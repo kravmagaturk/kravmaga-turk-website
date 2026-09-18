@@ -54,3 +54,27 @@
  .welcome-poster.v39 .hero-hotmenu{position:absolute!important;left:41.7%!important;right:2.4%!important;bottom:13.7%!important;height:10.8%!important;grid-template-columns:repeat(5,1fr)!important;padding:0!important;gap:0!important;background:transparent!important}
  .welcome-poster.v39 .hero-hotmenu a{border:0!important;min-height:0!important}
 }
+/* V3.12: poster-only navigation; exact 1536x1024 image coordinate mapping
+   icon centers approx x=690,847,1016,1200,1384; y=806 */
+.top>nav,.top>.menu{display:none!important}
+.welcome-poster.v39 .hero-hotmenu{
+ position:absolute!important;
+ left:40.0%!important; right:2.3%!important;
+ bottom:15.9%!important; height:11.8%!important;
+ display:grid!important; grid-template-columns:repeat(5,1fr)!important;
+ gap:0!important; padding:0!important; background:transparent!important; z-index:20!important
+}
+.welcome-poster.v39 .hero-hotmenu a{
+ display:block!important;width:100%!important;height:100%!important;
+ min-height:0!important;margin:0!important;padding:0!important;
+ border:0!important;background:transparent!important
+}
+@media(max-width:760px){
+ .top>nav,.top>.menu{display:none!important}
+ .welcome-poster.v39 .hero-hotmenu{
+  position:absolute!important;left:40.0%!important;right:2.3%!important;
+  bottom:15.9%!important;height:11.8%!important;
+  display:grid!important;grid-template-columns:repeat(5,1fr)!important;
+  gap:0!important;padding:0!important;background:transparent!important
+ }
+}
