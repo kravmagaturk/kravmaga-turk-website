@@ -179,3 +179,19 @@ main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-c
 .map-link-home>a{min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#fff;text-decoration:none;background:radial-gradient(circle at center,#1b1d20 0,#0b0c0e 68%)}
 .map-link-home strong{font-size:32px;letter-spacing:.08em}.map-link-home span{color:#ccc}.map-link-home em{font-style:normal;color:#d21d27;font-weight:800;margin-top:5px}
 @media(max-width:760px){.map-link-home>a{min-height:150px}.map-link-home strong{font-size:26px}}
+
+/* V5.3.5 stop repeating hero artwork in service cards */
+.service-card.service-lessons,.service-card.service-private,.service-card.service-security{
+ aspect-ratio:16/7!important;min-height:150px!important;
+ background:
+ linear-gradient(135deg,rgba(181,18,27,.24),transparent 42%),
+ radial-gradient(circle at 78% 28%,#292c30 0,#111315 34%,#08090a 72%)!important;
+}
+.service-card.service-lessons:before,.service-card.service-private:before,.service-card.service-security:before{
+ position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:56px;line-height:1;color:rgba(255,255,255,.13);font-weight:900
+}
+.service-card.service-lessons:before{content:"01"}
+.service-card.service-private:before{content:"02"}
+.service-card.service-security:before{content:"03"}
+.service-card.service-lessons:after,.service-card.service-private:after,.service-card.service-security:after{background:linear-gradient(90deg,rgba(0,0,0,.82),transparent)!important}
+@media(max-width:760px){.service-card.service-lessons,.service-card.service-private,.service-card.service-security{aspect-ratio:16/6!important;min-height:118px!important}.service-card.service-lessons:before,.service-card.service-private:before,.service-card.service-security:before{font-size:42px}}
