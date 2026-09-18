@@ -37,3 +37,11 @@
  .welcome-poster.v39 .hero-hotmenu span{font-size:9px;opacity:.62;margin-top:3px}
  .welcome-poster.v39 .hero-hotmenu a:last-child{grid-column:1/-1}
 }
+/* V3.10 icon row = visible main menu; old hero CTA removed */
+.welcome-poster.v39 .welcome-actions{display:none!important}
+.welcome-poster.v39 .hero-hotmenu a{color:#fff!important;justify-content:flex-end!important;padding:0 4px 4px!important;text-shadow:0 2px 5px #000}
+.welcome-poster.v39 .hero-hotmenu b{font-size:11px!important;letter-spacing:.08em!important;font-weight:700}
+.welcome-poster.v39 .hero-hotmenu span{display:none!important}
+@media(max-width:760px){
+ .welcome-poster.v39 .hero-hotmenu b{font-size:11px!important}
+}
