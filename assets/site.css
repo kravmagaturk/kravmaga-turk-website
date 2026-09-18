@@ -104,3 +104,9 @@ html{scroll-behavior:smooth}
 
 /* V4.2 hard-disable every legacy top navigation */
 header.top>nav,header.top>.menu,header.top button.menu,.mobile-menu,.nav-toggle{display:none!important;visibility:hidden!important;pointer-events:none!important}
+
+/* V4.3 exact 1248x1248 poster menu mapping */
+.welcome-poster.v39{position:relative;max-width:1248px;margin:0 auto}
+.welcome-poster.v39>img{display:block;width:100%;height:auto;object-fit:contain}
+.welcome-poster .hero-hotmenu.v4-seven{left:53.45%!important;right:6.75%!important;top:11.65%!important;height:64.25%!important;grid-template-rows:repeat(7,1fr)!important;gap:1.35%!important}
+@media(max-width:760px){.welcome-poster.v39{width:100%;max-width:none}.welcome-poster .hero-hotmenu.v4-seven{left:53.45%!important;right:6.75%!important;top:11.65%!important;height:64.25%!important}}
