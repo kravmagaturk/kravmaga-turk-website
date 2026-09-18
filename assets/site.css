@@ -133,3 +133,11 @@ main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-c
  .welcome-poster.v39>img{display:block!important;width:100vw!important;max-width:none!important;height:auto!important;margin:0!important;padding:0!important;object-fit:contain!important}
  .welcome-poster .hero-hotmenu.v4-seven{left:53.45%!important;right:6.75%!important;top:11.65%!important;height:64.25%!important}
 }
+
+/* V5 rollback: stable 1536x1024 horizontal hero */
+.welcome-poster.v39{position:relative!important;width:100%!important;max-width:1536px!important;margin:0 auto!important;overflow:hidden!important}
+.welcome-poster.v39>img{display:block!important;width:100%!important;height:auto!important;max-width:100%!important;object-fit:contain!important}
+.welcome-poster .hero-hotmenu.v39-five{position:absolute!important;left:40%!important;right:2.3%!important;bottom:15.9%!important;top:auto!important;height:11.8%!important;display:grid!important;grid-template-columns:repeat(5,1fr)!important;grid-template-rows:1fr!important;gap:0!important;padding:0!important;background:transparent!important;z-index:30!important}
+.welcome-poster .hero-hotmenu.v39-five a{display:block!important;width:100%!important;height:100%!important;background:transparent!important;border:0!important}
+@media(hover:hover){.welcome-poster .hero-hotmenu.v39-five a:hover{background:rgba(180,18,27,.10)!important}}
+@media(max-width:760px){.welcome-poster.v39{width:100%!important;max-width:none!important;margin:0!important}.welcome-poster.v39>img{width:100%!important;height:auto!important}.welcome-poster .hero-hotmenu.v39-five{left:40%!important;right:2.3%!important;bottom:15.9%!important;top:auto!important;height:11.8%!important;display:grid!important;grid-template-columns:repeat(5,1fr)!important}}
