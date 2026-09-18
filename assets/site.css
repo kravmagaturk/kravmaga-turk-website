@@ -45,3 +45,12 @@
 @media(max-width:760px){
  .welcome-poster.v39 .hero-hotmenu b{font-size:11px!important}
 }
+/* V3.11 baked icon labels: invisible click zones exactly over lower-right five tiles */
+.welcome-poster.v39 .hero-hotmenu{position:absolute!important;left:41.7%!important;right:2.4%!important;bottom:13.7%!important;height:10.8%!important;display:grid!important;grid-template-columns:repeat(5,1fr)!important;padding:0!important;gap:0!important;background:transparent!important}
+.welcome-poster.v39 .hero-hotmenu a{display:block!important;min-height:0!important;height:100%!important;padding:0!important;margin:0!important;background:transparent!important;border:0!important;color:transparent!important;text-shadow:none!important}
+.welcome-poster.v39 .hero-hotmenu a:focus-visible{outline:2px solid #e11!important;outline-offset:-2px!important}
+.welcome-poster.v39 .hero-hotmenu b,.welcome-poster.v39 .hero-hotmenu span{display:none!important}
+@media(max-width:760px){
+ .welcome-poster.v39 .hero-hotmenu{position:absolute!important;left:41.7%!important;right:2.4%!important;bottom:13.7%!important;height:10.8%!important;grid-template-columns:repeat(5,1fr)!important;padding:0!important;gap:0!important;background:transparent!important}
+ .welcome-poster.v39 .hero-hotmenu a{border:0!important;min-height:0!important}
+}
