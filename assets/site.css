@@ -170,3 +170,12 @@ main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-c
 .press-overlay em{font-style:normal;color:#d0d0d0;font-size:15px}
 @media(hover:hover){.press-feature:hover>img{transform:scale(1.025);filter:grayscale(.3) brightness(.52) contrast(1.15)}}
 @media(max-width:760px){.press-feature{height:190px;margin:12px 0}.press-overlay{left:20px}.press-overlay strong{font-size:34px}.press-overlay em{font-size:13px}}
+
+/* V5.3.3 no blocked embeds/external card images */
+.service-card:nth-child(1) img{object-position:18% 50%}
+.service-card:nth-child(2) img{object-position:52% 50%}
+.service-card:nth-child(3) img{object-position:84% 50%}
+.map-link-home{height:auto!important;border-top:2px solid #b5121b!important;background:#101113}
+.map-link-home>a{min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#fff;text-decoration:none;background:radial-gradient(circle at center,#1b1d20 0,#0b0c0e 68%)}
+.map-link-home strong{font-size:32px;letter-spacing:.08em}.map-link-home span{color:#ccc}.map-link-home em{font-style:normal;color:#d21d27;font-weight:800;margin-top:5px}
+@media(max-width:760px){.map-link-home>a{min-height:150px}.map-link-home strong{font-size:26px}}
