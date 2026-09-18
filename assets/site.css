@@ -93,3 +93,11 @@
 
 /* SEO H1 remains semantic without disturbing visual hero */
 .seo-h1{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* V4.1 seven poster menu hit-zones: right column, 1248x1248 reference */
+.welcome-poster .hero-hotmenu.v4-seven{position:absolute!important;left:53.5%!important;right:6.8%!important;top:11.7%!important;height:64.5%!important;display:grid!important;grid-template-columns:1fr!important;grid-template-rows:repeat(7,1fr)!important;gap:1.3%!important;padding:0!important;background:transparent!important;z-index:30!important}
+.welcome-poster .hero-hotmenu.v4-seven a{display:block!important;width:100%!important;height:100%!important;background:transparent!important;border:1px solid transparent!important;border-radius:8px!important;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease!important}
+@media(hover:hover){.welcome-poster .hero-hotmenu.v4-seven a:hover{transform:translateX(4px);border-color:rgba(220,30,38,.72)!important;box-shadow:0 0 18px rgba(220,30,38,.18)}}
+.welcome-poster .hero-hotmenu.v4-seven a:active{transform:scale(.985)}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.welcome-poster .hero-hotmenu.v4-seven a{transition:none!important}}
