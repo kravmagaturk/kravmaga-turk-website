@@ -124,3 +124,12 @@ main#top .intro,main#top .section p,main#top .band p{color:#c6c8ca}
 main#top .cards article{background:#111315!important;border:1px solid #292c2f!important;color:#fff!important}
 main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-color:#b5121b!important}
 @media(max-width:760px){main#top .section,main#top .band{padding-top:36px!important;padding-bottom:36px!important}}
+
+/* V4.5 mobile poster: fill phone width, no desktop max-width/gutters */
+@media(max-width:760px){
+ body{margin:0!important;padding:0!important;overflow-x:hidden!important}
+ main#top{width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
+ .welcome-poster.v39{width:100vw!important;max-width:none!important;margin:0!important;padding:0!important;overflow:hidden!important}
+ .welcome-poster.v39>img{display:block!important;width:100vw!important;max-width:none!important;height:auto!important;margin:0!important;padding:0!important;object-fit:contain!important}
+ .welcome-poster .hero-hotmenu.v4-seven{left:53.45%!important;right:6.75%!important;top:11.65%!important;height:64.25%!important}
+}
