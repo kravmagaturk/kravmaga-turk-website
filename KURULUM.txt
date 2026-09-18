@@ -1,0 +1,8 @@
+Krav Maga Türk V2
+
+Bu depo yeni web sitesi test sürümü içindir.
+Canlı kravmaga.com.tr alan adına bağlamadan önce Cloudflare test ortamında kontrol edilmelidir.
+
+Ana dosya: index.html
+Stil: assets/site.css
+JS: assets/site.js
