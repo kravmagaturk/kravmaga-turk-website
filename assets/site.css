@@ -110,3 +110,17 @@ header.top>nav,header.top>.menu,header.top button.menu,.mobile-menu,.nav-toggle{
 .welcome-poster.v39>img{display:block;width:100%;height:auto;object-fit:contain}
 .welcome-poster .hero-hotmenu.v4-seven{left:53.45%!important;right:6.75%!important;top:11.65%!important;height:64.25%!important;grid-template-rows:repeat(7,1fr)!important;gap:1.35%!important}
 @media(max-width:760px){.welcome-poster.v39{width:100%;max-width:none}.welcome-poster .hero-hotmenu.v4-seven{left:53.45%!important;right:6.75%!important;top:11.65%!important;height:64.25%!important}}
+
+/* V4.4 poster-first homepage and unified cinematic section language */
+body{background:#08090a}
+body>header.top,main#top>header.top{display:none!important}
+main#top{margin:0!important;padding:0!important}
+main#top .welcome-poster.v39{margin-top:0!important}
+main#top .section,main#top .band{background:#0b0c0e!important;color:#f3f3f3!important;border-top:1px solid #242629}
+main#top .section.light{background:#101214!important;color:#f3f3f3!important}
+main#top .section h2,main#top .band h2,main#top .location-block h2{color:#fff!important;letter-spacing:-.02em}
+main#top .eyebrow{color:#d81f2a!important;font-weight:800;letter-spacing:.14em}
+main#top .intro,main#top .section p,main#top .band p{color:#c6c8ca}
+main#top .cards article{background:#111315!important;border:1px solid #292c2f!important;color:#fff!important}
+main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-color:#b5121b!important}
+@media(max-width:760px){main#top .section,main#top .band{padding-top:36px!important;padding-bottom:36px!important}}
