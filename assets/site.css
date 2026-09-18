@@ -141,3 +141,19 @@ main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-c
 .welcome-poster .hero-hotmenu.v39-five a{display:block!important;width:100%!important;height:100%!important;background:transparent!important;border:0!important}
 @media(hover:hover){.welcome-poster .hero-hotmenu.v39-five a:hover{background:rgba(180,18,27,.10)!important}}
 @media(max-width:760px){.welcome-poster.v39{width:100%!important;max-width:none!important;margin:0!important}.welcome-poster.v39>img{width:100%!important;height:auto!important}.welcome-poster .hero-hotmenu.v39-five{left:40%!important;right:2.3%!important;bottom:15.9%!important;top:auto!important;height:11.8%!important;display:grid!important;grid-template-columns:repeat(5,1fr)!important}}
+
+/* V5.3 homepage additions */
+.home-additions{max-width:1240px;margin:0 auto;padding:34px 22px 0;background:#08090a;color:#fff}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service-card{position:relative;display:block;aspect-ratio:1/1;overflow:hidden;border:1px solid #292b2e;border-radius:10px;background:#111;color:#fff;text-decoration:none}
+.service-card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.75) contrast(1.06);transition:transform .22s ease}
+.service-card:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.92))}
+.service-card span{position:absolute;z-index:2;left:22px;right:18px;bottom:20px;font-size:clamp(18px,2vw,28px);font-weight:900;letter-spacing:.03em}
+@media(hover:hover){.service-card:hover img{transform:scale(1.025)}}
+.press-strip{margin:20px 0;min-height:92px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid #2b2d30;border-left:4px solid #b5121b;background:#101113;color:#fff;text-decoration:none}
+.press-strip strong{font-size:26px}.press-strip span{color:#c9c9c9}
+.testimonials{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:20px 0}
+.testimonials article{padding:26px;background:#101113;border:1px solid #292b2e}
+.testimonials p{margin:0 0 18px;color:#ddd;line-height:1.65}.testimonials strong,.testimonials small{display:block}.testimonials small{margin-top:3px;color:#999}
+.map-home{margin-top:20px;height:360px;border-top:2px solid #b5121b;overflow:hidden}.map-home iframe{width:100%;height:100%;border:0;display:block}
+@media(max-width:760px){.home-additions{padding:18px 12px 0}.service-grid{grid-template-columns:1fr;gap:12px}.service-card{aspect-ratio:16/10}.testimonials{grid-template-columns:1fr;gap:12px}.press-strip{min-height:76px;padding:16px 18px}.map-home{height:300px}}
