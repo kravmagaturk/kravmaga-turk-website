@@ -23,3 +23,17 @@
 
 /* Mobile: CTA controls before poster, artwork unobstructed */
 @media(max-width:760px){.welcome-poster{display:flex!important;flex-direction:column!important}.welcome-actions{order:-1!important;position:relative!important;z-index:5!important;padding:10px 14px!important;border-bottom:1px solid rgba(255,255,255,.12)!important}.welcome-poster>img{order:1!important;position:relative!important;z-index:1!important;margin:0!important}}
+
+/* V3.9 hero coordinate menu */
+.welcome-poster.v39{position:relative}
+.welcome-poster.v39 .hero-hotmenu{position:absolute;left:42%;right:2.5%;bottom:14.5%;display:grid;grid-template-columns:repeat(5,1fr);z-index:6}
+.welcome-poster.v39 .hero-hotmenu a{min-height:92px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;text-decoration:none;color:transparent;background:transparent;border-left:1px solid transparent}
+.welcome-poster.v39 .hero-hotmenu b,.welcome-poster.v39 .hero-hotmenu span{font-size:0}
+.welcome-poster.v39 .hero-hotmenu a:focus-visible{outline:2px solid #e11;outline-offset:-3px}
+@media(max-width:760px){
+ .welcome-poster.v39 .hero-hotmenu{position:relative;left:auto;right:auto;bottom:auto;display:grid;grid-template-columns:1fr 1fr;background:#08090a;padding:10px;gap:8px}
+ .welcome-poster.v39 .hero-hotmenu a{min-height:48px;color:#fff;border:1px solid rgba(255,255,255,.18);justify-content:center;padding:7px}
+ .welcome-poster.v39 .hero-hotmenu b{font-size:11px;letter-spacing:.08em}
+ .welcome-poster.v39 .hero-hotmenu span{font-size:9px;opacity:.62;margin-top:3px}
+ .welcome-poster.v39 .hero-hotmenu a:last-child{grid-column:1/-1}
+}
