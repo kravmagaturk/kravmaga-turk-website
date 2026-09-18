@@ -90,3 +90,6 @@
 .footer-grid p,.footer-bottom{opacity:.58;font-size:12px}.footer-grid a{display:block;color:#ddd;text-decoration:none;margin:0 0 9px}
 .footer-bottom{border-top:1px solid #222;margin-top:24px;padding-top:16px}
 @media(max-width:760px){.sub-theme-strip{height:135px}.location-block{padding:34px 0}.map-slot{min-height:210px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
+
+/* SEO H1 remains semantic without disturbing visual hero */
+.seo-h1{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
