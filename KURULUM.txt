@@ -6,3 +6,5 @@ Canlı kravmaga.com.tr alan adına bağlamadan önce Cloudflare test ortamında 
 Ana dosya: index.html
 Stil: assets/site.css
 JS: assets/site.js
+
+Cloudflare Git otomatik deployment bağlantısı: 18.09.2026 tarihinde test commit'i gönderildi.
