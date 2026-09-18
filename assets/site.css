@@ -101,3 +101,6 @@
 .welcome-poster .hero-hotmenu.v4-seven a:active{transform:scale(.985)}
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.welcome-poster .hero-hotmenu.v4-seven a{transition:none!important}}
+
+/* V4.2 hard-disable every legacy top navigation */
+header.top>nav,header.top>.menu,header.top button.menu,.mobile-menu,.nav-toggle{display:none!important;visibility:hidden!important;pointer-events:none!important}
