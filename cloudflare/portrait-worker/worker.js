@@ -187,7 +187,7 @@ export default {
       const result = await env.AI.run(AI_MODEL, {
         prompt,
         negative_prompt: negativePrompt,
-        image: Array.from(imageBytes),
+        image_b64: match[2].replace(/\\s/g, ""),
         width: 768,
         height: 768,
         num_steps: 20,
