@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Özel Güvenlik Eğitimi İstanbul | Krav Maga Türk</title>
+
+<meta name="description" content="Özel güvenlik personeline yönelik Krav Maga, yakın temas, farkındalık ve kurumsal güvenlik eğitimleri. Krav Maga Türk güvenlik eğitimleri İstanbul.">
+
+<style>
+:root{
+    --bg:#050505;
+    --bg2:#0b0b0b;
+    --card:#111;
+    --red:#e81822;
+    --text:#f5f5f5;
+    --muted:#999;
+    --border:#292929;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+}
+
+.kmt-page{
+    width:100%;
+    overflow:hidden;
+    background:var(--bg);
+}
+
+.kmt-wrap{
+    width:min(1140px,calc(100% - 38px));
+    margin:0 auto;
+}
+
+.kmt-section{
+    position:relative;
+    padding:72px 0;
+}
+
+.kmt-dark{
+    background:var(--bg2);
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+}
+
+.kmt-kicker{
+    color:var(--red);
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2.2px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.kmt-redline{
+    width:62px;
+    height:3px;
+    background:var(--red);
+    margin:0 0 22px;
+}
+
+.kmt-section-title{
+    max-width:800px;
+    margin-bottom:35px;
+}
+
+.kmt-section-title span{
+    display:block;
+    color:var(--red);
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.kmt-section-title h2{
+    font-size:40px;
+    line-height:1.12;
+    margin-bottom:12px;
+}
+
+.kmt-section-title p{
+    color:var(--muted);
+    font-size:16px;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.kmt-hero{
+    position:relative;
+    min-height:610px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    isolation:isolate;
+    background:
+        radial-gradient(circle at 85% 45%,
+        rgba(190,0,0,.22),
+        transparent 36%),
+        linear-gradient(120deg,#050505,#090909 65%,#140000);
+    border-bottom:1px solid var(--border);
+}
+
+
+/*
+=================================================
+GÜVENLİK HERO GÖRSELİ
+
+Hostinger'a son hazırladığımız:
+XRAY + ÖZEL GÜVENLİK
+
+görselini yükledikten sonra aşağıdaki:
+
+url("")
+
+kısmının içine görsel URL'sini koyacağız.
+
+Görsel olmadan da sayfa düzgün çalışır.
+=================================================
+*/
+
+.kmt-security-photo{
+    position:absolute;
+    inset:0;
+    z-index:-3;
+
+    background-image:url("assetsozel-guvenlik-xray.webp");
+
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+}
+
+
+/* Görsel üzerindeki sinematik karartma */
+
+.kmt-security-overlay{
+    position:absolute;
+    inset:0;
+    z-index:-2;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,5,.98) 0%,
+            rgba(5,5,5,.92) 25%,
+            rgba(5,5,5,.72) 43%,
+            rgba(5,5,5,.26) 68%,
+            rgba(5,5,5,.08) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(5,5,5,.55),
+            transparent 45%
+        );
+}
+
+
+/* GERÇEK 19-48 LOGO */
+
+.kmt-hero-logo{
+    position:absolute;
+    z-index:-1;
+
+    width:360px;
+    height:360px;
+
+    left:4%;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    background:
+        url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png")
+        center/contain no-repeat;
+
+    opacity:.06;
+    filter:grayscale(1);
+
+    pointer-events:none;
+}
+
+
+.kmt-hero-content{
+    position:relative;
+    z-index:2;
+    max-width:650px;
+    padding:90px 0;
+}
+
+
+.kmt-hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    margin-bottom:20px;
+
+    padding:7px 11px;
+
+    background:rgba(10,10,10,.68);
+    border:1px solid #363636;
+    border-radius:5px;
+
+    color:#bbb;
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.4px;
+
+    text-transform:uppercase;
+}
+
+.kmt-hero-badge:before{
+    content:"";
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--red);
+}
+
+
+.kmt-hero h1{
+    font-size:clamp(44px,6vw,70px);
+    line-height:1.01;
+    letter-spacing:-2px;
+
+    max-width:650px;
+
+    margin-bottom:20px;
+}
+
+
+.kmt-hero-text{
+    max-width:590px;
+
+    color:#b8b8b8;
+
+    font-size:18px;
+    line-height:1.65;
+}
+
+
+.kmt-hero-features{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+
+    margin-top:23px;
+}
+
+
+.kmt-hero-feature{
+    padding:7px 10px;
+
+    border:1px solid #333;
+    border-radius:5px;
+
+    background:rgba(5,5,5,.72);
+
+    color:#aaa;
+
+    font-size:11px;
+    font-weight:700;
+}
+
+
+.kmt-actions{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:30px;
+}
+
+
+.kmt-btn{
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    min-height:50px;
+
+    padding:0 24px;
+
+    border-radius:7px;
+
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:800;
+
+    transition:.2s ease;
+}
+
+
+.kmt-btn-red{
+    background:var(--red);
+    color:#fff;
+
+    border:1px solid var(--red);
+}
+
+
+.kmt-btn-red:hover{
+    background:#f2222c;
+    transform:translateY(-2px);
+}
+
+
+.kmt-btn-dark{
+    background:rgba(10,10,10,.82);
+
+    color:#fff;
+
+    border:1px solid #444;
+}
+
+
+.kmt-btn-dark:hover{
+    border-color:#888;
+}
+
+
+/* ========================================
+   GİRİŞ
+======================================== */
+
+.kmt-intro-grid{
+    display:grid;
+
+    grid-template-columns:1.15fr .85fr;
+
+    gap:38px;
+
+    align-items:start;
+}
+
+
+.kmt-intro-text h2{
+    font-size:38px;
+    line-height:1.12;
+
+    margin-bottom:20px;
+}
+
+
+.kmt-intro-text p{
+    color:#aaa;
+
+    font-size:16px;
+
+    margin-bottom:18px;
+}
+
+
+.kmt-law{
+    background:var(--card);
+
+    border:1px solid #333;
+    border-left:3px solid var(--red);
+
+    border-radius:10px;
+
+    padding:28px;
+}
+
+
+.kmt-law small{
+    display:block;
+
+    color:var(--red);
+
+    font-size:10px;
+    font-weight:900;
+
+    letter-spacing:1.4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:9px;
+}
+
+
+.kmt-law h3{
+    font-size:23px;
+
+    margin-bottom:12px;
+}
+
+
+.kmt-law p{
+    color:#929292;
+
+    font-size:14px;
+}
+
+
+/* ========================================
+   EĞİTİM KARTLARI
+======================================== */
+
+.kmt-card-grid{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:14px;
+}
+
+
+.kmt-card{
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:11px;
+
+    padding:25px;
+
+    min-height:215px;
+
+    transition:.2s ease;
+}
+
+
+.kmt-card:hover{
+    border-color:#555;
+
+    transform:translateY(-3px);
+}
+
+
+.kmt-card-number{
+    color:var(--red);
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    margin-bottom:19px;
+}
+
+
+.kmt-card h3{
+    font-size:18px;
+
+    line-height:1.25;
+
+    margin-bottom:10px;
+}
+
+
+.kmt-card p{
+    color:#8d8d8d;
+
+    font-size:14px;
+}
+
+
+/* ========================================
+   YAKIN TEMAS
+======================================== */
+
+.kmt-contact{
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+.kmt-contact:after{
+    content:"";
+
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    right:-80px;
+    bottom:-130px;
+
+    background:
+        url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png")
+        center/contain no-repeat;
+
+    opacity:.035;
+
+    filter:grayscale(1);
+
+    pointer-events:none;
+}
+
+
+.kmt-contact-grid{
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:.8fr 1.2fr;
+
+    gap:35px;
+}
+
+
+.kmt-contact-title h2{
+    font-size:39px;
+
+    line-height:1.1;
+
+    margin-bottom:15px;
+}
+
+
+.kmt-contact-title p{
+    color:#999;
+
+    font-size:15px;
+}
+
+
+.kmt-modules{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:11px;
+}
+
+
+.kmt-module{
+    background:#080808;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    padding:19px;
+}
+
+
+.kmt-module small{
+    display:block;
+
+    color:var(--red);
+
+    font-size:10px;
+    font-weight:900;
+
+    margin-bottom:7px;
+}
+
+
+.kmt-module strong{
+    display:block;
+
+    font-size:15px;
+
+    margin-bottom:4px;
+}
+
+
+.kmt-module p{
+    color:#777;
+
+    font-size:12px;
+}
+
+
+/* ========================================
+   GÜVENLİK YAKLAŞIMI
+======================================== */
+
+.kmt-process{
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:10px;
+}
+
+
+.kmt-process-item{
+    background:#101010;
+
+    border:1px solid var(--border);
+
+    border-radius:9px;
+
+    padding:23px 17px;
+
+    text-align:center;
+}
+
+
+.kmt-process-number{
+    width:36px;
+    height:36px;
+
+    margin:0 auto 13px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    background:var(--red);
+
+    color:#fff;
+
+    font-size:11px;
+    font-weight:900;
+}
+
+
+.kmt-process-item h3{
+    font-size:15px;
+
+    margin-bottom:5px;
+}
+
+
+.kmt-process-item p{
+    color:#777;
+
+    font-size:12px;
+}
+
+
+/* ========================================
+   PROJELER
+======================================== */
+
+.kmt-project-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:10px;
+}
+
+
+.kmt-project{
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    background:#101010;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    padding:16px 18px;
+}
+
+
+.kmt-project-mark{
+    flex:0 0 auto;
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--red);
+}
+
+
+.kmt-project span{
+    color:#bbb;
+
+    font-size:13px;
+}
+
+
+/* ========================================
+   MARKA
+======================================== */
+
+.kmt-brand-note{
+    padding:25px;
+
+    background:#0d0d0d;
+
+    border:1px solid var(--border);
+
+    border-radius:9px;
+
+    color:#888;
+
+    font-size:13px;
+}
+
+
+.kmt-brand-note strong{
+    color:#ddd;
+}
+
+
+/* ========================================
+   CTA
+======================================== */
+
+.kmt-cta{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:82px 0;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at 50% 110%,
+            rgba(190,0,0,.22),
+            transparent 50%
+        ),
+        var(--bg);
+}
+
+
+.kmt-cta:before{
+    content:"";
+
+    position:absolute;
+
+    width:390px;
+    height:390px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:
+        url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png")
+        center/contain no-repeat;
+
+    opacity:.045;
+
+    filter:grayscale(1);
+}
+
+
+.kmt-cta-content{
+    position:relative;
+
+    z-index:2;
+}
+
+
+.kmt-cta h2{
+    font-size:44px;
+
+    line-height:1.1;
+
+    margin-bottom:13px;
+}
+
+
+.kmt-cta p{
+    max-width:650px;
+
+    margin:0 auto;
+
+    color:#929292;
+}
+
+
+.kmt-cta .kmt-actions{
+    justify-content:center;
+}
+
+
+/* ========================================
+   TABLET
+   751 - 1100
+======================================== */
+
+@media(min-width:751px) and (max-width:1100px){
+
+    .kmt-wrap{
+        width:calc(100% - 46px);
+    }
+
+    .kmt-hero{
+        min-height:520px;
+    }
+
+    .kmt-security-photo{
+        background-position:58% center;
+    }
+
+    .kmt-security-overlay{
+        background:
+            linear-gradient(
+                90deg,
+                rgba(5,5,5,.97) 0%,
+                rgba(5,5,5,.88) 35%,
+                rgba(5,5,5,.45) 67%,
+                rgba(5,5,5,.12) 100%
+            );
+    }
+
+    .kmt-hero-content{
+        max-width:550px;
+
+        padding:65px 0;
+    }
+
+    .kmt-hero h1{
+        font-size:42px;
+
+        letter-spacing:-1px;
+    }
+
+    .kmt-hero-text{
+        max-width:510px;
+
+        font-size:15px;
+    }
+
+    .kmt-hero-logo{
+        width:260px;
+        height:260px;
+
+        left:3%;
+    }
+
+    .kmt-section{
+        padding:55px 0;
+    }
+
+    .kmt-section-title h2,
+    .kmt-contact-title h2,
+    .kmt-intro-text h2{
+        font-size:31px;
+    }
+
+    .kmt-section-title p,
+    .kmt-intro-text p{
+        font-size:14px;
+    }
+
+    .kmt-card-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .kmt-card{
+        min-height:190px;
+    }
+
+    .kmt-process-item{
+        padding:18px 9px;
+    }
+
+    .kmt-process-item h3{
+        font-size:13px;
+    }
+
+    .kmt-cta h2{
+        font-size:32px;
+    }
+}
+
+
+/* ========================================
+   MOBİL
+======================================== */
+
+@media(max-width:750px){
+
+    .kmt-wrap{
+        width:calc(100% - 28px);
+    }
+
+    .kmt-hero{
+        min-height:620px;
+
+        align-items:flex-end;
+    }
+
+    /*
+    MOBİL HERO KADRAJI
+
+    Ana güvenlik personeli görünür.
+    X-Ray'in bir bölümü solda kalır.
+    */
+
+    .kmt-security-photo{
+        background-size:auto 390px;
+
+        background-position:61% top;
+
+        background-repeat:no-repeat;
+    }
+
+    .kmt-security-overlay{
+        background:
+            linear-gradient(
+                0deg,
+                rgba(5,5,5,1) 0%,
+                rgba(5,5,5,.97) 27%,
+                rgba(5,5,5,.76) 48%,
+                rgba(5,5,5,.17) 77%,
+                rgba(5,5,5,.10) 100%
+            );
+    }
+
+    .kmt-hero-logo{
+        width:200px;
+        height:200px;
+
+        left:-55px;
+        top:19%;
+
+        opacity:.04;
+    }
+
+    .kmt-hero-content{
+        width:100%;
+
+        max-width:100%;
+
+        padding:290px 0 43px;
+    }
+
+    .kmt-kicker{
+        font-size:9px;
+
+        letter-spacing:1.5px;
+    }
+
+    .kmt-hero-badge{
+        font-size:9px;
+
+        margin-bottom:14px;
+    }
+
+    .kmt-hero h1{
+        max-width:350px;
+
+        font-size:30px;
+
+        line-height:1.08;
+
+        letter-spacing:-.5px;
+
+        margin-bottom:15px;
+    }
+
+    .kmt-redline{
+        width:46px;
+
+        margin-bottom:17px;
+    }
+
+    .kmt-hero-text{
+        max-width:350px;
+
+        font-size:14px;
+
+        line-height:1.55;
+    }
+
+    .kmt-hero-features{
+        gap:6px;
+
+        margin-top:17px;
+    }
+
+    .kmt-hero-feature{
+        padding:5px 7px;
+
+        font-size:9px;
+    }
+
+    .kmt-actions{
+        margin-top:22px;
+    }
+
+    .kmt-btn{
+        width:100%;
+
+        min-height:47px;
+
+        padding:0 15px;
+
+        font-size:13px;
+    }
+
+    .kmt-section{
+        padding:44px 0;
+    }
+
+    .kmt-section-title{
+        margin-bottom:25px;
+    }
+
+    .kmt-section-title h2,
+    .kmt-contact-title h2,
+    .kmt-intro-text h2{
+        font-size:24px;
+
+        line-height:1.15;
+    }
+
+    .kmt-section-title p{
+        font-size:13px;
+    }
+
+    .kmt-intro-grid,
+    .kmt-contact-grid{
+        grid-template-columns:1fr;
+
+        gap:24px;
+    }
+
+    .kmt-intro-text p{
+        font-size:14px;
+    }
+
+    .kmt-law{
+        padding:21px 18px;
+    }
+
+    .kmt-law h3{
+        font-size:19px;
+    }
+
+    .kmt-card-grid{
+        grid-template-columns:1fr;
+    }
+
+    .kmt-card{
+        min-height:0;
+
+        padding:21px 18px;
+    }
+
+    .kmt-card h3{
+        font-size:17px;
+    }
+
+    .kmt-card p{
+        font-size:13px;
+    }
+
+    .kmt-modules{
+        grid-template-columns:1fr;
+    }
+
+    .kmt-process{
+        grid-template-columns:1fr;
+    }
+
+    .kmt-process-item{
+        display:grid;
+
+        grid-template-columns:45px 1fr;
+
+        grid-template-rows:auto auto;
+
+        column-gap:11px;
+
+        text-align:left;
+
+        padding:16px;
+    }
+
+    .kmt-process-number{
+        grid-row:1 / 3;
+
+        margin:auto;
+    }
+
+    .kmt-process-item h3{
+        align-self:end;
+
+        font-size:15px;
+    }
+
+    .kmt-process-item p{
+        align-self:start;
+    }
+
+    .kmt-project-grid{
+        grid-template-columns:1fr;
+    }
+
+    .kmt-project{
+        padding:14px;
+    }
+
+    .kmt-brand-note{
+        padding:18px;
+
+        font-size:12px;
+    }
+
+    .kmt-cta{
+        padding:58px 0;
+    }
+
+    .kmt-cta h2{
+        font-size:26px;
+    }
+
+    .kmt-cta p{
+        font-size:14px;
+    }
+
+    .kmt-cta:before{
+        width:280px;
+        height:280px;
+    }
+}
+
+
+/* ========================================
+   DAR TELEFON
+======================================== */
+
+@media(max-width:420px){
+
+    .kmt-hero h1{
+        font-size:27px;
+    }
+
+    .kmt-section-title h2,
+    .kmt-contact-title h2,
+    .kmt-intro-text h2{
+        font-size:22px;
+    }
+
+    .kmt-security-photo{
+        background-position:62% top;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="kmt-page">
+
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section class="kmt-hero">
+
+<div class="kmt-security-photo"></div>
+<div class="kmt-security-overlay"></div>
+<div class="kmt-hero-logo"></div>
+
+<div class="kmt-wrap">
+
+<div class="kmt-hero-content">
+
+<div class="kmt-kicker">
+KRAV MAGA TÜRK • GÜVENLİK
+</div>
+
+<div class="kmt-hero-badge">
+Özel Güvenlik Eğitimleri
+</div>
+
+<h1>
+Özel Güvenlik Eğitimi
+</h1>
+
+<div class="kmt-redline"></div>
+
+<p class="kmt-hero-text">
+Özel güvenlik personeline yönelik farkındalık,
+yakın temas, kişisel güvenlik ve kontrollü müdahale
+prensiplerini içeren uygulamalı eğitim programları.
+</p>
+
+<div class="kmt-hero-features">
+
+<span class="kmt-hero-feature">
+FARKINDALIK
+</span>
+
+<span class="kmt-hero-feature">
+YAKIN TEMAS
+</span>
+
+<span class="kmt-hero-feature">
+KONTROLLÜ MÜDAHALE
+</span>
+
+<span class="kmt-hero-feature">
+GÖREV GÜVENLİĞİ
+</span>
+
+</div>
+
+<div class="kmt-actions">
+
+<a
+href="https://wa.me/905321621821?text=Merhaba%2C%20%C3%B6zel%20g%C3%BCvenlik%20e%C4%9Fitimleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+target="_blank"
+rel="noopener"
+class="kmt-btn kmt-btn-red">
+Kurumsal Eğitim Bilgisi Al
+</a>
+
+<a
+href="#egitim"
+class="kmt-btn kmt-btn-dark">
+Eğitim İçeriği
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     GİRİŞ
+===================================== -->
+
+<section class="kmt-section">
+
+<div class="kmt-wrap">
+
+<div class="kmt-intro-grid">
+
+<div class="kmt-intro-text">
+
+<div class="kmt-kicker">
+ÖZEL GÜVENLİK
+</div>
+
+<h2>
+Güvenlik Personeline Yönelik Eğitim
+</h2>
+
+<p>
+Özel güvenlik personelinin görevi yalnızca fiziksel
+müdahaleden ibaret değildir. Farkındalık, doğru
+iletişim, mesafe kontrolü, risk değerlendirmesi
+ve gerektiğinde kontrollü hareket edebilme güvenlik
+hizmetinin önemli parçalarıdır.
+</p>
+
+<p>
+Krav Maga Türk güvenlik eğitimlerinde çalışmalar,
+personelin görev ortamında karşılaşabileceği durumlara
+uygun senaryolar ve temel kişisel güvenlik prensipleri
+çerçevesinde ele alınır.
+</p>
+
+</div>
+
+
+<div class="kmt-law">
+
+<small>
+MEVZUAT
+</small>
+
+<h3>
+5188 Sayılı Kanun
+</h3>
+
+<p>
+Özel güvenlik hizmetleri Türkiye'de 5188 sayılı
+Özel Güvenlik Hizmetlerine Dair Kanun kapsamında
+yürütülmektedir. Eğitim içeriği kurumun görev alanı,
+personel yapısı ve ihtiyaçları dikkate alınarak
+planlanabilir.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     EĞİTİM
+===================================== -->
+
+<section
+class="kmt-section kmt-dark"
+id="egitim">
+
+<div class="kmt-wrap">
+
+<div class="kmt-section-title">
+
+<span>
+EĞİTİM KONULARI
+</span>
+
+<h2>
+Görev Ortamına Yönelik Çalışmalar
+</h2>
+
+<p>
+Güvenlik personelinin farkındalık, iletişim,
+mesafe kontrolü ve kontrollü hareket becerilerini
+destekleyen eğitim başlıkları.
+</p>
+
+</div>
+
+
+<div class="kmt-card-grid">
+
+
+<article class="kmt-card">
+
+<div class="kmt-card-number">
+01
+</div>
+
+<h3>
+Farkındalık
+</h3>
+
+<p>
+Risk oluşturabilecek davranışları ve çevresel
+değişiklikleri erken fark etmeye yönelik çalışmalar.
+</p>
+
+</article>
+
+
+<article class="kmt-card">
+
+<div class="kmt-card-number">
+02
+</div>
+
+<h3>
+Yakın Temas
+</h3>
+
+<p>
+Görev sırasında oluşabilecek yakın mesafeli
+durumlarda mesafe ve pozisyon kontrolü.
+</p>
+
+</article>
+
+
+<article class="kmt-card">
+
+<div class="kmt-card-number">
+03
+</div>
+
+<h3>
+Kontrollü Müdahale
+</h3>
+
+<p>
+Durumun özelliklerine göre güvenli ve kontrollü
+hareket prensiplerinin değerlendirilmesi.
+</p>
+
+</article>
+
+
+<article class="kmt-card">
+
+<div class="kmt-card-number">
+04
+</div>
+
+<h3>
+Görev Güvenliği
+</h3>
+
+<p>
+Personelin kendisini, görev alanını ve çevresini
+korumaya yönelik temel güvenlik yaklaşımı.
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     YAKIN TEMAS
+===================================== -->
+
+<section class="kmt-section kmt-contact">
+
+<div class="kmt-wrap">
+
+<div class="kmt-contact-grid">
+
+
+<div class="kmt-contact-title">
+
+<div class="kmt-kicker">
+SELF DEFENSE / KRAV MAGA
+</div>
+
+<h2>
+Yakın Temas Eğitimi
+</h2>
+
+<p>
+Güvenlik personelinin görev alanındaki yakın
+temas durumlarına yönelik uygulamalı eğitim modülleri.
+</p>
+
+</div>
+
+
+<div class="kmt-modules">
+
+
+<div class="kmt-module">
+
+<small>
+MODÜL 01
+</small>
+
+<strong>
+Basic Combatives
+</strong>
+
+<p>
+Temel hareket ve pozisyon prensipleri.
+</p>
+
+</div>
+
+
+<div class="kmt-module">
+
+<small>
+MODÜL 02
+</small>
+
+<strong>
+The Best Defense
+</strong>
+
+<p>
+Riskten kaçınma ve güvenli tepki yaklaşımı.
+</p>
+
+</div>
+
+
+<div class="kmt-module">
+
+<small>
+MODÜL 03
+</small>
+
+<strong>
+On The Edge
+</strong>
+
+<p>
+Yakın mesafede farkındalık ve kontrol.
+</p>
+
+</div>
+
+
+<div class="kmt-module">
+
+<small>
+MODÜL 04
+</small>
+
+<strong>
+Line of Fire
+</strong>
+
+<p>
+Görev ortamına yönelik güvenlik farkındalığı.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     GÜVENLİK YAKLAŞIMI
+===================================== -->
+
+<section class="kmt-section kmt-dark">
+
+<div class="kmt-wrap">
+
+<div class="kmt-section-title">
+
+<span>
+GÜVENLİK YAKLAŞIMI
+</span>
+
+<h2>
+Fark Etmeden Müdahaleye
+</h2>
+
+<p>
+Güvenlik yaklaşımının amacı yalnızca müdahale
+değil, riskin mümkün olduğunca erken yönetilmesidir.
+</p>
+
+</div>
+
+
+<div class="kmt-process">
+
+
+<div class="kmt-process-item">
+
+<div class="kmt-process-number">
+01
+</div>
+
+<h3>
+Farkındalık
+</h3>
+
+<p>
+Çevreyi ve davranışları gözlemle.
+</p>
+
+</div>
+
+
+<div class="kmt-process-item">
+
+<div class="kmt-process-number">
+02
+</div>
+
+<h3>
+Değerlendirme
+</h3>
+
+<p>
+Risk seviyesini değerlendir.
+</p>
+
+</div>
+
+
+<div class="kmt-process-item">
+
+<div class="kmt-process-number">
+03
+</div>
+
+<h3>
+Mesafe
+</h3>
+
+<p>
+Güvenli pozisyonu koru.
+</p>
+
+</div>
+
+
+<div class="kmt-process-item">
+
+<div class="kmt-process-number">
+04
+</div>
+
+<h3>
+Müdahale
+</h3>
+
+<p>
+Gerektiğinde kontrollü hareket et.
+</p>
+
+</div>
+
+
+<div class="kmt-process-item">
+
+<div class="kmt-process-number">
+05
+</div>
+
+<h3>
+Kontrol
+</h3>
+
+<p>
+Durumu güvenli şekilde yönet.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     REFERANSLAR
+===================================== -->
+
+<section class="kmt-section">
+
+<div class="kmt-wrap">
+
+<div class="kmt-section-title">
+
+<span>
+DENEYİM
+</span>
+
+<h2>
+Güvenlik Projeleri
+</h2>
+
+<p>
+Krav Maga Türk'ün geçmiş güvenlik çalışmalarında
+yer aldığı proje ve görev alanlarından bazıları.
+</p>
+
+</div>
+
+
+<div class="kmt-project-grid">
+
+<div class="kmt-project">
+<div class="kmt-project-mark"></div>
+<span>Cumhuriyet Gazetesi</span>
+</div>
+
+<div class="kmt-project">
+<div class="kmt-project-mark"></div>
+<span>Yapı Kredi Plaza – İsrail Konsolosluğu</span>
+</div>
+
+<div class="kmt-project">
+<div class="kmt-project-mark"></div>
+<span>Zorlu Holding – Ambarlı</span>
+</div>
+
+<div class="kmt-project">
+<div class="kmt-project-mark"></div>
+<span>Doğuş Grubu – Maslak</span>
+</div>
+
+<div class="kmt-project">
+<div class="kmt-project-mark"></div>
+<span>Koç Holding – Beylerbeyi</span>
+</div>
+
+<div class="kmt-project">
+<div class="kmt-project-mark"></div>
+<span>Sabancı Plaza – 4. Levent</span>
+</div>
+
+<div class="kmt-project">
+<div class="kmt-project-mark"></div>
+<span>Turkcell & Vodafone Küçükyalı / Maslak</span>
+</div>
+
+<div class="kmt-project">
+<div class="kmt-project-mark"></div>
+<span>Maslak Plaza Güvenlik Projeleri</span>
+</div>
+
+<div class="kmt-project">
+<div class="kmt-project-mark"></div>
+<span>Kemerburgaz, Kemer Country ve Göl Yaşam Alanları</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     MARKA
+===================================== -->
+
+<section class="kmt-section kmt-dark">
+
+<div class="kmt-wrap">
+
+<div class="kmt-brand-note">
+
+<strong>Krav Maga Türk</strong> markası —
+TPE tescil no:
+<strong>2007/49875</strong>.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     CTA
+===================================== -->
+
+<section class="kmt-cta">
+
+<div class="kmt-wrap">
+
+<div class="kmt-cta-content">
+
+<div class="kmt-kicker">
+KRAV MAGA TÜRK • GÜVENLİK
+</div>
+
+<h2>
+Kurumsal Güvenlik Eğitimi
+</h2>
+
+<p>
+Özel güvenlik personeline yönelik eğitim programı,
+kurumun görev alanı ve eğitim ihtiyacına göre planlanabilir.
+</p>
+
+<div class="kmt-actions">
+
+<a
+href="https://wa.me/905321621821?text=Merhaba%2C%20kurumsal%20%C3%B6zel%20g%C3%BCvenlik%20e%C4%9Fitimi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+target="_blank"
+rel="noopener"
+class="kmt-btn kmt-btn-red">
+WhatsApp'tan Bilgi Al
+</a>
+
+<a
+href="https://maps.app.goo.gl/iszqRUoKMwvySvEh8"
+target="_blank"
+rel="noopener"
+class="kmt-btn kmt-btn-dark">
+Konumu Gör
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+<script>
+document.querySelectorAll('a[href="#egitim"]').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    var target=document.getElementById('egitim');
+    if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>
