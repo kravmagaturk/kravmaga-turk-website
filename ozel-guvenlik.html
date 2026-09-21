@@ -1823,5 +1823,12 @@ document.querySelectorAll('a[href="#egitim"]').forEach(function(btn){
   });
 });
 </script>
+<script id="kmt-static-anchor-fix">
+document.addEventListener('click',function(e){
+ var a=e.target.closest('a[href^="#"]'); if(!a)return;
+ var id=a.getAttribute('href').slice(1), t=document.getElementById(id);
+ if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+id);}
+});
+</script>
 </body>
 </html>
