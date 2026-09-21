@@ -737,7 +737,7 @@
 
 <!-- HERO -->
 
-<section class="kmt-hero">
+<section class="kmt-hero" id="talep">
 
 <div class="kmt-watermark"></div>
 
@@ -1006,5 +1006,12 @@ Planlanan öğrenci eğitim panelinin
 Bülent Çetin • Krav Maga Türk
 </strong>
 
+<script id="kmt-static-anchor-fix">
+document.addEventListener('click',function(e){
+ var a=e.target.closest('a[href^="#"]'); if(!a)return;
+ var id=a.getAttribute('href').slice(1), t=document.getElementById(id);
+ if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+id);}
+});
+</script>
 </body>
 </html>
