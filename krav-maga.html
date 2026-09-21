@@ -998,3 +998,10 @@ eğitimin önemli parçalarındandır.
 <div class="kmt-principles">
 
 <h3>Temel Yaklaşım</h3>
+<script id="kmt-static-anchor-fix">
+document.addEventListener('click',function(e){
+ var a=e.target.closest('a[href^="#"]'); if(!a)return;
+ var id=a.getAttribute('href').slice(1), t=document.getElementById(id);
+ if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+id);}
+});
+</script>
