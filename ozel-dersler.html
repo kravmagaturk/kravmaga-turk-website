@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Krav Maga Özel Ders İstanbul | Bire Bir Eğitim</title>
+
+<meta name="description" content="İstanbul Krav Maga özel dersleri. Bire bir kişisel savunma eğitimi, 10 derslik özel eğitim programları ve Practitioner seviye programları. Krav Maga Türk Akademi.">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:#f5f5f5;
+    line-height:1.6;
+}
+
+.kmt-page{
+    width:100%;
+    overflow:hidden;
+    background:#050505;
+}
+
+.kmt-wrap{
+    width:min(1120px,calc(100% - 36px));
+    margin:0 auto;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.kmt-hero{
+    position:relative;
+    overflow:hidden;
+    min-height:500px;
+    display:flex;
+    align-items:center;
+    border-bottom:1px solid #252525;
+    background:
+        radial-gradient(circle at 78% 40%,rgba(190,0,0,.15),transparent 34%),
+        linear-gradient(120deg,#080808 0%,#050505 65%,#110000 100%);
+}
+
+/* GERÇEK 19-48 LOGO */
+
+.kmt-hero:before{
+    content:"";
+    position:absolute;
+    width:520px;
+    height:520px;
+    right:4%;
+    top:50%;
+    transform:translateY(-50%);
+    background-image:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain;
+    opacity:.085;
+    filter:grayscale(1);
+    pointer-events:none;
+}
+
+.kmt-hero:after{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    right:-280px;
+    bottom:-360px;
+    background:rgba(190,0,0,.14);
+    filter:blur(80px);
+    border-radius:50%;
+    pointer-events:none;
+}
+
+.kmt-hero-content{
+    position:relative;
+    z-index:2;
+    max-width:760px;
+    padding:75px 0;
+}
+
+.kmt-kicker{
+    color:#e81822;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2.4px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+}
+
+.kmt-hero h1{
+    font-size:clamp(42px,6vw,68px);
+    line-height:1.02;
+    letter-spacing:-2px;
+    max-width:760px;
+    margin-bottom:21px;
+}
+
+.kmt-redline{
+    width:62px;
+    height:3px;
+    background:#e81822;
+    margin-bottom:22px;
+}
+
+.kmt-hero-text{
+    max-width:650px;
+    color:#b6b6b6;
+    font-size:18px;
+}
+
+.kmt-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:30px;
+}
+
+.kmt-btn{
+    min-height:50px;
+    padding:0 24px;
+    border-radius:7px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:800;
+    transition:.2s ease;
+}
+
+.kmt-btn-red{
+    background:#e81822;
+    border:1px solid #e81822;
+    color:#fff;
+}
+
+.kmt-btn-red:hover{
+    background:#f2222c;
+    transform:translateY(-2px);
+}
+
+.kmt-btn-dark{
+    background:rgba(15,15,15,.85);
+    border:1px solid #444;
+    color:#fff;
+}
+
+.kmt-btn-dark:hover{
+    border-color:#888;
+}
+
+
+/* ==========================================
+   GENERAL
+========================================== */
+
+.kmt-section{
+    position:relative;
+    padding:70px 0;
+}
+
+.kmt-section-dark{
+    background:#0b0b0b;
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+}
+
+.kmt-section-title{
+    max-width:800px;
+    margin-bottom:34px;
+}
+
+.kmt-section-title span{
+    display:block;
+    color:#e81822;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.kmt-section-title h2{
+    font-size:40px;
+    line-height:1.12;
+    margin-bottom:12px;
+}
+
+.kmt-section-title p{
+    color:#999;
+    font-size:16px;
+}
+
+
+/* ==========================================
+   ÖZEL DERS NEDİR
+========================================== */
+
+.kmt-intro-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:35px;
+    align-items:stretch;
+}
+
+.kmt-intro-text{
+    padding-right:20px;
+}
+
+.kmt-intro-text p{
+    color:#aaa;
+    font-size:16px;
+    margin-bottom:17px;
+}
+
+.kmt-info-card{
+    background:linear-gradient(145deg,#121212,#090909);
+    border:1px solid #292929;
+    border-left:3px solid #e81822;
+    border-radius:12px;
+    padding:27px;
+}
+
+.kmt-info-card h3{
+    font-size:21px;
+    margin-bottom:14px;
+}
+
+.kmt-info-row{
+    padding:13px 0;
+    border-bottom:1px solid #252525;
+}
+
+.kmt-info-row:last-child{
+    border-bottom:0;
+}
+
+.kmt-info-row small{
+    display:block;
+    color:#777;
+    font-size:10px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.kmt-info-row strong{
+    color:#f5f5f5;
+    font-size:15px;
+}
+
+
+/* ==========================================
+   DERS SİSTEMİ
+========================================== */
+
+.kmt-system{
+    position:relative;
+    overflow:hidden;
+}
+
+.kmt-system:before{
+    content:"";
+    position:absolute;
+    width:430px;
+    height:430px;
+    right:-100px;
+    bottom:-130px;
+    background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/contain no-repeat;
+    opacity:.035;
+    filter:grayscale(1);
+    pointer-events:none;
+}
+
+.kmt-system-grid{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.kmt-system-card{
+    background:#111;
+    border:1px solid #292929;
+    border-radius:10px;
+    padding:24px;
+    min-height:170px;
+}
+
+.kmt-system-number{
+    color:#e81822;
+    font-size:12px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.kmt-system-card h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.kmt-system-card p{
+    color:#8e8e8e;
+    font-size:14px;
+}
+
+
+/* ==========================================
+   PAKETLER
+========================================== */
+
+.kmt-packages{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.kmt-package{
+    position:relative;
+    overflow:hidden;
+    background:#101010;
+    border:1px solid #2c2c2c;
+    border-radius:13px;
+    padding:29px;
+}
+
+.kmt-package.featured{
+    border-color:#9c171d;
+    box-shadow:inset 0 0 60px rgba(180,0,0,.05);
+}
+
+.kmt-package-label{
+    display:inline-block;
+    background:#e81822;
+    color:#fff;
+    padding:5px 9px;
+    border-radius:4px;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.kmt-package h3{
+    font-size:26px;
+    margin:14px 0 21px;
+}
+
+.kmt-lesson{
+    background:#080808;
+    border:1px solid #252525;
+    border-left:2px solid #e81822;
+    border-radius:7px;
+    padding:15px;
+    margin-bottom:10px;
+}
+
+.kmt-lesson strong{
+    display:block;
+    font-size:14px;
+    color:#f5f5f5;
+    margin-bottom:3px;
+}
+
+.kmt-lesson span{
+    display:block;
+    font-size:12px;
+    color:#858585;
+}
+
+.kmt-diploma{
+    margin-top:18px;
+    padding:14px;
+    background:rgba(232,24,34,.09);
+    border:1px solid rgba(232,24,34,.35);
+    border-radius:7px;
+}
+
+.kmt-diploma small{
+    display:block;
+    color:#777;
+    text-transform:uppercase;
+    font-size:9px;
+    letter-spacing:1px;
+    margin-bottom:3px;
+}
+
+.kmt-diploma strong{
+    color:#fff;
+    font-size:14px;
+}
+
+
+/* ==========================================
+   KOŞULLAR
+========================================== */
+
+.kmt-conditions-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.kmt-condition{
+    background:#101010;
+    border:1px solid #292929;
+    border-radius:12px;
+    padding:28px;
+}
+
+.kmt-condition h3{
+    font-size:21px;
+    margin-bottom:18px;
+}
+
+.kmt-list{
+    list-style:none;
+}
+
+.kmt-list li{
+    position:relative;
+    color:#aaa;
+    font-size:14px;
+    padding:10px 0 10px 20px;
+    border-bottom:1px solid #242424;
+}
+
+.kmt-list li:last-child{
+    border-bottom:0;
+}
+
+.kmt-list li:before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:#e81822;
+    font-weight:900;
+}
+
+.kmt-warning{
+    margin-top:18px;
+    padding:15px;
+    border-radius:7px;
+    background:#080808;
+    border:1px solid #292929;
+    color:#888;
+    font-size:12px;
+}
+
+
+/* ==========================================
+   ÜCRET
+========================================== */
+
+.kmt-price-box{
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 88% 10%,rgba(190,0,0,.16),transparent 35%),
+        #101010;
+    border:1px solid #303030;
+    border-radius:14px;
+    padding:34px;
+}
+
+.kmt-price-box:after{
+    content:"19  •  48";
+    position:absolute;
+    right:20px;
+    bottom:-28px;
+    color:rgba(255,255,255,.018);
+    font-size:100px;
+    line-height:1;
+    font-weight:900;
+    pointer-events:none;
+}
+
+.kmt-price-grid{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:35px;
+    align-items:center;
+}
+
+.kmt-price-title{
+    font-size:27px;
+    margin-bottom:5px;
+}
+
+.kmt-price-desc{
+    color:#888;
+}
+
+.kmt-price{
+    text-align:right;
+}
+
+.kmt-price strong{
+    display:block;
+    color:#e81822;
+    font-size:54px;
+    line-height:1;
+    letter-spacing:-2px;
+}
+
+.kmt-price span{
+    color:#ddd;
+    font-size:14px;
+    font-weight:700;
+}
+
+.kmt-price-info{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:27px;
+}
+
+.kmt-price-item{
+    background:#080808;
+    border:1px solid #292929;
+    border-radius:7px;
+    padding:16px;
+}
+
+.kmt-price-item small{
+    display:block;
+    color:#777;
+    font-size:10px;
+    margin-bottom:4px;
+}
+
+.kmt-price-item strong{
+    font-size:14px;
+}
+
+
+/* ==========================================
+   YERİNDE EĞİTİM
+========================================== */
+
+.kmt-location{
+    display:grid;
+    grid-template-columns:1fr .8fr;
+    gap:30px;
+    align-items:center;
+}
+
+.kmt-location h2{
+    font-size:38px;
+    line-height:1.12;
+    margin-bottom:15px;
+}
+
+.kmt-location p{
+    color:#999;
+    font-size:15px;
+}
+
+.kmt-location-card{
+    background:#101010;
+    border:1px solid #292929;
+    border-left:3px solid #e81822;
+    border-radius:10px;
+    padding:25px;
+}
+
+.kmt-location-card strong{
+    display:block;
+    font-size:18px;
+    margin-bottom:7px;
+}
+
+.kmt-location-card span{
+    color:#888;
+    font-size:13px;
+}
+
+
+/* ==========================================
+   CTA
+========================================== */
+
+.kmt-cta{
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    padding:75px 0;
+    background:
+        radial-gradient(circle at 50% 100%,rgba(180,0,0,.20),transparent 48%),
+        #050505;
+}
+
+.kmt-cta:before{
+    content:"";
+    position:absolute;
+    width:370px;
+    height:370px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/contain no-repeat;
+    opacity:.045;
+    filter:grayscale(1);
+    pointer-events:none;
+}
+
+.kmt-cta-content{
+    position:relative;
+    z-index:2;
+}
+
+.kmt-cta h2{
+    font-size:44px;
+    line-height:1.1;
+    margin-bottom:12px;
+}
+
+.kmt-cta p{
+    max-width:620px;
+    margin:0 auto 27px;
+    color:#929292;
+}
+
+
+/* ==========================================
+   TABLET 751 - 1100
+========================================== */
+
+@media (min-width:751px) and (max-width:1100px){
+
+    .kmt-hero{
+        min-height:440px;
+    }
+
+    .kmt-hero:before{
+        width:400px;
+        height:400px;
+        right:-35px;
+        opacity:.07;
+    }
+
+    .kmt-hero-content{
+        padding:58px 0;
+        max-width:640px;
+    }
+
+    .kmt-hero h1{
+        font-size:41px;
+        line-height:1.08;
+        letter-spacing:-1px;
+    }
+
+    .kmt-hero-text{
+        font-size:15px;
+        max-width:560px;
+    }
+
+    .kmt-section{
+        padding:52px 0;
+    }
+
+    .kmt-section-title h2{
+        font-size:31px;
+    }
+
+    .kmt-section-title p{
+        font-size:14px;
+    }
+
+    .kmt-intro-text p{
+        font-size:14px;
+    }
+
+    .kmt-system-card{
+        padding:20px;
+    }
+
+    .kmt-system-card h3{
+        font-size:16px;
+    }
+
+    .kmt-system-card p{
+        font-size:13px;
+    }
+
+    .kmt-package h3{
+        font-size:22px;
+    }
+
+    .kmt-price strong{
+        font-size:45px;
+    }
+
+    .kmt-location h2,
+    .kmt-cta h2{
+        font-size:31px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:750px){
+
+    .kmt-wrap{
+        width:calc(100% - 28px);
+    }
+
+    .kmt-hero{
+        min-height:auto;
+    }
+
+    .kmt-hero:before{
+        width:320px;
+        height:320px;
+        right:-120px;
+        top:52%;
+        opacity:.065;
+    }
+
+    .kmt-hero-content{
+        padding:46px 0 42px;
+        max-width:100%;
+    }
+
+    .kmt-kicker{
+        font-size:9px;
+        letter-spacing:1.5px;
+    }
+
+    /* SAYFADAKİ TEK H1 */
+
+    .kmt-hero h1{
+        font-size:30px;
+        line-height:1.08;
+        letter-spacing:-.5px;
+        max-width:330px;
+        margin-bottom:16px;
+    }
+
+    .kmt-redline{
+        width:45px;
+        margin-bottom:17px;
+    }
+
+    .kmt-hero-text{
+        max-width:330px;
+        font-size:14px;
+        line-height:1.55;
+    }
+
+    .kmt-actions{
+        margin-top:23px;
+    }
+
+    .kmt-btn{
+        width:100%;
+        min-height:47px;
+        padding:0 15px;
+        font-size:13px;
+    }
+
+    .kmt-section{
+        padding:43px 0;
+    }
+
+    .kmt-section-title{
+        margin-bottom:24px;
+    }
+
+    .kmt-section-title h2{
+        font-size:24px;
+        line-height:1.15;
+    }
+
+    .kmt-section-title p{
+        font-size:13px;
+    }
+
+    .kmt-intro-grid,
+    .kmt-packages,
+    .kmt-conditions-grid,
+    .kmt-price-grid,
+    .kmt-location{
+        grid-template-columns:1fr;
+    }
+
+    .kmt-intro-text{
+        padding-right:0;
+    }
+
+    .kmt-intro-text p{
+        font-size:14px;
+    }
+
+    .kmt-info-card{
+        padding:21px 18px;
+    }
+
+    .kmt-info-card h3{
+        font-size:18px;
+    }
+
+    .kmt-system-grid{
+        grid-template-columns:1fr;
+    }
+
+    .kmt-system-card{
+        min-height:0;
+        padding:20px 18px;
+    }
+
+    .kmt-system-card h3{
+        font-size:17px;
+    }
+
+    .kmt-system-card p{
+        font-size:13px;
+    }
+
+    .kmt-package{
+        padding:21px 18px;
+    }
+
+    .kmt-package h3{
+        font-size:20px;
+    }
+
+    .kmt-condition{
+        padding:21px 18px;
+    }
+
+    .kmt-condition h3{
+        font-size:19px;
+    }
+
+    .kmt-list li{
+        font-size:13px;
+    }
+
+    .kmt-price-box{
+        padding:23px 18px;
+    }
+
+    .kmt-price{
+        text-align:left;
+    }
+
+    .kmt-price-title{
+        font-size:21px;
+    }
+
+    .kmt-price-desc{
+        font-size:13px;
+    }
+
+    .kmt-price strong{
+        font-size:40px;
+        letter-spacing:-1px;
+    }
+
+    .kmt-price-info{
+        grid-template-columns:1fr;
+    }
+
+    .kmt-location{
+        gap:20px;
+    }
+
+    .kmt-location h2{
+        font-size:25px;
+    }
+
+    .kmt-location p{
+        font-size:14px;
+    }
+
+    .kmt-cta{
+        padding:55px 0;
+    }
+
+    .kmt-cta h2{
+        font-size:26px;
+    }
+
+    .kmt-cta p{
+        font-size:14px;
+    }
+
+    .kmt-cta:before{
+        width:290px;
+        height:290px;
+    }
+}
+
+
+/* ==========================================
+   DAR TELEFON
+========================================== */
+
+@media(max-width:420px){
+
+    .kmt-hero h1{
+        font-size:27px;
+    }
+
+    .kmt-section-title h2{
+        font-size:22px;
+    }
+
+    .kmt-price strong{
+        font-size:37px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="kmt-page">
+
+
+<!-- ========================================
+     HERO
+========================================= -->
+
+<section class="kmt-hero">
+
+<div class="kmt-wrap">
+
+<div class="kmt-hero-content">
+
+<div class="kmt-kicker">
+KRAV MAGA TÜRK • BİRE BİR EĞİTİM
+</div>
+
+<!-- SAYFADAKİ TEK H1 -->
+<h1>Krav Maga Özel Ders İstanbul</h1>
+
+<div class="kmt-redline"></div>
+
+<p class="kmt-hero-text">
+Bire bir çalışma düzeniyle kişisel savunma becerilerinizi
+geliştirin. Eğitim programı öğrencinin seviyesine,
+ilerleme hızına ve çalışma ihtiyaçlarına göre uygulanır.
+</p>
+
+<div class="kmt-actions">
+
+<a
+href="https://wa.me/905321621821?text=Merhaba%2C%20Krav%20Maga%20%C3%B6zel%20dersleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+target="_blank"
+rel="noopener"
+class="kmt-btn kmt-btn-red">
+Özel Ders İçin İletişim
+</a>
+
+<a
+href="#paketler"
+class="kmt-btn kmt-btn-dark">
+Eğitim Paketlerini Gör
+</a>
+
+</div>
+
+</div>
+</div>
+
+</section>
+
+
+<!-- ========================================
+     ÖZEL DERS
+========================================= -->
+
+<section class="kmt-section">
