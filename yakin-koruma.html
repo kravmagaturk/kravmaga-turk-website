@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yakın Koruma Eğitimi İstanbul | CPO | Krav Maga Türk</title>
+
+<meta name="description" content="İstanbul yakın koruma ve CPO eğitimleri. Krav Maga Türk güvenlik danışmanlığı, yakın koruma eğitim modülleri ve kurumsal güvenlik çalışmaları.">
+
+<style>
+:root{
+  --bg:#050505;
+  --bg2:#0b0b0b;
+  --card:#111;
+  --red:#e81822;
+  --text:#f5f5f5;
+  --muted:#999;
+  --border:#292929;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+.cpo-page{
+  width:100%;
+  overflow:hidden;
+  background:var(--bg);
+}
+
+.cpo-wrap{
+  width:min(1140px,calc(100% - 38px));
+  margin:auto;
+}
+
+.cpo-section{
+  position:relative;
+  padding:72px 0;
+}
+
+.cpo-dark{
+  background:var(--bg2);
+  border-top:1px solid #222;
+  border-bottom:1px solid #222;
+}
+
+.cpo-kicker{
+  color:var(--red);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:11px;
+}
+
+.cpo-line{
+  width:60px;
+  height:3px;
+  background:var(--red);
+  margin:0 0 22px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.cpo-hero{
+  position:relative;
+  min-height:610px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  isolation:isolate;
+  border-bottom:1px solid var(--border);
+  background:#050505;
+}
+
+.cpo-hero-photo{
+  position:absolute;
+  inset:0;
+  z-index:-4;
+
+  background-image:
+  url("https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=375,fit=crop/mePyW7BezQcoMDkG/yakin-koruma-hizmetlerimiz-YlenX7LOrrsv08OG.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  transform:scale(1.02);
+}
+
+.cpo-hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:-3;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5,5,5,.98) 0%,
+      rgba(5,5,5,.91) 31%,
+      rgba(5,5,5,.62) 53%,
+      rgba(5,5,5,.27) 75%,
+      rgba(5,5,5,.18) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(5,5,5,.75),
+      transparent 55%
+    );
+}
+
+.cpo-red-glow{
+  position:absolute;
+  width:500px;
+  height:500px;
+  right:-180px;
+  bottom:-280px;
+  z-index:-2;
+  border-radius:50%;
+  background:rgba(180,0,0,.18);
+  filter:blur(80px);
+}
+
+/* GERÇEK 19-48 LOGO */
+
+.cpo-logo{
+  position:absolute;
+  z-index:-1;
+  width:520px;
+  height:520px;
+  right:4%;
+  left:auto;
+  top:50%;
+  transform:translateY(-50%);
+  background:
+    url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png")
+    center/contain no-repeat;
+  opacity:.085;
+  filter:grayscale(1);
+  pointer-events:none;
+}
+
+.cpo-hero-content{
+  position:relative;
+  z-index:3;
+  max-width:680px;
+  padding:90px 0;
+}
+
+.cpo-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:7px 11px;
+  margin-bottom:20px;
+  border:1px solid #3a3a3a;
+  border-radius:5px;
+  background:rgba(5,5,5,.72);
+  color:#bbb;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.5px;
+}
+
+.cpo-badge:before{
+  content:"";
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--red);
+}
+
+.cpo-hero h1{
+  max-width:680px;
+  font-size:clamp(44px,6vw,70px);
+  line-height:1.02;
+  letter-spacing:-2px;
+  margin-bottom:19px;
+}
+
+.cpo-hero-text{
+  max-width:610px;
+  color:#bbb;
+  font-size:18px;
+}
+
+.cpo-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:23px;
+}
+
+.cpo-tag{
+  padding:6px 9px;
+  background:rgba(5,5,5,.72);
+  border:1px solid #353535;
+  border-radius:5px;
+  color:#aaa;
+  font-size:10px;
+  font-weight:800;
+}
+
+.cpo-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:29px;
+}
+
+.cpo-btn{
+  min-height:50px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 24px;
+  border-radius:7px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:900;
+  transition:.2s ease;
+}
+
+.cpo-btn-red{
+  background:var(--red);
+  border:1px solid var(--red);
+  color:#fff;
+}
+
+.cpo-btn-red:hover{
+  background:#f2222c;
+  transform:translateY(-2px);
+}
+
+.cpo-btn-dark{
+  color:#fff;
+  background:rgba(5,5,5,.82);
+  border:1px solid #444;
+}
+
+
+/* =========================
+   GÖRSEL ŞERİT
+========================= */
+
+.cpo-gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+
+.cpo-photo{
+  position:relative;
+  height:245px;
+  overflow:hidden;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:#111;
+}
+
+.cpo-photo img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  filter:grayscale(15%) contrast(1.06) brightness(.76);
+  transition:.35s ease;
+}
+
+.cpo-photo:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      0deg,
+      rgba(5,5,5,.75),
+      transparent 58%
+    );
+  pointer-events:none;
+}
+
+.cpo-photo:hover img{
+  transform:scale(1.04);
+  filter:grayscale(0) contrast(1.06) brightness(.9);
+}
+
+.cpo-photo span{
+  position:absolute;
+  z-index:3;
+  left:15px;
+  bottom:13px;
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+}
+
+
+/* =========================
+   DANIŞMANLIK
+========================= */
+
+.cpo-intro{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:start;
+}
+
+.cpo-intro h2{
+  font-size:40px;
+  line-height:1.12;
+  margin-bottom:20px;
+}
+
+.cpo-intro p{
+  color:#aaa;
+  margin-bottom:17px;
+  font-size:15px;
+}
+
+.cpo-info{
+  display:grid;
+  gap:10px;
+}
+
+.cpo-info-card{
+  padding:22px;
+  background:#111;
+  border:1px solid var(--border);
+  border-left:3px solid var(--red);
+  border-radius:8px;
+}
+
+.cpo-info-card h3{
+  font-size:17px;
+  margin-bottom:6px;
+}
+
+.cpo-info-card p{
+  color:#888;
+  font-size:13px;
+  margin:0;
+}
+
+
+/* =========================
+   CPO EĞİTİMİ
+========================= */
+
+.cpo-title{
+  max-width:780px;
+  margin-bottom:35px;
+}
+
+.cpo-title span{
+  display:block;
+  color:var(--red);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:9px;
+}
+
+.cpo-title h2{
+  font-size:40px;
+  line-height:1.12;
+  margin-bottom:12px;
+}
+
+.cpo-title p{
+  color:#999;
+}
+
+.cpo-module-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:13px;
+}
+
+.cpo-module{
+  min-height:210px;
+  padding:25px;
+  background:#111;
+  border:1px solid var(--border);
+  border-radius:10px;
+  transition:.2s ease;
+}
+
+.cpo-module:hover{
+  border-color:#555;
+  transform:translateY(-3px);
+}
+
+.cpo-num{
+  color:var(--red);
+  font-size:11px;
+  font-weight:900;
+  margin-bottom:24px;
+}
+
+.cpo-module h3{
+  font-size:18px;
+  margin-bottom:9px;
+}
+
+.cpo-module p{
+  color:#888;
+  font-size:13px;
+}
+
+
+/* =========================
+   REFERANSLAR
+========================= */
+
+.cpo-ref-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.cpo-ref{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  padding:16px 18px;
+  border:1px solid var(--border);
+  background:#101010;
+  border-radius:8px;
+  color:#bbb;
+  font-size:13px;
+}
+
+.cpo-ref:before{
+  content:"";
+  flex:0 0 auto;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--red);
+}
+
+
+/* =========================
+   BELGE NOTU
+========================= */
+
+.cpo-note{
+  padding:24px;
+  background:#0d0d0d;
+  border:1px solid var(--border);
+  border-left:3px solid var(--red);
+  border-radius:8px;
+  color:#999;
+  font-size:13px;
+}
+
+.cpo-note strong{
+  color:#fff;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cpo-cta{
+  position:relative;
+  overflow:hidden;
+  padding:85px 0;
+  text-align:center;
+
+  background:
+    radial-gradient(circle at 50% 110%,rgba(190,0,0,.23),transparent 50%),
+    #050505;
+}
+
+.cpo-cta:before{
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+
+  background:
+    url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png")
+    center/contain no-repeat;
+
+  opacity:.04;
+  filter:grayscale(1);
+}
+
+.cpo-cta-content{
+  position:relative;
+  z-index:2;
+}
+
+.cpo-cta h2{
+  font-size:43px;
+  line-height:1.1;
+  margin-bottom:13px;
+}
+
+.cpo-cta p{
+  max-width:620px;
+  margin:auto;
+  color:#999;
+}
+
+.cpo-cta .cpo-actions{
+  justify-content:center;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(min-width:751px) and (max-width:1100px){
+
+  .cpo-wrap{
+    width:calc(100% - 46px);
+  }
+
+  .cpo-hero{
+    min-height:520px;
+  }
+
+  .cpo-hero h1{
+    font-size:42px;
+    letter-spacing:-1px;
+  }
+
+  .cpo-hero-text{
+    font-size:15px;
+  }
+
+  .cpo-hero-photo{
+    background-position:58% center;
+  }
+
+  .cpo-hero-content{
+    max-width:550px;
+    padding:65px 0;
+  }
+
+  .cpo-logo{
+    width:400px;
+    height:400px;
+    right:-35px;
+    left:auto;
+    opacity:.07;
+  }
+
+  .cpo-section{
+    padding:55px 0;
+  }
+
+  .cpo-gallery{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .cpo-photo{
+    height:190px;
+  }
+
+  .cpo-intro h2,
+  .cpo-title h2{
+    font-size:31px;
+  }
+
+  .cpo-module-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .cpo-module{
+    min-height:180px;
+  }
+
+  .cpo-cta h2{
+    font-size:32px;
+  }
+}
+
+
+/* =========================
+   MOBİL
+========================= */
+
+@media(max-width:750px){
+
+  .cpo-wrap{
+    width:calc(100% - 28px);
+  }
+
+  .cpo-section{
+    padding:44px 0;
+  }
+
+  .cpo-hero{
+    min-height:610px;
+    align-items:flex-end;
+  }
+
+  .cpo-hero-photo{
+    background-size:auto 390px;
+    background-position:center top;
+  }
+
+  .cpo-hero-overlay{
+    background:
+      linear-gradient(
+        0deg,
+        rgba(5,5,5,1) 0%,
+        rgba(5,5,5,.98) 30%,
+        rgba(5,5,5,.70) 52%,
+        rgba(5,5,5,.15) 78%
+      );
+  }
+
+  .cpo-logo{
+    width:320px;
+    height:320px;
+    right:-120px;
+    left:auto;
+    top:34%;
+    opacity:.065;
+  }
+
+  .cpo-hero-content{
+    padding:280px 0 43px;
+    max-width:100%;
+  }
+
+  .cpo-hero h1{
+    max-width:360px;
+    font-size:30px;
+    line-height:1.08;
+    letter-spacing:-.5px;
+  }
+
+  .cpo-hero-text{
+    font-size:14px;
+    max-width:360px;
+  }
+
+  .cpo-actions{
+    margin-top:21px;
+  }
+
+  .cpo-btn{
+    width:100%;
+    min-height:47px;
+    font-size:13px;
+  }
+
+  .cpo-gallery{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+
+  .cpo-photo{
+    height:180px;
+  }
+
+  .cpo-photo span{
+    font-size:9px;
+    left:10px;
+    bottom:9px;
+  }
+
+  .cpo-intro{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .cpo-intro h2,
+  .cpo-title h2{
+    font-size:24px;
+  }
+
+  .cpo-intro p{
+    font-size:14px;
+  }
+
+  .cpo-module-grid{
+    grid-template-columns:1fr;
+  }
+
+  .cpo-module{
+    min-height:0;
+    padding:21px 18px;
+  }
+
+  .cpo-ref-grid{
+    grid-template-columns:1fr;
+  }
+
+  .cpo-cta{
+    padding:60px 0;
+  }
+
+  .cpo-cta h2{
+    font-size:26px;
+  }
+
+  .cpo-cta p{
+    font-size:14px;
+  }
+}
+
+
+/* DAR TELEFON */
+
+@media(max-width:420px){
+
+  .cpo-hero h1{
+    font-size:27px;
+  }
+
+  .cpo-intro h2,
+  .cpo-title h2{
+    font-size:22px;
+  }
+
+  .cpo-gallery{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .cpo-photo{
+    height:155px;
+  }
+
+  .cpo-logo{
+    width:280px;
+    height:280px;
+    right:-115px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="cpo-page">
+
+
+<!-- HERO -->
+
+<section class="cpo-hero">
+
+<div class="cpo-hero-photo"></div>
+<div class="cpo-hero-overlay"></div>
+<div class="cpo-red-glow"></div>
+<div class="cpo-logo"></div>
+
+<div class="cpo-wrap">
+
+<div class="cpo-hero-content">
+
+<div class="cpo-kicker">
+KRAV MAGA TÜRK • SECURITY
+</div>
+
+<div class="cpo-badge">
+CLOSE PROTECTION OFFICER
+</div>
+
+<h1>Yakın Koruma Eğitimleri</h1>
+
+<div class="cpo-line"></div>
+
+<p class="cpo-hero-text">
+Yakın koruma personeline yönelik Krav Maga,
+kişisel güvenlik, farkındalık ve görev ortamına
+uyarlanmış eğitim programları.
+</p>
+
+<div class="cpo-tags">
+<span class="cpo-tag">CPO</span>
+<span class="cpo-tag">KRAV MAGA</span>
+<span class="cpo-tag">GÜVENLİK DANIŞMANLIĞI</span>
+<span class="cpo-tag">KURUMSAL EĞİTİM</span>
+</div>
+
+<div class="cpo-actions">
+
+<a
+href="https://wa.me/905321621821?text=Merhaba%2C%20yak%C4%B1n%20koruma%20e%C4%9Fitimleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+target="_blank"
+rel="noopener"
+class="cpo-btn cpo-btn-red">
+Fiyat Teklifi Al
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- MEVCUT FOTOĞRAFLAR -->
+
+<section class="cpo-section cpo-dark">
+
+<div class="cpo-wrap">
+
+<div class="cpo-gallery">
+
+<div class="cpo-photo">
+<img
+src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=375,fit=crop/mePyW7BezQcoMDkG/yakin-koruma-hizmetlerimiz-YlenX7LOrrsv08OG.jpg"
+alt="Yakın koruma eğitimi"
+loading="lazy">
+<span>Yakın Koruma</span>
+</div>
+
+<div class="cpo-photo">
+<img
+src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=375,fit=crop/mePyW7BezQcoMDkG/istockphoto-87307375-612x612-AwvL4M17XrHyOwg1.jpg"
+alt="Yakın koruma ve güvenlik"
+loading="lazy">
+<span>Güvenlik</span>
+</div>
+
+<div class="cpo-photo">
+<img
+src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=375,fit=crop/mePyW7BezQcoMDkG/fb_img_1610283008601-mv0Lao5WeKhp9oJ2.jpg"
+alt="Krav Maga yakın koruma"
+loading="lazy">
+<span>Krav Maga</span>
+</div>
+
+<div class="cpo-photo">
+<img
+src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=375,fit=crop/mePyW7BezQcoMDkG/generated/generated-m5KLJlPWXGCVL5oN.png"
+alt="Close Protection Officer"
+loading="lazy">
+<span>CPO</span>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- DANIŞMANLIK -->
+
+<section class="cpo-section">
+
+<div class="cpo-wrap">
+
+<div class="cpo-intro">
+
+<div>
+
+<div class="cpo-kicker">
+GÜVENLİK DANIŞMANLIĞI
+</div>
+
+<h2>Güvenlik ve Yakın Koruma</h2>
+
+<p>
+Krav Maga Türk güvenlik danışmanlığı ve Krav Maga
+eğitimleri kapsamında güvenlik personeline yönelik
+mesleki çalışmalar gerçekleştirmektedir.
+</p>
+
+<p>
+Programlar kurumun çalışma alanı, personel yapısı
+ve eğitim ihtiyacına göre planlanabilir.
+</p>
+
+</div>
+
+
+<div class="cpo-info">
+
+<div class="cpo-info-card">
+<h3>Denetim Hizmetleri</h3>
+<p>
+Güvenlik projelerinin saha uygulamalarının
+değerlendirilmesi ve kurum sorumlularına raporlama.
+</p>
+</div>
+
+<div class="cpo-info-card">
+<h3>Eğitim</h3>
+<p>
+Güvenlik personeline yönelik görev alanına uygun
+Krav Maga ve kişisel güvenlik eğitimleri.
+</p>
+</div>
+
+<div class="cpo-info-card">
+<h3>Danışmanlık</h3>
+<p>
+Proje ihtiyaçlarının değerlendirilmesi,
+güvenlik yaklaşımının ve eğitim planının oluşturulması.
+</p>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- CPO -->
+
+<section class="cpo-section cpo-dark" id="cpo-egitim">
+
+<div class="cpo-wrap">
+
+<div class="cpo-title">
+
+<span>YAKIN KORUMA • CPO</span>
+
+<h2>Close Protection Officer Eğitimi</h2>
+
+<p>
+Yakın koruma görev ortamına yönelik Krav Maga
+eğitim modülleri.
+</p>
+
+</div>
+
+
+<div class="cpo-module-grid">
+
+<div class="cpo-module">
+<div class="cpo-num">01</div>
+<h3>Basic Combatives</h3>
+<p>
+Temel hareket, pozisyon, mesafe ve kişisel
+güvenlik prensipleri.
+</p>
+</div>
+
+<div class="cpo-module">
+<div class="cpo-num">02</div>
+<h3>The Best Defense</h3>
+<p>
+Riskten kaçınma, farkındalık ve güvenli
+tepki yaklaşımı.
+</p>
+</div>
+
+<div class="cpo-module">
+<div class="cpo-num">03</div>
+<h3>On The Edge</h3>
+<p>
+Yakın mesafede farkındalık ve kontrollü
+hareket çalışmaları.
+</p>
+</div>
+
+<div class="cpo-module">
+<div class="cpo-num">04</div>
+<h3>Dim Mak</h3>
+<p>
+Krav Maga Türk yakın koruma eğitim programındaki
+özel eğitim modülü.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- REFERANSLAR -->
+
+<section class="cpo-section">
+
+<div class="cpo-wrap">
+
+<div class="cpo-title">
+
+<span>DENEYİM</span>
+
+<h2>Referanslar</h2>
