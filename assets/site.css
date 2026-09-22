@@ -308,3 +308,11 @@ html body.live-parallel .parallel-info h3{color:#fff!important}
 .live-parallel main:after{content:"KMT";position:absolute;z-index:-1;left:-.22em;top:62%;font-size:clamp(240px,38vw,650px);line-height:.75;font-weight:900;letter-spacing:-.12em;color:rgba(227,27,35,.022);transform:rotate(-8deg);pointer-events:none;white-space:nowrap}
 .live-parallel main>section{position:relative;z-index:1}
 @media(max-width:760px){.live-parallel main:before{right:-.35em;top:38%;font-size:75vw}.live-parallel main:after{left:-.3em;top:68%;font-size:70vw}}
+
+/* V5.4.5 visible cropped 1948 watermark fix */
+.live-parallel main{position:relative!important;isolation:auto!important;overflow:hidden!important}
+.live-parallel main:before{content:"1948"!important;display:block!important;position:absolute!important;z-index:0!important;right:-8vw!important;top:38%!important;font-size:clamp(280px,42vw,700px)!important;line-height:.72!important;font-weight:900!important;letter-spacing:-.12em!important;color:rgba(255,255,255,.065)!important;transform:rotate(-8deg)!important;pointer-events:none!important;white-space:nowrap!important}
+.live-parallel main:after{content:"KMT"!important;display:block!important;position:absolute!important;z-index:0!important;left:-7vw!important;top:67%!important;font-size:clamp(250px,38vw,620px)!important;font-weight:900!important;letter-spacing:-.12em!important;color:rgba(227,27,35,.05)!important;transform:rotate(-8deg)!important;pointer-events:none!important;white-space:nowrap!important}
+.live-parallel main>section{position:relative!important;z-index:1!important;background-color:transparent!important}
+.live-parallel .parallel-hero{background:#050607!important}
+@media(max-width:760px){.live-parallel main:before{right:-18vw!important;top:43%!important;font-size:78vw!important}.live-parallel main:after{left:-16vw!important;top:72%!important;font-size:72vw!important}}
