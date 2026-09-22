@@ -287,3 +287,17 @@ main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-c
 .live-parallel .parallel-cards article,.live-parallel .parallel-testimonials blockquote{background:#111315!important;border-color:#292b2e!important;color:#ddd!important}
 .live-parallel .parallel-cards p,.live-parallel .parallel-about p,.live-parallel .parallel-info p{color:#b9bbbd!important}
 .parallel-brand small:before{content:"19 · 48  ";color:#e31b23;font-weight:900;letter-spacing:.16em}
+
+/* V5.4.3 force all homepage content sections dark */
+html body.live-parallel{background:#08090a!important}
+html body.live-parallel main{background:#08090a!important}
+html body.live-parallel main>section:not(.parallel-hero){background:#08090a!important}
+html body.live-parallel .parallel-section,
+html body.live-parallel .parallel-about,
+html body.live-parallel .parallel-info,
+html body.live-parallel .parallel-testimonials{background:#08090a!important;color:#fff!important}
+html body.live-parallel .parallel-section h1,
+html body.live-parallel .parallel-section h2,
+html body.live-parallel .parallel-about h2,
+html body.live-parallel .parallel-info h2,
+html body.live-parallel .parallel-info h3{color:#fff!important}
