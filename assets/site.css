@@ -280,3 +280,10 @@ main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-c
 .parallel-nav details div a{color:#eee!important;border-bottom:1px solid #25272a!important}.parallel-nav details div a:hover{color:#e31b23!important;background:#151719}
 .parallel-toggle{color:#fff!important;border-color:#555!important;background:#111!important}
 @media(max-width:900px){.parallel-nav{background:#090a0b!important;border-top:1px solid #2b2d30!important}.parallel-nav>a,.parallel-nav summary{color:#eee!important;border-bottom:1px solid #25272a!important}.parallel-nav details div{background:#111315!important}}
+
+/* V5.4.2 homepage full black + 1948 brand */
+.live-parallel main,.live-parallel .parallel-section,.live-parallel .parallel-about,.live-parallel .parallel-info,.live-parallel .parallel-testimonials{background:#08090a!important;color:#eee!important}
+.live-parallel .parallel-section h1,.live-parallel .parallel-about h2,.live-parallel .parallel-info h2{color:#fff!important}
+.live-parallel .parallel-cards article,.live-parallel .parallel-testimonials blockquote{background:#111315!important;border-color:#292b2e!important;color:#ddd!important}
+.live-parallel .parallel-cards p,.live-parallel .parallel-about p,.live-parallel .parallel-info p{color:#b9bbbd!important}
+.parallel-brand small:before{content:"19 · 48  ";color:#e31b23;font-weight:900;letter-spacing:.16em}
