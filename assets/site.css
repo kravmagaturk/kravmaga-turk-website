@@ -261,3 +261,11 @@ main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-c
 .parallel-testimonials blockquote{background:#f5f5f5!important;border-color:#ddd!important;color:#333!important}
 .parallel-footer{background:#111!important;color:#aaa!important}
 @media(max-width:900px){.parallel-header{min-height:64px!important;padding:0 16px!important}.parallel-toggle{display:block!important;color:#111!important;border-color:#aaa!important}.parallel-nav{top:64px!important;background:#fff!important;border-top:1px solid #ddd!important}.parallel-nav>a,.parallel-nav summary{color:#111!important;border-bottom:1px solid #eee!important;padding:15px 0!important}.parallel-nav details div{background:#f5f5f5!important}.parallel-brand span{font-size:17px}}
+
+/* V5.4 approved service labels */
+.parallel-service{position:relative;min-height:230px;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(145deg,#1b1d20,#090a0b);border:1px solid #333;border-bottom:2px solid #e31b23;color:#fff!important;overflow:hidden}
+.parallel-service:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 15%,rgba(227,27,35,.20),transparent 40%);pointer-events:none}
+.parallel-service span{position:absolute;top:24px;left:28px;color:#e31b23;font-size:13px;font-weight:900}
+.parallel-service h2{position:relative;margin:0!important;max-width:85%;font-size:clamp(22px,2.2vw,34px)!important;line-height:1;color:#fff!important}
+.parallel-service b{position:absolute;right:24px;bottom:24px;width:44px;height:44px;border:2px solid #e31b23;border-radius:50%;display:grid;place-items:center;font-size:24px}
+@media(max-width:900px){.parallel-service{min-height:150px;padding:24px}.parallel-service b{right:20px;bottom:20px}}
