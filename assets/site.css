@@ -212,3 +212,24 @@ main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-c
  .home-footer{padding:18px 8px 14px}
  .home-footer-links a{font-size:13px;padding:0 8px}
 }
+
+/* V5.3.7 live-site parallel comparison */
+.live-parallel{margin:0;background:#08090a;color:#eee;font-family:Arial,Helvetica,sans-serif}
+.parallel-header{min-height:72px;background:#08090a;border-bottom:1px solid #25272a;display:flex;align-items:center;padding:0 4vw;gap:32px;position:sticky;top:0;z-index:50}
+.parallel-brand{font-weight:900;letter-spacing:.08em;color:#fff;white-space:nowrap}
+.parallel-nav{margin-left:auto;display:flex;align-items:center;gap:25px;font-size:13px;font-weight:800}
+.parallel-nav>a,.parallel-nav summary{color:#eee;cursor:pointer;list-style:none;padding:26px 0}
+.parallel-nav details{position:relative}.parallel-nav summary::-webkit-details-marker{display:none}
+.parallel-nav details div{display:none;position:absolute;top:62px;left:0;min-width:190px;background:#111315;border:1px solid #303236;padding:8px;box-shadow:0 15px 35px #000}
+.parallel-nav details[open] div{display:grid}.parallel-nav details div a{padding:11px 12px;color:#ddd;border-bottom:1px solid #25272a}
+.parallel-toggle{display:none;margin-left:auto;background:none;border:1px solid #444;color:#fff;font-size:22px;min-width:46px;min-height:42px}
+.parallel-hero{background:#050607}.parallel-hero img{display:block;width:min(100%,1536px);height:auto;margin:auto}
+.parallel-section,.parallel-about,.parallel-info{width:min(1180px,calc(100% - 40px));margin:auto;padding:72px 0}
+.parallel-section h1,.parallel-about h2,.parallel-info h2{font-size:clamp(38px,5vw,68px);margin:0 0 34px;color:#fff}
+.parallel-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.parallel-cards article{padding:30px;background:#111315;border-top:3px solid #b5121b;min-height:240px}
+.parallel-cards h2{font-size:22px}.parallel-cards p,.parallel-about p,.parallel-info p{color:#bbb;line-height:1.75}
+.parallel-about{border-top:1px solid #292b2e}.parallel-info{border-top:1px solid #292b2e}
+.parallel-btn{display:inline-flex;margin-top:14px;padding:14px 20px;background:#b5121b;color:#fff;font-weight:800}
+.parallel-footer{padding:28px 20px;text-align:center;border-top:1px solid #292b2e;color:#777;font-size:12px}
+@media(max-width:900px){.parallel-header{padding:0 18px}.parallel-toggle{display:block}.parallel-nav{display:none;position:absolute;left:0;right:0;top:72px;background:#090a0b;padding:12px 18px 22px;flex-direction:column;align-items:stretch;gap:0}.parallel-nav.open{display:flex}.parallel-nav>a,.parallel-nav summary{display:block;padding:15px 0;border-bottom:1px solid #25272a}.parallel-nav details div{position:static;box-shadow:none;border:0;background:#111;margin-bottom:8px}.parallel-cards{grid-template-columns:1fr}.parallel-section,.parallel-about,.parallel-info{padding:48px 0}}
