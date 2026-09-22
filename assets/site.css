@@ -195,3 +195,20 @@ main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-c
 .service-card.service-security:before{content:"03"}
 .service-card.service-lessons:after,.service-card.service-private:after,.service-card.service-security:after{background:linear-gradient(90deg,rgba(0,0,0,.82),transparent)!important}
 @media(max-width:760px){.service-card.service-lessons,.service-card.service-private,.service-card.service-security{aspect-ratio:16/6!important;min-height:118px!important}.service-card.service-lessons:before,.service-card.service-private:before,.service-card.service-security:before{font-size:42px}}
+
+
+/* V5.3.6 homepage footer + tablet hero fit */
+.home-footer{margin:0;padding:22px 12px 18px;border-top:1px solid #242629;text-align:center;background:#08090a;color:#8f9398}
+.home-footer-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px 0}
+.home-footer-links a{color:#c8cacc;text-decoration:none;font-size:14px;line-height:1.4;padding:0 12px;border-right:1px solid #3a3d40}
+.home-footer-links a:last-child{border-right:0}
+.home-footer-links a:hover{color:#fff}
+.home-footer p{margin:10px 0 0;font-size:12px;color:#6f7378}
+@media(min-width:761px) and (max-width:1180px){
+ .welcome-poster.v39{width:100vw!important;max-width:none!important;margin:0!important}
+ .welcome-poster.v39>img{width:100vw!important;max-width:none!important;height:auto!important;object-fit:contain!important}
+}
+@media(max-width:760px){
+ .home-footer{padding:18px 8px 14px}
+ .home-footer-links a{font-size:13px;padding:0 8px}
+}
