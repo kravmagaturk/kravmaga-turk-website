@@ -240,3 +240,24 @@ main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-c
 .parallel-testimonials blockquote{margin:0;padding:30px;background:#111315;border:1px solid #292b2e;color:#ddd;font-size:17px;line-height:1.7}
 .parallel-testimonials cite{display:block;margin-top:20px;color:#999;font-size:13px;font-style:normal;font-weight:700}
 @media(max-width:900px){.parallel-testimonials{grid-template-columns:1fr;padding-bottom:48px}.parallel-testimonials blockquote{padding:22px}}
+
+/* V5.3.9 live visual template match */
+.live-parallel{background:#fff;color:#111}
+.parallel-header{min-height:64px;background:#f4f4f4!important;border-bottom:1px solid #ddd!important;padding:0 max(24px,calc((100vw - 1320px)/2))!important;gap:38px;box-shadow:none}
+.parallel-brand{display:flex!important;flex-direction:column;justify-content:center;color:#111!important;line-height:1;text-decoration:none}
+.parallel-brand span{font-size:20px;font-weight:900;letter-spacing:.04em}.parallel-brand b{color:#e31b23}.parallel-brand small{font-size:7px;letter-spacing:.25em;margin-top:5px;color:#666}
+.parallel-nav{margin-left:auto;gap:30px;font-size:14px!important;font-weight:700!important}
+.parallel-nav>a,.parallel-nav summary{color:#111!important;padding:23px 0 20px!important;position:relative}
+.parallel-nav>a:first-child{color:#e31b23!important}.parallel-nav>a:first-child:after{content:"";position:absolute;left:0;right:0;bottom:11px;height:2px;background:#e31b23}
+.parallel-nav details summary:after{content:"▾";font-size:10px;margin-left:10px;color:#111}
+.parallel-nav details div{top:56px;background:#fff!important;border:1px solid #ddd!important;box-shadow:0 12px 28px rgba(0,0,0,.15)!important}
+.parallel-nav details div a{color:#222!important;border-bottom:1px solid #eee!important}
+.parallel-hero{background:#111!important;overflow:hidden}.parallel-hero img{width:100%!important;max-width:none!important;height:auto!important;display:block!important}
+.parallel-section,.parallel-about,.parallel-info,.parallel-testimonials{color:#111}
+.parallel-section h1,.parallel-about h2,.parallel-info h2{color:#111!important}
+.parallel-cards article{background:#f5f5f5!important;border:1px solid #e2e2e2!important;border-top:3px solid #e31b23!important}
+.parallel-cards p,.parallel-about p,.parallel-info p{color:#555!important}.parallel-btn{background:#e31b23!important}
+.parallel-about,.parallel-info{border-top:1px solid #ddd!important}
+.parallel-testimonials blockquote{background:#f5f5f5!important;border-color:#ddd!important;color:#333!important}
+.parallel-footer{background:#111!important;color:#aaa!important}
+@media(max-width:900px){.parallel-header{min-height:64px!important;padding:0 16px!important}.parallel-toggle{display:block!important;color:#111!important;border-color:#aaa!important}.parallel-nav{top:64px!important;background:#fff!important;border-top:1px solid #ddd!important}.parallel-nav>a,.parallel-nav summary{color:#111!important;border-bottom:1px solid #eee!important;padding:15px 0!important}.parallel-nav details div{background:#f5f5f5!important}.parallel-brand span{font-size:17px}}
