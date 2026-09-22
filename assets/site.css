@@ -269,3 +269,14 @@ main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-c
 .parallel-service h2{position:relative;margin:0!important;max-width:85%;font-size:clamp(22px,2.2vw,34px)!important;line-height:1;color:#fff!important}
 .parallel-service b{position:absolute;right:24px;bottom:24px;width:44px;height:44px;border:2px solid #e31b23;border-radius:50%;display:grid;place-items:center;font-size:24px}
 @media(max-width:900px){.parallel-service{min-height:150px;padding:24px}.parallel-service b{right:20px;bottom:20px}}
+
+/* V5.4.1 red-black navigation */
+.parallel-header{background:#08090a!important;border-bottom:2px solid #b5121b!important}
+.parallel-brand,.parallel-brand span{color:#fff!important}.parallel-brand b{color:#e31b23!important}.parallel-brand small{color:#9b9b9b!important}
+.parallel-nav>a,.parallel-nav summary{color:#f1f1f1!important}
+.parallel-nav>a:first-child{color:#e31b23!important}.parallel-nav>a:first-child:after{background:#e31b23!important}
+.parallel-nav details summary:after{color:#e31b23!important}
+.parallel-nav details div{background:#0d0e10!important;border:1px solid #333!important;border-top:2px solid #e31b23!important}
+.parallel-nav details div a{color:#eee!important;border-bottom:1px solid #25272a!important}.parallel-nav details div a:hover{color:#e31b23!important;background:#151719}
+.parallel-toggle{color:#fff!important;border-color:#555!important;background:#111!important}
+@media(max-width:900px){.parallel-nav{background:#090a0b!important;border-top:1px solid #2b2d30!important}.parallel-nav>a,.parallel-nav summary{color:#eee!important;border-bottom:1px solid #25272a!important}.parallel-nav details div{background:#111315!important}}
