@@ -336,3 +336,21 @@ html body.live-parallel .parallel-info h3{color:#fff!important}
 .kmt-1948-watermark img{display:block!important;width:100%!important;height:auto!important;max-width:none!important;filter:grayscale(1) brightness(1.7) contrast(.9)!important}
 .parallel-section>h1,.parallel-section>.parallel-cards{position:relative!important;z-index:2!important}
 @media(max-width:760px){.kmt-1948-watermark{left:50%!important;right:auto!important;top:52%!important;width:125vw!important;transform:translate(-50%,-50%)!important;opacity:.065!important}}
+
+
+/* V5.5 unified navigation interaction fix — all pages */
+.parallel-header{z-index:9999!important;isolation:auto!important;overflow:visible!important}
+.parallel-header .parallel-nav{position:relative;z-index:10000!important}
+.parallel-header .parallel-nav details{position:relative!important;z-index:10001!important;pointer-events:auto!important}
+.parallel-header .parallel-nav summary,.parallel-header .parallel-nav a{pointer-events:auto!important}
+.parallel-header .parallel-nav details[open]{z-index:10020!important}
+.parallel-header .parallel-nav details[open]>div{display:grid!important;z-index:10030!important;pointer-events:auto!important}
+@media(min-width:901px){
+ .parallel-header .parallel-nav{display:flex!important}
+ .parallel-header .parallel-nav details>div{position:absolute!important;top:56px!important;left:0!important}
+}
+@media(max-width:900px){
+ .parallel-header .parallel-nav{position:absolute!important;left:0!important;right:0!important;top:64px!important;z-index:10010!important}
+ .parallel-header .parallel-nav.open{display:flex!important}
+ .parallel-header .parallel-nav details>div{position:static!important}
+}
