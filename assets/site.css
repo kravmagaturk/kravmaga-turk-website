@@ -323,3 +323,8 @@ html body.live-parallel .parallel-info h3{color:#fff!important}
 .kmt-1948-watermark span{color:rgba(227,27,35,.075)!important}
 .parallel-section>h1,.parallel-section>.parallel-cards{position:relative!important;z-index:2!important}
 @media(max-width:760px){.kmt-1948-watermark{right:-22vw!important;top:10px!important;font-size:72vw!important}}
+
+/* V5.4.7 GitHub logo asset watermark */
+.kmt-1948-watermark{right:-9vw!important;top:-70px!important;width:clamp(420px,55vw,900px)!important;height:auto!important;font-size:0!important;transform:rotate(-7deg)!important;opacity:.11!important}
+.kmt-1948-watermark img{display:block!important;width:100%!important;height:auto!important;max-width:none!important;filter:grayscale(1) contrast(1.15)!important}
+@media(max-width:760px){.kmt-1948-watermark{right:-30vw!important;top:20px!important;width:105vw!important;opacity:.10!important}}
