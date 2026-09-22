@@ -354,3 +354,24 @@ html body.live-parallel .parallel-info h3{color:#fff!important}
  .parallel-header .parallel-nav.open{display:flex!important}
  .parallel-header .parallel-nav details>div{position:static!important}
 }
+
+
+/* V5.6 combat-inspired homepage — original KMT implementation */
+.live-parallel .combat-hero{position:relative;min-height:min(78vh,780px);display:flex;align-items:center;overflow:hidden;background:#050505!important}
+.live-parallel .combat-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;filter:saturate(.82) contrast(1.08)}
+.live-parallel .combat-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,3,3,.94) 0%,rgba(3,3,3,.72) 42%,rgba(3,3,3,.22) 72%),linear-gradient(0deg,rgba(5,5,5,.74),transparent 50%)}
+.combat-hero-overlay{position:relative;z-index:2;width:min(1180px,calc(100% - 40px));margin:auto;padding:88px 0;color:#fff}
+.combat-kicker{margin:0 0 18px!important;color:#e31b23!important;font-size:12px!important;font-weight:900;letter-spacing:.24em}
+.combat-hero-overlay h1{margin:0!important;max-width:850px;font-size:clamp(54px,8vw,112px)!important;line-height:.83!important;letter-spacing:-.055em!important;font-weight:950!important;color:#fff!important}
+.combat-hero-overlay h1 span{color:#e31b23}
+.combat-hero-overlay>p:not(.combat-kicker){margin:25px 0 0;color:#d2d2d2;font-size:clamp(16px,2vw,21px);font-weight:700;letter-spacing:.04em}
+.combat-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.combat-actions a{display:inline-flex;align-items:center;min-height:50px;padding:0 24px;border:2px solid #e31b23;background:#e31b23;color:#fff!important;font-size:12px;font-weight:900;letter-spacing:.08em;text-decoration:none}
+.combat-actions a+ a{background:rgba(5,5,5,.48);border-color:#777}
+.live-parallel .parallel-section{padding-top:86px!important;padding-bottom:92px!important}
+.live-parallel .parallel-section>h1{font-size:clamp(40px,5vw,68px)!important;letter-spacing:-.045em!important;text-transform:uppercase}
+.live-parallel .parallel-service{min-height:285px!important;transition:transform .2s ease,border-color .2s ease}
+.live-parallel .parallel-service:hover{transform:translateY(-5px);border-color:#e31b23}
+.live-parallel .parallel-about,.live-parallel .parallel-info{padding-top:80px!important;padding-bottom:80px!important}
+.live-parallel .parallel-about h2,.live-parallel .parallel-info h2{font-size:clamp(36px,4vw,58px)!important;text-transform:uppercase;letter-spacing:-.035em!important}
+@media(max-width:760px){.live-parallel .combat-hero{min-height:620px}.live-parallel .combat-hero>img{object-position:62% center}.live-parallel .combat-hero:after{background:linear-gradient(90deg,rgba(3,3,3,.94),rgba(3,3,3,.48)),linear-gradient(0deg,rgba(3,3,3,.88),transparent 60%)}.combat-hero-overlay{width:calc(100% - 32px);padding:68px 0}.combat-hero-overlay h1{font-size:clamp(48px,15vw,72px)!important}.combat-actions a{width:100%;justify-content:center}.live-parallel .parallel-service{min-height:190px!important}}
