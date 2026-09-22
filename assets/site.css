@@ -233,3 +233,10 @@ main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-c
 .parallel-btn{display:inline-flex;margin-top:14px;padding:14px 20px;background:#b5121b;color:#fff;font-weight:800}
 .parallel-footer{padding:28px 20px;text-align:center;border-top:1px solid #292b2e;color:#777;font-size:12px}
 @media(max-width:900px){.parallel-header{padding:0 18px}.parallel-toggle{display:block}.parallel-nav{display:none;position:absolute;left:0;right:0;top:72px;background:#090a0b;padding:12px 18px 22px;flex-direction:column;align-items:stretch;gap:0}.parallel-nav.open{display:flex}.parallel-nav>a,.parallel-nav summary{display:block;padding:15px 0;border-bottom:1px solid #25272a}.parallel-nav details div{position:static;box-shadow:none;border:0;background:#111;margin-bottom:8px}.parallel-cards{grid-template-columns:1fr}.parallel-section,.parallel-about,.parallel-info{padding:48px 0}}
+
+/* V5.3.8 live homepage lower sections */
+.parallel-info h3{margin:-20px 0 12px;font-size:20px;color:#ddd}
+.parallel-testimonials{width:min(1180px,calc(100% - 40px));margin:auto;padding:0 0 72px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.parallel-testimonials blockquote{margin:0;padding:30px;background:#111315;border:1px solid #292b2e;color:#ddd;font-size:17px;line-height:1.7}
+.parallel-testimonials cite{display:block;margin-top:20px;color:#999;font-size:13px;font-style:normal;font-weight:700}
+@media(max-width:900px){.parallel-testimonials{grid-template-columns:1fr;padding-bottom:48px}.parallel-testimonials blockquote{padding:22px}}
