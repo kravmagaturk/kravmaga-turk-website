@@ -301,3 +301,10 @@ html body.live-parallel .parallel-section h2,
 html body.live-parallel .parallel-about h2,
 html body.live-parallel .parallel-info h2,
 html body.live-parallel .parallel-info h3{color:#fff!important}
+
+/* V5.4.4 oversized cropped 1948 watermark */
+.live-parallel main{position:relative;isolation:isolate;overflow:hidden}
+.live-parallel main:before{content:"1948";position:absolute;z-index:-1;right:-.18em;top:34%;font-size:clamp(260px,42vw,720px);line-height:.72;font-weight:900;letter-spacing:-.12em;color:rgba(255,255,255,.025);transform:rotate(-8deg);pointer-events:none;white-space:nowrap}
+.live-parallel main:after{content:"KMT";position:absolute;z-index:-1;left:-.22em;top:62%;font-size:clamp(240px,38vw,650px);line-height:.75;font-weight:900;letter-spacing:-.12em;color:rgba(227,27,35,.022);transform:rotate(-8deg);pointer-events:none;white-space:nowrap}
+.live-parallel main>section{position:relative;z-index:1}
+@media(max-width:760px){.live-parallel main:before{right:-.35em;top:38%;font-size:75vw}.live-parallel main:after{left:-.3em;top:68%;font-size:70vw}}
