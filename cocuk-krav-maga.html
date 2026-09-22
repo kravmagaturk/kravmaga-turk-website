@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Çocuk Krav Maga İstanbul | Kids Defense</title>
+
+<meta name="description" content="İstanbul çocuk Krav Maga ve Kids Defense eğitimleri. 09–12 yaş çocuklara uygun farkındalık, kişisel güvenlik, koordinasyon ve temel savunma eğitimi. Krav Maga Türk Akademi.">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:#f5f5f5;
+    line-height:1.6;
+}
+
+.kmt-page{
+    width:100%;
+    overflow:hidden;
+    background:#050505;
+}
+
+.kmt-wrap{
+    width:min(1120px,calc(100% - 36px));
+    margin:0 auto;
+}
+
+/* ==============================
+   ORTAK
+============================== */
+
+.kmt-section{
+    position:relative;
+    padding:70px 0;
+}
+
+.kmt-section-dark{
+    background:#0b0b0b;
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+}
+
+.kmt-kicker{
+    color:#e81822;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2.3px;
+    text-transform:uppercase;
+    margin-bottom:13px;
+}
+
+.kmt-redline{
+    width:62px;
+    height:3px;
+    background:#e81822;
+    margin:0 0 22px;
+}
+
+.kmt-section-title{
+    max-width:800px;
+    margin-bottom:34px;
+}
+
+.kmt-section-title span{
+    display:block;
+    color:#e81822;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.kmt-section-title h2{
+    font-size:40px;
+    line-height:1.12;
+    margin-bottom:12px;
+}
+
+.kmt-section-title p{
+    color:#999;
+    font-size:16px;
+}
+
+.kmt-btn{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    min-height:50px;
+    padding:0 24px;
+    border-radius:7px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:800;
+    transition:.2s ease;
+}
+
+.kmt-btn-red{
+    color:#fff;
+    background:#e81822;
+    border:1px solid #e81822;
+}
+
+.kmt-btn-red:hover{
+    background:#f2222c;
+    transform:translateY(-2px);
+}
+
+.kmt-btn-dark{
+    color:#fff;
+    background:rgba(15,15,15,.88);
+    border:1px solid #444;
+}
+
+.kmt-btn-dark:hover{
+    border-color:#888;
+}
+
+.kmt-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:29px;
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.kmt-hero{
+    position:relative;
+    min-height:520px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    border-bottom:1px solid #252525;
+
+    background:
+        radial-gradient(circle at 80% 35%,rgba(190,0,0,.16),transparent 36%),
+        linear-gradient(120deg,#080808 0%,#050505 66%,#110000 100%);
+}
+
+/* GERÇEK 19-48 LOGO */
+
+.kmt-hero:before{
+    content:"";
+    position:absolute;
+    width:520px;
+    height:520px;
+    right:4%;
+    top:50%;
+    transform:translateY(-50%);
+
+    background-image:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain;
+
+    opacity:.085;
+    filter:grayscale(1);
+    pointer-events:none;
+}
+
+.kmt-hero:after{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    right:-280px;
+    bottom:-350px;
+    background:rgba(190,0,0,.14);
+    filter:blur(80px);
+    border-radius:50%;
+    pointer-events:none;
+}
+
+.kmt-hero-content{
+    position:relative;
+    z-index:2;
+    max-width:760px;
+    padding:75px 0;
+}
+
+/* SAYFADAKİ TEK H1 */
+
+.kmt-hero h1{
+    font-size:clamp(42px,6vw,68px);
+    line-height:1.02;
+    letter-spacing:-2px;
+    max-width:760px;
+    margin-bottom:21px;
+}
+
+.kmt-hero-text{
+    max-width:650px;
+    color:#b6b6b6;
+    font-size:18px;
+}
+
+
+/* ==============================
+   ÇOCUK KRAV MAGA METNİ
+============================== */
+
+.kmt-kids-text{
+    max-width:850px;
+}
+
+.kmt-kids-text p{
+    color:#aaa;
+    font-size:16px;
+    margin-bottom:17px;
+}
+
+.kmt-kids-text p:last-child{
+    margin-bottom:0;
+}
+
+
+/* ==============================
+   AMAÇLAR
+============================== */
+
+.kmt-goals{
+    position:relative;
+    overflow:hidden;
+}
+
+.kmt-goals:before{
+    content:"";
+    position:absolute;
+    width:430px;
+    height:430px;
+    right:-100px;
+    bottom:-130px;
+    background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/contain no-repeat;
+    opacity:.035;
+    filter:grayscale(1);
+    pointer-events:none;
+}
+
+.kmt-goal-grid{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.kmt-goal{
+    background:#111;
+    border:1px solid #292929;
+    border-radius:10px;
+    padding:24px;
+    min-height:185px;
+}
+
+.kmt-goal-number{
+    color:#e81822;
+    font-size:12px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.kmt-goal h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.kmt-goal p{
+    color:#8d8d8d;
+    font-size:14px;
+}
+
+
+/* ==============================
+   PROGRAM
+============================== */
+
+.kmt-program-grid{
+    display:grid;
+    grid-template-columns:1fr .9fr;
+    gap:20px;
+}
+
+.kmt-program{
+    background:#101010;
+    border:1px solid #292929;
+    border-radius:13px;
+    padding:29px;
+}
+
+.kmt-program.featured{
+    border-color:#99171d;
+    box-shadow:inset 0 0 60px rgba(180,0,0,.05);
+}
+
+.kmt-label{
+    display:inline-block;
+    padding:5px 9px;
+    border-radius:4px;
+    background:#e81822;
+    color:#fff;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.kmt-program h3{
+    font-size:26px;
+    margin:14px 0 21px;
+}
+
+.kmt-data{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:9px;
+}
+
+.kmt-data-item{
+    background:#080808;
+    border:1px solid #262626;
+    border-radius:7px;
+    padding:14px;
+}
+
+.kmt-data-item small{
+    display:block;
+    color:#777;
+    text-transform:uppercase;
+    letter-spacing:.8px;
+    font-size:10px;
+    margin-bottom:4px;
+}
+
+.kmt-data-item strong{
+    color:#fff;
+    font-size:15px;
+}
+
+.kmt-program-note{
+    color:#888;
+    font-size:13px;
+    margin-top:18px;
+}
+
+
+/* ==============================
+   DERS İÇERİĞİ
+============================== */
+
+.kmt-training-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.kmt-training{
+    background:#111;
+    border:1px solid #292929;
+    border-radius:10px;
+    padding:24px;
+    min-height:180px;
+}
+
+.kmt-training-number{
+    color:#e81822;
+    font-size:12px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.kmt-training h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.kmt-training p{
+    color:#8e8e8e;
+    font-size:14px;
+}
+
+
+/* ==============================
+   EBEVEYN BİLGİLERİ
+============================== */
+
+.kmt-parent-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.kmt-parent-card{
+    background:#101010;
+    border:1px solid #292929;
+    border-radius:12px;
+    padding:28px;
+}
+
+.kmt-parent-card h3{
+    font-size:21px;
+    margin-bottom:17px;
+}
+
+.kmt-list{
+    list-style:none;
+}
+
+.kmt-list li{
+    position:relative;
+    padding:10px 0 10px 20px;
+    border-bottom:1px solid #242424;
+    color:#aaa;
+    font-size:14px;
+}
+
+.kmt-list li:last-child{
+    border-bottom:0;
+}
+
+.kmt-list li:before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:#e81822;
+    font-weight:900;
+}
+
+
+/* ==============================
+   MEDYA / VİDEO KAPAĞI
+============================== */
+
+.kmt-media{
+    display:grid;
+    grid-template-columns:1fr .9fr;
+    gap:35px;
+    align-items:center;
+}
+
+.kmt-media-text h2{
+    font-size:38px;
+    line-height:1.12;
+    margin-bottom:15px;
+}
+
+.kmt-media-text p{
+    color:#999;
+    font-size:15px;
+}
+
+.kmt-video-cover{
+    position:relative;
+    overflow:hidden;
+    min-height:300px;
+    border-radius:14px;
+    border:1px solid #303030;
+    background:#111;
+}
+
+.kmt-video-cover img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+
+.kmt-video-cover:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.12) 65%);
+    pointer-events:none;
+}
+
+.kmt-play{
+    position:absolute;
+    z-index:4;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#e81822;
+    color:#fff;
+    font-size:25px;
+    box-shadow:0 10px 35px rgba(0,0,0,.5);
+    pointer-events:none;
+}
+
+.kmt-video-note{
+    position:absolute;
+    z-index:4;
+    left:20px;
+    right:20px;
+    bottom:17px;
+    color:#fff;
+    font-size:12px;
+    text-shadow:0 2px 8px #000;
+}
+
+
+/* ==============================
+   CTA
+============================== */
+
+.kmt-cta{
+    position:relative;
+    overflow:hidden;
+    padding:75px 0;
+    text-align:center;
+
+    background:
+        radial-gradient(circle at 50% 100%,rgba(180,0,0,.20),transparent 48%),
+        #050505;
+}
+
+.kmt-cta:before{
+    content:"";
+    position:absolute;
+    width:370px;
+    height:370px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/contain no-repeat;
+    opacity:.045;
+    filter:grayscale(1);
+    pointer-events:none;
+}
+
+.kmt-cta-content{
+    position:relative;
+    z-index:2;
+}
+
+.kmt-cta h2{
+    font-size:44px;
+    line-height:1.1;
+    margin-bottom:12px;
+}
+
+.kmt-cta p{
+    max-width:620px;
+    margin:0 auto 26px;
+    color:#929292;
+}
+
+
+/* ==============================
+   TABLET 751 - 1100
+============================== */
+
+@media(min-width:751px) and (max-width:1100px){
+
+    .kmt-hero{
+        min-height:440px;
+    }
+
+    .kmt-hero:before{
+        width:400px;
+        height:400px;
+        right:-35px;
+        opacity:.07;
+    }
+
+    .kmt-hero-content{
+        padding:58px 0;
+        max-width:640px;
+    }
+
+    .kmt-hero h1{
+        font-size:41px;
+        line-height:1.08;
+        letter-spacing:-1px;
+    }
+
+    .kmt-hero-text{
+        font-size:15px;
+        max-width:560px;
+    }
+
+    .kmt-section{
+        padding:52px 0;
+    }
+
+    .kmt-section-title h2{
+        font-size:31px;
+    }
+
+    .kmt-section-title p{
+        font-size:14px;
+    }
+
+    .kmt-kids-text p{
+        font-size:14px;
+    }
+
+    .kmt-goal{
+        padding:20px;
+    }
+
+    .kmt-goal h3,
+    .kmt-training h3{
+        font-size:16px;
+    }
+
+    .kmt-goal p,
+    .kmt-training p{
+        font-size:13px;
+    }
+
+    .kmt-program h3{
+        font-size:22px;
+    }
+
+    .kmt-media-text h2,
+    .kmt-cta h2{
+        font-size:31px;
+    }
+
+}
+
+
+/* ==============================
+   MOBİL
+============================== */
+
+@media(max-width:750px){
+
+    .kmt-wrap{
+        width:calc(100% - 28px);
+    }
+
+    .kmt-hero{
+        min-height:auto;
+    }
+
+    .kmt-hero:before{
+        width:320px;
+        height:320px;
+        right:-120px;
+        top:52%;
+        opacity:.065;
+    }
+
+    .kmt-hero-content{
+        padding:46px 0 42px;
+        max-width:100%;
+    }
+
+    .kmt-kicker{
+        font-size:9px;
+        letter-spacing:1.5px;
+    }
+
+    /* SAYFADAKİ TEK H1 */
+
+    .kmt-hero h1{
+        font-size:30px;
+        line-height:1.08;
+        letter-spacing:-.5px;
+        max-width:330px;
+        margin-bottom:16px;
+    }
+
+    .kmt-redline{
+        width:45px;
+        margin-bottom:17px;
+    }
+
+    .kmt-hero-text{
+        max-width:330px;
+        font-size:14px;
+        line-height:1.55;
+    }
+
+    .kmt-actions{
+        margin-top:23px;
+    }
+
+    .kmt-btn{
+        width:100%;
+        min-height:47px;
+        padding:0 15px;
+        font-size:13px;
+    }
+
+    .kmt-section{
+        padding:43px 0;
+    }
+
+    .kmt-section-title{
+        margin-bottom:24px;
+    }
+
+    .kmt-section-title h2{
+        font-size:24px;
+        line-height:1.15;
+    }
+
+    .kmt-section-title p{
+        font-size:13px;
+    }
+
+    .kmt-kids-text p{
+        font-size:14px;
+    }
+
+    .kmt-goal-grid,
+    .kmt-training-grid{
+        grid-template-columns:1fr;
+    }
+
+    .kmt-goal,
+    .kmt-training{
+        min-height:0;
+        padding:20px 18px;
+    }
+
+    .kmt-goal h3,
+    .kmt-training h3{
+        font-size:17px;
+    }
+
+    .kmt-goal p,
+    .kmt-training p{
+        font-size:13px;
+    }
+
+    .kmt-program-grid,
+    .kmt-parent-grid,
+    .kmt-media{
+        grid-template-columns:1fr;
+    }
+
+    .kmt-program{
+        padding:21px 18px;
+    }
+
+    .kmt-program h3{
+        font-size:20px;
+    }
+
+    .kmt-data{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .kmt-data-item strong{
+        font-size:13px;
+    }
+
+    .kmt-parent-card{
+        padding:21px 18px;
+    }
+
+    .kmt-parent-card h3{
+        font-size:18px;
+    }
+
+    .kmt-list li{
+        font-size:13px;
+    }
+
+    .kmt-media{
+        gap:22px;
+    }
+
+    .kmt-media-text h2{
+        font-size:25px;
+    }
+
+    .kmt-media-text p{
+        font-size:14px;
+    }
+
+    .kmt-video-cover{
+        min-height:230px;
+    }
+
+    .kmt-play{
+        width:58px;
+        height:58px;
+        font-size:21px;
+    }
+
+    .kmt-cta{
+        padding:55px 0;
+    }
+
+    .kmt-cta h2{
+        font-size:26px;
+    }
+
+    .kmt-cta p{
+        font-size:14px;
+    }
+
+    .kmt-cta:before{
+        width:290px;
+        height:290px;
+    }
+
+}
+
+
+/* ==============================
+   DAR TELEFON
+============================== */
+
+@media(max-width:420px){
+
+    .kmt-hero h1{
+        font-size:27px;
+    }
+
+    .kmt-section-title h2{
+        font-size:22px;
+    }
+
+    .kmt-data{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="kmt-page">
+
+
+<!-- ==============================
+     HERO
+============================== -->
+
+<section class="kmt-hero">
+
+<div class="kmt-wrap">
+
+<div class="kmt-hero-content">
+
+<div class="kmt-kicker">
+KRAV MAGA TÜRK • KIDS DEFENSE
+</div>
+
+<!-- SAYFADAKİ TEK H1 -->
+<h1>Çocuk Krav Maga İstanbul</h1>
+
+<div class="kmt-redline"></div>
+
+<p class="kmt-hero-text">
+Çocukların yaşlarına uygun şekilde çevresel farkındalık,
+kişisel güvenlik, koordinasyon ve temel savunma
+becerilerini geliştirmeye yönelik Krav Maga eğitimi.
+</p>
+
+<div class="kmt-actions">
+
+<a
+href="https://wa.me/905321621821?text=Merhaba%2C%20%C3%A7ocuk%20Krav%20Maga%20dersleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+target="_blank"
+rel="noopener"
+class="kmt-btn kmt-btn-red">
+Çocuk Dersi İçin Bilgi Al
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     ÇOCUK KRAV MAGA
+============================== -->
+
+<section class="kmt-section">
+
+<div class="kmt-wrap">
+
+<div class="kmt-section-title">
+
+<span>Kids Defense</span>
+
+<h2>Çocuklar İçin Krav Maga</h2>
+
+<p>
+Çocuk programında amaç yalnızca savunma hareketleri
+öğretmek değil; güvenli davranış alışkanlıkları
+geliştirmelerine yardımcı olmaktır.
+</p>
+
+</div>
+
+<div class="kmt-kids-text">
+
+<p>
+Çocuk Krav Maga eğitimi yetişkin programının
+küçültülmüş bir versiyonu değildir. Çalışmalar
+çocukların yaşına, fiziksel gelişimine ve
+öğrenme biçimine uygun şekilde uygulanır.
+</p>
+
+<p>
+Derslerde çevresel farkındalık, kişisel alan,
+doğru mesafe, koordinasyon, kontrollü hareket
+ve temel kişisel güvenlik prensipleri üzerinde durulur.
+</p>
+
+<p>
+Çalışmalar kontrollü bir eğitim ortamında,
+çocuğun fiziksel ve zihinsel gelişimi dikkate
+alınarak gerçekleştirilir.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     KAZANIMLAR
+============================== -->
+
+<section class="kmt-section kmt-section-dark kmt-goals">
+
+<div class="kmt-wrap">
+
+<div class="kmt-section-title">
+
+<span>Eğitim Yaklaşımı</span>
+
+<h2>Çocukların Kazanacağı Beceriler</h2>
+
+<p>
+Program yaş grubuna uygun fiziksel çalışmalar ile
+kişisel güvenlik farkındalığını birlikte geliştirir.
+</p>
+
+</div>
+
+
+<div class="kmt-goal-grid">
+
+
+<article class="kmt-goal">
+
+<div class="kmt-goal-number">01</div>
+
+<h3>Farkındalık</h3>
+
+<p>
+Çevresini gözlemleme, riskli durumları fark etme
+ve güvenli davranış seçeneklerini değerlendirme.
+</p>
+
+</article>
+
+
+<article class="kmt-goal">
+
+<div class="kmt-goal-number">02</div>
