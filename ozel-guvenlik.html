@@ -144,7 +144,7 @@ Görsel olmadan da sayfa düzgün çalışır.
     inset:0;
     z-index:-3;
 
-    background-image:url("assetsozel-guvenlik-xray.webp");
+    background-image:url("./assetsozel-guvenlik-xray.webp?v=2");
 
     background-size:cover;
     background-position:center center;
@@ -1173,6 +1173,13 @@ Görsel olmadan da sayfa düzgün çalışır.
 <style id="kmt-mobile-final">
 html{box-sizing:border-box;overflow-x:hidden}*,*:before,*:after{box-sizing:inherit}body{overflow-x:hidden}img,video,iframe{max-width:100%;height:auto}a,button{touch-action:manipulation}
 @media(max-width:750px){.kmt-wrap,.wrap,.leg-wrap,.kmt-ref-wrap{width:min(100% - 32px,1200px)!important;margin-left:auto!important;margin-right:auto!important}.kmt-actions,.leg-actions{flex-wrap:wrap}.kmt-btn,.leg-btn{min-height:46px}.kmt-actions .kmt-btn,.leg-actions .leg-btn{max-width:100%}}
+</style>
+<style id="kmt-xray-live">
+/* GitHub yerel X-Ray hero görseli: masaüstü/tablet/mobil */
+.kmt-security-photo{background-image:url("./assetsozel-guvenlik-xray.webp?v=2")!important;background-repeat:no-repeat!important;background-color:#08090a!important}
+@media(min-width:1181px){.kmt-security-photo{background-size:cover!important;background-position:center 42%!important}}
+@media(min-width:751px) and (max-width:1180px){.kmt-hero{min-height:560px!important}.kmt-security-photo{background-size:cover!important;background-position:58% center!important}}
+@media(max-width:750px){.kmt-security-photo{background-size:cover!important;background-position:62% top!important}}
 </style>
 </head>
 
