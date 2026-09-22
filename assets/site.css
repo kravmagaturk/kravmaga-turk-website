@@ -316,3 +316,10 @@ html body.live-parallel .parallel-info h3{color:#fff!important}
 .live-parallel main>section{position:relative!important;z-index:1!important;background-color:transparent!important}
 .live-parallel .parallel-hero{background:#050607!important}
 @media(max-width:760px){.live-parallel main:before{right:-18vw!important;top:43%!important;font-size:78vw!important}.live-parallel main:after{left:-16vw!important;top:72%!important;font-size:72vw!important}}
+
+/* V5.4.6 real 1948 watermark element */
+.parallel-section{position:relative!important;overflow:hidden!important}
+.kmt-1948-watermark{position:absolute!important;display:block!important;right:-8vw!important;top:-35px!important;z-index:0!important;font-size:clamp(220px,34vw,560px)!important;line-height:.8!important;font-weight:950!important;letter-spacing:-.12em!important;color:rgba(255,255,255,.075)!important;transform:rotate(-7deg)!important;pointer-events:none!important;user-select:none!important;white-space:nowrap!important}
+.kmt-1948-watermark span{color:rgba(227,27,35,.075)!important}
+.parallel-section>h1,.parallel-section>.parallel-cards{position:relative!important;z-index:2!important}
+@media(max-width:760px){.kmt-1948-watermark{right:-22vw!important;top:10px!important;font-size:72vw!important}}
