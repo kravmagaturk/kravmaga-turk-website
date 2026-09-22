@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kravmaga.com.tr/</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://kravmaga.com.tr/egitimler</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kravmaga.com.tr/hakkimizda</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kravmaga.com.tr/belgeler</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://kravmaga.com.tr/iletisim</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kravmaga.com.tr/</loc></url>
+  <url><loc>https://kravmaga.com.tr/krav-maga</loc></url>
+  <url><loc>https://kravmaga.com.tr/ozel-dersler</loc></url>
+  <url><loc>https://kravmaga.com.tr/cocuk-seansi</loc></url>
+  <url><loc>https://kravmaga.com.tr/egitim-modulu</loc></url>
+  <url><loc>https://kravmaga.com.tr/hakkimizda</loc></url>
+  <url><loc>https://kravmaga.com.tr/temsilcilikler</loc></url>
+  <url><loc>https://kravmaga.com.tr/belgeler</loc></url>
+  <url><loc>https://kravmaga.com.tr/legionnaire</loc></url>
+  <url><loc>https://kravmaga.com.tr/referanslar</loc></url>
+  <url><loc>https://kravmaga.com.tr/ozel-guvenlik</loc></url>
+  <url><loc>https://kravmaga.com.tr/yakin-koruma</loc></url>
+  <url><loc>https://kravmaga.com.tr/basin</loc></url>
+  <url><loc>https://kravmaga.com.tr/iletisim</loc></url>
 </urlset>
