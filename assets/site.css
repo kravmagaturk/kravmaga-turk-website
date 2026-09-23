@@ -273,3 +273,11 @@ main#top .map-home>a{min-height:190px;display:flex;flex-direction:column;align-i
   .welcome-poster.v39{width:100vw!important;max-width:none!important;height:auto!important;min-height:0!important;margin:0!important;overflow:visible!important;background:#050607}
   .welcome-poster.v39>img{display:block!important;width:100vw!important;max-width:none!important;height:auto!important;object-fit:contain!important;object-position:center top!important;margin:0!important}
 }
+
+
+/* TRANSFER: hero overlap fix - preserve original aspect ratio */
+@media (min-width:1101px){
+  .welcome-poster.v39{position:relative!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:hidden!important}
+  .welcome-poster.v39>img{position:relative!important;display:block!important;width:100%!important;height:auto!important;max-width:none!important;object-fit:contain!important}
+  .kmt-egitim-sec{position:relative!important;clear:both!important;z-index:2!important}
+}
