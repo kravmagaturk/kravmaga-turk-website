@@ -86,6 +86,42 @@
       }
       .kmt-footer-copy strong{color:#bdbdbd!important}
 
+
+      /* ORTAK 19-48 LOGO FILIGRANI */
+      .bc-watermark,
+      .kmt-representative-page .watermark,
+      .kmt-belgeler .water,
+      #kmt-basin .basin-watermark{
+        width:430px!important;height:430px!important;
+        background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/contain no-repeat!important;
+        opacity:.085!important;filter:grayscale(1)!important;
+        color:transparent!important;font-size:0!important;letter-spacing:0!important;
+        pointer-events:none!important
+      }
+      .bc-watermark>*,.kmt-representative-page .watermark>*,
+      .kmt-belgeler .water>*,#kmt-basin .basin-watermark>*{
+        display:none!important
+      }
+
+      .bc-video-watermark,.bc-section-year,.bc-dark-year{
+        color:transparent!important;font-size:0!important;letter-spacing:0!important;
+        width:250px!important;height:250px!important;
+        background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/contain no-repeat!important;
+        opacity:.055!important;filter:grayscale(1)!important;
+        pointer-events:none!important
+      }
+
+      .kmt-representative-page .final::before,
+      .kmt-belgeler .bottom::before,
+      #kmt-basin .basin-media::before{
+        content:""!important;
+        width:320px!important;height:320px!important;
+        background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/contain no-repeat!important;
+        opacity:.045!important;filter:grayscale(1)!important;
+        color:transparent!important;font-size:0!important;letter-spacing:0!important;
+        pointer-events:none!important
+      }
+
       @media(max-width:900px){
         .transfer-nav-inner{min-height:64px;padding:0 14px}
         .transfer-brand{font-size:14px}
