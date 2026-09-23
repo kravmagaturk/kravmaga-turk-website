@@ -10,25 +10,15 @@
         border-bottom:1px solid #252525;color:#fff;font-family:Arial,Helvetica,sans-serif;
         box-shadow:0 5px 18px rgba(0,0,0,.22)
       }
-      .transfer-nav-inner{
-        max-width:1536px;margin:0 auto;min-height:72px;padding:0 24px;
-        display:flex;align-items:center;gap:24px
-      }
+      .transfer-nav-inner{max-width:1536px;margin:0 auto;min-height:72px;padding:0 24px;display:flex;align-items:center;gap:18px}
       .transfer-brand{
         color:#fff!important;text-decoration:none!important;font-weight:900;
         font-size:16px;letter-spacing:.06em;white-space:nowrap
       }
       .transfer-brand i{font-style:normal;color:#e30620}
-      .transfer-links{
-        margin-left:auto;display:flex;align-items:center;gap:8px
-      }
+      .transfer-links{margin-left:auto;display:flex;align-items:center;gap:7px}
       .transfer-item{position:relative}
-      .transfer-item>a,.transfer-item>button{
-        height:46px;display:flex;align-items:center;justify-content:center;padding:0 16px;
-        border:1px solid rgba(255,255,255,.10);background:#111315;color:#f2f2f2!important;border-radius:8px;
-        text-decoration:none!important;font:800 14px/1 Arial,Helvetica,sans-serif;letter-spacing:.05em;
-        cursor:pointer;transition:background-color .12s ease,border-color .12s ease,color .12s ease
-      }
+      .transfer-item>a,.transfer-item>button{height:46px;display:flex;align-items:center;justify-content:center;padding:0 15px;border:1px solid rgba(255,255,255,.10);background:#111315;color:#f2f2f2!important;border-radius:8px;text-decoration:none!important;font:800 14px/1 Arial,Helvetica,sans-serif;letter-spacing:.04em;cursor:pointer;white-space:nowrap;transition:background-color .12s ease,border-color .12s ease,color .12s ease}
       .transfer-item>a:hover,.transfer-item>button:hover,
       .transfer-item.open>button{
         background:#191c1f;border-color:rgba(227,6,32,.48);color:#fff!important
@@ -37,12 +27,7 @@
         outline:2px solid #e30620;outline-offset:2px
       }
 
-      .transfer-drop{
-        display:none;position:absolute;top:46px;left:0;min-width:270px;
-        background:#0b0c0e;border:1px solid #2a2d31;border-top:3px solid #e30620;
-        box-shadow:0 14px 28px rgba(0,0,0,.42);border-radius:0 0 10px 10px;
-        overflow:hidden;z-index:6000
-      }
+      .transfer-drop{display:none;position:absolute;top:46px;left:0;min-width:270px;max-height:70vh;overflow-y:auto;background:#0b0c0e;border:1px solid #2a2d31;border-top:3px solid #e30620;box-shadow:0 14px 28px rgba(0,0,0,.42);border-radius:0 0 10px 10px;z-index:9000}
       .transfer-item.open>.transfer-drop{display:block}
       .transfer-drop a{
         display:block;padding:14px 16px;color:#ddd!important;text-decoration:none!important;
@@ -89,24 +74,9 @@
 
 
       /* TEK STANDART 19-48 LOGO */
-      .bc-watermark,.bc-video-watermark,.bc-section-year,.bc-dark-year,.bc-photo-year,
-      .kmt-representative-page .watermark,.kmt-belgeler .water,
-      #kmt-basin .basin-watermark,#kmt-basin .basin-media::before,
-      .kmt-ref-watermark,.kmt-watermark,.kmt-hero-logo,
-      .leg-watermark,.leg-story-brand,.leg-author-logo,.leg-cta::before,
-      .kmt-representative-page .final::before,.kmt-belgeler .bottom::before{
-        display:none!important
-      }
+      .bc-watermark,.bc-video-watermark,.bc-section-year,.bc-dark-year,.bc-photo-year,.kmt-representative-page .watermark,.kmt-belgeler .water,#kmt-basin .basin-watermark,#kmt-basin .basin-media::before,.kmt-ref-watermark,.kmt-watermark,.kmt-hero-logo,.leg-watermark,.leg-story-brand,.leg-author-logo,.leg-cta::before,.kmt-representative-page .final::before,.kmt-belgeler .bottom::before{display:none!important}
       .kmt-hero:before{content:none!important}
-      .kmt-standard-mark{
-        position:absolute!important;
-        width:370px!important;height:370px!important;
-        right:4%!important;left:auto!important;top:50%!important;
-        transform:translateY(-50%)!important;
-        background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/contain no-repeat!important;
-        opacity:.16!important;filter:none!important;
-        pointer-events:none!important;z-index:1!important
-      }
+      .kmt-standard-mark{position:absolute!important;width:390px!important;height:390px!important;right:4%!important;left:auto!important;top:50%!important;transform:translateY(-50%)!important;background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/82% no-repeat!important;opacity:.28!important;filter:contrast(1.08)!important;mix-blend-mode:screen!important;-webkit-mask-image:radial-gradient(circle at center,#000 0 54%,rgba(0,0,0,.88) 62%,transparent 78%)!important;mask-image:radial-gradient(circle at center,#000 0 54%,rgba(0,0,0,.88) 62%,transparent 78%)!important;pointer-events:none!important;z-index:1!important}
       .bc-hero,.kmt-representative-page .hero,.kmt-belgeler .hero,
       #kmt-basin .basin-hero,.kmt-ref-hero,.leg-hero,.kmt-hero,.cpo-hero,.page{
         position:relative!important
@@ -118,7 +88,7 @@
       }
 
       @media(max-width:900px){
-        .kmt-standard-mark{width:250px!important;height:250px!important;right:-2%!important;opacity:.065!important}
+        .kmt-standard-mark{width:260px!important;height:260px!important;right:-4%!important;opacity:.20!important}
       }
       @media(max-width:900px){
         .transfer-nav-inner{min-height:64px;padding:0 14px}
