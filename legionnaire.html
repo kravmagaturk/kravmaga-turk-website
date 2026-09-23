@@ -900,6 +900,92 @@ body{
 html{box-sizing:border-box;overflow-x:hidden}*,*:before,*:after{box-sizing:inherit}body{overflow-x:hidden}img,video,iframe{max-width:100%;height:auto}a,button{touch-action:manipulation}
 @media(max-width:750px){.kmt-wrap,.wrap,.leg-wrap,.kmt-ref-wrap{width:min(100% - 32px,1200px)!important;margin-left:auto!important;margin-right:auto!important}.kmt-actions,.leg-actions{flex-wrap:wrap}.kmt-btn,.leg-btn{min-height:46px}.kmt-actions .kmt-btn,.leg-actions .leg-btn{max-width:100%}}
 </style>
+
+<style id="kmt-legionnaire-standard">
+:root{--red:#e50922!important;--bg:#050505!important;--bg2:#0b0b0b!important;--card:#101010!important;--border:#262626!important}
+.leg-page{background:#050505!important;color:#f5f5f5!important}
+.leg-wrap{width:min(1180px,92%)!important}
+
+/* STANDARD HERO */
+.leg-hero{
+  min-height:500px!important;
+  background:radial-gradient(circle at 82% 45%,#2a1013 0,#0d0d0d 37%,#050505 72%)!important;
+  border-bottom:1px solid #202020!important;
+}
+.leg-hero:after{display:none!important}
+.leg-hero-content{max-width:850px!important;padding:82px 0 75px!important}
+.leg-kicker{color:#e50922!important;font-size:11px!important;letter-spacing:3px!important}
+.leg-hero h1{font-size:clamp(43px,7vw,78px)!important;line-height:.96!important;letter-spacing:-2px!important}
+.leg-line{width:88px!important;height:5px!important;background:#e50922!important;margin-top:29px!important}
+.leg-hero-text{max-width:760px!important;color:#c3c3c3!important;font-size:clamp(17px,2vw,20px)!important;line-height:1.65!important}
+.leg-tag{background:#101010!important;border:1px solid #2a2a2a!important;color:#aaa!important;border-radius:0!important}
+
+/* STANDARD SECTIONS */
+.leg-section{padding:70px 0!important}
+.leg-alt{background:#0b0b0b!important;border-color:#202020!important}
+.leg-title{max-width:850px!important;margin:0 auto 42px!important;text-align:center!important}
+.leg-title span{color:#e50922!important;font-size:10px!important;letter-spacing:2px!important}
+.leg-title h2{font-size:clamp(29px,4vw,43px)!important;letter-spacing:-.7px!important}
+.leg-title p{max-width:720px!important;margin:0 auto!important;color:#999!important;line-height:1.65!important}
+
+/* STORY - no second logo column */
+.leg-story{display:block!important;max-width:980px!important;margin:0 auto!important}
+.leg-story-brand{display:none!important}
+.leg-story-text h2{font-size:clamp(29px,4vw,43px)!important}
+.leg-story-text p{color:#aaa!important;font-size:15px!important;line-height:1.75!important}
+.leg-highlight{background:#101010!important;border:1px solid #262626!important;border-left:0!important;border-bottom:4px solid #e50922!important;padding:24px!important}
+
+/* TIMELINE */
+.leg-time{border-left:1px solid #333!important}
+.leg-time:before{background:#e50922!important;box-shadow:0 0 0 5px rgba(229,9,34,.12)!important}
+.leg-time-year{color:#e50922!important}
+
+/* GALLERY */
+.leg-gallery{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important}
+.leg-photo{border-radius:0!important;border:1px solid #262626!important;background:#101010!important}
+.leg-photo:hover{border-color:#e50922!important}
+.leg-photo img{filter:grayscale(18%) contrast(1.04)!important}
+
+/* CARDS */
+.leg-memory,.leg-connection{gap:20px!important}
+.leg-memory-card,.leg-card,.leg-document,.leg-author{
+  background:#101010!important;
+  border:1px solid #262626!important;
+  border-radius:0!important;
+  border-bottom:4px solid #e50922!important;
+  box-shadow:none!important
+}
+.leg-memory-card span,.leg-document span,.leg-card b{color:#e50922!important}
+.leg-author-logo{display:none!important}
+.leg-author{grid-template-columns:1fr!important;max-width:850px!important}
+
+/* CTA */
+.leg-cta{background:#0b0b0b!important;border-top:1px solid #202020!important;padding:70px 20px!important}
+.leg-cta:before{display:none!important}
+.leg-btn{border-radius:7px!important}
+.leg-btn-red{background:#e50922!important}
+
+/* TABLET */
+@media(min-width:651px) and (max-width:1000px){
+  .leg-hero{min-height:460px!important}
+  .leg-gallery{grid-template-columns:repeat(3,1fr)!important}
+  .leg-connection{grid-template-columns:repeat(2,1fr)!important}
+}
+
+/* MOBILE */
+@media(max-width:650px){
+  .leg-wrap{width:min(92%,1180px)!important}
+  .leg-hero{min-height:410px!important}
+  .leg-hero-content{padding:65px 0 58px!important}
+  .leg-section{padding:52px 0!important}
+  .leg-title{text-align:left!important;margin-bottom:28px!important}
+  .leg-title p{margin:0!important}
+  .leg-gallery{grid-template-columns:repeat(2,1fr)!important;gap:8px!important}
+  .leg-memory,.leg-connection{grid-template-columns:1fr!important}
+  .leg-memory-card,.leg-card,.leg-document,.leg-author{padding:22px!important}
+}
+</style>
+
 </head>
 
 
@@ -909,6 +995,105 @@ html{box-sizing:border-box;overflow-x:hidden}*,*:before,*:after{box-sizing:inher
 
 
 <!-- HERO -->
+
+<section class="leg-hero">
+
+<div class="leg-watermark"></div>
+
+<div class="leg-wrap">
+
+<div class="leg-hero-content">
+
+<div class="leg-kicker">
+KRAV MAGA TÜRK • KİŞİSEL ARŞİV
+</div>
+
+<h1>LEGIONNAIRE</h1>
+
+<div class="leg-line"></div>
+
+<p class="leg-hero-text">
+Bülent Çetin'in 1994–1996 döneminden
+kişisel arşiv fotoğrafları ve sonraki
+Krav Maga çalışmalarına uzanan
+yaşam deneyiminden bir bölüm.
+</p>
+
+<div class="leg-years">
+
+<span class="leg-tag">
+1994
+</span>
+
+<span class="leg-tag">
+LEGIONNAIRE
+</span>
+
+<span class="leg-tag">
+KİŞİSEL ARŞİV
+</span>
+
+<span class="leg-tag">
+KRAV MAGA TÜRK
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- STORY -->
+
+<section class="leg-section">
+
+<div class="leg-wrap">
+
+<div class="leg-story">
+
+
+<div class="leg-story-brand"></div>
+
+
+<div class="leg-story-text">
+
+<div class="leg-kicker">
+BÜLENT ÇETİN
+</div>
+
+<h2>
+Askerî Dönemden Krav Maga'ya
+</h2>
+
+<p>
+Bülent Çetin, kişisel anlatımına göre
+1994 yılında Legionnaire dönemine başladı
+ve sakatlığı nedeniyle 1996 yılında
+Türkiye'ye döndü.
+</p>
+
+<p>
+Bu sayfadaki fotoğraflar, o döneme ait
+kişisel arşivin bir bölümünü oluşturmaktadır.
+Yıllar sonra bu görüntüler yalnızca askerî
+bir dönemin değil, birlikte geçirilen
+zor günlerin ve arkadaşlıkların da
+hatırası olarak kalmıştır.
+</p>
+
+<div class="leg-highlight">
+“Bu resimler tarihe bir anı olarak kaldı.
+Baktıkça o güzel ve zor askerî günleri,
+ birlikte hatırlıyorum.”
+</div>
+</div>
+</div>
+</div>
+</section>
 
 
 </main>
