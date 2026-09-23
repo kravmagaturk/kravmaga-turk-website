@@ -1164,6 +1164,24 @@ Görsel olmadan da sayfa düzgün çalışır.
     }
 }
 
+
+.kmt-security-page .kmt-standard-mark{display:none!important}
+.kmt-security-single-mark{
+  position:absolute;
+  z-index:1;
+  width:340px;
+  height:340px;
+  right:4%;
+  top:50%;
+  transform:translateY(-50%);
+  background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/82% no-repeat;
+  opacity:.16;
+  pointer-events:none;
+  filter:contrast(1.08);
+}
+@media(max-width:750px){
+  .kmt-security-single-mark{width:220px;height:220px;right:-70px;top:28%;opacity:.10}
+}
 </style>
 <style id="kmt-mobile-final">
 html{box-sizing:border-box;overflow-x:hidden}*,*:before,*:after{box-sizing:inherit}body{overflow-x:hidden}img,video,iframe{max-width:100%;height:auto}a,button{touch-action:manipulation}
@@ -1194,6 +1212,7 @@ html{box-sizing:border-box;overflow-x:hidden}*,*:before,*:after{box-sizing:inher
 
 <div class="kmt-security-photo"></div>
 <div class="kmt-security-overlay"></div>
+<div class="kmt-security-single-mark" aria-hidden="true"></div>
 <div class="kmt-wrap">
 
 <div class="kmt-hero-content">
@@ -1249,11 +1268,11 @@ Kurumsal Eğitim Bilgisi Al
 </a>
 
 <a
-href="egitim-icerigi.html"
+href="./egitim-icerigi.html"
 class="kmt-btn kmt-btn-article"
 aria-label="Krav Maga Türk eğitim içeriği sayfasını aç">
 <span class="kmt-btn-article-text">
-<small>GÜNCEL BİLGİLER</small>
+<small>EĞİTİM MERKEZİ</small>
 <strong>Eğitim İçeriği</strong>
 </span>
 <span class="kmt-btn-article-arrow">↗</span>
