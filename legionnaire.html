@@ -924,6 +924,62 @@ body{
   .leg-story-text,.leg-story-text p,.leg-highlight{max-width:100%!important}
 }
 </style>
+
+<style id="kmt-leg-gallery-fit">
+.leg-photo{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  aspect-ratio:1/1!important;
+  padding:10px!important;
+  background:linear-gradient(145deg,#171717,#0b0b0b)!important;
+  cursor:zoom-in!important;
+}
+.leg-photo img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  transform:none!important;
+  filter:grayscale(12%) contrast(1.03)!important;
+}
+.leg-photo:hover img{
+  transform:scale(1.01)!important;
+  filter:grayscale(0) contrast(1.03)!important;
+}
+.leg-photo:after{display:none!important}
+
+/* Tüfekli kare: yüzün üstte kalmasını garanti et */
+.leg-photo:nth-child(3) img{
+  object-position:center top!important;
+}
+
+.kmt-leg-lightbox{
+  position:fixed;inset:0;z-index:99999;display:none;
+  align-items:center;justify-content:center;padding:24px;
+  background:rgba(0,0,0,.90)
+}
+.kmt-leg-lightbox.open{display:flex}
+.kmt-leg-lightbox-inner{
+  position:relative;width:min(980px,94vw);max-height:90vh;
+  padding:16px;background:#0b0b0b;border:1px solid #333;
+  box-shadow:0 24px 70px rgba(0,0,0,.65)
+}
+.kmt-leg-lightbox img{
+  display:block;width:100%;max-height:82vh;
+  object-fit:contain;background:#050505
+}
+.kmt-leg-close{
+  position:absolute;right:8px;top:8px;z-index:2;
+  width:42px;height:42px;border:0;border-radius:50%;
+  background:#e50922;color:#fff;font-size:24px;cursor:pointer
+}
+@media(max-width:650px){
+  .leg-photo{padding:7px!important}
+  .kmt-leg-lightbox{padding:10px}
+  .kmt-leg-lightbox-inner{padding:10px}
+}
+</style>
 </head>
 
 
@@ -1200,6 +1256,14 @@ loading="lazy">
 
 
 
+
+<div class="kmt-leg-lightbox" id="kmtLegLightbox" aria-hidden="true">
+  <div class="kmt-leg-lightbox-inner">
+    <button class="kmt-leg-close" type="button" aria-label="Fotoğrafı kapat">×</button>
+    <img src="" alt="Büyütülmüş Legionnaire arşiv fotoğrafı">
+  </div>
+</div>
+
 <!-- MEMORY -->
 
 <section class="leg-section">
@@ -1422,5 +1486,46 @@ Geçmişten Bugüne Krav Maga Türk
 
 </main>
 
+
+<script>
+(function(){
+  var box=document.getElementById('kmtLegLightbox');
+  if(!box) return;
+  var big=box.querySelector('img');
+  var close=box.querySelector('.kmt-leg-close');
+
+  document.querySelectorAll('.leg-gallery .leg-photo img').forEach(function(img){
+    img.setAttribute('tabindex','0');
+    img.setAttribute('role','button');
+
+    function openPhoto(){
+      big.src=img.currentSrc || img.src;
+      big.alt=img.alt || 'Legionnaire arşiv fotoğrafı';
+      box.classList.add('open');
+      box.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    }
+
+    img.addEventListener('click',openPhoto);
+    img.addEventListener('keydown',function(e){
+      if(e.key==='Enter' || e.key===' '){
+        e.preventDefault();
+        openPhoto();
+      }
+    });
+  });
+
+  function shut(){
+    box.classList.remove('open');
+    box.setAttribute('aria-hidden','true');
+    big.src='';
+    document.body.style.overflow='';
+  }
+
+  close.addEventListener('click',shut);
+  box.addEventListener('click',function(e){if(e.target===box) shut()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape') shut()});
+})();
+</script>
 <script src="assets/footer.js" defer></script></body>
 </html>
