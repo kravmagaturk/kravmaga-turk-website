@@ -179,7 +179,7 @@
               </div>
             </div>
 
-            <div class="transfer-item"><a href="https://kravmaga.com.tr/blog">BLOG</a></div>
+            <div class="transfer-item"><a href="blog.html">BLOG</a></div>
             <div class="transfer-item"><a href="iletisim.html">İLETİŞİM</a></div>
           </nav>
         </div>
