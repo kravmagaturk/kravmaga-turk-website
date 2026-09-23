@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Eğitmen & Seviye Sorgu | Krav Maga Türk</title>
+<meta name="description" content="Krav Maga Türk eğitmen, asistan, temsilci ve seviye kayıt sorgulama sayfası.">
+<style>
+html,body{margin:0;min-height:100%;background:#050505!important;color:#fff}
+body{font-family:Arial,Helvetica,sans-serif;min-height:100vh}
+#kmt-egitmen-sorgu{min-height:calc(100vh - 140px)!important;margin:0!important;width:100%!important;padding-top:58px!important;padding-bottom:90px!important}
+#kmt-egitmen-sorgu:before{
+  width:420px!important;height:420px!important;
+  right:5%!important;top:48%!important;
+  opacity:.20!important;z-index:0!important
+}
+#kmt-egitmen-sorgu .kmt-wrap{position:relative;z-index:2}
+@media(max-width:700px){
+  #kmt-egitmen-sorgu{padding-top:42px!important;padding-bottom:70px!important}
+  #kmt-egitmen-sorgu:before{width:250px!important;height:250px!important;right:-18%!important;top:34%!important;opacity:.10!important}
+}
+</style>
+</head>
+<body>
+<div id="kmt-egitmen-sorgu">
+<style>
+html,body{background:#050505!important}
+#kmt-egitmen-sorgu,
+#kmt-egitmen-sorgu ~ *,
+body > div,
+main,
+section{--kmt-egitmen-page-black:1}
+
+#kmt-egitmen-sorgu{
+--red:#e50922;--dark:#050505;--card:#111315;--line:#2b2b2f;--muted:#aaa;
+font-family:Arial,sans-serif;
+background:#050505;
+color:#fff;
+padding:54px 16px 70px;
+border-radius:0;
+position:relative;
+overflow:hidden;
+isolation:isolate;
+min-height:100vh;
+width:100vw;
+margin-left:calc(50% - 50vw);
+}
+#kmt-egitmen-sorgu:before{
+content:"";
+position:absolute;
+width:390px;
+height:390px;
+right:5%;
+top:50%;
+transform:translateY(-50%);
+background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/82% no-repeat;
+opacity:.22;
+filter:contrast(1.08);
+-webkit-mask-image:radial-gradient(circle at center,#000 0 55%,rgba(0,0,0,.9) 64%,transparent 80%);
+mask-image:radial-gradient(circle at center,#000 0 55%,rgba(0,0,0,.9) 64%,transparent 80%);
+pointer-events:none;
+z-index:0;
+}
+#kmt-egitmen-sorgu:after{content:none;display:none}
+#kmt-egitmen-sorgu *{box-sizing:border-box}.kmt-wrap{max-width:1000px;margin:auto}.kmt-head{text-align:center;margin-bottom:28px}.kmt-head h1{margin:0 0 9px;font-size:32px;color:#fff}.kmt-head h1 span{color:var(--red)}.kmt-head p{color:#aaa;margin:0;font-size:14px}.kmt-search{background:#151517;border:1px solid #29292d;border-radius:14px;padding:20px}.kmt-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.kmt-field label{display:block;margin:0 0 7px;font-size:13px;color:#bbb;font-weight:700}.kmt-field input,.kmt-field select{width:100%;height:48px;border:1px solid #353539;border-radius:9px;background:#0e0e10;color:#fff;padding:0 13px;font-size:15px;outline:none}.kmt-field input:focus,.kmt-field select:focus{border-color:var(--red)}.kmt-full{grid-column:1/-1}.kmt-btn{width:100%;border:0;border-radius:9px;min-height:50px;padding:12px 20px;background:var(--red);color:#fff;font-size:16px;font-weight:800;cursor:pointer}.kmt-btn:hover{filter:brightness(1.1)}#kmtStatus{text-align:center;padding:18px 5px 4px;color:#aaa;display:none}#kmtResults{display:none;margin-top:22px}.kmt-count{color:#aaa;font-size:13px;margin:0 0 12px}.kmt-card{display:grid;grid-template-columns:150px 1fr;gap:22px;background:#151517;border:1px solid #2c2c30;border-radius:14px;padding:18px;margin-bottom:15px}.kmt-photo{width:150px;height:180px;background:#090909;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid #333}.kmt-photo img{width:100%;height:100%;object-fit:cover}.kmt-no-photo{color:#777;font-size:12px;text-align:center;padding:10px}.kmt-name{font-size:22px;font-weight:800;margin:0 0 6px}.kmt-reg{color:var(--red);font-weight:700;font-size:13px;margin-bottom:13px}.kmt-badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}.kmt-badge{background:#26262a;border:1px solid #39393e;border-radius:20px;padding:5px 10px;font-size:12px;font-weight:700}.kmt-badge.active{background:#11291b;border-color:#245d38;color:#7ee29d}.kmt-badge.inactive{background:#321417;border-color:#67252c;color:#ff9da6}.kmt-info{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.kmt-row{padding:8px 0;border-bottom:1px solid #29292d;font-size:14px}.kmt-label{display:block;color:#888;font-size:11px;margin-bottom:2px;text-transform:uppercase}.kmt-value{color:#eee;font-weight:600}.kmt-empty{background:#151517;border:1px solid #303034;border-radius:12px;padding:30px 15px;text-align:center;color:#aaa}
+@media(max-width:700px){#kmt-egitmen-sorgu{padding:22px 10px}.kmt-head h1{font-size:25px}.kmt-grid{grid-template-columns:1fr}.kmt-full{grid-column:auto}.kmt-card{grid-template-columns:1fr}.kmt-photo{width:140px;height:165px;margin:auto}.kmt-name,.kmt-reg{text-align:center}.kmt-badges{justify-content:center}.kmt-info{grid-template-columns:1fr}}
+
+#kmt-egitmen-sorgu{box-shadow:0 100vh 0 100vh #050505}
+#kmt-egitmen-sorgu .kmt-wrap{position:relative;z-index:2}
+@media(max-width:900px){
+  #kmt-egitmen-sorgu:before{width:330px;height:330px;right:-8%;opacity:.12}
+}
+@media(max-width:700px){
+  #kmt-egitmen-sorgu{padding:38px 10px 60px;min-height:100vh}
+  #kmt-egitmen-sorgu:before{width:250px;height:250px;right:-24%;top:34%;opacity:.09}
+}
+#kmt-egitmen-sorgu:after{content:none!important}
+</style>
+<div class="kmt-wrap">
+<div class="kmt-head"><h1>Eğitmen <span>Seviye Sorgu</span></h1><p>Krav Maga Türk Akademi kayıtlarında eğitmen, asistan, temsilci ve expert bilgilerini sorgulayabilirsiniz.</p></div>
+<div class="kmt-search"><div class="kmt-grid">
+<div class="kmt-field"><label>Kategori</label><select id="kmtRole"><option value="">Tüm Kategoriler</option><option value="instructor">Instructor</option><option value="asistan">Asistan</option><option value="temsilci">Temsilci</option><option value="expert">Expert</option></select></div>
+<div class="kmt-field"><label>Durum</label><select id="kmtActive"><option value="">Tüm Durumlar</option><option value="faal">Faal</option><option value="faal_olmayan">Faal Olmayan</option></select></div>
+<div class="kmt-field kmt-full"><label>Ad Soyad veya Sicil No</label><input id="kmtText" type="text" autocomplete="off" placeholder="Arama yapın"></div>
+<div class="kmt-full"><button class="kmt-btn" type="button" onclick="kmtSearch()">SORGULA</button></div>
+</div><div id="kmtStatus"></div></div><div id="kmtResults"></div></div>
+<script>
+(function(){
+const DB_URL="https://kravmaga-diploma-default-rtdb.firebaseio.com";
+const ROLE_NAMES={instructor:"Instructor",asistan:"Asistan",assistant:"Asistan",temsilci:"Temsilci",representative:"Temsilci",expert:"Expert"};
+function esc(v){return String(v==null?"":v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;")}
+function norm(v){return String(v||"").toLocaleLowerCase("tr-TR").replace(/ı/g,"i").replace(/ş/g,"s").replace(/ğ/g,"g").replace(/ü/g,"u").replace(/ö/g,"o").replace(/ç/g,"c").trim()}
+function rolesOf(r){let roles=[];if(Array.isArray(r.publicRoles))roles=roles.concat(r.publicRoles);if(Array.isArray(r.roles))roles=roles.concat(r.roles);if(r.publicRole)roles.push(r.publicRole);if(r.role)roles=roles.concat(String(r.role).split(/[,•]+/));if(r.instructor)roles.push("instructor");if(r.assistant)roles.push("asistan");if(r.representative)roles.push("temsilci");if(r.expert)roles.push("expert");roles=roles.map(x=>{x=norm(x);if(x==="assistant")return"asistan";if(x==="representative")return"temsilci";if(x==="antrenor")return"instructor";return x});return[...new Set(roles.filter(Boolean))]}
+function statusOf(r){const s=norm(r.status||"faal");return(s==="pasif"||s==="faal olmayan"||s==="faal_olmayan"||s==="inactive")?"faal_olmayan":"faal"}
+function parseDate(v){if(!v)return null;const s=String(v).trim(),m=s.match(/^(\d{1,2})[.\-/](\d{1,2})[.\-/](\d{4})$/);if(m){const d=new Date(+m[3],+m[2]-1,+m[1]);if(!isNaN(d))return d}const d=new Date(s);return isNaN(d)?null:d}
+function duration(v){const start=parseDate(v);if(!start)return"-";const now=new Date();if(start>now)return"-";let years=now.getFullYear()-start.getFullYear(),months=now.getMonth()-start.getMonth(),days=now.getDate()-start.getDate();if(days<0){months--;days+=new Date(now.getFullYear(),now.getMonth(),0).getDate()}if(months<0){years--;months+=12}const out=[];if(years)out.push(years+" yıl");if(months)out.push(months+" ay");if(days||!out.length)out.push(days+" gün");return out.join(" ")}
+function levelOf(r){if(r.levelText)return r.levelText;if(r.level)return r.level;if(r.levels)return Array.isArray(r.levels)?r.levels.join(", "):r.levels;if(r.subLevel)return r.subLevel;return"-"}
+function card(r,key){const roles=rolesOf(r),status=statusOf(r),roleBadges=roles.map(role=>'<span class="kmt-badge">'+esc(ROLE_NAMES[role]||role)+'</span>').join(""),statusBadge=status==="faal"?'<span class="kmt-badge active">● Faal</span>':'<span class="kmt-badge inactive">● Faal Olmayan</span>',photo=r.webPortrait||r.portrait||r.aiPortrait||r.photo||"",name=r.name||r.fullName||r.adSoyad||"-",reg=r.registerNo||r.register||r.sicilNo||key||"-",join=r.joinDate||r.academyJoinDate||r.akademiyeGirisTarihi||"-",loc=r.location||r.lokasyon||"-",photoHTML=photo?'<img src="'+esc(photo)+'" alt="'+esc(name)+'">':'<div class="kmt-no-photo">Web profil görseli<br>bulunmuyor</div>';return '<div class="kmt-card"><div class="kmt-photo">'+photoHTML+'</div><div><div class="kmt-name">'+esc(name)+'</div><div class="kmt-reg">Sicil No: '+esc(reg)+'</div><div class="kmt-badges">'+roleBadges+statusBadge+'</div><div class="kmt-info"><div class="kmt-row"><span class="kmt-label">Kategori</span><span class="kmt-value">'+esc(roles.map(x=>ROLE_NAMES[x]||x).join(", ")||"-")+'</span></div><div class="kmt-row"><span class="kmt-label">Seviye</span><span class="kmt-value">'+esc(levelOf(r))+'</span></div><div class="kmt-row"><span class="kmt-label">Lokasyon</span><span class="kmt-value">'+esc(loc)+'</span></div><div class="kmt-row"><span class="kmt-label">Durum</span><span class="kmt-value">'+(status==="faal"?"Faal":"Faal Olmayan")+'</span></div><div class="kmt-row"><span class="kmt-label">Akademiye Giriş Tarihi</span><span class="kmt-value">'+esc(join)+'</span></div><div class="kmt-row"><span class="kmt-label">Eğitim Süresi</span><span class="kmt-value">'+esc(duration(join))+'</span></div></div></div></div>'}
+window.kmtSearch=async function(){const role=document.getElementById("kmtRole").value,active=document.getElementById("kmtActive").value,textq=norm(document.getElementById("kmtText").value),statusBox=document.getElementById("kmtStatus"),resultBox=document.getElementById("kmtResults");statusBox.style.display="block";statusBox.textContent="Kayıtlar aranıyor...";resultBox.style.display="none";resultBox.innerHTML="";try{const response=await fetch(DB_URL+"/publicInstructors.json?ts="+Date.now(),{cache:"no-store"});if(!response.ok)throw new Error("HTTP "+response.status);const data=await response.json();if(!data){statusBox.textContent="Kayıt bulunamadı.";return}let records=Object.keys(data).map(key=>({key,data:data[key]||{}}));records=records.filter(item=>{const r=item.data,roles=rolesOf(r),status=statusOf(r);if(role&&!roles.includes(role))return false;if(active&&status!==active)return false;if(textq){const searchable=norm([r.name,r.fullName,r.adSoyad,r.registerNo,r.register,r.sicilNo,item.key].filter(Boolean).join(" "));if(!searchable.includes(textq))return false}return true});records.sort((a,b)=>norm(a.data.name||a.data.fullName||a.data.adSoyad).localeCompare(norm(b.data.name||b.data.fullName||b.data.adSoyad),"tr"));statusBox.style.display="none";resultBox.style.display="block";if(!records.length){resultBox.innerHTML='<div class="kmt-empty">Seçtiğiniz kriterlere uygun kayıt bulunamadı.</div>';return}resultBox.innerHTML='<div class="kmt-count">'+records.length+' kayıt bulundu.</div>'+records.map(item=>card(item.data,item.key)).join("")}catch(err){console.error(err);statusBox.style.display="block";statusBox.textContent="Kayıt sistemine şu anda ulaşılamıyor. Lütfen tekrar deneyin."}};
+document.getElementById("kmtText").addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();window.kmtSearch()}});
+})();
+</script>
+</div>
+
+<script src="assets/footer.js" defer></script>
+</body>
+</html>
