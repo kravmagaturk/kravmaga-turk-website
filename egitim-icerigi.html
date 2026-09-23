@@ -50,6 +50,21 @@ body{overflow-x:hidden}
   .kmt-grid{grid-template-columns:1fr}
   .kmt-btn{width:100%}
 }
+
+.kmt-hub-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.kmt-hub-card{
+  position:relative;display:block;min-height:190px;padding:26px;
+  border:1px solid #292929;border-radius:12px;background:
+  radial-gradient(circle at 100% 0%,rgba(232,24,34,.10),transparent 36%),#101010;
+  color:#fff;text-decoration:none;transition:.18s ease
+}
+.kmt-hub-card:hover{transform:translateY(-3px);border-color:rgba(232,24,34,.62);background:
+  radial-gradient(circle at 100% 0%,rgba(232,24,34,.18),transparent 40%),#111}
+.kmt-hub-card small{display:block;color:#e81822;font-size:9px;font-weight:900;letter-spacing:1.6px;margin-bottom:18px}
+.kmt-hub-card h3{margin:0 0 8px;font-size:23px}
+.kmt-hub-card p{margin:0;color:#8e8e8e;font-size:13px;line-height:1.65;max-width:430px}
+.kmt-hub-arrow{position:absolute;right:20px;bottom:18px;color:#e81822;font-size:22px;font-weight:900}
+@media(max-width:750px){.kmt-hub-grid{grid-template-columns:1fr}.kmt-hub-card{min-height:160px}}
 </style>
 </head>
 <body>
@@ -62,6 +77,43 @@ body{overflow-x:hidden}
       <h1>Yakın Koruma ve Görev Güvenliği</h1>
       <div class="kmt-line"></div>
       <p class="kmt-lead">Yakın koruma görevlerinde farkındalık, ekip koordinasyonu, hareket disiplini ve risk yönetimini tek çerçevede anlatan görsel eğitim özeti.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="kmt-section kmt-dark">
+  <div class="kmt-wrap">
+    <div class="kmt-heading">
+      <span>EĞİTİM MERKEZİ</span>
+      <h2>Eğitim Alanını Seçin</h2>
+      <p>Her eğitim alanı kendi sayfası ve kendi içerik yapısıyla açılır. Bu merkez zamanla CPO benzeri özel eğitim şablonlarının ortak giriş noktası olacaktır.</p>
+    </div>
+    <div class="kmt-hub-grid">
+      <a class="kmt-hub-card" href="krav-maga.html">
+        <small>01 • GENEL DERS</small>
+        <h3>Krav Maga Genel Dersler</h3>
+        <p>Başlangıç ve devam eden grup eğitimleri, seans yapısı ve temel eğitim içeriği.</p>
+        <span class="kmt-hub-arrow">→</span>
+      </a>
+      <a class="kmt-hub-card" href="ozel-dersler.html">
+        <small>02 • ÖZEL DERS</small>
+        <h3>Bire Bir Eğitim</h3>
+        <p>Özel ders paketleri, bire bir çalışma sistemi ve kişisel eğitim programları.</p>
+        <span class="kmt-hub-arrow">→</span>
+      </a>
+      <a class="kmt-hub-card" href="egitmen-and-seviye-sorgu.html">
+        <small>03 • SINAVLAR & SEVİYE</small>
+        <h3>Seviye ve Eğitmen Sorgu</h3>
+        <p>Seviye, eğitmen ve kayıt doğrulama yapısına geçiş. Sınav modülü daha sonra bu yapıya ayrıca bağlanabilir.</p>
+        <span class="kmt-hub-arrow">→</span>
+      </a>
+      <a class="kmt-hub-card" href="yakin-koruma.html">
+        <small>04 • CPO</small>
+        <h3>Yakın Koruma / CPO</h3>
+        <p>Yakın koruma görevleri, güvenlik danışmanlığı ve CPO eğitim modülleri.</p>
+        <span class="kmt-hub-arrow">→</span>
+      </a>
     </div>
   </div>
 </section>
