@@ -87,41 +87,37 @@
       .kmt-footer-copy strong{color:#bdbdbd!important}
 
 
-      /* ORTAK 19-48 LOGO FILIGRANI */
-      .bc-watermark,
-      .kmt-representative-page .watermark,
-      .kmt-belgeler .water,
-      #kmt-basin .basin-watermark{
-        width:430px!important;height:430px!important;
-        background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/contain no-repeat!important;
-        opacity:.085!important;filter:grayscale(1)!important;
-        color:transparent!important;font-size:0!important;letter-spacing:0!important;
-        pointer-events:none!important
-      }
-      .bc-watermark>*,.kmt-representative-page .watermark>*,
-      .kmt-belgeler .water>*,#kmt-basin .basin-watermark>*{
+
+      /* TEK STANDART 19-48 LOGO */
+      .bc-watermark,.bc-video-watermark,.bc-section-year,.bc-dark-year,.bc-photo-year,
+      .kmt-representative-page .watermark,.kmt-belgeler .water,
+      #kmt-basin .basin-watermark,#kmt-basin .basin-media::before,
+      .kmt-ref-watermark,.kmt-watermark,
+      .kmt-representative-page .final::before,.kmt-belgeler .bottom::before{
         display:none!important
       }
-
-      .bc-video-watermark,.bc-section-year,.bc-dark-year{
-        color:transparent!important;font-size:0!important;letter-spacing:0!important;
-        width:250px!important;height:250px!important;
+      .kmt-hero:before{content:none!important}
+      .kmt-standard-mark{
+        position:absolute!important;
+        width:360px!important;height:360px!important;
+        right:4%!important;top:50%!important;
+        transform:translateY(-50%)!important;
         background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/contain no-repeat!important;
-        opacity:.055!important;filter:grayscale(1)!important;
-        pointer-events:none!important
+        opacity:.085!important;filter:grayscale(1)!important;
+        pointer-events:none!important;z-index:1!important
       }
-
-      .kmt-representative-page .final::before,
-      .kmt-belgeler .bottom::before,
-      #kmt-basin .basin-media::before{
-        content:""!important;
-        width:320px!important;height:320px!important;
-        background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/contain no-repeat!important;
-        opacity:.045!important;filter:grayscale(1)!important;
-        color:transparent!important;font-size:0!important;letter-spacing:0!important;
-        pointer-events:none!important
+      .bc-hero,.kmt-representative-page .hero,.kmt-belgeler .hero,
+      #kmt-basin .basin-hero,.kmt-ref-hero,.leg-hero,.kmt-hero,.cpo-hero,.page{
+        position:relative!important
       }
-
+      .bc-hero-content,.kmt-representative-page .hero-inner,.kmt-belgeler .hero-in,
+      #kmt-basin .basin-hero-inner,.kmt-ref-hero-content,.leg-hero-content,
+      .kmt-hero-content,.cpo-hero-content,.page>.wrap{
+        position:relative!important;z-index:2!important
+      }
+      @media(max-width:900px){
+        .kmt-standard-mark{width:250px!important;height:250px!important;right:-2%!important;opacity:.065!important}
+      }
       @media(max-width:900px){
         .transfer-nav-inner{min-height:64px;padding:0 14px}
         .transfer-brand{font-size:14px}
@@ -151,6 +147,26 @@
       }
     `;
     document.head.appendChild(style);
+  }
+
+
+  function injectStandardMark() {
+    document.querySelectorAll(".kmt-standard-mark").forEach(function(el){el.remove()});
+    var hero =
+      document.querySelector(".bc-hero") ||
+      document.querySelector(".kmt-representative-page .hero") ||
+      document.querySelector(".kmt-belgeler .hero") ||
+      document.querySelector("#kmt-basin .basin-hero") ||
+      document.querySelector(".kmt-ref-hero") ||
+      document.querySelector(".leg-hero") ||
+      document.querySelector(".kmt-hero") ||
+      document.querySelector(".cpo-hero") ||
+      document.querySelector("main.page");
+    if(!hero) return;
+    var mark=document.createElement("div");
+    mark.className="kmt-standard-mark";
+    mark.setAttribute("aria-hidden","true");
+    hero.appendChild(mark);
   }
 
   function buildHeader() {
@@ -319,6 +335,7 @@
       document.body.appendChild(newFooter);
     }
 
+    injectStandardMark();
     bindMenu();
   }
 
