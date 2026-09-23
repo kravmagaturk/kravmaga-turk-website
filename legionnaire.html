@@ -926,22 +926,36 @@ body{
 </style>
 
 <style id="kmt-leg-gallery-fit">
+.leg-gallery{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:12px!important;
+}
 .leg-photo{
+  position:relative!important;
+  width:100%!important;
+  aspect-ratio:1/1!important;
+  min-height:0!important;
+  padding:8px!important;
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
-  aspect-ratio:1/1!important;
-  padding:10px!important;
+  overflow:hidden!important;
   background:linear-gradient(145deg,#171717,#0b0b0b)!important;
+  border:1px solid #2a2a2a!important;
+  border-radius:0!important;
   cursor:zoom-in!important;
 }
 .leg-photo img{
+  display:block!important;
   width:100%!important;
   height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
   object-fit:contain!important;
   object-position:center center!important;
   transform:none!important;
-  filter:grayscale(12%) contrast(1.03)!important;
+  filter:grayscale(10%) contrast(1.03)!important;
 }
 .leg-photo:hover img{
   transform:scale(1.01)!important;
@@ -949,11 +963,19 @@ body{
 }
 .leg-photo:after{display:none!important}
 
-/* Tüfekli kare: yüzün üstte kalmasını garanti et */
+/* 3. fotoğraf özel kalibrasyon */
+.leg-photo:nth-child(3){
+  padding:4px!important;
+}
 .leg-photo:nth-child(3) img{
+  width:94%!important;
+  height:94%!important;
+  object-fit:contain!important;
   object-position:center top!important;
+  transform:translateY(2%) scale(.98)!important;
 }
 
+/* Aynı sayfa lightbox */
 .kmt-leg-lightbox{
   position:fixed;inset:0;z-index:99999;display:none;
   align-items:center;justify-content:center;padding:24px;
@@ -974,8 +996,13 @@ body{
   width:42px;height:42px;border:0;border-radius:50%;
   background:#e50922;color:#fff;font-size:24px;cursor:pointer
 }
+@media(max-width:1000px){
+  .leg-gallery{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
 @media(max-width:650px){
-  .leg-photo{padding:7px!important}
+  .leg-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+  .leg-photo{padding:6px!important}
+  .leg-photo:nth-child(3){padding:3px!important}
   .kmt-leg-lightbox{padding:10px}
   .kmt-leg-lightbox-inner{padding:10px}
 }
