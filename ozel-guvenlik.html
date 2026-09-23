@@ -144,10 +144,10 @@ Görsel olmadan da sayfa düzgün çalışır.
     inset:0;
     z-index:-3;
 
-    background-image:url("./assetsozel-guvenlik-xray.webp?v=2");
+    background-image:url("./assetsozel-guvenlik-xray.webp");
 
     background-size:cover;
-    background-position:center center;
+    background-position:68% center;
     background-repeat:no-repeat;
 }
 
@@ -162,11 +162,11 @@ Görsel olmadan da sayfa düzgün çalışır.
     background:
         linear-gradient(
             90deg,
-            rgba(5,5,5,.98) 0%,
-            rgba(5,5,5,.92) 25%,
-            rgba(5,5,5,.72) 43%,
-            rgba(5,5,5,.26) 68%,
-            rgba(5,5,5,.08) 100%
+            rgba(5,5,5,.96) 0%,
+            rgba(5,5,5,.88) 25%,
+            rgba(5,5,5,.64) 43%,
+            rgba(5,5,5,.20) 68%,
+            rgba(5,5,5,.04) 100%
         ),
         linear-gradient(
             0deg,
@@ -178,29 +178,7 @@ Görsel olmadan da sayfa düzgün çalışır.
 
 /* GERÇEK 19-48 LOGO */
 
-.kmt-hero-logo{
-    position:absolute;
-    z-index:-1;
-
-    width:360px;
-    height:360px;
-
-    left:4%;
-    top:50%;
-
-    transform:translateY(-50%);
-
-    background:
-        url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png")
-        center/contain no-repeat;
-
-    opacity:.06;
-    filter:grayscale(1);
-
-    pointer-events:none;
-}
-
-
+.kmt-hero-logo{display:none!important}
 .kmt-hero-content{
     position:relative;
     z-index:2;
@@ -1199,8 +1177,6 @@ html{box-sizing:border-box;overflow-x:hidden}*,*:before,*:after{box-sizing:inher
 
 <div class="kmt-security-photo"></div>
 <div class="kmt-security-overlay"></div>
-<div class="kmt-hero-logo"></div>
-
 <div class="kmt-wrap">
 
 <div class="kmt-hero-content">
