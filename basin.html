@@ -10,6 +10,1011 @@ html{box-sizing:border-box;overflow-x:hidden}*,*:before,*:after{box-sizing:inher
 </style>
 </head>
 <body style="margin:0;background:#050505">
+<section id="kmt-basin">
+
+<style>
+#kmt-basin,
+#kmt-basin *{
+  box-sizing:border-box;
+}
+
+#kmt-basin{
+  --red:#e50922;
+  --black:#050505;
+  --dark:#0a0a0b;
+  --panel:#111113;
+  --panel2:#171719;
+  --line:#29292d;
+  --white:#fff;
+  --muted:#a3a3a8;
+
+  position:relative;
+  width:100%;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  background:var(--black);
+  color:var(--white);
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+#kmt-basin a{
+  color:inherit;
+}
+
+#kmt-basin .basin-wrap{
+  width:min(1240px,90%);
+  margin:0 auto;
+}
+
+#kmt-basin .basin-label{
+  display:block;
+  margin-bottom:10px;
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+#kmt-basin h1,
+#kmt-basin h2,
+#kmt-basin h3{
+  color:#fff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+#kmt-basin .basin-hero{
+  position:relative;
+  min-height:440px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 75% 45%,
+      rgba(145,5,27,.30),
+      rgba(30,7,11,.18) 32%,
+      #070708 68%
+    );
+
+  border-bottom:1px solid #29292d;
+}
+
+#kmt-basin .basin-watermark{
+  position:absolute;
+  right:1%;
+  top:48%;
+  transform:translateY(-50%);
+  text-align:right;
+  pointer-events:none;
+  user-select:none;
+}
+
+#kmt-basin .basin-watermark strong{
+  display:block;
+  color:rgba(255,255,255,.035);
+  font-size:clamp(170px,28vw,390px);
+  font-weight:900;
+  line-height:.72;
+  letter-spacing:-18px;
+}
+
+#kmt-basin .basin-watermark span{
+  display:block;
+  margin-top:28px;
+  color:rgba(229,9,34,.09);
+  font-size:clamp(20px,4vw,50px);
+  font-weight:900;
+  letter-spacing:7px;
+  white-space:nowrap;
+}
+
+#kmt-basin .basin-hero-content{
+  position:relative;
+  z-index:2;
+  max-width:820px;
+  padding:80px 0;
+}
+
+#kmt-basin .basin-hero h1{
+  margin:0;
+  font-size:clamp(52px,8vw,94px);
+  line-height:.9;
+  font-weight:900;
+  letter-spacing:-4px;
+}
+
+#kmt-basin .basin-hero h1 span{
+  display:block;
+  margin-top:8px;
+  color:var(--red);
+  font-size:.42em;
+  line-height:1.1;
+  letter-spacing:1px;
+}
+
+#kmt-basin .basin-redline{
+  width:90px;
+  height:5px;
+  margin:28px 0;
+  background:var(--red);
+}
+
+#kmt-basin .basin-lead{
+  max-width:700px;
+  margin:0;
+  color:#aaa;
+  font-size:17px;
+  line-height:1.75;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+#kmt-basin .basin-intro{
+  position:relative;
+  padding:70px 0 55px;
+  background:#0a0a0b;
+}
+
+#kmt-basin .basin-intro-grid{
+  display:grid;
+  grid-template-columns:.7fr 1.3fr;
+  gap:55px;
+  align-items:start;
+}
+
+#kmt-basin .basin-intro h2{
+  margin:0;
+  font-size:clamp(30px,4vw,47px);
+  line-height:1.05;
+  font-weight:900;
+}
+
+#kmt-basin .basin-intro-copy p{
+  margin:0 0 17px;
+  color:#aaa;
+  font-size:15px;
+  line-height:1.8;
+}
+
+
+/* =========================
+   MEDYA ARŞİVİ
+========================= */
+
+#kmt-basin .basin-media{
+  position:relative;
+  padding:65px 0 75px;
+  background:#050505;
+}
+
+#kmt-basin .basin-media::before{
+  content:"1948";
+  position:absolute;
+  right:-30px;
+  top:0;
+  color:rgba(255,255,255,.022);
+  font-size:clamp(160px,25vw,370px);
+  line-height:.8;
+  font-weight:900;
+  pointer-events:none;
+}
+
+#kmt-basin .basin-heading{
+  position:relative;
+  z-index:2;
+  margin-bottom:32px;
+}
+
+#kmt-basin .basin-heading h2{
+  margin:0;
+  font-size:clamp(31px,4vw,47px);
+  line-height:1.05;
+  font-weight:900;
+}
+
+#kmt-basin .basin-heading p{
+  max-width:700px;
+  margin:15px 0 0;
+  color:#929297;
+  font-size:14px;
+  line-height:1.7;
+}
+
+
+/* =========================
+   VIDEO GRID
+========================= */
+
+#kmt-basin .basin-video-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:15px;
+}
+
+#kmt-basin .basin-video{
+  position:relative;
+  min-width:0;
+  overflow:hidden;
+  background:#111113;
+  border:1px solid #29292d;
+  border-bottom:4px solid var(--red);
+  cursor:pointer;
+  transition:
+    transform .2s ease,
+    border-color .2s ease;
+}
+
+#kmt-basin .basin-video:hover{
+  transform:translateY(-3px);
+  border-color:#4a4a4f;
+  border-bottom-color:var(--red);
+}
+
+#kmt-basin .basin-video-media{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:#090909;
+}
+
+#kmt-basin .basin-video-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .3s ease;
+}
+
+#kmt-basin .basin-video:hover .basin-video-media img{
+  transform:scale(1.035);
+}
+
+#kmt-basin .basin-video-media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.65),
+      rgba(0,0,0,.02) 55%
+    );
+}
+
+#kmt-basin .basin-play{
+  position:absolute;
+  z-index:3;
+  left:50%;
+  top:50%;
+  width:58px;
+  height:58px;
+  transform:translate(-50%,-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--red);
+  border-radius:50%;
+  box-shadow:0 8px 25px rgba(0,0,0,.45);
+  transition:transform .2s ease;
+}
+
+#kmt-basin .basin-video:hover .basin-play{
+  transform:translate(-50%,-50%) scale(1.08);
+}
+
+#kmt-basin .basin-play span{
+  margin-left:4px;
+  color:#fff;
+  font-size:21px;
+}
+
+#kmt-basin .basin-video-number{
+  position:absolute;
+  z-index:3;
+  top:10px;
+  right:12px;
+  color:rgba(255,255,255,.7);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+#kmt-basin .basin-video-info{
+  padding:16px 17px 17px;
+}
+
+#kmt-basin .basin-video-info small{
+  display:block;
+  margin-bottom:6px;
+  color:var(--red);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+#kmt-basin .basin-video-info h3{
+  margin:0;
+  font-size:15px;
+  line-height:1.4;
+  font-weight:800;
+}
+
+#kmt-basin .basin-video iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+
+/* =========================
+   BASIN HABERİ
+========================= */
+
+#kmt-basin .basin-news{
+  padding:70px 0;
+  background:#0c0c0e;
+  border-top:1px solid #242428;
+}
+
+#kmt-basin .basin-news-card{
+  position:relative;
+  display:grid;
+  grid-template-columns:180px 1fr auto;
+  gap:30px;
+  align-items:center;
+  padding:30px;
+  overflow:hidden;
+  background:#131315;
+  border:1px solid #2c2c30;
+  border-left:5px solid var(--red);
+  text-decoration:none;
+  transition:.2s ease;
+}
+
+#kmt-basin .basin-news-card:hover{
+  transform:translateY(-3px);
+  border-color:#48484d;
+  border-left-color:var(--red);
+}
+
+#kmt-basin .basin-news-logo{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100px;
+  color:#fff;
+  background:#a60000;
+  font-family:Georgia,serif;
+  font-size:28px;
+  font-weight:700;
+}
+
+#kmt-basin .basin-news-copy small{
+  display:block;
+  margin-bottom:8px;
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+#kmt-basin .basin-news-copy h3{
+  margin:0 0 8px;
+  font-size:23px;
+  line-height:1.25;
+}
+
+#kmt-basin .basin-news-copy p{
+  margin:0;
+  color:#999;
+  font-size:14px;
+  line-height:1.6;
+}
+
+#kmt-basin .basin-news-arrow{
+  color:var(--red);
+  font-size:35px;
+  font-weight:900;
+}
+
+
+/* =========================
+   KURUMSAL ÇALIŞMALAR
+========================= */
+
+#kmt-basin .basin-organizations{
+  position:relative;
+  padding:70px 0;
+  overflow:hidden;
+  background:#050505;
+}
+
+#kmt-basin .basin-organizations::after{
+  content:"KRAV MAGA TÜRK";
+  position:absolute;
+  left:3%;
+  bottom:-15px;
+  color:rgba(229,9,34,.045);
+  font-size:clamp(50px,10vw,140px);
+  font-weight:900;
+  white-space:nowrap;
+  pointer-events:none;
+}
+
+#kmt-basin .basin-org-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin-top:30px;
+}
+
+#kmt-basin .basin-org{
+  min-height:95px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  text-align:center;
+  background:#121214;
+  border:1px solid #28282c;
+  border-top:3px solid var(--red);
+}
+
+#kmt-basin .basin-org strong{
+  color:#e7e7e9;
+  font-size:13px;
+  line-height:1.4;
+}
+
+
+/* =========================
+   BELEDİYELER
+========================= */
+
+#kmt-basin .basin-municipality{
+  padding:70px 0;
+  background:#0b0b0c;
+}
+
+#kmt-basin .basin-municipality-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin-top:30px;
+}
+
+#kmt-basin .basin-municipality-card{
+  min-height:125px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:24px;
+  background:#141416;
+  border:1px solid #29292d;
+  border-bottom:4px solid var(--red);
+}
+
+#kmt-basin .basin-municipality-card small{
+  margin-bottom:7px;
+  color:var(--red);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+#kmt-basin .basin-municipality-card strong{
+  color:#fff;
+  font-size:17px;
+  line-height:1.35;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+#kmt-basin .basin-cta{
+  position:relative;
+  padding:75px 0;
+  text-align:center;
+  background:
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(150,0,25,.28),
+      transparent 50%
+    ),
+    #070708;
+  border-top:1px solid #29292d;
+}
+
+#kmt-basin .basin-cta h2{
+  margin:0 0 15px;
+  font-size:clamp(29px,4vw,44px);
+  font-weight:900;
+}
+
+#kmt-basin .basin-cta p{
+  max-width:650px;
+  margin:0 auto 27px;
+  color:#999;
+  font-size:14px;
+  line-height:1.7;
+}
+
+#kmt-basin .basin-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:14px 29px;
+  color:#fff !important;
+  background:var(--red);
+  border:1px solid var(--red);
+  border-radius:3px;
+  text-decoration:none !important;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+  transition:.2s ease;
+}
+
+#kmt-basin .basin-button:hover{
+  transform:translateY(-2px);
+  background:#bd101c;
+  border-color:#bd101c;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:1000px){
+
+  #kmt-basin .basin-video-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  #kmt-basin .basin-org-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  #kmt-basin .basin-intro-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+}
+
+
+/* =========================
+   TELEFON
+========================= */
+
+@media(max-width:650px){
+
+  #kmt-basin .basin-hero{
+    min-height:350px;
+  }
+
+  #kmt-basin .basin-hero-content{
+    padding:60px 0;
+  }
+
+  #kmt-basin .basin-hero h1{
+    font-size:54px;
+    letter-spacing:-3px;
+  }
+
+  #kmt-basin .basin-watermark{
+    right:-20%;
+  }
+
+  #kmt-basin .basin-watermark strong{
+    font-size:210px;
+    letter-spacing:-12px;
+  }
+
+  #kmt-basin .basin-watermark span{
+    font-size:20px;
+    letter-spacing:3px;
+  }
+
+  #kmt-basin .basin-intro,
+  #kmt-basin .basin-media,
+  #kmt-basin .basin-news,
+  #kmt-basin .basin-organizations,
+  #kmt-basin .basin-municipality{
+    padding:45px 0;
+  }
+
+  #kmt-basin .basin-video-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  #kmt-basin .basin-org-grid{
+    grid-template-columns:1fr;
+  }
+
+  #kmt-basin .basin-municipality-grid{
+    grid-template-columns:1fr;
+  }
+
+  #kmt-basin .basin-news-card{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:20px;
+  }
+
+  #kmt-basin .basin-news-logo{
+    min-height:80px;
+  }
+
+  #kmt-basin .basin-news-arrow{
+    display:none;
+  }
+
+  #kmt-basin .basin-button{
+    width:100%;
+  }
+}
+
+</style>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="basin-hero">
+
+  <div class="basin-watermark" aria-hidden="true">
+    <strong>1948</strong>
+    <span>KRAV MAGA TÜRK</span>
+  </div>
+
+  <div class="basin-wrap">
+
+    <div class="basin-hero-content">
+
+      <span class="basin-label">
+        KRAV MAGA TÜRK • MEDYA ARŞİVİ
+      </span>
+
+      <!-- SAYFADAKİ TEK H1 -->
+      <h1>
+        BASIN
+        <span>VE MEDYA ARŞİVİ</span>
+      </h1>
+
+      <div class="basin-redline"></div>
+
+      <p class="basin-lead">
+        Krav Maga Türk'ün televizyon programları, haber çalışmaları,
+        röportajları, eğitim çekimleri ve yıllar içerisinde
+        gerçekleştirilen medya çalışmalarından seçilmiş kayıtlar.
+      </p>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     BASIN ÖYKÜSÜ
+========================= -->
+
+<section class="basin-intro">
+
+  <div class="basin-wrap basin-intro-grid">
+
+    <div>
+      <span class="basin-label">KRAV MAGA TÜRK</span>
+      <h2>BASIN ÖYKÜMÜZ</h2>
+    </div>
+
+    <div class="basin-intro-copy">
+
+      <p>
+        Krav Maga Türk'ün yakın savunma, kişisel güvenlik ve
+        profesyonel güvenlik alanındaki çalışmaları yıllar içerisinde
+        farklı televizyon, haber ve medya çalışmalarında yer aldı.
+      </p>
+
+      <p>
+        Bu arşivde televizyon programları, röportajlar, uygulamalı
+        çekimler ve çeşitli kurumlarla gerçekleştirilen çalışmalardan
+        seçilmiş görüntülere ulaşabilirsiniz.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     VİDEOLAR
+========================= -->
+
+<section class="basin-media">
+
+  <div class="basin-wrap">
+
+    <div class="basin-heading">
+      <span class="basin-label">VİDEO ARŞİVİ</span>
+      <h2>TELEVİZYON • HABER • RÖPORTAJ</h2>
+
+      <p>
+        Videoyu izlemek için kartın üzerindeki oynat düğmesine dokunun.
+        Video yalnızca oynatıldığında yüklenir.
+      </p>
+    </div>
+
+
+    <div class="basin-video-grid">
+
+
+      <!-- 01 -->
+      <article class="basin-video"
+               data-video="LclrsMQorOo"
+               tabindex="0"
+               role="button"
+               aria-label="Krav Maga Türk basın videosu 1">
+
+        <div class="basin-video-media">
+          <img
+            src="https://i.ytimg.com/vi/LclrsMQorOo/hqdefault.jpg"
+            alt="Krav Maga Türk basın ve medya videosu"
+            loading="lazy">
+          <span class="basin-video-number">01</span>
+          <div class="basin-play"><span>▶</span></div>
+        </div>
+
+        <div class="basin-video-info">
+          <small>KRAV MAGA TÜRK</small>
+          <h3>Basın ve Medya Arşivi</h3>
+        </div>
+
+      </article>
+
+
+      <!-- 02 -->
+      <article class="basin-video"
+               data-video="Dc-0kgMLf5w"
+               tabindex="0"
+               role="button"
+               aria-label="Krav Maga Türk basın videosu 2">
+
+        <div class="basin-video-media">
+          <img
+            src="https://i.ytimg.com/vi/Dc-0kgMLf5w/hqdefault.jpg"
+            alt="Krav Maga Türk televizyon çalışması"
+            loading="lazy">
+          <span class="basin-video-number">02</span>
+          <div class="basin-play"><span>▶</span></div>
+        </div>
+
+        <div class="basin-video-info">
+          <small>TELEVİZYON</small>
+          <h3>Krav Maga Türk Medya Çalışması</h3>
+        </div>
+
+      </article>
+
+
+      <!-- 03 -->
+      <article class="basin-video"
+               data-video="_v19wCPidcw"
+               tabindex="0"
+               role="button"
+               aria-label="Krav Maga Türk basın videosu 3">
+
+        <div class="basin-video-media">
+          <img
+            src="https://i.ytimg.com/vi/_v19wCPidcw/hqdefault.jpg"
+            alt="Krav Maga Türk medya arşivi"
+            loading="lazy">
+          <span class="basin-video-number">03</span>
+          <div class="basin-play"><span>▶</span></div>
+        </div>
+
+        <div class="basin-video-info">
+          <small>MEDYA</small>
+          <h3>Krav Maga ve Yakın Savunma</h3>
+        </div>
+
+      </article>
+
+
+      <!-- 04 -->
+      <article class="basin-video"
+               data-video="IgmnKaO8Zgg"
+               tabindex="0"
+               role="button"
+               aria-label="Krav Maga Türk basın videosu 4">
+
+        <div class="basin-video-media">
+          <img
+            src="https://i.ytimg.com/vi/IgmnKaO8Zgg/hqdefault.jpg"
+            alt="Krav Maga Türk televizyon videosu"
+            loading="lazy">
+          <span class="basin-video-number">04</span>
+          <div class="basin-play"><span>▶</span></div>
+        </div>
+
+        <div class="basin-video-info">
+          <small>TV ARŞİVİ</small>
+          <h3>Krav Maga Türk</h3>
+        </div>
+
+      </article>
+
+
+      <!-- 05 -->
+      <article class="basin-video"
+               data-video="ClYFOk79nnA"
+               tabindex="0"
+               role="button"
+               aria-label="Krav Maga Türk basın videosu 5">
+
+        <div class="basin-video-media">
+          <img
+            src="https://i.ytimg.com/vi/ClYFOk79nnA/hqdefault.jpg"
+            alt="Krav Maga Türk yakın savunma videosu"
+            loading="lazy">
+          <span class="basin-video-number">05</span>
+          <div class="basin-play"><span>▶</span></div>
+        </div>
+
+        <div class="basin-video-info">
+          <small>YAKIN SAVUNMA</small>
+          <h3>Uygulamalı Çekim</h3>
+        </div>
+
+      </article>
+
+
+      <!-- 06 -->
+      <article class="basin-video"
+               data-video="y-Uvq5QVJA4"
+               tabindex="0"
+               role="button"
+               aria-label="Krav Maga Türk basın videosu 6">
+
+        <div class="basin-video-media">
+          <img
+            src="https://i.ytimg.com/vi/y-Uvq5QVJA4/hqdefault.jpg"
+            alt="Krav Maga Türk basın videosu"
+            loading="lazy">
+          <span class="basin-video-number">06</span>
+          <div class="basin-play"><span>▶</span></div>
+        </div>
+
+        <div class="basin-video-info">
+          <small>MEDYA ARŞİVİ</small>
+          <h3>Krav Maga Eğitim Çekimi</h3>
+        </div>
+
+      </article>
+
+
+      <!-- 07 -->
+      <article class="basin-video"
+               data-video="tJTZ1sx-eYw"
+               tabindex="0"
+               role="button"
+               aria-label="Krav Maga Türk basın videosu 7">
+
+        <div class="basin-video-media">
+          <img
+            src="https://i.ytimg.com/vi/tJTZ1sx-eYw/hqdefault.jpg"
+            alt="Krav Maga Türk televizyon röportajı"
+            loading="lazy">
+          <span class="basin-video-number">07</span>
+          <div class="basin-play"><span>▶</span></div>
+        </div>
+
+        <div class="basin-video-info">
+          <small>RÖPORTAJ</small>
+          <h3>Krav Maga Türk Basın Çalışması</h3>
+        </div>
+
+      </article>
+
+
+      <!-- 08 -->
+      <article class="basin-video"
+               data-video="RUROcKquZ00"
+               tabindex="0"
+               role="button"
+               aria-label="Krav Maga Türk basın videosu 8">
+
+        <div class="basin-video-media">
+          <img
+            src="https://i.ytimg.com/vi/RUROcKquZ00/hqdefault.jpg"
+            alt="Krav Maga Türk medya videosu"
+            loading="lazy">
+          <span class="basin-video-number">08</span>
+          <div class="basin-play"><span>▶</span></div>
+        </div>
+
+        <div class="basin-video-info">
+          <small>TV</small>
+          <h3>Krav Maga ve Kişisel Güvenlik</h3>
+        </div>
+
+      </article>
+
+
+      <!-- 09 -->
+      <article class="basin-video"
+               data-video="rNekwatsAg4"
+               tabindex="0"
+               role="button"
+               aria-label="Krav Maga Türk basın videosu 9">
+
+        <div class="basin-video-media">
+          <img
+            src="https://i.ytimg.com/vi/rNekwatsAg4/hqdefault.jpg"
+            alt="Krav Maga Türk eğitim videosu"
+            loading="lazy">
+          <span class="basin-video-number">09</span>
+          <div class="basin-play"><span>▶</span></div>
+        </div>
+
+        <div class="basin-video-info">
+          <small>EĞİTİM</small>
+          <h3>Krav Maga Uygulamaları</h3>
+        </div>
+
+      </article>
+
+
+      <!-- 10 -->
+      <article class="basin-video"
+               data-video="KvA-Dlxn_Mg"
+               tabindex="0"
+               role="button"
+               aria-label="Krav Maga Türk basın videosu 10">
+
+        <div class="basin-video-media">
+          <img
+            src="https://i.ytimg.com/vi/KvA-Dlxn_Mg/hqdefault.jpg"
+            alt="Krav Maga Türk basın arşivi videosu"
+            loading="lazy">
+          <span class="basin-video-number">10</span>
+          <div class="basin-play"><span>▶</span></div>
+        </div>
+
+        <div class="basin-video-info">
+          <small>ARŞİV</small>
+          <h3>Televizyon Çalışması</h3>
+        </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 
 </main>
 <script src="assets/footer.js" defer></script></body>
