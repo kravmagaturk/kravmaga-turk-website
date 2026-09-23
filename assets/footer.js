@@ -92,18 +92,19 @@
       .bc-watermark,.bc-video-watermark,.bc-section-year,.bc-dark-year,.bc-photo-year,
       .kmt-representative-page .watermark,.kmt-belgeler .water,
       #kmt-basin .basin-watermark,#kmt-basin .basin-media::before,
-      .kmt-ref-watermark,.kmt-watermark,
+      .kmt-ref-watermark,.kmt-watermark,.kmt-hero-logo,
+      .leg-watermark,.leg-story-brand,.leg-author-logo,.leg-cta::before,
       .kmt-representative-page .final::before,.kmt-belgeler .bottom::before{
         display:none!important
       }
       .kmt-hero:before{content:none!important}
       .kmt-standard-mark{
         position:absolute!important;
-        width:360px!important;height:360px!important;
-        right:4%!important;top:50%!important;
+        width:370px!important;height:370px!important;
+        right:4%!important;left:auto!important;top:50%!important;
         transform:translateY(-50%)!important;
         background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/contain no-repeat!important;
-        opacity:.085!important;filter:grayscale(1)!important;
+        opacity:.16!important;filter:none!important;
         pointer-events:none!important;z-index:1!important
       }
       .bc-hero,.kmt-representative-page .hero,.kmt-belgeler .hero,
@@ -115,6 +116,7 @@
       .kmt-hero-content,.cpo-hero-content,.page>.wrap{
         position:relative!important;z-index:2!important
       }
+
       @media(max-width:900px){
         .kmt-standard-mark{width:250px!important;height:250px!important;right:-2%!important;opacity:.065!important}
       }
