@@ -258,3 +258,10 @@ main#top .map-home>a{min-height:190px;display:flex;flex-direction:column;align-i
   .welcome-poster.v39{height:auto;min-height:0;overflow:hidden}
   .welcome-poster.v39>img{display:block;width:100%;height:auto;object-fit:contain}
 }
+
+
+/* TRANSFER: desktop hero full-width fix */
+@media (min-width:1101px){
+  .welcome-poster.v39{width:100%;max-width:none;margin-left:0;margin-right:0}
+  .welcome-poster.v39>img{width:100%;max-width:none}
+}
