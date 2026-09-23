@@ -5,162 +5,108 @@
     const style = document.createElement("style");
     style.id = "kmt-shared-layout-styles";
     style.textContent = `
-      :root{--kmt-red:#d60000;--kmt-text:#151515;--kmt-muted:#666;--kmt-line:#dedede;--kmt-soft:#f5f5f5}
-
-      html,body{background:#fff!important;color:var(--kmt-text)!important}
-      body{font-family:Arial,Helvetica,sans-serif!important}
-
-      body>main,.page,.section,.content-block,.location-block,.registry,.band,
-      .bc-intro,.bc-section,.bc-krav,.bc-people,.bc-links,.bc-dark,
-      .kmt-egitim-sec,.kmt-reviews{
-        background:#fff!important;color:var(--kmt-text)!important
-      }
-
-      body main h1,body main h2,body main h3,body main h4,
-      body main p,body main li,body main span,body main strong,
-      .page h1,.page h2,.page h3,.page p,
-      .bc-intro h2,.bc-section h2,.bc-krav h2,.bc-people h2,.bc-links h2,
-      .bc-intro p,.bc-krav p{
-        color:var(--kmt-text)!important
-      }
-
-      body main .eyebrow,.bc-label,.kmt-egitim-baslik strong,
-      .kmt-reviews-title span{color:var(--kmt-red)!important}
-
-      .cards article,.mini-grid div,.contact-card,.schedule-panel,
-      .bc-card,.bc-consult-card,.bc-org-card,.bc-person{
-        background:var(--kmt-soft)!important;color:var(--kmt-text)!important;
-        border-color:#ddd!important
-      }
-
-      .cards article p,.mini-grid span,.contact-card p,.schedule-panel small,
-      .bc-card p,.bc-consult-card p,.bc-org-card p,.bc-person p{
-        color:#555!important
-      }
-
       .transfer-nav{
-        position:sticky!important;top:0;z-index:5000;background:#fff!important;
-        border-bottom:1px solid #ddd;color:#111;font-family:Arial,Helvetica,sans-serif;
-        box-shadow:0 5px 18px rgba(0,0,0,.06)
+        position:sticky!important;top:0;z-index:5000;background:#050607!important;
+        border-bottom:1px solid #252525;color:#fff;font-family:Arial,Helvetica,sans-serif;
+        box-shadow:0 5px 18px rgba(0,0,0,.22)
       }
-
       .transfer-nav-inner{
         max-width:1536px;margin:0 auto;min-height:72px;padding:0 24px;
         display:flex;align-items:center;gap:24px
       }
-
       .transfer-brand{
-        color:#111!important;text-decoration:none!important;font-weight:900;
-        font-size:17px;letter-spacing:.055em;white-space:nowrap
+        color:#fff!important;text-decoration:none!important;font-weight:900;
+        font-size:16px;letter-spacing:.06em;white-space:nowrap
       }
-
-      .transfer-brand i{font-style:normal;color:var(--kmt-red)}
-
+      .transfer-brand i{font-style:normal;color:#e30620}
       .transfer-links{
         margin-left:auto;display:flex;align-items:center;gap:8px
       }
-
       .transfer-item{position:relative}
-
       .transfer-item>a,.transfer-item>button{
-        height:44px;display:flex;align-items:center;justify-content:center;padding:0 17px;
-        border:1px solid #d6d6d6;background:#fff;color:#171717!important;border-radius:8px;
-        text-decoration:none!important;font:800 15px/1 Arial,Helvetica,sans-serif;
-        letter-spacing:.035em;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.03);
-        transition:background-color .12s ease,border-color .12s ease,color .12s ease
+        height:46px;display:flex;align-items:center;justify-content:center;padding:0 16px;
+        border:1px solid rgba(255,255,255,.10);background:#111315;color:#f2f2f2!important;border-radius:8px;
+        text-decoration:none!important;font:800 14px/1 Arial,Helvetica,sans-serif;letter-spacing:.05em;
+        cursor:pointer;transition:background-color .12s ease,border-color .12s ease,color .12s ease
       }
-
       .transfer-item>a:hover,.transfer-item>button:hover,
       .transfer-item.open>button{
-        background:#f7f7f7;border-color:#bbb;color:var(--kmt-red)!important
+        background:#191c1f;border-color:rgba(227,6,32,.48);color:#fff!important
       }
-
       .transfer-item>a:focus-visible,.transfer-item>button:focus-visible{
-        outline:2px solid var(--kmt-red);outline-offset:2px
+        outline:2px solid #e30620;outline-offset:2px
       }
 
       .transfer-drop{
-        display:none;position:absolute;top:50px;left:0;min-width:270px;
-        background:#fff;border:1px solid #d9d9d9;border-top:3px solid var(--kmt-red);
-        box-shadow:0 14px 28px rgba(0,0,0,.12);border-radius:0 0 10px 10px;overflow:hidden
+        display:none;position:absolute;top:46px;left:0;min-width:270px;
+        background:#0b0c0e;border:1px solid #2a2d31;border-top:3px solid #e30620;
+        box-shadow:0 14px 28px rgba(0,0,0,.42);border-radius:0 0 10px 10px;
+        overflow:hidden;z-index:6000
       }
-
       .transfer-item.open>.transfer-drop{display:block}
-
       .transfer-drop a{
-        display:block;padding:14px 16px;color:#222!important;text-decoration:none!important;
-        font-size:14px;font-weight:700;border-bottom:1px solid #eee;
-        transition:background-color .1s ease,color .1s ease
+        display:block;padding:14px 16px;color:#ddd!important;text-decoration:none!important;
+        font-size:13px;font-weight:700;border-bottom:1px solid #222;
+        background:#0b0c0e;white-space:nowrap
       }
-
       .transfer-drop a:last-child{border-bottom:0}
-      .transfer-drop a:hover{background:#f6f6f6;color:var(--kmt-red)!important}
+      .transfer-drop a:hover{background:#17191c;color:#fff!important}
 
       .transfer-mobile{
-        display:none;margin-left:auto;background:#fff;color:#111;border:1px solid #ccc;
+        display:none;margin-left:auto;background:#111315;color:#fff;border:1px solid #3b3d42;
         border-radius:8px;padding:9px 12px;font-size:20px
       }
 
       .kmt-site-footer{
-        width:100%;box-sizing:border-box;background:#fff!important;color:#555!important;
-        border-top:3px solid var(--kmt-red);font-family:Arial,Helvetica,sans-serif
+        width:100%;box-sizing:border-box;background:#070809!important;color:#aaa!important;
+        border-top:3px solid #d60000;font-family:Arial,Helvetica,sans-serif
       }
-
       .kmt-footer-inner{
         max-width:1536px;margin:0 auto;padding:34px 5% 28px;
         display:flex;align-items:center;justify-content:space-between;gap:28px
       }
-
       .kmt-footer-brand strong{
-        display:block;color:#111!important;font-size:28px;font-weight:900;letter-spacing:1px;line-height:1.05
+        display:block;color:#fff!important;font-size:28px;font-weight:900;letter-spacing:1px;line-height:1.05
       }
-
-      .kmt-footer-brand strong span{color:var(--kmt-red)!important}
-
+      .kmt-footer-brand strong span{color:#d60000!important}
       .kmt-footer-brand small{
-        display:block;margin-top:10px;color:#777!important;font-size:12px;
-        font-weight:700;letter-spacing:2px
+        display:block;margin-top:10px;color:#7f8690!important;font-size:12px;font-weight:700;letter-spacing:2px
       }
-
       .kmt-footer-info{
         display:flex;align-items:center;justify-content:flex-end;gap:28px;flex-wrap:wrap
       }
-
       .kmt-footer-info a,.kmt-footer-info span{
-        color:#444!important;text-decoration:none!important;font-size:13px;font-weight:800;
+        color:#b8b8b8!important;text-decoration:none!important;font-size:13px;font-weight:800;
         letter-spacing:.04em;white-space:nowrap
       }
-
-      .kmt-footer-info a:hover{color:var(--kmt-red)!important}
-
+      .kmt-footer-info a:hover{color:#fff!important}
       .kmt-footer-copy{
-        max-width:1536px;margin:0 auto;padding:18px 5% 22px;border-top:1px solid #e3e3e3;
-        color:#777!important;font-size:12px;text-align:center;line-height:1.5
+        max-width:1536px;margin:0 auto;padding:18px 5% 22px;border-top:1px solid #1d1f22;
+        color:#7f7f7f!important;font-size:12px;text-align:center;line-height:1.5
       }
-
-      .kmt-footer-copy strong{color:#444!important}
+      .kmt-footer-copy strong{color:#bdbdbd!important}
 
       @media(max-width:900px){
         .transfer-nav-inner{min-height:64px;padding:0 14px}
-        .transfer-brand{font-size:15px}
+        .transfer-brand{font-size:14px}
         .transfer-mobile{display:block}
         .transfer-links{
-          display:none;position:absolute;left:0;right:0;top:64px;background:#fff;
-          border-bottom:1px solid #ddd;padding:10px 14px 18px;flex-direction:column;gap:0;
-          box-shadow:0 14px 24px rgba(0,0,0,.10)
+          display:none;position:absolute;left:0;right:0;top:64px;background:#08090a;
+          border-bottom:1px solid #26292d;padding:10px 14px 18px;flex-direction:column;gap:0;
+          box-shadow:0 14px 24px rgba(0,0,0,.35)
         }
         .transfer-links.open{display:flex}
         .transfer-item{width:100%}
         .transfer-item>a,.transfer-item>button{
           width:100%;height:50px;justify-content:flex-start;border-radius:0;border:0;
-          border-bottom:1px solid #eee;background:#fff;padding:0 10px;font-size:15px;
-          box-shadow:none
+          border-bottom:1px solid #202225;background:#08090a;padding:0 10px;font-size:14px
         }
         .transfer-drop{
           position:static;display:none;min-width:0;box-shadow:none;border:0;
-          border-left:3px solid var(--kmt-red);border-radius:0;margin:0 0 8px 8px
+          border-left:3px solid #d60000;border-radius:0;margin:0 0 8px 8px
         }
         .transfer-item.open>.transfer-drop{display:block}
+        .transfer-drop a{white-space:normal}
         .kmt-footer-inner{display:block;padding:26px 18px 20px}
         .kmt-footer-brand strong{font-size:23px}
         .kmt-footer-brand small{font-size:11px;letter-spacing:1.4px}
@@ -178,6 +124,7 @@
         <div class="transfer-nav-inner">
           <a class="transfer-brand" href="index.html">KRAV MAGA <i>TÜRK</i></a>
           <button class="transfer-mobile" type="button" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+
           <nav class="transfer-links" aria-label="Ana menü">
             <div class="transfer-item"><a href="index.html">ANA SAYFA</a></div>
 
@@ -248,9 +195,9 @@
     return wrap.firstElementChild;
   }
 
-  function closeAllMenus(except) {
+  function closeAllMenus(exceptItem) {
     document.querySelectorAll(".transfer-item.open").forEach(function (item) {
-      if (item !== except) {
+      if (item !== exceptItem) {
         item.classList.remove("open");
         const btn = item.querySelector(":scope > button");
         if (btn) btn.setAttribute("aria-expanded", "false");
@@ -265,19 +212,22 @@
     if (mobileBtn && links) {
       mobileBtn.addEventListener("click", function (event) {
         event.stopPropagation();
-        const open = links.classList.toggle("open");
-        mobileBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        const isOpen = links.classList.toggle("open");
+        mobileBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
       });
     }
 
     document.querySelectorAll(".transfer-item > button").forEach(function (btn) {
       btn.addEventListener("click", function (event) {
+        event.preventDefault();
         event.stopPropagation();
+
         const item = btn.parentElement;
-        const willOpen = !item.classList.contains("open");
+        const shouldOpen = !item.classList.contains("open");
+
         closeAllMenus(item);
-        item.classList.toggle("open", willOpen);
-        btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+        item.classList.toggle("open", shouldOpen);
+        btn.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
       });
     });
 
@@ -285,19 +235,26 @@
       drop.addEventListener("click", function (event) {
         event.stopPropagation();
       });
+      drop.addEventListener("mouseenter", function () {
+        const item = drop.parentElement;
+        if (item) item.classList.add("open");
+      });
     });
 
-    document.addEventListener("click", function () {
-      closeAllMenus();
-      if (links && window.innerWidth <= 900) {
-        links.classList.remove("open");
-        if (mobileBtn) mobileBtn.setAttribute("aria-expanded", "false");
+    document.addEventListener("click", function (event) {
+      if (!event.target.closest(".transfer-nav")) {
+        closeAllMenus();
+        if (links && window.innerWidth <= 900) {
+          links.classList.remove("open");
+          if (mobileBtn) mobileBtn.setAttribute("aria-expanded", "false");
+        }
       }
     });
 
-    window.addEventListener("resize", function () {
-      closeAllMenus();
-      if (links && window.innerWidth > 900) links.classList.remove("open");
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeAllMenus();
+      }
     });
   }
 
