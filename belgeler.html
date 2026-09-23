@@ -3,125 +3,163 @@
 <style>
 .kmt-belgeler,.kmt-belgeler *{box-sizing:border-box}
 .kmt-belgeler{
-  width:100%;margin:0;padding:0;overflow:hidden;background:#fff;color:#111;
+  width:100%;margin:0;padding:0;overflow:hidden;
+  background:#050505;color:#f5f5f5;
   font-family:Arial,Helvetica,sans-serif
 }
-.kmt-belgeler .wrap{width:min(1380px,92%);margin:auto}
+.kmt-belgeler .wrap{width:min(1180px,92%);margin:auto}
 
-/* ANA SAYFA DİLİNE YAKIN HERO */
-.kmt-belgeler .hero{
-  position:relative;min-height:460px;display:flex;align-items:center;overflow:hidden;
-  border-bottom:4px solid #d60000;
-  background:
-    radial-gradient(circle at 82% 32%,rgba(214,0,0,.32),transparent 34%),
-    linear-gradient(135deg,#050607 0,#111315 58%,#08090a 100%)
+.kmt-belgeler .kicker,.kmt-belgeler .eyebrow{
+  display:inline-block;color:#e50922;font-size:11px;line-height:1.3;
+  font-weight:900;letter-spacing:3px
 }
-.kmt-belgeler .hero:after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(0,0,0,.18),transparent 52%,rgba(0,0,0,.18));
-  pointer-events:none
+.kmt-belgeler h2{
+  margin:10px 0 22px;color:#fff;font-size:clamp(29px,4vw,43px);
+  line-height:1.08;font-weight:900;letter-spacing:-.7px
+}
+
+/* HERO */
+.kmt-belgeler .hero{
+  position:relative;min-height:500px;display:flex;align-items:center;
+  overflow:hidden;border-bottom:1px solid #202020;
+  background:radial-gradient(circle at 82% 45%,#2a1013 0,#0d0d0d 37%,#050505 72%)
 }
 .kmt-belgeler .water{
-  position:absolute;right:3%;top:50%;transform:translateY(-50%);
+  position:absolute;right:3%;top:48%;transform:translateY(-50%);
   text-align:right;line-height:.8;pointer-events:none;user-select:none
 }
 .kmt-belgeler .water strong{
-  display:block;font-size:clamp(110px,19vw,280px);font-weight:900;
-  color:rgba(255,255,255,.035);letter-spacing:-12px
+  display:block;color:rgba(255,255,255,.035);
+  font-size:clamp(110px,20vw,285px);line-height:.75;
+  font-weight:900;letter-spacing:-12px
 }
 .kmt-belgeler .water span{
-  display:block;font-size:clamp(20px,4vw,52px);font-weight:900;
-  color:rgba(255,255,255,.055);letter-spacing:4px
+  display:block;margin-top:18px;color:rgba(255,255,255,.045);
+  font-size:clamp(21px,4vw,56px);font-weight:900;letter-spacing:4px
 }
-.kmt-belgeler .hero-in{position:relative;z-index:2;max-width:820px;padding:82px 0 72px}
-.kmt-belgeler .kicker,.kmt-belgeler .eyebrow{
-  display:inline-block;color:#d60000;font-size:11px;font-weight:900;letter-spacing:3px
+.kmt-belgeler .hero-in{
+  position:relative;z-index:2;max-width:850px;padding:82px 0 75px
 }
 .kmt-belgeler h1{
-  margin:18px 0 20px;color:#fff;font-size:clamp(44px,7vw,82px);
-  line-height:.95;letter-spacing:-2.5px;font-weight:900
+  margin:18px 0 22px;color:#fff;font-size:clamp(43px,7vw,78px);
+  line-height:.96;font-weight:900;letter-spacing:-2px
 }
-.kmt-belgeler h1 span{color:#e00000}
+.kmt-belgeler h1 span{color:#e50922}
 .kmt-belgeler .lead{
-  max-width:720px;margin:0;color:#d0d0d0;font-size:clamp(17px,2vw,20px);line-height:1.65
+  max-width:760px;margin:0;color:#c3c3c3;
+  font-size:clamp(17px,2vw,20px);line-height:1.65
 }
-.kmt-belgeler .redline{width:90px;height:5px;margin-top:28px;background:#d60000}
+.kmt-belgeler .redline{
+  width:88px;height:5px;margin-top:29px;background:#e50922
+}
 
-/* ANA SAYFADAKİ BEYAZ İÇERİK DİLİ */
+/* GİRİŞ */
 .kmt-belgeler .intro{
-  padding:58px 0 50px;background:#fff;border-bottom:1px solid #e5e5e5
+  padding:70px 0;background:#0b0b0b;border-bottom:1px solid #202020
 }
-.kmt-belgeler h2{
-  margin:10px 0 18px;color:#111;font-size:clamp(28px,4vw,42px);
-  line-height:1.08;font-weight:900
+.kmt-belgeler .intro .wrap{
+  display:grid;grid-template-columns:6px 1fr;gap:30px
 }
+.kmt-belgeler .intro .wrap:before{
+  content:"";display:block;width:6px;min-height:230px;background:#e50922
+}
+.kmt-belgeler .intro .eyebrow,
+.kmt-belgeler .intro h2,
+.kmt-belgeler .intro p{grid-column:2}
+.kmt-belgeler .intro .eyebrow{align-self:end}
+.kmt-belgeler .intro h2{margin-top:-2px}
 .kmt-belgeler .intro p{
-  max-width:980px;margin:0 0 12px;color:#4a4a4a;font-size:15px;line-height:1.75
+  max-width:980px;margin:0 0 14px;color:#aaa;font-size:15px;line-height:1.75
 }
 
-/* BELGE GALERİSİ */
-.kmt-belgeler .gallery{padding:58px 0 72px;background:#f7f7f7}
-.kmt-belgeler .gallery-head{margin-bottom:34px;text-align:center}
-.kmt-belgeler .gallery-head h2{margin-bottom:8px}
-.kmt-belgeler .gallery-head p{margin:0;color:#666;font-size:14px}
+/* GALERİ */
+.kmt-belgeler .gallery{
+  padding:75px 0 82px;background:#050505
+}
+.kmt-belgeler .gallery-head{
+  max-width:850px;margin:0 auto 42px;text-align:center
+}
+.kmt-belgeler .gallery-head h2{margin-bottom:9px}
+.kmt-belgeler .gallery-head p{
+  max-width:720px;margin:0 auto;color:#999;font-size:14px;line-height:1.65
+}
 .kmt-belgeler .grid{
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px
 }
 .kmt-belgeler .card{
-  overflow:hidden;background:#fff;border:1px solid #dedede;border-radius:10px;
-  box-shadow:0 5px 16px rgba(0,0,0,.06);
-  transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease
+  position:relative;overflow:hidden;background:#101010;border:1px solid #262626;
+  border-bottom:4px solid #e50922;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease
 }
 .kmt-belgeler .card:hover{
-  transform:translateY(-3px);border-color:#d60000;box-shadow:0 12px 24px rgba(0,0,0,.10)
+  transform:translateY(-4px);border-color:#e50922;
+  box-shadow:0 18px 40px rgba(0,0,0,.42)
 }
 .kmt-belgeler .card a{display:block;color:inherit;text-decoration:none}
 .kmt-belgeler .pic{
-  height:370px;padding:20px;display:flex;align-items:center;justify-content:center;
-  overflow:hidden;background:#f0f0f0;border-bottom:1px solid #e3e3e3
+  position:relative;height:360px;padding:18px;display:flex;align-items:center;justify-content:center;
+  overflow:hidden;background:linear-gradient(145deg,#171717,#0b0b0b)
+}
+.kmt-belgeler .pic:after{
+  content:"";position:absolute;inset:auto 0 0;height:28%;
+  background:linear-gradient(transparent,rgba(0,0,0,.35));pointer-events:none
 }
 .kmt-belgeler .pic img{
   display:block;width:100%;height:100%;object-fit:contain;object-position:center;
-  transition:transform .15s ease
+  transition:transform .18s ease
 }
-.kmt-belgeler .card:hover img{transform:scale(1.015)}
+.kmt-belgeler .card:hover img{transform:scale(1.018)}
 .kmt-belgeler .info{
-  position:relative;min-height:92px;padding:18px 18px 18px 68px;
-  display:flex;flex-direction:column;justify-content:center;background:#fff;
-  border-bottom:4px solid #d60000
+  position:relative;min-height:104px;padding:20px 18px 20px 72px;
+  display:flex;flex-direction:column;justify-content:center;background:#101010
 }
 .kmt-belgeler .info b{
-  position:absolute;left:17px;top:20px;color:#d7d7d7;font-size:35px;line-height:1
+  position:absolute;left:17px;top:21px;color:rgba(255,255,255,.12);
+  font-size:38px;line-height:1;font-weight:900
 }
 .kmt-belgeler .info span{
-  margin-bottom:5px;color:#d60000;font-size:10px;font-weight:900;letter-spacing:1.4px
+  margin-bottom:6px;color:#e50922;font-size:9px;font-weight:900;letter-spacing:2px
 }
-.kmt-belgeler .info strong{color:#111;font-size:15px;line-height:1.3}
+.kmt-belgeler .info strong{
+  color:#fff;font-size:16px;line-height:1.3;font-weight:900
+}
 
-/* ALT BÖLÜM */
+/* ALT */
 .kmt-belgeler .bottom{
-  padding:60px 5%;text-align:center;background:#fff;border-top:1px solid #e4e4e4
+  position:relative;padding:70px 5%;text-align:center;
+  background:#0b0b0b;border-top:1px solid #1d1d1d
 }
-.kmt-belgeler .bottom h2{margin-bottom:14px}
+.kmt-belgeler .bottom:before{
+  content:"1948";position:absolute;right:3%;top:50%;transform:translateY(-50%);
+  color:rgba(255,255,255,.025);font-size:clamp(120px,18vw,260px);
+  font-weight:900;line-height:1;pointer-events:none
+}
+.kmt-belgeler .bottom>*{position:relative;z-index:1}
+.kmt-belgeler .bottom h2{margin-bottom:16px}
 .kmt-belgeler .bottom p{
-  max-width:700px;margin:auto;color:#555;line-height:1.65
+  max-width:680px;margin:auto;color:#aaa;line-height:1.65
 }
 
-@media(max-width:1000px){
+@media(max-width:900px){
   .kmt-belgeler .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .kmt-belgeler .pic{height:330px}
   .kmt-belgeler .water{right:-3%}
 }
 @media(max-width:650px){
-  .kmt-belgeler .hero{min-height:390px}
-  .kmt-belgeler .hero-in{padding:62px 0 54px}
-  .kmt-belgeler .intro{padding:44px 0}
-  .kmt-belgeler .gallery{padding:44px 0 52px}
-  .kmt-belgeler .grid{grid-template-columns:1fr;gap:15px}
-  .kmt-belgeler .pic{height:360px;padding:16px}
+  .kmt-belgeler .hero{min-height:410px}
+  .kmt-belgeler .hero-in{padding:65px 0 58px}
+  .kmt-belgeler .intro{padding:52px 0}
+  .kmt-belgeler .intro .wrap{grid-template-columns:4px 1fr;gap:18px}
+  .kmt-belgeler .intro .wrap:before{width:4px;min-height:190px}
+  .kmt-belgeler .gallery{padding:52px 0 60px}
+  .kmt-belgeler .grid{grid-template-columns:1fr;gap:16px}
+  .kmt-belgeler .pic{height:380px;padding:16px}
   .kmt-belgeler .water strong{letter-spacing:-7px}
+  .kmt-belgeler .bottom{padding:54px 6%}
 }
-@media(max-width:390px){.kmt-belgeler .pic{height:320px}}
+@media(max-width:390px){
+  .kmt-belgeler .pic{height:335px}
+}
 </style>
 
 
