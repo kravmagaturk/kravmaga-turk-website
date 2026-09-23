@@ -16,26 +16,21 @@
         font-size:16px;letter-spacing:.06em;white-space:nowrap
       }
       .transfer-brand i{font-style:normal;color:#e30620}
-      .transfer-links{margin-left:auto;display:flex;align-items:center;gap:7px}
+      .transfer-links{margin-left:auto;display:flex;align-items:center;gap:4px}
       .transfer-item{position:relative}
-      .transfer-item>a,.transfer-item>button{height:46px;display:flex;align-items:center;justify-content:center;padding:0 15px;border:1px solid rgba(255,255,255,.10);background:#111315;color:#f2f2f2!important;border-radius:8px;text-decoration:none!important;font:800 14px/1 Arial,Helvetica,sans-serif;letter-spacing:.04em;cursor:pointer;white-space:nowrap;transition:background-color .12s ease,border-color .12s ease,color .12s ease}
-      .transfer-item>a:hover,.transfer-item>button:hover,
-      .transfer-item.open>button{
-        background:#191c1f;border-color:rgba(227,6,32,.48);color:#fff!important
-      }
+      .transfer-item>a,.transfer-item>button{height:42px;display:flex;align-items:center;justify-content:center;padding:0 13px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,#121416,#0e1012);color:#f2f2f2!important;border-radius:7px;text-decoration:none!important;font:800 13px/1 Arial,Helvetica,sans-serif;letter-spacing:.035em;cursor:pointer;white-space:nowrap;transition:background-color .16s ease,border-color .16s ease,color .16s ease,box-shadow .16s ease,transform .16s ease}
+      .transfer-item>a:hover,.transfer-item>button:hover,.transfer-item.open>button{background:linear-gradient(180deg,rgba(227,6,32,.18),rgba(227,6,32,.08));border-color:rgba(227,6,32,.55);color:#fff!important;box-shadow:0 0 0 1px rgba(227,6,32,.08) inset,0 5px 16px rgba(0,0,0,.22);transform:translateY(-1px)}
       .transfer-item>a:focus-visible,.transfer-item>button:focus-visible{
         outline:2px solid #e30620;outline-offset:2px
       }
 
-      .transfer-drop{display:none;position:absolute;top:46px;left:0;min-width:270px;max-height:70vh;overflow-y:auto;background:#0b0c0e;border:1px solid #2a2d31;border-top:3px solid #e30620;box-shadow:0 14px 28px rgba(0,0,0,.42);border-radius:0 0 10px 10px;z-index:9000}
+      .transfer-drop{display:none;position:absolute;top:42px;left:0;min-width:250px;max-height:70vh;overflow-y:auto;background:#0b0c0e;border:1px solid #2a2d31;border-top:3px solid #e30620;box-shadow:0 14px 28px rgba(0,0,0,.42);border-radius:0 0 10px 10px;z-index:9000}
       .transfer-item.open>.transfer-drop{display:block}
       .transfer-drop a{
-        display:block;padding:14px 16px;color:#ddd!important;text-decoration:none!important;
-        font-size:13px;font-weight:700;border-bottom:1px solid #222;
-        background:#0b0c0e;white-space:nowrap
+        display:block;padding:10px 14px;color:#ddd!important;text-decoration:none!important;line-height:1.35;font-size:12.5px;font-weight:700;border-bottom:1px solid #1d2023;background:#0b0c0e;white-space:nowrap;transition:background-color .14s ease,color .14s ease,padding-left .14s ease
       }
       .transfer-drop a:last-child{border-bottom:0}
-      .transfer-drop a:hover{background:#17191c;color:#fff!important}
+      .transfer-drop a:hover{background:rgba(227,6,32,.12);color:#fff!important;padding-left:17px}
 
       .transfer-mobile{
         display:none;margin-left:auto;background:#111315;color:#fff;border:1px solid #3b3d42;
