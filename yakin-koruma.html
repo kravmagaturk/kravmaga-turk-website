@@ -249,6 +249,16 @@ body{
   background:rgba(5,5,5,.82);
   border:1px solid #444;
 }
+.cpo-btn-content{
+  border-color:rgba(232,24,34,.42);
+  background:linear-gradient(135deg,rgba(232,24,34,.12),rgba(5,5,5,.88));
+}
+.cpo-btn-content:hover{
+  border-color:rgba(232,24,34,.72);
+  background:linear-gradient(135deg,rgba(232,24,34,.20),rgba(8,8,8,.96));
+  transform:translateY(-2px);
+}
+
 
 
 /* =========================
@@ -755,10 +765,12 @@ body{
     right:-115px;
   }
 }
+
+.cpo-body .kmt-standard-mark{display:none!important}
 </style>
 </head>
 
-<body>
+<body class="cpo-body">
 
 <main class="cpo-page">
 
@@ -809,6 +821,12 @@ target="_blank"
 rel="noopener"
 class="cpo-btn cpo-btn-red">
 Fiyat Teklifi Al
+</a>
+
+<a
+href="egitim-icerigi.html"
+class="cpo-btn cpo-btn-dark cpo-btn-content">
+Eğitim İçeriği
 </a>
 
 </div>
