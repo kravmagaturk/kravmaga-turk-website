@@ -226,3 +226,20 @@ main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-c
     grid-template-columns:repeat(5,minmax(0,1fr))!important;
   }
 }
+
+
+/* TRANSFER TEST: homepage normalization 23.09.2026
+   Test branch only. Consolidates the final homepage poster/card rules without changing main/live. */
+body{margin:0;background:#08090a;overflow-x:hidden}
+main#top{width:100%;margin:0;padding:0}
+main#top .welcome-poster.v39{position:relative;width:100%;max-width:1536px;margin:0 auto;padding:0;overflow:hidden;background:#050607}
+main#top .welcome-poster.v39>img{display:block;width:100%;height:auto;max-width:none;margin:0;object-fit:contain;object-position:center top}
+main#top .welcome-poster.v39 .hero-hotmenu.v39-five{position:absolute;left:40%;right:2.3%;bottom:15.9%;top:auto;height:11.8%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:1fr;gap:0;padding:0;background:transparent;z-index:30}
+main#top .welcome-poster.v39 .hero-hotmenu.v39-five a{display:block;width:100%;height:100%;min-height:0;margin:0;padding:0;border:0;background:transparent}
+main#top .home-additions{width:min(1240px,100%);margin:0 auto;padding:34px 22px 0;background:#08090a;color:#fff}
+main#top .service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+main#top .service-card{position:relative;display:block;overflow:hidden;border:1px solid #292b2e;border-radius:10px;color:#fff;text-decoration:none;aspect-ratio:16/7;min-height:150px;background:linear-gradient(135deg,rgba(181,18,27,.24),transparent 42%),radial-gradient(circle at 78% 28%,#292c30 0,#111315 34%,#08090a 72%)}
+main#top .service-card span{position:absolute;z-index:2;left:22px;right:18px;bottom:20px;font-size:clamp(18px,2vw,28px);font-weight:900;letter-spacing:.03em}
+main#top .map-home{margin-top:20px;height:auto;border-top:2px solid #b5121b;overflow:hidden;background:#101113}
+main#top .map-home>a{min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#fff;text-decoration:none;background:radial-gradient(circle at center,#1b1d20 0,#0b0c0e 68%)}
+@media(max-width:760px){main#top .welcome-poster.v39{width:100%;max-width:none}main#top .welcome-poster.v39>img{width:100%;height:auto}main#top .welcome-poster.v39 .hero-hotmenu.v39-five{left:40%;right:2.3%;bottom:15.9%;height:11.8%}main#top .home-additions{padding:18px 12px 0}main#top .service-grid{grid-template-columns:1fr;gap:12px}main#top .service-card{aspect-ratio:16/6;min-height:118px}main#top .map-home>a{min-height:150px}}
