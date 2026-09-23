@@ -24,18 +24,18 @@ margin-left:calc(50% - 50vw);
 #kmt-egitmen-sorgu:before{
 content:"";
 position:absolute;
-width:420px;
-height:420px;
-right:4%;
-top:46%;
+width:390px;
+height:390px;
+right:5%;
+top:50%;
 transform:translateY(-50%);
 background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png") center/82% no-repeat;
-opacity:.16;
+opacity:.22;
 filter:contrast(1.08);
--webkit-mask-image:radial-gradient(circle at center,#000 0 54%,rgba(0,0,0,.88) 62%,transparent 78%);
-mask-image:radial-gradient(circle at center,#000 0 54%,rgba(0,0,0,.88) 62%,transparent 78%);
+-webkit-mask-image:radial-gradient(circle at center,#000 0 55%,rgba(0,0,0,.9) 64%,transparent 80%);
+mask-image:radial-gradient(circle at center,#000 0 55%,rgba(0,0,0,.9) 64%,transparent 80%);
 pointer-events:none;
-z-index:-1;
+z-index:0;
 }
 #kmt-egitmen-sorgu:after{content:none;display:none}
 #kmt-egitmen-sorgu *{box-sizing:border-box}.kmt-wrap{max-width:1000px;margin:auto}.kmt-head{text-align:center;margin-bottom:28px}.kmt-head h1{margin:0 0 9px;font-size:32px;color:#fff}.kmt-head h1 span{color:var(--red)}.kmt-head p{color:#aaa;margin:0;font-size:14px}.kmt-search{background:#151517;border:1px solid #29292d;border-radius:14px;padding:20px}.kmt-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.kmt-field label{display:block;margin:0 0 7px;font-size:13px;color:#bbb;font-weight:700}.kmt-field input,.kmt-field select{width:100%;height:48px;border:1px solid #353539;border-radius:9px;background:#0e0e10;color:#fff;padding:0 13px;font-size:15px;outline:none}.kmt-field input:focus,.kmt-field select:focus{border-color:var(--red)}.kmt-full{grid-column:1/-1}.kmt-btn{width:100%;border:0;border-radius:9px;min-height:50px;padding:12px 20px;background:var(--red);color:#fff;font-size:16px;font-weight:800;cursor:pointer}.kmt-btn:hover{filter:brightness(1.1)}#kmtStatus{text-align:center;padding:18px 5px 4px;color:#aaa;display:none}#kmtResults{display:none;margin-top:22px}.kmt-count{color:#aaa;font-size:13px;margin:0 0 12px}.kmt-card{display:grid;grid-template-columns:150px 1fr;gap:22px;background:#151517;border:1px solid #2c2c30;border-radius:14px;padding:18px;margin-bottom:15px}.kmt-photo{width:150px;height:180px;background:#090909;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid #333}.kmt-photo img{width:100%;height:100%;object-fit:cover}.kmt-no-photo{color:#777;font-size:12px;text-align:center;padding:10px}.kmt-name{font-size:22px;font-weight:800;margin:0 0 6px}.kmt-reg{color:var(--red);font-weight:700;font-size:13px;margin-bottom:13px}.kmt-badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}.kmt-badge{background:#26262a;border:1px solid #39393e;border-radius:20px;padding:5px 10px;font-size:12px;font-weight:700}.kmt-badge.active{background:#11291b;border-color:#245d38;color:#7ee29d}.kmt-badge.inactive{background:#321417;border-color:#67252c;color:#ff9da6}.kmt-info{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.kmt-row{padding:8px 0;border-bottom:1px solid #29292d;font-size:14px}.kmt-label{display:block;color:#888;font-size:11px;margin-bottom:2px;text-transform:uppercase}.kmt-value{color:#eee;font-weight:600}.kmt-empty{background:#151517;border:1px solid #303034;border-radius:12px;padding:30px 15px;text-align:center;color:#aaa}
@@ -77,3 +77,34 @@ document.getElementById("kmtText").addEventListener("keydown",function(e){if(e.k
 })();
 </script>
 </div>
+<script id="kmtForceBlackPage">
+(function(){
+  function forceBlack(){
+    document.documentElement.style.setProperty('background','#050505','important');
+    document.body.style.setProperty('background','#050505','important');
+    document.body.style.setProperty('background-color','#050505','important');
+    document.body.style.setProperty('min-height','100vh','important');
+
+    var root=document.getElementById('kmt-egitmen-sorgu');
+    if(root){
+      var p=root.parentElement;
+      while(p && p!==document.body){
+        p.style.setProperty('background','#050505','important');
+        p.style.setProperty('background-color','#050505','important');
+        p=p.parentElement;
+      }
+    }
+
+    document.querySelectorAll('footer, [class*="footer"], [data-testid*="footer"]').forEach(function(el){
+      el.style.setProperty('background-color','#050505','important');
+    });
+  }
+  forceBlack();
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',forceBlack,{once:true});
+  }else{
+    setTimeout(forceBlack,0);
+  }
+  setTimeout(forceBlack,500);
+})();
+</script>
