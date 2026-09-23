@@ -159,7 +159,7 @@
                 <a href="temsilcilikler.html">Temsilcilikler</a>
                 <a href="belgeler.html">Belgeler</a>
                 <a href="legionnaire.html">Legionnaire</a>
-                <a href="https://kravmaga.com.tr/egitmen-and-seviye-sorgu">Eğitmen &amp; Seviye Sorgu</a>
+                <a href="egitmen-and-seviye-sorgu.html">Eğitmen &amp; Seviye Sorgu</a>
                 <a href="basin.html">Basın</a>
                 <a href="referanslar.html">Referanslar</a>
               </div>
