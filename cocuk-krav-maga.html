@@ -456,6 +456,30 @@ body{
     object-position:center;
 }
 
+.kmt-kids-media-placeholder{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    text-align:center;
+    background:
+      radial-gradient(circle at 50% 40%,rgba(232,24,34,.16),transparent 38%),
+      linear-gradient(145deg,#161616,#080808);
+}
+.kmt-kids-media-placeholder strong{
+    color:#fff;
+    font-size:clamp(28px,5vw,48px);
+    letter-spacing:2px;
+}
+.kmt-kids-media-placeholder span{
+    color:#e81822;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2px;
+}
 .kmt-video-cover:after{
     content:"";
     position:absolute;
@@ -465,24 +489,7 @@ body{
     pointer-events:none;
 }
 
-.kmt-play{
-    position:absolute;
-    z-index:4;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#e81822;
-    color:#fff;
-    font-size:25px;
-    box-shadow:0 10px 35px rgba(0,0,0,.5);
-    pointer-events:none;
-}
+.kmt-play{display:none!important}
 
 .kmt-video-note{
     position:absolute;
@@ -1346,13 +1353,12 @@ tıklamayla video açılacak şekilde bağlanabilir.
 
 <div class="kmt-video-cover">
 
-<img
-src="https://assets.zyrosite.com/mePyW7BezQcoMDkG/kids_5-AwvOy5W59Ei7J31x.jpg"
-alt="Krav Maga Türk Kids Defense çocuk eğitimi"
-loading="lazy"
-decoding="async">
+<div class="kmt-kids-media-placeholder" aria-label="Krav Maga Türk Kids Defense çocuk eğitimi">
+  <strong>KIDS DEFENSE</strong>
+  <span>KRAV MAGA TÜRK AKADEMİ</span>
+</div>
 
-<div class="kmt-play">▶</div>
+
 
 <div class="kmt-video-note">
 Kids Defense • Krav Maga Türk Akademi
