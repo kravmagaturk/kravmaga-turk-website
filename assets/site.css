@@ -281,3 +281,17 @@ main#top .map-home>a{min-height:190px;display:flex;flex-direction:column;align-i
   .welcome-poster.v39>img{position:relative!important;display:block!important;width:100%!important;height:auto!important;max-width:none!important;object-fit:contain!important}
   .kmt-egitim-sec{position:relative!important;clear:both!important;z-index:2!important}
 }
+
+
+/* TRANSFER: shared footer component 23.09.2026 */
+.kmt-site-footer{width:100%;box-sizing:border-box;background:#070809;color:#aaa;border-top:3px solid #d60000;padding:0!important;text-transform:none!important;font-family:Arial,Helvetica,sans-serif}
+.kmt-site-footer .kmt-footer-inner{max-width:1350px;margin:auto;padding:28px 5% 22px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.kmt-site-footer .kmt-footer-brand strong{display:block;color:#fff;font-size:20px;letter-spacing:1px}
+.kmt-site-footer .kmt-footer-brand strong span{color:#d60000}
+.kmt-site-footer .kmt-footer-brand small{display:block;margin-top:7px;color:#777;font-size:10px;letter-spacing:1.6px}
+.kmt-site-footer .kmt-footer-info{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.kmt-site-footer .kmt-footer-info a,.kmt-site-footer .kmt-footer-info span{display:inline;color:#aaa;text-decoration:none;font-size:12px;font-weight:700;margin:0}
+.kmt-site-footer .kmt-footer-info a:hover{color:#fff}
+.kmt-site-footer .kmt-footer-copy{max-width:1350px;margin:auto;padding:14px 5% 19px;border-top:1px solid #222;color:#777;font-size:11px;text-align:center;line-height:1.5}
+.kmt-site-footer .kmt-footer-copy strong{color:#aaa}
+@media(max-width:700px){.kmt-site-footer .kmt-footer-inner{padding:23px 18px 18px;display:block}.kmt-site-footer .kmt-footer-info{margin-top:17px;gap:13px}.kmt-site-footer .kmt-footer-copy{padding:13px 18px 17px}}
