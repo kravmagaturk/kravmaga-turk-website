@@ -49,29 +49,21 @@
   max-width:760px;margin:0;color:#c3c3c3;
   font-size:clamp(17px,2vw,20px);line-height:1.65
 }
-.kmt-belgeler .redline{
-  width:88px;height:5px;margin-top:29px;background:#e50922
-}
+.kmt-belgeler .redline{display:none}
 
-.kmt-belgeler .hero-photo-panel{position:absolute;right:17%;bottom:0;width:300px;height:88%;z-index:1;overflow:hidden;opacity:.68}
-.kmt-belgeler .hero-photo-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050505 0,transparent 42%),linear-gradient(0deg,#050505 0,transparent 40%)}
-.kmt-belgeler .hero-photo-panel img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(.2) contrast(1.05)}
-@media(max-width:900px){.kmt-belgeler .hero-photo-panel{right:4%;width:220px;opacity:.44}}
-@media(max-width:650px){.kmt-belgeler .hero-photo-panel{display:none}}
+.kmt-belgeler .hero-photo-panel{position:relative;width:min(560px,100%);height:235px;margin:24px 0 20px;z-index:2;overflow:hidden;background:#090909;border:1px solid #242424}
+.kmt-belgeler .hero-photo-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050505 0,transparent 20%,transparent 80%,#050505 100%),linear-gradient(0deg,#050505 0,transparent 28%)}
+.kmt-belgeler .hero-photo-panel img{width:100%;height:100%;object-fit:cover;object-position:center 28%;filter:contrast(1.05) saturate(.88)}
+
+
 
 /* GİRİŞ */
 .kmt-belgeler .intro{
   padding:70px 0;background:#0b0b0b;border-bottom:1px solid #202020
 }
-.kmt-belgeler .intro .wrap{
-  display:grid;grid-template-columns:6px 1fr;gap:30px
-}
-.kmt-belgeler .intro .wrap:before{
-  content:"";display:block;width:6px;min-height:230px;background:#e50922
-}
-.kmt-belgeler .intro .eyebrow,
-.kmt-belgeler .intro h2,
-.kmt-belgeler .intro p{grid-column:2}
+.kmt-belgeler .intro .wrap{display:block}
+.kmt-belgeler .intro .wrap:before{display:none!important}
+
 .kmt-belgeler .intro .eyebrow{align-self:end}
 .kmt-belgeler .intro h2{margin-top:-2px}
 .kmt-belgeler .intro p{
@@ -103,7 +95,7 @@
 }
 .kmt-belgeler .card a{display:block;color:inherit;text-decoration:none}
 .kmt-belgeler .pic{
-  position:relative;height:360px;padding:18px;display:flex;align-items:center;justify-content:center;
+  position:relative;height:250px;padding:14px;display:flex;align-items:center;justify-content:center;
   overflow:hidden;background:linear-gradient(145deg,#171717,#0b0b0b)
 }
 .kmt-belgeler .pic:after{
@@ -148,7 +140,7 @@
 
 @media(max-width:900px){
   .kmt-belgeler .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .kmt-belgeler .pic{height:330px}
+  .kmt-belgeler .pic{height:230px}
   .kmt-belgeler .water{right:-3%}
 }
 @media(max-width:650px){
@@ -159,13 +151,20 @@
   .kmt-belgeler .intro .wrap:before{width:4px;min-height:190px}
   .kmt-belgeler .gallery{padding:52px 0 60px}
   .kmt-belgeler .grid{grid-template-columns:1fr;gap:16px}
-  .kmt-belgeler .pic{height:380px;padding:16px}
+  .kmt-belgeler .pic{height:280px;padding:14px}
   .kmt-belgeler .water strong{letter-spacing:-7px}
   .kmt-belgeler .bottom{padding:54px 6%}
 }
 @media(max-width:390px){
-  .kmt-belgeler .pic{height:335px}
+  .kmt-belgeler .pic{height:260px}
 }
+
+.kmt-doc-lightbox{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.88)}
+.kmt-doc-lightbox.open{display:flex}
+.kmt-doc-lightbox-inner{position:relative;width:min(920px,94vw);max-height:88vh;padding:18px;background:#0b0b0b;border:1px solid #333;box-shadow:0 24px 70px rgba(0,0,0,.65)}
+.kmt-doc-lightbox img{display:block;width:100%;max-height:80vh;object-fit:contain;background:#111}
+.kmt-doc-close{position:absolute;right:8px;top:8px;z-index:2;width:42px;height:42px;border:0;border-radius:50%;background:#e50922;color:#fff;font-size:24px;cursor:pointer}
+@media(max-width:650px){.kmt-belgeler .hero-photo-panel{height:190px;margin:18px 0}.kmt-doc-lightbox{padding:10px}.kmt-doc-lightbox-inner{padding:10px}}
 </style>
 
 
@@ -177,9 +176,7 @@
     <span>KRAV MAGA TÜRK</span>
   </div>
 
-  <div class="hero-photo-panel" aria-hidden="true">
-    <img src="https://assets.zyrosite.com/mePyW7BezQcoMDkG/446709753_350400-M4LXtToouwjpk9Wv.jpg" alt="">
-  </div>
+  
   <div class="wrap">
     <div class="hero-in">
 
@@ -190,6 +187,9 @@
       <h1>
         Bülent Çetin <span>Belgeleri</span>
       </h1>
+<div class="hero-photo-panel" aria-hidden="true">
+    <img src="https://assets.zyrosite.com/mePyW7BezQcoMDkG/446709753_350400-M4LXtToouwjpk9Wv.jpg" alt="">
+  </div>
 
       <p class="lead">
         Eğitim, uzmanlık ve mesleki gelişim sürecine ait
@@ -267,9 +267,7 @@
       <article class="card">
 
         <a
-          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/dan-YbNbGw1aL8cNg2jk.jpg"
-          target="_blank"
-          rel="noopener noreferrer">
+          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/dan-YbNbGw1aL8cNg2jk.jpg">
 
           <div class="pic">
 
@@ -301,9 +299,7 @@
       <article class="card">
 
         <a
-          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/turk-AoPDlkbbLpCaMlej.jpg"
-          target="_blank"
-          rel="noopener noreferrer">
+          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/turk-AoPDlkbbLpCaMlej.jpg">
 
           <div class="pic">
 
@@ -335,9 +331,7 @@
       <article class="card">
 
         <a
-          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/kmg_instructor-mjEzyNMbe4iv21yW.jpg"
-          target="_blank"
-          rel="noopener noreferrer">
+          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/kmg_instructor-mjEzyNMbe4iv21yW.jpg">
 
           <div class="pic">
 
@@ -369,9 +363,7 @@
       <article class="card">
 
         <a
-          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/tae-kwon-do-ZOxHx3LFqIRrBhnH.png"
-          target="_blank"
-          rel="noopener noreferrer">
+          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/tae-kwon-do-ZOxHx3LFqIRrBhnH.png">
 
           <div class="pic">
 
@@ -401,9 +393,7 @@
       <article class="card">
 
         <a
-          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/km-mxBzQOvbP5Fevq5W.jpg"
-          target="_blank"
-          rel="noopener noreferrer">
+          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/km-mxBzQOvbP5Fevq5W.jpg">
 
           <div class="pic">
 
@@ -435,9 +425,7 @@
       <article class="card">
 
         <a
-          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/muay-thai-YIGpmsQ8iBjvRoQX.png"
-          target="_blank"
-          rel="noopener noreferrer">
+          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/muay-thai-YIGpmsQ8iBjvRoQX.png">
 
           <div class="pic">
 
@@ -469,9 +457,7 @@
       <article class="card">
 
         <a
-          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/a--cts-ALp8v5EWKLtknr9l.jpg"
-          target="_blank"
-          rel="noopener noreferrer">
+          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/a--cts-ALp8v5EWKLtknr9l.jpg">
 
           <div class="pic">
 
@@ -501,9 +487,7 @@
       <article class="card">
 
         <a
-          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/esa02-9wAdV4apCaJY96OH.png"
-          target="_blank"
-          rel="noopener noreferrer">
+          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/esa02-9wAdV4apCaJY96OH.png">
 
           <div class="pic">
 
@@ -537,9 +521,7 @@
       <article class="card">
 
         <a
-          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/grd-1_kmg-AwvOZa7b3yIe2k1K.jpg"
-          target="_blank"
-          rel="noopener noreferrer">
+          href="https://assets.zyrosite.com/mePyW7BezQcoMDkG/grd-1_kmg-AwvOZa7b3yIe2k1K.jpg">
 
           <div class="pic">
 
@@ -575,6 +557,13 @@
 
 
 <!-- ALT BÖLÜM -->
+<div class="kmt-doc-lightbox" id="kmtDocLightbox" aria-hidden="true">
+  <div class="kmt-doc-lightbox-inner">
+    <button class="kmt-doc-close" type="button" aria-label="Belgeyi kapat">×</button>
+    <img src="" alt="Büyütülmüş belge">
+  </div>
+</div>
+
 <section class="bottom">
 
   <span class="eyebrow">
@@ -591,4 +580,31 @@
     görmektedir.
   </p>
 
-</section><script src="assets/footer.js" defer></script>
+</section><script>
+(function(){
+  var box=document.getElementById('kmtDocLightbox');
+  if(!box) return;
+  var img=box.querySelector('img');
+  var close=box.querySelector('.kmt-doc-close');
+  document.querySelectorAll('.kmt-belgeler .card a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      img.src=a.getAttribute('href');
+      img.alt=(a.querySelector('img')||{}).alt||'Belge';
+      box.classList.add('open');
+      box.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    });
+  });
+  function shut(){
+    box.classList.remove('open');
+    box.setAttribute('aria-hidden','true');
+    img.src='';
+    document.body.style.overflow='';
+  }
+  close.addEventListener('click',shut);
+  box.addEventListener('click',function(e){if(e.target===box) shut()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape') shut()});
+})();
+</script>
+<script src="assets/footer.js" defer></script>
