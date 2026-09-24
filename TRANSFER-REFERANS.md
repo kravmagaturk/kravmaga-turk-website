@@ -187,3 +187,10 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Özel Güvenlik hero fotoğrafındaki “ÖZEL GÜVENLİK” yazısı lokal blur/mask katmanıyla görünmez hale getirildi.
 - Yakın Koruma hero'sunda Özel Güvenlik havaalanı fotoğrafı kaldırıldı; repodaki uygulamalı koruma/eğitim fotoğrafı kullanıldı.
 - Son kontrolde ilgili altı sayfanın style ve CSS parantez dengeleri temiz, ortak footer.js bağlantıları mevcut.
+
+### Mobil son kalibrasyon — Belgeler / üst boşluk
+- Belgeler sayfasında mobil önizlemeler sabit çerçeve yüksekliğine alındı; tüm belge görselleri `contain` ile aynı görünen ölçekte ve eşit iç boşlukla gösteriliyor.
+- Tüm iç sayfalarda mobil üst boşluklar ortak `footer.js` kalibrasyonu ile sıfırlandı; sayfa içeriği menünün hemen altından başlıyor.
+- Krav Maga mobil hero üst padding'i ayrıca sıfırlandı.
+- Eğitmen & Seviye Sorgu mobil üst padding'i ayrıca sıfırlandı.
+- Son kontrolde ilgili dosyalarda style/CSS parantez dengeleri temiz.
