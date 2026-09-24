@@ -1205,6 +1205,22 @@
 
 @media(hover:none){.bc-card:hover,.bc-consult-card:hover,.bc-person:hover,.bc-video:hover img{transform:none}}
 .bc-person:focus-visible,.bc-video:focus-visible{outline:2px solid #e50922;outline-offset:3px}
+
+/* 06 / TPE marka belgesi: kartin icine gomulu belge arka plani */
+.bc-grid-four .bc-card:nth-child(7){
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(rgba(8,8,9,.76),rgba(8,8,9,.90)),
+    url("assets/documents/tpe-marka-tescil.jpg") center/contain no-repeat,
+    #111113;
+}
+.bc-grid-four .bc-card:nth-child(7) > *{position:relative;z-index:1}
+
+/* mobil ust bosluk: Krav Maga sayfasi ile ayni ritim */
+@media(max-width:650px){
+  .bc-hero{min-height:410px}
+}
 </style>
 
 
