@@ -34,8 +34,10 @@
 
       .transfer-mobile{
         display:none;margin-left:auto;background:#111315;color:#fff;border:1px solid #3b3d42;
-        border-radius:8px;padding:9px 12px;font-size:20px
+        border-radius:8px;padding:9px 12px;font-size:20px;min-width:44px;min-height:44px
       }
+      .transfer-mobile:focus-visible,.transfer-item>a:focus-visible,.transfer-item>button:focus-visible,
+      .kmt-footer-info a:focus-visible{outline:2px solid #e30620;outline-offset:2px}
 
       .kmt-site-footer{
         width:100%;box-sizing:border-box;background:#070809!important;color:#aaa!important;
@@ -57,7 +59,7 @@
       }
       .kmt-footer-info a,.kmt-footer-info span{
         color:#b8b8b8!important;text-decoration:none!important;font-size:13px;font-weight:800;
-        letter-spacing:.04em;white-space:nowrap
+        letter-spacing:.04em;white-space:nowrap;line-height:1.45
       }
       .kmt-footer-info a:hover{color:#fff!important}
       .kmt-footer-copy{
