@@ -120,3 +120,9 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Tüm HTML dosyalarında yerel `href/src` referansları dosya ağacıyla karşılaştırıldı; kırık yerel referans bulunmadı.
 - Tüm HTML dosyalarında `<style>` açılış/kapanış dengesi kontrol edildi; sorun kalmadı.
 - `assets/site.css` içindeki artık geçersiz olan “TRANSFER TEST / test branch only” yorumu production durumuna göre güncellendi.
+
+### SEO sitemap / robots / 404 turu
+- Sitemap URL'leri tüm indexlenebilir sayfaların canonical adresleriyle karşılaştırıldı; eşleşmeler doğru.
+- `diploma-sorgu.html` bilinçli olarak `noindex,nofollow,noarchive` ve sitemap dışında bırakıldı.
+- Robots meta etiketi eksik olan indexlenebilir sayfalara `index,follow,max-image-preview:large` standardı eklendi.
+- Vercel için markalı `404.html` eklendi; sayfa `noindex,nofollow` ve Ana Sayfa / İletişim geri dönüş bağlantıları içeriyor.
