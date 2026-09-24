@@ -49,3 +49,5 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Statik yerel bağlantı/asset bütünlük taramasında kalan kırık iç referans bulunmadı.
 - Firebase REST uç noktaları bu çalışma ortamının web erişim kısıtı nedeniyle dışarıdan doğrudan doğrulanamadı; kod ve CSP izinleri kontrol edildi.
 - MODÜL 8 için kalan tek doğrulama gerçek yayın URL'sinde tarayıcı görsel/etkileşim testidir; canlı main dalına geçiş yapılmadı.
+
+- Vercel preview deployment tetikleme notu: 24 Eylül 2026, MODÜL 8 tarayıcı testi için.
