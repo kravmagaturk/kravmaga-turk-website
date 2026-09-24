@@ -266,13 +266,14 @@ body{
 
 .cpo-gallery{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:10px;
 }
 
 .cpo-photo{
   position:relative;
-  height:245px;
+  height:auto;
+  aspect-ratio:1/1;
   overflow:hidden;
   border-radius:10px;
   border:1px solid var(--border);
@@ -309,8 +310,14 @@ body{
 .cpo-photo span{
   position:absolute;
   z-index:3;
-  left:15px;
-  bottom:13px;
+  left:12px;
+  right:12px;
+  bottom:12px;
+  width:max-content;
+  max-width:calc(100% - 24px);
+  padding:6px 9px;
+  border-radius:5px;
+  background:rgba(5,5,5,.78);
   color:#fff;
   font-size:11px;
   font-weight:900;
@@ -584,11 +591,11 @@ body{
   }
 
   .cpo-gallery{
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(3,1fr);
   }
 
   .cpo-photo{
-    height:190px;
+    height:auto;
   }
 
   .cpo-intro h2,
@@ -682,12 +689,13 @@ body{
   }
 
   .cpo-gallery{
-    grid-template-columns:1fr 1fr;
-    gap:8px;
+    grid-template-columns:1fr;
+    gap:10px;
   }
 
   .cpo-photo{
-    height:180px;
+    height:auto;
+    aspect-ratio:1/1;
   }
 
   .cpo-photo span{
@@ -751,11 +759,12 @@ body{
   }
 
   .cpo-gallery{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr;
   }
 
   .cpo-photo{
-    height:155px;
+    height:auto;
+    aspect-ratio:1/1;
   }
 
   .cpo-logo{
@@ -812,7 +821,10 @@ img{max-width:100%}
   opacity:.07!important;
   background:url("/_vercel/image?url=%2Fassets%2Fbrand%2Flogo-1948.png&w=256&q=82") center/contain no-repeat!important;
 }
-.cpo-hero-content{padding:58px 0!important}
+.cpo-hero-content{
+  padding:58px 0!important;
+  max-width:min(600px,44vw)!important;
+}
 @media(max-width:750px){
   .cpo-hero{min-height:540px!important;align-items:flex-end!important}
   .cpo-hero-photo{
@@ -828,7 +840,10 @@ img{max-width:100%}
     top:118px!important;
     opacity:.055!important;
   }
-  .cpo-hero-content{padding:225px 0 36px!important}
+  .cpo-hero-content{
+    padding:225px 0 36px!important;
+    max-width:100%!important;
+  }
 }
 @media(max-width:420px){
   .cpo-hero-photo{height:200px!important;inset:0!important}
@@ -916,7 +931,7 @@ loading="lazy" decoding="async" fetchpriority="low">
 
 <div class="cpo-photo">
 <img
-src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=375,fit=crop/mePyW7BezQcoMDkG/yakin-koruma-hizmetlerimiz-YlenX7LOrrsv08OG.jpg" alt="Yakın koruma eğitimi"
+src="assets/security/ozel-guvenlik-xray.webp" alt="Özel güvenlik eğitimi"
 loading="lazy" decoding="async" fetchpriority="low">
 <span>Güvenlik</span>
 </div>
@@ -927,13 +942,6 @@ src="hero.webp"
 alt="Krav Maga yakın koruma"
 loading="lazy" decoding="async" fetchpriority="low">
 <span>Krav Maga</span>
-</div>
-
-<div class="cpo-photo">
-<img
-src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=375,fit=crop/mePyW7BezQcoMDkG/yakin-koruma-hizmetlerimiz-YlenX7LOrrsv08OG.jpg" alt="Close Protection Officer"
-loading="lazy" decoding="async" fetchpriority="low">
-<span>CPO</span>
 </div>
 
 </div>
