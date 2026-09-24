@@ -211,6 +211,9 @@
 
   function injectStandardMark() {
     document.querySelectorAll(".kmt-standard-mark").forEach(function(el){el.remove()});
+    if(document.body.classList.contains("kmt-home-theme") ||
+       document.body.classList.contains("cpo-body") ||
+       document.querySelector(".bc-hero")) return;
     var hero =
       document.querySelector(".bc-hero") ||
       document.querySelector(".kmt-representative-page .hero") ||
