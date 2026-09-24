@@ -89,41 +89,75 @@
   .bc-hero h1{font-size:40px!important}
 }
 </style>
-<style id="kmt-bulent-cyberpunk-visible">
-/* Cyberpunk hero görünürlüğü: görseli karartmadan sayfaya yedir */
+
+<style id="kmt-bulent-cyberpunk-img-layer">
+/* Cyberpunk hero: gerçek IMG katmanı; eski background kuralları artık etkileyemez */
 .bc-hero{
-  background-image:
-    linear-gradient(90deg,rgba(5,5,5,.72) 0%,rgba(5,5,5,.48) 34%,rgba(5,5,5,.16) 66%,rgba(5,5,5,.04) 100%),
-    url("https://raw.githubusercontent.com/kravmagaturk/kravmaga-turk-website/main/bulent-cetin-cyberpunk-hero.png")!important;
-  background-size:cover!important;
-  background-position:center 44%!important;
-  background-repeat:no-repeat!important;
-  background-color:#050505!important;
+  position:relative!important;
+  min-height:430px!important;
+  background:#050505!important;
+  overflow:hidden!important;
+}
+.bc-hero-bg{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+  object-fit:cover!important;
+  object-position:center 42%!important;
+  z-index:0!important;
+  opacity:1!important;
+  filter:contrast(1.04) brightness(.82) saturate(.92)!important;
 }
 .bc-hero:before{
-  background:
-    linear-gradient(90deg,rgba(0,0,0,.30) 0%,rgba(0,0,0,.16) 38%,transparent 72%)!important;
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  background:linear-gradient(90deg,rgba(5,5,5,.78) 0%,rgba(5,5,5,.48) 36%,rgba(5,5,5,.14) 68%,rgba(5,5,5,.04) 100%)!important;
+  pointer-events:none!important;
 }
 .bc-hero:after{
-  box-shadow:inset 0 0 55px rgba(0,0,0,.28)!important;
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  box-shadow:inset 0 0 55px rgba(0,0,0,.26)!important;
+  pointer-events:none!important;
+}
+.bc-hero-content{
+  position:relative!important;
+  z-index:2!important;
+  min-height:430px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
 }
 .bc-hero h1{
+  margin:0!important;
+  font-size:clamp(48px,6.5vw,82px)!important;
   text-shadow:0 3px 20px rgba(0,0,0,.82)!important;
 }
+@media(max-width:1100px){
+  .bc-hero,.bc-hero-content{min-height:390px!important}
+  .bc-hero-bg{object-position:54% 40%!important}
+}
 @media(max-width:750px){
-  .bc-hero{
-    background-position:40% top!important;
-  }
+  .bc-hero,.bc-hero-content{min-height:350px!important}
+  .bc-hero-bg{object-position:43% top!important}
+  .bc-hero h1{font-size:40px!important}
 }
 </style>
 </head><body><section class="bc-page">
 
   <!-- HERO / 1948 -->
-  <header class="bc-hero" style="background-image:linear-gradient(90deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.72) 38%,rgba(5,5,5,.24) 68%,rgba(5,5,5,.06) 100%),url('https://raw.githubusercontent.com/kravmagaturk/kravmaga-turk-website/main/https://raw.githubusercontent.com/kravmagaturk/kravmaga-turk-website/main/bulent-cetin-cyberpunk-hero.png')!important;background-size:cover!important;background-position:center 42%!important;background-repeat:no-repeat!important;">
-<div class="bc-hero-content">
-      <h1>BÜLENT ÇETİN</h1>
-    </div>
-  </header>
+  <header class="bc-hero">
+  <img class="bc-hero-bg" src="/bulent-cetin-cyberpunk-hero.png?v=20260925-3" alt="" aria-hidden="true">
+  <div class="bc-hero-content">
+    <h1>BÜLENT ÇETİN</h1>
+  </div>
+</header>
 
 
   <!-- FOTOĞRAF + ÖZGEÇMİŞ -->
