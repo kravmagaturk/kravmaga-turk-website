@@ -135,6 +135,47 @@
         .kmt-security-photo,.cpo-hero-photo{top:0!important}
       }
 
+      /* KRAV MAGA MOBILE TOP REFERENCE: diğer iç sayfalar Krav Maga ile aynı üst başlangıç */
+      @media(max-width:750px){
+        .kmt-belgeler .hero,
+        .kmt-representative-page .hero,
+        .leg-hero,
+        .bc-hero,
+        .kmt-contact,
+        .edu-hero,
+        #kmt-basin .basin-hero,
+        .kmt-ref-hero{
+          margin-top:0!important;
+          padding-top:0!important;
+          top:auto!important;
+        }
+        .kmt-belgeler .hero-in,
+        .kmt-representative-page .hero-inner,
+        .leg-hero-content,
+        .bc-hero-content,
+        .kmt-contact-wrap,
+        .edu-hero,
+        #kmt-basin .basin-hero-inner,
+        .kmt-ref-hero-content{
+          margin-top:0!important;
+          padding-top:0!important;
+        }
+        .kmt-belgeler .hero,
+        .kmt-representative-page .hero,
+        .leg-hero,
+        .bc-hero,
+        #kmt-basin .basin-hero,
+        .kmt-ref-hero{
+          align-items:flex-start!important;
+        }
+        /* Güvenlik sayfaları: menü-altı boşluk yok, görsel için iç alan korunur */
+        body.kmt-home-theme .kmt-hero,
+        body.cpo-body .cpo-hero{
+          margin-top:0!important;
+          padding-top:0!important;
+        }
+      }
+
       @media(max-width:900px){
         .transfer-nav-inner{min-height:64px;padding:0 14px}
         .transfer-brand{font-size:14px}
