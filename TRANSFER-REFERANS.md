@@ -40,4 +40,7 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - `hakkimizda.html` dosyasının Bülent Çetin sayfasının eski/noindex kopyası olduğu doğrulandı; Eğitimler bağlantısı `bulent-cetin.html` olarak düzeltildi ve eski kopya kaldırıldı.
 - Canonical `/temsilcilik` adresinin `temsilcilikler.html` dosyasına eşlenmesi için `_redirects` eklendi.
 - Taranan sayfalarda aktif Hostinger/Zyro bağımlılığı bulunmadı; kalan `kravmaga.com.tr` adresleri canonical SEO URL'leridir.
-- MODÜL 8 henüz kapanmadı: görsel/tarayıcı testi, menü etkileşimleri, formlar ve mobil son tur tamamlanacak.
+- Kod seviyesi son turunda eski `hakkimizda.html` bağlantıları Ana Sayfa ve Özel Güvenlik sayfasında `bulent-cetin.html` olarak düzeltildi.
+- Ortak `assets/footer.js` menü kodu kontrol edildi: mobil menü, alt menüler, ESC ile kapatma ve tüm sayfalara ortak header/footer enjeksiyonu mevcut.
+- CSP başlığı mevcut inline CSS/JS mimarisiyle uyumlu hale getirildi; Firebase sorguları için `https://kravmaga-diploma-default-rtdb.firebaseio.com` connect-src iznine eklendi ve HTTPS profil görsellerine izin verildi.
+- MODÜL 8 kod seviyesi testi tamamlandı; kullanıcı tarafında gerçek tarayıcı masaüstü/telefon görsel kontrolü kaldı.
