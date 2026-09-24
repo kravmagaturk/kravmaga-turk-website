@@ -44,3 +44,8 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Ortak `assets/footer.js` menü kodu kontrol edildi: mobil menü, alt menüler, ESC ile kapatma ve tüm sayfalara ortak header/footer enjeksiyonu mevcut.
 - CSP başlığı mevcut inline CSS/JS mimarisiyle uyumlu hale getirildi; Firebase sorguları için `https://kravmaga-diploma-default-rtdb.firebaseio.com` connect-src iznine eklendi ve HTTPS profil görsellerine izin verildi.
 - MODÜL 8 kod seviyesi testi tamamlandı; kullanıcı tarafında gerçek tarayıcı masaüstü/telefon görsel kontrolü kaldı.
+
+- Main/transfer-test karşılaştırması: transfer-test main dalının 174 commit önünde, 0 commit gerisinde. Main üzerinde kaçırılmış yeni değişiklik yok.
+- Statik yerel bağlantı/asset bütünlük taramasında kalan kırık iç referans bulunmadı.
+- Firebase REST uç noktaları bu çalışma ortamının web erişim kısıtı nedeniyle dışarıdan doğrudan doğrulanamadı; kod ve CSP izinleri kontrol edildi.
+- MODÜL 8 için kalan tek doğrulama gerçek yayın URL'sinde tarayıcı görsel/etkileşim testidir; canlı main dalına geçiş yapılmadı.
