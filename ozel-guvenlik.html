@@ -1231,6 +1231,41 @@ html{box-sizing:border-box;overflow-x:hidden}*,*:before,*:after{box-sizing:inher
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Özel Güvenlik Eğitimi İstanbul | Krav Maga Türk">
 <meta name="twitter:description" content="Özel güvenlik personeline yönelik Krav Maga, yakın temas, farkındalık ve kurumsal güvenlik eğitimleri. İstanbul Krav Maga Türk.">
+<style id="kmt-matching-color-security">
+/* MATCHING COLOR GRADING — site-wide visual standard */
+.kmt-security-photo{
+  inset:0!important;
+  background-image:url("assets/security/ozel-guvenlik-xray.webp")!important;
+  background-size:cover!important;
+  background-position:72% center!important;
+  background-repeat:no-repeat!important;
+  background-color:#050505!important;
+  transform:none!important;
+  filter:contrast(1.05) brightness(.73) saturate(.76)!important;
+}
+.kmt-security-photo:after{content:none!important;display:none!important}
+.kmt-security-overlay{
+  background:
+    linear-gradient(90deg,rgba(5,5,5,.99) 0%,rgba(5,5,5,.94) 28%,rgba(5,5,5,.72) 48%,rgba(5,5,5,.30) 72%,rgba(5,5,5,.14) 100%),
+    linear-gradient(0deg,rgba(5,5,5,.70),transparent 54%),
+    radial-gradient(circle at 76% 44%,rgba(145,0,10,.12),transparent 36%)!important;
+}
+.kmt-security-single-mark{display:none!important}
+.kmt-hero{box-shadow:inset 0 0 100px rgba(0,0,0,.35)}
+@media(max-width:750px){
+  .kmt-security-photo{
+    inset:0!important;
+    height:100%!important;
+    background-size:cover!important;
+    background-position:64% top!important;
+  }
+  .kmt-security-overlay{
+    background:
+      linear-gradient(0deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.97) 31%,rgba(5,5,5,.72) 55%,rgba(5,5,5,.18) 84%),
+      linear-gradient(90deg,rgba(5,5,5,.38),transparent 68%)!important;
+  }
+}
+</style>
 </head>
 
 <body class="kmt-home-theme">
@@ -1868,36 +1903,4 @@ document.addEventListener('click',function(e){
 </script>
 <script src="assets/footer.js" defer></script></body>
 </html>
-<style id="kmt-matching-color-security">
-/* Matching color grading: güvenlik görseli ayrı bir kutu değil, hero'nun devamı */
-.kmt-security-photo{
-  inset:0!important;
-  background-image:url("assets/security/ozel-guvenlik-xray.webp")!important;
-  background-size:cover!important;
-  background-position:72% center!important;
-  background-repeat:no-repeat!important;
-  transform:none!important;
-  filter:contrast(1.04) brightness(.76) saturate(.78)!important;
-}
-.kmt-security-photo:after{content:none!important;display:none!important}
-.kmt-security-overlay{
-  background:
-    linear-gradient(90deg,rgba(5,5,5,.98) 0%,rgba(5,5,5,.93) 29%,rgba(5,5,5,.70) 48%,rgba(5,5,5,.28) 72%,rgba(5,5,5,.16) 100%),
-    linear-gradient(0deg,rgba(5,5,5,.66),transparent 52%),
-    radial-gradient(circle at 76% 46%,rgba(150,0,10,.12),transparent 34%)!important;
-}
-.kmt-security-single-mark{display:none!important}
-@media(max-width:750px){
-  .kmt-security-photo{
-    inset:0!important;
-    height:100%!important;
-    background-size:cover!important;
-    background-position:64% top!important;
-  }
-  .kmt-security-overlay{
-    background:
-      linear-gradient(0deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.97) 31%,rgba(5,5,5,.72) 55%,rgba(5,5,5,.20) 82%),
-      linear-gradient(90deg,rgba(5,5,5,.35),transparent 65%)!important;
-  }
-}
-</style>
+
