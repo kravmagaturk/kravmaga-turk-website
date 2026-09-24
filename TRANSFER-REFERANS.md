@@ -81,3 +81,9 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Güvenlik header'ları Vercel native `headers` yapılandırmasına taşındı; Firebase REST bağlantısı CSP içinde izinli.
 - `robots.txt` ve `sitemap.xml` mevcut ve Vercel clean URL yapısıyla uyumlu hale getirildi.
 - Dış web crawler halen eski Hostinger önbelleği döndürebildiği için gerçek zamanlı içerik doğrulamasında referans alınmamalı; Vercel/DNS Valid Configuration ve repo üretim kodu esas alınmalı.
+
+### TRANSFER sonrası temizlik
+- Vercel geçişinden sonra artık gereksiz kalan `_headers` ve `_redirects` dosyaları kaldırıldı; görevleri `vercel.json` içinde korunuyor.
+- Repo genelinde `hostinger`, `zyro`, `hstgr.net` ve `assets.zyrosite.com` referansları tarandı; aktif web kodunda kalıntı bulunmadı.
+- `cloudflare/portrait-worker` ayrı çalışan servis olduğu için korundu.
+- Son `main` commitlerinde eski Cloudflare GitHub build check'leri tetiklenmiyor; Vercel artık ana üretim akışı.
