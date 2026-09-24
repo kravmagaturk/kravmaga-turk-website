@@ -95,3 +95,10 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Ortak mobil menüye küçük ekranlarda güvenli dikey kaydırma, overscroll kontrolü ve touch scrolling eklendi.
 - Vercel `vercel.json` içinde statik `/assets/*` ve hero görseli için kontrollü cache header'ları eklendi.
 - Büyük dosya tespiti: `assets/home/egitim-secenekleri.png` ~1.9 MB, `assets/brand/logo-1948.png` ~0.92 MB, `assets/documents/muay-thai-hakem.png` ~0.88 MB. Bunlar binary sıkıştırma için sonraki medya optimizasyonu adaylarıdır.
+
+### Görsel sıkıştırma / Vercel Image Optimization
+- Vercel native Image Optimization aktif edildi (`images` yapılandırması, AVIF/WebP, minimum cache TTL 86400).
+- `assets/home/egitim-secenekleri.png` (~1.9 MB) ana sayfada responsive optimize edilmiş 768/1080/1500px çıktılar üzerinden servis ediliyor (q=78).
+- `assets/brand/logo-1948.png` (~0.92 MB) görünür kullanımlarda 128px/512px optimize edilmiş çıktı üzerinden servis ediliyor (q=82).
+- `assets/documents/muay-thai-hakem.png` (~0.88 MB) Belgeler sayfasında 1334px optimize edilmiş çıktı üzerinden servis ediliyor (q=88).
+- Orijinal PNG dosyaları kalite/yedek amacıyla repoda korunuyor; ziyaretçiye ağır orijinal yerine Vercel'in sıkıştırılmış modern formatı gönderiliyor.
