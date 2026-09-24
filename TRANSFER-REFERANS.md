@@ -111,3 +111,12 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - `assets/cpo-egitim-icerigi.webp` dosyası `assets/security/cpo-egitim-icerigi.webp` altına taşındı.
 - `assets/bulent-cetin-hero.png` dosyası `assets/about/bulent-cetin-hero.png` altına taşındı.
 - İlgili sayfa referansları aynı atomik commit içinde güncellendi; kök dosya kirliliği azaltıldı ve güvenlik görselleri Vercel `/assets/*` optimizasyon kapsamına alındı.
+
+### Kod sadeleştirme ve bütünlük kontrolü
+- Ana sayfadaki ortak `header/footer` markup, inline navigasyon CSS'i ve eski mobil menü JS'i kaldırıldı; ortak `assets/footer.js` tek kaynak olarak bırakıldı. Ana sayfada yaklaşık 6.3 KB tekrar kod temizlendi.
+- `bulent-cetin.html`, `temsilcilikler.html`, `egitimler.html` ve `ozel-guvenlik.html` içindeki artık ortak bileşen tarafından değiştirilen eski menü/footer markup'ları kaldırıldı.
+- `bulent-cetin.html` içinde geçmiş düzenlemelerden kalan iç içe/denge dışı `<style>` etiketleri düzeltildi; mobilde ortak menüyü gizleyen eski `header nav { display:none!important }` kuralı kaldırıldı.
+- `temsilcilikler.html` içindeki kullanılmayan eski transfer menü/footer CSS bloğu kaldırıldı.
+- Tüm HTML dosyalarında yerel `href/src` referansları dosya ağacıyla karşılaştırıldı; kırık yerel referans bulunmadı.
+- Tüm HTML dosyalarında `<style>` açılış/kapanış dengesi kontrol edildi; sorun kalmadı.
+- `assets/site.css` içindeki artık geçersiz olan “TRANSFER TEST / test branch only” yorumu production durumuna göre güncellendi.
