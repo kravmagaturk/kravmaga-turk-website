@@ -44,7 +44,7 @@
       ]
     },
     {
-      "source": "/hero.webp.webp",
+      "source": "/hero.webp",
       "headers": [
         {
           "key": "Cache-Control",

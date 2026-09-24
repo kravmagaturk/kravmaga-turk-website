@@ -29,7 +29,7 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Legionnaire 8 arşiv görseli yerel `assets/legionnaire/` klasöründen kullanılıyor.
 - Kullanılmayan eski `KRAV-MAGA-TURK-V4-MENU.png`, `KURULUM.txt` ve `assets/site.js` kaldırıldı.
 - Eski `international-register/main/logo.png` görsel bağımlılığı ana site sayfalarından kaldırıldı.
-- Aktif kullanılan `hero.webp.webp`, `assetsozel-guvenlik-xray.webp`, eğitim ve temsilcilik görselleri korunuyor.
+- Aktif kullanılan `hero.webp`, `assetsozel-guvenlik-xray.webp`, eğitim ve temsilcilik görselleri korunuyor.
 - Kalan Zyro bağımlılığı: YOK. Ana Sayfa ve Belgeler görselleri `assets/home/` ve `assets/documents/` altına yerelleştirildi.
 
 
@@ -102,3 +102,6 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - `assets/brand/logo-1948.png` (~0.92 MB) görünür kullanımlarda 128px/512px optimize edilmiş çıktı üzerinden servis ediliyor (q=82).
 - `assets/documents/muay-thai-hakem.png` (~0.88 MB) Belgeler sayfasında 1334px optimize edilmiş çıktı üzerinden servis ediliyor (q=88).
 - Orijinal PNG dosyaları kalite/yedek amacıyla repoda korunuyor; ziyaretçiye ağır orijinal yerine Vercel'in sıkıştırılmış modern formatı gönderiliyor.
+
+### Dosya adı temizliği
+- Eski çift uzantılı `hero.webp.webp` dosyası `hero.webp` olarak yeniden adlandırıldı; ana sayfa, Yakın Koruma, Vercel cache/image config ve sosyal paylaşım görsel referansları atomik commit ile güncellendi.
