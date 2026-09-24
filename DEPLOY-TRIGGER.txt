@@ -1,2 +1,0 @@
-Redeploy trigger: 2026-09-24 18:58 TRT
-Reason: force production refresh after visual fixes.
