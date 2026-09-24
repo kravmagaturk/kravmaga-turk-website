@@ -850,6 +850,61 @@ img{max-width:100%}
   .cpo-hero-content{padding-top:205px!important}
 }
 </style>
+<style id="kmt-matching-color-cpo">
+/* MATCHING COLOR GRADING — site-wide visual standard */
+.cpo-hero{
+  min-height:560px!important;
+  background:#050505!important;
+  box-shadow:inset 0 0 100px rgba(0,0,0,.36);
+}
+.cpo-hero-photo{
+  inset:0!important;
+  height:auto!important;
+  background-image:url("assets/education/cpo.webp")!important;
+  background-size:cover!important;
+  background-position:72% center!important;
+  background-repeat:no-repeat!important;
+  transform:none!important;
+  filter:contrast(1.06) brightness(.69) saturate(.74)!important;
+}
+.cpo-hero-overlay{
+  background:
+    linear-gradient(90deg,rgba(5,5,5,.995) 0%,rgba(5,5,5,.96) 31%,rgba(5,5,5,.77) 48%,rgba(5,5,5,.38) 69%,rgba(5,5,5,.16) 100%),
+    linear-gradient(0deg,rgba(5,5,5,.72),transparent 57%),
+    radial-gradient(circle at 76% 46%,rgba(150,0,12,.12),transparent 36%)!important;
+}
+.cpo-red-glow,.cpo-logo{display:none!important}
+.cpo-hero-content{
+  max-width:590px!important;
+  padding:72px 0!important;
+}
+.cpo-gallery .cpo-photo img{
+  filter:contrast(1.06) brightness(.74) saturate(.76)!important;
+}
+.cpo-gallery .cpo-photo:after{
+  background:
+    linear-gradient(0deg,rgba(5,5,5,.86),transparent 58%),
+    radial-gradient(circle at 72% 28%,rgba(135,0,10,.08),transparent 46%)!important;
+}
+@media(max-width:750px){
+  .cpo-hero{min-height:590px!important;align-items:flex-end!important}
+  .cpo-hero-photo{
+    inset:0!important;
+    height:100%!important;
+    background-size:cover!important;
+    background-position:66% top!important;
+  }
+  .cpo-hero-overlay{
+    background:
+      linear-gradient(0deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.98) 34%,rgba(5,5,5,.74) 58%,rgba(5,5,5,.17) 85%),
+      linear-gradient(90deg,rgba(5,5,5,.32),transparent 72%)!important;
+  }
+  .cpo-hero-content{
+    max-width:100%!important;
+    padding:285px 0 38px!important;
+  }
+}
+</style>
 </head>
 
 <body class="cpo-body">
@@ -1179,54 +1234,4 @@ Konumu Gör
 <script src="assets/footer.js" defer></script>
 </body>
 </html>
-<style id="kmt-matching-color-cpo">
-/* Matching color grading: yakın koruma görseli hero'nun doğal arka planı */
-.cpo-hero{min-height:560px!important;background:#050505!important}
-.cpo-hero-photo{
-  inset:0!important;
-  height:auto!important;
-  background-image:url("assets/education/cpo.webp")!important;
-  background-size:cover!important;
-  background-position:70% center!important;
-  background-repeat:no-repeat!important;
-  transform:none!important;
-  filter:contrast(1.05) brightness(.70) saturate(.76)!important;
-}
-.cpo-hero-overlay{
-  background:
-    linear-gradient(90deg,rgba(5,5,5,.99) 0%,rgba(5,5,5,.96) 32%,rgba(5,5,5,.76) 48%,rgba(5,5,5,.36) 68%,rgba(5,5,5,.18) 100%),
-    linear-gradient(0deg,rgba(5,5,5,.72),transparent 56%),
-    radial-gradient(circle at 76% 48%,rgba(155,0,12,.13),transparent 34%)!important;
-}
-.cpo-red-glow,.cpo-logo{display:none!important}
-.cpo-hero-content{
-  max-width:600px!important;
-  padding:72px 0!important;
-}
-.cpo-gallery .cpo-photo img{
-  filter:contrast(1.05) brightness(.76) saturate(.78)!important;
-}
-.cpo-gallery .cpo-photo:after{
-  background:
-    linear-gradient(0deg,rgba(5,5,5,.82),transparent 56%),
-    radial-gradient(circle at 70% 30%,rgba(130,0,10,.09),transparent 44%)!important;
-}
-@media(max-width:750px){
-  .cpo-hero{min-height:590px!important;align-items:flex-end!important}
-  .cpo-hero-photo{
-    inset:0!important;
-    height:100%!important;
-    background-size:cover!important;
-    background-position:66% top!important;
-  }
-  .cpo-hero-overlay{
-    background:
-      linear-gradient(0deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.98) 34%,rgba(5,5,5,.74) 58%,rgba(5,5,5,.18) 84%),
-      linear-gradient(90deg,rgba(5,5,5,.30),transparent 70%)!important;
-  }
-  .cpo-hero-content{
-    max-width:100%!important;
-    padding:285px 0 38px!important;
-  }
-}
-</style>
+
