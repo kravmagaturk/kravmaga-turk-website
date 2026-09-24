@@ -92,6 +92,7 @@
         .transfer-links{
           display:none;position:absolute;left:0;right:0;top:64px;background:#08090a;
           border-bottom:1px solid #26292d;padding:10px 14px 18px;flex-direction:column;gap:0;
+          max-height:calc(100dvh - 64px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
           box-shadow:0 14px 24px rgba(0,0,0,.35)
         }
         .transfer-links.open{display:flex}
