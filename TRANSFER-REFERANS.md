@@ -71,3 +71,13 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Hostinger e-posta kayıtları (MX, SPF, DKIM, DMARC, autoconfig, autodiscover) korunarak bırakıldı.
 - Geri dönüş dalı: `backup-pre-transfer-2026-09-24`.
 - Post-cutover doğrulama tamamlanmadan eski Hostinger/Cloudflare yardımcı entegrasyonları silinmeyecek.
+
+### Post-cutover kontrolü
+- Ana sayfa, İletişim, Eğitimler, Belgeler, Legionnaire, Eğitmen & Seviye Sorgu ve Diploma Sorgu üretim kodları kontrol edildi; aktif Hostinger/Zyro bağımlılığı bulunmadı.
+- Tüm kritik sayfalarda H1 ve ortak `assets/footer.js` yüklemesi mevcut.
+- Vercel için eksik olan native yapılandırma eklendi: `vercel.json`.
+- `cleanUrls: true` ile sitemap/canonical uzantısız URL yapısı Vercel'e uyarlandı.
+- `/temsilcilik -> /temsilcilikler` internal rewrite eklendi.
+- Güvenlik header'ları Vercel native `headers` yapılandırmasına taşındı; Firebase REST bağlantısı CSP içinde izinli.
+- `robots.txt` ve `sitemap.xml` mevcut ve Vercel clean URL yapısıyla uyumlu hale getirildi.
+- Dış web crawler halen eski Hostinger önbelleği döndürebildiği için gerçek zamanlı içerik doğrulamasında referans alınmamalı; Vercel/DNS Valid Configuration ve repo üretim kodu esas alınmalı.
