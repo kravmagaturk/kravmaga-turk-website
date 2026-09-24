@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Diploma & Sicil Sorgu | Krav Maga Türk</title>
+<meta name="description" content="Krav Maga Türk sicil numarası ile diploma ve eğitim kayıt bilgisi sorgulama sayfası.">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="canonical" href="https://kravmaga.com.tr/diploma-sorgu">
+<style>
+:root{--bg:#050505;--card:#121214;--line:#2c2c30;--red:#e50922;--muted:#9d9da3}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:#fff;font-family:Arial,Helvetica,sans-serif}
+.page{min-height:100vh;padding:64px 16px 90px;background:radial-gradient(circle at 85% 25%,rgba(229,9,34,.12),transparent 32%),#050505}
+.wrap{max-width:860px;margin:auto;position:relative;z-index:1}.head{text-align:center;margin-bottom:28px}
+.kicker{color:var(--red);font-size:11px;font-weight:900;letter-spacing:2.4px}.head h1{font-size:clamp(34px,6vw,58px);margin:10px 0 12px;line-height:1}
+.head p{color:var(--muted);margin:0 auto;max-width:650px;line-height:1.65}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+label{display:block;font-size:13px;font-weight:800;margin-bottom:8px;color:#c9c9cd}
+.search{display:grid;grid-template-columns:1fr auto;gap:10px}.search input{height:50px;border-radius:9px;border:1px solid #38383d;background:#0b0b0d;color:#fff;padding:0 14px;font-size:16px;outline:none;text-transform:uppercase}
+.search input:focus{border-color:var(--red)}button{border:0;border-radius:9px;padding:0 22px;min-height:50px;font-weight:900;cursor:pointer}
+.primary{background:var(--red);color:#fff}.danger{background:#2a0d10;color:#ff9ca4;border:1px solid #6f232a;width:100%;margin-top:18px}
+.status{padding:18px 0 0;color:#aaa;text-align:center}.result{display:none;margin-top:22px}
+.card{display:grid;grid-template-columns:170px 1fr;gap:22px;background:#111315;border:1px solid #2d2f33;border-radius:14px;padding:18px}
+.photo{width:170px;height:220px;border-radius:10px;overflow:hidden;background:#090909;border:1px solid #333;display:flex;align-items:center;justify-content:center}
+.photo img{width:100%;height:100%;object-fit:cover}.nophoto{color:#777;text-align:center;font-size:12px;padding:10px}
+.name{font-size:24px;font-weight:900;margin-bottom:4px}.reg{color:var(--red);font-size:13px;font-weight:800;margin-bottom:14px}
+.row{display:grid;grid-template-columns:145px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid #292b2f;font-size:14px}.row:last-child{border-bottom:0}
+.lab{color:#85858b;font-size:11px;text-transform:uppercase}.val{font-weight:700}.badge{display:inline-block;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:800;background:#11291b;color:#7ee29d;border:1px solid #245d38}
+.badge.off{background:#321417;color:#ff9da6;border-color:#67252c}.msg{margin-top:16px;padding:13px;border-radius:9px;font-size:13px;line-height:1.5}
+.ok{background:#102616;border:1px solid #245d38;color:#8ce3a6}.err{background:#2a0d10;border:1px solid #6f232a;color:#ff9ca4}
+@media(max-width:650px){.page{padding:42px 10px 70px}.panel{padding:16px}.search{grid-template-columns:1fr}.card{grid-template-columns:1fr}.photo{width:150px;height:190px;margin:auto}.name,.reg{text-align:center}.row{grid-template-columns:1fr;gap:3px}}
+</style>
+</head>
+<body>
+<main class="page"><div class="wrap">
+<div class="head"><div class="kicker">KRAV MAGA TÜRK • DİPLOMA & SİCİL</div><h1>Kayıt Sorgulama</h1><p>Sicil numaranız ile kayıt durumunuzu ve temel eğitim bilgilerinizi görüntüleyebilirsiniz.</p></div>
+<div class="panel">
+<label for="reg">Sicil Numarası</label>
+<div class="search"><input id="reg" type="text" autocomplete="off" placeholder="Örn. KM2026001"><button id="btn" class="primary" type="button">SORGULA</button></div>
+<div id="status" class="status"></div><div id="result" class="result"></div><div id="deleteMessage"></div>
+</div>
+</div></main>
+<script>
+(function(){
+const DB='https://kravmaga-diploma-default-rtdb.firebaseio.com';
+let current=null;
+const $=id=>document.getElementById(id);
+function esc(v){return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;')}
+function inactive(s){s=String(s||'').toLocaleLowerCase('tr-TR');return s==='pasif'||s==='faal olmayan'||s==='faal_olmayan'||s==='inactive'}
+function docs(d){if(Array.isArray(d.documents)&&d.documents.length)return d.documents.filter(Boolean);let level=d.level||d.mainLevel||d.seviye||'';let sub=d.subLevel||d.altSeviye||'';return level?[{level:[level,sub].filter(Boolean).join(' ')}]:[]}
+function level(d){const a=docs(d).map(x=>x.level).filter(Boolean);return a.length?a.join(' • '):(d.level||'-')}
+function normalize(raw,reg){if(!raw||typeof raw!=='object')return null;let d=raw;if(!d.studentName&&!d.registerNo){const vals=Object.values(d).filter(v=>v&&typeof v==='object');const exact=vals.find(v=>String(v.registerNo||'').toUpperCase()===reg);d=exact||(vals.length===1?vals[0]:d)}return Object.assign({},d,{registerNo:d.registerNo||d.register||d.registrationNo||d.sicilNo||reg,studentName:d.studentName||d.name||d.fullName||d.adSoyad||'',webPortrait:d.webPortrait||d.webProfilePortrait||d.portrait||'',photo:d.photo||d.studentPhoto||d.image||''})}
+function render(d){const photo=d.webPortrait||d.photo||'';const st=inactive(d.status);const loc=[d.country,d.city,d.district].filter(Boolean).join(' / ')||'-';$('result').innerHTML='<div class="card"><div class="photo">'+(photo?'<img src="'+esc(photo)+'" alt="'+esc(d.studentName)+'">':'<div class="nophoto">Profil görseli bulunmuyor</div>')+'</div><div><div class="name">'+esc(d.studentName)+'</div><div class="reg">Sicil No: '+esc(d.registerNo)+'</div><div style="margin-bottom:12px"><span class="badge'+(st?' off':'')+'">'+(st?'Faal Olmayan':'Faal')+'</span></div><div class="row"><span class="lab">Seviye / Belgeler</span><span class="val">'+esc(level(d))+'</span></div><div class="row"><span class="lab">Lokasyon</span><span class="val">'+esc(loc)+'</span></div>'+(d.joinDate?'<div class="row"><span class="lab">Akademiye Giriş</span><span class="val">'+esc(d.joinDate)+'</span></div>':'')+'<div class="row"><span class="lab">Durum</span><span class="val">'+(st?'Faal Olmayan':'Faal')+'</span></div><button id="deleteBtn" class="danger" type="button">BİLGİLERİMİ SİL</button></div></div>';$('result').style.display='block';$('deleteBtn').onclick=requestDelete}
+async function search(){const reg=$('reg').value.trim().toUpperCase();$('deleteMessage').innerHTML='';if(!reg){$('status').textContent='Sicil numaranızı girin.';return}$('btn').disabled=true;$('status').textContent='Kayıt aranıyor...';$('result').style.display='none';try{const r=await fetch(DB+'/diplomaData/'+encodeURIComponent(reg)+'.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);const d=normalize(await r.json(),reg);if(!d||!d.studentName){current=null;$('status').textContent='Kayıt bulunamadı.';return}current=d;$('status').textContent='';render(d)}catch(e){console.error(e);$('status').textContent='Kayıt sistemine ulaşılamıyor. Lütfen tekrar deneyin.'}finally{$('btn').disabled=false}}
+async function requestDelete(){if(!current||!current.registerNo)return;if(!confirm('Bilgilerinizin silinmesi için yöneticiye talep gönderilsin mi? Kayıt yönetici onayı olmadan silinmez.'))return;const now=new Date().toISOString();const req={registerNo:current.registerNo,studentName:current.studentName||'',requestedAt:now,status:'pending',source:'transfer-diploma-sorgu'};const log={type:'deletion_request',registerNo:current.registerNo,studentName:current.studentName||'',timestamp:now,source:'transfer-diploma-sorgu'};try{const results=await Promise.allSettled([fetch(DB+'/deletionRequests/'+encodeURIComponent(current.registerNo)+'.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(req)}),fetch(DB+'/securityLogs.json',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(log)})]);const logged=results[1].status==='fulfilled'&&results[1].value.ok;if(!logged)throw new Error('Bildirim kaydı oluşturulamadı');$('deleteMessage').innerHTML='<div class="msg ok">✓ Silme talebiniz yöneticiye bildirildi. Kayıt yönetici onayı olmadan silinmez.</div>'}catch(e){console.error(e);$('deleteMessage').innerHTML='<div class="msg err">Silme talebi gönderilemedi. Lütfen daha sonra tekrar deneyin.</div>'}}
+$('btn').onclick=search;$('reg').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();search()}});const q=new URLSearchParams(location.search).get('reg');if(q){$('reg').value=q;search()}
+})();
+</script>
+<script src="assets/footer.js" defer></script>
+</body></html>
