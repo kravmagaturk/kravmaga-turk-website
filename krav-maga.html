@@ -862,6 +862,27 @@ body{overflow-x:hidden}
 .kmt-page{min-height:100vh}
 </style>
 <link rel="canonical" href="https://kravmaga.com.tr/krav-maga">
+<style id="kmt-mobile-qc-kravmaga">
+html,body,.kmt-page{max-width:100%;overflow-x:hidden}
+.kmt-wrap,.kmt-about,.kmt-program-grid,.kmt-price-grid,.kmt-price-details,.kmt-first,.kmt-training-grid{min-width:0}
+.kmt-program,.kmt-data-item,.kmt-price-box,.kmt-price-detail,.kmt-first-card,.kmt-training{min-width:0}
+.kmt-program-note,.kmt-price-desc,.kmt-first p,.kmt-history p,.kmt-principle{overflow-wrap:anywhere}
+@media(max-width:900px){
+  .transfer-links{max-height:calc(100vh - 64px);overflow-y:auto;overscroll-behavior:contain}
+  .transfer-drop{max-height:none!important}
+}
+@media(max-width:750px){
+  .kmt-hero:after{width:360px;height:360px;right:-180px;bottom:-220px}
+  .kmt-price strong{white-space:normal}
+  .kmt-data-item strong,.kmt-price-detail strong{overflow-wrap:anywhere}
+  .kmt-footer-inner,.kmt-footer-info{max-width:100%}
+  .kmt-footer-info a,.kmt-footer-info span{white-space:normal!important}
+}
+@media(max-width:360px){
+  .kmt-wrap{width:calc(100% - 22px)}
+  .kmt-program,.kmt-price-box,.kmt-principles,.kmt-first-card{padding-left:15px;padding-right:15px}
+}
+</style>
 </head>
 
 <body>
