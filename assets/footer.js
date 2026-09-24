@@ -98,12 +98,41 @@
       }
       @media(max-width:750px){
         .kmt-belgeler .hero{min-height:340px!important}
-        .kmt-belgeler .hero-in{padding-top:38px!important;padding-bottom:38px!important}
-        .kmt-representative-page .hero-inner{padding-top:38px!important;padding-bottom:38px!important}
-        .leg-hero-content{padding-top:42px!important;padding-bottom:42px!important}
-        .kmt-contact-wrap{padding-top:34px!important;padding-bottom:38px!important}
-        .edu-page{padding-top:28px!important}
-        .kmt-belgeler h1,.kmt-representative-page h1,.leg-hero h1{margin-top:10px!important}
+        .kmt-belgeler .hero-in{padding-top:0!important;padding-bottom:38px!important}
+        .kmt-representative-page .hero-inner{padding-top:0!important;padding-bottom:38px!important}
+        .leg-hero-content{padding-top:0!important;padding-bottom:42px!important}
+        .kmt-contact-wrap{padding-top:0!important;padding-bottom:38px!important}
+        .edu-page{padding-top:0!important}
+        .kmt-belgeler h1,.kmt-representative-page h1,.leg-hero h1{margin-top:0!important}
+      }
+
+      /* MOBILE TOP GAP ZERO: iç sayfalar ortak menünün hemen altında başlar */
+      @media(max-width:750px){
+        body>main,body>section,
+        .kmt-page,.cpo-page,.edu-page,.bc-page,.kmt-belgeler,
+        .kmt-representative-page,#kmt-basin,.leg-page,.kmt-contact{
+          margin-top:0!important;
+          padding-top:0!important;
+        }
+        .kmt-belgeler .hero-in,
+        .kmt-representative-page .hero-inner,
+        .leg-hero-content,
+        .kmt-contact-wrap,
+        .edu-page{
+          padding-top:0!important;
+          margin-top:0!important;
+        }
+        body:not(.kmt-home-theme) .kmt-hero-content{
+          padding-top:0!important;
+          margin-top:0!important;
+        }
+        #kmt-egitmen-sorgu{
+          padding-top:0!important;
+          margin-top:0!important;
+        }
+        .bc-hero{margin-top:0!important}
+        .bc-hero-content{margin-top:0!important}
+        .kmt-security-photo,.cpo-hero-photo{top:0!important}
       }
 
       @media(max-width:900px){
