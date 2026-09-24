@@ -170,3 +170,11 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - `international-register` diploma/sicil sistemi ayrı proje olarak korunuyor.
 - Eski yardımcı Cloudflare test/worker kayıtları üretim akışının parçası değildir; riskli silme yapılmadan bırakılmıştır.
 - Bundan sonraki değişiklikler TRANSFER kapsamında değil, normal web sitesi bakım/geliştirme çalışması olarak ele alınacaktır.
+
+### Kapanış sonrası mobil kalibrasyon düzeltmesi
+- Kullanıcı mobil kontrolde `/temsilcilik` 404, bazı iç sayfalarda fazla üst boşluk, Özel Güvenlik hero görsel/logo genişliği ve Yakın Koruma hero arka planı sorunlarını bildirdi.
+- `temsilcilikler.html` dosyası atomik olarak `temsilcilik.html` adına taşındı; Vercel rewrite kaldırıldı. `/temsilcilikler` kalıcı olarak `/temsilcilik` adresine yönleniyor.
+- Ortak `assets/footer.js` içine production page calibration eklendi; Belgeler, Temsilcilik, Legionnaire, İletişim ve Eğitimler sayfalarının üst boşlukları masaüstü/mobil için azaltıldı.
+- Özel Güvenlik hero görseli tam ekran cover yerine küçük/contain yerleşime alındı; 1948 logo küçültüldü ve Vercel optimize çıktısı kullanıldı.
+- Yakın Koruma hero arka planındaki eğitim infografiği kaldırıldı; yerel güvenlik/koruma fotoğrafı küçük/contain yerleşime alındı, 1948 logo küçültüldü.
+- Son doğrulamada eski `temsilcilikler.html` referansı kalmadı, `temsilcilik.html` canonical adresi sitemap ile eşleşiyor ve ilgili HTML style blokları dengeli.
