@@ -87,3 +87,11 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Repo genelinde `hostinger`, `zyro`, `hstgr.net` ve `assets.zyrosite.com` referansları tarandı; aktif web kodunda kalıntı bulunmadı.
 - `cloudflare/portrait-worker` ayrı çalışan servis olduğu için korundu.
 - Son `main` commitlerinde eski Cloudflare GitHub build check'leri tetiklenmiyor; Vercel artık ana üretim akışı.
+
+### Mobil / SEO / Performans son turu
+- Ana içerik sayfalarına Open Graph ve Twitter paylaşım meta etiketleri eklendi.
+- Ana sayfaya `og:image`, Twitter paylaşım görseli ve Organization JSON-LD yapılandırılmış verisi eklendi.
+- Eğitimler ve Belgeler görsellerinde eksik `decoding="async"` ayarları tamamlandı.
+- Ortak mobil menüye küçük ekranlarda güvenli dikey kaydırma, overscroll kontrolü ve touch scrolling eklendi.
+- Vercel `vercel.json` içinde statik `/assets/*` ve hero görseli için kontrollü cache header'ları eklendi.
+- Büyük dosya tespiti: `assets/home/egitim-secenekleri.png` ~1.9 MB, `assets/brand/logo-1948.png` ~0.92 MB, `assets/documents/muay-thai-hakem.png` ~0.88 MB. Bunlar binary sıkıştırma için sonraki medya optimizasyonu adaylarıdır.
