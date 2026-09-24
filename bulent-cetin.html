@@ -449,6 +449,8 @@
   justify-content:center;
   overflow:hidden;
   background:
+    linear-gradient(90deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.82) 48%,rgba(5,5,5,.42) 100%),
+    url("assets/documents/tpe-marka-tescil.jpg") right center/auto 88% no-repeat,
     radial-gradient(circle at center,#2a080e 0%,#0d0d0f 43%,#050505 78%);
   border-bottom:1px solid #29292d;
 }
@@ -1206,20 +1208,16 @@
 @media(hover:none){.bc-card:hover,.bc-consult-card:hover,.bc-person:hover,.bc-video:hover img{transform:none}}
 .bc-person:focus-visible,.bc-video:focus-visible{outline:2px solid #e50922;outline-offset:3px}
 
-/* 06 / TPE marka belgesi: kartin icine gomulu belge arka plani */
-.bc-grid-four .bc-card:nth-child(7){
-  position:relative;
-  overflow:hidden;
-  background:
-    linear-gradient(rgba(8,8,9,.76),rgba(8,8,9,.90)),
-    url("assets/documents/tpe-marka-tescil.jpg") center/contain no-repeat,
-    #111113;
-}
-.bc-grid-four .bc-card:nth-child(7) > *{position:relative;z-index:1}
-
-/* mobil ust bosluk: Krav Maga sayfasi ile ayni ritim */
-@media(max-width:650px){
-  .bc-hero{min-height:410px}
+/* Belge hero arka plani + Krav Maga sayfasi ile ayni mobil ust ritim */
+@media(max-width:750px){
+  .bc-hero{
+    min-height:auto;
+    padding:38px 0 43px;
+    background:
+      linear-gradient(rgba(5,5,5,.78),rgba(5,5,5,.90)),
+      url("assets/documents/tpe-marka-tescil.jpg") center/auto 92% no-repeat,
+      radial-gradient(circle at center,#2a080e 0%,#0d0d0f 43%,#050505 78%);
+  }
 }
 </style>
 
