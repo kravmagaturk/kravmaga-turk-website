@@ -55,3 +55,11 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Vercel `transfer-test` preview başarıyla tetiklendi: `kravmaga-transfer-test-git-transfer-test-bulicet-9162.vercel.app`.
 - Preview dış erişimi Vercel koruması nedeniyle araçlardan doğrulanamadı; kullanıcı tarayıcı testi gerekli.
 - Aynı committe eski Cloudflare entegrasyonları `kravmaga-turk-website`, `kravmaga-turk-test` ve `kravmaga-portrait` için otomatik build denedi ve başarısız oldu. Bunlar MODÜL 9 öncesi entegrasyon temizliği olarak ele alınacak; repo kodu şu aşamada değiştirilmedi.
+
+## MODÜL 9 — Canlıya Geçiş Hazırlığı
+- Geri dönüş dalı oluşturuldu: `backup-pre-transfer-2026-09-24` (main SHA: `7da9d39417e1cd2c12787711812ea4caed7e67ca`).
+- `transfer-test -> main` için draft PR açıldı: #1 `TRANSFER: canlıya geçiş hazırlığı`.
+- PR mergeable durumda; ancak eski Cloudflare GitHub entegrasyonları nedeniyle check durumu unstable.
+- Vercel preview kontrolü başarılı.
+- Hata veren/eski Cloudflare kontrolleri: `kravmaga-portrait` ve `kravmaga-turk-test` (bazı commitlerde `kravmaga-turk-website` de tetiklendi).
+- Bu eski entegrasyonlar temizlenmeden PR main'e merge edilmeyecek ve `kravmaga.com.tr` DNS/yönlendirmesi değiştirilmeyecek.
