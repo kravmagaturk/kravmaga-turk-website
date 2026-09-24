@@ -7,7 +7,7 @@
   transform:translateY(-50%);
   width:min(46vw,620px);
   aspect-ratio:1/1;
-  background:url("assets/about/bulent-cetin-hero.png") center/cover no-repeat;
+  background:url("/_vercel/image?url=%2Fassets%2Fabout%2Fbulent-cetin-hero.png&w=768&q=82") center/cover no-repeat;
   opacity:.88;
   -webkit-mask-image:radial-gradient(ellipse at center,#000 0 56%,rgba(0,0,0,.92) 63%,transparent 82%);
   mask-image:radial-gradient(ellipse at center,#000 0 56%,rgba(0,0,0,.92) 63%,transparent 82%);
@@ -23,8 +23,10 @@
   .bc-new-hero-art{width:430px;right:-8%;opacity:.72}
 }
 @media(max-width:650px){
-  .bc-new-hero-art{width:330px;right:-18%;opacity:.42}
-  .bc-hero-content{padding-right:24%!important}
+  .bc-new-hero-art{width:300px;right:-24%;opacity:.34}
+  .bc-hero-content{padding-right:12%!important}
+  .bc-hero h1{font-size:clamp(38px,12vw,48px)}
+  .bc-hero p{max-width:76%;line-height:1.45}
 }
 </style>
 <meta property="og:type" content="website">
@@ -1237,6 +1239,8 @@
 
 }
 
+@media(hover:none){.bc-card:hover,.bc-consult-card:hover,.bc-person:hover,.bc-video:hover img{transform:none}}
+.bc-person:focus-visible,.bc-video:focus-visible{outline:2px solid #e50922;outline-offset:3px}
 </style>
 
 
