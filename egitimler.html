@@ -51,6 +51,29 @@ html,body{background:var(--edu-black);color:#fff}
 .edu-page{padding:42px 0 64px}.edu-wrap{width:calc(100% - 24px)}.edu-hero{margin-bottom:38px}.edu-hero h1{font-size:clamp(38px,13vw,58px);letter-spacing:-2px}.edu-hero p{font-size:15px}.edu-section{padding-top:36px}.edu-section-head{grid-template-columns:1fr;gap:12px}.edu-section-head h2{font-size:34px}.edu-grid,.edu-grid.levels{grid-template-columns:1fr;gap:14px}.edu-media{height:auto;min-height:0;padding:8px}.edu-media img{height:auto;max-height:none;aspect-ratio:auto}.edu-info{padding:16px}.edu-times{grid-template-columns:1fr}.edu-schedule{margin-top:38px;padding:20px}.edu-lightbox{padding:12px}.edu-lightbox img{max-height:82vh}.edu-close{right:10px;top:10px}}
 @media(prefers-reduced-motion:reduce){.edu-media img{transition:none}}
 </style>
+<style id="kmt-mobile-qc-egitimler">
+html,body,.edu-page{max-width:100%;overflow-x:hidden}
+.edu-wrap,.edu-section-head,.edu-grid,.edu-card,.edu-open,.edu-info,.edu-times,.edu-time{min-width:0}
+.edu-info strong,.edu-info span,.edu-section-head p,.edu-hero p{overflow-wrap:anywhere}
+@media(max-width:900px){
+  .transfer-links{max-height:calc(100vh - 64px);overflow-y:auto;overscroll-behavior:contain}
+  .transfer-drop{max-height:none!important}
+}
+@media(max-width:760px){
+  .edu-page{padding-top:34px}
+  .edu-hero h1{max-width:100%;overflow-wrap:anywhere}
+  .edu-media img{max-width:100%;height:auto}
+  .edu-lightbox-inner{max-width:100%;min-width:0}
+  .edu-lightbox img{max-width:100%;max-height:78vh}
+  .kmt-footer-inner,.kmt-footer-info{max-width:100%}
+  .kmt-footer-info a,.kmt-footer-info span{white-space:normal!important}
+}
+@media(max-width:360px){
+  .edu-wrap{width:calc(100% - 18px)}
+  .edu-section-head h2{font-size:28px}
+  .edu-info{padding:14px}
+}
+</style>
 </head>
 <body>
 <header class="top">
