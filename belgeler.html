@@ -7,8 +7,28 @@
 <meta name="description" content="Krav Maga Türk belge, sertifika ve eğitim arşivinden seçilmiş kayıtlar.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://kravmaga.com.tr/belgeler">
-<style>html,body{margin:0;min-height:100%;background:#050505;color:#fff}body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}</style>
-
+<style>html,body{margin:0;min-height:100%;background:#050505;color:#fff}body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+/* kmt-mobile-doc-uniform: tüm belge önizlemeleri mobilde aynı çerçeve ve görünür ebat */
+@media(max-width:650px){
+  .kmt-belgeler .pic{
+    width:100%!important;
+    height:230px!important;
+    aspect-ratio:auto!important;
+    padding:12px!important;
+    background:#0d0d0d!important;
+  }
+  .kmt-belgeler .pic img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    background:#0d0d0d!important;
+  }
+}
+@media(max-width:390px){
+  .kmt-belgeler .pic{height:210px!important;padding:10px!important}
+}
+</style>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Krav Maga Türk">
 <meta property="og:title" content="Belgeler | Krav Maga Türk">
