@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/temsilcilik",
-      "destination": "/temsilcilikler"
+      "destination": "/temsilcilikler.html"
     }
   ],
   "headers": [
@@ -70,7 +70,7 @@
         "search": ""
       },
       {
-        "pathname": "^/hero\\.webp\\.webp$",
+        "pathname": "^/hero\\.webp$",
         "search": ""
       }
     ],
