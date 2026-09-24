@@ -52,5 +52,40 @@
         }
       ]
     }
-  ]
+  ],
+  "images": {
+    "sizes": [
+      128,
+      256,
+      512,
+      768,
+      1080,
+      1200,
+      1334,
+      1500
+    ],
+    "localPatterns": [
+      {
+        "pathname": "^/assets/.*$",
+        "search": ""
+      },
+      {
+        "pathname": "^/hero\\.webp\\.webp$",
+        "search": ""
+      }
+    ],
+    "minimumCacheTTL": 86400,
+    "qualities": [
+      78,
+      82,
+      88
+    ],
+    "formats": [
+      "image/avif",
+      "image/webp"
+    ],
+    "dangerouslyAllowSVG": false,
+    "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
+    "contentDispositionType": "inline"
+  }
 }
