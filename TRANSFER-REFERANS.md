@@ -131,3 +131,13 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Eski `/hakkimizda` rotası kalıcı olarak `/bulent-cetin` adresine yönlendirildi.
 - Dosya adı kaynaklı çoğul `/temsilcilikler` rotası kalıcı olarak canonical `/temsilcilik` adresine yönlendirildi.
 - Vercel `cleanUrls` yapısı korunuyor; `.html` uzantılı erişimler temiz URL yapısına uyumlu çalışıyor.
+
+### Canlı sayfa görsel kalite turu
+- Ana Sayfa, Eğitimler, Belgeler, Bülent Çetin ve İletişim sayfalarında mobil tipografi, kart aralıkları, dokunmatik hover davranışı ve focus-visible durumları düzenlendi.
+- Ana Sayfa mobil eğitim başlığı ve öğrenci görüşleri kartları küçük ekranlarda daha dengeli hale getirildi.
+- Eğitimler sayfasında mobil kart yazı boyutları, lightbox kapatma alanı ve dokunmatik hover davranışı iyileştirildi.
+- Belgeler sayfasında mobil kart bilgi alanları sıkılaştırıldı, lightbox/kart focus görünürlüğü artırıldı ve touch cihazlarda hover sıçraması kapatıldı.
+- Bülent Çetin mobil hero görseli daha kontrollü konumlandırıldı; hero görseli Vercel Image Optimization üzerinden servis edilmeye başlandı.
+- İletişim sayfasındaki 1948 arka plan logosu Vercel optimize çıktısına taşındı; buton/kart erişilebilirlik ve touch davranışı iyileştirildi.
+- Ortak navigasyon hamburger butonuna minimum 44px dokunma alanı ve menü/footer bağlantılarına focus-visible stilleri eklendi.
+- Son kontrolde ilgili tüm sayfalarda style etiket dengesi, ortak footer.js bağlantısı ve yatay taşma riski temiz çıktı.
