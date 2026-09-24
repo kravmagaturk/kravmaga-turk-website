@@ -63,3 +63,11 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Vercel preview kontrolü başarılı.
 - Hata veren/eski Cloudflare kontrolleri: `kravmaga-portrait` ve `kravmaga-turk-test` (bazı commitlerde `kravmaga-turk-website` de tetiklendi).
 - Bu eski entegrasyonlar temizlenmeden PR main'e merge edilmeyecek ve `kravmaga.com.tr` DNS/yönlendirmesi değiştirilmeyecek.
+
+### MODÜL 9 — Domain geçişi tamamlandı
+- `kravmaga.com.tr` Vercel Production ortamına bağlandı ve Valid Configuration durumuna geldi.
+- `www.kravmaga.com.tr` Vercel üzerinde 308 Permanent Redirect ile `kravmaga.com.tr` adresine yönlendirildi ve Valid Configuration durumuna geldi.
+- Cloudflare kök web kayıtları Vercel CNAME hedefine taşındı: `eae4c6c2485b91d4.vercel-dns-017.com` (DNS only).
+- Hostinger e-posta kayıtları (MX, SPF, DKIM, DMARC, autoconfig, autodiscover) korunarak bırakıldı.
+- Geri dönüş dalı: `backup-pre-transfer-2026-09-24`.
+- Post-cutover doğrulama tamamlanmadan eski Hostinger/Cloudflare yardımcı entegrasyonları silinmeyecek.
