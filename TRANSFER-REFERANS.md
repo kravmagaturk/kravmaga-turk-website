@@ -126,3 +126,8 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - `diploma-sorgu.html` bilinçli olarak `noindex,nofollow,noarchive` ve sitemap dışında bırakıldı.
 - Robots meta etiketi eksik olan indexlenebilir sayfalara `index,follow,max-image-preview:large` standardı eklendi.
 - Vercel için markalı `404.html` eklendi; sayfa `noindex,nofollow` ve Ana Sayfa / İletişim geri dönüş bağlantıları içeriyor.
+
+### Eski URL uyumluluğu
+- Eski `/hakkimizda` rotası kalıcı olarak `/bulent-cetin` adresine yönlendirildi.
+- Dosya adı kaynaklı çoğul `/temsilcilikler` rotası kalıcı olarak canonical `/temsilcilik` adresine yönlendirildi.
+- Vercel `cleanUrls` yapısı korunuyor; `.html` uzantılı erişimler temiz URL yapısına uyumlu çalışıyor.
