@@ -89,7 +89,7 @@ body{
 .cpo-hero-photo{
   position:absolute;
   inset:0;
-  z-index:-4;
+  z-index:0;
 
   background-image:url("https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=375,fit=crop/mePyW7BezQcoMDkG/yakin-koruma-hizmetlerimiz-YlenX7LOrrsv08OG.jpg");
 
@@ -103,7 +103,7 @@ body{
 .cpo-hero-overlay{
   position:absolute;
   inset:0;
-  z-index:-3;
+  z-index:1;
 
   background:
     linear-gradient(
@@ -127,7 +127,7 @@ body{
   height:500px;
   right:-180px;
   bottom:-280px;
-  z-index:-2;
+  z-index:2;
   border-radius:50%;
   background:rgba(180,0,0,.18);
   filter:blur(80px);
@@ -140,7 +140,7 @@ body{
 
 .cpo-logo{
   position:absolute;
-  z-index:-1;
+  z-index:2;
 
   width:520px;
   height:520px;
@@ -163,7 +163,7 @@ body{
 
 .cpo-hero-content{
   position:relative;
-  z-index:3;
+  z-index:4;
   max-width:680px;
   padding:90px 0;
 }
@@ -798,8 +798,8 @@ img{max-width:100%}
 /* Production calibration: bilgi afişi kaldırıldı, koruma görseli küçük/sığdırılmış */
 .cpo-hero{min-height:520px!important}
 .cpo-hero-photo{
-  inset:64px 4% 64px 48%!important;
-  background-size:contain!important;
+  inset:0 0 0 46%!important;
+  background-size:cover!important;
   background-position:center!important;
   background-repeat:no-repeat!important;
   transform:none!important;
@@ -816,10 +816,10 @@ img{max-width:100%}
 @media(max-width:750px){
   .cpo-hero{min-height:540px!important;align-items:flex-end!important}
   .cpo-hero-photo{
-    inset:18px 8% auto 8%!important;
-    height:210px!important;
-    background-size:contain!important;
-    background-position:center top!important;
+    inset:0!important;
+    height:220px!important;
+    background-size:cover!important;
+    background-position:center!important;
   }
   .cpo-logo{
     width:120px!important;
@@ -831,7 +831,7 @@ img{max-width:100%}
   .cpo-hero-content{padding:225px 0 36px!important}
 }
 @media(max-width:420px){
-  .cpo-hero-photo{height:190px!important;inset:15px 7% auto 7%!important}
+  .cpo-hero-photo{height:200px!important;inset:0!important}
   .cpo-hero-content{padding-top:205px!important}
 }
 </style>
