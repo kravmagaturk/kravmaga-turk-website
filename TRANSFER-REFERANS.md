@@ -51,3 +51,7 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - MODÜL 8 için kalan tek doğrulama gerçek yayın URL'sinde tarayıcı görsel/etkileşim testidir; canlı main dalına geçiş yapılmadı.
 
 - Vercel preview deployment tetikleme notu: 24 Eylül 2026, MODÜL 8 tarayıcı testi için.
+
+- Vercel `transfer-test` preview başarıyla tetiklendi: `kravmaga-transfer-test-git-transfer-test-bulicet-9162.vercel.app`.
+- Preview dış erişimi Vercel koruması nedeniyle araçlardan doğrulanamadı; kullanıcı tarayıcı testi gerekli.
+- Aynı committe eski Cloudflare entegrasyonları `kravmaga-turk-website`, `kravmaga-turk-test` ve `kravmaga-portrait` için otomatik build denedi ve başarısız oldu. Bunlar MODÜL 9 öncesi entegrasyon temizliği olarak ele alınacak; repo kodu şu aşamada değiştirilmedi.
