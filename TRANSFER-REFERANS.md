@@ -141,3 +141,15 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - İletişim sayfasındaki 1948 arka plan logosu Vercel optimize çıktısına taşındı; buton/kart erişilebilirlik ve touch davranışı iyileştirildi.
 - Ortak navigasyon hamburger butonuna minimum 44px dokunma alanı ve menü/footer bağlantılarına focus-visible stilleri eklendi.
 - Son kontrolde ilgili tüm sayfalarda style etiket dengesi, ortak footer.js bağlantısı ve yatay taşma riski temiz çıktı.
+
+### Canlı son kontrol / production readiness
+- Dış web indeksleyicisi hâlâ eski Hostinger önbelleğini gösterebildiği için gerçek zamanlı içerik doğrulamasında repo/Vercel production config esas alındı.
+- Ana Sayfa, Eğitimler, Belgeler, Bülent Çetin, Temsilcilik, Legionnaire, Eğitmen & Seviye Sorgu, Diploma Sorgu, İletişim, Yakın Koruma ve Özel Güvenlik production dosyaları kontrol edildi; title/canonical/robots/footer bağlantıları doğrulandı.
+- Kritik production düzeltmesi: Vercel Image Optimization local pattern içindeki eski `hero.webp.webp` yolu `hero.webp` olarak güncellendi.
+- Kritik production düzeltmesi: `/temsilcilik` rewrite hedefi `/temsilcilikler.html` yapılarak `/temsilcilikler -> /temsilcilik` redirect'i ile olası yönlendirme döngüsü kaldırıldı.
+- Ortak menü ve ana sayfadaki Temsilcilikler bağlantıları doğrudan canonical `/temsilcilik` rotasına çevrildi; gereksiz redirect hop kaldırıldı.
+- Mobil menü açma/kapatma ve ESC davranışı ortak `footer.js` içinde mevcut.
+- Eğitimler ve Belgeler lightbox/büyütme kodu ve ESC kapatma davranışı mevcut.
+- İletişim ve Yakın Koruma WhatsApp + harita bağlantıları mevcut.
+- Eğitmen sorgusu `publicInstructors`, diploma sorgusu `diplomaData` node'una bağlı; silme talebi `deletionRequests` ve `securityLogs` kayıtlarını kullanıyor.
+- Markalı 404 sayfası `noindex,nofollow`; Vercel redirects/rewrites aktif yapılandırmada mevcut.
