@@ -199,17 +199,23 @@ body{
 
 .kmt-about{
     display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:45px;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+    align-items:stretch;
 }
 
+.kmt-about-text{height:100%;display:flex;flex-direction:column;justify-content:flex-start}
 .kmt-about-text p{
     color:#b8b8b8;
     font-size:16px;
-    margin-bottom:17px;
+    margin-bottom:14px;
 }
 
 .kmt-principles{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
     background:linear-gradient(145deg,#121212,#090909);
     border:1px solid #292929;
     border-left:3px solid #df101b;
@@ -239,6 +245,8 @@ body{
     font-size:16px;
     margin-bottom:2px;
 }
+
+.kmt-about-section{padding-bottom:48px}
 
 /* =========================
    PROGRAM
@@ -928,7 +936,7 @@ html,body,.kmt-page{max-width:100%;overflow-x:hidden}
 
 <!-- KRAV MAGA NEDİR -->
 
-<section class="kmt-section">
+<section class="kmt-section kmt-about-section">
 <div class="kmt-wrap">
 
 <div class="kmt-section-title">
