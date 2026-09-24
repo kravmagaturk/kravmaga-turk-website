@@ -7,6 +7,41 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bülent Çetin | Krav Maga Türk">
 <meta name="twitter:description" content="Bülent Çetin">
+<style id="kmt-matching-color-bulent">
+/* MATCHING COLOR GRADING — site-wide visual standard */
+.bc-hero{
+  background-color:#050505!important;
+}
+.bc-hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(5,5,5,.98) 0%,rgba(5,5,5,.91) 34%,rgba(5,5,5,.56) 56%,rgba(5,5,5,.15) 100%),
+    radial-gradient(circle at 73% 48%,rgba(145,0,12,.14),transparent 33%);
+}
+.bc-hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  box-shadow:inset 0 0 90px rgba(0,0,0,.58);
+}
+.bc-hero-content{z-index:2}
+.bc-video img{
+  filter:contrast(1.04) brightness(.78) saturate(.80);
+}
+@media(max-width:750px){
+  .bc-hero:before{
+    background:
+      linear-gradient(0deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.80) 42%,rgba(5,5,5,.20) 88%),
+      linear-gradient(90deg,rgba(5,5,5,.42),transparent 72%);
+  }
+}
+</style>
 </head><body><section class="bc-page">
 
   <!-- HERO / 1948 -->
@@ -451,7 +486,7 @@
   background:
     linear-gradient(90deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.84) 38%,rgba(5,5,5,.48) 62%,rgba(5,5,5,.18) 100%),
     linear-gradient(0deg,rgba(5,5,5,.44),rgba(5,5,5,.10) 46%,rgba(120,0,0,.10)),
-    url("bulent-cetin-hero-clean.png") center/cover no-repeat;
+    url("bulent-cetin-hero-clean.png") right center/auto 100% no-repeat;
   background-blend-mode:normal,multiply,normal;
   border-bottom:1px solid #29292d;
 }
@@ -1216,7 +1251,7 @@
     padding:38px 0 43px;
     background:
       linear-gradient(0deg,rgba(5,5,5,.97) 0%,rgba(5,5,5,.88) 38%,rgba(5,5,5,.44) 72%,rgba(5,5,5,.18) 100%),
-      url("bulent-cetin-hero-clean.png") 58% center/cover no-repeat;
+      url("bulent-cetin-hero-clean.png") 64% center/auto 100% no-repeat;
   }
 }
 </style>
@@ -1255,18 +1290,4 @@
 
 })();
 </script><script src="assets/footer.js" defer></script></body></html>
-<style id="kmt-matching-color-bulent">
-/* Matching color grading: görseli sayfanın parçası gibi birleştir */
-.bc-hero:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:1;
-  pointer-events:none;
-  background:
-    radial-gradient(circle at 72% 48%,rgba(148,0,12,.16),transparent 34%),
-    linear-gradient(90deg,rgba(0,0,0,.26),transparent 46%,rgba(0,0,0,.10));
-  mix-blend-mode:multiply;
-}
-.bc-hero-content{z-index:2}
-</style>
+
