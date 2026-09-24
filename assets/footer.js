@@ -154,7 +154,7 @@
               <button type="button" aria-expanded="false">HAKKIMIZDA ▾</button>
               <div class="transfer-drop">
                 <a href="bulent-cetin.html">Bülent Çetin</a>
-                <a href="temsilcilikler.html">Temsilcilikler</a>
+                <a href="/temsilcilik">Temsilcilikler</a>
                 <a href="belgeler.html">Belgeler</a>
                 <a href="legionnaire.html">Legionnaire</a>
                 <a href="egitmen-and-seviye-sorgu.html">Eğitmen &amp; Seviye Sorgu</a>
