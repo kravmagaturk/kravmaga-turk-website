@@ -1216,21 +1216,8 @@ html{box-sizing:border-box;overflow-x:hidden}*,*:before,*:after{box-sizing:inher
 }
 
 .kmt-security-photo:after{
-  content:"";
-  position:absolute;
-  right:3%;
-  top:24%;
-  width:38%;
-  height:30%;
-  border-radius:48%;
-  background:radial-gradient(ellipse at center,rgba(14,15,16,.99) 0%,rgba(14,15,16,.98) 56%,rgba(14,15,16,.82) 72%,transparent 100%);
-  filter:none;
-  backdrop-filter:none;
-  -webkit-backdrop-filter:none;
-  pointer-events:none;
-}
-@media(max-width:750px){
-  .kmt-security-photo:after{right:6%;top:22%;width:42%;height:34%;filter:none}
+  content:none!important;
+  display:none!important;
 }
 </style>
 
