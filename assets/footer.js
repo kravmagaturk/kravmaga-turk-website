@@ -306,9 +306,9 @@
     bindMenu();
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", renderSharedLayout, { once: true });
-  } else {
+  if (document.body) {
     renderSharedLayout();
+  } else {
+    document.addEventListener("DOMContentLoaded", renderSharedLayout, { once: true });
   }
 })();
