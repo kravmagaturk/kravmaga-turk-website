@@ -31,3 +31,13 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Eski `international-register/main/logo.png` görsel bağımlılığı ana site sayfalarından kaldırıldı.
 - Aktif kullanılan `hero.webp.webp`, `assetsozel-guvenlik-xray.webp`, eğitim ve temsilcilik görselleri korunuyor.
 - Kalan Zyro bağımlılığı: YOK. Ana Sayfa ve Belgeler görselleri `assets/home/` ve `assets/documents/` altına yerelleştirildi.
+
+
+## MODÜL 8 — Tam Site Testi
+- Başlangıç: 24 Eylül 2026.
+- Ana sayfa ve Temsilcilikler menüsündeki canlı siteye kaçan Eğitmen & Seviye Sorgu / Blog bağlantıları test dalındaki yerel HTML sayfalarına çevrildi.
+- Eğitimler sayfasındaki harici GitHub avatar görseli yerel `assets/brand/logo-1948.png` ile değiştirildi.
+- `hakkimizda.html` dosyasının Bülent Çetin sayfasının eski/noindex kopyası olduğu doğrulandı; Eğitimler bağlantısı `bulent-cetin.html` olarak düzeltildi ve eski kopya kaldırıldı.
+- Canonical `/temsilcilik` adresinin `temsilcilikler.html` dosyasına eşlenmesi için `_redirects` eklendi.
+- Taranan sayfalarda aktif Hostinger/Zyro bağımlılığı bulunmadı; kalan `kravmaga.com.tr` adresleri canonical SEO URL'leridir.
+- MODÜL 8 henüz kapanmadı: görsel/tarayıcı testi, menü etkileşimleri, formlar ve mobil son tur tamamlanacak.
