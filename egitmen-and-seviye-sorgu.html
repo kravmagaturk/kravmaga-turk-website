@@ -76,6 +76,7 @@ z-index:0;
   #kmt-egitmen-sorgu:before{width:250px;height:250px;right:-24%;top:34%;opacity:.09}
 }
 #kmt-egitmen-sorgu:after{content:none!important}
+.kmt-kvkk{margin-top:12px;padding-top:11px;border-top:1px solid #29292d}.kmt-kvkk summary{display:inline-block;color:#9b9ba0;font-size:12px;font-weight:800;cursor:pointer;list-style:none}.kmt-kvkk summary::-webkit-details-marker{display:none}.kmt-kvkk summary:hover{color:#fff}.kmt-kvkk-text{margin-top:10px;padding:12px 14px;background:#0e0e10;border:1px solid #303034;border-radius:8px;color:#aaa;font-size:12px;line-height:1.6}.kmt-kvkk-text a{color:#fff;text-decoration:underline}
 </style>
 <div class="kmt-wrap">
 <div class="kmt-head"><h1>Eğitmen <span>Seviye Sorgu</span></h1><p>Krav Maga Türk Akademi kayıtlarında eğitmen, asistan, temsilci ve expert bilgilerini sorgulayabilirsiniz.</p></div>
@@ -84,7 +85,9 @@ z-index:0;
 <div class="kmt-field"><label>Durum</label><select id="kmtActive"><option value="">Tüm Durumlar</option><option value="faal">Faal</option><option value="faal_olmayan">Faal Olmayan</option></select></div>
 <div class="kmt-field kmt-full"><label>Ad Soyad veya Sicil No</label><input id="kmtText" type="text" autocomplete="off" placeholder="Arama yapın"></div>
 <div class="kmt-full"><button class="kmt-btn" type="button" onclick="kmtSearch()">SORGULA</button></div>
-</div><div id="kmtStatus"></div></div><div id="kmtResults"></div></div>
+</div>
+<details class="kmt-kvkk"><summary>KVKK / Aydınlatma Metni</summary><div class="kmt-kvkk-text">Bu sorgulama ekranında yer alan ad, soyad, sicil / belge numarası ve seviye bilgileri; doğrulama, şeffaflık ve belge teyidi amacıyla işlenmekte ve gösterilmektedir. Veriler yalnızca ilgili doğrulama süreci kapsamında kullanılmaktadır. Bilgilerin güncellenmesi, düzeltilmesi veya silinmesi taleplerinizi <a href="iletisim.html">Krav Maga Türk iletişim kanalları</a> üzerinden iletebilirsiniz.</div></details>
+<div id="kmtStatus"></div></div><div id="kmtResults"></div></div>
 <script>
 (function(){
 const DB_URL="https://kravmaga-diploma-default-rtdb.firebaseio.com";
