@@ -449,9 +449,10 @@
   justify-content:center;
   overflow:hidden;
   background:
-    linear-gradient(90deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.82) 48%,rgba(5,5,5,.42) 100%),
-    url("bulent-cetin-hero-clean.png") right center/auto 88% no-repeat,
-    radial-gradient(circle at center,#2a080e 0%,#0d0d0f 43%,#050505 78%);
+    linear-gradient(90deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.84) 38%,rgba(5,5,5,.48) 62%,rgba(5,5,5,.18) 100%),
+    linear-gradient(0deg,rgba(5,5,5,.44),rgba(5,5,5,.10) 46%,rgba(120,0,0,.10)),
+    url("bulent-cetin-hero-clean.png") center/cover no-repeat;
+  background-blend-mode:normal,multiply,normal;
   border-bottom:1px solid #29292d;
 }
 
@@ -1214,9 +1215,8 @@
     min-height:auto;
     padding:38px 0 43px;
     background:
-      linear-gradient(rgba(5,5,5,.78),rgba(5,5,5,.90)),
-      url("bulent-cetin-hero-clean.png") center/auto 92% no-repeat,
-      radial-gradient(circle at center,#2a080e 0%,#0d0d0f 43%,#050505 78%);
+      linear-gradient(0deg,rgba(5,5,5,.97) 0%,rgba(5,5,5,.88) 38%,rgba(5,5,5,.44) 72%,rgba(5,5,5,.18) 100%),
+      url("bulent-cetin-hero-clean.png") 58% center/cover no-repeat;
   }
 }
 </style>
@@ -1255,3 +1255,18 @@
 
 })();
 </script><script src="assets/footer.js" defer></script></body></html>
+<style id="kmt-matching-color-bulent">
+/* Matching color grading: görseli sayfanın parçası gibi birleştir */
+.bc-hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 72% 48%,rgba(148,0,12,.16),transparent 34%),
+    linear-gradient(90deg,rgba(0,0,0,.26),transparent 46%,rgba(0,0,0,.10));
+  mix-blend-mode:multiply;
+}
+.bc-hero-content{z-index:2}
+</style>
