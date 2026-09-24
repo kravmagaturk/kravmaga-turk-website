@@ -116,15 +116,26 @@
 }
 .kmt-belgeler .card a{display:block;color:inherit;text-decoration:none}
 .kmt-belgeler .pic{
-  position:relative;height:250px;padding:14px;display:flex;align-items:center;justify-content:center;
-  overflow:hidden;background:linear-gradient(145deg,#171717,#0b0b0b)
+  position:relative;
+  aspect-ratio:4/3;
+  height:auto;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:linear-gradient(145deg,#171717,#0b0b0b)
 }
 .kmt-belgeler .pic:after{
   content:"";position:absolute;inset:auto 0 0;height:28%;
   background:linear-gradient(transparent,rgba(0,0,0,.35));pointer-events:none
 }
 .kmt-belgeler .pic img{
-  display:block;width:100%;height:100%;object-fit:contain;object-position:center;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
   transition:transform .18s ease
 }
 .kmt-belgeler .card:hover img{transform:scale(1.018)}
@@ -161,7 +172,7 @@
 
 @media(max-width:900px){
   .kmt-belgeler .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .kmt-belgeler .pic{height:230px}
+  .kmt-belgeler .pic{height:auto}
   .kmt-belgeler .water{right:-3%}
 }
 @media(max-width:650px){
@@ -172,12 +183,12 @@
   .kmt-belgeler .intro .wrap:before{width:4px;min-height:190px}
   .kmt-belgeler .gallery{padding:52px 0 60px}
   .kmt-belgeler .grid{grid-template-columns:1fr;gap:16px}
-  .kmt-belgeler .pic{height:280px;padding:14px}
+  .kmt-belgeler .pic{height:auto;padding:0}
   .kmt-belgeler .water strong{letter-spacing:-7px}
   .kmt-belgeler .bottom{padding:54px 6%}
 }
 @media(max-width:390px){
-  .kmt-belgeler .pic{height:260px}
+  .kmt-belgeler .pic{height:auto}
 }
 
 .kmt-doc-lightbox{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.88)}
