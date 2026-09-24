@@ -153,3 +153,20 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - İletişim ve Yakın Koruma WhatsApp + harita bağlantıları mevcut.
 - Eğitmen sorgusu `publicInstructors`, diploma sorgusu `diplomaData` node'una bağlı; silme talebi `deletionRequests` ve `securityLogs` kayıtlarını kullanıyor.
 - Markalı 404 sayfası `noindex,nofollow`; Vercel redirects/rewrites aktif yapılandırmada mevcut.
+
+## TRANSFER PROJESİ — TAMAMLANDI / KAPATILDI
+- Kapanış tarihi: 24 Eylül 2026.
+- Ana üretim deposu: `kravmagaturk/kravmaga-turk-website` / `main`.
+- Canlı alan adı: `https://kravmaga.com.tr`.
+- Hosting/production: Vercel.
+- DNS: Cloudflare üzerinden Vercel'e yönlendirilmiş durumda.
+- `www.kravmaga.com.tr` → `kravmaga.com.tr` 308 yönlendirmesi yapılandırıldı.
+- Hostinger/Zyro bağımlılıkları ana web kodundan temizlendi.
+- Vercel native `vercel.json`, clean URLs, güvenlik header'ları, cache ve image optimization yapılandırması aktif.
+- SEO: canonical, sitemap, robots, Open Graph/Twitter meta, Organization JSON-LD ve 404 düzeni tamamlandı.
+- Mobil/masaüstü ortak menü-footer, lightbox, sorgu ekranları ve kritik sayfalar production readiness kontrolünden geçti.
+- Firebase sorgu entegrasyonları korunuyor: `publicInstructors`, `diplomaData`, `deletionRequests`, `securityLogs`.
+- Geri dönüş dalı korunuyor: `backup-pre-transfer-2026-09-24`.
+- `international-register` diploma/sicil sistemi ayrı proje olarak korunuyor.
+- Eski yardımcı Cloudflare test/worker kayıtları üretim akışının parçası değildir; riskli silme yapılmadan bırakılmıştır.
+- Bundan sonraki değişiklikler TRANSFER kapsamında değil, normal web sitesi bakım/geliştirme çalışması olarak ele alınacaktır.
