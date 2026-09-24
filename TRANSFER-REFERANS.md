@@ -22,3 +22,12 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Legionnaire sayfasındaki eski Hostinger/Zyro fotoğraf URL'leri yerel `assets/legionnaire/` dosyalarına çevrilmelidir.
 - Eğitmen & Seviye Sorgu sayfasında siyah tam sayfa görünüm, 1948 logo ve KVKK bölümü korunmalıdır.
 - GitHub kökünde ve assets klasörlerinde kullanılmayan eski dosyalar periyodik olarak taranıp temizlenmelidir.
+
+
+## MODÜL 7 — Temizlik Durumu
+- 1948 logo ana site deposuna taşındı: `assets/brand/logo-1948.png`.
+- Legionnaire 8 arşiv görseli yerel `assets/legionnaire/` klasöründen kullanılıyor.
+- Kullanılmayan eski `KRAV-MAGA-TURK-V4-MENU.png`, `KURULUM.txt` ve `assets/site.js` kaldırıldı.
+- Eski `international-register/main/logo.png` görsel bağımlılığı ana site sayfalarından kaldırıldı.
+- Aktif kullanılan `hero.webp.webp`, `assetsozel-guvenlik-xray.webp`, eğitim ve temsilcilik görselleri korunuyor.
+- Kalan Zyro bağımlılığı: ana sayfadaki 3 görsel ve Belgeler sayfasındaki 9 kaynak görsel. Yerel kopyalar doğrulanmadan silinmeyecek/değiştirilmeyecek.
