@@ -87,6 +87,25 @@
       @media(max-width:900px){
         .kmt-standard-mark{width:260px!important;height:260px!important;right:-4%!important;opacity:.20!important}
       }
+      /* PRODUCTION PAGE CALIBRATION */
+      @media(min-width:751px){
+        .kmt-belgeler .hero-in{padding-top:54px!important;padding-bottom:54px!important}
+        .kmt-representative-page .hero-inner{padding-top:54px!important;padding-bottom:54px!important}
+        .leg-hero-content{padding-top:56px!important;padding-bottom:56px!important}
+        .kmt-contact-wrap{padding-top:52px!important;padding-bottom:48px!important}
+        .edu-page{padding-top:44px!important}
+        .bc-hero-content{padding-top:0!important;padding-bottom:0!important}
+      }
+      @media(max-width:750px){
+        .kmt-belgeler .hero{min-height:340px!important}
+        .kmt-belgeler .hero-in{padding-top:38px!important;padding-bottom:38px!important}
+        .kmt-representative-page .hero-inner{padding-top:38px!important;padding-bottom:38px!important}
+        .leg-hero-content{padding-top:42px!important;padding-bottom:42px!important}
+        .kmt-contact-wrap{padding-top:34px!important;padding-bottom:38px!important}
+        .edu-page{padding-top:28px!important}
+        .kmt-belgeler h1,.kmt-representative-page h1,.leg-hero h1{margin-top:10px!important}
+      }
+
       @media(max-width:900px){
         .transfer-nav-inner{min-height:64px;padding:0 14px}
         .transfer-brand{font-size:14px}
