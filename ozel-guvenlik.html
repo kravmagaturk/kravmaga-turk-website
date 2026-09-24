@@ -1174,11 +1174,46 @@ html{box-sizing:border-box;overflow-x:hidden}*,*:before,*:after{box-sizing:inher
 @media(max-width:750px){.kmt-wrap,.wrap,.leg-wrap,.kmt-ref-wrap{width:min(100% - 32px,1200px)!important;margin-left:auto!important;margin-right:auto!important}.kmt-actions,.leg-actions{flex-wrap:wrap}.kmt-btn,.leg-btn{min-height:46px}.kmt-actions .kmt-btn,.leg-actions .leg-btn{max-width:100%}}
 </style>
 <style id="kmt-xray-live">
-/* GitHub yerel X-Ray hero görseli: masaüstü/tablet/mobil */
-.kmt-security-photo{background-image:url("./assets/security/ozel-guvenlik-xray.webp?v=2")!important;background-repeat:no-repeat!important;background-color:#08090a!important}
-@media(min-width:1181px){.kmt-security-photo{background-size:cover!important;background-position:center 42%!important}}
-@media(min-width:751px) and (max-width:1180px){.kmt-hero{min-height:560px!important}.kmt-security-photo{background-size:cover!important;background-position:58% center!important}}
-@media(max-width:750px){.kmt-security-photo{background-size:cover!important;background-position:62% top!important}}
+/* Production calibration: güvenlik görseli küçük ve çerçeveye sığdırılmış */
+.kmt-security-photo{
+  inset:64px 4% 64px 48%!important;
+  background-image:url("/_vercel/image?url=%2Fassets%2Fsecurity%2Fozel-guvenlik-xray.webp&w=768&q=82")!important;
+  background-size:contain!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  background-color:transparent!important;
+  transform:none!important;
+}
+.kmt-security-single-mark{
+  width:230px!important;
+  height:230px!important;
+  right:5%!important;
+  top:50%!important;
+  opacity:.10!important;
+  background:url("/_vercel/image?url=%2Fassets%2Fbrand%2Flogo-1948.png&w=256&q=82") center/contain no-repeat!important;
+}
+@media(min-width:751px) and (max-width:1180px){
+  .kmt-hero{min-height:520px!important}
+  .kmt-security-photo{inset:70px 3% 70px 52%!important}
+  .kmt-security-single-mark{width:190px!important;height:190px!important;right:3%!important}
+}
+@media(max-width:750px){
+  .kmt-hero{min-height:540px!important;align-items:flex-end!important}
+  .kmt-security-photo{
+    inset:18px 8% auto 8%!important;
+    height:210px!important;
+    background-size:contain!important;
+    background-position:center top!important;
+  }
+  .kmt-security-single-mark{
+    width:125px!important;
+    height:125px!important;
+    right:8px!important;
+    top:118px!important;
+    opacity:.07!important;
+  }
+  .kmt-hero-content{padding:225px 0 36px!important}
+}
 </style>
 
 <link rel="stylesheet" href="/assets/site.css?v=550">
