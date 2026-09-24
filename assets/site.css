@@ -228,8 +228,7 @@ main#top .btn.primary{background:#b5121b!important;color:#fff!important;border-c
 }
 
 
-/* TRANSFER TEST: homepage normalization 23.09.2026
-   Test branch only. Consolidates the final homepage poster/card rules without changing main/live. */
+/* PRODUCTION: homepage normalization 23.09.2026 */
 body{margin:0;background:#08090a;overflow-x:hidden}
 main#top{width:100%;margin:0;padding:0}
 main#top .welcome-poster.v39{position:relative;width:100%;max-width:1536px;margin:0 auto;padding:0;overflow:hidden;background:#050607}
