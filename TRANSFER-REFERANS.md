@@ -30,4 +30,4 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Kullanılmayan eski `KRAV-MAGA-TURK-V4-MENU.png`, `KURULUM.txt` ve `assets/site.js` kaldırıldı.
 - Eski `international-register/main/logo.png` görsel bağımlılığı ana site sayfalarından kaldırıldı.
 - Aktif kullanılan `hero.webp.webp`, `assetsozel-guvenlik-xray.webp`, eğitim ve temsilcilik görselleri korunuyor.
-- Kalan Zyro bağımlılığı: ana sayfadaki 3 görsel ve Belgeler sayfasındaki 9 kaynak görsel. Yerel kopyalar doğrulanmadan silinmeyecek/değiştirilmeyecek.
+- Kalan Zyro bağımlılığı: YOK. Ana Sayfa ve Belgeler görselleri `assets/home/` ve `assets/documents/` altına yerelleştirildi.
