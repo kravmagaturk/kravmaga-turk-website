@@ -87,5 +87,17 @@
     "dangerouslyAllowSVG": false,
     "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
     "contentDispositionType": "inline"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/hakkimizda",
+      "destination": "/bulent-cetin",
+      "permanent": true
+    },
+    {
+      "source": "/temsilcilikler",
+      "destination": "/temsilcilik",
+      "permanent": true
+    }
+  ]
 }
