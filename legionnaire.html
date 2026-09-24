@@ -925,7 +925,8 @@ body{
 }
 </style>
 
-<style id="kmt-leg-gallery-fit">
+<style id="kmt-leg-gallery-calibration">
+/* TRANSFER referans: Legionnaire galeri kalibrasyonu */
 .leg-gallery{
   display:grid!important;
   grid-template-columns:repeat(4,minmax(0,1fr))!important;
@@ -934,9 +935,9 @@ body{
 .leg-photo{
   position:relative!important;
   width:100%!important;
-  aspect-ratio:1/1!important;
+  aspect-ratio:4/3!important;
   min-height:0!important;
-  padding:8px!important;
+  padding:6px!important;
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
@@ -952,7 +953,7 @@ body{
   height:100%!important;
   max-width:100%!important;
   max-height:100%!important;
-  object-fit:contain!important;
+  object-fit:cover!important;
   object-position:center center!important;
   transform:none!important;
   filter:grayscale(10%) contrast(1.03)!important;
@@ -963,19 +964,22 @@ body{
 }
 .leg-photo:after{display:none!important}
 
-/* 3. fotoğraf özel kalibrasyon */
+/* Dikey / kritik kareler: kırpma yok */
+.leg-photo:nth-child(1) img,
+.leg-photo:nth-child(3) img{
+  object-fit:contain!important;
+  background:#0b0b0b!important;
+}
+
+/* Tüfekli 3. fotoğraf: kafa üstten görünür kalsın */
 .leg-photo:nth-child(3){
   padding:4px!important;
 }
 .leg-photo:nth-child(3) img{
-  width:100%!important;
-  height:100%!important;
-  object-fit:contain!important;
-  object-position:center center!important;
-  transform:none!important;
+  object-position:center top!important;
 }
 
-/* Aynı sayfa lightbox */
+/* Aynı sayfada büyütme */
 .kmt-leg-lightbox{
   position:fixed;inset:0;z-index:99999;display:none;
   align-items:center;justify-content:center;padding:24px;
@@ -989,7 +993,7 @@ body{
 }
 .kmt-leg-lightbox img{
   display:block;width:100%;max-height:82vh;
-  object-fit:contain;background:#050505
+  object-fit:contain!important;background:#050505
 }
 .kmt-leg-close{
   position:absolute;right:8px;top:8px;z-index:2;
@@ -1001,48 +1005,12 @@ body{
 }
 @media(max-width:650px){
   .leg-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
-  .leg-photo{padding:6px!important}
+  .leg-photo{aspect-ratio:4/3!important;padding:5px!important}
   .leg-photo:nth-child(3){padding:3px!important}
   .kmt-leg-lightbox{padding:10px}
   .kmt-leg-lightbox-inner{padding:10px}
 }
 </style>
-
-<style id="kmt-leg-landscape-calibration">
-/* KMT landscape calibration */
-.leg-photo{
-  aspect-ratio:4/3!important;
-  padding:6px!important;
-}
-.leg-photo img{
-  width:100%!important;
-  height:100%!important;
-  object-fit:cover!important;
-  object-position:center center!important;
-}
-
-/* Dikey / kritik kareler: kırpma yok */
-.leg-photo:nth-child(1) img,
-.leg-photo:nth-child(3) img{
-  object-fit:contain!important;
-  background:#0b0b0b!important;
-}
-
-/* Tüfekli fotoğraf */
-.leg-photo:nth-child(3) img{
-  object-position:center top!important;
-}
-
-/* Lightbox her zaman tam oran */
-.kmt-leg-lightbox img{
-  object-fit:contain!important;
-}
-
-@media(max-width:650px){
-  .leg-photo{aspect-ratio:4/3!important}
-}
-</style>
-
 <link rel="canonical" href="https://kravmaga.com.tr/legionnaire">
 </head>
 
