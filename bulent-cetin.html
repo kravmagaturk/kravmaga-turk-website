@@ -2,16 +2,17 @@
 <meta name="robots" content="index,follow,max-image-preview:large"><title>Bülent Çetin | Krav Maga Türk</title><meta name="description" content="Bülent Çetin'in Krav Maga, yakın savunma, güvenlik ve eğitmenlik çalışmaları."><link rel="canonical" href="https://kravmaga.com.tr/bulent-cetin"><style>html,body{margin:0;background:#050505}a{-webkit-tap-highlight-color:transparent}</style><style>
 .bc-new-hero-art{
   position:absolute;
-  right:2%;
+  right:5%;
   top:50%;
   transform:translateY(-50%);
-  width:min(46vw,620px);
-  aspect-ratio:1/1;
-  background:url("/_vercel/image?url=%2Fassets%2Fabout%2Fbulent-cetin-hero.png&w=768&q=82") center/cover no-repeat;
-  opacity:.88;
-  -webkit-mask-image:radial-gradient(ellipse at center,#000 0 56%,rgba(0,0,0,.92) 63%,transparent 82%);
-  mask-image:radial-gradient(ellipse at center,#000 0 56%,rgba(0,0,0,.92) 63%,transparent 82%);
-  mix-blend-mode:screen;
+  width:330px;
+  height:390px;
+  background:url("/_vercel/image?url=%2Fassets%2Fabout%2Fbulent-cetin-hero.png&w=768&q=82") 54% 46%/560px auto no-repeat;
+  opacity:.96;
+  overflow:hidden;
+  border-radius:12px;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%);
   pointer-events:none;
   z-index:1;
 }
@@ -20,11 +21,14 @@
 .bc-hero p{max-width:650px}
 .bc-redline{margin-left:0!important;margin-right:0!important}
 @media(max-width:900px){
-  .bc-new-hero-art{width:430px;right:-8%;opacity:.72}
+  .bc-new-hero-art{width:260px;height:320px;right:2%;background-size:470px auto;background-position:54% 45%;opacity:.78}
 }
 @media(max-width:650px){
-  .bc-new-hero-art{width:300px;right:-24%;opacity:.34}
-  .bc-hero-content{padding-right:12%!important}
+  .bc-new-hero-art{width:190px;height:235px;right:-3%;background-size:350px auto;background-position:54% 43%;opacity:.48}
+  .bc-hero-content{padding-right:16%!important}
+  .bc-hero h1{font-size:clamp(38px,12vw,48px)}
+  .bc-hero p{max-width:72%;line-height:1.45}
+}
   .bc-hero h1{font-size:clamp(38px,12vw,48px)}
   .bc-hero p{max-width:76%;line-height:1.45}
 }
