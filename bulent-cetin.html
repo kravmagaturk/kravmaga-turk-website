@@ -42,6 +42,33 @@
   }
 }
 </style>
+<style id="kmt-bulent-title-only">
+/* Hero'da yalnızca BÜLENT ÇETİN başlığı görünür */
+.bc-hero > .bc-hero-content > .bc-label,
+.bc-hero > .bc-hero-content > p,
+.bc-hero > .bc-hero-content > .bc-redline{
+  display:none!important;
+}
+.bc-hero-content{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.bc-hero h1{
+  margin:0!important;
+}
+/* Arka plan görselindeki alt yazıyı kadraj dışında bırak */
+.bc-hero{
+  background-size:auto 132%!important;
+  background-position:right 38%!important;
+}
+@media(max-width:750px){
+  .bc-hero{
+    background-size:auto 118%!important;
+    background-position:62% 34%!important;
+  }
+}
+</style>
 </head><body><section class="bc-page">
 
   <!-- HERO / 1948 -->
