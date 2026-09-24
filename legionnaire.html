@@ -104,7 +104,7 @@ body{
  transform:translateY(-50%);
 
  background:
- url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png")
+ url("assets/brand/logo-1948.png")
  center/contain no-repeat;
 
  opacity:.11;
@@ -257,7 +257,7 @@ body{
  height:250px;
 
  background:
- url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png")
+ url("assets/brand/logo-1948.png")
  center/contain no-repeat;
 
  opacity:.85;
@@ -582,7 +582,7 @@ body{
  height:140px;
 
  background:
- url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png")
+ url("assets/brand/logo-1948.png")
  center/contain no-repeat;
 }
 
@@ -649,7 +649,7 @@ body{
  translate(-50%,-50%);
 
  background:
- url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png")
+ url("assets/brand/logo-1948.png")
  center/contain no-repeat;
 
  opacity:.035;
@@ -896,10 +896,122 @@ body{
 }
 
 </style>
-<style id="kmt-mobile-final">
-html{box-sizing:border-box;overflow-x:hidden}*,*:before,*:after{box-sizing:inherit}body{overflow-x:hidden}img,video,iframe{max-width:100%;height:auto}a,button{touch-action:manipulation}
-@media(max-width:750px){.kmt-wrap,.wrap,.leg-wrap,.kmt-ref-wrap{width:min(100% - 32px,1200px)!important;margin-left:auto!important;margin-right:auto!important}.kmt-actions,.leg-actions{flex-wrap:wrap}.kmt-btn,.leg-btn{min-height:46px}.kmt-actions .kmt-btn,.leg-actions .leg-btn{max-width:100%}}
+
+<style id="kmt-leg-story-wide">
+.leg-story{
+  display:block!important;
+  max-width:1180px!important;
+  margin:0 auto!important;
+}
+.leg-story-text{
+  width:100%!important;
+  max-width:1120px!important;
+  margin:0 auto!important;
+}
+.leg-story-text h2{
+  max-width:1000px!important;
+}
+.leg-story-text p{
+  max-width:1080px!important;
+  font-size:16px!important;
+  line-height:1.72!important;
+}
+.leg-highlight{
+  max-width:1080px!important;
+  margin:28px 0 0!important;
+}
+@media(max-width:750px){
+  .leg-story-text,.leg-story-text p,.leg-highlight{max-width:100%!important}
+}
 </style>
+
+<style id="kmt-leg-gallery-calibration">
+/* TRANSFER referans: Legionnaire galeri kalibrasyonu */
+.leg-gallery{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:12px!important;
+}
+.leg-photo{
+  position:relative!important;
+  width:100%!important;
+  aspect-ratio:4/3!important;
+  min-height:0!important;
+  padding:6px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+  background:linear-gradient(145deg,#171717,#0b0b0b)!important;
+  border:1px solid #2a2a2a!important;
+  border-radius:0!important;
+  cursor:zoom-in!important;
+}
+.leg-photo img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  transform:none!important;
+  filter:grayscale(10%) contrast(1.03)!important;
+}
+.leg-photo:hover img{
+  transform:scale(1.01)!important;
+  filter:grayscale(0) contrast(1.03)!important;
+}
+.leg-photo:after{display:none!important}
+
+/* Dikey / kritik kareler: kırpma yok */
+.leg-photo:nth-child(1) img,
+.leg-photo:nth-child(3) img{
+  object-fit:contain!important;
+  background:#0b0b0b!important;
+}
+
+/* Tüfekli 3. fotoğraf: kafa üstten görünür kalsın */
+.leg-photo:nth-child(3){
+  padding:4px!important;
+}
+.leg-photo:nth-child(3) img{
+  object-position:center top!important;
+}
+
+/* Aynı sayfada büyütme */
+.kmt-leg-lightbox{
+  position:fixed;inset:0;z-index:99999;display:none;
+  align-items:center;justify-content:center;padding:24px;
+  background:rgba(0,0,0,.90)
+}
+.kmt-leg-lightbox.open{display:flex}
+.kmt-leg-lightbox-inner{
+  position:relative;width:min(980px,94vw);max-height:90vh;
+  padding:16px;background:#0b0b0b;border:1px solid #333;
+  box-shadow:0 24px 70px rgba(0,0,0,.65)
+}
+.kmt-leg-lightbox img{
+  display:block;width:100%;max-height:82vh;
+  object-fit:contain!important;background:#050505
+}
+.kmt-leg-close{
+  position:absolute;right:8px;top:8px;z-index:2;
+  width:42px;height:42px;border:0;border-radius:50%;
+  background:#e50922;color:#fff;font-size:24px;cursor:pointer
+}
+@media(max-width:1000px){
+  .leg-gallery{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media(max-width:650px){
+  .leg-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+  .leg-photo{aspect-ratio:4/3!important;padding:5px!important}
+  .leg-photo:nth-child(3){padding:3px!important}
+  .kmt-leg-lightbox{padding:10px}
+  .kmt-leg-lightbox-inner{padding:10px}
+}
+</style>
+<link rel="canonical" href="https://kravmaga.com.tr/legionnaire">
 </head>
 
 
@@ -1002,14 +1114,450 @@ hatırası olarak kalmıştır.
 <div class="leg-highlight">
 “Bu resimler tarihe bir anı olarak kaldı.
 Baktıkça o güzel ve zor askerî günleri,
- birlikte hatırlıyorum.”
+dostlarımı özlüyorum.”
 </div>
+
+
+<div class="leg-timeline">
+
+
+<div class="leg-time">
+
+<span class="leg-time-year">
+1994
+</span>
+
+<h3>
+Legionnaire Dönemi
+</h3>
+
+<p>
+Kişisel arşivde yer alan askerî dönem
+ve eğitim fotoğrafları.
+</p>
+
 </div>
+
+
+<div class="leg-time">
+
+<span class="leg-time-year">
+1996
+</span>
+
+<h3>
+Türkiye'ye Dönüş
+</h3>
+
+<p>
+Sakatlık sonrasında Türkiye'ye dönüş
+ve güvenlik alanındaki çalışmaların
+devam etmesi.
+</p>
+
 </div>
+
+
+<div class="leg-time">
+
+<span class="leg-time-year">
+SONRAKİ DÖNEM
+</span>
+
+<h3>
+Krav Maga ve Güvenlik
+</h3>
+
+<p>
+Kişisel güvenlik, yakın koruma ve
+Krav Maga alanındaki çalışmaların
+geliştirilmesi.
+</p>
+
 </div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section style="padding:34px 20px;text-align:center;background:#090909;border-top:1px solid #222"><a href="index.html" style="display:inline-block;padding:14px 22px;background:#e81822;color:#fff;text-decoration:none;font:700 13px Arial,sans-serif">Ana Sayfaya Dön</a></section>
+
+
+<!-- PHOTO ARCHIVE -->
+
+<section class="leg-section leg-alt">
+
+<div class="leg-wrap">
+
+<div class="leg-title">
+
+<span>
+1994–1996 • FOTOĞRAF ARŞİVİ
+</span>
+
+<h2>
+Kişisel Arşivden Kareler
+</h2>
+
+<p>
+Legionnaire döneminden günümüze kalan
+kişisel arşiv fotoğrafları.
+</p>
+
+</div>
+
+
+<div class="leg-gallery">
+
+
+<div class="leg-photo">
+<img
+src="assets/legionnaire/legion-yemin-toreni.webp"
+alt="Bülent Çetin Legionnaire kişisel arşiv"
+loading="lazy" decoding="async" fetchpriority="low">
+</div>
+
+
+<div class="leg-photo">
+<img
+src="assets/legionnaire/legion-arkadaslar.webp"
+alt="Legionnaire döneminden kişisel arşiv fotoğrafı"
+loading="lazy" decoding="async" fetchpriority="low">
+</div>
+
+
+<div class="leg-photo">
+<img
+src="assets/legionnaire/legion-2-sec.webp"
+alt="Bülent Çetin askerî dönem arşivi"
+loading="lazy" decoding="async" fetchpriority="low">
+</div>
+
+
+<div class="leg-photo">
+<img
+src="assets/legionnaire/legion-fransa-tren-istasyonu.webp"
+alt="Fransa Legionnaire döneminden arşiv fotoğrafı"
+loading="lazy" decoding="async" fetchpriority="low">
+</div>
+
+
+<div class="leg-photo">
+<img
+src="assets/legionnaire/legion-takim.webp"
+alt="Legionnaire arkadaşları kişisel arşiv"
+loading="lazy" decoding="async" fetchpriority="low">
+</div>
+
+
+<div class="leg-photo">
+<img
+src="assets/legionnaire/legion-7-birlik.webp"
+alt="Legionnaire birlik fotoğrafı kişisel arşiv"
+loading="lazy" decoding="async" fetchpriority="low">
+</div>
+
+
+<div class="leg-photo">
+<img
+src="assets/legionnaire/legion-22.webp"
+alt="Krav Maga ve Legionnaire kişisel arşiv"
+loading="lazy" decoding="async" fetchpriority="low">
+</div>
+
+
+<div class="leg-photo">
+<img
+src="assets/legionnaire/legion-56.webp"
+alt="Bülent Çetin Legionnaire eğitim arşivi"
+loading="lazy" decoding="async" fetchpriority="low">
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<div class="kmt-leg-lightbox" id="kmtLegLightbox" aria-hidden="true">
+  <div class="kmt-leg-lightbox-inner">
+    <button class="kmt-leg-close" type="button" aria-label="Fotoğrafı kapat">×</button>
+    <img src="" alt="Büyütülmüş Legionnaire arşiv fotoğrafı">
+  </div>
+</div>
+
+<!-- MEMORY -->
+
+<section class="leg-section">
+
+<div class="leg-wrap">
+
+<div class="leg-title">
+
+<span>
+DENEYİM
+</span>
+
+<h2>
+Geçmişten Bugüne
+</h2>
+
+<p>
+Bu sayfa bir eğitim programından çok,
+kişisel geçmişin ve arşivin korunması
+amacıyla hazırlanmıştır.
+</p>
+
+</div>
+
+
+<div class="leg-memory">
+
+
+<div class="leg-memory-card">
+
+<span>
+ARŞİV
+</span>
+
+<h3>
+Bir Dönemin Hatırası
+</h3>
+
+<p>
+Fotoğraflar, 1990'lı yıllardaki askerî
+dönemden kalan kişisel hatıraların
+bir bölümünü belgelemektedir.
+</p>
+
+</div>
+
+
+<div class="leg-memory-card">
+
+<span>
+KRAV MAGA TÜRK
+</span>
+
+<h3>
+Deneyimin Devamı
+</h3>
+
+<p>
+Sonraki yıllarda kişisel güvenlik,
+yakın koruma ve Krav Maga alanındaki
+çalışmalar Bülent Çetin'in mesleki
+yaşamının önemli bir bölümünü oluşturdu.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ORIGINAL NOTE -->
+
+<section class="leg-section leg-alt">
+
+<div class="leg-wrap">
+
+<div class="leg-title">
+
+<span>
+ARŞİV NOTU
+</span>
+
+<h2>
+Krav Maga ve 4e Régiment
+</h2>
+
+</div>
+
+
+<div class="leg-document">
+
+<span>
+FRANSIZCA ARŞİV METNİ
+</span>
+
+<p>
+La pratique de ce système de combat au corps
+à corps suit, au 4e Régiment de la Légion
+étrangère, les bases dictées par son fondateur
+Imi Lichtenfeld (1910–1998), ancien instructeur
+de l’armée israélienne.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CONNECTION -->
+
+<section class="leg-section">
+
+<div class="leg-wrap">
+
+<div class="leg-title">
+
+<span>
+KRAV MAGA TÜRK
+</span>
+
+<h2>
+Deneyimden Eğitime
+</h2>
+
+<p>
+Geçmişte edinilen farklı deneyimlerin ardından
+çalışmalar kişisel güvenlik, yakın koruma ve
+Krav Maga eğitimleriyle devam etti.
+</p>
+
+</div>
+
+
+<div class="leg-connection">
+
+
+<div class="leg-card">
+
+<b>01</b>
+
+<h3>
+Kişisel Güvenlik
+</h3>
+
+<p>
+Farkındalık, mesafe ve değişen
+koşullara uyum sağlamaya yönelik
+eğitim yaklaşımı.
+</p>
+
+</div>
+
+
+<div class="leg-card">
+
+<b>02</b>
+
+<h3>
+Krav Maga
+</h3>
+
+<p>
+Başlangıç seviyesinden ileri çalışmalara
+uzanan uygulamalı eğitim sistemi.
+</p>
+
+</div>
+
+
+<div class="leg-card">
+
+<b>03</b>
+
+<h3>
+Yakın Koruma
+</h3>
+
+<p>
+Güvenlik ve Close Protection alanındaki
+eğitim ve danışmanlık çalışmaları.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="leg-cta">
+
+<div class="leg-cta-inner">
+
+<div class="leg-kicker">
+KRAV MAGA TÜRK • 19–48
+</div>
+
+<h2>
+Geçmişten Bugüne Krav Maga Türk
+</h2>
+
+</div>
+
+</div>
+
+</section>
+
+
 </main>
-</body>
+
+
+<script>
+(function(){
+  var box=document.getElementById('kmtLegLightbox');
+  if(!box) return;
+  var big=box.querySelector('img');
+  var close=box.querySelector('.kmt-leg-close');
+
+  document.querySelectorAll('.leg-gallery .leg-photo img').forEach(function(img){
+    img.setAttribute('tabindex','0');
+    img.setAttribute('role','button');
+
+    function openPhoto(){
+      big.src=img.currentSrc || img.src;
+      big.alt=img.alt || 'Legionnaire arşiv fotoğrafı';
+      box.classList.add('open');
+      box.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    }
+
+    img.addEventListener('click',openPhoto);
+    img.addEventListener('keydown',function(e){
+      if(e.key==='Enter' || e.key===' '){
+        e.preventDefault();
+        openPhoto();
+      }
+    });
+  });
+
+  function shut(){
+    box.classList.remove('open');
+    box.setAttribute('aria-hidden','true');
+    big.src='';
+    document.body.style.overflow='';
+  }
+
+  close.addEventListener('click',shut);
+  box.addEventListener('click',function(e){if(e.target===box) shut()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape') shut()});
+})();
+</script>
+<script src="assets/footer.js" defer></script></body>
 </html>

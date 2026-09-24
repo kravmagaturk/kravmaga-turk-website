@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Online Krav Maga Eğitimi | Krav Maga Türk Akademi</title>
+<meta name="description" content="Krav Maga Türk Online Akademi: Bülent Çetin'in eğitim deneyimiyle hazırlanan video eğitimleri, öğrenci paneli, ilerleme takibi ve online Krav Maga eğitim modeli.">
+<link rel="canonical" href="https://kravmaga.com.tr/online-akademi">
+<style id="kmt-transfer-clean">
+html,body{margin:0;min-height:100%;background:#050505!important;color:#fff}
+body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+.kmt-online{min-height:100vh}
+</style>
+</head>
+<body>
 <style>
 :root{
   --bg:#050505;
@@ -39,19 +54,7 @@
   border-bottom:1px solid var(--border);
 }
 
-.kmt-watermark{
-  position:absolute;
-  z-index:-1;
-  width:520px;
-  height:520px;
-  right:2%;
-  top:50%;
-  transform:translateY(-50%);
-  background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png")
-             center/contain no-repeat;
-  opacity:.10;
-  filter:grayscale(1);
-}
+.kmt-watermark{display:none!important}
 
 .kmt-hero-content{
   max-width:790px;
@@ -226,24 +229,19 @@
 /* BULENT CETIN */
 
 .kmt-instructor{
-  display:grid;
-  grid-template-columns:220px 1fr;
-  gap:45px;
-  align-items:center;
-  padding:40px;
+  display:block;
+  max-width:920px;
+  margin:0 auto;
+  padding:42px 46px;
+  text-align:center;
   border:1px solid #292929;
   border-radius:13px;
   background:
-    radial-gradient(circle at 10% 50%,rgba(232,24,34,.12),transparent 32%),
+    radial-gradient(circle at 50% 0%,rgba(232,24,34,.10),transparent 38%),
     #0e0e0e;
 }
 
-.kmt-instructor-logo{
-  width:210px;
-  height:210px;
-  background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png")
-             center/contain no-repeat;
-}
+.kmt-instructor-logo{display:none!important}
 
 .kmt-instructor-content .mini{
   margin-bottom:8px;
@@ -267,16 +265,17 @@
 }
 
 .kmt-instructor-content p{
-  max-width:720px;
-  margin:0 0 14px;
-  color:#999;
-  font-size:14px;
-  line-height:1.75;
+  max-width:760px;
+  margin:0 auto 14px;
+  color:#aaa;
+  font-size:15px;
+  line-height:1.8;
 }
 
 .kmt-badges{
   display:flex;
   flex-wrap:wrap;
+  justify-content:center;
   gap:7px;
   margin-top:22px;
 }
@@ -343,13 +342,7 @@
   background:#090909;
 }
 
-.kmt-side-logo{
-  width:105px;
-  height:105px;
-  margin:0 auto 25px;
-  background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png")
-             center/contain no-repeat;
-}
+.kmt-side-logo{display:none!important}
 
 .kmt-menu{
   padding:13px 14px;
@@ -578,18 +571,7 @@
     #050505;
 }
 
-.kmt-interest:before{
-  content:"";
-  position:absolute;
-  width:360px;
-  height:360px;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  background:url("https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png")
-             center/contain no-repeat;
-  opacity:.035;
-}
+.kmt-interest:before{content:none!important;display:none!important}
 
 .kmt-interest-inner{
   position:relative;
@@ -622,7 +604,7 @@
   .kmt-wrap{width:calc(100% - 46px)}
   .kmt-hero{min-height:520px}
   .kmt-online h1{font-size:48px}
-  .kmt-watermark{width:360px;height:360px;right:-30px}
+  .kmt-watermark{display:none!important}
   .kmt-features{grid-template-columns:repeat(2,1fr)}
 }
 
@@ -646,13 +628,7 @@
     max-width:350px;
   }
 
-  .kmt-watermark{
-    width:260px;
-    height:260px;
-    right:-105px;
-    top:30%;
-    opacity:.07;
-  }
+  .kmt-watermark{display:none!important}
 
   .kmt-experience-grid{
     grid-template-columns:1fr;
@@ -669,17 +645,11 @@
   .kmt-heading h2{font-size:25px}
 
   .kmt-instructor{
-    grid-template-columns:1fr;
-    gap:20px;
-    padding:25px;
+    padding:25px 20px;
     text-align:center;
   }
 
-  .kmt-instructor-logo{
-    width:150px;
-    height:150px;
-    margin:auto;
-  }
+  .kmt-instructor-logo{display:none!important}
 
   .kmt-instructor-content h2{
     font-size:27px;
@@ -730,9 +700,6 @@
 <!-- HERO -->
 
 <section class="kmt-hero">
-
-<div class="kmt-watermark"></div>
-
 <div class="kmt-wrap">
 
 <div class="kmt-hero-content">
@@ -814,9 +781,6 @@ Udemy'de Eğitime Başla
 <div class="kmt-wrap">
 
 <div class="kmt-instructor">
-
-<div class="kmt-instructor-logo"></div>
-
 <div class="kmt-instructor-content">
 
 <div class="mini">
@@ -830,24 +794,15 @@ Krav Maga • Kişisel Savunma • Güvenlik Eğitimleri
 </h3>
 
 <p>
-Krav Maga Türk Online Akademi, Bülent Çetin'in
-uzun yıllara dayanan saha ve eğitim deneyimini
-dijital ortama taşımak amacıyla hazırlanıyor.
+Bülent Çetin'in uzun yıllara dayanan saha ve eğitim deneyimi, Krav Maga Türk Online Akademi ile dijital ortama taşınmaktadır.
 </p>
 
 <p>
-2.000'i aşkın öğrenciyle çalışma deneyiminden
-elde edilen eğitim birikimi; temel prensiplerden
-uygulamaya doğru ilerleyen, düzenli ve anlaşılır
-bir online eğitim sistemi içerisinde sunulacak.
+2.000'i aşkın öğrenciyle edinilen eğitim birikimi; temel prensiplerden uygulamaya ilerleyen, anlaşılır ve takip edilebilir bir eğitim yapısı içinde sunulacaktır.
 </p>
 
 <p>
-Amaç yalnızca video izlenen bir platform değil;
-öğrencinin derslerini takip edebildiği, ilerlemesini
-görebildiği ve eğitim programını adım adım
-sürdürebildiği uzun soluklu bir eğitim ortamı
-oluşturmaktır.
+Amaç, yalnızca video izlenen bir sistem değil; öğrencinin derslerini ve ilerlemesini düzenli biçimde takip edebildiği sürdürülebilir bir eğitim ortamı oluşturmaktır.
 </p>
 
 <div class="kmt-badges">
@@ -883,9 +838,7 @@ Online Akademi Nasıl Çalışacak?
 </h2>
 
 <p>
-Eğitimlerin tek bir kişisel öğrenci hesabı
-altında takip edilebildiği uzun soluklu bir
-online eğitim sistemi planlanmaktadır.
+Eğitimlerin tek bir kişisel öğrenci hesabı altında takip edilebildiği uzun soluklu bir online eğitim sistemi planlanmaktadır.
 </p>
 
 </div>
@@ -952,7 +905,7 @@ Tek Hesap. Tüm Eğitimler.
 
 <p>
 Planlanan öğrenci eğitim panelinin
-ön izleme görünümü.
+önizleme görünümü.
 </p>
 
 </div>
@@ -961,9 +914,6 @@ Planlanan öğrenci eğitim panelinin
 <div class="kmt-dashboard">
 
 <aside class="kmt-sidebar">
-
-<div class="kmt-side-logo"></div>
-
 <div class="kmt-menu active">Eğitimlerim</div>
 <div class="kmt-menu">Dersler</div>
 <div class="kmt-menu">İlerlemem</div>
@@ -992,3 +942,269 @@ Planlanan öğrenci eğitim panelinin
 <strong>
 Bülent Çetin • Krav Maga Türk
 </strong>
+
+</div>
+
+
+<div class="kmt-course">
+
+<div class="kmt-course-head">
+<strong>Krav Maga • Başlangıç</strong>
+<small>Video Eğitim</small>
+</div>
+
+<div class="kmt-progress">
+<div style="width:68%"></div>
+</div>
+
+</div>
+
+
+<div class="kmt-course">
+
+<div class="kmt-course-head">
+<strong>Basic Combatives</strong>
+<small>Eğitim Modülü</small>
+</div>
+
+<div class="kmt-progress">
+<div style="width:40%"></div>
+</div>
+
+</div>
+
+
+<div class="kmt-course">
+
+<div class="kmt-course-head">
+<strong>Self Defense</strong>
+<small>Eğitim Modülü</small>
+</div>
+
+<div class="kmt-progress">
+<div style="width:15%"></div>
+</div>
+
+</div>
+
+
+<div class="kmt-preview-note">
+Bu alan planlanan Online Akademi kullanıcı
+deneyimini göstermek amacıyla hazırlanmış
+bir önizlemedir. Üyelik ve ödeme sistemi
+henüz aktif değildir.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MEMBERSHIP -->
+
+<section class="kmt-section kmt-alt">
+
+<div class="kmt-wrap">
+
+<div class="kmt-heading">
+
+<span>
+PLANLANAN ÜYELİK
+</span>
+
+<h2>
+Eğitim Seçenekleri
+</h2>
+
+<p>
+Eğitim paketleri ve fiyatlandırma,
+ön talep değerlendirmesinden sonra
+belirlenecektir.
+</p>
+
+</div>
+
+
+<div class="kmt-membership">
+
+<div class="kmt-member">
+
+<div class="kmt-member-label">
+BAŞLANGIÇ
+</div>
+
+<h3>Temel Eğitim</h3>
+
+<p>
+Online Krav Maga eğitimine başlangıç.
+</p>
+
+<ul>
+<li>Kişisel öğrenci hesabı</li>
+<li>Video ders erişimi</li>
+<li>İlerleme takibi</li>
+</ul>
+
+<span class="kmt-coming">
+HAZIRLANIYOR
+</span>
+
+</div>
+
+
+<div class="kmt-member featured">
+
+<div class="kmt-member-label">
+ONLINE AKADEMİ
+</div>
+
+<h3>Tam Eğitim</h3>
+
+<p>
+Kapsamlı online eğitim sistemi.
+</p>
+
+<ul>
+<li>Bölümlere ayrılmış eğitimler</li>
+<li>Kişisel eğitim paneli</li>
+<li>Ders ilerleme sistemi</li>
+<li>Yeni içerik erişimi</li>
+</ul>
+
+<span class="kmt-coming">
+HAZIRLANIYOR
+</span>
+
+</div>
+
+
+<div class="kmt-member">
+
+<div class="kmt-member-label">
+İLERİ SEVİYE
+</div>
+
+<h3>Özel Modüller</h3>
+
+<p>
+İleri eğitim içerikleri.
+</p>
+
+<ul>
+<li>Özel eğitim modülleri</li>
+<li>Video dersler</li>
+<li>Kişisel ilerleme kaydı</li>
+</ul>
+
+<span class="kmt-coming">
+PLANLANIYOR
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- UDEMY -->
+
+<section class="kmt-section">
+
+<div class="kmt-wrap">
+
+<div class="kmt-udemy">
+
+<div>
+
+<div class="kmt-kicker">
+EĞİTİME ŞİMDİ BAŞLAMAK İSTEYENLER
+</div>
+
+<h2>
+Udemy Eğitimleri
+</h2>
+
+<p>
+Krav Maga Türk Online Akademi geliştirilirken,
+mevcut video eğitimlerine Udemy üzerinden
+erişmeye devam edebilirsiniz.
+</p>
+
+<a
+href="https://www.udemy.com/user/bulent-cetin-3/"
+target="_blank"
+rel="noopener"
+class="kmt-btn kmt-btn-red">
+Udemy Eğitimlerini Gör
+</a>
+
+</div>
+
+
+<div class="kmt-udemy-box">
+
+<strong>
+Krav Maga Eğitimi
+</strong>
+
+<span>
+Bülent Çetin'in Krav Maga eğitim
+içeriklerini Udemy üzerinden inceleyin.
+</span>
+
+<a
+href="https://www.udemy.com/course/krav-maga-egitimi/"
+target="_blank"
+rel="noopener"
+class="kmt-btn kmt-btn-dark">
+Kursu İncele
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FORM INTRO -->
+
+<section class="kmt-interest" id="talep">
+
+<div class="kmt-wrap">
+
+<div class="kmt-interest-inner">
+
+<div class="kmt-kicker">
+ÖN TALEP • ONLINE AKADEMİ
+</div>
+
+<h2>
+Online Eğitime Katılmak İster misiniz?
+</h2>
+
+<p>
+Krav Maga Türk Online Akademi açıldığında eğitim, üyelik ve erişim duyuruları bu sayfada paylaşılacaktır.
+</p>
+
+
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+<script src="assets/footer.js" defer></script>
+</body>
+</html>
