@@ -178,3 +178,12 @@ Bu dosya, `transfer-test` dalındaki bağımsız web sitesi aktarımının çal�
 - Özel Güvenlik hero görseli tam ekran cover yerine küçük/contain yerleşime alındı; 1948 logo küçültüldü ve Vercel optimize çıktısı kullanıldı.
 - Yakın Koruma hero arka planındaki eğitim infografiği kaldırıldı; yerel güvenlik/koruma fotoğrafı küçük/contain yerleşime alındı, 1948 logo küçültüldü.
 - Son doğrulamada eski `temsilcilikler.html` referansı kalmadı, `temsilcilik.html` canonical adresi sitemap ile eşleşiyor ve ilgili HTML style blokları dengeli.
+
+### PC görünüm kalibrasyonu — 24 Eylül 2026
+- Bülent Çetin hero PNG görseli merkez portre kırpımıyla yeniden kalibre edildi; yan yazılar görünüm alanı dışında bırakıldı ve oran sabitlendi.
+- Belgeler kartlarında tüm belge önizlemeleri aynı 4:3 çerçeve oranına ve eşit doluluğa getirildi; lightbox tam belgeyi contain olarak göstermeye devam ediyor.
+- Eğitmen & Seviye Sorgu sayfasındaki 1948 logo küçültülüp sağ üst köşeye alındı; mobilde gizlenerek panel çakışması kaldırıldı.
+- Krav Maga Nedir bölümü iki eşit sütuna alındı; sağ prensipler kartı sol açıklama yüksekliğiyle eşitlendi ve bölüm alt boşluğu azaltıldı.
+- Özel Güvenlik hero fotoğrafındaki “ÖZEL GÜVENLİK” yazısı lokal blur/mask katmanıyla görünmez hale getirildi.
+- Yakın Koruma hero'sunda Özel Güvenlik havaalanı fotoğrafı kaldırıldı; repodaki uygulamalı koruma/eğitim fotoğrafı kullanıldı.
+- Son kontrolde ilgili altı sayfanın style ve CSS parantez dengeleri temiz, ortak footer.js bağlantıları mevcut.
