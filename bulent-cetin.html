@@ -42,8 +42,9 @@
   }
 }
 </style>
+
 <style id="kmt-bulent-title-only">
-/* Hero'da yalnızca BÜLENT ÇETİN başlığı görünür */
+/* Hero: yalnızca tek BÜLENT ÇETİN başlığı */
 .bc-hero > .bc-hero-content > .bc-label,
 .bc-hero > .bc-hero-content > p,
 .bc-hero > .bc-hero-content > .bc-redline{
@@ -53,19 +54,29 @@
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
+  min-height:400px!important;
 }
 .bc-hero h1{
   margin:0!important;
+  position:relative!important;
+  z-index:3!important;
 }
-/* Arka plan görselindeki alt yazıyı kadraj dışında bırak */
+/* Arka plan görselindeki ikinci isim satırını kadrajın altına taşı */
 .bc-hero{
-  background-size:auto 132%!important;
-  background-position:right 38%!important;
+  background-size:auto 155%!important;
+  background-position:right 30%!important;
+}
+@media(max-width:1100px){
+  .bc-hero{
+    background-size:auto 145%!important;
+    background-position:68% 28%!important;
+  }
 }
 @media(max-width:750px){
+  .bc-hero-content{min-height:330px!important}
   .bc-hero{
-    background-size:auto 118%!important;
-    background-position:62% 34%!important;
+    background-size:auto 138%!important;
+    background-position:63% 25%!important;
   }
 }
 </style>
