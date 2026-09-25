@@ -259,7 +259,6 @@
               <button type="button" aria-expanded="false">KRAV MAGA ▾</button>
               <div class="transfer-drop">
                 <a href="krav-maga.html">Krav Maga</a>
-                <a href="https://kravmagaturk.github.io/international-register/">Diploma Kayıt Sorgu</a>
                 <a href="ozel-dersler.html">Özel Dersler</a>
                 <a href="cocuk-krav-maga.html">Çocuk Dersleri</a>
                 <a href="online-akademi.html">Eğitim Modül</a>
