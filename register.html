@@ -2,7 +2,10 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<meta name="robots" content="noindex,nofollow,noarchive">\n<link rel="canonical" href="https://kravmaga.com.tr/register">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="canonical" href="https://kravmaga.com.tr/register">
+<style>.transfer-nav,.kmt-site-footer{display:none!important}</style>
 <title>Krav Maga Türk International Kayıt Sorgulama</title>
 <!-- v57: genel diploma + Junior/Kids/Asistan/Instructor alt seviyeleri + Katılım/Seminer -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -147,7 +150,7 @@ body:after{content:"KRAV MAGA TÜRK";position:fixed;right:3vw;top:66%;font-size:
 <div class="container">
   <div class="header">
     <div class="lang-toggle"><button class="lang-btn" id="langToggleBtn" onclick="toggleUILang()">EN</button></div>
-    <img id="siteLogoImg" src="https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png" class="logo" crossorigin="anonymous" onerror="this.style.display='none'" alt="Logo">
+    <img id="siteLogoImg" src="logo.png" class="logo" crossorigin="anonymous" onerror="this.style.display='none'" alt="Logo">
     <h1>KRAV MAGA TÜRK INTERNATIONAL</h1>
     <p id="txt-subtitle">Kayıt Sorgulama</p>
   </div>
@@ -883,7 +886,7 @@ function generateQR(elementId, text){
 }
 function prepareLogoBase64(){
   if(cachedLogoBase64 !== null) return Promise.resolve(cachedLogoBase64);
-  return fetch('https://raw.githubusercontent.com/kravmagaturk/international-register/main/logo.png').then(function(res){ return res.blob(); }).then(function(blob){
+  return fetch('logo.png').then(function(res){ return res.blob(); }).then(function(blob){
     return new Promise(function(resolve, reject){
       var reader = new FileReader();
       reader.onloadend = function(){ resolve(reader.result); };
@@ -1354,13 +1357,13 @@ function downloadStudentListPDF(){
 // === A4 DIKEY PNG SERTIFIKA SABLONLARI ===
 // GitHub ana dizinindeki gerçek PNG şablon dosyaları.
 var TEMPLATE_FILES = {
-  diplomaTr: ['https://raw.githubusercontent.com/kravmagaturk/international-register/main/yeni_master_2.png'],
-  diplomaGeneral: ['https://raw.githubusercontent.com/kravmagaturk/international-register/main/diploma-genel.png'],
-  registryInfo: ['https://raw.githubusercontent.com/kravmagaturk/international-register/main/sicil-pdf.png'],
-  diplomaEn: ['https://raw.githubusercontent.com/kravmagaturk/international-register/main/yeni_master_2.png'],
-  honorTr: ['https://raw.githubusercontent.com/kravmagaturk/international-register/main/yeni_master_2.png'],
-  honorEn: ['https://raw.githubusercontent.com/kravmagaturk/international-register/main/yeni_master_2.png'],
-  instructorId: ['https://raw.githubusercontent.com/kravmagaturk/international-register/main/instructor-id-template.png']
+  diplomaTr: ['yeni_master_2.png'],
+  diplomaGeneral: ['diploma-genel.png'],
+  registryInfo: ['sicil-pdf.png'],
+  diplomaEn: ['yeni_master_2.png'],
+  honorTr: ['yeni_master_2.png'],
+  honorEn: ['yeni_master_2.png'],
+  instructorId: ['instructor-id-template.png']
 };
 var templateCache = {};
 function loadImageAsDataURL(url){
