@@ -668,5 +668,77 @@
 })();
 </script>
 <script src="assets/footer.js" defer></script>
+
+<style id="kmt-belgeler-uniform-cards">
+/* Belge kartları: içerik uzunluğundan bağımsız eşit ölçü */
+.kmt-belgeler .grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-auto-rows:1fr;
+  gap:20px;
+  align-items:stretch;
+}
+.kmt-belgeler .card{
+  width:100%;
+  aspect-ratio:4 / 5;
+  min-width:0;
+  height:auto;
+  display:flex;
+  overflow:hidden;
+}
+.kmt-belgeler .card > a{
+  width:100%;
+  height:100%;
+  min-height:0;
+  display:grid;
+  grid-template-rows:minmax(0,1fr) 112px;
+}
+.kmt-belgeler .pic{
+  width:100%;
+  height:100%!important;
+  min-height:0;
+  aspect-ratio:auto!important;
+  padding:14px;
+}
+.kmt-belgeler .pic img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+}
+.kmt-belgeler .info{
+  width:100%;
+  height:112px;
+  min-height:112px;
+  overflow:hidden;
+  padding:18px 16px 18px 68px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.kmt-belgeler .info strong{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  line-clamp:2;
+  overflow:hidden;
+}
+@media(max-width:900px){
+  .kmt-belgeler .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .kmt-belgeler .card{aspect-ratio:4 / 5}
+}
+@media(max-width:650px){
+  .kmt-belgeler .grid{grid-template-columns:1fr;gap:16px}
+  .kmt-belgeler .card{aspect-ratio:4 / 4.7}
+  .kmt-belgeler .card > a{grid-template-rows:minmax(0,1fr) 96px}
+  .kmt-belgeler .pic{height:100%!important;padding:12px!important}
+  .kmt-belgeler .info{height:96px;min-height:96px;padding:16px 14px 16px 62px}
+}
+@media(max-width:390px){
+  .kmt-belgeler .card{aspect-ratio:4 / 4.8}
+  .kmt-belgeler .pic{height:100%!important;padding:10px!important}
+}
+</style>
+
 </body>
 </html>
