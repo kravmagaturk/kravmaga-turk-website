@@ -749,5 +749,39 @@
 }
 </style>
 
+
+<style id="kmt-belgeler-image-cover">
+/* Belge önizlemeleri: aynı oran, aynı kesim, çerçeveyi tam doldur */
+.kmt-belgeler .pic{
+  width:100%;
+  height:100%!important;
+  min-height:0;
+  aspect-ratio:auto!important;
+  padding:0!important;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#0a0a0d!important;
+}
+.kmt-belgeler .pic img{
+  display:block;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  margin:0!important;
+  background:transparent!important;
+}
+@media(max-width:650px){
+  .kmt-belgeler .pic{padding:0!important}
+}
+@media(max-width:390px){
+  .kmt-belgeler .pic{padding:0!important}
+}
+</style>
+
 </body>
 </html>
