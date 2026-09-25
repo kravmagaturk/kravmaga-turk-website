@@ -1266,6 +1266,39 @@ html{box-sizing:border-box;overflow-x:hidden}*,*:before,*:after{box-sizing:inher
   }
 }
 </style>
+<style id="kmt-security-hero-size-fix">
+/* Özel Güvenlik hero: görsel küçük, ortalı ve orantılı */
+.kmt-security-photo{
+  inset:72px 6% 72px 48%!important;
+  height:auto!important;
+  background-size:contain!important;
+  background-position:center center!important;
+  background-repeat:no-repeat!important;
+  background-color:transparent!important;
+}
+@media(min-width:751px) and (max-width:1180px){
+  .kmt-security-photo{
+    inset:78px 4% 78px 52%!important;
+    background-size:contain!important;
+    background-position:center center!important;
+  }
+}
+@media(max-width:750px){
+  .kmt-hero{
+    min-height:540px!important;
+    align-items:flex-end!important;
+  }
+  .kmt-security-photo{
+    inset:22px 8% auto 8%!important;
+    height:210px!important;
+    background-size:contain!important;
+    background-position:center top!important;
+  }
+  .kmt-hero-content{
+    padding:230px 0 36px!important;
+  }
+}
+</style>
 </head>
 
 <body class="kmt-home-theme">
