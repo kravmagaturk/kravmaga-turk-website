@@ -751,13 +751,13 @@
 
 
 <style id="kmt-belgeler-image-cover">
-/* Belge önizlemeleri: aynı oran, aynı kesim, çerçeveyi tam doldur */
+/* Belge önizlemeleri: kart ölçüsü sabit, belgenin tamamı net ve görünür */
 .kmt-belgeler .pic{
   width:100%;
   height:100%!important;
   min-height:0;
   aspect-ratio:auto!important;
-  padding:0!important;
+  padding:12px!important;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -768,18 +768,18 @@
   display:block;
   width:100%!important;
   height:100%!important;
-  max-width:none!important;
-  max-height:none!important;
-  object-fit:cover!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
   object-position:center center!important;
   margin:0!important;
-  background:transparent!important;
+  background:#0a0a0d!important;
 }
 @media(max-width:650px){
-  .kmt-belgeler .pic{padding:0!important}
+  .kmt-belgeler .pic{padding:10px!important}
 }
 @media(max-width:390px){
-  .kmt-belgeler .pic{padding:0!important}
+  .kmt-belgeler .pic{padding:8px!important}
 }
 </style>
 
