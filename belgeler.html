@@ -670,7 +670,7 @@
 <script src="assets/footer.js" defer></script>
 
 <style id="kmt-belgeler-card-layout">
-/* Tek kaynak: eşit kartlar + belgeyi kırpmadan tamamen görünür tut */
+/* Tüm belge kartlarında tek ve sabit görsel oranı */
 .kmt-belgeler .grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -680,19 +680,20 @@
 .kmt-belgeler .card{
   width:100%;
   min-width:0;
-  aspect-ratio:4/5;
+  height:100%;
   display:flex;
   overflow:hidden;
 }
 .kmt-belgeler .card>a{
   width:100%;
   height:100%;
-  display:grid;
-  grid-template-rows:minmax(0,1fr) 112px;
+  display:flex;
+  flex-direction:column;
 }
 .kmt-belgeler .pic{
   width:100%;
-  height:100%!important;
+  aspect-ratio:4/3!important;
+  height:auto!important;
   min-height:0;
   padding:12px!important;
   display:flex;
@@ -700,17 +701,17 @@
   justify-content:center;
   overflow:hidden;
   background:#0a0a0d!important;
-  aspect-ratio:auto!important;
+  flex:0 0 auto;
 }
 .kmt-belgeler .pic img{
   display:block;
-  width:auto!important;
-  height:auto!important;
+  width:100%!important;
+  height:100%!important;
   max-width:100%!important;
   max-height:100%!important;
   object-fit:contain!important;
   object-position:center!important;
-  margin:auto!important;
+  margin:0!important;
   background:transparent!important;
 }
 .kmt-belgeler .info{
@@ -722,6 +723,7 @@
   display:flex;
   flex-direction:column;
   justify-content:center;
+  flex:0 0 112px;
 }
 .kmt-belgeler .info strong{
   display:-webkit-box;
@@ -735,10 +737,13 @@
 }
 @media(max-width:650px){
   .kmt-belgeler .grid{grid-template-columns:1fr;gap:16px}
-  .kmt-belgeler .card{aspect-ratio:4/4.7}
-  .kmt-belgeler .card>a{grid-template-rows:minmax(0,1fr) 96px}
-  .kmt-belgeler .pic{padding:10px!important}
-  .kmt-belgeler .info{height:96px;min-height:96px;padding:16px 14px 16px 62px}
+  .kmt-belgeler .pic{aspect-ratio:4/3!important;padding:10px!important}
+  .kmt-belgeler .info{
+    height:96px;
+    min-height:96px;
+    flex-basis:96px;
+    padding:16px 14px 16px 62px
+  }
 }
 @media(max-width:390px){
   .kmt-belgeler .pic{padding:8px!important}
