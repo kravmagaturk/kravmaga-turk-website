@@ -927,7 +927,7 @@ body{
 </style>
 
 <style id="kmt-leg-gallery-calibration">
-/* TRANSFER referans: Legionnaire galeri kalibrasyonu */
+/* Legionnaire galeri: tüm karelerde fotoğraf kırpılmadan tamamen görünür */
 .leg-gallery{
   display:grid!important;
   grid-template-columns:repeat(4,minmax(0,1fr))!important;
@@ -954,10 +954,11 @@ body{
   height:100%!important;
   max-width:100%!important;
   max-height:100%!important;
-  object-fit:cover!important;
+  object-fit:contain!important;
   object-position:center center!important;
   transform:none!important;
   filter:grayscale(10%) contrast(1.03)!important;
+  background:#0b0b0b!important;
 }
 .leg-photo:hover img{
   transform:scale(1.01)!important;
@@ -965,19 +966,10 @@ body{
 }
 .leg-photo:after{display:none!important}
 
-/* Dikey / kritik kareler: kırpma yok */
-.leg-photo:nth-child(1) img,
-.leg-photo:nth-child(3) img{
+/* Ayakta duran / dikey fotoğraflar tam görünür, yukarıdan kesilmez */
+.leg-photo img[height],
+.leg-photo img[width]{
   object-fit:contain!important;
-  background:#0b0b0b!important;
-}
-
-/* Tüfekli 3. fotoğraf: kafa üstten görünür kalsın */
-.leg-photo:nth-child(3){
-  padding:4px!important;
-}
-.leg-photo:nth-child(3) img{
-  object-position:center top!important;
 }
 
 /* Aynı sayfada büyütme */
@@ -1007,7 +999,6 @@ body{
 @media(max-width:650px){
   .leg-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
   .leg-photo{aspect-ratio:4/3!important;padding:5px!important}
-  .leg-photo:nth-child(3){padding:3px!important}
   .kmt-leg-lightbox{padding:10px}
   .kmt-leg-lightbox-inner{padding:10px}
 }
