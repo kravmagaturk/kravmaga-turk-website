@@ -67,6 +67,7 @@
         color:#7f7f7f!important;font-size:12px;text-align:center;line-height:1.5
       }
       .kmt-footer-copy strong{color:#bdbdbd!important}
+      .kmt-footer-member-note{display:block;margin-top:8px;color:#9a9a9a!important;font-size:11px;line-height:1.45}.kmt-footer-member-note a{color:#d0d0d0!important;text-decoration:none!important;font-weight:800}.kmt-footer-member-note a:hover{color:#fff!important}
 
 
 
@@ -296,12 +297,14 @@
             <span>KADIKÖY · İSTANBUL</span>
             <a href="https://www.instagram.com/kravmagaturk" target="_blank" rel="noopener">INSTAGRAM</a>
             <a href="https://www.youtube.com/@KravMagaTurk" target="_blank" rel="noopener">YOUTUBE</a>
+            <a href="https://www.youtube.com/@KravMagaT%C3%BCrk/membership" target="_blank" rel="noopener">ÜYELİK</a>
           </div>
         </div>
         <div class="kmt-footer-copy">
           © COPYRIGHT 2026 TÜM HAKLARI SAKLIDIR.
           <strong>KRAV MAGA TÜRK GÜVENLİK DANIŞMANLIĞI</strong>
           ® TPE: 2007/49875
+          <span class="kmt-footer-member-note">YouTube üyeleri için özel içerikler: <a href="https://www.youtube.com/@KravMagaT%C3%BCrk/membership" target="_blank" rel="noopener">Krav Maga Türk Üyelik</a></span>
         </div>
       </footer>
     `;

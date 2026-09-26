@@ -7,6 +7,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bülent Çetin | Krav Maga Türk">
 <meta name="twitter:description" content="Bülent Çetin">
+<link id="kmt-bulent-fast-preload" rel="preload" as="image" href="assets/about/bulent-cetin-neon-city-hero.png" fetchpriority="high">
 
 
 
@@ -76,11 +77,19 @@
   .bc-hero h1{font-size:40px!important}
 }
 </style>
+<style id="kmt-bulent-text-fix">
+.bc-page,.bc-page *{writing-mode:horizontal-tb!important;text-orientation:mixed!important;word-break:normal!important;overflow-wrap:break-word!important}
+.bc-card,.bc-consult-card,.bc-org-card,.bc-person{min-width:0!important}
+.bc-card h3,.bc-consult-card h3,.bc-org-card strong,.bc-person h3{white-space:normal!important;line-height:1.25!important}
+.bc-hero-bg{content-visibility:auto!important}
+@media(max-width:900px){.bc-grid-four,.bc-org-grid,.bc-people-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.bc-card,.bc-consult-card{min-height:130px!important}}
+@media(max-width:560px){.bc-grid-four,.bc-org-grid,.bc-people-grid{grid-template-columns:1fr!important}.bc-card,.bc-consult-card,.bc-org-card,.bc-person{padding:18px!important}.bc-hero,.bc-hero-content{min-height:300px!important}.bc-hero h1{font-size:34px!important}}
+</style>
 </head><body><section class="bc-page">
 
   <!-- HERO / 1948 -->
   <header class="bc-hero">
-  <img class="bc-hero-bg" src="assets/about/bulent-cetin-neon-city-hero.png" alt="" aria-hidden="true">
+  <img class="bc-hero-bg" src="assets/about/bulent-cetin-neon-city-hero.png" alt="" aria-hidden="true" width="2170" height="725" loading="eager" decoding="async" fetchpriority="high">
   <div class="bc-hero-content">
     <h1>BÜLENT ÇETİN</h1>
   </div>
