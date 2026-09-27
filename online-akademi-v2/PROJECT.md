@@ -32,7 +32,7 @@ Yeni sohbet açıldığında kullanıcı yalnızca “ONLINE AKADEMİ V2 devam�
 - [x] 4. Ders bilgi modelini oluşturma
 - [x] 5. İlk Basic modül prototipini hazırlama
 - [x] 6. WMV -> MP4 dönüşüm planı ve deneme videosu
-- [ ] 7. Video depolama seçimi (Cloudflare R2/Stream veya YouTube)
+- [x] 7. Video depolama seçimi (Cloudflare R2/Stream veya YouTube)
 - [ ] 8. Üyelik/yetki sistemi
 - [ ] 9. İlerleme takibi
 - [ ] 10. Kitap QR eşleştirmesi
@@ -55,6 +55,10 @@ Yeni sohbet açıldığında kullanıcı yalnızca “ONLINE AKADEMİ V2 devam�
 - Çıktı: H.264 + AAC, 1280x720, 23.98 fps, faststart, ~3.70 MiB.
 - Yerel HTML5 oynatıcı test sayfası oluşturuldu ve bilgisayarda açıldı.
 - Dönüşüm profili TRANSCODING.md dosyasına kaydedildi.
+- Video depolama kararı onaylandı: Stream kullanılmayacak, R2 Standard ücretsiz kota hedeflenecek.
+- R2 mimarisi R2-ARCHITECTURE.md dosyasına kaydedildi.
+- Planlanan bucket adı: kravmaga-online-akademi-media.
+- Bucket private olacak; videolar GitHub/Pages içine konmayacak.
 
 ## Sonraki iş
-Video depolama seçimini yap: Cloudflare R2/Stream veya mevcut YouTube yapısı. Seçimden sonra Basic modülündeki videoUrl alanlarını gerçek yayın adreslerine bağla.
+Cloudflare R2 bucket oluşturma ve test videosunu private R2 yapısına yükleme. Ardından Basic ders veri modelindeki test videoUrl alanını gerçek R2 erişim katmanına bağla.
