@@ -1,0 +1,22 @@
+{
+  "source": "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul",
+  "videoCount": 110,
+  "totalGB": 6.65,
+  "format": "WMV",
+  "categories": {
+    "Basic": 23,
+    "Bear_Hug": 5,
+    "Bıçak": 5,
+    "DimMak-1": 6,
+    "DimMak-2": 9,
+    "Haber": 10,
+    "Kilit": 5,
+    "Materyal": 9,
+    "Silah": 9,
+    "Sopa": 9,
+    "Tekme": 9,
+    "Yer": 11
+  },
+  "status": "inventory-complete",
+  "next": "course-data-model-and-basic-prototype"
+}
