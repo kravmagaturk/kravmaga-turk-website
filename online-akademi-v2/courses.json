@@ -162,7 +162,8 @@
           "sizeMB": 4.73,
           "videoUrl": null,
           "bookQrKey": null,
-          "status": "awaiting-transcode"
+          "status": "transcode-tested",
+          "prototypeOutput": "local-only:_online-akademi-test-media/basic-reaksiyon-4.mp4"
         },
         {
           "id": "basic-18",
