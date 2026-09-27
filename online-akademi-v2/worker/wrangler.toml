@@ -1,0 +1,10 @@
+name = "kravmaga-online-video"
+main = "src/index.js"
+compatibility_date = "2026-09-28"
+
+[vars]
+B2_BUCKET_NAME = "kravmaga-online-akademi-media"
+
+# Secrets must be added with:
+# npx wrangler secret put B2_KEY_ID
+# npx wrangler secret put B2_APPLICATION_KEY
