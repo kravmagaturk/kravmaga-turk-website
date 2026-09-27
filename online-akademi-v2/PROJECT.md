@@ -6,8 +6,8 @@ Mevcut masaüstü eğitim modülünün içerik ve ders organizasyonunu koruyup m
 ## Kaynaklar
 - Eski modül: \\BULICET\Users\RDC-GUEST\OneDrive\Belgeler\modul
 - Mevcut web sayfası: online-akademi.html
-- Video sayısı: 110 WMV
-- Toplam video boyutu: yaklaşık 6.65 GB
+- Video sayısı: 76 WMV (2026-09-28 yeniden tarama)
+- Toplam video boyutu: yaklaşık 3.99 GB (2026-09-28 yeniden tarama)
 - Kitap projesi: ayrı sohbette hazırlanıyor; tamamlandığında QR/video eşleştirmesi bu projeye eklenecek.
 
 ## Mimari kararlar
@@ -42,12 +42,12 @@ Yeni sohbet açıldığında kullanıcı yalnızca “ONLINE AKADEMİ V2 devam�
 ## DURUM
 2026-09-27:
 - online-akademi-v2 dalı main üzerinden oluşturuldu.
-- Kaynak modülde 110 WMV video ve yaklaşık 6.65 GB içerik tespit edildi.
-- Kategoriler: Basic, Bear_Hug, Bıçak, DimMak-1, DimMak-2, Haber, Kilit, Materyal, Silah, Sopa, Tekme, Yer.
-- Yerel tam video envanteri online-akademi-course-catalog.json olarak üretildi.
+- Kaynak modül kullanıcı temizliği sonrası yeniden tarandı: 76 WMV video ve yaklaşık 3.99 GB içerik kaldı.
+- Güncel kategoriler: Basic, Bear_Hug, Bıçak, Kilit, Materyal, Sopa, Tekme, Yer.
+- Güncel yerel video envanteri 76 ders üzerinden yeniden üretildi.
 - Canlı siteye değişiklik yapılmadı.
-- courses.json veri modeli oluşturuldu.
-- Basic Combatives için 23 ders veri modeline bağlandı.
+- courses.json veri modeli güncel 76 videoya göre yeniden oluşturuldu (8 modül).
+- Basic için 23 ders korunuyor; diğer 7 modül de veri modeline eklendi.
 - online-akademi.html test dalında Basic ders listesini veri üzerinden açıp kapatan prototipe dönüştürüldü.
 - Videoların çoğu henüz oynatılmıyor; toplu MP4 dönüşümü bekliyor.
 - FFmpeg 9.0.2 essentials yerel araç klasörüne kuruldu.
@@ -58,7 +58,10 @@ Yeni sohbet açıldığında kullanıcı yalnızca “ONLINE AKADEMİ V2 devam�
 - Video depolama kararı onaylandı: Stream kullanılmayacak, R2 Standard ücretsiz kota hedeflenecek.
 - R2 mimarisi R2-ARCHITECTURE.md dosyasına kaydedildi.
 - Planlanan bucket adı: kravmaga-online-akademi-media.
+- Kullanıcı gereksiz videoları kaynak klasörden sildi; kaldırılan içerikler veri modelinden çıkarıldı.
+- Udemy'deki “Bob kauçuk adam kullanımı” videosu kullanıcı tarafından yarın eklenecek; pending-media.json içinde bekleyen iş olarak kaydedildi.
+- Toplu dönüşüm için güvenli, tekrar çalıştırılabilir transcode-library.ps1 hazırlandı; varsayılan çalışma modu dönüşüm yapmadan doğrulama/dry-run şeklinde.
 - Bucket private olacak; videolar GitHub/Pages içine konmayacak.
 
 ## Sonraki iş
-Cloudflare R2 bucket oluşturma ve test videosunu private R2 yapısına yükleme. Ardından Basic ders veri modelindeki test videoUrl alanını gerçek R2 erişim katmanına bağla.
+Hesap işlemleri yarına bırakıldı. Kullanıcı Bob kauçuk adam videosunu ekledikten sonra envanteri bir kez daha tara; ardından R2 bucket oluştur, test videosunu private R2'ye yükle ve Basic test videoUrl alanını gerçek erişim katmanına bağla.
