@@ -97,3 +97,5 @@ Backblaze B2 application key değerlerini yalnızca Worker secret olarak tanıml
 11. [ ] Yönetim paneli
 12. [ ] Genel test
 13. [ ] Kullanıcı onayı sonrası canlıya geçiş
+
+- Akademi öğrencilerine diploma/sertifika erişim hakkı yönetici panelinden ayrıca verilebilecek; eğitim erişiminden bağımsız yetki olarak tutulacak.
