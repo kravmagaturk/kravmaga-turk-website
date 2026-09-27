@@ -70,3 +70,30 @@ Yeni sohbet açıldığında kullanıcı yalnızca “ONLINE AKADEMİ V2 devam�
 
 ## Sonraki iş
 Backblaze B2 application key değerlerini yalnızca Worker secret olarak tanımla; test MP4 dosyasını private bucket'a yükle; Worker'ı deploy et ve /api/video/basic-17 üzerinden Range destekli oynatma testini tamamla. Bob kauçuk adam videosu eklendiğinde envanteri tekrar tara.
+
+
+## Yeni onaylanan kapsam — 28 Eylül 2026
+- Sistem yeni video, bölüm ve kurs eklemeye açık olacak.
+- Kullanıcı grupları: antrenör/eğitmen, akademi öğrencisi, dışarıdan ücretli kullanıcı, yönetici.
+- Öğrenci bazında izlenen dakika, izleme yüzdesi, ders tamamlama ve oturum sayısı kaydedilecek.
+- Öğrenci panelinde grafiksel ilerleme ve izleme süresi gösterilecek.
+- Kurs/bölüm sonunda test sistemi olacak.
+- Online Katılım Sertifikası yalnızca zorunlu videolar/bölümler tamamlandıktan ve gerekli test geçildikten sonra üretilecek.
+- Sertifika doğrulama kodu/URL altyapısı planlandı.
+- Ayrıntılı tasarım: online-akademi-v2/ACADEMY-ARCHITECTURE.md
+- Veri modeli taslağı: online-akademi-v2/academy-data-model.json
+
+## Güncel geliştirme sırası
+1. [x] Private B2 video erişimi
+2. [x] Worker + Range + Plyr test oynatma
+3. [ ] Tüm kurs/video kataloğunu tamamla
+4. [ ] Kullanıcı ve rol sistemi
+5. [ ] Kurs erişim hakları
+6. [ ] İzleme dakika / ilerleme kaydı
+7. [ ] Grafiksel öğrenci paneli
+8. [ ] Test sistemi
+9. [ ] Sertifika üretimi ve doğrulama
+10. [ ] Ödeme/paket erişimi
+11. [ ] Yönetim paneli
+12. [ ] Genel test
+13. [ ] Kullanıcı onayı sonrası canlıya geçiş
