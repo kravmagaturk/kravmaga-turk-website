@@ -7,6 +7,7 @@
 <title>Online Krav Maga Eğitimi | Krav Maga Türk Akademi</title>
 <meta name="description" content="Krav Maga Türk Online Akademi: Bülent Çetin'in eğitim deneyimiyle hazırlanan video eğitimleri, öğrenci paneli, ilerleme takibi ve online Krav Maga eğitim modeli.">
 <link rel="canonical" href="https://kravmaga.com.tr/online-akademi">
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
 <style id="kmt-production-clean">
 html,body{margin:0;min-height:100%;background:#050505!important;color:#fff}
 body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
@@ -513,6 +514,47 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
   display:inline-block;
   margin-left:7px;
   color:#e81822;
+}
+
+.kmt-lesson-play{
+  appearance:none;
+  padding:0;
+  border:0;
+  background:none;
+  color:#fff;
+  font:inherit;
+  text-align:left;
+  cursor:pointer;
+}
+
+.kmt-lesson-play:hover{color:#e81822}
+
+.kmt-video-player{
+  margin-top:14px;
+  padding:14px;
+  border:1px solid #303030;
+  border-radius:9px;
+  background:#090909;
+}
+
+.kmt-video-player[hidden]{display:none}
+
+.kmt-video-player-head{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+  color:#aaa;
+  font-size:11px;
+  font-weight:800;
+}
+
+.kmt-video-player-head strong{color:#fff}
+
+.kmt-video-player .plyr{
+  border-radius:8px;
+  overflow:hidden;
+  --plyr-color-main:#e81822;
 }
 
 /* MEMBERSHIP */
@@ -1048,6 +1090,16 @@ Dersleri Göster
 </div>
 </div>
 
+<div class="kmt-video-player" id="basic-video-player" hidden>
+<div class="kmt-video-player-head">
+<strong id="basic-video-title">Basic • Reaksiyon 4</strong>
+<span>PRIVATE VIDEO TEST</span>
+</div>
+<video id="academy-player" controls playsinline preload="metadata">
+<source src="https://kravmaga-online-video.bulicet.workers.dev/api/video/basic-17" type="video/mp4">
+</video>
+</div>
+
 </div>
 
 
@@ -1283,6 +1335,7 @@ Krav Maga Türk Online Akademi açıldığında eğitim, üyelik ve erişim duyu
 
 </main>
 <script src="assets/footer.js" defer></script>
+<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 <script>
 (function(){
   var toggle=document.getElementById('basic-toggle');
@@ -1295,6 +1348,29 @@ Krav Maga Türk Online Akademi açıldığında eğitim, üyelik ve erişim duyu
     });
   }
 
+  var playerWrap=document.getElementById('basic-video-player');
+  var playerTitle=document.getElementById('basic-video-title');
+  var player=(window.Plyr&&document.getElementById('academy-player'))?new Plyr('#academy-player',{
+    controls:['play-large','play','progress','current-time','mute','volume','settings','fullscreen']
+  }):null;
+
+  if(list){
+    list.addEventListener('click',function(e){
+      var btn=e.target.closest('[data-video-id]');
+      if(!btn) return;
+      if(playerWrap) playerWrap.hidden=false;
+      if(playerTitle) playerTitle.textContent='Basic • '+(btn.getAttribute('data-title')||'Video Ders');
+      if(player){
+        player.source={
+          type:'video',
+          sources:[{src:btn.getAttribute('data-video-url'),type:'video/mp4'}]
+        };
+        player.play();
+      }
+      if(playerWrap) playerWrap.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+  }
+
   fetch('online-akademi-v2/courses.json',{cache:'no-store'})
     .then(function(r){if(!r.ok) throw new Error('course data'); return r.json();})
     .then(function(data){
@@ -1302,9 +1378,15 @@ Krav Maga Türk Online Akademi açıldığında eğitim, üyelik ve erişim duyu
       if(!mod||!list) return;
       if(count) count.textContent=mod.lessons.length+' Ders • Eğitim Modülü';
       list.innerHTML=mod.lessons.map(function(lesson,index){
+        var ready=lesson.id==='basic-17'&&lesson.videoUrl;
+        var title=String(index+1).padStart(2,'0')+' • '+lesson.title;
+        var titleHtml=ready
+          ? '<button type="button" class="kmt-lesson-play" data-video-id="'+lesson.id+'" data-title="'+lesson.title+'" data-video-url="'+lesson.videoUrl+'">'+title+' ▶</button>'
+          : title;
+        var status=ready?'HAZIR':'MP4 BEKLİYOR';
         return '<div class="kmt-lesson">'+
-          '<div class="kmt-lesson-title">'+String(index+1).padStart(2,'0')+' • '+lesson.title+'</div>'+
-          '<div class="kmt-lesson-meta">'+lesson.sizeMB+' MB <span class="kmt-lesson-status">MP4 BEKLİYOR</span></div>'+
+          '<div class="kmt-lesson-title">'+titleHtml+'</div>'+
+          '<div class="kmt-lesson-meta">'+lesson.sizeMB+' MB <span class="kmt-lesson-status">'+status+'</span></div>'+
         '</div>';
       }).join('');
     })
