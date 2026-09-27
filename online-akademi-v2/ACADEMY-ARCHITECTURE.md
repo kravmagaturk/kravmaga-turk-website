@@ -11,6 +11,8 @@ Sistem sonradan yeni video, bölüm, kurs, test ve sertifika eklenmesine açık 
 2. **Akademi öğrencisi**
    - Krav Maga Türk bünyesindeki aktif öğrenci.
    - Atanan eğitimlere üyelik hakkıyla erişir.
+   - Yönetici panelinden diploma/sertifika erişim hakkı ayrıca verilebilir.
+   - Diploma erişimi eğitim erişiminden bağımsız bir yetki olarak açılıp kapatılabilir.
 3. **Dışarıdan ücretli kullanıcı**
    - Satın aldığı kurs/paket kadar erişir.
    - Süreli veya süresiz erişim pakete göre belirlenebilir.
@@ -95,6 +97,7 @@ Sertifika doğrulama sayfası daha sonra diploma/sertifika sorgu altyapısıyla 
 - Akademi öğrencisi: aktif akademi üyeliğine bağlı eğitimler
 - Dış kullanıcı: satın alınmış paket/kurs
 - Yönetici: tam erişim
+- Akademi öğrencisi için ek yetki: diploma/sertifika görüntüleme ve indirme erişimi yönetici tarafından ayrıca atanabilir.
 
 Frontend hiçbir B2 anahtarı taşımaz. Video erişimi Worker üzerinden ve kullanıcı yetkisi kontrol edilerek verilir.
 
