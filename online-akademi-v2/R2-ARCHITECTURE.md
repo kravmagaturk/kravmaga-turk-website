@@ -19,13 +19,9 @@ media/
   bicak/
   kilit/
   materyal/
-  silah/
   sopa/
   tekme/
   yer/
-  dimmak-1/
-  dimmak-2/
-  haber/
 
 ## Dosya isim standardı
 - Küçük harf
@@ -58,3 +54,12 @@ media/basic/basic-17-reaksiyon-4.mp4
 - Sadece web için dönüştürülmüş MP4 dosyaları yüklenecek.
 - Toplam depolama düzenli izlenecek.
 - Ücretsiz kotaya yaklaşınca toplu yükleme durdurulacak.
+
+
+## Güncel kaynak durumu — 2026-09-28
+Kullanıcı kaynak klasörde gereksiz videoları temizledi.
+- Güncel video sayısı: 76
+- Güncel toplam WMV boyutu: yaklaşık 3.99 GB
+- Güncel modüller: Basic, Bear_Hug, Bıçak, Kilit, Materyal, Sopa, Tekme, Yer
+- DimMak, Haber ve Silah klasörlerindeki videolar güncel eğitim havuzunda artık yer almıyor.
+- Udemy'deki Bob kauçuk adam kullanımı videosu daha sonra eklenecek.
