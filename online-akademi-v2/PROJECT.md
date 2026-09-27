@@ -29,8 +29,8 @@ Yeni sohbet açıldığında kullanıcı yalnızca “ONLINE AKADEMİ V2 devam�
 - [x] 1. Kaynak modül klasörünü tarama
 - [x] 2. Video envanterini çıkarma
 - [x] 3. Ayrı geliştirme dalı oluşturma
-- [ ] 4. Ders bilgi modelini oluşturma
-- [ ] 5. İlk Basic modül prototipini hazırlama
+- [x] 4. Ders bilgi modelini oluşturma
+- [x] 5. İlk Basic modül prototipini hazırlama
 - [ ] 6. WMV -> MP4 dönüşüm planı ve deneme videosu
 - [ ] 7. Video depolama seçimi (Cloudflare R2/Stream veya YouTube)
 - [ ] 8. Üyelik/yetki sistemi
@@ -46,6 +46,10 @@ Yeni sohbet açıldığında kullanıcı yalnızca “ONLINE AKADEMİ V2 devam�
 - Kategoriler: Basic, Bear_Hug, Bıçak, DimMak-1, DimMak-2, Haber, Kilit, Materyal, Silah, Sopa, Tekme, Yer.
 - Yerel tam video envanteri online-akademi-course-catalog.json olarak üretildi.
 - Canlı siteye değişiklik yapılmadı.
+- courses.json veri modeli oluşturuldu.
+- Basic Combatives için 23 ders veri modeline bağlandı.
+- online-akademi.html test dalında Basic ders listesini veri üzerinden açıp kapatan prototipe dönüştürüldü.
+- Videolar henüz oynatılmıyor; tümü MP4 dönüşümü bekliyor.
 
 ## Sonraki iş
-Ders veri modelini oluştur ve Basic kategorisini örnek modül olarak mevcut online-akademi tasarımına bağlayacak test sürümünü hazırla.
+WMV -> MP4 dönüşüm planını netleştir ve Basic kategorisinden tek bir deneme videosunu dönüştürerek web oynatıcı testine hazırla.
