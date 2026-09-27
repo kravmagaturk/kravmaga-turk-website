@@ -27,7 +27,10 @@ function securityHeaders(headers) {
   headers.set("Cache-Control", "private, no-store");
   headers.set("X-Content-Type-Options", "nosniff");
   headers.set("Referrer-Policy", "same-origin");
-  headers.set("Cross-Origin-Resource-Policy", "same-site");
+  headers.set("Cross-Origin-Resource-Policy", "cross-origin");
+  headers.set("Access-Control-Allow-Origin", "*");
+  headers.set("Access-Control-Allow-Headers", "Range, Content-Type");
+  headers.set("Access-Control-Expose-Headers", "Content-Length, Content-Range, Accept-Ranges");
   return headers;
 }
 
@@ -36,7 +39,15 @@ export default {
     const url = new URL(request.url);
 
     if (request.method === "OPTIONS") {
-      return new Response(null, { status: 204 });
+      return new Response(null, {
+        status: 204,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
+          "Access-Control-Allow-Headers": "Range, Content-Type",
+          "Access-Control-Max-Age": "86400"
+        }
+      });
     }
 
     if (!url.pathname.startsWith("/api/video/")) {
