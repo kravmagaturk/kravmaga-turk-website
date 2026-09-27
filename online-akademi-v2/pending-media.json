@@ -1,0 +1,12 @@
+{
+  "updated": "2026-09-28",
+  "pending": [
+    {
+      "id": "udemy-bob-dummy",
+      "title": "Bob kauçuk adam kullanımı",
+      "source": "Udemy",
+      "plannedAction": "Kullanıcı videoyu yarın kaynak klasöre ekleyecek; eklendikten sonra envantere ve ders modeline alınacak.",
+      "status": "waiting-for-user-file"
+    }
+  ]
+}
