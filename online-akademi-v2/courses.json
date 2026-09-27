@@ -1,225 +1,841 @@
-{
-  "version": "0.1",
-  "updated": "2026-09-27",
-  "modules": [
-    {
-      "id": "basic",
-      "title": "Basic Combatives",
-      "category": "Basic",
-      "access": "student",
-      "status": "prototype",
-      "sourceFormat": "WMV",
-      "deliveryFormat": "MP4-H264-pending",
-      "lessons": [
-        {
-          "id": "basic-01",
-          "title": "Çapraz",
-          "sourceRelativePath": "Basic/capraz.wmv",
-          "sizeMB": 18.16,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-02",
-          "title": "Dirsekler",
-          "sourceRelativePath": "Basic/Dirsekler.wmv",
-          "sizeMB": 43.92,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-03",
-          "title": "Dört Vuruş",
-          "sourceRelativePath": "Basic/dort_vurus.wmv",
-          "sizeMB": 13.39,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-04",
-          "title": "Duruşlar",
-          "sourceRelativePath": "Basic/Duruslar.wmv",
-          "sizeMB": 39.09,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-05",
-          "title": "Güncelleme 1",
-          "sourceRelativePath": "Basic/guncelleme_1.wmv",
-          "sizeMB": 33.45,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-06",
-          "title": "HammerFist 360",
-          "sourceRelativePath": "Basic/HammerFist-360.wmv",
-          "sizeMB": 32.03,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-07",
-          "title": "HammerFist",
-          "sourceRelativePath": "Basic/HammerFist.wmv",
-          "sizeMB": 23.66,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-08",
-          "title": "Isınma",
-          "sourceRelativePath": "Basic/isinma.wmv",
-          "sizeMB": 44.12,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-09",
-          "title": "Kasık",
-          "sourceRelativePath": "Basic/Kasik.wmv",
-          "sizeMB": 28.25,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-10",
-          "title": "Kida",
-          "sourceRelativePath": "Basic/Kida.wmv",
-          "sizeMB": 7.05,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-11",
-          "title": "Nefes",
-          "sourceRelativePath": "Basic/nefes.wmv",
-          "sizeMB": 27.69,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-12",
-          "title": "Oturma",
-          "sourceRelativePath": "Basic/Oturma.wmv",
-          "sizeMB": 82.97,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-13",
-          "title": "Parmak Kilit",
-          "sourceRelativePath": "Basic/Parmak-kilit.wmv",
-          "sizeMB": 5.78,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-14",
-          "title": "Reaksiyon 1",
-          "sourceRelativePath": "Basic/reaksiyon_1.wmv",
-          "sizeMB": 184.12,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-15",
-          "title": "Reaksiyon 2",
-          "sourceRelativePath": "Basic/reaksiyon_2.wmv",
-          "sizeMB": 56.32,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-16",
-          "title": "Reaksiyon 3",
-          "sourceRelativePath": "Basic/reaksiyon_3.wmv",
-          "sizeMB": 158.05,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-17",
-          "title": "Reaksiyon 4",
-          "sourceRelativePath": "Basic/reaksiyon_4.wmv",
-          "sizeMB": 4.73,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "transcode-tested",
-          "prototypeOutput": "local-only:_online-akademi-test-media/basic-reaksiyon-4.mp4"
-        },
-        {
-          "id": "basic-18",
-          "title": "Reaksiyon • B. Çetin",
-          "sourceRelativePath": "Basic/reaksiyon_b.cetin.wmv",
-          "sizeMB": 13.81,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-19",
-          "title": "Refleks",
-          "sourceRelativePath": "Basic/refleks.wmv",
-          "sizeMB": 30.87,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-20",
-          "title": "Saç Çekilmesi",
-          "sourceRelativePath": "Basic/sac_cekilmesi.wmv",
-          "sizeMB": 6.97,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-21",
-          "title": "Statik & Dinamik",
-          "sourceRelativePath": "Basic/Statik&Dinamik.wmv",
-          "sizeMB": 21.44,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-22",
-          "title": "Tek El Saldırı",
-          "sourceRelativePath": "Basic/Tek El Saldırı.wmv",
-          "sizeMB": 10.53,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        },
-        {
-          "id": "basic-23",
-          "title": "Yerde Saldırı",
-          "sourceRelativePath": "Basic/Yerde Saldırı.wmv",
-          "sizeMB": 9.58,
-          "videoUrl": null,
-          "bookQrKey": null,
-          "status": "awaiting-transcode"
-        }
-      ]
-    }
-  ]
+﻿{
+    "version":  "0.2",
+    "updated":  "2026-09-28",
+    "modules":  [
+                    {
+                        "id":  "basic",
+                        "title":  "Basic",
+                        "sourceCategory":  "Basic",
+                        "access":  "student",
+                        "status":  "prepared",
+                        "lessons":  [
+                                        {
+                                            "id":  "basic-01",
+                                            "title":  "capraz",
+                                            "sourceRelativePath":  "Basic/capraz.wmv",
+                                            "sizeMB":  18.16,
+                                            "r2Key":  "media/basic/basic-01-capraz.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-02",
+                                            "title":  "Dirsekler",
+                                            "sourceRelativePath":  "Basic/Dirsekler.wmv",
+                                            "sizeMB":  43.92,
+                                            "r2Key":  "media/basic/basic-02-dirsekler.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-03",
+                                            "title":  "dort_vurus",
+                                            "sourceRelativePath":  "Basic/dort_vurus.wmv",
+                                            "sizeMB":  13.39,
+                                            "r2Key":  "media/basic/basic-03-dort-vurus.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-04",
+                                            "title":  "Duruslar",
+                                            "sourceRelativePath":  "Basic/Duruslar.wmv",
+                                            "sizeMB":  39.09,
+                                            "r2Key":  "media/basic/basic-04-duruslar.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-05",
+                                            "title":  "guncelleme_1",
+                                            "sourceRelativePath":  "Basic/guncelleme_1.wmv",
+                                            "sizeMB":  33.45,
+                                            "r2Key":  "media/basic/basic-05-guncelleme-1.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-06",
+                                            "title":  "HammerFist",
+                                            "sourceRelativePath":  "Basic/HammerFist.wmv",
+                                            "sizeMB":  23.66,
+                                            "r2Key":  "media/basic/basic-06-hammerfist.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-07",
+                                            "title":  "HammerFist-360",
+                                            "sourceRelativePath":  "Basic/HammerFist-360.wmv",
+                                            "sizeMB":  32.03,
+                                            "r2Key":  "media/basic/basic-07-hammerfist-360.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-08",
+                                            "title":  "isinma",
+                                            "sourceRelativePath":  "Basic/isinma.wmv",
+                                            "sizeMB":  44.12,
+                                            "r2Key":  "media/basic/basic-08-isinma.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-09",
+                                            "title":  "Kasik",
+                                            "sourceRelativePath":  "Basic/Kasik.wmv",
+                                            "sizeMB":  28.25,
+                                            "r2Key":  "media/basic/basic-09-kasik.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-10",
+                                            "title":  "Kida",
+                                            "sourceRelativePath":  "Basic/Kida.wmv",
+                                            "sizeMB":  7.05,
+                                            "r2Key":  "media/basic/basic-10-kida.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-11",
+                                            "title":  "nefes",
+                                            "sourceRelativePath":  "Basic/nefes.wmv",
+                                            "sizeMB":  27.69,
+                                            "r2Key":  "media/basic/basic-11-nefes.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-12",
+                                            "title":  "Oturma",
+                                            "sourceRelativePath":  "Basic/Oturma.wmv",
+                                            "sizeMB":  82.97,
+                                            "r2Key":  "media/basic/basic-12-oturma.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-13",
+                                            "title":  "Parmak-kilit",
+                                            "sourceRelativePath":  "Basic/Parmak-kilit.wmv",
+                                            "sizeMB":  5.78,
+                                            "r2Key":  "media/basic/basic-13-parmak-kilit.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-14",
+                                            "title":  "reaksiyon_1",
+                                            "sourceRelativePath":  "Basic/reaksiyon_1.wmv",
+                                            "sizeMB":  184.12,
+                                            "r2Key":  "media/basic/basic-14-reaksiyon-1.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-15",
+                                            "title":  "reaksiyon_2",
+                                            "sourceRelativePath":  "Basic/reaksiyon_2.wmv",
+                                            "sizeMB":  56.32,
+                                            "r2Key":  "media/basic/basic-15-reaksiyon-2.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-16",
+                                            "title":  "reaksiyon_3",
+                                            "sourceRelativePath":  "Basic/reaksiyon_3.wmv",
+                                            "sizeMB":  158.05,
+                                            "r2Key":  "media/basic/basic-16-reaksiyon-3.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-17",
+                                            "title":  "reaksiyon_4",
+                                            "sourceRelativePath":  "Basic/reaksiyon_4.wmv",
+                                            "sizeMB":  4.73,
+                                            "r2Key":  "media/basic/basic-17-reaksiyon-4.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "transcode-tested",
+                                            "prototypeOutput":  "local-only:_online-akademi-test-media/basic-reaksiyon-4.mp4"
+                                        },
+                                        {
+                                            "id":  "basic-18",
+                                            "title":  "reaksiyon_b.cetin",
+                                            "sourceRelativePath":  "Basic/reaksiyon_b.cetin.wmv",
+                                            "sizeMB":  13.81,
+                                            "r2Key":  "media/basic/basic-18-reaksiyon-b-cetin.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-19",
+                                            "title":  "refleks",
+                                            "sourceRelativePath":  "Basic/refleks.wmv",
+                                            "sizeMB":  30.87,
+                                            "r2Key":  "media/basic/basic-19-refleks.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-20",
+                                            "title":  "sac_cekilmesi",
+                                            "sourceRelativePath":  "Basic/sac_cekilmesi.wmv",
+                                            "sizeMB":  6.97,
+                                            "r2Key":  "media/basic/basic-20-sac-cekilmesi.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-21",
+                                            "title":  "Statik\u0026Dinamik",
+                                            "sourceRelativePath":  "Basic/Statik\u0026Dinamik.wmv",
+                                            "sizeMB":  21.44,
+                                            "r2Key":  "media/basic/basic-21-statik-dinamik.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-22",
+                                            "title":  "Tek El Saldırı",
+                                            "sourceRelativePath":  "Basic/Tek El Saldırı.wmv",
+                                            "sizeMB":  10.53,
+                                            "r2Key":  "media/basic/basic-22-tek-el-saldiri.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "basic-23",
+                                            "title":  "Yerde Saldırı",
+                                            "sourceRelativePath":  "Basic/Yerde Saldırı.wmv",
+                                            "sizeMB":  9.58,
+                                            "r2Key":  "media/basic/basic-23-yerde-saldiri.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        }
+                                    ]
+                    },
+                    {
+                        "id":  "bear-hug",
+                        "title":  "Bear_Hug",
+                        "sourceCategory":  "Bear_Hug",
+                        "access":  "student",
+                        "status":  "prepared",
+                        "lessons":  [
+                                        {
+                                            "id":  "bear-hug-01",
+                                            "title":  "Arkadan Çekme",
+                                            "sourceRelativePath":  "Bear_Hug/Arkadan Çekme.wmv",
+                                            "sizeMB":  11.82,
+                                            "r2Key":  "media/bear-hug/bear-hug-01-arkadan-cekme.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "bear-hug-02",
+                                            "title":  "Bear_Hug",
+                                            "sourceRelativePath":  "Bear_Hug/Bear_Hug.wmv",
+                                            "sizeMB":  232.97,
+                                            "r2Key":  "media/bear-hug/bear-hug-02-bear-hug.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "bear-hug-03",
+                                            "title":  "Guncelleme",
+                                            "sourceRelativePath":  "Bear_Hug/Guncelleme.wmv",
+                                            "sizeMB":  28.17,
+                                            "r2Key":  "media/bear-hug/bear-hug-03-guncelleme.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "bear-hug-04",
+                                            "title":  "guncelleme_2",
+                                            "sourceRelativePath":  "Bear_Hug/guncelleme_2.wmv",
+                                            "sizeMB":  13.43,
+                                            "r2Key":  "media/bear-hug/bear-hug-04-guncelleme-2.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "bear-hug-05",
+                                            "title":  "kurt_kapan",
+                                            "sourceRelativePath":  "Bear_Hug/kurt_kapan.wmv",
+                                            "sizeMB":  11.3,
+                                            "r2Key":  "media/bear-hug/bear-hug-05-kurt-kapan.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        }
+                                    ]
+                    },
+                    {
+                        "id":  "bicak",
+                        "title":  "bıçak",
+                        "sourceCategory":  "bıçak",
+                        "access":  "student",
+                        "status":  "prepared",
+                        "lessons":  [
+                                        {
+                                            "id":  "bicak-01",
+                                            "title":  "Bloklar",
+                                            "sourceRelativePath":  "bıçak/Bloklar.wmv",
+                                            "sizeMB":  148.68,
+                                            "r2Key":  "media/bicak/bicak-01-bloklar.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "bicak-02",
+                                            "title":  "Elden Alma",
+                                            "sourceRelativePath":  "bıçak/Elden Alma.wmv",
+                                            "sizeMB":  80.76,
+                                            "r2Key":  "media/bicak/bicak-02-elden-alma.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "bicak-03",
+                                            "title":  "kelebek",
+                                            "sourceRelativePath":  "bıçak/kelebek.wmv",
+                                            "sizeMB":  67.54,
+                                            "r2Key":  "media/bicak/bicak-03-kelebek.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "bicak-04",
+                                            "title":  "Kilit",
+                                            "sourceRelativePath":  "bıçak/Kilit.wmv",
+                                            "sizeMB":  90.73,
+                                            "r2Key":  "media/bicak/bicak-04-kilit.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "bicak-05",
+                                            "title":  "Yerde",
+                                            "sourceRelativePath":  "bıçak/Yerde.wmv",
+                                            "sizeMB":  60.05,
+                                            "r2Key":  "media/bicak/bicak-05-yerde.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        }
+                                    ]
+                    },
+                    {
+                        "id":  "kilit",
+                        "title":  "Kilit",
+                        "sourceCategory":  "Kilit",
+                        "access":  "student",
+                        "status":  "prepared",
+                        "lessons":  [
+                                        {
+                                            "id":  "kilit-01",
+                                            "title":  "Bilek_Boyun_Kilit",
+                                            "sourceRelativePath":  "Kilit/Bilek_Boyun_Kilit.wmv",
+                                            "sizeMB":  372.62,
+                                            "r2Key":  "media/kilit/kilit-01-bilek-boyun-kilit.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "kilit-02",
+                                            "title":  "Guncel",
+                                            "sourceRelativePath":  "Kilit/Guncel.wmv",
+                                            "sizeMB":  105.23,
+                                            "r2Key":  "media/kilit/kilit-02-guncel.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "kilit-03",
+                                            "title":  "iki el ile tutuş",
+                                            "sourceRelativePath":  "Kilit/iki el ile tutuş.wmv",
+                                            "sizeMB":  99.94,
+                                            "r2Key":  "media/kilit/kilit-03-iki-el-ile-tutus.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "kilit-04",
+                                            "title":  "koldan_cekme",
+                                            "sourceRelativePath":  "Kilit/koldan_cekme.wmv",
+                                            "sizeMB":  5.1,
+                                            "r2Key":  "media/kilit/kilit-04-koldan-cekme.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "kilit-05",
+                                            "title":  "koldan_savurma",
+                                            "sourceRelativePath":  "Kilit/koldan_savurma.wmv",
+                                            "sizeMB":  4.05,
+                                            "r2Key":  "media/kilit/kilit-05-koldan-savurma.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        }
+                                    ]
+                    },
+                    {
+                        "id":  "materyal",
+                        "title":  "Materyal",
+                        "sourceCategory":  "Materyal",
+                        "access":  "student",
+                        "status":  "prepared",
+                        "lessons":  [
+                                        {
+                                            "id":  "materyal-01",
+                                            "title":  "canta",
+                                            "sourceRelativePath":  "Materyal/canta.wmv",
+                                            "sizeMB":  3.92,
+                                            "r2Key":  "media/materyal/materyal-01-canta.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "materyal-02",
+                                            "title":  "cezalandırıcı",
+                                            "sourceRelativePath":  "Materyal/cezalandırıcı.wmv",
+                                            "sizeMB":  219.85,
+                                            "r2Key":  "media/materyal/materyal-02-cezalandirici.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "materyal-03",
+                                            "title":  "Havlu",
+                                            "sourceRelativePath":  "Materyal/Havlu.wmv",
+                                            "sizeMB":  138.73,
+                                            "r2Key":  "media/materyal/materyal-03-havlu.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "materyal-04",
+                                            "title":  "Kemer",
+                                            "sourceRelativePath":  "Materyal/Kemer.wmv",
+                                            "sizeMB":  11.85,
+                                            "r2Key":  "media/materyal/materyal-04-kemer.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "materyal-05",
+                                            "title":  "Kubaton",
+                                            "sourceRelativePath":  "Materyal/Kubaton.wmv",
+                                            "sizeMB":  132.07,
+                                            "r2Key":  "media/materyal/materyal-05-kubaton.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "materyal-06",
+                                            "title":  "nunchaku_1",
+                                            "sourceRelativePath":  "Materyal/nunchaku_1.wmv",
+                                            "sizeMB":  79.86,
+                                            "r2Key":  "media/materyal/materyal-06-nunchaku-1.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "materyal-07",
+                                            "title":  "nunchaku_2",
+                                            "sourceRelativePath":  "Materyal/nunchaku_2.wmv",
+                                            "sizeMB":  77.22,
+                                            "r2Key":  "media/materyal/materyal-07-nunchaku-2.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "materyal-08",
+                                            "title":  "nunchaku_3",
+                                            "sourceRelativePath":  "Materyal/nunchaku_3.wmv",
+                                            "sizeMB":  123.63,
+                                            "r2Key":  "media/materyal/materyal-08-nunchaku-3.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "materyal-09",
+                                            "title":  "nunchaku_4",
+                                            "sourceRelativePath":  "Materyal/nunchaku_4.wmv",
+                                            "sizeMB":  119.68,
+                                            "r2Key":  "media/materyal/materyal-09-nunchaku-4.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        }
+                                    ]
+                    },
+                    {
+                        "id":  "sopa",
+                        "title":  "sopa",
+                        "sourceCategory":  "sopa",
+                        "access":  "student",
+                        "status":  "prepared",
+                        "lessons":  [
+                                        {
+                                            "id":  "sopa-01",
+                                            "title":  "bacaklar",
+                                            "sourceRelativePath":  "sopa/bacaklar.wmv",
+                                            "sizeMB":  31.16,
+                                            "r2Key":  "media/sopa/sopa-01-bacaklar.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "sopa-02",
+                                            "title":  "beyzbol",
+                                            "sourceRelativePath":  "sopa/beyzbol.wmv",
+                                            "sizeMB":  51.76,
+                                            "r2Key":  "media/sopa/sopa-02-beyzbol.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "sopa-03",
+                                            "title":  "sopa game",
+                                            "sourceRelativePath":  "sopa/sopa game.wmv",
+                                            "sizeMB":  20.61,
+                                            "r2Key":  "media/sopa/sopa-03-sopa-game.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "sopa-04",
+                                            "title":  "Sopa_kilit",
+                                            "sourceRelativePath":  "sopa/Sopa_kilit.wmv",
+                                            "sizeMB":  11.23,
+                                            "r2Key":  "media/sopa/sopa-04-sopa-kilit.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "sopa-05",
+                                            "title":  "sopa-180",
+                                            "sourceRelativePath":  "sopa/sopa-180.wmv",
+                                            "sizeMB":  25.24,
+                                            "r2Key":  "media/sopa/sopa-05-sopa-180.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "sopa-06",
+                                            "title":  "sopa-45",
+                                            "sourceRelativePath":  "sopa/sopa-45.wmv",
+                                            "sizeMB":  56.3,
+                                            "r2Key":  "media/sopa/sopa-06-sopa-45.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "sopa-07",
+                                            "title":  "sopa-90",
+                                            "sourceRelativePath":  "sopa/sopa-90.wmv",
+                                            "sizeMB":  21.01,
+                                            "r2Key":  "media/sopa/sopa-07-sopa-90.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "sopa-08",
+                                            "title":  "sopa-tutuş",
+                                            "sourceRelativePath":  "sopa/sopa-tutuş.wmv",
+                                            "sizeMB":  22.57,
+                                            "r2Key":  "media/sopa/sopa-08-sopa-tutus.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "sopa-09",
+                                            "title":  "Yerde Saldırı",
+                                            "sourceRelativePath":  "sopa/Yerde Saldırı.wmv",
+                                            "sizeMB":  9.58,
+                                            "r2Key":  "media/sopa/sopa-09-yerde-saldiri.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        }
+                                    ]
+                    },
+                    {
+                        "id":  "tekme",
+                        "title":  "Tekme",
+                        "sourceCategory":  "Tekme",
+                        "access":  "student",
+                        "status":  "prepared",
+                        "lessons":  [
+                                        {
+                                            "id":  "tekme-01",
+                                            "title":  "Diz Vuruşu",
+                                            "sourceRelativePath":  "Tekme/Diz Vuruşu.wmv",
+                                            "sizeMB":  18.38,
+                                            "r2Key":  "media/tekme/tekme-01-diz-vurusu.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "tekme-02",
+                                            "title":  "Döner Tekme",
+                                            "sourceRelativePath":  "Tekme/Döner Tekme.wmv",
+                                            "sizeMB":  18.27,
+                                            "r2Key":  "media/tekme/tekme-02-doner-tekme.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "tekme-03",
+                                            "title":  "Esnetme",
+                                            "sourceRelativePath":  "Tekme/Esnetme.wmv",
+                                            "sizeMB":  92.57,
+                                            "r2Key":  "media/tekme/tekme-03-esnetme.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "tekme-04",
+                                            "title":  "Geri Tekme",
+                                            "sourceRelativePath":  "Tekme/Geri Tekme.wmv",
+                                            "sizeMB":  17.92,
+                                            "r2Key":  "media/tekme/tekme-04-geri-tekme.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "tekme-05",
+                                            "title":  "kaval vuruşu",
+                                            "sourceRelativePath":  "Tekme/kaval vuruşu.wmv",
+                                            "sizeMB":  17.7,
+                                            "r2Key":  "media/tekme/tekme-05-kaval-vurusu.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "tekme-06",
+                                            "title":  "Makas Kırık",
+                                            "sourceRelativePath":  "Tekme/Makas Kırık.wmv",
+                                            "sizeMB":  18.9,
+                                            "r2Key":  "media/tekme/tekme-06-makas-kirik.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "tekme-07",
+                                            "title":  "Mesafe",
+                                            "sourceRelativePath":  "Tekme/Mesafe.wmv",
+                                            "sizeMB":  14.94,
+                                            "r2Key":  "media/tekme/tekme-07-mesafe.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "tekme-08",
+                                            "title":  "Ön Tekme",
+                                            "sourceRelativePath":  "Tekme/Ön Tekme.wmv",
+                                            "sizeMB":  60.97,
+                                            "r2Key":  "media/tekme/tekme-08-on-tekme.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "tekme-09",
+                                            "title":  "Yan Tekme",
+                                            "sourceRelativePath":  "Tekme/Yan Tekme.wmv",
+                                            "sizeMB":  14.54,
+                                            "r2Key":  "media/tekme/tekme-09-yan-tekme.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        }
+                                    ]
+                    },
+                    {
+                        "id":  "yer",
+                        "title":  "Yer",
+                        "sourceCategory":  "Yer",
+                        "access":  "student",
+                        "status":  "prepared",
+                        "lessons":  [
+                                        {
+                                            "id":  "yer-01",
+                                            "title":  "Düşme",
+                                            "sourceRelativePath":  "Yer/Düşme.wmv",
+                                            "sizeMB":  35.43,
+                                            "r2Key":  "media/yer/yer-01-dusme.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "yer-02",
+                                            "title":  "Düşürme",
+                                            "sourceRelativePath":  "Yer/Düşürme.wmv",
+                                            "sizeMB":  20.57,
+                                            "r2Key":  "media/yer/yer-02-dusurme.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "yer-03",
+                                            "title":  "Kalkmak",
+                                            "sourceRelativePath":  "Yer/Kalkmak.wmv",
+                                            "sizeMB":  49.83,
+                                            "r2Key":  "media/yer/yer-03-kalkmak.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "yer-04",
+                                            "title":  "Karından İtme",
+                                            "sourceRelativePath":  "Yer/Karından İtme.wmv",
+                                            "sizeMB":  35.99,
+                                            "r2Key":  "media/yer/yer-04-karindan-itme.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "yer-05",
+                                            "title":  "Kol Kilit",
+                                            "sourceRelativePath":  "Yer/Kol Kilit.wmv",
+                                            "sizeMB":  24.47,
+                                            "r2Key":  "media/yer/yer-05-kol-kilit.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "yer-06",
+                                            "title":  "Makas",
+                                            "sourceRelativePath":  "Yer/Makas.wmv",
+                                            "sizeMB":  20.74,
+                                            "r2Key":  "media/yer/yer-06-makas.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "yer-07",
+                                            "title":  "Takla",
+                                            "sourceRelativePath":  "Yer/Takla.wmv",
+                                            "sizeMB":  67.39,
+                                            "r2Key":  "media/yer/yer-07-takla.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "yer-08",
+                                            "title":  "Tekme Atılması",
+                                            "sourceRelativePath":  "Yer/Tekme Atılması.wmv",
+                                            "sizeMB":  56.7,
+                                            "r2Key":  "media/yer/yer-08-tekme-atilmasi.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "yer-09",
+                                            "title":  "Tekme Atmak",
+                                            "sourceRelativePath":  "Yer/Tekme Atmak.wmv",
+                                            "sizeMB":  31.88,
+                                            "r2Key":  "media/yer/yer-09-tekme-atmak.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "yer-10",
+                                            "title":  "Tekme Tutulması",
+                                            "sourceRelativePath":  "Yer/Tekme Tutulması.wmv",
+                                            "sizeMB":  34,
+                                            "r2Key":  "media/yer/yer-10-tekme-tutulmasi.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        },
+                                        {
+                                            "id":  "yer-11",
+                                            "title":  "Yandan Saldırı",
+                                            "sourceRelativePath":  "Yer/Yandan Saldırı.wmv",
+                                            "sizeMB":  47.61,
+                                            "r2Key":  "media/yer/yer-11-yandan-saldiri.mp4",
+                                            "videoUrl":  null,
+                                            "bookQrKey":  null,
+                                            "status":  "awaiting-transcode"
+                                        }
+                                    ]
+                    }
+                ]
 }
+
+[executed on device: Bulicet (973823e4-491d-42de-906f-6f07bdfec386)]
