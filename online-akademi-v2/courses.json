@@ -1,4 +1,4 @@
-﻿{
+{
     "version":  "0.2",
     "updated":  "2026-09-28",
     "modules":  [
@@ -837,5 +837,3 @@
                     }
                 ]
 }
-
-[executed on device: Bulicet (973823e4-491d-42de-906f-6f07bdfec386)]
