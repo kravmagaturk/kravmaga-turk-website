@@ -1,5 +1,5 @@
 const VIDEO_MAP = {
-  "basic-17": "media/basic/basic-17-reaksiyon-4.mp4"
+  "basic-17": "basic-17-reaksiyon-4.mp4"
 };
 
 let cachedAuth = null;
@@ -8,16 +8,16 @@ async function getB2Auth(env) {
   if (cachedAuth && cachedAuth.expiresAt > Date.now()) return cachedAuth;
 
   const token = btoa(`${env.B2_KEY_ID}:${env.B2_APPLICATION_KEY}`);
-  const res = await fetch("https://api.backblazeb2.com/b2api/v2/b2_authorize_account", {
+  const res = await fetch("https://api.backblazeb2.com/b2api/v4/b2_authorize_account", {
     headers: { Authorization: `Basic ${token}` }
   });
 
-  if (!res.ok) throw new Error("B2 authorization failed");
+  if (!res.ok) { const detail = await res.text(); throw new Error(`B2 authorization failed (${res.status}): ${detail}`); }
   const data = await res.json();
 
   cachedAuth = {
     authorizationToken: data.authorizationToken,
-    downloadUrl: data.downloadUrl,
+    downloadUrl: data.apiInfo?.storageApi?.downloadUrl,
     expiresAt: Date.now() + 20 * 60 * 60 * 1000
   };
   return cachedAuth;
@@ -91,7 +91,7 @@ export default {
         headers
       });
     } catch (err) {
-      return new Response("Video service error", { status: 502 });
+      return new Response(`Video service error: ${err && err.message ? err.message : "unknown"}`, { status: 502 });
     }
   }
 };
