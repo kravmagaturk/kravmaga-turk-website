@@ -31,7 +31,7 @@ Yeni sohbet açıldığında kullanıcı yalnızca “ONLINE AKADEMİ V2 devam�
 - [x] 3. Ayrı geliştirme dalı oluşturma
 - [x] 4. Ders bilgi modelini oluşturma
 - [x] 5. İlk Basic modül prototipini hazırlama
-- [ ] 6. WMV -> MP4 dönüşüm planı ve deneme videosu
+- [x] 6. WMV -> MP4 dönüşüm planı ve deneme videosu
 - [ ] 7. Video depolama seçimi (Cloudflare R2/Stream veya YouTube)
 - [ ] 8. Üyelik/yetki sistemi
 - [ ] 9. İlerleme takibi
@@ -49,7 +49,12 @@ Yeni sohbet açıldığında kullanıcı yalnızca “ONLINE AKADEMİ V2 devam�
 - courses.json veri modeli oluşturuldu.
 - Basic Combatives için 23 ders veri modeline bağlandı.
 - online-akademi.html test dalında Basic ders listesini veri üzerinden açıp kapatan prototipe dönüştürüldü.
-- Videolar henüz oynatılmıyor; tümü MP4 dönüşümü bekliyor.
+- Videoların çoğu henüz oynatılmıyor; toplu MP4 dönüşümü bekliyor.
+- FFmpeg 9.0.2 essentials yerel araç klasörüne kuruldu.
+- Basic/Reaksiyon 4 için ilk WMV -> MP4 testi tamamlandı.
+- Çıktı: H.264 + AAC, 1280x720, 23.98 fps, faststart, ~3.70 MiB.
+- Yerel HTML5 oynatıcı test sayfası oluşturuldu ve bilgisayarda açıldı.
+- Dönüşüm profili TRANSCODING.md dosyasına kaydedildi.
 
 ## Sonraki iş
-WMV -> MP4 dönüşüm planını netleştir ve Basic kategorisinden tek bir deneme videosunu dönüştürerek web oynatıcı testine hazırla.
+Video depolama seçimini yap: Cloudflare R2/Stream veya mevcut YouTube yapısı. Seçimden sonra Basic modülündeki videoUrl alanlarını gerçek yayın adreslerine bağla.
