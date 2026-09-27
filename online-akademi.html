@@ -1072,6 +1072,10 @@ Bülent Çetin • Krav Maga Türk
 Dersleri Göster
 </button>
 
+<button class="kmt-module-toggle" type="button" id="basic-video-test">
+Test Videosunu Aç
+</button>
+
 <div class="kmt-lesson-list" id="basic-lessons">
 <div class="kmt-lesson">
 <div class="kmt-lesson-title">Ders listesi yükleniyor...</div>
@@ -1279,6 +1283,22 @@ Krav Maga Türk Online Akademi açıldığında eğitim, üyelik ve erişim duyu
   var player=(window.Plyr&&document.getElementById('academy-player'))?new Plyr('#academy-player',{
     controls:['play-large','play','progress','current-time','mute','volume','settings','fullscreen']
   }):null;
+
+  var testVideoBtn=document.getElementById('basic-video-test');
+  if(testVideoBtn){
+    testVideoBtn.addEventListener('click',function(){
+      if(playerWrap) playerWrap.hidden=false;
+      if(playerTitle) playerTitle.textContent='Basic • Reaksiyon 4';
+      if(player){
+        player.source={
+          type:'video',
+          sources:[{src:'https://kravmaga-online-video.bulicet.workers.dev/api/video/basic-17',type:'video/mp4'}]
+        };
+        player.play();
+      }
+      if(playerWrap) playerWrap.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+  }
 
   if(list){
     list.addEventListener('click',function(e){
