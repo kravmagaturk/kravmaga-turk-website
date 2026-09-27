@@ -175,7 +175,7 @@
                                             "sourceRelativePath":  "Basic/reaksiyon_4.wmv",
                                             "sizeMB":  4.73,
                                             "r2Key":  "media/basic/basic-17-reaksiyon-4.mp4",
-                                            "videoUrl":  null,
+                                            "videoUrl":  "https://kravmaga-online-video.bulicet.workers.dev/api/video/basic-17",
                                             "bookQrKey":  null,
                                             "status":  "transcode-tested",
                                             "prototypeOutput":  "local-only:_online-akademi-test-media/basic-reaksiyon-4.mp4"
