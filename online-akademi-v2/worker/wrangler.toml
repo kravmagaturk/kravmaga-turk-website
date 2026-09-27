@@ -1,6 +1,6 @@
 name = "kravmaga-online-video"
 main = "src/index.js"
-compatibility_date = "2026-09-28"
+compatibility_date = "2026-09-27"
 
 [vars]
 B2_BUCKET_NAME = "kravmaga-online-akademi-media"
