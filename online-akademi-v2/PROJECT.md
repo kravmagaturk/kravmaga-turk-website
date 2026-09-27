@@ -33,7 +33,7 @@ Yeni sohbet açıldığında kullanıcı yalnızca “ONLINE AKADEMİ V2 devam�
 - [x] 5. İlk Basic modül prototipini hazırlama
 - [x] 6. WMV -> MP4 dönüşüm planı ve deneme videosu
 - [x] 7. Video depolama seçimi (Cloudflare R2/Stream veya YouTube)
-- [ ] 8. Üyelik/yetki sistemi
+- [ ] 8. Üyelik/yetki sistemi (Worker iskeleti hazır; oturum kontrolü bekliyor)
 - [ ] 9. İlerleme takibi
 - [ ] 10. Kitap QR eşleştirmesi
 - [ ] 11. Test yayını
@@ -60,8 +60,13 @@ Yeni sohbet açıldığında kullanıcı yalnızca “ONLINE AKADEMİ V2 devam�
 - Planlanan bucket adı: kravmaga-online-akademi-media.
 - Kullanıcı gereksiz videoları kaynak klasörden sildi; kaldırılan içerikler veri modelinden çıkarıldı.
 - Udemy'deki “Bob kauçuk adam kullanımı” videosu kullanıcı tarafından yarın eklenecek; pending-media.json içinde bekleyen iş olarak kaydedildi.
+- Backblaze B2 hesabı ve private bucket oluşturuldu: kravmaga-online-akademi-media.
+- Master key kullanılmadan, bucket'a sınırlı ayrı application key oluşturma akışı tamamlandı.
+- Private B2 video proxy için Cloudflare Worker iskeleti hazırlandı.
+- Worker Range isteklerini geçiriyor; B2 gerçek URL'sini frontend'den gizliyor.
+- Worker secret şablonu ve .gitignore eklendi; gerçek anahtarlar GitHub'a yazılmayacak.
 - Toplu dönüşüm için güvenli, tekrar çalıştırılabilir transcode-library.ps1 hazırlandı; varsayılan çalışma modu dönüşüm yapmadan doğrulama/dry-run şeklinde.
 - Bucket private olacak; videolar GitHub/Pages içine konmayacak.
 
 ## Sonraki iş
-Hesap işlemleri yarına bırakıldı. Kullanıcı Bob kauçuk adam videosunu ekledikten sonra envanteri bir kez daha tara; ardından R2 bucket oluştur, test videosunu private R2'ye yükle ve Basic test videoUrl alanını gerçek erişim katmanına bağla.
+Backblaze B2 application key değerlerini yalnızca Worker secret olarak tanımla; test MP4 dosyasını private bucket'a yükle; Worker'ı deploy et ve /api/video/basic-17 üzerinden Range destekli oynatma testini tamamla. Bob kauçuk adam videosu eklendiğinde envanteri tekrar tara.
