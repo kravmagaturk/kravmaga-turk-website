@@ -1,0 +1,224 @@
+{
+  "version": "0.1",
+  "updated": "2026-09-27",
+  "modules": [
+    {
+      "id": "basic",
+      "title": "Basic Combatives",
+      "category": "Basic",
+      "access": "student",
+      "status": "prototype",
+      "sourceFormat": "WMV",
+      "deliveryFormat": "MP4-H264-pending",
+      "lessons": [
+        {
+          "id": "basic-01",
+          "title": "Çapraz",
+          "sourceRelativePath": "Basic/capraz.wmv",
+          "sizeMB": 18.16,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-02",
+          "title": "Dirsekler",
+          "sourceRelativePath": "Basic/Dirsekler.wmv",
+          "sizeMB": 43.92,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-03",
+          "title": "Dört Vuruş",
+          "sourceRelativePath": "Basic/dort_vurus.wmv",
+          "sizeMB": 13.39,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-04",
+          "title": "Duruşlar",
+          "sourceRelativePath": "Basic/Duruslar.wmv",
+          "sizeMB": 39.09,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-05",
+          "title": "Güncelleme 1",
+          "sourceRelativePath": "Basic/guncelleme_1.wmv",
+          "sizeMB": 33.45,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-06",
+          "title": "HammerFist 360",
+          "sourceRelativePath": "Basic/HammerFist-360.wmv",
+          "sizeMB": 32.03,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-07",
+          "title": "HammerFist",
+          "sourceRelativePath": "Basic/HammerFist.wmv",
+          "sizeMB": 23.66,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-08",
+          "title": "Isınma",
+          "sourceRelativePath": "Basic/isinma.wmv",
+          "sizeMB": 44.12,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-09",
+          "title": "Kasık",
+          "sourceRelativePath": "Basic/Kasik.wmv",
+          "sizeMB": 28.25,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-10",
+          "title": "Kida",
+          "sourceRelativePath": "Basic/Kida.wmv",
+          "sizeMB": 7.05,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-11",
+          "title": "Nefes",
+          "sourceRelativePath": "Basic/nefes.wmv",
+          "sizeMB": 27.69,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-12",
+          "title": "Oturma",
+          "sourceRelativePath": "Basic/Oturma.wmv",
+          "sizeMB": 82.97,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-13",
+          "title": "Parmak Kilit",
+          "sourceRelativePath": "Basic/Parmak-kilit.wmv",
+          "sizeMB": 5.78,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-14",
+          "title": "Reaksiyon 1",
+          "sourceRelativePath": "Basic/reaksiyon_1.wmv",
+          "sizeMB": 184.12,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-15",
+          "title": "Reaksiyon 2",
+          "sourceRelativePath": "Basic/reaksiyon_2.wmv",
+          "sizeMB": 56.32,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-16",
+          "title": "Reaksiyon 3",
+          "sourceRelativePath": "Basic/reaksiyon_3.wmv",
+          "sizeMB": 158.05,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-17",
+          "title": "Reaksiyon 4",
+          "sourceRelativePath": "Basic/reaksiyon_4.wmv",
+          "sizeMB": 4.73,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-18",
+          "title": "Reaksiyon • B. Çetin",
+          "sourceRelativePath": "Basic/reaksiyon_b.cetin.wmv",
+          "sizeMB": 13.81,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-19",
+          "title": "Refleks",
+          "sourceRelativePath": "Basic/refleks.wmv",
+          "sizeMB": 30.87,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-20",
+          "title": "Saç Çekilmesi",
+          "sourceRelativePath": "Basic/sac_cekilmesi.wmv",
+          "sizeMB": 6.97,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-21",
+          "title": "Statik & Dinamik",
+          "sourceRelativePath": "Basic/Statik&Dinamik.wmv",
+          "sizeMB": 21.44,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-22",
+          "title": "Tek El Saldırı",
+          "sourceRelativePath": "Basic/Tek El Saldırı.wmv",
+          "sizeMB": 10.53,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        },
+        {
+          "id": "basic-23",
+          "title": "Yerde Saldırı",
+          "sourceRelativePath": "Basic/Yerde Saldırı.wmv",
+          "sizeMB": 9.58,
+          "videoUrl": null,
+          "bookQrKey": null,
+          "status": "awaiting-transcode"
+        }
+      ]
+    }
+  ]
+}
