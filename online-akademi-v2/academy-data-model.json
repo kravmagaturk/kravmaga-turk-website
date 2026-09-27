@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "roles": ["admin", "trainer", "academy_student", "paid_external"],
+  "progress": {
+    "userId": null,
+    "courseId": null,
+    "lessonId": null,
+    "firstOpenedAt": null,
+    "lastOpenedAt": null,
+    "watchedSeconds": 0,
+    "videoDurationSeconds": 0,
+    "watchedPercent": 0,
+    "completed": false,
+    "completedAt": null,
+    "sessionCount": 0
+  },
+  "testResult": {
+    "testId": null,
+    "userId": null,
+    "score": 0,
+    "passed": false,
+    "attemptCount": 0,
+    "passedAt": null
+  },
+  "certificate": {
+    "certificateId": null,
+    "userId": null,
+    "courseId": null,
+    "issueDate": null,
+    "verificationCode": null,
+    "verificationUrl": null,
+    "status": "not_eligible"
+  }
+}
