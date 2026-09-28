@@ -19,10 +19,12 @@
 - Tüfek savunma içerikleri
 - Silah/ateşli silah savunma içerikleri
 
-## İnceleme gerektiren
+## Kesin alınmayacak (ek)
 - Certified Protection Officer
-  - İçinde silah/tüfek savunma videoları varsa alınmayacak.
-  - Yalnızca uygun, silahsız eğitim parçaları varsa ayrıca seçilecek.
 
 ## Not
 İndirme ve içe aktarma sırasında Udemy müfredat sırası korunacak; Online Akademi modül ve ders ID'leri buna göre eşlenecek.
+
+## Dosya boyutu notu
+- Udemy'den alınacak videolar düşük/orta çözünürlükteyse doğrudan daha az yer kaplar.
+- Yine de arşive almadan önce codec/çözünürlük/bitrate kontrolü yapılacak; gereksiz yere yeniden sıkıştırma yapılmayacak.
