@@ -99,3 +99,11 @@ Backblaze B2 application key değerlerini yalnızca Worker secret olarak tanıml
 13. [ ] Kullanıcı onayı sonrası canlıya geçiş
 
 - Akademi öğrencilerine diploma/sertifika erişim hakkı yönetici panelinden ayrıca verilebilecek; eğitim erişiminden bağımsız yetki olarak tutulacak.
+
+
+## Kitap ↔ Online Akademi QR senkronizasyonu
+- Kitap projesindeki QR kodlar mümkün olduğunda doğrudan Krav Maga Türk Online Akademi içindeki ilgili ders/bölüm sayfasına bağlanacak.
+- `bookQrKey` alanları bu eşleşme için kullanılacak.
+- Kitap projesi ayrı ilerlese de Online Akademi ders ID'leri ve QR hedefleriyle senkron tutulacak.
+- Kitap baskıya girmeden önce QR hedefleri test ortamında doğrulanacak; canlı URL'ler en son yayın öncesi sabitlenecek.
+- Gelecekte ders/video yolu değişse bile kitap QR'larının bozulmaması için doğrudan B2 video URL'si değil, kalıcı akademi ders/QR yönlendirme adresi kullanılacak.
