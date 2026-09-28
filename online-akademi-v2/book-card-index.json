@@ -884,11 +884,12 @@
       "chapter": "B11 — Ateşli Silah Tehdidi ve Uygulama Güvenliği",
       "title": "Yardım çağrısı",
       "sourcePlan": "Farkındalık/senaryo şeması; otomatik teknik QR yok",
-      "artStatus": "planned-source-pending",
+      "artStatus": "representative-3d-review-saved",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "reviewArtifact": "Krav_Maga_B11_3B_Temsili_G04_G07_Baski_Onizleme_2026-09-29.pdf"
     },
     {
       "cardId": "B11-G05",
@@ -910,18 +911,20 @@
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "sourceGap": "Original Word has Resim-14 heading but no embedded technical image in its weapon section; later memoir photos are unrelated."
     },
     {
       "cardId": "B11-G07",
       "chapter": "B11 — Ateşli Silah Tehdidi ve Uygulama Güvenliği",
       "title": "Eşli uygulama sınırı",
       "sourcePlan": "Farkındalık/senaryo şeması; otomatik teknik QR yok",
-      "artStatus": "planned-source-pending",
+      "artStatus": "representative-3d-review-saved",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "reviewArtifact": "Krav_Maga_B11_3B_Temsili_G04_G07_Baski_Onizleme_2026-09-29.pdf"
     },
     {
       "cardId": "B11-G08",
