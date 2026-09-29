@@ -423,7 +423,11 @@
       "reviewArtifact": "Krav_Maga_B06_G01_Video_Kareleri_3B_Inceleme_2026-09-29.pdf",
       "sourceReviewNote": "Ayakta açık duruş ve öne adım özgün video karelerinden çizildi. Basic/Duruslar.wmv ile aynı çekim ve teknik ad henüz doğrulanmadı. Tam iki ayak görünür; 125 mm prova genişliğinde yaklaşık 303 ppi. B09 düşme kaynağı değildir.",
       "chapterReviewArtifact": "Krav_Maga_B06_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B06 metin sırası ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      }
     },
     {
       "cardId": "B06-G02",
@@ -438,7 +442,11 @@
       "qrStatus": "candidate-only",
       "publicationCheck": "Gergedan/Koç adı ve iki açıdan gerçek poz",
       "chapterReviewArtifact": "Krav_Maga_B06_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B06 metin sırası ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
@@ -454,7 +462,11 @@
       "qrStatus": "candidate-only",
       "publicationCheck": "Adım ayak yerleşimi gerçek kare",
       "chapterReviewArtifact": "Krav_Maga_B06_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B06 metin sırası ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
@@ -470,7 +482,11 @@
       "qrStatus": "candidate-only",
       "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
       "chapterReviewArtifact": "Krav_Maga_B06_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B06 metin sırası ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
@@ -487,7 +503,11 @@
       "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
       "bookAccessScope": "core-candidate-awaiting-lesson-publication",
       "chapterReviewArtifact": "Krav_Maga_B06_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B06 metin sırası ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
@@ -503,7 +523,11 @@
       "qrStatus": "candidate-only",
       "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
       "chapterReviewArtifact": "Krav_Maga_B06_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B06 metin sırası ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
