@@ -8,7 +8,9 @@
     "M4Y and BH are separate families. BH has 2 current Udemy source videos.",
     "No automatic book QR for On The Edge, Line of Fire, blades, firearms, stick or Materyal.",
     "No QR is print-ready; source candidates need frame and instructor verification.",
-    "B03-G03 Kida is the greeting in the author's original manuscript (p. 10); one card and one verified Academy lesson QR unless a distinct lesson warrants a separate editorial decision."
+    "B03-G03 Kida is the greeting in the author's original manuscript (p. 10); one card and one verified Academy lesson QR unless a distinct lesson warrants a separate editorial decision.",
+    "Book QR access is limited to lessons explicitly published in the Krav Maga Kitap Görsel Eğitim curriculum; membership alone does not grant access to all Academy modules.",
+    "Academy course access is assigned through the administrator panel to Krav Maga members; a book entitlement is scoped to the book visual curriculum and must be checked server-side after sign-in."
   ],
   "cards": [
     {
@@ -193,7 +195,7 @@
       "academyModuleId": "basic",
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "qrStatus": "exact-source-match-awaiting-route-and-access",
+      "qrStatus": "exact-source-match-awaiting-route-access-and-book-entitlement",
       "publicationCheck": "Özgün metin s. 10 ile Kida/selam anlamı; gerçek video/poz kareleri, yüz ve el/ayak konumu, kalıcı ders URL'si, erişim ve 300 ppi baskı kontrolü",
       "technicalId": "BAS-KIDA",
       "frameTimecodes": [],
@@ -205,7 +207,8 @@
         "Karşılıklı selam başlangıcı: iki kişi tam beden, ön görünüş",
         "Selam hareketi: el, gövde ve ayaklar net, ön ve yan açı",
         "Bitiş: dikkat odağı, iki kişi tam beden"
-      ]
+      ],
+      "bookAccessScope": "core-candidate-awaiting-lesson-publication"
     },
     {
       "cardId": "B03-G04",
@@ -351,8 +354,9 @@
       "academyModuleId": "basic",
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "qrStatus": "exact-source-match-awaiting-route-and-access",
-      "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü"
+      "qrStatus": "exact-source-match-awaiting-route-access-and-book-entitlement",
+      "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
+      "bookAccessScope": "core-candidate-awaiting-lesson-publication"
     },
     {
       "cardId": "B05-G04",
@@ -403,13 +407,14 @@
       "academyModuleId": "basic",
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "qrStatus": "exact-source-match-awaiting-route-and-access",
+      "qrStatus": "exact-source-match-awaiting-route-access-and-book-entitlement",
       "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
       "technicalId": "BAS-DURUS",
       "frameTimecodes": [],
       "sourcePhotoIds": [],
       "sourceVerified": false,
-      "printReady": false
+      "printReady": false,
+      "bookAccessScope": "core-candidate-awaiting-lesson-publication"
     },
     {
       "cardId": "B06-G02",
@@ -460,8 +465,9 @@
       "academyModuleId": "basic",
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "qrStatus": "exact-source-match-awaiting-route-and-access",
-      "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü"
+      "qrStatus": "exact-source-match-awaiting-route-access-and-book-entitlement",
+      "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
+      "bookAccessScope": "core-candidate-awaiting-lesson-publication"
     },
     {
       "cardId": "B06-G06",
@@ -512,8 +518,9 @@
       "academyModuleId": "basic",
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "qrStatus": "exact-source-match-awaiting-route-and-access",
-      "publicationCheck": "Bağımsız dirsek türü ve temas doğrulaması"
+      "qrStatus": "exact-source-match-awaiting-route-access-and-book-entitlement",
+      "publicationCheck": "Bağımsız dirsek türü ve temas doğrulaması",
+      "bookAccessScope": "core-candidate-awaiting-lesson-publication"
     },
     {
       "cardId": "B07-G04",
@@ -1933,5 +1940,13 @@
     "inventoryArtifact": "Krav_Maga_190_Orijinal_Gorsel_Kaynak_Envanteri_2026-09-29.csv",
     "auditArtifact": "Krav_Maga_Orijinal_Gorsel_Donusum_Denetimi_2026-09-29.md",
     "allSourcePhotosConverted": false
+  },
+  "bookAccessPolicy": {
+    "curriculumName": "Krav Maga Kitap Görsel Eğitim",
+    "eligibleLessonSetSource": "explicit published core lesson IDs; pending Academy upload and confirmation",
+    "memberAccess": "administrator-granted",
+    "bookQrAccess": "book-scoped entitlement to eligible lessons after sign-in",
+    "externalPaidAccess": "future plan; inactive",
+    "publicationStatus": "contract-draft-awaiting-route-and-entitlement-verification"
   }
 }
