@@ -401,7 +401,7 @@
       "cardId": "B06-G01",
       "reviewPage": 29,
       "title": "Duruş karşılaştırması",
-      "artStatus": "Mevcut temsili sahne / taslak",
+      "artStatus": "source-video-frame-3d-review-saved",
       "sourceCandidate": "Basic/Duruslar.wmv aday",
       "academyLessonId": "basic-04",
       "academyModuleId": "basic",
@@ -410,11 +410,18 @@
       "qrStatus": "exact-source-match-awaiting-route-access-and-book-entitlement",
       "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
       "technicalId": "BAS-DURUS",
-      "frameTimecodes": [],
+      "frameTimecodes": [
+        "00:02",
+        "00:06"
+      ],
       "sourcePhotoIds": [],
       "sourceVerified": false,
       "printReady": false,
-      "bookAccessScope": "core-candidate-awaiting-lesson-publication"
+      "bookAccessScope": "core-candidate-awaiting-lesson-publication",
+      "frameSourceVideo": "WhatsApp Video 2026-09-28 at 12.11.44.mp4",
+      "drawingAsset": "generated_images/exec-a9147c0b-7c57-4cfe-b1ba-ca37bb08e957.png",
+      "reviewArtifact": "Krav_Maga_B06_G01_Video_Kareleri_3B_Inceleme_2026-09-29.pdf",
+      "sourceReviewNote": "Ayakta açık duruş ve öne adım özgün video karelerinden çizildi. Basic/Duruslar.wmv ile aynı çekim ve teknik ad henüz doğrulanmadı. Tam iki ayak görünür; 125 mm prova genişliğinde yaklaşık 303 ppi. B09 düşme kaynağı değildir."
     },
     {
       "cardId": "B06-G02",
