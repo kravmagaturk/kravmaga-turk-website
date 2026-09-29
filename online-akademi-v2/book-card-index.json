@@ -952,7 +952,9 @@
       "printReady": false,
       "candidateAcademyLessonIds": [],
       "candidateStandardMedia": [],
-      "sourceReviewNote": "Çalışma alanı temsilî 3B inceleme taslağı; özgün minder/çevre pozu bekleniyor."
+      "sourceReviewNote": "Çalışma alanı temsilî 3B inceleme taslağı; özgün minder/çevre pozu bekleniyor.",
+      "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B09-G02",
@@ -973,7 +975,9 @@
       ],
       "candidateStandardMedia": [
         "02-dusme-nasil-olmali.mp4"
-      ]
+      ],
+      "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B09-G03",
@@ -997,7 +1001,9 @@
       "candidateStandardMedia": [
         "02-dusme-nasil-olmali.mp4",
         "03-takla-atmak.mp4"
-      ]
+      ],
+      "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B09-G04",
@@ -1016,7 +1022,9 @@
         "yer-03"
       ],
       "candidateStandardMedia": [],
-      "sourceReviewNote": "Dengeli kalkışın başlangıç, ara ve bitiş pozu; özgün video zaman kodları bekleniyor."
+      "sourceReviewNote": "Dengeli kalkışın başlangıç, ara ve bitiş pozu; özgün video zaman kodları bekleniyor.",
+      "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B09-G05",
@@ -1037,7 +1045,9 @@
       "candidateStandardMedia": [
         "15-yerden-tekme-ile-kalkmak.mp4"
       ],
-      "sourceReviewNote": "Mesafe oluşturan kalkış ve tekmeyle kalkış aynı teknik varsayılmıyor; ikinci medya yalnız karşılaştırma. Yer/Tekme Atılması.wmv bu karttan çıkarıldı."
+      "sourceReviewNote": "Mesafe oluşturan kalkış ve tekmeyle kalkış aynı teknik varsayılmıyor; ikinci medya yalnız karşılaştırma. Yer/Tekme Atılması.wmv bu karttan çıkarıldı.",
+      "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B09-G06",
@@ -1060,7 +1070,9 @@
       ],
       "candidateStandardMedia": [
         "05-karin-ustunden-itis.mp4"
-      ]
+      ],
+      "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B09-G07",
@@ -1074,7 +1086,9 @@
       "printReady": false,
       "candidateAcademyLessonIds": [],
       "candidateStandardMedia": [],
-      "sourceReviewNote": "Durdurma işareti temsilî 3B taslak; özgün işaret pozu bekleniyor."
+      "sourceReviewNote": "Durdurma işareti temsilî 3B taslak; özgün işaret pozu bekleniyor.",
+      "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B09-G08",
@@ -1088,7 +1102,9 @@
       "printReady": false,
       "candidateAcademyLessonIds": [],
       "candidateStandardMedia": [],
-      "sourceReviewNote": "Çevre/çıkış temsilî 3B taslak; doğrudan teknik video gerekmeyebilir, çevre yönü kontrol edilecek."
+      "sourceReviewNote": "Çevre/çıkış temsilî 3B taslak; doğrudan teknik video gerekmeyebilir, çevre yönü kontrol edilecek.",
+      "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B10-G01",
