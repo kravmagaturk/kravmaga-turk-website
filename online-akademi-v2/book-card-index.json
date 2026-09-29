@@ -526,7 +526,7 @@
       "cardId": "B07-G04",
       "reviewPage": 38,
       "title": "Tekme",
-      "artStatus": "P06 tekme pozu",
+      "artStatus": "book-style-source-photo-review",
       "sourceCandidate": "KICK-03…15; alt tür doğrulanacak",
       "academyLessonId": null,
       "academyModuleId": null,
@@ -542,7 +542,15 @@
       "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
       "photoCandidateNote": "Tekme/diz hareketleri görüntüden aday; teknik adı ve doğru sıra videoyla kontrol edilecek.",
       "sourceVerified": false,
-      "printReady": false
+      "printReady": false,
+      "sourceArtDraft": "generated_images/exec-68d34656-def7-40ed-9bec-d59fee6b96fe.png",
+      "artSourcePhoto": "WhatsApp Image 2026-09-28 at 12.11.38.jpeg",
+      "artPixelDimensions": [
+        1024,
+        1536
+      ],
+      "styleReference": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
+      "technicalReview": "Tam ayak/kadraj kontrol edildi; tek kare hareket adı ve temas hedefi için kesin kaynak değildir."
     },
     {
       "cardId": "B07-G05",
@@ -717,7 +725,7 @@
       "cardId": "B08-G05",
       "reviewPage": 46,
       "title": "Boyun güvenliği",
-      "artStatus": "Boyun güvenliği şeması",
+      "artStatus": "source-photo-match-rejected",
       "sourceCandidate": "HL-03 / 03-boyun-kilit-yandan.mp4",
       "academyLessonId": null,
       "academyModuleId": null,
@@ -725,15 +733,16 @@
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
       "publicationCheck": "HL-03 gerçek kare ve uzman dili",
-      "candidateSourcePhotos": [
+      "candidateSourcePhotos": [],
+      "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
+      "photoCandidateNote": "12.11.39 (4), 12.11.40 ve 12.11.40 (1) boyun güvenliği kartı için açık kaynak kanıtı sağlamıyor; temas üst göğüs/kol olabilir. Video veya yeni pozla eşleştirme gerekli.",
+      "sourceVerified": false,
+      "printReady": false,
+      "rejectedSourcePhotos": [
         "WhatsApp Image 2026-09-28 at 12.11.39 (4).jpeg",
         "WhatsApp Image 2026-09-28 at 12.11.40.jpeg",
         "WhatsApp Image 2026-09-28 at 12.11.40 (1).jpeg"
-      ],
-      "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
-      "photoCandidateNote": "Boyun teması aday kareleri; güvenlik anlatımı ve kesin kare seçimi gerekli.",
-      "sourceVerified": false,
-      "printReady": false
+      ]
     },
     {
       "cardId": "B08-G06",
