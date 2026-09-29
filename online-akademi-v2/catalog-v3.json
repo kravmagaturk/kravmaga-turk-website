@@ -28,7 +28,7 @@
                                                                  "bookQrKey":  "BC-15",
                                                                  "routeKey":  "lesson/bc-15",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "tanıtım.mp4"
+                                                                 "sourceFile":  "tanÄ±tÄ±m.mp4"
                                                              },
                                                              {
                                                                  "id":  "bc-01",
@@ -41,7 +41,7 @@
                                                                  "bookQrKey":  "BC-01",
                                                                  "routeKey":  "lesson/bc-01",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "bulent_Çetin.mp4"
+                                                                 "sourceFile":  "bulent_Ã‡etin.mp4"
                                                              },
                                                              {
                                                                  "id":  "bc-02",
@@ -54,7 +54,7 @@
                                                                  "bookQrKey":  "BC-02",
                                                                  "routeKey":  "lesson/bc-02",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "çekiç_yumruk.mp4"
+                                                                 "sourceFile":  "Ã§ekiÃ§_yumruk.mp4"
                                                              },
                                                              {
                                                                  "id":  "bc-03",
@@ -67,7 +67,7 @@
                                                                  "bookQrKey":  "BC-03",
                                                                  "routeKey":  "lesson/bc-03",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "dirsek_vuruşları.mp4"
+                                                                 "sourceFile":  "dirsek_vuruÅŸlarÄ±.mp4"
                                                              },
                                                              {
                                                                  "id":  "bc-04",
@@ -80,7 +80,7 @@
                                                                  "bookQrKey":  "BC-04",
                                                                  "routeKey":  "lesson/bc-04",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "dört yana çekiç yumruk (360 derece).mp4"
+                                                                 "sourceFile":  "dÃ¶rt yana Ã§ekiÃ§ yumruk (360 derece).mp4"
                                                              },
                                                              {
                                                                  "id":  "bc-05",
@@ -93,7 +93,7 @@
                                                                  "bookQrKey":  "BC-05",
                                                                  "routeKey":  "lesson/bc-05",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "dört_vuruş_atak.mp4"
+                                                                 "sourceFile":  "dÃ¶rt_vuruÅŸ_atak.mp4"
                                                              },
                                                              {
                                                                  "id":  "bc-06",
@@ -106,11 +106,11 @@
                                                                  "bookQrKey":  "BC-06",
                                                                  "routeKey":  "lesson/bc-06",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "ısınma tekniği.mp4"
+                                                                 "sourceFile":  "Ä±sÄ±nma tekniÄŸi.mp4"
                                                              },
                                                              {
                                                                  "id":  "bc-07",
-                                                                 "title":  "Kasık Mesane Vuruşu (Vaga Vagal Şok)",
+                                                                 "title":  "KasÄ±k Mesane VuruÅŸu (Vaga Vagal Åok)",
                                                                  "order":  8,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -119,7 +119,7 @@
                                                                  "bookQrKey":  "BC-07",
                                                                  "routeKey":  "lesson/bc-07",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "kasık_mesane_vuruşu (Vaga-vagal-şok).mp4"
+                                                                 "sourceFile":  "kasÄ±k_mesane_vuruÅŸu (Vaga-vagal-ÅŸok).mp4"
                                                              },
                                                              {
                                                                  "id":  "bc-08",
@@ -132,7 +132,7 @@
                                                                  "bookQrKey":  "BC-08",
                                                                  "routeKey":  "lesson/bc-08",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "kida_selam_nasıl _verilir.mp4"
+                                                                 "sourceFile":  "kida_selam_nasÄ±l _verilir.mp4"
                                                              },
                                                              {
                                                                  "id":  "bc-09",
@@ -158,7 +158,7 @@
                                                                  "bookQrKey":  "BC-10",
                                                                  "routeKey":  "lesson/bc-10",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "krav_maga_sisteminde_duruşlar.mp4"
+                                                                 "sourceFile":  "krav_maga_sisteminde_duruÅŸlar.mp4"
                                                              },
                                                              {
                                                                  "id":  "bc-11",
@@ -171,7 +171,7 @@
                                                                  "bookQrKey":  "BC-11",
                                                                  "routeKey":  "lesson/bc-11",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "online eğitimi nasıl uygulayacağız.mp4"
+                                                                 "sourceFile":  "online eÄŸitimi nasÄ±l uygulayacaÄŸÄ±z.mp4"
                                                              },
                                                              {
                                                                  "id":  "bc-12",
@@ -184,7 +184,7 @@
                                                                  "bookQrKey":  "BC-12",
                                                                  "routeKey":  "lesson/bc-12",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "refleks_geliştirme_1.mp4"
+                                                                 "sourceFile":  "refleks_geliÅŸtirme_1.mp4"
                                                              },
                                                              {
                                                                  "id":  "bc-13",
@@ -197,7 +197,7 @@
                                                                  "bookQrKey":  "BC-13",
                                                                  "routeKey":  "lesson/bc-13",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "refleks_geliştirme_2.mp4"
+                                                                 "sourceFile":  "refleks_geliÅŸtirme_2.mp4"
                                                              },
                                                              {
                                                                  "id":  "bc-14",
@@ -223,7 +223,7 @@
                                                                  "bookQrKey":  "BC-16",
                                                                  "routeKey":  "lesson/bc-16",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "temporal_vuruş.mp4"
+                                                                 "sourceFile":  "temporal_vuruÅŸ.mp4"
                                                              },
                                                              {
                                                                  "id":  "bc-17",
@@ -249,7 +249,7 @@
                                                                  "bookQrKey":  "BC-18",
                                                                  "routeKey":  "lesson/bc-18",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "yumruk çapraz vuruş (45 derece).mp4"
+                                                                 "sourceFile":  "yumruk Ã§apraz vuruÅŸ (45 derece).mp4"
                                                              }
                                                          ]
                                          },
@@ -351,7 +351,7 @@
                                              "lessons":  [
                                                              {
                                                                  "id":  "bh-01",
-                                                                 "title":  "Bear Hug - Mesafesiz Saldırılar",
+                                                                 "title":  "Mesafesiz Saldırılar - Bear Hug",
                                                                  "order":  1,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -420,7 +420,7 @@
                                                              },
                                                              {
                                                                  "id":  "hl-03",
-                                                                 "title":  "Boyun Kilit Yandan",
+                                                                 "title":  "Yandan Boyun Kilidi",
                                                                  "order":  3,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -433,7 +433,7 @@
                                                              },
                                                              {
                                                                  "id":  "hl-04",
-                                                                 "title":  "Boyun Kilit Arkadan",
+                                                                 "title":  "Arkadan Boyun Kilidi",
                                                                  "order":  4,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -446,7 +446,7 @@
                                                              },
                                                              {
                                                                  "id":  "hl-05",
-                                                                 "title":  "Boyun Arka Kilit Çözme",
+                                                                 "title":  "Arkadan Boyun Kilidi Çözme",
                                                                  "order":  5,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -573,7 +573,7 @@
                                                              },
                                                              {
                                                                  "id":  "test-07",
-                                                                 "title":  "Boyun Kilit",
+                                                                 "title":  "Boyun Kilidi",
                                                                  "order":  7,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -586,7 +586,7 @@
                                                              },
                                                              {
                                                                  "id":  "test-08",
-                                                                 "title":  "Bilek Kilit",
+                                                                 "title":  "Bilek Kilidi",
                                                                  "order":  8,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -700,7 +700,7 @@
                                                              },
                                                              {
                                                                  "id":  "kick-06",
-                                                                 "title":  "Diz Vurmak",
+                                                                 "title":  "Diz Vuruşu",
                                                                  "order":  6,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -817,7 +817,7 @@
                                                              },
                                                              {
                                                                  "id":  "kick-15",
-                                                                 "title":  "Yerden Tekme İle Kalkmak",
+                                                                 "title":  "Yerden Tekme ile Kalkma",
                                                                  "order":  15,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -918,7 +918,7 @@
                                                              },
                                                              {
                                                                  "id":  "gf-07",
-                                                                 "title":  "Yerde Düşme Sonrası Tekme Savunması",
+                                                                 "title":  "Yere Düşme Sonrası Tekme Savunması",
                                                                  "order":  7,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -957,7 +957,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/knife-10",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "tanıtım.mp4"
+                                                                 "sourceFile":  "tanÄ±tÄ±m.mp4"
                                                              },
                                                              {
                                                                  "id":  "knife-01",
@@ -983,7 +983,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/knife-02",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "bıçak_savunma_güncelleme-3.mp4"
+                                                                 "sourceFile":  "bÄ±Ã§ak_savunma_gÃ¼ncelleme-3.mp4"
                                                              },
                                                              {
                                                                  "id":  "knife-03",
@@ -996,7 +996,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/knife-03",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "bıçaklı_yerde_saldırı.mp4"
+                                                                 "sourceFile":  "bÄ±Ã§aklÄ±_yerde_saldÄ±rÄ±.mp4"
                                                              },
                                                              {
                                                                  "id":  "knife-04",
@@ -1013,7 +1013,7 @@
                                                              },
                                                              {
                                                                  "id":  "knife-05",
-                                                                 "title":  "Elden Alma Disarm",
+                                                                 "title":  "Elden Alma / Disarm",
                                                                  "order":  6,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1035,7 +1035,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/knife-06",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "güncelleme.mp4"
+                                                                 "sourceFile":  "gÃ¼ncelleme.mp4"
                                                              },
                                                              {
                                                                  "id":  "knife-07",
@@ -1048,11 +1048,11 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/knife-07",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "güncelleme_4.mp4"
+                                                                 "sourceFile":  "gÃ¼ncelleme_4.mp4"
                                                              },
                                                              {
                                                                  "id":  "knife-08",
-                                                                 "title":  "Günxelleme 2",
+                                                                 "title":  "Güncelleme 2",
                                                                  "order":  9,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1061,7 +1061,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/knife-08",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "günxelleme-2.mp4"
+                                                                 "sourceFile":  "gÃ¼nxelleme-2.mp4"
                                                              },
                                                              {
                                                                  "id":  "knife-09",
@@ -1110,11 +1110,11 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/stick-13",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "tanıtım.mp4"
+                                                                 "sourceFile":  "tanÄ±tÄ±m.mp4"
                                                              },
                                                              {
                                                                  "id":  "stick-01",
-                                                                 "title":  "360 Derece Savunma Sisteminde Bambu Sopası İle Çalışma Tekniği",
+                                                                 "title":  "360 Derece Savunma - Bambu Sopası",
                                                                  "order":  2,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1123,7 +1123,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/stick-01",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "360 derece savunma sisteminde bambu sopası ile çalışma tekniği.mp4"
+                                                                 "sourceFile":  "360 derece savunma sisteminde bambu sopasÄ± ile Ã§alÄ±ÅŸma tekniÄŸi.mp4"
                                                              },
                                                              {
                                                                  "id":  "stick-02",
@@ -1136,7 +1136,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/stick-02",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "bacaklara vuruş.mp4"
+                                                                 "sourceFile":  "bacaklara vuruÅŸ.mp4"
                                                              },
                                                              {
                                                                  "id":  "stick-03",
@@ -1149,7 +1149,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/stick-03",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "beyzbol vuruşuna karşı savunma.mp4"
+                                                                 "sourceFile":  "beyzbol vuruÅŸuna karÅŸÄ± savunma.mp4"
                                                              },
                                                              {
                                                                  "id":  "stick-04",
@@ -1162,7 +1162,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/stick-04",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "beyzbol_güncelleme.mp4"
+                                                                 "sourceFile":  "beyzbol_gÃ¼ncelleme.mp4"
                                                              },
                                                              {
                                                                  "id":  "stick-05",
@@ -1175,7 +1175,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/stick-05",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "çapraz saldırılar.mp4"
+                                                                 "sourceFile":  "Ã§apraz saldÄ±rÄ±lar.mp4"
                                                              },
                                                              {
                                                                  "id":  "stick-06",
@@ -1188,7 +1188,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/stick-06",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "dikey saldırılar.mp4"
+                                                                 "sourceFile":  "dikey saldÄ±rÄ±lar.mp4"
                                                              },
                                                              {
                                                                  "id":  "stick-07",
@@ -1201,7 +1201,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/stick-07",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "orta seviye saldırılar.mp4"
+                                                                 "sourceFile":  "orta seviye saldÄ±rÄ±lar.mp4"
                                                              },
                                                              {
                                                                  "id":  "stick-08",
@@ -1214,7 +1214,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/stick-08",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "saldırgan sopayı tutarsa.mp4"
+                                                                 "sourceFile":  "saldÄ±rgan sopayÄ± tutarsa.mp4"
                                                              },
                                                              {
                                                                  "id":  "stick-09",
@@ -1227,11 +1227,11 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/stick-09",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "sopa çalışma öncesi oyunlar.mp4"
+                                                                 "sourceFile":  "sopa Ã§alÄ±ÅŸma Ã¶ncesi oyunlar.mp4"
                                                              },
                                                              {
                                                                  "id":  "stick-10",
-                                                                 "title":  "Sopa El Becerileri İçin Uyum Çalışması",
+                                                                 "title":  "Sopa El Becerileri için Uyum Çalışması",
                                                                  "order":  11,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1240,11 +1240,11 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/stick-10",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "sopa el becerileri için uyum çalışması.mp4"
+                                                                 "sourceFile":  "sopa el becerileri iÃ§in uyum Ã§alÄ±ÅŸmasÄ±.mp4"
                                                              },
                                                              {
                                                                  "id":  "stick-11",
-                                                                 "title":  "Sopa İle Tüfek Vuruşu Üstten",
+                                                                 "title":  "Sopa ile Tüfek Vuruşu Üstten",
                                                                  "order":  12,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1253,7 +1253,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/stick-11",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "sopa ile tüfek_vuruşu_üstten.mp4"
+                                                                 "sourceFile":  "sopa ile tÃ¼fek_vuruÅŸu_Ã¼stten.mp4"
                                                              },
                                                              {
                                                                  "id":  "stick-12",
@@ -1270,7 +1270,7 @@
                                                              },
                                                              {
                                                                  "id":  "stick-14",
-                                                                 "title":  "Yere Düştükten Sonra Sopaya Karşı Savunma Teknikleri",
+                                                                 "title":  "Yere Düştükten Sonra Sopaya Karşı Savunma",
                                                                  "order":  14,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1279,11 +1279,11 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/stick-14",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "yere düştükten sonra sopaya karşı savunma teknikleri.mp4"
+                                                                 "sourceFile":  "yere dÃ¼ÅŸtÃ¼kten sonra sopaya karÅŸÄ± savunma teknikleri.mp4"
                                                              },
                                                              {
                                                                  "id":  "stick-15",
-                                                                 "title":  "Youtube Eğitim Desteği",
+                                                                 "title":  "YouTube Eğitim Desteği",
                                                                  "order":  15,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1292,7 +1292,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/stick-15",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "youtube_eğitim desteği.mp4"
+                                                                 "sourceFile":  "youtube_eÄŸitim desteÄŸi.mp4"
                                                              }
                                                          ]
                                          },
@@ -1306,7 +1306,7 @@
                                              "lessons":  [
                                                              {
                                                                  "id":  "firearm-01",
-                                                                 "title":  "Güvenli Mesafe Kullanma",
+                                                                 "title":  "Güvenli Mesafe Kullanımı",
                                                                  "order":  1,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1315,7 +1315,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/firearm-01",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "güvenli_mesafe_kullanma.mp4"
+                                                                 "sourceFile":  "gÃ¼venli_mesafe_kullanma.mp4"
                                                              },
                                                              {
                                                                  "id":  "firearm-02",
@@ -1328,11 +1328,11 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/firearm-02",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "sailahlı_saldırıya_savunma.mp4"
+                                                                 "sourceFile":  "sailahlÄ±_saldÄ±rÄ±ya_savunma.mp4"
                                                              },
                                                              {
                                                                  "id":  "firearm-03",
-                                                                 "title":  "Silah Tehdit Güncelleme 5188 Güvenlik",
+                                                                 "title":  "Silah Tehdidi Güncelleme - 5188 Güvenlik",
                                                                  "order":  3,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1341,7 +1341,7 @@
                                                                  "bookQrKey":  "",
                                                                  "routeKey":  "lesson/firearm-03",
                                                                  "status":  "ready",
-                                                                 "sourceFile":  "silah_tehdit_güncelleme_5188 güvenlik.mp4"
+                                                                 "sourceFile":  "silah_tehdit_gÃ¼ncelleme_5188 gÃ¼venlik.mp4"
                                                              }
                                                          ]
                                          }
@@ -1362,6 +1362,6 @@
                                  "G5"
                              ],
                   "sharedModule":  "test-hazirlik",
-                  "note":  "Seviye bazlı erişim panelden atanır."
+                  "note":  "Seviye bazlÄ± eriÅŸim panelden atanÄ±r."
               }
 }

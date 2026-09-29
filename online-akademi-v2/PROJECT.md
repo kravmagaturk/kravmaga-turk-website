@@ -146,3 +146,43 @@ Yayın hedefi: bugün canlı sayfaya geçiş; ancak canlıya almadan hemen önce
 - Canlı Worker üzerinden bc-01 için gerçek B2 HEAD testi: 200, byte-range destekli.
 - D1 kullanıcı/grant tablolarında şu anda kalıcı test/öğrenci kaydı yok.
 - Medya yüklemesi devam ediyor; bitişte 94/94 doğrulaması yapılacak.
+
+## 2026-09-29 — Canlı Yayın Güvenlik / Kitap QR Güncellemesi
+- Canlı Online Akademi route'u Cloudflare Worker üzerinden aktif: `kravmaga.com.tr/online-akademi*`.
+- Canlı katalog PC/OneDrive yolu içermiyor.
+- Yetkisiz video-ticket ve doğrudan video erişimi HTTP 401 dönüyor.
+- Normal öğrenci erişimi artık role tek başına bağlı değil; `core` grant zorunlu.
+- Kitap QR için `book` grant eklendi. Sadece `Krav Maga Kitap Görsel Eğitim` bölümündeki 18 ders bookEligible.
+- Materyal için `special` grant zorunlu.
+- İlerleme API'si de lesson erişimini Worker tarafında doğruluyor.
+- Yönetici panelinde Üye Eğitim / Kitap QR / Materyal ayrı yetki alanları var.
+- Tanıtım/Giriş videoları modül sıralamalarında en öne alındı.
+- Kitap QR referansı Library'ye de aktarıldı: `/KITAP-QR-KRAV-MAGA-KITAP-GORSEL-EGITIM.md`.
+
+## 2026-09-29 — B2 Kapasite Optimizasyonu
+- Backblaze ücretsiz depolama uyarısı sonrası canlı bucket kontrol edildi.
+- Güncel durum doğrulandı: 94 sürüm, toplam 9.469 GiB; firearm-02 geçici olarak eksik, eski basic-17-reaksiyon-4.mp4 gereksiz kalıntıydı.
+- Gereksiz basic-17-reaksiyon-4.mp4 B2'den silindi (~3.7 MB).
+- Canlı medya testi: 94 dersten 93 erişilebilir, yalnız firearm-02 404.
+- firearm-02 yerel orijinal: ~865.6 MB / 40.3 dk / H.264+Aac 720p.
+- 2 dakikalık CRF25 + maxrate1600k örnek dönüşüm ~10.2 MB; tahmini tam çıktı ~205 MB.
+- Tam optimize dönüşüm devam ediyor. Tamamlanınca aynı firearm-02 object key ile yüklenecek.
+- Hedef: 94/94 medya erişimi ve B2 toplam kullanımını 10 GiB altında güvenli payla tutmak.
+- Sonraki kapasite adayları: stick-10 (~411 MB), knife-04 (~287 MB). Gerekirse optimize edilip eski sürümler tek tek değiştirilecek.
+
+## Backblaze Depolama Optimizasyonu — 2026-09-29
+- B2 güncel durum: 93/94 dosya, 9.466 GiB.
+- Eksik tek nesne: firearm-02.
+- Orijinal firearm-02 yaklaşık 865.6 MB olduğu için ücretsiz 10 GiB sınırını aşacaktı.
+- firearm-02, 1280x720 H.264 + AAC korunarak düşük bitrateli optimize sürüme dönüştürülüyor.
+- Manifest gelecekte yanlışlıkla büyük orijinali tekrar yüklememek için optimize dosya yoluna çevrildi.
+- Yerel orijinal silinmedi.
+## Depolama Optimizasyonu — 2026-09-29
+- Backblaze B2 toplam sürüm boyutu eski/tekrar sürümler temizlendikten sonra yaklaşık 8.42 GiB seviyesine indirildi.
+- 7 eski video sürümü silindi; yaklaşık 1.21 GiB alan geri kazanıldı.
+- Büyük Materyal videoları optimize edildi ve güncel sürümler B2'ye aktarıldı.
+- stick-01 ve stick-14 yerel dosyalarının SHA1 değerleri birebir aynıdır: 0AA4D532E892F2396893E83B8441E7BC2B5B92EB
+- Bu nedenle iki ders B2'de aynı fiziksel video nesnesini bilinçli olarak paylaşır. 94 ders için 93 benzersiz B2 nesnesi normal ve beklenen durumdur.
+- Canlı medya denetimi: 94/94 ders erişilebilir.
+- Canlı güvenlik denetimi: 94 ders, PC yolu sızıntısı yok, B2 doğrudan adres sızıntısı yok, yetkisiz api/me 401, doğrudan video 401, admin 403, kitap QR kapsamı yalnız çekirdek 18 ders.
+- Backblaze günlük yükleme/storage cap uyarısı yeni yükleme URL'sini geçici olarak engelleyebilir; mevcut canlı 94 ders için ek yükleme gerekmiyor.

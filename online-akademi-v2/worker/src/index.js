@@ -49,6 +49,7 @@ async function getB2Auth(env) {
   const data = await res.json();
   cachedB2Auth = {
     authorizationToken: data.authorizationToken,
+    accountId: data.accountId,
     downloadUrl: data.apiInfo?.storageApi?.downloadUrl,
     apiUrl: data.apiInfo?.storageApi?.apiUrl,
     expiresAt: Date.now() + 20 * 60 * 60 * 1000
@@ -298,6 +299,107 @@ async function sha256Hex(value) {
   return Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2, "0")).join("");
 }
 
+async function adminUploadAuthorized(request, env) {
+  const staticToken = request.headers.get("X-Upload-Token") || "";
+  let allowed = false;
+  if (staticToken) {
+    const tokenHash = await sha256Hex(staticToken);
+    const tokenRow = await env.DB.prepare(
+      "SELECT purpose,expires_at FROM admin_tokens WHERE token_hash=?"
+    ).bind(tokenHash).first();
+    allowed = !!tokenRow && tokenRow.purpose === "media-upload" && Number(tokenRow.expires_at) > Date.now();
+  }
+  if (!allowed) {
+    try { await requireAdmin(request, env); allowed = true; }
+    catch {}
+  }
+  return allowed;
+}
+
+async function handleStorageList(request, env) {
+  if (request.method !== "GET") return json(request, { error: "method-not-allowed" }, 405);
+  if (!(await adminUploadAuthorized(request, env))) return json(request, { error: "unauthorized" }, 401);
+  try {
+    const auth = await getB2Auth(env);
+    const files = [];
+    let startFileName = null;
+    for (let page = 0; page < 20; page++) {
+      const res = await fetch(`${auth.apiUrl}/b2api/v4/b2_list_file_names`, {
+        method: "POST",
+        headers: { Authorization: auth.authorizationToken, "Content-Type": "application/json" },
+        body: JSON.stringify({ bucketId: env.B2_BUCKET_ID, startFileName, maxFileCount: 1000 })
+      });
+      if (!res.ok) return json(request, { error: "storage-list-failed" }, 502);
+      const data = await res.json();
+      for (const f of data.files || []) files.push({
+        fileId: f.fileId, fileName: f.fileName, contentLength: f.contentLength,
+        uploadTimestamp: f.uploadTimestamp, contentType: f.contentType
+      });
+      startFileName = data.nextFileName || null;
+      if (!startFileName) break;
+    }
+    return json(request, { count: files.length, files });
+  } catch {
+    return json(request, { error: "storage-list-error" }, 502);
+  }
+}
+
+async function handleStorageVersions(request, env) {
+  if (request.method !== "GET") return json(request, { error: "method-not-allowed" }, 405);
+  if (!(await adminUploadAuthorized(request, env))) return json(request, { error: "unauthorized" }, 401);
+  try {
+    const auth = await getB2Auth(env);
+    const files = [];
+    let startFileName = null;
+    let startFileId = null;
+    for (let page = 0; page < 50; page++) {
+      const body = { bucketId: env.B2_BUCKET_ID, maxFileCount: 1000 };
+      if (startFileName) body.startFileName = startFileName;
+      if (startFileId) body.startFileId = startFileId;
+      const res = await fetch(`${auth.apiUrl}/b2api/v4/b2_list_file_versions`, {
+        method: "POST",
+        headers: { Authorization: auth.authorizationToken, "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      });
+      if (!res.ok) return json(request, { error: "storage-versions-failed" }, 502);
+      const data = await res.json();
+      for (const f of data.files || []) files.push({
+        fileId: f.fileId, fileName: f.fileName, action: f.action,
+        contentLength: f.contentLength || 0, uploadTimestamp: f.uploadTimestamp,
+        contentType: f.contentType
+      });
+      startFileName = data.nextFileName || null;
+      startFileId = data.nextFileId || null;
+      if (!startFileName) break;
+    }
+    return json(request, { count: files.length, files });
+  } catch {
+    return json(request, { error: "storage-versions-error" }, 502);
+  }
+}
+
+async function handleStorageDelete(request, env) {
+  if (request.method !== "POST") return json(request, { error: "method-not-allowed" }, 405);
+  if (!(await adminUploadAuthorized(request, env))) return json(request, { error: "unauthorized" }, 401);
+  let body;
+  try { body = await request.json(); } catch { return json(request, { error: "invalid-json" }, 400); }
+  const fileName = String(body.fileName || "");
+  const fileId = String(body.fileId || "");
+  if (!fileName || !fileId) return json(request, { error: "missing-file" }, 400);
+  try {
+    const auth = await getB2Auth(env);
+    const res = await fetch(`${auth.apiUrl}/b2api/v4/b2_delete_file_version`, {
+      method: "POST",
+      headers: { Authorization: auth.authorizationToken, "Content-Type": "application/json" },
+      body: JSON.stringify({ fileName, fileId })
+    });
+    if (!res.ok) return json(request, { error: "storage-delete-failed" }, 502);
+    return json(request, { ok: true, fileName });
+  } catch {
+    return json(request, { error: "storage-delete-error" }, 502);
+  }
+}
+
 async function handleUploadUrl(request, env) {
   if (request.method !== "POST") return json(request, { error: "method-not-allowed" }, 405);
   const staticToken = request.headers.get("X-Upload-Token") || "";
@@ -322,11 +424,169 @@ async function handleUploadUrl(request, env) {
       headers: { Authorization: auth.authorizationToken, "Content-Type": "application/json" },
       body: JSON.stringify({ bucketId: env.B2_BUCKET_ID })
     });
-    if (!up.ok) return json(request, { error: "upload-url-unavailable" }, 502);
+    if (!up.ok) {
+      const detail = await up.text().catch(() => "");
+      return json(request, { error: "upload-url-unavailable", status: up.status, detail: detail.slice(0, 500) }, 502);
+    }
     const data = await up.json();
     return json(request, { uploadUrl: data.uploadUrl, authorizationToken: data.authorizationToken });
   } catch {
     return json(request, { error: "upload-service-error" }, 502);
+  }
+}
+
+async function handleAccountStorageSummary(request, env) {
+  if (request.method !== "GET") return json(request, { error: "method-not-allowed" }, 405);
+  if (!(await adminUploadAuthorized(request, env))) return json(request, { error: "unauthorized" }, 401);
+  try {
+    const auth = await getB2Auth(env);
+    const lb = await fetch(`${auth.apiUrl}/b2api/v4/b2_list_buckets`, {
+      method: "POST",
+      headers: { Authorization: auth.authorizationToken, "Content-Type": "application/json" },
+      body: JSON.stringify({ accountId: auth.accountId })
+    });
+    if (!lb.ok) return json(request, { error: "list-buckets-failed", status: lb.status }, 502);
+    const data = await lb.json();
+    const buckets = [];
+    let accountBytes = 0;
+    for (const b of data.buckets || []) {
+      let startFileName = null, startFileId = null, bytes = 0, versions = 0;
+      for (let page = 0; page < 100; page++) {
+        const body = { bucketId: b.bucketId, maxFileCount: 1000 };
+        if (startFileName) body.startFileName = startFileName;
+        if (startFileId) body.startFileId = startFileId;
+        const res = await fetch(`${auth.apiUrl}/b2api/v4/b2_list_file_versions`, {
+          method: "POST",
+          headers: { Authorization: auth.authorizationToken, "Content-Type": "application/json" },
+          body: JSON.stringify(body)
+        });
+        if (!res.ok) return json(request, { error: "list-versions-failed", bucket: b.bucketName, status: res.status }, 502);
+        const pageData = await res.json();
+        for (const f of pageData.files || []) { bytes += Number(f.contentLength) || 0; versions++; }
+        startFileName = pageData.nextFileName || null;
+        startFileId = pageData.nextFileId || null;
+        if (!startFileName) break;
+      }
+      accountBytes += bytes;
+      buckets.push({ bucketId: b.bucketId, bucketName: b.bucketName, bytes, giB: bytes / 1073741824, versions });
+    }
+    return json(request, { accountBytes, accountGiB: accountBytes / 1073741824, buckets });
+  } catch {
+    return json(request, { error: "account-storage-summary-error" }, 502);
+  }
+}
+
+async function handleStorageSummary(request, env) {
+  if (request.method !== "GET") return json(request, { error: "method-not-allowed" }, 405);
+  let allowed = false;
+  try { await requireAdmin(request, env); allowed = true; } catch {}
+  if (!allowed) {
+    const staticToken = request.headers.get("X-Upload-Token") || "";
+    if (staticToken) {
+      const tokenHash = await sha256Hex(staticToken);
+      const row = await env.DB.prepare("SELECT purpose,expires_at FROM admin_tokens WHERE token_hash=?").bind(tokenHash).first();
+      allowed = !!row && row.purpose === "media-upload" && Number(row.expires_at) > Date.now();
+    }
+  }
+  if (!allowed) return json(request, { error: "unauthorized" }, 401);
+  try {
+    const auth = await getB2Auth(env);
+    let startFileName = null;
+    let startFileId = null;
+    const files = [];
+    do {
+      const body = { bucketId: env.B2_BUCKET_ID, maxFileCount: 1000 };
+      if (startFileName) body.startFileName = startFileName;
+      if (startFileId) body.startFileId = startFileId;
+      const res = await fetch(auth.apiUrl + "/b2api/v4/b2_list_file_versions", {
+        method: "POST",
+        headers: { Authorization: auth.authorizationToken, "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      });
+      if (!res.ok) return json(request, { error: "b2-list-failed", status: res.status }, 502);
+      const data = await res.json();
+      files.push(...(data.files || []));
+      startFileName = data.nextFileName || null;
+      startFileId = data.nextFileId || null;
+    } while (startFileName);
+    const totalBytes = files.reduce((n, f) => n + Number(f.contentLength || 0), 0);
+    const currentNames = new Set();
+    for (const f of files) if (f.action === "upload") currentNames.add(f.fileName);
+    return json(request, {
+      fileVersions: files.length,
+      currentFiles: currentNames.size,
+      totalBytes,
+      totalGiB: Math.round(totalBytes / 1073741824 * 1000) / 1000
+    });
+  } catch {
+    return json(request, { error: "storage-summary-error" }, 502);
+  }
+}
+
+async function handleStorageStats(request, env) {
+  if (request.method !== "GET") return json(request, { error: "method-not-allowed" }, 405);
+  const staticToken = request.headers.get("X-Upload-Token") || "";
+  let allowed = false;
+  if (staticToken) {
+    const tokenHash = await sha256Hex(staticToken);
+    const tokenRow = await env.DB.prepare(
+      "SELECT purpose,expires_at FROM admin_tokens WHERE token_hash=?"
+    ).bind(tokenHash).first();
+    allowed = !!tokenRow && tokenRow.purpose === "media-upload" && Number(tokenRow.expires_at) > Date.now();
+  }
+  if (!allowed) {
+    try { await requireAdmin(request, env); allowed = true; } catch {}
+  }
+  if (!allowed) return json(request, { error: "unauthorized" }, 401);
+
+  try {
+    const auth = await getB2Auth(env);
+    let startFileName = null, startFileId = null;
+    let totalBytes = 0, uploadBytes = 0, fileVersions = 0, uploads = 0, hides = 0;
+    const names = new Map();
+    for (let page = 0; page < 100; page++) {
+      const res = await fetch(`${auth.apiUrl}/b2api/v4/b2_list_file_versions`, {
+        method: "POST",
+        headers: { Authorization: auth.authorizationToken, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          bucketId: env.B2_BUCKET_ID,
+          maxFileCount: 1000,
+          ...(startFileName ? { startFileName } : {}),
+          ...(startFileId ? { startFileId } : {})
+        })
+      });
+      if (!res.ok) return json(request, { error: "b2-list-failed", status: res.status }, 502);
+      const data = await res.json();
+      for (const f of data.files || []) {
+        fileVersions++;
+        const size = Number(f.contentLength) || 0;
+        totalBytes += size;
+        if (f.action === "upload") { uploads++; uploadBytes += size; }
+        if (f.action === "hide") hides++;
+        const arr = names.get(f.fileName) || [];
+        arr.push({ fileId: f.fileId, action: f.action, size, uploadTimestamp: f.uploadTimestamp });
+        names.set(f.fileName, arr);
+      }
+      if (!data.nextFileName) break;
+      startFileName = data.nextFileName;
+      startFileId = data.nextFileId || null;
+    }
+    let redundantBytes = 0, redundantVersions = 0;
+    for (const arr of names.values()) {
+      const sorted = arr.slice().sort((a,b)=>(b.uploadTimestamp||0)-(a.uploadTimestamp||0));
+      for (const old of sorted.slice(1)) {
+        redundantVersions++;
+        if (old.action === "upload") redundantBytes += old.size;
+      }
+    }
+    return json(request, {
+      fileNames: names.size, fileVersions, uploads, hides,
+      totalBytes, totalGiB: totalBytes / 1073741824,
+      redundantVersions, redundantBytes, redundantGiB: redundantBytes / 1073741824,
+      names: Array.from(names.keys()).sort()
+    });
+  } catch (e) {
+    return json(request, { error: "storage-stats-error" }, 502);
   }
 }
 
@@ -352,6 +612,13 @@ export default {
     if (url.pathname.startsWith("/api/video-ticket/")) return handleVideoTicket(request, env, url);
     if (url.pathname.startsWith("/api/video/")) return handleVideo(request, env, url);
     if (url.pathname === "/api/admin/upload-url") return handleUploadUrl(request, env);
+    if (url.pathname === "/api/admin/storage-stats") return handleStorageStats(request, env);
+    if (url.pathname === "/api/admin/storage-delete") return handleStorageDelete(request, env);
+    if (url.pathname === "/api/admin/storage-list") return handleStorageList(request, env);
+    if (url.pathname === "/api/admin/storage-versions") return handleStorageVersions(request, env);
+
+    if (url.pathname === "/api/admin/storage-summary") return handleStorageSummary(request, env);
+    if (url.pathname === "/api/admin/account-storage-summary") return handleAccountStorageSummary(request, env);
     if (url.pathname.startsWith("/api/admin/")) return handleAdmin(request, env, url);
 
     return text(request, "Not found", 404);

@@ -305,3 +305,12 @@ Yayın hedefi: bugün canlı sayfaya geçiş; ancak canlıya almadan hemen önce
 - Kitap QR erişimi yalnız bu 18 çekirdek derse izin verecek; The Best Defense ve Materyal otomatik açılmayacak.
 - Masaüstü kitap bölümüne `KITAP-QR-KRAV-MAGA-KITAP-GORSEL-EGITIM.md` bırakıldı.
 - Aktif video yüklemesini bozmamak için fiziksel eski `cekirdek` kaynak yolu yükleme tamamlanana kadar korunuyor; masaüstünde yeni adla güvenli bağlantı/alias oluşturuldu. Yükleme bittikten sonra eski yol temizlenebilir.
+## Depolama Optimizasyonu — 2026-09-29
+- Backblaze B2 toplam sürüm boyutu eski/tekrar sürümler temizlendikten sonra yaklaşık 8.42 GiB seviyesine indirildi.
+- 7 eski video sürümü silindi; yaklaşık 1.21 GiB alan geri kazanıldı.
+- Büyük Materyal videoları optimize edildi ve güncel sürümler B2'ye aktarıldı.
+- stick-01 ve stick-14 yerel dosyalarının SHA1 değerleri birebir aynıdır: 0AA4D532E892F2396893E83B8441E7BC2B5B92EB
+- Bu nedenle iki ders B2'de aynı fiziksel video nesnesini bilinçli olarak paylaşır. 94 ders için 93 benzersiz B2 nesnesi normal ve beklenen durumdur.
+- Canlı medya denetimi: 94/94 ders erişilebilir.
+- Canlı güvenlik denetimi: 94 ders, PC yolu sızıntısı yok, B2 doğrudan adres sızıntısı yok, yetkisiz api/me 401, doğrudan video 401, admin 403, kitap QR kapsamı yalnız çekirdek 18 ders.
+- Backblaze günlük yükleme/storage cap uyarısı yeni yükleme URL'sini geçici olarak engelleyebilir; mevcut canlı 94 ders için ek yükleme gerekmiyor.

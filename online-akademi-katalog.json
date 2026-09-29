@@ -103,7 +103,7 @@
                                                              },
                                                              {
                                                                  "id":  "bc-07",
-                                                                 "title":  "Kasık Mesane Vuruşu (Vaga Vagal Şok)",
+                                                                 "title":  "KasÄ±k Mesane VuruÅŸu (Vaga Vagal Åok)",
                                                                  "order":  8,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -327,7 +327,7 @@
                                              "lessons":  [
                                                              {
                                                                  "id":  "bh-01",
-                                                                 "title":  "Bear Hug - Mesafesiz Saldırılar",
+                                                                 "title":  "Mesafesiz Saldırılar - Bear Hug",
                                                                  "order":  1,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -392,7 +392,7 @@
                                                              },
                                                              {
                                                                  "id":  "hl-03",
-                                                                 "title":  "Boyun Kilit Yandan",
+                                                                 "title":  "Yandan Boyun Kilidi",
                                                                  "order":  3,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -404,7 +404,7 @@
                                                              },
                                                              {
                                                                  "id":  "hl-04",
-                                                                 "title":  "Boyun Kilit Arkadan",
+                                                                 "title":  "Arkadan Boyun Kilidi",
                                                                  "order":  4,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -416,7 +416,7 @@
                                                              },
                                                              {
                                                                  "id":  "hl-05",
-                                                                 "title":  "Boyun Arka Kilit Çözme",
+                                                                 "title":  "Arkadan Boyun Kilidi Çözme",
                                                                  "order":  5,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -534,7 +534,7 @@
                                                              },
                                                              {
                                                                  "id":  "test-07",
-                                                                 "title":  "Boyun Kilit",
+                                                                 "title":  "Boyun Kilidi",
                                                                  "order":  7,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -546,7 +546,7 @@
                                                              },
                                                              {
                                                                  "id":  "test-08",
-                                                                 "title":  "Bilek Kilit",
+                                                                 "title":  "Bilek Kilidi",
                                                                  "order":  8,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -652,7 +652,7 @@
                                                              },
                                                              {
                                                                  "id":  "kick-06",
-                                                                 "title":  "Diz Vurmak",
+                                                                 "title":  "Diz Vuruşu",
                                                                  "order":  6,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -760,7 +760,7 @@
                                                              },
                                                              {
                                                                  "id":  "kick-15",
-                                                                 "title":  "Yerden Tekme İle Kalkmak",
+                                                                 "title":  "Yerden Tekme ile Kalkma",
                                                                  "order":  15,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -854,7 +854,7 @@
                                                              },
                                                              {
                                                                  "id":  "gf-07",
-                                                                 "title":  "Yerde Düşme Sonrası Tekme Savunması",
+                                                                 "title":  "Yere Düşme Sonrası Tekme Savunması",
                                                                  "order":  7,
                                                                  "access":  "student",
                                                                  "required":  true,
@@ -943,7 +943,7 @@
                                                              },
                                                              {
                                                                  "id":  "knife-05",
-                                                                 "title":  "Elden Alma Disarm",
+                                                                 "title":  "Elden Alma / Disarm",
                                                                  "order":  6,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -979,7 +979,7 @@
                                                              },
                                                              {
                                                                  "id":  "knife-08",
-                                                                 "title":  "Günxelleme 2",
+                                                                 "title":  "Güncelleme 2",
                                                                  "order":  9,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1037,7 +1037,7 @@
                                                              },
                                                              {
                                                                  "id":  "stick-01",
-                                                                 "title":  "360 Derece Savunma Sisteminde Bambu Sopası İle Çalışma Tekniği",
+                                                                 "title":  "360 Derece Savunma - Bambu Sopası",
                                                                  "order":  2,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1145,7 +1145,7 @@
                                                              },
                                                              {
                                                                  "id":  "stick-10",
-                                                                 "title":  "Sopa El Becerileri İçin Uyum Çalışması",
+                                                                 "title":  "Sopa El Becerileri için Uyum Çalışması",
                                                                  "order":  11,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1157,7 +1157,7 @@
                                                              },
                                                              {
                                                                  "id":  "stick-11",
-                                                                 "title":  "Sopa İle Tüfek Vuruşu Üstten",
+                                                                 "title":  "Sopa ile Tüfek Vuruşu Üstten",
                                                                  "order":  12,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1181,7 +1181,7 @@
                                                              },
                                                              {
                                                                  "id":  "stick-14",
-                                                                 "title":  "Yere Düştükten Sonra Sopaya Karşı Savunma Teknikleri",
+                                                                 "title":  "Yere Düştükten Sonra Sopaya Karşı Savunma",
                                                                  "order":  14,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1193,7 +1193,7 @@
                                                              },
                                                              {
                                                                  "id":  "stick-15",
-                                                                 "title":  "Youtube Eğitim Desteği",
+                                                                 "title":  "YouTube Eğitim Desteği",
                                                                  "order":  15,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1215,7 +1215,7 @@
                                              "lessons":  [
                                                              {
                                                                  "id":  "firearm-01",
-                                                                 "title":  "Güvenli Mesafe Kullanma",
+                                                                 "title":  "Güvenli Mesafe Kullanımı",
                                                                  "order":  1,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1239,7 +1239,7 @@
                                                              },
                                                              {
                                                                  "id":  "firearm-03",
-                                                                 "title":  "Silah Tehdit Güncelleme 5188 Güvenlik",
+                                                                 "title":  "Silah Tehdidi Güncelleme - 5188 Güvenlik",
                                                                  "order":  3,
                                                                  "access":  "special",
                                                                  "required":  false,
@@ -1268,6 +1268,6 @@
                                  "G5"
                              ],
                   "sharedModule":  "test-hazirlik",
-                  "note":  "Seviye bazlı erişim panelden atanır."
+                  "note":  "Seviye bazlÄ± eriÅŸim panelden atanÄ±r."
               }
 }
