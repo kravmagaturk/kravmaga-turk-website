@@ -1597,7 +1597,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B13_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B13_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "B13 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, QR ve baskı açık"
     },
     {
       "cardId": "B13-G02",
@@ -1611,14 +1612,15 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B13_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B13_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": "draft-approved",
       "drawingAsset": "generated_images/exec-034b4903-b6f5-4e17-a30c-38c456087ae9.png",
       "artPixelDimensions": [
         1536,
         1024
       ],
       "proofWidthMm": 118,
-      "proofEffectivePpi": 331
+      "proofEffectivePpi": 331,
+      "chapterDecisionScope": "B13 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, QR ve baskı açık"
     },
     {
       "cardId": "B13-G03",
@@ -1632,7 +1634,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B13_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B13_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "B13 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, QR ve baskı açık"
     },
     {
       "cardId": "B13-G04",
@@ -1646,7 +1649,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B13_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B13_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "B13 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, QR ve baskı açık"
     },
     {
       "cardId": "B13-G05",
@@ -1660,7 +1664,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B13_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B13_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "B13 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, QR ve baskı açık"
     },
     {
       "cardId": "B13-G06",
@@ -1674,7 +1679,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B13_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B13_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "B13 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, QR ve baskı açık"
     },
     {
       "cardId": "B13-G07",
@@ -1688,7 +1694,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B13_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B13_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "B13 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, QR ve baskı açık"
     },
     {
       "cardId": "B13-G08",
@@ -1702,7 +1709,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B13_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B13_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "B13 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, QR ve baskı açık"
     },
     {
       "cardId": "B14-G01",
@@ -1714,7 +1722,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B14_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B14-G02",
@@ -1726,7 +1736,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B14_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B14-G03",
@@ -1738,7 +1750,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B14_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B14-G04",
@@ -1750,31 +1764,51 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B14_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B14-G05",
       "chapter": "B14 — Kadınlar İçin Öz Savunma ve Güvenlik Planı",
       "title": "Yargısız destek",
       "sourcePlan": "Mevcut bölüm metni/gerçek fotoğraf; sahne şeması",
-      "artStatus": "eight-card-review-pdf-saved",
+      "artStatus": "book-style-3d-representative-review",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B14_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending",
+      "drawingAsset": "generated_images/exec-9fcea1bb-df82-4698-b7ff-f341e010fb84.png",
+      "artPixelDimensions": [
+        1536,
+        1024
+      ],
+      "proofWidthMm": 118,
+      "proofEffectivePpi": 331
     },
     {
       "cardId": "B14-G06",
       "chapter": "B14 — Kadınlar İçin Öz Savunma ve Güvenlik Planı",
       "title": "Ders sınırı",
       "sourcePlan": "Mevcut bölüm metni/gerçek fotoğraf; sahne şeması",
-      "artStatus": "eight-card-review-pdf-saved",
+      "artStatus": "book-style-3d-representative-review",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B14_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending",
+      "drawingAsset": "generated_images/exec-51f500a1-69a9-4e3b-b6e3-3b428589b390.png",
+      "artPixelDimensions": [
+        1536,
+        1024
+      ],
+      "proofWidthMm": 118,
+      "proofEffectivePpi": 331
     },
     {
       "cardId": "B14-G07",
@@ -1786,7 +1820,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B14_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B14-G08",
@@ -1798,7 +1834,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B14_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B14_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B15-G01",
