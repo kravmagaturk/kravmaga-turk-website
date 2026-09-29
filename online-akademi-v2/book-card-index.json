@@ -519,7 +519,11 @@
       "qrStatus": "candidate-only",
       "publicationCheck": "Gerçek poz ve el ayası/tokat alt türü",
       "chapterReviewArtifact": "Krav_Maga_B07_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B07 metin sırası ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
@@ -535,7 +539,11 @@
       "qrStatus": "candidate-only",
       "publicationCheck": "Alt türler ve bilek açısı kaynak kare",
       "chapterReviewArtifact": "Krav_Maga_B07_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B07 metin sırası ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
@@ -552,7 +560,11 @@
       "publicationCheck": "Bağımsız dirsek türü ve temas doğrulaması",
       "bookAccessScope": "core-candidate-awaiting-lesson-publication",
       "chapterReviewArtifact": "Krav_Maga_B07_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B07 metin sırası ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
@@ -591,7 +603,11 @@
         "scope": "Görsel taslak; teknik kaynak ve baskı doğrulaması açık"
       },
       "chapterReviewArtifact": "Krav_Maga_B07_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B07 metin sırası ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      }
     },
     {
       "cardId": "B07-G05",
@@ -630,7 +646,11 @@
       "previousStyleDraft": "generated_images/exec-c175debc-b02e-4e35-adbe-615c31f47f05.png",
       "correctedTransparentDraft": "generated_images/exec-952e750c-b256-44fb-9833-7c94a4d3d1c9.png",
       "chapterReviewArtifact": "Krav_Maga_B07_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B07 metin sırası ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      }
     },
     {
       "cardId": "B07-G06",
@@ -645,7 +665,11 @@
       "qrStatus": "candidate-only",
       "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
       "chapterReviewArtifact": "Krav_Maga_B07_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B07 metin sırası ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
@@ -661,7 +685,11 @@
       "qrStatus": "candidate-only",
       "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
       "chapterReviewArtifact": "Krav_Maga_B07_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B07 metin sırası ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
