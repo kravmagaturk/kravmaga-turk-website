@@ -680,7 +680,10 @@
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "candidateSourcePaths": [
+        "Yer/Düşme.wmv"
+      ]
     },
     {
       "cardId": "B09-G03",
@@ -691,7 +694,11 @@
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "candidateSourcePaths": [
+        "Yer/Düşme.wmv",
+        "Yer/Takla.wmv"
+      ]
     },
     {
       "cardId": "B09-G04",
@@ -702,7 +709,10 @@
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "candidateSourcePaths": [
+        "Yer/Kalkmak.wmv"
+      ]
     },
     {
       "cardId": "B09-G05",
@@ -713,7 +723,11 @@
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "candidateSourcePaths": [
+        "Yer/Kalkmak.wmv",
+        "Yer/Tekme Atılması.wmv"
+      ]
     },
     {
       "cardId": "B09-G06",
@@ -724,7 +738,11 @@
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "candidateSourcePaths": [
+        "Yer/Karından İtme.wmv",
+        "Yer/Yandan Saldırı.wmv"
+      ]
     },
     {
       "cardId": "B09-G07",
