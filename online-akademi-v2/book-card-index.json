@@ -200,7 +200,12 @@
       "sourcePhotoIds": [],
       "sourceVerified": false,
       "printReady": false,
-      "artPlan": "Selamın başlangıç–hareket–bitiş kareleri; özgün Basic/Kida.wmv ve yazar pozlarıyla el, ayak, gövde ve bakış doğrulanacak"
+      "artPlan": "Selamın başlangıç–hareket–bitiş kareleri; özgün Basic/Kida.wmv ve yazar pozlarıyla el, ayak, gövde ve bakış doğrulanacak",
+      "missingSourceShots": [
+        "Karşılıklı selam başlangıcı: iki kişi tam beden, ön görünüş",
+        "Selam hareketi: el, gövde ve ayaklar net, ön ve yan açı",
+        "Bitiş: dikkat odağı, iki kişi tam beden"
+      ]
     },
     {
       "cardId": "B03-G04",
@@ -521,7 +526,16 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
-      "publicationCheck": "Alt tür/hedef ve kaynak P06 karşılaştırması"
+      "publicationCheck": "Alt tür/hedef ve kaynak P06 karşılaştırması",
+      "candidateSourcePhotos": [
+        "WhatsApp Image 2026-09-28 at 12.11.38.jpeg",
+        "WhatsApp Image 2026-09-28 at 12.11.39.jpeg",
+        "WhatsApp Image 2026-09-28 at 12.11.39 (1).jpeg"
+      ],
+      "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
+      "photoCandidateNote": "Tekme/diz hareketleri görüntüden aday; teknik adı ve doğru sıra videoyla kontrol edilecek.",
+      "sourceVerified": false,
+      "printReady": false
     },
     {
       "cardId": "B07-G05",
@@ -534,7 +548,15 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
-      "publicationCheck": "Baş/diz temas anatomisi ve eğitim yorumu"
+      "publicationCheck": "Baş/diz temas anatomisi ve eğitim yorumu",
+      "candidateSourcePhotos": [
+        "WhatsApp Image 2026-09-28 at 12.11.16.jpeg",
+        "WhatsApp Image 2026-09-28 at 12.11.22.jpeg"
+      ],
+      "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
+      "photoCandidateNote": "Diz teması aday; güvenli poz ve sıra yazar/video kontrolünde.",
+      "sourceVerified": false,
+      "printReady": false
     },
     {
       "cardId": "B07-G06",
@@ -599,7 +621,19 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
-      "publicationCheck": "Sarılma teması ve BH videosu"
+      "publicationCheck": "Sarılma teması ve BH videosu",
+      "candidateSourcePhotos": [
+        "WhatsApp Image 2026-09-28 at 12.11.42.jpeg",
+        "WhatsApp Image 2026-09-28 at 12.11.42 (1).jpeg",
+        "WhatsApp Image 2026-09-28 at 12.11.42 (2).jpeg",
+        "WhatsApp Image 2026-09-28 at 12.11.45 (2).jpeg",
+        "WhatsApp Image 2026-09-28 at 12.11.45 (3).jpeg",
+        "WhatsApp Image 2026-09-28 at 12.11.46.jpeg"
+      ],
+      "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
+      "photoCandidateNote": "Yakın ve arkadan sarılma aday kareleri; teknik aile BH/M4Y ayrımı doğrulanacak.",
+      "sourceVerified": false,
+      "printReady": false
     },
     {
       "cardId": "B08-G04",
@@ -612,7 +646,16 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
-      "publicationCheck": "Tutuş eli, eklem açısı; giysi ayrı"
+      "publicationCheck": "Tutuş eli, eklem açısı; giysi ayrı",
+      "candidateSourcePhotos": [
+        "WhatsApp Image 2026-09-28 at 12.11.03.jpeg",
+        "WhatsApp Image 2026-09-28 at 12.11.04.jpeg",
+        "WhatsApp Image 2026-09-28 at 12.11.14.jpeg"
+      ],
+      "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
+      "photoCandidateNote": "Kol/bilek tutuşu aday kareleri; el pozisyonu ve yön kaynaktan doğrulanacak.",
+      "sourceVerified": false,
+      "printReady": false
     },
     {
       "cardId": "B08-G05",
@@ -625,7 +668,16 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
-      "publicationCheck": "HL-03 gerçek kare ve uzman dili"
+      "publicationCheck": "HL-03 gerçek kare ve uzman dili",
+      "candidateSourcePhotos": [
+        "WhatsApp Image 2026-09-28 at 12.11.39 (4).jpeg",
+        "WhatsApp Image 2026-09-28 at 12.11.40.jpeg",
+        "WhatsApp Image 2026-09-28 at 12.11.40 (1).jpeg"
+      ],
+      "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
+      "photoCandidateNote": "Boyun teması aday kareleri; güvenlik anlatımı ve kesin kare seçimi gerekli.",
+      "sourceVerified": false,
+      "printReady": false
     },
     {
       "cardId": "B08-G06",
@@ -677,7 +729,15 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
-      "publicationCheck": "P23/P24 başlangıç; devam videosu"
+      "publicationCheck": "P23/P24 başlangıç; devam videosu",
+      "candidateSourcePhotos": [
+        "WhatsApp Image 2026-09-28 at 12.11.45.jpeg",
+        "WhatsApp Image 2026-09-28 at 12.11.45 (1).jpeg"
+      ],
+      "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
+      "photoCandidateNote": "Saç teması olasılığı; bu görüntüden kesin teknik adı çıkarılmayacak.",
+      "sourceVerified": false,
+      "printReady": false
     },
     {
       "cardId": "B09-G01",
