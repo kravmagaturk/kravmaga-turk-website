@@ -550,7 +550,8 @@
         1536
       ],
       "styleReference": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "technicalReview": "Tam ayak/kadraj kontrol edildi; tek kare hareket adı ve temas hedefi için kesin kaynak değildir."
+      "technicalReview": "Tam ayak/kadraj kontrol edildi; tek kare hareket adı ve temas hedefi için kesin kaynak değildir.",
+      "reviewProof": "Krav_Maga_B07_G04_B08_G05_Kaynak_Stil_Inceleme_2026-09-29.pdf"
     },
     {
       "cardId": "B07-G05",
@@ -725,7 +726,7 @@
       "cardId": "B08-G05",
       "reviewPage": 46,
       "title": "Boyun güvenliği",
-      "artStatus": "source-photo-match-rejected",
+      "artStatus": "book-style-head-arm-source-review",
       "sourceCandidate": "HL-03 / 03-boyun-kilit-yandan.mp4",
       "academyLessonId": null,
       "academyModuleId": null,
@@ -733,7 +734,9 @@
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
       "publicationCheck": "HL-03 gerçek kare ve uzman dili",
-      "candidateSourcePhotos": [],
+      "candidateSourcePhotos": [
+        "WhatsApp Image 2026-09-28 at 12.11.45 (1).jpeg"
+      ],
       "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
       "photoCandidateNote": "12.11.39 (4), 12.11.40 ve 12.11.40 (1) boyun güvenliği kartı için açık kaynak kanıtı sağlamıyor; temas üst göğüs/kol olabilir. Video veya yeni pozla eşleştirme gerekli.",
       "sourceVerified": false,
@@ -742,7 +745,15 @@
         "WhatsApp Image 2026-09-28 at 12.11.39 (4).jpeg",
         "WhatsApp Image 2026-09-28 at 12.11.40.jpeg",
         "WhatsApp Image 2026-09-28 at 12.11.40 (1).jpeg"
-      ]
+      ],
+      "artSourcePhoto": "WhatsApp Image 2026-09-28 at 12.11.45 (1).jpeg",
+      "sourceArtDraft": "generated_images/exec-d508757c-fb93-4857-a4ea-3ddac4810f6a.png",
+      "reviewProof": "Krav_Maga_B07_G04_B08_G05_Kaynak_Stil_Inceleme_2026-09-29.pdf",
+      "artPixelDimensions": [
+        1024,
+        1536
+      ],
+      "technicalReview": "Baş/kol yerleşimi görünüyor; boyun güvenliği anlatımı ve el katmanı video/yazar kontrolünde. Saç tutuşu diye etiketlenmeyecek."
     },
     {
       "cardId": "B08-G06",
@@ -787,7 +798,7 @@
       "cardId": "B08-G09",
       "reviewPage": 50,
       "title": "Saç tutuşu",
-      "artStatus": "P23/P24 saç tutuşu başlangıcı",
+      "artStatus": "source-photo-match-rejected",
       "sourceCandidate": "M4Y/BH adayı; ana ders seçilmedi",
       "academyLessonId": null,
       "academyModuleId": null,
@@ -795,14 +806,15 @@
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
       "publicationCheck": "P23/P24 başlangıç; devam videosu",
-      "candidateSourcePhotos": [
+      "candidateSourcePhotos": [],
+      "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
+      "photoCandidateNote": "12.11.45 ve 12.11.45 (1) fotoğraflarında saç kavraması görünmüyor; baş/kol teması. Saç tutuşu kaynağı ayrıca gerekiyor.",
+      "sourceVerified": false,
+      "printReady": false,
+      "rejectedSourcePhotos": [
         "WhatsApp Image 2026-09-28 at 12.11.45.jpeg",
         "WhatsApp Image 2026-09-28 at 12.11.45 (1).jpeg"
-      ],
-      "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
-      "photoCandidateNote": "Saç teması olasılığı; bu görüntüden kesin teknik adı çıkarılmayacak.",
-      "sourceVerified": false,
-      "printReady": false
+      ]
     },
     {
       "cardId": "B09-G01",
