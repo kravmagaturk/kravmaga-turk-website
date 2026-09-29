@@ -1,0 +1,97 @@
+﻿{
+    "schemaVersion":  1,
+    "mode":  "non-destructive-planning",
+    "note":  "courses.json canlı/çalışan kaynak olarak değiştirilmedi. Bu dosya V2 geçiş planıdır.",
+    "oldModules":  [
+                       {
+                           "old":  "basic",
+                           "lessons":  23,
+                           "action":  "compare-and-merge",
+                           "target":  "basic-combatives",
+                           "reason":  "eski Basic arşivi yeni modüler kaynaklarla karşılaştırılacak"
+                       },
+                       {
+                           "old":  "bear-hug",
+                           "lessons":  5,
+                           "action":  "replace-by-modular",
+                           "target":  [
+                                          "mesafeli-dort-yandan-saldirilara-savunma",
+                                          "yakin-mesafeden-sarmal-saldirilar-bear-hug"
+                                      ]
+                       },
+                       {
+                           "old":  "bicak",
+                           "lessons":  5,
+                           "action":  "move-special-access",
+                           "target":  "on-the-edge",
+                           "bookEligible":  false
+                       },
+                       {
+                           "old":  "kilit",
+                           "lessons":  5,
+                           "action":  "replace-by-modular",
+                           "target":  "headlock-wrist-lock"
+                       },
+                       {
+                           "old":  "materyal",
+                           "lessons":  9,
+                           "action":  "exclude-main-flow",
+                           "target":  "archive-only",
+                           "bookEligible":  false
+                       },
+                       {
+                           "old":  "sopa",
+                           "lessons":  9,
+                           "action":  "move-special-access",
+                           "target":  "stick-defense",
+                           "bookEligible":  false
+                       },
+                       {
+                           "old":  "tekme",
+                           "lessons":  9,
+                           "action":  "replace-by-modular",
+                           "target":  "kick-technique"
+                       },
+                       {
+                           "old":  "yer",
+                           "lessons":  11,
+                           "action":  "replace-by-modular",
+                           "target":  "ground-fighting"
+                       }
+                   ],
+    "v2Sections":  [
+                       {
+                           "id":  "basic-combatives",
+                           "title":  "Basic Combatives",
+                           "access":  "student"
+                       },
+                       {
+                           "id":  "the-best-defense",
+                           "title":  "The Best Defense",
+                           "access":  "student"
+                       },
+                       {
+                           "id":  "on-the-edge",
+                           "title":  "On The Edge",
+                           "access":  "special"
+                       },
+                       {
+                           "id":  "line-of-fire",
+                           "title":  "Line of Fire",
+                           "access":  "special"
+                       }
+                   ],
+    "testTracks":  [
+                       "Practitioner Level 1",
+                       "Practitioner Level 2",
+                       "Practitioner Level 3",
+                       "Practitioner Level 4",
+                       "Practitioner Level 5",
+                       "Graduate Level 1",
+                       "Graduate Level 2",
+                       "Graduate Level 3",
+                       "Graduate Level 4",
+                       "Graduate Level 5"
+                   ],
+    "next":  "Select preferred source per duplicate before changing courses.json."
+}

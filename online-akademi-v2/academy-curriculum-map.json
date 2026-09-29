@@ -1,0 +1,68 @@
+﻿{
+    "schemaVersion":  1,
+    "courseId":  "krav-maga-main",
+    "title":  "Krav Maga",
+    "sourcePolicy":  "modular-existing-videos-no-full-course-redownload",
+    "sections":  [
+                     {
+                         "id":  "basic-combatives",
+                         "title":  "Basic Combatives",
+                         "modules":  [
+                                         "basic-archive",
+                                         "kick-technique",
+                                         "bob-basic"
+                                     ],
+                         "bookEligible":  true
+                     },
+                     {
+                         "id":  "the-best-defense",
+                         "title":  "The Best Defense",
+                         "modules":  [
+                                         "headlock-wrist-lock",
+                                         "ground-fighting",
+                                         "mesafeli-dort-yandan-saldirilara-savunma",
+                                         "yakin-mesafeden-sarmal-saldirilar-bear-hug",
+                                         "practitioner-graduate-tests-unarmed"
+                                     ],
+                         "bookEligible":  true
+                     },
+                     {
+                         "id":  "on-the-edge",
+                         "title":  "On The Edge",
+                         "modules":  [
+                                         "on-the-edge",
+                                         "knife-defense"
+                                     ],
+                         "bookEligible":  false,
+                         "specialAccess":  true
+                     },
+                     {
+                         "id":  "line-of-fire",
+                         "title":  "Line of Fire",
+                         "modules":  [
+                                         "firearm-defense",
+                                         "pistol-test"
+                                     ],
+                         "bookEligible":  false,
+                         "specialAccess":  true
+                     }
+                 ],
+    "separateArchive":  [
+                            {
+                                "id":  "stick-defense",
+                                "title":  "Sopa Savunma",
+                                "bookEligible":  false,
+                                "specialAccess":  true
+                            },
+                            {
+                                "id":  "material",
+                                "title":  "Materyal",
+                                "bookEligible":  false,
+                                "academyMainFlow":  false,
+                                "reason":  "harmful-tool-content"
+                            }
+                        ],
+    "excluded":  [
+                     "dim-mak"
+                 ]
+}

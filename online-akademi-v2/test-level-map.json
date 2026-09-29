@@ -1,0 +1,307 @@
+﻿{
+    "schemaVersion":  2,
+    "strategy":  "shared-test-curriculum",
+    "note":  "Aynı 12 test başlığı Practitioner L1-L5 ve Graduate L1-L5 öğrencilerini kapsar. Fiziksel video kopyası çoğaltılmaz.",
+    "sharedLessons":  [
+                          {
+                              "id":  "T01",
+                              "topic":  "Tanıtım",
+                              "file":  "01-tanitim.mp4",
+                              "status":  "ready",
+                              "curriculum":  "test-common",
+                              "module":  null,
+                              "specialAccess":  false
+                          },
+                          {
+                              "id":  "T02",
+                              "topic":  "Temel Hareketler",
+                              "file":  null,
+                              "status":  "missing-source",
+                              "curriculum":  "basic-combatives",
+                              "module":  null,
+                              "specialAccess":  false
+                          },
+                          {
+                              "id":  "T03",
+                              "topic":  "Mesafeli Saldırılar",
+                              "file":  "03-mesafeli-saldirilar.mp4",
+                              "status":  "ready",
+                              "curriculum":  "the-best-defense",
+                              "module":  "mesafeli-dort-yandan-saldirilara-savunma",
+                              "specialAccess":  false
+                          },
+                          {
+                              "id":  "T04",
+                              "topic":  "Mesafesiz Saldırılar",
+                              "file":  "04-mesafesiz-saldirilar.mp4",
+                              "status":  "ready",
+                              "curriculum":  "the-best-defense",
+                              "module":  "yakin-mesafeden-sarmal-saldirilar-bear-hug",
+                              "specialAccess":  false
+                          },
+                          {
+                              "id":  "T05",
+                              "topic":  "Boyun Kilit",
+                              "file":  "05-boyun-kilit.mp4",
+                              "status":  "ready",
+                              "curriculum":  "the-best-defense",
+                              "module":  "headlock-wrist-lock",
+                              "specialAccess":  false
+                          },
+                          {
+                              "id":  "T06",
+                              "topic":  "Bilek Kilit",
+                              "file":  "06-bilek-kilit.mp4",
+                              "status":  "ready",
+                              "curriculum":  "the-best-defense",
+                              "module":  "headlock-wrist-lock",
+                              "specialAccess":  false
+                          },
+                          {
+                              "id":  "T07",
+                              "topic":  "Tekmeler",
+                              "file":  "07-tekmeler.mp4",
+                              "status":  "ready",
+                              "curriculum":  "basic-combatives",
+                              "module":  "kick-technique",
+                              "specialAccess":  false
+                          },
+                          {
+                              "id":  "T08",
+                              "topic":  "Yer Hareketleri",
+                              "file":  null,
+                              "status":  "missing-source",
+                              "curriculum":  "the-best-defense",
+                              "module":  "ground-fighting",
+                              "specialAccess":  false
+                          },
+                          {
+                              "id":  "T09",
+                              "topic":  "Sopa Test",
+                              "file":  "_excluded-weapons/09-sopa-savunma-test.mp4",
+                              "status":  "ready-excluded-core",
+                              "curriculum":  "special-archive",
+                              "module":  "stick-defense",
+                              "specialAccess":  true
+                          },
+                          {
+                              "id":  "T10",
+                              "topic":  "Bıçak Savunma",
+                              "file":  "_excluded-weapons/10-bicak-savunma-test.mp4",
+                              "status":  "ready-excluded-core",
+                              "curriculum":  "on-the-edge",
+                              "module":  "on-the-edge",
+                              "specialAccess":  true
+                          },
+                          {
+                              "id":  "T11",
+                              "topic":  "Tabanca Savunma",
+                              "file":  "_excluded-weapons/11-tabanca-savunma-test.mp4",
+                              "status":  "ready-excluded-core",
+                              "curriculum":  "line-of-fire",
+                              "module":  "firearm-defense",
+                              "specialAccess":  true
+                          },
+                          {
+                              "id":  "T12",
+                              "topic":  "Yere Düşme Sonrası Tekme Savunması",
+                              "file":  "12-yere-dusme-sonrasi-tekme-savunmasi.mp4",
+                              "status":  "ready",
+                              "curriculum":  "the-best-defense",
+                              "module":  "ground-fighting",
+                              "specialAccess":  false
+                          }
+                      ],
+    "levels":  [
+                   {
+                       "level":  "P1",
+                       "displayName":  "Practitioner Level 1",
+                       "lessons":  [
+                                       "T01",
+                                       "T02",
+                                       "T03",
+                                       "T04",
+                                       "T05",
+                                       "T06",
+                                       "T07",
+                                       "T08",
+                                       "T09",
+                                       "T10",
+                                       "T11",
+                                       "T12"
+                                   ],
+                       "status":  "shared-curriculum-ready"
+                   },
+                   {
+                       "level":  "P2",
+                       "displayName":  "Practitioner Level 2",
+                       "lessons":  [
+                                       "T01",
+                                       "T02",
+                                       "T03",
+                                       "T04",
+                                       "T05",
+                                       "T06",
+                                       "T07",
+                                       "T08",
+                                       "T09",
+                                       "T10",
+                                       "T11",
+                                       "T12"
+                                   ],
+                       "status":  "shared-curriculum-ready"
+                   },
+                   {
+                       "level":  "P3",
+                       "displayName":  "Practitioner Level 3",
+                       "lessons":  [
+                                       "T01",
+                                       "T02",
+                                       "T03",
+                                       "T04",
+                                       "T05",
+                                       "T06",
+                                       "T07",
+                                       "T08",
+                                       "T09",
+                                       "T10",
+                                       "T11",
+                                       "T12"
+                                   ],
+                       "status":  "shared-curriculum-ready"
+                   },
+                   {
+                       "level":  "P4",
+                       "displayName":  "Practitioner Level 4",
+                       "lessons":  [
+                                       "T01",
+                                       "T02",
+                                       "T03",
+                                       "T04",
+                                       "T05",
+                                       "T06",
+                                       "T07",
+                                       "T08",
+                                       "T09",
+                                       "T10",
+                                       "T11",
+                                       "T12"
+                                   ],
+                       "status":  "shared-curriculum-ready"
+                   },
+                   {
+                       "level":  "P5",
+                       "displayName":  "Practitioner Level 5",
+                       "lessons":  [
+                                       "T01",
+                                       "T02",
+                                       "T03",
+                                       "T04",
+                                       "T05",
+                                       "T06",
+                                       "T07",
+                                       "T08",
+                                       "T09",
+                                       "T10",
+                                       "T11",
+                                       "T12"
+                                   ],
+                       "status":  "shared-curriculum-ready"
+                   },
+                   {
+                       "level":  "G1",
+                       "displayName":  "Graduate Level 1",
+                       "lessons":  [
+                                       "T01",
+                                       "T02",
+                                       "T03",
+                                       "T04",
+                                       "T05",
+                                       "T06",
+                                       "T07",
+                                       "T08",
+                                       "T09",
+                                       "T10",
+                                       "T11",
+                                       "T12"
+                                   ],
+                       "status":  "shared-curriculum-ready"
+                   },
+                   {
+                       "level":  "G2",
+                       "displayName":  "Graduate Level 2",
+                       "lessons":  [
+                                       "T01",
+                                       "T02",
+                                       "T03",
+                                       "T04",
+                                       "T05",
+                                       "T06",
+                                       "T07",
+                                       "T08",
+                                       "T09",
+                                       "T10",
+                                       "T11",
+                                       "T12"
+                                   ],
+                       "status":  "shared-curriculum-ready"
+                   },
+                   {
+                       "level":  "G3",
+                       "displayName":  "Graduate Level 3",
+                       "lessons":  [
+                                       "T01",
+                                       "T02",
+                                       "T03",
+                                       "T04",
+                                       "T05",
+                                       "T06",
+                                       "T07",
+                                       "T08",
+                                       "T09",
+                                       "T10",
+                                       "T11",
+                                       "T12"
+                                   ],
+                       "status":  "shared-curriculum-ready"
+                   },
+                   {
+                       "level":  "G4",
+                       "displayName":  "Graduate Level 4",
+                       "lessons":  [
+                                       "T01",
+                                       "T02",
+                                       "T03",
+                                       "T04",
+                                       "T05",
+                                       "T06",
+                                       "T07",
+                                       "T08",
+                                       "T09",
+                                       "T10",
+                                       "T11",
+                                       "T12"
+                                   ],
+                       "status":  "shared-curriculum-ready"
+                   },
+                   {
+                       "level":  "G5",
+                       "displayName":  "Graduate Level 5",
+                       "lessons":  [
+                                       "T01",
+                                       "T02",
+                                       "T03",
+                                       "T04",
+                                       "T05",
+                                       "T06",
+                                       "T07",
+                                       "T08",
+                                       "T09",
+                                       "T10",
+                                       "T11",
+                                       "T12"
+                                   ],
+                       "status":  "shared-curriculum-ready"
+                   }
+               ]
+}

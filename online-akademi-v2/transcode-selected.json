@@ -1,0 +1,165 @@
+﻿{
+    "schemaVersion":  1,
+    "count":  39,
+    "totalBytes":  2115008851,
+    "totalGB":  1.97,
+    "policy":  "selected old WMV sources that remain unique/supplemental after modular comparison",
+    "items":  [
+                  {
+                      "relative":  "Basic/capraz.wmv",
+                      "bytes":  19041306
+                  },
+                  {
+                      "relative":  "Basic/Dirsekler.wmv",
+                      "bytes":  46054784
+                  },
+                  {
+                      "relative":  "Basic/dort_vurus.wmv",
+                      "bytes":  14037814
+                  },
+                  {
+                      "relative":  "Basic/Duruslar.wmv",
+                      "bytes":  40990622
+                  },
+                  {
+                      "relative":  "Basic/guncelleme_1.wmv",
+                      "bytes":  35078456
+                  },
+                  {
+                      "relative":  "Basic/HammerFist.wmv",
+                      "bytes":  24814148
+                  },
+                  {
+                      "relative":  "Basic/HammerFist-360.wmv",
+                      "bytes":  33582400
+                  },
+                  {
+                      "relative":  "Basic/isinma.wmv",
+                      "bytes":  46262790
+                  },
+                  {
+                      "relative":  "Basic/Kasik.wmv",
+                      "bytes":  29622292
+                  },
+                  {
+                      "relative":  "Basic/Kida.wmv",
+                      "bytes":  7389626
+                  },
+                  {
+                      "relative":  "Basic/nefes.wmv",
+                      "bytes":  29030268
+                  },
+                  {
+                      "relative":  "Basic/Oturma.wmv",
+                      "bytes":  87002777
+                  },
+                  {
+                      "relative":  "Basic/Parmak-kilit.wmv",
+                      "bytes":  6061604
+                  },
+                  {
+                      "relative":  "Basic/reaksiyon_1.wmv",
+                      "bytes":  193067176
+                  },
+                  {
+                      "relative":  "Basic/reaksiyon_2.wmv",
+                      "bytes":  59055174
+                  },
+                  {
+                      "relative":  "Basic/reaksiyon_3.wmv",
+                      "bytes":  165722348
+                  },
+                  {
+                      "relative":  "Basic/reaksiyon_4.wmv",
+                      "bytes":  4957544
+                  },
+                  {
+                      "relative":  "Basic/reaksiyon_b.cetin.wmv",
+                      "bytes":  14477824
+                  },
+                  {
+                      "relative":  "Basic/refleks.wmv",
+                      "bytes":  32366364
+                  },
+                  {
+                      "relative":  "Basic/sac_cekilmesi.wmv",
+                      "bytes":  7309628
+                  },
+                  {
+                      "relative":  "Basic/Statik\u0026Dinamik.wmv",
+                      "bytes":  22478070
+                  },
+                  {
+                      "relative":  "Basic/Tek El Saldırı.wmv",
+                      "bytes":  11037736
+                  },
+                  {
+                      "relative":  "Basic/Yerde Saldırı.wmv",
+                      "bytes":  10045698
+                  },
+                  {
+                      "relative":  "Tekme/Döner Tekme.wmv",
+                      "bytes":  19157992
+                  },
+                  {
+                      "relative":  "Yer/Düşme.wmv",
+                      "bytes":  37150508
+                  },
+                  {
+                      "relative":  "Yer/Takla.wmv",
+                      "bytes":  70663510
+                  },
+                  {
+                      "relative":  "Yer/Tekme Tutulması.wmv",
+                      "bytes":  35654460
+                  },
+                  {
+                      "relative":  "Yer/Düşürme.wmv",
+                      "bytes":  21574094
+                  },
+                  {
+                      "relative":  "Yer/Yandan Saldırı.wmv",
+                      "bytes":  49918886
+                  },
+                  {
+                      "relative":  "Yer/Kol Kilit.wmv",
+                      "bytes":  25662160
+                  },
+                  {
+                      "relative":  "Kilit/Bilek_Boyun_Kilit.wmv",
+                      "bytes":  390716230
+                  },
+                  {
+                      "relative":  "Kilit/Guncel.wmv",
+                      "bytes":  110336688
+                  },
+                  {
+                      "relative":  "Kilit/iki el ile tutuş.wmv",
+                      "bytes":  104792968
+                  },
+                  {
+                      "relative":  "Kilit/koldan_cekme.wmv",
+                      "bytes":  5349568
+                  },
+                  {
+                      "relative":  "Kilit/koldan_savurma.wmv",
+                      "bytes":  4245532
+                  },
+                  {
+                      "relative":  "Bear_Hug/Arkadan Çekme.wmv",
+                      "bytes":  12397772
+                  },
+                  {
+                      "relative":  "Bear_Hug/Bear_Hug.wmv",
+                      "bytes":  244281914
+                  },
+                  {
+                      "relative":  "Bear_Hug/Guncelleme.wmv",
+                      "bytes":  29542294
+                  },
+                  {
+                      "relative":  "Bear_Hug/guncelleme_2.wmv",
+                      "bytes":  14077826
+                  }
+              ]
+}

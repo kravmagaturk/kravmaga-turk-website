@@ -1,0 +1,115 @@
+﻿{
+    "schemaVersion":  1,
+    "purpose":  "Test video technique-to-curriculum mapping; level assignment remains separate.",
+    "items":  [
+                  {
+                      "testNo":  "01",
+                      "file":  "01-tanitim.mp4",
+                      "topic":  "Tanıtım",
+                      "curriculum":  "test-common",
+                      "bookReference":  false,
+                      "status":  "ready"
+                  },
+                  {
+                      "testNo":  "02",
+                      "file":  null,
+                      "topic":  "Temel Hareketler",
+                      "curriculum":  "basic-combatives",
+                      "bookReference":  true,
+                      "status":  "missing-source"
+                  },
+                  {
+                      "testNo":  "03",
+                      "file":  "03-mesafeli-saldirilar.mp4",
+                      "topic":  "Mesafeli Saldırılar",
+                      "curriculum":  "the-best-defense",
+                      "module":  "mesafeli-dort-yandan-saldirilara-savunma",
+                      "bookReference":  true,
+                      "status":  "ready"
+                  },
+                  {
+                      "testNo":  "04",
+                      "file":  "04-mesafesiz-saldirilar.mp4",
+                      "topic":  "Mesafesiz Saldırılar",
+                      "curriculum":  "the-best-defense",
+                      "module":  "yakin-mesafeden-sarmal-saldirilar-bear-hug",
+                      "bookReference":  true,
+                      "status":  "ready"
+                  },
+                  {
+                      "testNo":  "05",
+                      "file":  "05-boyun-kilit.mp4",
+                      "topic":  "Boyun Kilit",
+                      "curriculum":  "the-best-defense",
+                      "module":  "headlock-wrist-lock",
+                      "bookReference":  true,
+                      "status":  "ready"
+                  },
+                  {
+                      "testNo":  "06",
+                      "file":  "06-bilek-kilit.mp4",
+                      "topic":  "Bilek Kilit",
+                      "curriculum":  "the-best-defense",
+                      "module":  "headlock-wrist-lock",
+                      "bookReference":  true,
+                      "status":  "ready"
+                  },
+                  {
+                      "testNo":  "07",
+                      "file":  "07-tekmeler.mp4",
+                      "topic":  "Tekmeler",
+                      "curriculum":  "basic-combatives",
+                      "module":  "kick-technique",
+                      "bookReference":  true,
+                      "status":  "ready"
+                  },
+                  {
+                      "testNo":  "08",
+                      "file":  null,
+                      "topic":  "Yer Hareketleri",
+                      "curriculum":  "the-best-defense",
+                      "module":  "ground-fighting",
+                      "bookReference":  true,
+                      "status":  "missing-source"
+                  },
+                  {
+                      "testNo":  "09",
+                      "file":  "_excluded-weapons/09-sopa-savunma-test.mp4",
+                      "topic":  "Sopa Test",
+                      "curriculum":  "special-archive",
+                      "module":  "stick-defense",
+                      "bookReference":  false,
+                      "specialAccess":  true,
+                      "status":  "ready-excluded-core"
+                  },
+                  {
+                      "testNo":  "10",
+                      "file":  "_excluded-weapons/10-bicak-savunma-test.mp4",
+                      "topic":  "Bıçak Savunma",
+                      "curriculum":  "on-the-edge",
+                      "module":  "on-the-edge",
+                      "bookReference":  false,
+                      "specialAccess":  true,
+                      "status":  "ready-excluded-core"
+                  },
+                  {
+                      "testNo":  "11",
+                      "file":  "_excluded-weapons/11-tabanca-savunma-test.mp4",
+                      "topic":  "Tabanca Savunma",
+                      "curriculum":  "line-of-fire",
+                      "module":  "firearm-defense",
+                      "bookReference":  false,
+                      "specialAccess":  true,
+                      "status":  "ready-excluded-core"
+                  },
+                  {
+                      "testNo":  "12",
+                      "file":  "12-yere-dusme-sonrasi-tekme-savunmasi.mp4",
+                      "topic":  "Yere Düşme Sonrası Tekme Savunması",
+                      "curriculum":  "the-best-defense",
+                      "module":  "ground-fighting",
+                      "bookReference":  true,
+                      "status":  "ready"
+                  }
+              ]
+}

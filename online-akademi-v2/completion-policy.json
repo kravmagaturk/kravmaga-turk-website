@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "lessonCompletion": {
+    "minimumWatchedPercent": 90,
+    "manualCompletionAllowedInPreview": true,
+    "manualCompletionAllowedLive": false,
+    "endedEventCompletesLesson": true
+  },
+  "courseCompletion": {
+    "requiredLessonsMustBeComplete": true,
+    "requiredPercent": 100
+  },
+  "certificateEligibility": {
+    "requiredCoursePercent": 100,
+    "finalTestRequiredWhenConfigured": true,
+    "accessMustBeValid": true,
+    "diplomaGrantSeparate": true
+  }
+}

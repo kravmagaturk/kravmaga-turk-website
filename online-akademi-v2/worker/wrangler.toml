@@ -1,0 +1,30 @@
+﻿name = "kravmaga-online-video"
+main = "src/index.js"
+compatibility_date = "2026-09-27"
+workers_dev = true
+
+routes = [
+  { pattern = "kravmaga.com.tr/online-akademi*", zone_name = "kravmaga.com.tr" }
+]
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+html_handling = "none"
+
+[vars]
+B2_BUCKET_NAME = "kravmaga-online-akademi-media"
+B2_BUCKET_ID = "4fe09b5ade8fef42ab0b0117"
+FIREBASE_PROJECT_ID = "kravmaga-diploma"
+ADMIN_EMAIL = "bulicet@gmail.com"
+
+# Secrets:
+# npx wrangler secret put B2_KEY_ID
+# npx wrangler secret put B2_APPLICATION_KEY
+# npx wrangler secret put UPLOAD_ADMIN_TOKEN
+
+[[d1_databases]]
+binding = "DB"
+database_name = "kravmaga-online-akademi"
+database_id = "8187ea4f-22a7-419e-9eb1-82fc97fe8c03"

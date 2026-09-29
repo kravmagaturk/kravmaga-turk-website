@@ -1,0 +1,123 @@
+﻿{
+    "schemaVersion":  1,
+    "source":  "old-module/Basic",
+    "count":  23,
+    "policy":  "comparison-only-no-delete-no-transcode-yet",
+    "items":  [
+                  {
+                      "status":  "keep-candidate",
+                      "group":  "Basic Combatives",
+                      "file":  "Duruslar.wmv"
+                  },
+                  {
+                      "status":  "keep-candidate",
+                      "group":  "Basic Combatives",
+                      "file":  "Kida.wmv"
+                  },
+                  {
+                      "status":  "keep-candidate",
+                      "group":  "Basic Combatives",
+                      "file":  "nefes.wmv"
+                  },
+                  {
+                      "status":  "compare-with-bob",
+                      "group":  "Basic Combatives",
+                      "file":  "isinma.wmv"
+                  },
+                  {
+                      "status":  "keep-candidate",
+                      "group":  "Basic Combatives",
+                      "file":  "Statik\u0026Dinamik.wmv"
+                  },
+                  {
+                      "status":  "keep-candidate",
+                      "group":  "Basic Combatives",
+                      "file":  "Kasik.wmv"
+                  },
+                  {
+                      "status":  "compare-with-bob",
+                      "group":  "Basic Combatives",
+                      "file":  "HammerFist.wmv"
+                  },
+                  {
+                      "status":  "compare-with-bob",
+                      "group":  "Basic Combatives",
+                      "file":  "HammerFist-360.wmv"
+                  },
+                  {
+                      "status":  "keep-candidate",
+                      "group":  "Basic Combatives",
+                      "file":  "capraz.wmv"
+                  },
+                  {
+                      "status":  "keep-candidate",
+                      "group":  "Basic Combatives",
+                      "file":  "Dirsekler.wmv"
+                  },
+                  {
+                      "status":  "compare-with-bob",
+                      "group":  "Basic Combatives",
+                      "file":  "refleks.wmv"
+                  },
+                  {
+                      "status":  "review",
+                      "group":  "Basic Combatives",
+                      "file":  "reaksiyon_1.wmv"
+                  },
+                  {
+                      "status":  "review",
+                      "group":  "Basic Combatives",
+                      "file":  "reaksiyon_2.wmv"
+                  },
+                  {
+                      "status":  "review",
+                      "group":  "Basic Combatives",
+                      "file":  "reaksiyon_3.wmv"
+                  },
+                  {
+                      "status":  "review",
+                      "group":  "Basic Combatives",
+                      "file":  "reaksiyon_4.wmv"
+                  },
+                  {
+                      "status":  "review",
+                      "group":  "Basic Combatives",
+                      "file":  "reaksiyon_b.cetin.wmv"
+                  },
+                  {
+                      "status":  "review-overlap",
+                      "group":  "The Best Defense",
+                      "file":  "dort_vurus.wmv"
+                  },
+                  {
+                      "status":  "review-overlap",
+                      "group":  "Ground Fighting",
+                      "file":  "Oturma.wmv"
+                  },
+                  {
+                      "status":  "review-overlap",
+                      "group":  "Ground Fighting",
+                      "file":  "Yerde Saldırı.wmv"
+                  },
+                  {
+                      "status":  "review-overlap",
+                      "group":  "The Best Defense",
+                      "file":  "Parmak-kilit.wmv"
+                  },
+                  {
+                      "status":  "review-overlap",
+                      "group":  "The Best Defense",
+                      "file":  "Tek El Saldırı.wmv"
+                  },
+                  {
+                      "status":  "review-overlap",
+                      "group":  "The Best Defense",
+                      "file":  "sac_cekilmesi.wmv"
+                  },
+                  {
+                      "status":  "review",
+                      "group":  "Unclassified",
+                      "file":  "guncelleme_1.wmv"
+                  }
+              ]
+}

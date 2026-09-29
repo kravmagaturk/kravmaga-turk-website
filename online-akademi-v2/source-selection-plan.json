@@ -1,0 +1,266 @@
+﻿{
+    "schemaVersion":  1,
+    "policy":  "Prefer browser-ready H264/AAC modular MP4 when technique coverage is equivalent; keep old WMV as archive/fallback until visual review is complete.",
+    "decisions":  [
+                      {
+                          "old":  "Tekme/Esnetme.wmv",
+                          "new":  "kick-technique/02-esnetme.mp4",
+                          "decision":  "prefer-new-verified-equivalent",
+                          "confidence":  "high",
+                          "visualReview":  "equivalent-contact-sheet"
+                      },
+                      {
+                          "old":  "Tekme/Ön Tekme.wmv",
+                          "new":  "kick-technique/03-on-tekme.mp4",
+                          "decision":  "prefer-new-verified-equivalent",
+                          "confidence":  "high",
+                          "visualReview":  "equivalent-contact-sheet"
+                      },
+                      {
+                          "old":  "Tekme/Yan Tekme.wmv",
+                          "new":  "kick-technique/04-yan-tekme.mp4",
+                          "decision":  "prefer-new-verified-equivalent",
+                          "confidence":  "high",
+                          "visualReview":  "equivalent-contact-sheet"
+                      },
+                      {
+                          "old":  "Tekme/Geri Tekme.wmv",
+                          "new":  "kick-technique/05-geri-tekme.mp4",
+                          "decision":  "prefer-new-verified-equivalent",
+                          "confidence":  "high",
+                          "visualReview":  "equivalent-contact-sheet"
+                      },
+                      {
+                          "old":  "Tekme/Diz Vuruşu.wmv",
+                          "new":  "kick-technique/06-diz-vurmak.mp4",
+                          "decision":  "prefer-new-verified-equivalent",
+                          "confidence":  "high",
+                          "visualReview":  "equivalent-contact-sheet"
+                      },
+                      {
+                          "old":  "Tekme/kaval vuruşu.wmv",
+                          "new":  "kick-technique/07-kaval-vurusu-low-kick.mp4",
+                          "decision":  "prefer-new-verified-equivalent",
+                          "confidence":  "high",
+                          "visualReview":  "equivalent-contact-sheet"
+                      },
+                      {
+                          "old":  "Tekme/Makas Kırık.wmv",
+                          "new":  "kick-technique/08-makas-kirik.mp4",
+                          "decision":  "prefer-new-verified-equivalent",
+                          "confidence":  "high",
+                          "visualReview":  "equivalent-contact-sheet"
+                      },
+                      {
+                          "old":  "Tekme/Mesafe.wmv",
+                          "new":  "kick-technique/09-mesafe-kapama.mp4",
+                          "decision":  "prefer-new-verified-equivalent",
+                          "confidence":  "high",
+                          "visualReview":  "equivalent-contact-sheet"
+                      },
+                      {
+                          "old":  "Tekme/Döner Tekme.wmv",
+                          "new":  null,
+                          "decision":  "keep-old-transcode-later",
+                          "confidence":  "high"
+                      },
+                      {
+                          "old":  "Yer/Düşme.wmv",
+                          "new":  "ground-fighting/02-dusme-nasil-olmali.mp4",
+                          "decision":  "keep-both-distinct",
+                          "confidence":  "high",
+                          "visualReview":  "different-content"
+                      },
+                      {
+                          "old":  "Yer/Takla.wmv",
+                          "new":  "ground-fighting/03-takla-atmak.mp4",
+                          "decision":  "keep-both-distinct",
+                          "confidence":  "high",
+                          "visualReview":  "different-content"
+                      },
+                      {
+                          "old":  "Yer/Kol Kilit.wmv",
+                          "new":  "ground-fighting/04-yandan-boyun-tehdit-kol-kilit.mp4",
+                          "decision":  "compare",
+                          "confidence":  "medium"
+                      },
+                      {
+                          "old":  "Yer/Karından İtme.wmv",
+                          "new":  "ground-fighting/05-karin-ustunden-itis.mp4",
+                          "decision":  "prefer-new-verified-equivalent",
+                          "confidence":  "high",
+                          "visualReview":  "equivalent-contact-sheet"
+                      },
+                      {
+                          "old":  "Yer/Makas.wmv",
+                          "new":  "ground-fighting/06-yerde-ayaklara-makas.mp4",
+                          "decision":  "prefer-new-verified-equivalent",
+                          "confidence":  "high",
+                          "visualReview":  "equivalent-contact-sheet"
+                      },
+                      {
+                          "old":  "Yer/Tekme Atılması.wmv",
+                          "new":  "ground-fighting/07-yerde-dusme-sonrasi-tekme-savunmasi.mp4",
+                          "decision":  "prefer-new-verified-equivalent",
+                          "confidence":  "high",
+                          "visualReview":  "same-technique-newer-edit"
+                      },
+                      {
+                          "old":  "Yer/Tekme Tutulması.wmv",
+                          "new":  "ground-fighting/08-yerde-tekme-tutmak-referans.png",
+                          "decision":  "keep-old-transcode-later",
+                          "confidence":  "high",
+                          "note":  "new source is image only"
+                      },
+                      {
+                          "old":  "Yer/Tekme Atmak.wmv",
+                          "new":  "kick-technique/14-yerde-tekme-atmak.mp4",
+                          "decision":  "prefer-new-verified-equivalent",
+                          "confidence":  "high",
+                          "visualReview":  "equivalent-contact-sheet"
+                      },
+                      {
+                          "old":  "Yer/Kalkmak.wmv",
+                          "new":  "kick-technique/15-yerden-tekme-ile-kalkmak.mp4",
+                          "decision":  "prefer-new-verified-equivalent",
+                          "confidence":  "high",
+                          "visualReview":  "equivalent-contact-sheet"
+                      },
+                      {
+                          "old":  "Yer/Düşürme.wmv",
+                          "new":  null,
+                          "decision":  "keep-old-transcode-later",
+                          "confidence":  "high"
+                      },
+                      {
+                          "old":  "Yer/Yandan Saldırı.wmv",
+                          "new":  null,
+                          "decision":  "keep-old-transcode-later",
+                          "confidence":  "high"
+                      },
+                      {
+                          "old":  "Basic/Tek El Saldırı.wmv",
+                          "new":  "mesafeli-dort-yandan-saldirilara-savunma/06-tek-el-tutus-onden-saldiri.mp4",
+                          "decision":  "compare",
+                          "confidence":  "medium"
+                      },
+                      {
+                          "old":  "Basic/Duruslar.wmv",
+                          "new":  null,
+                          "decision":  "keep-old-transcode-later",
+                          "confidence":  "high"
+                      },
+                      {
+                          "old":  "Basic/Kida.wmv",
+                          "new":  null,
+                          "decision":  "keep-old-transcode-later",
+                          "confidence":  "high"
+                      },
+                      {
+                          "old":  "Basic/nefes.wmv",
+                          "new":  null,
+                          "decision":  "keep-old-transcode-later",
+                          "confidence":  "high"
+                      },
+                      {
+                          "old":  "Basic/Dirsekler.wmv",
+                          "new":  null,
+                          "decision":  "keep-old-transcode-later",
+                          "confidence":  "high"
+                      },
+                      {
+                          "old":  "Basic/HammerFist.wmv",
+                          "new":  null,
+                          "decision":  "keep-old-transcode-later",
+                          "confidence":  "high"
+                      },
+                      {
+                          "old":  "Basic/HammerFist-360.wmv",
+                          "new":  null,
+                          "decision":  "keep-old-transcode-later",
+                          "confidence":  "high"
+                      },
+                      {
+                          "old":  "Basic/Kasik.wmv",
+                          "new":  null,
+                          "decision":  "keep-old-transcode-later",
+                          "confidence":  "high"
+                      },
+                      {
+                          "old":  "Basic/capraz.wmv",
+                          "new":  null,
+                          "decision":  "keep-old-transcode-later",
+                          "confidence":  "high"
+                      },
+                      {
+                          "old":  "Basic/sac_cekilmesi.wmv",
+                          "new":  null,
+                          "decision":  "keep-old-transcode-later",
+                          "confidence":  "high"
+                      },
+                      {
+                          "old":  "Kilit/Bilek_Boyun_Kilit.wmv",
+                          "new":  "headlock-wrist-lock",
+                          "decision":  "compare",
+                          "confidence":  "medium"
+                      },
+                      {
+                          "old":  "Kilit/iki el ile tutuş.wmv",
+                          "new":  "headlock-wrist-lock/07-tutuslar-kilitler.mp4",
+                          "decision":  "compare",
+                          "confidence":  "medium"
+                      },
+                      {
+                          "old":  "Kilit/koldan_cekme.wmv",
+                          "new":  "headlock-wrist-lock/07-tutuslar-kilitler.mp4",
+                          "decision":  "compare",
+                          "confidence":  "low"
+                      },
+                      {
+                          "old":  "Kilit/koldan_savurma.wmv",
+                          "new":  "headlock-wrist-lock/07-tutuslar-kilitler.mp4",
+                          "decision":  "compare",
+                          "confidence":  "low"
+                      },
+                      {
+                          "old":  "Kilit/Guncel.wmv",
+                          "new":  null,
+                          "decision":  "review-old",
+                          "confidence":  "low"
+                      },
+                      {
+                          "old":  "Bear_Hug/Bear_Hug.wmv",
+                          "new":  "yakin-mesafeden-sarmal-saldirilar-bear-hug/01-bear-hug-full-mesafesiz-saldirilar.mp4",
+                          "decision":  "prefer-new-keep-old-reference",
+                          "confidence":  "high",
+                          "visualReview":  "same-family-different-recording-new-broader"
+                      },
+                      {
+                          "old":  "Bear_Hug/kurt_kapan.wmv",
+                          "new":  "yakin-mesafeden-sarmal-saldirilar-bear-hug/02-arkadan-mesafesiz-tutus-kurt-kapani.mp4",
+                          "decision":  "prefer-new-verified-equivalent",
+                          "confidence":  "high",
+                          "visualReview":  "equivalent-contact-sheet"
+                      },
+                      {
+                          "old":  "Bear_Hug/Arkadan Çekme.wmv",
+                          "new":  "mesafeli-dort-yandan-saldirilara-savunma/05-arkadan-mesafeli-tutus.mp4",
+                          "decision":  "compare",
+                          "confidence":  "medium"
+                      },
+                      {
+                          "old":  "Bear_Hug/Guncelleme.wmv",
+                          "new":  null,
+                          "decision":  "review-old",
+                          "confidence":  "low"
+                      },
+                      {
+                          "old":  "Bear_Hug/guncelleme_2.wmv",
+                          "new":  null,
+                          "decision":  "review-old",
+                          "confidence":  "low"
+                      }
+                  ],
+    "noDeleteBeforeApproval":  true,
+    "noBulkTranscodeBeforeFinalInventory":  true
+}

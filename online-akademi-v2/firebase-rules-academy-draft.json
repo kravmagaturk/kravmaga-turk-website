@@ -1,0 +1,25 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "academyUsers": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        "profile": {
+          ".write": "auth != null && auth.uid === $uid"
+        },
+        "progress": {
+          "$lessonId": {
+            ".write": "auth != null && auth.uid === $uid"
+          }
+        },
+        "tests": {
+          "$levelId": {
+            ".write": "auth != null && auth.uid === $uid"
+          }
+        }
+      }
+    }
+  },
+  "_note": "Taslak. Canlı Firebase kurallarına son güvenlik testi ve admin claim modeli netleşmeden uygulanmayacak."
+}

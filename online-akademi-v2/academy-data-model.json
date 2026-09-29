@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "nodes": {
+    "academyUsers/{uid}": {
+      "profile": ["displayName", "email", "role", "status", "createdAt", "lastLoginAt"],
+      "access": {
+        "core": "boolean",
+        "special": "boolean",
+        "diploma": "boolean",
+        "expiresAt": "ISO date|null",
+        "grants": "course/module grant map"
+      },
+      "progress/{lessonId}": [
+        "watchedSec",
+        "durationSec",
+        "percent",
+        "completed",
+        "completedAt",
+        "firstOpenedAt",
+        "lastOpenedAt",
+        "sessionCount"
+      ],
+      "tests/{levelId}": ["attempts", "bestScore", "passed", "passedAt"],
+      "certificates/{certificateId}": ["eligible", "issued", "issuedAt", "registerId"]
+    },
+    "academyAdmin": {
+      "catalogVersion": "string",
+      "announcements": "map",
+      "maintenance": "map"
+    }
+  },
+  "roles": ["admin", "instructor", "academy_student", "paid_external"],
+  "privacy": {
+    "userReadsOwnProgressOnly": true,
+    "userWritesOwnProgressOnly": true,
+    "adminCanManageUsers": true,
+    "publicProgressRead": false
+  }
+}

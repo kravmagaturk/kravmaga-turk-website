@@ -1,0 +1,10 @@
+# Local/runtime artifacts
+compare-frames/
+*.log
+upload-batch-*.json
+media-upload-manifest*.json
+final-source-inventory.json
+basic-media-metadata.json
+modular-media-metadata.json
+resume-batch-*.json
+curl-batch-*.json

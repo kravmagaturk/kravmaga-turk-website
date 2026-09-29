@@ -1,0 +1,976 @@
+﻿{
+    "version":  "2.0-draft",
+    "updated":  "2026-09-28",
+    "liveReady":  false,
+    "sourcePolicy":  "modular-source-first",
+    "sections":  [
+                     {
+                         "id":  "basic-combatives",
+                         "title":  "Basic Combatives",
+                         "access":  "student",
+                         "bookEligible":  true,
+                         "modules":  [
+                                         {
+                                             "id":  "basic-core",
+                                             "title":  "Temel Teknikler",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "bas-capraz",
+                                                                 "title":  "capraz",
+                                                                 "sourceFile":  "capraz.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\capraz.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-CAPRAZ",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  95.8,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-dirsekler",
+                                                                 "title":  "Dirsekler",
+                                                                 "sourceFile":  "Dirsekler.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\Dirsekler.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-DIRSEKLER",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  230.14,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-dort-vurus",
+                                                                 "title":  "dort_vurus",
+                                                                 "sourceFile":  "dort_vurus.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\dort_vurus.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-DORT-VURUS",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  68.78,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-duruslar",
+                                                                 "title":  "Duruslar",
+                                                                 "sourceFile":  "Duruslar.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\Duruslar.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-DURUSLAR",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  203.83,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-guncelleme-1",
+                                                                 "title":  "guncelleme_1",
+                                                                 "sourceFile":  "guncelleme_1.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\guncelleme_1.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-GUNCELLEME-1",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  175.88,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-hammerfist",
+                                                                 "title":  "HammerFist",
+                                                                 "sourceFile":  "HammerFist.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\HammerFist.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-HAMMERFIST",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  124.16,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-hammerfist-360",
+                                                                 "title":  "HammerFist-360",
+                                                                 "sourceFile":  "HammerFist-360.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\HammerFist-360.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-HAMMERFIST-360",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  166.87,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-isinma",
+                                                                 "title":  "isinma",
+                                                                 "sourceFile":  "isinma.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\isinma.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-ISINMA",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  231.23,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-kasik",
+                                                                 "title":  "Kasik",
+                                                                 "sourceFile":  "Kasik.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\Kasik.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-KASIK",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  148.19,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-kida",
+                                                                 "title":  "Kida",
+                                                                 "sourceFile":  "Kida.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\Kida.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-KIDA",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  37.2,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-nefes",
+                                                                 "title":  "nefes",
+                                                                 "sourceFile":  "nefes.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\nefes.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-NEFES",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  144.14,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-parmak-kilit",
+                                                                 "title":  "Parmak-kilit",
+                                                                 "sourceFile":  "Parmak-kilit.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\Parmak-kilit.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-PARMAK-KILIT",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  33.45,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-reaksiyon-1",
+                                                                 "title":  "reaksiyon_1",
+                                                                 "sourceFile":  "reaksiyon_1.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\reaksiyon_1.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-REAKSIYON-1",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  962.21,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-reaksiyon-2",
+                                                                 "title":  "reaksiyon_2",
+                                                                 "sourceFile":  "reaksiyon_2.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\reaksiyon_2.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-REAKSIYON-2",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  295.63,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-reaksiyon-3",
+                                                                 "title":  "reaksiyon_3",
+                                                                 "sourceFile":  "reaksiyon_3.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\reaksiyon_3.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-REAKSIYON-3",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  824.78,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-reaksiyon-4",
+                                                                 "title":  "reaksiyon_4",
+                                                                 "sourceFile":  "reaksiyon_4.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\reaksiyon_4.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-REAKSIYON-4",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  23.98,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-reaksiyon-b-cetin",
+                                                                 "title":  "reaksiyon_b.cetin",
+                                                                 "sourceFile":  "reaksiyon_b.cetin.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\reaksiyon_b.cetin.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-REAKSIYON-B-CETIN",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  70.78,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-refleks",
+                                                                 "title":  "refleks",
+                                                                 "sourceFile":  "refleks.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\refleks.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-REFLEKS",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  160.33,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-statik-dinamik",
+                                                                 "title":  "Statik\u0026Dinamik",
+                                                                 "sourceFile":  "Statik\u0026Dinamik.wmv",
+                                                                 "sourcePath":  "\\\\BULICET\\Users\\RDC-GUEST\\OneDrive\\Belgeler\\modul\\Basic\\Statik\u0026Dinamik.wmv",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-STATIK-DINAMIK",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  111.53,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "id":  "kick-technique",
+                                             "title":  "Kick Technique",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "kıck-01",
+                                                                 "title":  "giris",
+                                                                 "sourceFile":  "01-giris.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\01-giris.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-01",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  653.7,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-02",
+                                                                 "title":  "esnetme",
+                                                                 "sourceFile":  "02-esnetme.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\02-esnetme.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-02",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  485.36,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-03",
+                                                                 "title":  "on tekme",
+                                                                 "sourceFile":  "03-on-tekme.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\03-on-tekme.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-03",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  320.92,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-04",
+                                                                 "title":  "yan tekme",
+                                                                 "sourceFile":  "04-yan-tekme.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\04-yan-tekme.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-04",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  78.57,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-05",
+                                                                 "title":  "geri tekme",
+                                                                 "sourceFile":  "05-geri-tekme.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\05-geri-tekme.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-05",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  96.19,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-06",
+                                                                 "title":  "diz vurmak",
+                                                                 "sourceFile":  "06-diz-vurmak.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\06-diz-vurmak.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-06",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  99.8,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-07",
+                                                                 "title":  "kaval vurusu low kick",
+                                                                 "sourceFile":  "07-kaval-vurusu-low-kick.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\07-kaval-vurusu-low-kick.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-07",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  94.34,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-08",
+                                                                 "title":  "makas kirik",
+                                                                 "sourceFile":  "08-makas-kirik.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\08-makas-kirik.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-08",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  100.78,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-09",
+                                                                 "title":  "mesafe kapama",
+                                                                 "sourceFile":  "09-mesafe-kapama.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\09-mesafe-kapama.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-09",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  80.15,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-10",
+                                                                 "title":  "onden gelen tekmeye savunma",
+                                                                 "sourceFile":  "10-onden-gelen-tekmeye-savunma.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\10-onden-gelen-tekmeye-savunma.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-10",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  253.46,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-11",
+                                                                 "title":  "yandan gelen tekmeye savunma",
+                                                                 "sourceFile":  "11-yandan-gelen-tekmeye-savunma.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\11-yandan-gelen-tekmeye-savunma.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-11",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  226.32,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-12",
+                                                                 "title":  "kaval vurusuna savunma",
+                                                                 "sourceFile":  "12-kaval-vurusuna-savunma.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\12-kaval-vurusuna-savunma.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-12",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  132.37,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-13",
+                                                                 "title":  "geri tekmeye savunma",
+                                                                 "sourceFile":  "13-geri-tekmeye-savunma.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\13-geri-tekmeye-savunma.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-13",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  98.3,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-14",
+                                                                 "title":  "yerde tekme atmak",
+                                                                 "sourceFile":  "14-yerde-tekme-atmak.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\14-yerde-tekme-atmak.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-14",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  169.56,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-15",
+                                                                 "title":  "yerden tekme ile kalkmak",
+                                                                 "sourceFile":  "15-yerden-tekme-ile-kalkmak.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\kick-technique\\15-yerden-tekme-ile-kalkmak.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-15",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  263.34,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         }
+                                     ]
+                     },
+                     {
+                         "id":  "the-best-defense",
+                         "title":  "The Best Defense",
+                         "access":  "student",
+                         "bookEligible":  true,
+                         "modules":  [
+                                         {
+                                             "id":  "mesafeli-dort-yandan-saldirilara-savunma",
+                                             "title":  "Mesafeli Dört Yandan Saldırılara Savunma",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "m4y-01",
+                                                                 "title":  "tanitim",
+                                                                 "sourceFile":  "01-tanitim.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\mesafeli-dort-yandan-saldirilara-savunma\\01-tanitim.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "M4Y-01",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  640.21,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "m4y-02",
+                                                                 "title":  "onden mesafeli saldirilar",
+                                                                 "sourceFile":  "02-onden-mesafeli-saldirilar.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\mesafeli-dort-yandan-saldirilara-savunma\\02-onden-mesafeli-saldirilar.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "M4Y-02",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  324.16,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "m4y-03",
+                                                                 "title":  "onden mesafeli tutuslu itme",
+                                                                 "sourceFile":  "03-onden-mesafeli-tutuslu-itme.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\mesafeli-dort-yandan-saldirilara-savunma\\03-onden-mesafeli-tutuslu-itme.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "M4Y-03",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  270.85,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "m4y-04",
+                                                                 "title":  "yandan mesafeli tutus",
+                                                                 "sourceFile":  "04-yandan-mesafeli-tutus.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\mesafeli-dort-yandan-saldirilara-savunma\\04-yandan-mesafeli-tutus.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "M4Y-04",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  226.24,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "m4y-05",
+                                                                 "title":  "arkadan mesafeli tutus",
+                                                                 "sourceFile":  "05-arkadan-mesafeli-tutus.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\mesafeli-dort-yandan-saldirilara-savunma\\05-arkadan-mesafeli-tutus.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "M4Y-05",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  257.73,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "m4y-06",
+                                                                 "title":  "tek el tutus onden saldiri",
+                                                                 "sourceFile":  "06-tek-el-tutus-onden-saldiri.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\mesafeli-dort-yandan-saldirilara-savunma\\06-tek-el-tutus-onden-saldiri.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "M4Y-06",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  267.78,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "id":  "yakin-mesafeden-sarmal-saldirilar-bear-hug",
+                                             "title":  "Yakın Mesafeden Sarmal Saldırılar - Bear Hug",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "bh-01",
+                                                                 "title":  "bear hug full mesafesiz saldirilar",
+                                                                 "sourceFile":  "01-bear-hug-full-mesafesiz-saldirilar.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\yakin-mesafeden-sarmal-saldirilar-bear-hug\\01-bear-hug-full-mesafesiz-saldirilar.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "BH-01",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  723.28,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bh-02",
+                                                                 "title":  "arkadan mesafesiz tutus kurt kapani",
+                                                                 "sourceFile":  "02-arkadan-mesafesiz-tutus-kurt-kapani.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\yakin-mesafeden-sarmal-saldirilar-bear-hug\\02-arkadan-mesafesiz-tutus-kurt-kapani.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "BH-02",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  59.09,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "id":  "headlock-wrist-lock",
+                                             "title":  "Headlock \u0026 Wrist Lock",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "hl-01",
+                                                                 "title":  "tanitim",
+                                                                 "sourceFile":  "01-tanitim.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\headlock-wrist-lock\\01-tanitim.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "HL-01",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  635.69,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "hl-02",
+                                                                 "title":  "bilek isinma",
+                                                                 "sourceFile":  "02-bilek-isinma.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\headlock-wrist-lock\\02-bilek-isinma.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "HL-02",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  247.17,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "hl-03",
+                                                                 "title":  "boyun kilit yandan",
+                                                                 "sourceFile":  "03-boyun-kilit-yandan.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\headlock-wrist-lock\\03-boyun-kilit-yandan.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "HL-03",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  438.53,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "hl-04",
+                                                                 "title":  "boyun kilit arkadan",
+                                                                 "sourceFile":  "04-boyun-kilit-arkadan.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\headlock-wrist-lock\\04-boyun-kilit-arkadan.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "HL-04",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  342.25,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "hl-05",
+                                                                 "title":  "boyun arka kilit cozme",
+                                                                 "sourceFile":  "05-boyun-arka-kilit-cozme.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\headlock-wrist-lock\\05-boyun-arka-kilit-cozme.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "HL-05",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  497.49,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "hl-06",
+                                                                 "title":  "giyotin",
+                                                                 "sourceFile":  "06-giyotin.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\headlock-wrist-lock\\06-giyotin.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "HL-06",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  271.04,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "hl-07",
+                                                                 "title":  "tutuslar kilitler",
+                                                                 "sourceFile":  "07-tutuslar-kilitler.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\headlock-wrist-lock\\07-tutuslar-kilitler.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "HL-07",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  665.96,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "id":  "ground-fighting",
+                                             "title":  "Ground Fighting / Yer Hareketleri",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "gf-01",
+                                                                 "title":  "giris",
+                                                                 "sourceFile":  "01-giris.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\ground-fighting\\01-giris.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "GF-01",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  640.21,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "gf-02",
+                                                                 "title":  "dusme nasil olmali",
+                                                                 "sourceFile":  "02-dusme-nasil-olmali.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\ground-fighting\\02-dusme-nasil-olmali.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "GF-02",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  248.02,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "gf-03",
+                                                                 "title":  "takla atmak",
+                                                                 "sourceFile":  "03-takla-atmak.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\ground-fighting\\03-takla-atmak.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "GF-03",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  113.39,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "gf-04",
+                                                                 "title":  "yandan boyun tehdit kol kilit",
+                                                                 "sourceFile":  "04-yandan-boyun-tehdit-kol-kilit.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\ground-fighting\\04-yandan-boyun-tehdit-kol-kilit.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "GF-04",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  126.87,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "gf-05",
+                                                                 "title":  "karin ustunden itis",
+                                                                 "sourceFile":  "05-karin-ustunden-itis.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\ground-fighting\\05-karin-ustunden-itis.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "GF-05",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  187.28,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "gf-06",
+                                                                 "title":  "yerde ayaklara makas",
+                                                                 "sourceFile":  "06-yerde-ayaklara-makas.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\ground-fighting\\06-yerde-ayaklara-makas.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "GF-06",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  111.32,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "gf-07",
+                                                                 "title":  "yerde dusme sonrasi tekme savunmasi",
+                                                                 "sourceFile":  "07-yerde-dusme-sonrasi-tekme-savunmasi.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\ground-fighting\\07-yerde-dusme-sonrasi-tekme-savunmasi.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "GF-07",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  297.56,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         }
+                                     ]
+                     },
+                     {
+                         "id":  "special",
+                         "title":  "Özel Modüller",
+                         "access":  "special",
+                         "bookEligible":  false,
+                         "modules":  [
+                                         {
+                                             "id":  "on-the-edge",
+                                             "title":  "On The Edge",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "ote-01",
+                                                                 "title":  "360 savunma",
+                                                                 "sourceFile":  "360 savunma.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\on-the-edge\\360 savunma.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  93.97,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "ote-02",
+                                                                 "title":  "bloklar",
+                                                                 "sourceFile":  "bloklar.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\on-the-edge\\bloklar.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  779.86,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "ote-03",
+                                                                 "title":  "elden alma disarm",
+                                                                 "sourceFile":  "elden alma disarm.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\on-the-edge\\elden alma disarm.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  422.53,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "ote-04",
+                                                                 "title":  "güncelleme",
+                                                                 "sourceFile":  "güncelleme.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\on-the-edge\\güncelleme.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  276.59,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "ote-05",
+                                                                 "title":  "günxelleme 2",
+                                                                 "sourceFile":  "günxelleme-2.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\on-the-edge\\günxelleme-2.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  162.99,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "ote-06",
+                                                                 "title":  "kilit",
+                                                                 "sourceFile":  "kilit.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\on-the-edge\\kilit.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  476.97,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "ote-07",
+                                                                 "title":  "tanıtım",
+                                                                 "sourceFile":  "tanıtım.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\on-the-edge\\tanıtım.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  640.21,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "ote-08",
+                                                                 "title":  "teori",
+                                                                 "sourceFile":  "teori.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\on-the-edge\\teori.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  320.55,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "id":  "stick-defense",
+                                             "title":  "Sopa Savunma",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "stıck-01",
+                                                                 "title":  "360 derece savunma sisteminde bambu sopası ile çalışma tekniği",
+                                                                 "sourceFile":  "360 derece savunma sisteminde bambu sopası ile çalışma tekniği.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\sopa-savunma\\360 derece savunma sisteminde bambu sopası ile çalışma tekniği.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-02",
+                                                                 "title":  "bacaklara vuruş",
+                                                                 "sourceFile":  "bacaklara vuruş.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\sopa-savunma\\bacaklara vuruş.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-03",
+                                                                 "title":  "beyzbol vuruşuna karşı savunma",
+                                                                 "sourceFile":  "beyzbol vuruşuna karşı savunma.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\sopa-savunma\\beyzbol vuruşuna karşı savunma.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-04",
+                                                                 "title":  "çapraz saldırılar",
+                                                                 "sourceFile":  "çapraz saldırılar.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\sopa-savunma\\çapraz saldırılar.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-05",
+                                                                 "title":  "dikey saldırılar",
+                                                                 "sourceFile":  "dikey saldırılar.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\sopa-savunma\\dikey saldırılar.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-06",
+                                                                 "title":  "orta seviye saldırılar",
+                                                                 "sourceFile":  "orta seviye saldırılar.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\sopa-savunma\\orta seviye saldırılar.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-07",
+                                                                 "title":  "saldırgan sopayı tutarsa",
+                                                                 "sourceFile":  "saldırgan sopayı tutarsa.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\sopa-savunma\\saldırgan sopayı tutarsa.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-08",
+                                                                 "title":  "sopa çalışma öncesi oyunlar",
+                                                                 "sourceFile":  "sopa çalışma öncesi oyunlar.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\sopa-savunma\\sopa çalışma öncesi oyunlar.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-09",
+                                                                 "title":  "sopa el becerileri için uyum çalışması",
+                                                                 "sourceFile":  "sopa el becerileri için uyum çalışması.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\sopa-savunma\\sopa el becerileri için uyum çalışması.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-10",
+                                                                 "title":  "sopa ile tüfek_vuruşu_üstten",
+                                                                 "sourceFile":  "sopa ile tüfek_vuruşu_üstten.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\sopa-savunma\\sopa ile tüfek_vuruşu_üstten.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-11",
+                                                                 "title":  "sopada kilit sistemi 2",
+                                                                 "sourceFile":  "sopada kilit sistemi-2.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\sopa-savunma\\sopada kilit sistemi-2.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-12",
+                                                                 "title":  "tanıtım",
+                                                                 "sourceFile":  "tanıtım.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\sopa-savunma\\tanıtım.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-13",
+                                                                 "title":  "yere düştükten sonra sopaya karşı savunma teknikleri",
+                                                                 "sourceFile":  "yere düştükten sonra sopaya karşı savunma teknikleri.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\sopa-savunma\\yere düştükten sonra sopaya karşı savunma teknikleri.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-14",
+                                                                 "title":  "youtube_eğitim desteği",
+                                                                 "sourceFile":  "youtube_eğitim desteği.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\udemy-import\\sopa-savunma\\youtube_eğitim desteği.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "id":  "line-of-fire",
+                                             "title":  "Line of Fire",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "lof-test-01",
+                                                                 "title":  "Tabanca Savunma Test",
+                                                                 "sourceFile":  "11-tabanca-savunma-test.mp4",
+                                                                 "sourcePath":  "C:\\Users\\RDC-GUEST\\Documents\\KravMaga\\online-akademi-test-videos\\_excluded-weapons\\11-tabanca-savunma-test.mp4",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  false
+                                                             }
+                                                         ]
+                                         }
+                                     ]
+                     }
+                 ],
+    "tests":  {
+                  "tracks":  [
+                                 "P1",
+                                 "P2",
+                                 "P3",
+                                 "P4",
+                                 "P5",
+                                 "G1",
+                                 "G2",
+                                 "G3",
+                                 "G4",
+                                 "G5"
+                             ],
+                  "levelMap":  "test-level-map.json",
+                  "techniqueMap":  "test-technique-map.json",
+                  "assignmentStatus":  "shared-curriculum-ready"
+              },
+    "excluded":  [
+                     "dim-mak",
+                     "material-main-flow"
+                 ]
+}

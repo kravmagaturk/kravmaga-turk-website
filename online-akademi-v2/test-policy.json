@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "tracks": ["P1","P2","P3","P4","P5","G1","G2","G3","G4","G5"],
+  "curriculumStrategy": "shared-12-topic-video-set",
+  "sharedTopics": ["T01","T02","T03","T04","T05","T06","T07","T08","T09","T10","T11","T12"],
+  "missingMedia": ["T02","T08"],
+  "specialTopics": ["T09","T10","T11"],
+  "scoring": {
+    "enabled": false,
+    "note": "Soru/puan yapısı eğitmen tarafından tanımlanınca etkinleştirilecek."
+  },
+  "visibility": {
+    "studentSeesOwnLevelTrack": true,
+    "adminSeesAllTracks": true
+  }
+}

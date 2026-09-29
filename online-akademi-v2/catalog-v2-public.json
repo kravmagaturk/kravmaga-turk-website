@@ -1,0 +1,813 @@
+﻿{
+    "version":  "2.0-draft",
+    "updated":  "2026-09-28",
+    "liveReady":  false,
+    "sections":  [
+                     {
+                         "id":  "basic-combatives",
+                         "title":  "Basic Combatives",
+                         "access":  "student",
+                         "bookEligible":  true,
+                         "modules":  [
+                                         {
+                                             "id":  "basic-core",
+                                             "title":  "Temel Teknikler",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "bas-capraz",
+                                                                 "title":  "capraz",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-CAPRAZ",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  95.8,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-dirsekler",
+                                                                 "title":  "Dirsekler",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-DIRSEKLER",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  230.14,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-dort-vurus",
+                                                                 "title":  "dort_vurus",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-DORT-VURUS",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  68.78,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-duruslar",
+                                                                 "title":  "Duruslar",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-DURUSLAR",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  203.83,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-guncelleme-1",
+                                                                 "title":  "guncelleme_1",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-GUNCELLEME-1",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  175.88,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-hammerfist",
+                                                                 "title":  "HammerFist",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-HAMMERFIST",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  124.16,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-hammerfist-360",
+                                                                 "title":  "HammerFist-360",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-HAMMERFIST-360",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  166.87,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-isinma",
+                                                                 "title":  "isinma",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-ISINMA",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  231.23,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-kasik",
+                                                                 "title":  "Kasik",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-KASIK",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  148.19,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-kida",
+                                                                 "title":  "Kida",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-KIDA",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  37.2,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-nefes",
+                                                                 "title":  "nefes",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-NEFES",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  144.14,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-parmak-kilit",
+                                                                 "title":  "Parmak-kilit",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-PARMAK-KILIT",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  33.45,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-reaksiyon-1",
+                                                                 "title":  "reaksiyon_1",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-REAKSIYON-1",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  962.21,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-reaksiyon-2",
+                                                                 "title":  "reaksiyon_2",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-REAKSIYON-2",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  295.63,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-reaksiyon-3",
+                                                                 "title":  "reaksiyon_3",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-REAKSIYON-3",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  824.78,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-reaksiyon-4",
+                                                                 "title":  "reaksiyon_4",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-REAKSIYON-4",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  23.98,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-reaksiyon-b-cetin",
+                                                                 "title":  "reaksiyon_b.cetin",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-REAKSIYON-B-CETIN",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  70.78,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-refleks",
+                                                                 "title":  "refleks",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-REFLEKS",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  160.33,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bas-statik-dinamik",
+                                                                 "title":  "Statik\u0026Dinamik",
+                                                                 "status":  "needs-transcode-or-compare",
+                                                                 "bookQrKey":  "BAS-STATIK-DINAMIK",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  111.53,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "id":  "kick-technique",
+                                             "title":  "Kick Technique",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "kıck-01",
+                                                                 "title":  "giris",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-01",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  653.7,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-02",
+                                                                 "title":  "esnetme",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-02",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  485.36,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-03",
+                                                                 "title":  "on tekme",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-03",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  320.92,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-04",
+                                                                 "title":  "yan tekme",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-04",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  78.57,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-05",
+                                                                 "title":  "geri tekme",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-05",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  96.19,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-06",
+                                                                 "title":  "diz vurmak",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-06",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  99.8,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-07",
+                                                                 "title":  "kaval vurusu low kick",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-07",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  94.34,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-08",
+                                                                 "title":  "makas kirik",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-08",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  100.78,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-09",
+                                                                 "title":  "mesafe kapama",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-09",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  80.15,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-10",
+                                                                 "title":  "onden gelen tekmeye savunma",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-10",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  253.46,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-11",
+                                                                 "title":  "yandan gelen tekmeye savunma",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-11",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  226.32,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-12",
+                                                                 "title":  "kaval vurusuna savunma",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-12",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  132.37,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-13",
+                                                                 "title":  "geri tekmeye savunma",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-13",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  98.3,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-14",
+                                                                 "title":  "yerde tekme atmak",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-14",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  169.56,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "kıck-15",
+                                                                 "title":  "yerden tekme ile kalkmak",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "KICK-15",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  263.34,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         }
+                                     ]
+                     },
+                     {
+                         "id":  "the-best-defense",
+                         "title":  "The Best Defense",
+                         "access":  "student",
+                         "bookEligible":  true,
+                         "modules":  [
+                                         {
+                                             "id":  "mesafeli-dort-yandan-saldirilara-savunma",
+                                             "title":  "Mesafeli Dört Yandan Saldırılara Savunma",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "m4y-01",
+                                                                 "title":  "tanitim",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "M4Y-01",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  640.21,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "m4y-02",
+                                                                 "title":  "onden mesafeli saldirilar",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "M4Y-02",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  324.16,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "m4y-03",
+                                                                 "title":  "onden mesafeli tutuslu itme",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "M4Y-03",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  270.85,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "m4y-04",
+                                                                 "title":  "yandan mesafeli tutus",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "M4Y-04",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  226.24,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "m4y-05",
+                                                                 "title":  "arkadan mesafeli tutus",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "M4Y-05",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  257.73,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "m4y-06",
+                                                                 "title":  "tek el tutus onden saldiri",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "M4Y-06",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  267.78,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "id":  "yakin-mesafeden-sarmal-saldirilar-bear-hug",
+                                             "title":  "Yakın Mesafeden Sarmal Saldırılar - Bear Hug",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "bh-01",
+                                                                 "title":  "bear hug full mesafesiz saldirilar",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "BH-01",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  723.28,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "bh-02",
+                                                                 "title":  "arkadan mesafesiz tutus kurt kapani",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "BH-02",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  59.09,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "id":  "headlock-wrist-lock",
+                                             "title":  "Headlock \u0026 Wrist Lock",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "hl-01",
+                                                                 "title":  "tanitim",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "HL-01",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  635.69,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "hl-02",
+                                                                 "title":  "bilek isinma",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "HL-02",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  247.17,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "hl-03",
+                                                                 "title":  "boyun kilit yandan",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "HL-03",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  438.53,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "hl-04",
+                                                                 "title":  "boyun kilit arkadan",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "HL-04",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  342.25,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "hl-05",
+                                                                 "title":  "boyun arka kilit cozme",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "HL-05",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  497.49,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "hl-06",
+                                                                 "title":  "giyotin",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "HL-06",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  271.04,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "hl-07",
+                                                                 "title":  "tutuslar kilitler",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "HL-07",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  665.96,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "id":  "ground-fighting",
+                                             "title":  "Ground Fighting / Yer Hareketleri",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "gf-01",
+                                                                 "title":  "giris",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "GF-01",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  640.21,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "gf-02",
+                                                                 "title":  "dusme nasil olmali",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "GF-02",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  248.02,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "gf-03",
+                                                                 "title":  "takla atmak",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "GF-03",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  113.39,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "gf-04",
+                                                                 "title":  "yandan boyun tehdit kol kilit",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "GF-04",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  126.87,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "gf-05",
+                                                                 "title":  "karin ustunden itis",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "GF-05",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  187.28,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "gf-06",
+                                                                 "title":  "yerde ayaklara makas",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "GF-06",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  111.32,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "gf-07",
+                                                                 "title":  "yerde dusme sonrasi tekme savunmasi",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  "GF-07",
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  297.56,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         }
+                                     ]
+                     },
+                     {
+                         "id":  "special",
+                         "title":  "Özel Modüller",
+                         "access":  "special",
+                         "bookEligible":  false,
+                         "modules":  [
+                                         {
+                                             "id":  "on-the-edge",
+                                             "title":  "On The Edge",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "ote-01",
+                                                                 "title":  "360 savunma",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  93.97,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "ote-02",
+                                                                 "title":  "bloklar",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  779.86,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "ote-03",
+                                                                 "title":  "elden alma disarm",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  422.53,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "ote-04",
+                                                                 "title":  "güncelleme",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  276.59,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "ote-05",
+                                                                 "title":  "günxelleme 2",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  162.99,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "ote-06",
+                                                                 "title":  "kilit",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  476.97,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "ote-07",
+                                                                 "title":  "tanıtım",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  640.21,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "ote-08",
+                                                                 "title":  "teori",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  320.55,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "id":  "stick-defense",
+                                             "title":  "Sopa Savunma",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "stıck-01",
+                                                                 "title":  "360 derece savunma sisteminde bambu sopası ile çalışma tekniği",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-02",
+                                                                 "title":  "bacaklara vuruş",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-03",
+                                                                 "title":  "beyzbol vuruşuna karşı savunma",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-04",
+                                                                 "title":  "çapraz saldırılar",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-05",
+                                                                 "title":  "dikey saldırılar",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-06",
+                                                                 "title":  "orta seviye saldırılar",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-07",
+                                                                 "title":  "saldırgan sopayı tutarsa",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-08",
+                                                                 "title":  "sopa çalışma öncesi oyunlar",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-09",
+                                                                 "title":  "sopa el becerileri için uyum çalışması",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-10",
+                                                                 "title":  "sopa ile tüfek_vuruşu_üstten",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-11",
+                                                                 "title":  "sopada kilit sistemi 2",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-12",
+                                                                 "title":  "tanıtım",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-13",
+                                                                 "title":  "yere düştükten sonra sopaya karşı savunma teknikleri",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             },
+                                                             {
+                                                                 "id":  "stıck-14",
+                                                                 "title":  "youtube_eğitim desteği",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  true
+                                                             }
+                                                         ]
+                                         },
+                                         {
+                                             "id":  "line-of-fire",
+                                             "title":  "Line of Fire",
+                                             "lessons":  [
+                                                             {
+                                                                 "id":  "lof-test-01",
+                                                                 "title":  "Tabanca Savunma Test",
+                                                                 "status":  "source-ready",
+                                                                 "bookQrKey":  null,
+                                                                 "videoUrl":  null,
+                                                                 "durationSec":  null,
+                                                                 "required":  false
+                                                             }
+                                                         ]
+                                         }
+                                     ]
+                     }
+                 ],
+    "tests":  {
+                  "tracks":  [
+                                 "P1",
+                                 "P2",
+                                 "P3",
+                                 "P4",
+                                 "P5",
+                                 "G1",
+                                 "G2",
+                                 "G3",
+                                 "G4",
+                                 "G5"
+                             ],
+                  "levelMap":  "test-level-map.json",
+                  "techniqueMap":  "test-technique-map.json",
+                  "assignmentStatus":  "shared-curriculum-ready"
+              }
+}
