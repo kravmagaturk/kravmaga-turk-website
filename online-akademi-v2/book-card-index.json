@@ -954,7 +954,11 @@
       "candidateStandardMedia": [],
       "sourceReviewNote": "Çalışma alanı temsilî 3B inceleme taslağı; özgün minder/çevre pozu bekleniyor.",
       "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B09 metin, kart başlıkları ve G01/G07/G08 temsilî görsel yönü; G02–G06 kaynak/çizim ve QR/baskı açık"
+      }
     },
     {
       "cardId": "B09-G02",
@@ -977,7 +981,11 @@
         "02-dusme-nasil-olmali.mp4"
       ],
       "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B09 metin, kart başlıkları ve G01/G07/G08 temsilî görsel yönü; G02–G06 kaynak/çizim ve QR/baskı açık"
+      }
     },
     {
       "cardId": "B09-G03",
@@ -1003,7 +1011,11 @@
         "03-takla-atmak.mp4"
       ],
       "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B09 metin, kart başlıkları ve G01/G07/G08 temsilî görsel yönü; G02–G06 kaynak/çizim ve QR/baskı açık"
+      }
     },
     {
       "cardId": "B09-G04",
@@ -1024,7 +1036,11 @@
       "candidateStandardMedia": [],
       "sourceReviewNote": "Dengeli kalkışın başlangıç, ara ve bitiş pozu; özgün video zaman kodları bekleniyor.",
       "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B09 metin, kart başlıkları ve G01/G07/G08 temsilî görsel yönü; G02–G06 kaynak/çizim ve QR/baskı açık"
+      }
     },
     {
       "cardId": "B09-G05",
@@ -1047,7 +1063,11 @@
       ],
       "sourceReviewNote": "Mesafe oluşturan kalkış ve tekmeyle kalkış aynı teknik varsayılmıyor; ikinci medya yalnız karşılaştırma. Yer/Tekme Atılması.wmv bu karttan çıkarıldı.",
       "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B09 metin, kart başlıkları ve G01/G07/G08 temsilî görsel yönü; G02–G06 kaynak/çizim ve QR/baskı açık"
+      }
     },
     {
       "cardId": "B09-G06",
@@ -1072,7 +1092,11 @@
         "05-karin-ustunden-itis.mp4"
       ],
       "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B09 metin, kart başlıkları ve G01/G07/G08 temsilî görsel yönü; G02–G06 kaynak/çizim ve QR/baskı açık"
+      }
     },
     {
       "cardId": "B09-G07",
@@ -1088,7 +1112,11 @@
       "candidateStandardMedia": [],
       "sourceReviewNote": "Durdurma işareti temsilî 3B taslak; özgün işaret pozu bekleniyor.",
       "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B09 metin, kart başlıkları ve G01/G07/G08 temsilî görsel yönü; G02–G06 kaynak/çizim ve QR/baskı açık"
+      }
     },
     {
       "cardId": "B09-G08",
@@ -1104,7 +1132,11 @@
       "candidateStandardMedia": [],
       "sourceReviewNote": "Çevre/çıkış temsilî 3B taslak; doğrudan teknik video gerekmeyebilir, çevre yönü kontrol edilecek.",
       "chapterReviewArtifact": "Krav_Maga_B09_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B09 metin, kart başlıkları ve G01/G07/G08 temsilî görsel yönü; G02–G06 kaynak/çizim ve QR/baskı açık"
+      }
     },
     {
       "cardId": "B10-G01",
@@ -1116,7 +1148,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B10-G02",
@@ -1128,7 +1162,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B10-G03",
@@ -1141,19 +1177,35 @@
       "permanentLessonUrl": null,
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
-      "sourceGap": "Original Word has Resim-12/13 heading; adjacent figure photo unavailable. K-026 is object-only."
+      "sourceGap": "Original Word has Resim-12/13 heading; adjacent figure photo unavailable. K-026 is object-only.",
+      "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B10-G04",
       "chapter": "B10 — Kesici Alet ve Sopa Tehdidi",
       "title": "Uzaklaşma ve yardım",
       "sourcePlan": "Farkındalık/senaryo şeması; otomatik teknik QR yok",
-      "artStatus": "eight-card-review-pdf-saved",
+      "artStatus": "book-style-3d-representative-review",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending",
+      "drawingAsset": "generated_images/exec-de5f1563-de56-4e27-b782-805ca0da364a.png",
+      "visualDraftDecision": {
+        "status": "approved",
+        "date": "2026-09-29",
+        "scope": "Yeni B10 G04/G06 3B görsel taslağı; bölüm, kaynak ve baskı kontrolleri açık"
+      },
+      "artPixelDimensions": [
+        1492,
+        1054
+      ],
+      "proofWidthMm": 118,
+      "proofEffectivePpi": 321
     },
     {
       "cardId": "B10-G05",
@@ -1166,20 +1218,36 @@
       "permanentLessonUrl": null,
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
-      "sourceGap": "Original Word has Resim-12/13 heading; adjacent figure photo unavailable. K-026 is object-only."
+      "sourceGap": "Original Word has Resim-12/13 heading; adjacent figure photo unavailable. K-026 is object-only.",
+      "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B10-G06",
       "chapter": "B10 — Kesici Alet ve Sopa Tehdidi",
       "title": "Eğitim maketi",
       "sourcePlan": "Farkındalık/senaryo şeması; otomatik teknik QR yok",
-      "artStatus": "eight-card-review-pdf-saved",
+      "artStatus": "book-style-3d-representative-review",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
-      "sourceArtDraft": "K-026-D · exec-8e675dd8-b5a0-4981-8e6b-8fb42f3de96c.png"
+      "sourceArtDraft": "K-026-D · exec-8e675dd8-b5a0-4981-8e6b-8fb42f3de96c.png",
+      "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending",
+      "drawingAsset": "generated_images/exec-f69abc07-3136-48dd-96f7-920a96abf76d.png",
+      "visualDraftDecision": {
+        "status": "approved",
+        "date": "2026-09-29",
+        "scope": "Yeni B10 G04/G06 3B görsel taslağı; bölüm, kaynak ve baskı kontrolleri açık"
+      },
+      "artPixelDimensions": [
+        1492,
+        1054
+      ],
+      "proofWidthMm": 118,
+      "proofEffectivePpi": 321
     },
     {
       "cardId": "B10-G07",
@@ -1191,7 +1259,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B10-G08",
@@ -1203,7 +1273,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B11-G01",
