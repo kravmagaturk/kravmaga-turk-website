@@ -677,7 +677,11 @@
       "qrStatus": "candidate-only",
       "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
       "chapterReviewArtifact": "Krav_Maga_B08_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B08 metin akışı ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
@@ -693,7 +697,11 @@
       "qrStatus": "candidate-only",
       "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
       "chapterReviewArtifact": "Krav_Maga_B08_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B08 metin akışı ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
@@ -740,7 +748,11 @@
       ],
       "technicalReview": "İki özgün fotoğraf arası teknik sıra ve el katmanları yazar/video ile doğrulanacak; BH/M4Y ayrımı henüz kesin değil.",
       "chapterReviewArtifact": "Krav_Maga_B08_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B08 metin akışı ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      }
     },
     {
       "cardId": "B08-G04",
@@ -790,7 +802,11 @@
         }
       ],
       "chapterReviewArtifact": "Krav_Maga_B08_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B08 metin akışı ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      }
     },
     {
       "cardId": "B08-G05",
@@ -830,7 +846,11 @@
         "scope": "Görsel taslak; teknik kaynak ve baskı doğrulaması açık"
       },
       "chapterReviewArtifact": "Krav_Maga_B08_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B08 metin akışı ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      }
     },
     {
       "cardId": "B08-G06",
@@ -845,7 +865,11 @@
       "qrStatus": "candidate-only",
       "publicationCheck": "Düz/yan/alttan ayrı gerçek kareler",
       "chapterReviewArtifact": "Krav_Maga_B08_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B08 metin akışı ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
@@ -861,7 +885,11 @@
       "qrStatus": "candidate-only",
       "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
       "chapterReviewArtifact": "Krav_Maga_B08_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B08 metin akışı ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
@@ -877,7 +905,11 @@
       "qrStatus": "candidate-only",
       "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
       "chapterReviewArtifact": "Krav_Maga_B08_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B08 metin akışı ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      },
       "printReady": false
     },
     {
@@ -902,7 +934,11 @@
         "WhatsApp Image 2026-09-28 at 12.11.45 (1).jpeg"
       ],
       "chapterReviewArtifact": "Krav_Maga_B08_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B08 metin akışı ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
+      }
     },
     {
       "cardId": "B09-G01",
@@ -913,7 +949,10 @@
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "candidateAcademyLessonIds": [],
+      "candidateStandardMedia": [],
+      "sourceReviewNote": "Çalışma alanı temsilî 3B inceleme taslağı; özgün minder/çevre pozu bekleniyor."
     },
     {
       "cardId": "B09-G02",
@@ -928,7 +967,13 @@
       "candidateSourcePaths": [
         "Yer/Düşme.wmv"
       ],
-      "sourceReviewNote": "undefined Sağlanan Kitap_Son_2.docx önizlemesinde Resim-10/11 yalnız metin atfı; bu sayfalarda görsel bulunmadı."
+      "sourceReviewNote": "Geri/yan düşmenin ayrı başlangıç, temas ve bitiş kareleri aranacak. Kitap_Son_2.docx s.35 Resim-10 yalnız metin atfı; görsel mevcut değil. WMV/MP4 eşliği kanıtlanmadı.",
+      "candidateAcademyLessonIds": [
+        "yer-01"
+      ],
+      "candidateStandardMedia": [
+        "02-dusme-nasil-olmali.mp4"
+      ]
     },
     {
       "cardId": "B09-G03",
@@ -944,7 +989,15 @@
         "Yer/Düşme.wmv",
         "Yer/Takla.wmv"
       ],
-      "sourceReviewNote": "undefined Sağlanan Kitap_Son_2.docx önizlemesinde Resim-10/11 yalnız metin atfı; bu sayfalarda görsel bulunmadı."
+      "sourceReviewNote": "Öne düşme ile takla ayrı hareketler; takla yalnız konu karşılaştırması. Resim-10 görseli sağlanan kitapta yok.",
+      "candidateAcademyLessonIds": [
+        "yer-01",
+        "yer-07"
+      ],
+      "candidateStandardMedia": [
+        "02-dusme-nasil-olmali.mp4",
+        "03-takla-atmak.mp4"
+      ]
     },
     {
       "cardId": "B09-G04",
@@ -958,7 +1011,12 @@
       "printReady": false,
       "candidateSourcePaths": [
         "Yer/Kalkmak.wmv"
-      ]
+      ],
+      "candidateAcademyLessonIds": [
+        "yer-03"
+      ],
+      "candidateStandardMedia": [],
+      "sourceReviewNote": "Dengeli kalkışın başlangıç, ara ve bitiş pozu; özgün video zaman kodları bekleniyor."
     },
     {
       "cardId": "B09-G05",
@@ -971,9 +1029,15 @@
       "permanentLessonUrl": null,
       "printReady": false,
       "candidateSourcePaths": [
-        "Yer/Kalkmak.wmv",
-        "Yer/Tekme Atılması.wmv"
-      ]
+        "Yer/Kalkmak.wmv"
+      ],
+      "candidateAcademyLessonIds": [
+        "yer-03"
+      ],
+      "candidateStandardMedia": [
+        "15-yerden-tekme-ile-kalkmak.mp4"
+      ],
+      "sourceReviewNote": "Mesafe oluşturan kalkış ve tekmeyle kalkış aynı teknik varsayılmıyor; ikinci medya yalnız karşılaştırma. Yer/Tekme Atılması.wmv bu karttan çıkarıldı."
     },
     {
       "cardId": "B09-G06",
@@ -989,7 +1053,14 @@
         "Yer/Karından İtme.wmv",
         "Yer/Yandan Saldırı.wmv"
       ],
-      "sourceReviewNote": "undefined Sağlanan Kitap_Son_2.docx önizlemesinde Resim-10/11 yalnız metin atfı; bu sayfalarda görsel bulunmadı."
+      "sourceReviewNote": "Karından itme ve yandan saldırı ayrı senaryolar; Resim-11 yalnız metin atfı, sağlanan kitapta görsel yok.",
+      "candidateAcademyLessonIds": [
+        "yer-04",
+        "yer-11"
+      ],
+      "candidateStandardMedia": [
+        "05-karin-ustunden-itis.mp4"
+      ]
     },
     {
       "cardId": "B09-G07",
@@ -1000,7 +1071,10 @@
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "candidateAcademyLessonIds": [],
+      "candidateStandardMedia": [],
+      "sourceReviewNote": "Durdurma işareti temsilî 3B taslak; özgün işaret pozu bekleniyor."
     },
     {
       "cardId": "B09-G08",
@@ -1011,7 +1085,10 @@
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "candidateAcademyLessonIds": [],
+      "candidateStandardMedia": [],
+      "sourceReviewNote": "Çevre/çıkış temsilî 3B taslak; doğrudan teknik video gerekmeyebilir, çevre yönü kontrol edilecek."
     },
     {
       "cardId": "B10-G01",
