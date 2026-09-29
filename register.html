@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Krav Maga Türk International Kayıt Sorgulama</title>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search), reg=q.get('reg');
+  if(reg){ location.replace('/diploma-dogrula.html?reg='+encodeURIComponent(String(reg).trim().toUpperCase())); }
+})();
+</script>
 <!-- v57: genel diploma + Junior/Kids/Asistan/Instructor alt seviyeleri + Katılım/Seminer -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -362,9 +368,10 @@ var ADMIN_EMAIL = 'bulicet@gmail.com';
 
 firebase.initializeApp(firebaseConfig);
 var auth = firebase.auth();
+var db = firebase.database();
 var googleProvider = new firebase.auth.GoogleAuthProvider();
 var currentAdminUser = null;
-var SITE_URL = 'https://kravmaga.com.tr/register';
+var SITE_URL = 'https://kravmaga.com.tr/diploma-dogrula.html';
 
 var diplomaData = [];
 var currentPhotoData = '';
@@ -1558,20 +1565,20 @@ function downloadPDF(record, lang){
   record=record||lastSearchedRecord; lang=lang||'tr'; if(!record)return;
   var d=record;
   var templatePromise=loadTemplate('diplomaGeneral').catch(function(){return null;});
-  var logoPromise=prepareLogoBase64().catch(function(){return false;});
-  Promise.all([makeQrDataUrl(buildQrUrl(d.registerNo)),templatePromise,logoPromise]).then(function(parts){
-    var qr=parts[0],template=parts[1],logo=parts[2],jsPDF=window.jspdf.jsPDF;
+  var qrPromise=makeQrDataUrl(buildQrUrl(d.registerNo)).catch(function(){return null;});
+  Promise.all([qrPromise,templatePromise]).then(function(parts){
+    var qr=parts[0],template=parts[1],jsPDF=window.jspdf.jsPDF;
     var W=297,H=210,doc=new jsPDF('l','mm','a4');
     if(!template) throw new Error('diploma-genel.png bulunamadı');
     doc.addImage(template,'PNG',0,0,W,H);
-    if(logo){ try{ doc.addImage(logo,'PNG',15.5,10.5,45.0,45.0); }catch(e){} }
-    addPdfUnicodeText(doc,String(d.studentName||'').toLocaleUpperCase('tr-TR'),148.5,94.8,{fontSize:26,bold:true,family:'Arial'});
-    addPdfUnicodeText(doc,String(d.level||'').toLocaleUpperCase('tr-TR'),148.5,124.5,{fontSize:20,bold:true,family:'Arial'});
-    addPdfUnicodeText(doc,String(d.registerNo||''),38.5,145.2,{fontSize:15,bold:true,family:'Arial'});
-    addPdfUnicodeText(doc,String(d.joinDate||''),38.5,159.3,{fontSize:14,bold:true,family:'Arial'});
-    addPdfUnicodeText(doc,String(d.examDate||''),38.5,177.6,{fontSize:14,bold:true,family:'Arial'});
-    if(d.instructorName) addPdfUnicodeText(doc,String(d.instructorName).toLocaleUpperCase('tr-TR'),141.0,166.0,{fontSize:14,bold:true,family:'Arial'});
-    if(qr) doc.addImage(qr,'PNG',234.0,116.5,42.0,42.0);
+    // diploma-genel.png logolu ana şablondur; ikinci bir logo eklenmez.
+    addPdfUnicodeText(doc,String(d.studentName||'').toLocaleUpperCase('tr-TR'),148.5,95.6,{fontSize:26,bold:true,family:'Arial'});
+    addPdfUnicodeText(doc,String(d.level||'').toLocaleUpperCase('tr-TR'),148.5,124.0,{fontSize:19,bold:true,family:'Arial'});
+    addPdfUnicodeText(doc,String(d.registerNo||''),38.5,132.0,{fontSize:13.5,bold:true,family:'Arial'});
+    addPdfUnicodeText(doc,String(d.joinDate||''),38.5,153.2,{fontSize:13,bold:true,family:'Arial'});
+    addPdfUnicodeText(doc,String(d.examDate||''),38.5,174.2,{fontSize:13,bold:true,family:'Arial'});
+    if(d.instructorName) addPdfUnicodeText(doc,String(d.instructorName).toLocaleUpperCase('tr-TR'),148.5,164.2,{fontSize:13,bold:true,family:'Arial'});
+    if(qr) doc.addImage(qr,'PNG',230.5,112.0,39.0,39.0);
     doc.save('diploma-'+d.registerNo+'.pdf');
     logSecurityEvent('download',{studentName:d.studentName,registerNo:d.registerNo,lang:lang,type:'general_template'});
   }).catch(function(err){ alert('PDF oluşturulamadı: '+err.message); });
@@ -1656,13 +1663,8 @@ async function loadAllDiplomas() {
                 renderDiplomaList();
                 return;
             }
-            const token = await currentAdminUser.getIdToken(true);
-            const response = await fetch(`${FIREBASE_URL}/diplomaData.json?auth=${encodeURIComponent(token)}`);
-            const raw = await response.text();
-            if (!response.ok) {
-                throw new Error(`Firebase HTTP ${response.status}: ${raw}`);
-            }
-            const data = raw ? JSON.parse(raw) : null;
+            const response = await adminFetch('/diplomaData.json',{cache:'no-store'});
+            const data = await response.json();
 
             diplomaData = [];
             if (data && typeof data === 'object') {
