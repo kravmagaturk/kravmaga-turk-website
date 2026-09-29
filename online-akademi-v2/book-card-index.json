@@ -639,7 +639,7 @@
       "cardId": "B08-G04",
       "reviewPage": 45,
       "title": "Bilek ve giysi",
-      "artStatus": "P03 bilek teması",
+      "artStatus": "source-photo-3d-review",
       "sourceCandidate": "HL-07 ana aday; HL-02 destek",
       "academyLessonId": null,
       "academyModuleId": null,
@@ -655,7 +655,18 @@
       "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
       "photoCandidateNote": "Kol/bilek tutuşu aday kareleri; el pozisyonu ve yön kaynaktan doğrulanacak.",
       "sourceVerified": false,
-      "printReady": false
+      "printReady": false,
+      "sourceArtDraft": "generated_images/exec-78f6ddef-8a1e-4002-96db-5bd84cf421f5.png",
+      "artSourcePhoto": "WhatsApp Image 2026-09-28 at 12.11.04.jpeg",
+      "artPixelDimensions": [
+        1086,
+        1448
+      ],
+      "maxSizeAt300PpiMm": [
+        92,
+        123
+      ],
+      "technicalReview": "Kaynak fotoğraftaki iç içe geçen dört el ve temas hattı karşılaştırılacak; üretim hareket sırası veya kilit adı kanıtı değildir."
     },
     {
       "cardId": "B08-G05",
