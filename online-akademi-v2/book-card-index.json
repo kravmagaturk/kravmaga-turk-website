@@ -847,10 +847,7 @@
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false,
-      "candidateAcademyLessonIds": [],
-      "candidateStandardMedia": [],
-      "sourceReviewNote": "Çalışma alanı görseli için özgün Resim 10/11 çevresi ve güvenli minder/çevre pozu taranacak; mevcut 3B görsel temsilî inceleme taslağı."
+      "printReady": false
     },
     {
       "cardId": "B09-G02",
@@ -865,13 +862,7 @@
       "candidateSourcePaths": [
         "Yer/Düşme.wmv"
       ],
-      "candidateAcademyLessonIds": [
-        "yer-01"
-      ],
-      "candidateStandardMedia": [
-        "02-dusme-nasil-olmali.mp4"
-      ],
-      "sourceReviewNote": "Geri/yan yönü ve temas pozları video kareleriyle ayrı doğrulanacak; WMV ve MP4 eşliği kanıtlanmadı."
+      "sourceReviewNote": "undefined Sağlanan Kitap_Son_2.docx önizlemesinde Resim-10/11 yalnız metin atfı; bu sayfalarda görsel bulunmadı."
     },
     {
       "cardId": "B09-G03",
@@ -887,15 +878,7 @@
         "Yer/Düşme.wmv",
         "Yer/Takla.wmv"
       ],
-      "candidateAcademyLessonIds": [
-        "yer-01",
-        "yer-07"
-      ],
-      "candidateStandardMedia": [
-        "02-dusme-nasil-olmali.mp4",
-        "03-takla-atmak.mp4"
-      ],
-      "sourceReviewNote": "Öne düşme ile takla ayrı hareketler; takla dersi yalnız karşılaştırma adayı, öne düşme kanıtı sayılmaz."
+      "sourceReviewNote": "undefined Sağlanan Kitap_Son_2.docx önizlemesinde Resim-10/11 yalnız metin atfı; bu sayfalarda görsel bulunmadı."
     },
     {
       "cardId": "B09-G04",
@@ -909,12 +892,7 @@
       "printReady": false,
       "candidateSourcePaths": [
         "Yer/Kalkmak.wmv"
-      ],
-      "candidateAcademyLessonIds": [
-        "yer-03"
-      ],
-      "candidateStandardMedia": [],
-      "sourceReviewNote": "Dengeli kalkışın başlangıç, ara ve bitiş pozu özgün karelerle doğrulanacak."
+      ]
     },
     {
       "cardId": "B09-G05",
@@ -927,15 +905,9 @@
       "permanentLessonUrl": null,
       "printReady": false,
       "candidateSourcePaths": [
-        "Yer/Kalkmak.wmv"
-      ],
-      "candidateAcademyLessonIds": [
-        "yer-03"
-      ],
-      "candidateStandardMedia": [
-        "15-yerden-tekme-ile-kalkmak.mp4"
-      ],
-      "sourceReviewNote": "Mesafe oluşturan kalkış ve tekmeyle kalkış aynı teknik varsayılmayacak; ikinci medya ayrı karşılaştırma adayı."
+        "Yer/Kalkmak.wmv",
+        "Yer/Tekme Atılması.wmv"
+      ]
     },
     {
       "cardId": "B09-G06",
@@ -951,14 +923,7 @@
         "Yer/Karından İtme.wmv",
         "Yer/Yandan Saldırı.wmv"
       ],
-      "candidateAcademyLessonIds": [
-        "yer-04",
-        "yer-11"
-      ],
-      "candidateStandardMedia": [
-        "05-karin-ustunden-itis.mp4"
-      ],
-      "sourceReviewNote": "Karından itme ve yandan saldırı farklı senaryolar; Resim 11 eşli pozlarıyla konum ayrı doğrulanacak."
+      "sourceReviewNote": "undefined Sağlanan Kitap_Son_2.docx önizlemesinde Resim-10/11 yalnız metin atfı; bu sayfalarda görsel bulunmadı."
     },
     {
       "cardId": "B09-G07",
@@ -969,10 +934,7 @@
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false,
-      "candidateAcademyLessonIds": [],
-      "candidateStandardMedia": [],
-      "sourceReviewNote": "Durdurma işareti için temsilî 3B çizim mevcut; yazarın özgün durdurma pozu ve ders kaynağı aranacak."
+      "printReady": false
     },
     {
       "cardId": "B09-G08",
@@ -983,10 +945,7 @@
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false,
-      "candidateAcademyLessonIds": [],
-      "candidateStandardMedia": [],
-      "sourceReviewNote": "Üstten çevre/çıkış planı için temsilî 3B çizim mevcut; doğrudan tek bir teknik videosu zorunlu değil, kaynak fotoğraf ve yön kontrolü sürüyor."
+      "printReady": false
     },
     {
       "cardId": "B10-G01",
