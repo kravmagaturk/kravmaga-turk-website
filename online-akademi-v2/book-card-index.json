@@ -1832,5 +1832,15 @@
     "sources": "technique and historical photo claims checked against original media",
     "resolution": "minimum effective 300 ppi at final placement",
     "status": "in_progress"
+  },
+  "originalImageAudit": {
+    "sourceDocx": "Kitap_Son_2.docx",
+    "mediaAssets": 190,
+    "photoBearingSources": 27,
+    "logoDiagramTableSources": 15,
+    "layoutShapeFragments": 148,
+    "inventoryArtifact": "Krav_Maga_190_Orijinal_Gorsel_Kaynak_Envanteri_2026-09-29.csv",
+    "auditArtifact": "Krav_Maga_Orijinal_Gorsel_Donusum_Denetimi_2026-09-29.md",
+    "allSourcePhotosConverted": false
   }
 }
