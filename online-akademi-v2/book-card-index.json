@@ -401,7 +401,7 @@
       "cardId": "B06-G01",
       "reviewPage": 29,
       "title": "Duruş karşılaştırması",
-      "artStatus": "two-frame-source-video-supplement-review",
+      "artStatus": "source-video-frame-3d-review-saved",
       "sourceCandidate": "Basic/Duruslar.wmv aday",
       "academyLessonId": "basic-04",
       "academyModuleId": "basic",
@@ -421,8 +421,9 @@
       "frameSourceVideo": "WhatsApp Video 2026-09-28 at 12.11.44.mp4",
       "drawingAsset": "generated_images/exec-a9147c0b-7c57-4cfe-b1ba-ca37bb08e957.png",
       "reviewArtifact": "Krav_Maga_B06_G01_Video_Kareleri_3B_Inceleme_2026-09-29.pdf",
-      "sourceReviewNote": "00:02 ve 00:06 ayakta pozları için kaynaklı 3B inceleme çizimi. Bölüm taslağındaki pasif/yarı savunma/savunma üçlü karşılaştırmasının tamamı değildir; pasif ve adlandırılmış aşamaların özgün gösterimi eksik. Basic/Duruslar.wmv ile aynı çekim doğrulanmadı. 125 mm prova genişliğinde yaklaşık 303 ppi.",
-      "chapterDecisionScope": "B06 görsel ve metin taslağı; teknik doğrulama ve baskı onayı ayrı"
+      "sourceReviewNote": "Ayakta açık duruş ve öne adım özgün video karelerinden çizildi. Basic/Duruslar.wmv ile aynı çekim ve teknik ad henüz doğrulanmadı. Tam iki ayak görünür; 125 mm prova genişliğinde yaklaşık 303 ppi. B09 düşme kaynağı değildir.",
+      "chapterReviewArtifact": "Krav_Maga_B06_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B06-G02",
@@ -435,7 +436,10 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
-      "publicationCheck": "Gergedan/Koç adı ve iki açıdan gerçek poz"
+      "publicationCheck": "Gergedan/Koç adı ve iki açıdan gerçek poz",
+      "chapterReviewArtifact": "Krav_Maga_B06_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending",
+      "printReady": false
     },
     {
       "cardId": "B06-G03",
@@ -448,7 +452,10 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
-      "publicationCheck": "Adım ayak yerleşimi gerçek kare"
+      "publicationCheck": "Adım ayak yerleşimi gerçek kare",
+      "chapterReviewArtifact": "Krav_Maga_B06_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending",
+      "printReady": false
     },
     {
       "cardId": "B06-G04",
@@ -461,7 +468,10 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
-      "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü"
+      "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
+      "chapterReviewArtifact": "Krav_Maga_B06_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending",
+      "printReady": false
     },
     {
       "cardId": "B06-G05",
@@ -475,7 +485,10 @@
       "permanentLessonUrl": null,
       "qrStatus": "exact-source-match-awaiting-route-access-and-book-entitlement",
       "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
-      "bookAccessScope": "core-candidate-awaiting-lesson-publication"
+      "bookAccessScope": "core-candidate-awaiting-lesson-publication",
+      "chapterReviewArtifact": "Krav_Maga_B06_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending",
+      "printReady": false
     },
     {
       "cardId": "B06-G06",
@@ -488,7 +501,10 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
-      "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü"
+      "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
+      "chapterReviewArtifact": "Krav_Maga_B06_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending",
+      "printReady": false
     },
     {
       "cardId": "B07-G01",
