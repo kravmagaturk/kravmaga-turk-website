@@ -1150,7 +1150,11 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B10 metin akışı ve sekiz kartın farkındalık/güvenlik görsel yönü; kaynak, uzman, QR ve baskı açık"
+      }
     },
     {
       "cardId": "B10-G02",
@@ -1164,7 +1168,11 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B10 metin akışı ve sekiz kartın farkındalık/güvenlik görsel yönü; kaynak, uzman, QR ve baskı açık"
+      }
     },
     {
       "cardId": "B10-G03",
@@ -1179,7 +1187,11 @@
       "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "sourceGap": "Original Word has Resim-12/13 heading; adjacent figure photo unavailable. K-026 is object-only.",
       "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B10 metin akışı ve sekiz kartın farkındalık/güvenlik görsel yönü; kaynak, uzman, QR ve baskı açık"
+      }
     },
     {
       "cardId": "B10-G04",
@@ -1193,7 +1205,11 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B10 metin akışı ve sekiz kartın farkındalık/güvenlik görsel yönü; kaynak, uzman, QR ve baskı açık"
+      },
       "drawingAsset": "generated_images/exec-de5f1563-de56-4e27-b782-805ca0da364a.png",
       "visualDraftDecision": {
         "status": "approved",
@@ -1220,7 +1236,11 @@
       "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "sourceGap": "Original Word has Resim-12/13 heading; adjacent figure photo unavailable. K-026 is object-only.",
       "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B10 metin akışı ve sekiz kartın farkındalık/güvenlik görsel yönü; kaynak, uzman, QR ve baskı açık"
+      }
     },
     {
       "cardId": "B10-G06",
@@ -1235,7 +1255,11 @@
       "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "sourceArtDraft": "K-026-D · exec-8e675dd8-b5a0-4981-8e6b-8fb42f3de96c.png",
       "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B10 metin akışı ve sekiz kartın farkındalık/güvenlik görsel yönü; kaynak, uzman, QR ve baskı açık"
+      },
       "drawingAsset": "generated_images/exec-f69abc07-3136-48dd-96f7-920a96abf76d.png",
       "visualDraftDecision": {
         "status": "approved",
@@ -1261,7 +1285,11 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B10 metin akışı ve sekiz kartın farkındalık/güvenlik görsel yönü; kaynak, uzman, QR ve baskı açık"
+      }
     },
     {
       "cardId": "B10-G08",
@@ -1275,7 +1303,11 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B10_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B10_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": {
+        "status": "draft-approved",
+        "date": "2026-09-29",
+        "scope": "B10 metin akışı ve sekiz kartın farkındalık/güvenlik görsel yönü; kaynak, uzman, QR ve baskı açık"
+      }
     },
     {
       "cardId": "B11-G01",
@@ -1287,7 +1319,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B11_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B11-G02",
@@ -1299,7 +1333,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B11_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B11-G03",
@@ -1311,19 +1347,30 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B11_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B11-G04",
       "chapter": "B11 — Ateşli Silah Tehdidi ve Uygulama Güvenliği",
       "title": "Yardım çağrısı",
       "sourcePlan": "Farkındalık/senaryo şeması; otomatik teknik QR yok",
-      "artStatus": "eight-card-review-pdf-saved",
+      "artStatus": "book-style-3d-representative-review",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B11_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending",
+      "drawingAsset": "generated_images/exec-9d631fff-a3aa-443c-a28d-7a9de5bb9350.png",
+      "artPixelDimensions": [
+        1492,
+        1054
+      ],
+      "proofWidthMm": 118,
+      "proofEffectivePpi": 321
     },
     {
       "cardId": "B11-G05",
@@ -1335,7 +1382,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B11_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B11-G06",
@@ -1348,19 +1397,30 @@
       "permanentLessonUrl": null,
       "printReady": false,
       "sourceGap": "Original Word has Resim-14 heading but no embedded technical image in its weapon section; later memoir photos are unrelated.",
-      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B11_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B11-G07",
       "chapter": "B11 — Ateşli Silah Tehdidi ve Uygulama Güvenliği",
       "title": "Eşli uygulama sınırı",
       "sourcePlan": "Farkındalık/senaryo şeması; otomatik teknik QR yok",
-      "artStatus": "eight-card-review-pdf-saved",
+      "artStatus": "book-style-3d-representative-review",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B11_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending",
+      "drawingAsset": "generated_images/exec-ea4d1c03-f676-4acc-870d-69cedf561382.png",
+      "artPixelDimensions": [
+        1492,
+        1054
+      ],
+      "proofWidthMm": 118,
+      "proofEffectivePpi": 321
     },
     {
       "cardId": "B11-G08",
@@ -1372,7 +1432,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B11_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B11_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B12-G01",
