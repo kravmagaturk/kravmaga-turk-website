@@ -548,7 +548,7 @@
       "cardId": "B07-G05",
       "reviewPage": 39,
       "title": "Diz",
-      "artStatus": "source-photo-3d-review",
+      "artStatus": "book-style-source-photo-review",
       "sourceCandidate": "KICK-06 / 06-diz-vurmak.mp4",
       "academyLessonId": null,
       "academyModuleId": null,
@@ -564,7 +564,7 @@
       "photoCandidateNote": "Diz teması aday; güvenli poz ve sıra yazar/video kontrolünde.",
       "sourceVerified": false,
       "printReady": false,
-      "sourceArtDraft": "generated_images/exec-30f13661-8f98-460a-8bfd-219aee0fac1f.png",
+      "sourceArtDraft": "generated_images/exec-c175debc-b02e-4e35-adbe-615c31f47f05.png",
       "artSourcePhoto": "WhatsApp Image 2026-09-28 at 12.11.16.jpeg",
       "artPixelDimensions": [
         1086,
@@ -574,7 +574,10 @@
         92,
         123
       ],
-      "technicalReview": "Diz açısı ve ayak konumu özgün fotoğrafla tam eşleştirilecek; temas/teknik etiketi henüz doğrulanmadı."
+      "technicalReview": "Diz açısı ve ayak konumu özgün fotoğrafla tam eşleştirilecek; temas/teknik etiketi henüz doğrulanmadı.",
+      "previousTransparentDraft": "generated_images/exec-30f13661-8f98-460a-8bfd-219aee0fac1f.png",
+      "styleReference": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf (B07/B08 red mat, black outfit, warm wall)",
+      "reviewProof": "Krav_Maga_B07_B08_Kaynak_Stil_Inceleme_2026-09-29.pdf"
     },
     {
       "cardId": "B07-G06",
@@ -657,7 +660,7 @@
       "cardId": "B08-G04",
       "reviewPage": 45,
       "title": "Bilek ve giysi",
-      "artStatus": "source-photo-3d-review",
+      "artStatus": "book-style-source-photo-review",
       "sourceCandidate": "HL-07 ana aday; HL-02 destek",
       "academyLessonId": null,
       "academyModuleId": null,
@@ -674,7 +677,7 @@
       "photoCandidateNote": "Kol/bilek tutuşu aday kareleri; el pozisyonu ve yön kaynaktan doğrulanacak.",
       "sourceVerified": false,
       "printReady": false,
-      "sourceArtDraft": "generated_images/exec-78f6ddef-8a1e-4002-96db-5bd84cf421f5.png",
+      "sourceArtDraft": "generated_images/exec-8c008ef5-faa8-4faa-8de5-b52adc8708cc.png",
       "artSourcePhoto": "WhatsApp Image 2026-09-28 at 12.11.04.jpeg",
       "artPixelDimensions": [
         1086,
@@ -684,7 +687,10 @@
         92,
         123
       ],
-      "technicalReview": "Kaynak fotoğraftaki iç içe geçen dört el ve temas hattı karşılaştırılacak; üretim hareket sırası veya kilit adı kanıtı değildir."
+      "technicalReview": "Kaynak fotoğraftaki iç içe geçen dört el ve temas hattı karşılaştırılacak; üretim hareket sırası veya kilit adı kanıtı değildir.",
+      "previousTransparentDraft": "generated_images/exec-78f6ddef-8a1e-4002-96db-5bd84cf421f5.png",
+      "styleReference": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf (B07/B08 red mat, black outfit, warm wall)",
+      "reviewProof": "Krav_Maga_B07_B08_Kaynak_Stil_Inceleme_2026-09-29.pdf"
     },
     {
       "cardId": "B08-G05",
