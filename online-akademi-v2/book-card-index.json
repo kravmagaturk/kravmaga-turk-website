@@ -548,7 +548,7 @@
       "cardId": "B07-G05",
       "reviewPage": 39,
       "title": "Diz",
-      "artStatus": "P14 diz pozu",
+      "artStatus": "source-photo-3d-review",
       "sourceCandidate": "KICK-06 / 06-diz-vurmak.mp4",
       "academyLessonId": null,
       "academyModuleId": null,
@@ -563,7 +563,18 @@
       "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
       "photoCandidateNote": "Diz teması aday; güvenli poz ve sıra yazar/video kontrolünde.",
       "sourceVerified": false,
-      "printReady": false
+      "printReady": false,
+      "sourceArtDraft": "generated_images/exec-30f13661-8f98-460a-8bfd-219aee0fac1f.png",
+      "artSourcePhoto": "WhatsApp Image 2026-09-28 at 12.11.16.jpeg",
+      "artPixelDimensions": [
+        1086,
+        1448
+      ],
+      "maxSizeAt300PpiMm": [
+        92,
+        123
+      ],
+      "technicalReview": "Diz açısı ve ayak konumu özgün fotoğrafla tam eşleştirilecek; temas/teknik etiketi henüz doğrulanmadı."
     },
     {
       "cardId": "B07-G06",
