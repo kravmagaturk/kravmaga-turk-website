@@ -186,3 +186,16 @@ Yayın hedefi: bugün canlı sayfaya geçiş; ancak canlıya almadan hemen önce
 - Canlı medya denetimi: 94/94 ders erişilebilir.
 - Canlı güvenlik denetimi: 94 ders, PC yolu sızıntısı yok, B2 doğrudan adres sızıntısı yok, yetkisiz api/me 401, doğrudan video 401, admin 403, kitap QR kapsamı yalnız çekirdek 18 ders.
 - Backblaze günlük yükleme/storage cap uyarısı yeni yükleme URL'sini geçici olarak engelleyebilir; mevcut canlı 94 ders için ek yükleme gerekmiyor.
+
+## Canlı Son Durum — 2026-09-29
+- Canlı adres: https://kravmaga.com.tr/online-akademi
+- HTTP: sayfa 200, katalog 200.
+- Müfredat: 94 ders.
+- Ana sıra: Basic Combatives / The Best Defense / Materyal.
+- Krav Maga Kitap Görsel Eğitim: 18 kitap-QR dersi.
+- Canlı güvenlik denetimi geçti: PC yolu sızıntısı yok, doğrudan B2 adres sızıntısı yok, yetkisiz API/video/admin erişimleri engelli.
+- Canlı medya denetimi geçti: 94/94 ders erişilebilir.
+- B2: 93 benzersiz fiziksel nesne, 94 ders. stick-01 ve stick-14 aynı SHA1 içeriği paylaştığı için tek nesne bilinçli kullanılıyor.
+- B2 toplam sürüm boyutu: yaklaşık 8.42 GiB.
+- Kitap QR referans dosyası ChatGPT Library'ye senkronlandı: KITAP-QR-KRAV-MAGA-KITAP-GORSEL-EGITIM.md.
+- GitHub canlı yedek dalı: online-akademi-v2-live.
