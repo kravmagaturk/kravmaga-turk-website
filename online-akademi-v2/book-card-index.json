@@ -1858,14 +1858,15 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B15_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B15_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": "draft-approved",
       "drawingAsset": "generated_images/exec-3e60d25c-56ef-4921-b542-1909f68a9e63.png",
       "artPixelDimensions": [
         1536,
         1024
       ],
       "proofWidthMm": 118,
-      "proofEffectivePpi": 331
+      "proofEffectivePpi": 331,
+      "chapterDecisionScope": "B15 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B15-G02",
@@ -1879,7 +1880,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B15_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B15_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "B15 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B15-G03",
@@ -1893,7 +1895,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B15_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B15_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "B15 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B15-G04",
@@ -1907,14 +1910,15 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B15_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B15_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": "draft-approved",
       "drawingAsset": "generated_images/exec-0bb786f4-3a4d-42e9-89cd-d30ca1f9a6f5.png",
       "artPixelDimensions": [
         1536,
         1024
       ],
       "proofWidthMm": 118,
-      "proofEffectivePpi": 331
+      "proofEffectivePpi": 331,
+      "chapterDecisionScope": "B15 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B15-G05",
@@ -1928,7 +1932,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B15_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B15_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "B15 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B15-G06",
@@ -1942,7 +1947,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B15_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B15_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "B15 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B15-G07",
@@ -1956,7 +1962,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B15_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B15_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "B15 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B15-G08",
@@ -1970,7 +1977,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B15_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B15_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "B15 metin akışı ve sekiz kartın görsel taslak yönü; kaynak, kişi izni, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B16-G01",
@@ -1982,19 +1990,30 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B16-G02",
       "chapter": "B16 — Acil Durum ve Güvenli Uzaklaşma",
       "title": "İki çıkış",
       "sourcePlan": "Mevcut bölüm metni/gerçek fotoğraf; sahne şeması",
-      "artStatus": "eight-card-review-pdf-saved",
+      "artStatus": "book-style-3d-representative-review",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending",
+      "drawingAsset": "generated_images/exec-61757429-a4b3-4e25-ae4f-30a4294f9236.png",
+      "artPixelDimensions": [
+        1672,
+        940
+      ],
+      "proofWidthMm": 118,
+      "proofEffectivePpi": 360
     },
     {
       "cardId": "B16-G03",
@@ -2006,7 +2025,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B16-G04",
@@ -2018,7 +2039,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B16-G05",
@@ -2030,7 +2053,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B16-G06",
@@ -2042,7 +2067,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B16-G07",
@@ -2054,7 +2081,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B16-G08",
@@ -2066,7 +2095,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B17-G01",
