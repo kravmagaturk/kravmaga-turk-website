@@ -7,7 +7,8 @@
     "QR points to permanent Academy lesson route after authenticated access check, never video storage endpoint.",
     "M4Y and BH are separate families. BH has 2 current Udemy source videos.",
     "No automatic book QR for On The Edge, Line of Fire, blades, firearms, stick or Materyal.",
-    "No QR is print-ready; source candidates need frame and instructor verification."
+    "No QR is print-ready; source candidates need frame and instructor verification.",
+    "Selamlama is a separate supplemental panel on B03-G03 until its own Academy lesson and source frames are registered; do not reuse the Kida QR for it."
   ],
   "cards": [
     {
@@ -193,7 +194,27 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "qrStatus": "exact-source-match-awaiting-route-and-access",
-      "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü"
+      "publicationCheck": "Kida ve selamlama ayrı başlık; özgün poz/kare, yüz, ayak ve el konumu, kalıcı URL, erişim ve 300 ppi baskı kontrolü",
+      "supplementalPanels": [
+        {
+          "panelId": "B03-G03-S",
+          "title": "Selamlama",
+          "sourceCandidate": "Online Akademi özgün selamlama fotoğraf/video kareleri beklenecek",
+          "academyLessonId": null,
+          "bookQrKey": null,
+          "permanentLessonUrl": null,
+          "artStatus": "source-pending",
+          "frameTimecodes": [],
+          "sourcePhotoIds": [],
+          "sourceVerified": false,
+          "printReady": false
+        }
+      ],
+      "technicalId": "BAS-KIDA",
+      "frameTimecodes": [],
+      "sourcePhotoIds": [],
+      "sourceVerified": false,
+      "printReady": false
     },
     {
       "cardId": "B03-G04",
@@ -392,7 +413,12 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "qrStatus": "exact-source-match-awaiting-route-and-access",
-      "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü"
+      "publicationCheck": "Metin, başlık, görsel ve erişim son kontrolü",
+      "technicalId": "BAS-DURUS",
+      "frameTimecodes": [],
+      "sourcePhotoIds": [],
+      "sourceVerified": false,
+      "printReady": false
     },
     {
       "cardId": "B06-G02",
