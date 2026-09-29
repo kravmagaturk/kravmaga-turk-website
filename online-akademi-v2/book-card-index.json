@@ -564,7 +564,7 @@
       "photoCandidateNote": "Diz teması aday; güvenli poz ve sıra yazar/video kontrolünde.",
       "sourceVerified": false,
       "printReady": false,
-      "sourceArtDraft": "generated_images/exec-c175debc-b02e-4e35-adbe-615c31f47f05.png",
+      "sourceArtDraft": "generated_images/exec-6705e772-5f95-4c7a-b393-e27b599c3246.png",
       "artSourcePhoto": "WhatsApp Image 2026-09-28 at 12.11.16.jpeg",
       "artPixelDimensions": [
         1086,
@@ -574,10 +574,12 @@
         92,
         123
       ],
-      "technicalReview": "Diz açısı ve ayak konumu özgün fotoğrafla tam eşleştirilecek; temas/teknik etiketi henüz doğrulanmadı.",
+      "technicalReview": "Sol yükseltilmiş bacak, alt bacak ve ayak ayrı görünür; kaynak diz açısı ve temas doğrulaması sürer.",
       "previousTransparentDraft": "generated_images/exec-30f13661-8f98-460a-8bfd-219aee0fac1f.png",
       "styleReference": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf (B07/B08 red mat, black outfit, warm wall)",
-      "reviewProof": "Krav_Maga_B07_B08_Kaynak_Stil_Inceleme_2026-09-29.pdf"
+      "reviewProof": "Krav_Maga_B07_B08_Kaynak_Stil_Inceleme_2026-09-29.pdf",
+      "previousStyleDraft": "generated_images/exec-c175debc-b02e-4e35-adbe-615c31f47f05.png",
+      "correctedTransparentDraft": "generated_images/exec-952e750c-b256-44fb-9833-7c94a4d3d1c9.png"
     },
     {
       "cardId": "B07-G06",
@@ -635,7 +637,7 @@
       "cardId": "B08-G03",
       "reviewPage": 44,
       "title": "Yakın sarılma",
-      "artStatus": "P20/P22 arka sarılma",
+      "artStatus": "book-style-source-photo-sequence-review",
       "sourceCandidate": "BH-01 ve BH-02; yalnız 2 video",
       "academyLessonId": null,
       "academyModuleId": null,
@@ -654,7 +656,26 @@
       "photoSourceArchive": "istediğin teknikresimler arka planı alma elbiseyi sen ayarla önceki çizimlere uygun olsun.zip",
       "photoCandidateNote": "Yakın ve arkadan sarılma aday kareleri; teknik aile BH/M4Y ayrımı doğrulanacak.",
       "sourceVerified": false,
-      "printReady": false
+      "printReady": false,
+      "sourceArtDrafts": [
+        {
+          "photo": "WhatsApp Image 2026-09-28 at 12.11.45 (2).jpeg",
+          "art": "generated_images/exec-4a422980-8965-4e54-a910-d348dcd69055.png",
+          "stage": "sarılma başlangıcı adayı"
+        },
+        {
+          "photo": "WhatsApp Image 2026-09-28 at 12.11.46.jpeg",
+          "art": "generated_images/exec-3849bba5-d45c-4e92-bc7e-f525889c16f9.png",
+          "stage": "önde el kontrolü adayı"
+        }
+      ],
+      "styleReference": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
+      "reviewProof": "Krav_Maga_B08_G03_Kaynakli_3B_Inceleme_2026-09-29.pdf",
+      "artPixelDimensions": [
+        1024,
+        1536
+      ],
+      "technicalReview": "İki özgün fotoğraf arası teknik sıra ve el katmanları yazar/video ile doğrulanacak; BH/M4Y ayrımı henüz kesin değil."
     },
     {
       "cardId": "B08-G04",
