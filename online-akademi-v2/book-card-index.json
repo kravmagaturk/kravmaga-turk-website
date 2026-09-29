@@ -551,7 +551,12 @@
       ],
       "styleReference": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
       "technicalReview": "Tam ayak/kadraj kontrol edildi; tek kare hareket adı ve temas hedefi için kesin kaynak değildir.",
-      "reviewProof": "Krav_Maga_B07_G04_B08_G05_Kaynak_Stil_Inceleme_2026-09-29.pdf"
+      "reviewProof": "Krav_Maga_B07_G04_B08_G05_Kaynak_Stil_Inceleme_2026-09-29.pdf",
+      "authorDecision": {
+        "status": "visual-draft-approved",
+        "date": "2026-09-29",
+        "scope": "Görsel taslak; teknik kaynak ve baskı doğrulaması açık"
+      }
     },
     {
       "cardId": "B07-G05",
@@ -690,7 +695,7 @@
       "cardId": "B08-G04",
       "reviewPage": 45,
       "title": "Bilek ve giysi",
-      "artStatus": "book-style-source-photo-review",
+      "artStatus": "book-style-source-photo-sequence-review",
       "sourceCandidate": "HL-07 ana aday; HL-02 destek",
       "academyLessonId": null,
       "academyModuleId": null,
@@ -717,10 +722,22 @@
         92,
         123
       ],
-      "technicalReview": "Kaynak fotoğraftaki iç içe geçen dört el ve temas hattı karşılaştırılacak; üretim hareket sırası veya kilit adı kanıtı değildir.",
+      "technicalReview": "İki kare için hangi el/kolun kontrolü ve hareket sırası yazar/video ile doğrulanacak.",
       "previousTransparentDraft": "generated_images/exec-78f6ddef-8a1e-4002-96db-5bd84cf421f5.png",
       "styleReference": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf (B07/B08 red mat, black outfit, warm wall)",
-      "reviewProof": "Krav_Maga_B07_B08_Kaynak_Stil_Inceleme_2026-09-29.pdf"
+      "reviewProof": "Krav_Maga_B08_G04_Kol_Bilek_Cift_Kare_Inceleme_2026-09-29.pdf",
+      "sourceArtDrafts": [
+        {
+          "photo": "WhatsApp Image 2026-09-28 at 12.11.03.jpeg",
+          "art": "generated_images/exec-1c5417eb-8a9f-46c5-adbe-b6c41b553bc8.png",
+          "stage": "ilk temas adayı"
+        },
+        {
+          "photo": "WhatsApp Image 2026-09-28 at 12.11.04.jpeg",
+          "art": "generated_images/exec-8c008ef5-faa8-4faa-8de5-b52adc8708cc.png",
+          "stage": "kol kontrolü adayı"
+        }
+      ]
     },
     {
       "cardId": "B08-G05",
@@ -753,7 +770,12 @@
         1024,
         1536
       ],
-      "technicalReview": "Baş/kol yerleşimi görünüyor; boyun güvenliği anlatımı ve el katmanı video/yazar kontrolünde. Saç tutuşu diye etiketlenmeyecek."
+      "technicalReview": "Baş/kol yerleşimi görünüyor; boyun güvenliği anlatımı ve el katmanı video/yazar kontrolünde. Saç tutuşu diye etiketlenmeyecek.",
+      "authorDecision": {
+        "status": "visual-draft-approved",
+        "date": "2026-09-29",
+        "scope": "Görsel taslak; teknik kaynak ve baskı doğrulaması açık"
+      }
     },
     {
       "cardId": "B08-G06",
