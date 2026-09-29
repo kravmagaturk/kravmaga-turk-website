@@ -73,7 +73,10 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
-      "publicationCheck": "Yüz benzerliği ve kullanım izni"
+      "publicationCheck": "Yüz benzerliği ve kullanım izni",
+      "sourceArtDraft": "K-002-D · exec-343a0db2-0303-4e3a-ae6b-2057d2418229.png",
+      "sourceVerified": false,
+      "printReady": false
     },
     {
       "cardId": "B01-G06",
@@ -255,7 +258,11 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "qrStatus": "candidate-only",
-      "publicationCheck": "K-015 tür ve sayı doğrulaması"
+      "publicationCheck": "K-015 tür ve sayı doğrulaması",
+      "sourceArtDraft": "K-015-D",
+      "sourceReviewArtifact": "Krav_Maga_K015_Ekipman_Kaynaga_Bagli_3B_Kart_2026-09-29.pdf",
+      "sourceVerified": false,
+      "printReady": false
     },
     {
       "cardId": "B04-G03",
