@@ -1716,88 +1716,96 @@
       "chapter": "B20 — Mezuniyet ve Öğrenci Tanıklıkları",
       "title": "Mezuniyet öncesi",
       "sourcePlan": "Arşiv fotoğrafı, belge ve kişi doğrulaması",
-      "artStatus": "planned-source-pending",
+      "artStatus": "source-mapping-review-pdf-saved",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "reviewArtifact": "Krav_Maga_B20_8_Kart_Tam_Inceleme_2026-09-29.pdf"
     },
     {
       "cardId": "B20-G02",
       "chapter": "B20 — Mezuniyet ve Öğrenci Tanıklıkları",
       "title": "Sınav sonrası",
       "sourcePlan": "Arşiv fotoğrafı, belge ve kişi doğrulaması",
-      "artStatus": "planned-source-pending",
+      "artStatus": "source-mapping-review-pdf-saved",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "reviewArtifact": "Krav_Maga_B20_8_Kart_Tam_Inceleme_2026-09-29.pdf"
     },
     {
       "cardId": "B20-G03",
       "chapter": "B20 — Mezuniyet ve Öğrenci Tanıklıkları",
       "title": "Nilüfer",
       "sourcePlan": "Arşiv fotoğrafı, belge ve kişi doğrulaması",
-      "artStatus": "planned-source-pending",
+      "artStatus": "source-mapping-review-pdf-saved",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "reviewArtifact": "Krav_Maga_B20_8_Kart_Tam_Inceleme_2026-09-29.pdf"
     },
     {
       "cardId": "B20-G04",
       "chapter": "B20 — Mezuniyet ve Öğrenci Tanıklıkları",
       "title": "Semiha",
       "sourcePlan": "Arşiv fotoğrafı, belge ve kişi doğrulaması",
-      "artStatus": "planned-source-pending",
+      "artStatus": "source-mapping-review-pdf-saved",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "reviewArtifact": "Krav_Maga_B20_8_Kart_Tam_Inceleme_2026-09-29.pdf"
     },
     {
       "cardId": "B20-G05",
       "chapter": "B20 — Mezuniyet ve Öğrenci Tanıklıkları",
       "title": "Ayşe G.",
       "sourcePlan": "Arşiv fotoğrafı, belge ve kişi doğrulaması",
-      "artStatus": "planned-source-pending",
+      "artStatus": "source-mapping-review-pdf-saved",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "reviewArtifact": "Krav_Maga_B20_8_Kart_Tam_Inceleme_2026-09-29.pdf"
     },
     {
       "cardId": "B20-G06",
       "chapter": "B20 — Mezuniyet ve Öğrenci Tanıklıkları",
       "title": "Tanıklık kartı",
       "sourcePlan": "Arşiv fotoğrafı, belge ve kişi doğrulaması",
-      "artStatus": "planned-source-pending",
+      "artStatus": "source-mapping-review-pdf-saved",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "reviewArtifact": "Krav_Maga_B20_8_Kart_Tam_Inceleme_2026-09-29.pdf"
     },
     {
       "cardId": "B20-G07",
       "chapter": "B20 — Mezuniyet ve Öğrenci Tanıklıkları",
       "title": "Fotoğraf dönüşümü",
       "sourcePlan": "Arşiv fotoğrafı, belge ve kişi doğrulaması",
-      "artStatus": "planned-source-pending",
+      "artStatus": "source-mapping-review-pdf-saved",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "reviewArtifact": "Krav_Maga_B20_8_Kart_Tam_Inceleme_2026-09-29.pdf"
     },
     {
       "cardId": "B20-G08",
       "chapter": "B20 — Mezuniyet ve Öğrenci Tanıklıkları",
       "title": "Kitap kapanışı",
       "sourcePlan": "Arşiv fotoğrafı, belge ve kişi doğrulaması",
-      "artStatus": "planned-source-pending",
+      "artStatus": "eight-card-review-pdf-saved",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
-      "printReady": false
+      "printReady": false,
+      "reviewArtifact": "Krav_Maga_B20_8_Kart_Tam_Inceleme_2026-09-29.pdf"
     }
   ],
   "productionGate": {
