@@ -1,4 +1,17 @@
 (function () {
+  function ensureBrowserLogo() {
+    let icon = document.querySelector('link[rel~="icon"]');
+    if (!icon) {
+      icon = document.createElement("link");
+      icon.rel = "icon";
+      document.head.appendChild(icon);
+    }
+    icon.type = "image/png";
+    icon.href = "/assets/brand/logo-1948.png";
+  }
+
+  ensureBrowserLogo();
+
   function injectSharedStyles() {
     if (document.getElementById("kmt-shared-layout-styles")) return;
 
