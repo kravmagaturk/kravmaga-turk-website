@@ -261,7 +261,7 @@
                 <a href="krav-maga.html">Krav Maga</a>
                 <a href="ozel-dersler.html">Özel Dersler</a>
                 <a href="cocuk-krav-maga.html">Çocuk Dersleri</a>
-                <a href="online-akademi.html">Eğitim Modül</a>
+                <a href="online-akademi.html">Online Eğitim</a>
               </div>
             </div>
 

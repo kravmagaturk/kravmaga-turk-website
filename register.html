@@ -11,8 +11,8 @@
 })();
 </script>
 <!-- v57: genel diploma + Junior/Kids/Asistan/Instructor alt seviyeleri + Katılım/Seminer -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="/qrcode.min.js"></script>
+<script src="/jspdf.umd.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
 <style>
@@ -1415,13 +1415,13 @@ function downloadStudentListPDF(){
 // === A4 DIKEY PNG SERTIFIKA SABLONLARI ===
 // GitHub ana dizinindeki gerçek PNG şablon dosyaları.
 var TEMPLATE_FILES = {
-  diplomaTr: ['https://raw.githubusercontent.com/kravmagaturk/international-register/main/yeni_master_2.png'],
-  diplomaGeneral: ['https://raw.githubusercontent.com/kravmagaturk/international-register/main/diploma-genel.png'],
-  registryInfo: ['https://raw.githubusercontent.com/kravmagaturk/international-register/main/sicil-pdf.png'],
-  diplomaEn: ['https://raw.githubusercontent.com/kravmagaturk/international-register/main/yeni_master_2.png'],
-  honorTr: ['https://raw.githubusercontent.com/kravmagaturk/international-register/main/yeni_master_2.png'],
-  honorEn: ['https://raw.githubusercontent.com/kravmagaturk/international-register/main/yeni_master_2.png'],
-  instructorId: ['https://raw.githubusercontent.com/kravmagaturk/international-register/main/instructor-id-template.png']
+  diplomaTr: ['/yeni_master_2.png'],
+  diplomaGeneral: ['/diploma-genel.png'],
+  registryInfo: ['/sicil-pdf.png'],
+  diplomaEn: ['/yeni_master_2.png'],
+  honorTr: ['/yeni_master_2.png'],
+  honorEn: ['/yeni_master_2.png'],
+  instructorId: ['/instructor-id-template.png']
 };
 var templateCache = {};
 function loadImageAsDataURL(url){
