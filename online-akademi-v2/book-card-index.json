@@ -749,7 +749,9 @@
       "chapterAuthorDecision": "pending",
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 40
+      "collectionReviewPage": 40,
+      "sourceReviewNote": "2026-10-01 SUP audit: this card is an instructional-flow diagram, not a technical strike sequence. Existing representative instructor/student/observer scene may be retained with separate stages for demonstration, slow attempt, controlled repetition, paired context and evaluation. Boxes must not imply that the pictured people are consecutive movement frames. Equipment placement, lesson order and any QR lesson remain open; sourceVerified=false and printReady=false.",
+      "sourceVerified": false
     },
     {
       "cardId": "B07-G07",
@@ -767,7 +769,9 @@
       "chapterAuthorDecision": "pending",
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 41
+      "collectionReviewPage": 41,
+      "sourceReviewNote": "2026-10-01 SUP audit: this card is a representative distance/material panel, not a fixed-distance technical prescription. Current three-person scene and control boxes may illustrate reach, balance and equipment conditions without asserting a universal meter value or strike distance. Bag/material type, target height, application range and any QR lesson remain open; sourceVerified=false and printReady=false.",
+      "sourceVerified": false
     },
     {
       "cardId": "B08-G01",
