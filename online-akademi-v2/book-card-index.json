@@ -477,7 +477,7 @@
       "frameSourceVideo": "WhatsApp Video 2026-09-28 at 12.11.44.mp4",
       "drawingAsset": "generated_images/exec-a9147c0b-7c57-4cfe-b1ba-ca37bb08e957.png",
       "reviewArtifact": "Krav_Maga_B06_G01_Video_Kareleri_3B_Inceleme_2026-09-29.pdf",
-      "sourceReviewNote": "Ayakta açık duruş ve öne adım özgün video karelerinden çizildi. Basic/Duruslar.wmv ile aynı çekim ve teknik ad henüz doğrulanmadı. Tam iki ayak görünür; 125 mm prova genişliğinde yaklaşık 303 ppi. B09 düşme kaynağı değildir. 2026-10-01 new-chat SUP visual audit: 00:02 open stance and 00:06 forward-step source frames compared with the two-panel 3D proof. Pose distinction is clear, but Basic/Duruslar.wmv identity and named stance mapping remain unverified. Keep sourceVerified=false and printReady=false.",
+      "sourceReviewNote": "Ayakta açık duruş ve öne adım özgün video karelerinden çizildi. Basic/Duruslar.wmv ile aynı çekim ve teknik ad henüz doğrulanmadı. Tam iki ayak görünür; 125 mm prova genişliğinde yaklaşık 303 ppi. B09 düşme kaynağı değildir. 2026-10-01 new-chat SUP visual audit: 00:02 open stance and 00:06 forward-step source frames compared with the two-panel 3D proof. Pose distinction is clear, but Basic/Duruslar.wmv identity and named stance mapping remain unverified. Keep sourceVerified=false and printReady=false. 2026-10-01 SUP B06 source audit: source manuscript explicitly names three stance categories: Pasif defense, Semi Defense, and Savaşçı duruşu. Current WhatsApp source video only supports two observed poses (00:02 open stance, 00:06 forward-step) and does not by itself establish the full named three-stance set or their exact labels. Keep sourceVerified=false and printReady=false until named stance-to-pose mapping is sourced.",
       "chapterReviewArtifact": "Krav_Maga_B06_Bolum_Onay_Dosyasi_2026-09-29.pdf",
       "chapterAuthorDecision": "pending",
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
@@ -499,7 +499,8 @@
       "chapterAuthorDecision": "pending",
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 30
+      "collectionReviewPage": 30,
+      "sourceReviewNote": "2026-10-01 SUP B06 source audit: source manuscript describes Gergedan duruşu as one hand/elbow contacting the head and the other open hand extended approximately one arm length, but no front/side original pose is currently available. The editorial question whether Gergedan and Koç are the same current Academy stance remains open. No technical drawing should be finalized from text alone."
     },
     {
       "cardId": "B06-G03",
@@ -517,7 +518,8 @@
       "chapterAuthorDecision": "pending",
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 31
+      "collectionReviewPage": 31,
+      "sourceReviewNote": "2026-10-01 SUP B06 source audit: source manuscript states forward/backward movement and says the left foot should remain in front, but the current project intentionally does not generalize this as a universal rule without author confirmation. No original front/side foot-placement photo or short video was found. Existing card remains a direction-map draft only; sourceVerified=false and printReady=false."
     },
     {
       "cardId": "B06-G04",
