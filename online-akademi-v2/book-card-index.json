@@ -627,7 +627,8 @@
       "chapterAuthorDecision": "pending",
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 37
+      "collectionReviewPage": 37,
+      "sourceReviewNote": "2026-10-01 SUP source reconciliation: legacy B08 scope addendum records P21 as the close-contact elbow pose, while the later 23-photo ZIP mapping groups 001-003 as B07-G03/B08-G01 candidates. These labels are not assumed to be the same numbering system. Independent elbow type/contact verification and source-number crosswalk are still required. Basic/Dirsekler.wmv is the current lesson-file candidate, not proof that a specific photo is the definitive elbow frame."
     },
     {
       "cardId": "B07-G04",
@@ -710,7 +711,7 @@
       "chapterAuthorDecision": "pending",
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
       "collectionReviewPage": 39,
-      "sourceReviewNote": "2026-10-01 new-chat SUP visual audit: 12.11.16 source and 3D knee proof compared. Reconstructed lower leg/foot and exact knee target/angle remain technical review items. Keep sourceVerified=false and printReady=false."
+      "sourceReviewNote": "2026-10-01 new-chat SUP visual audit: 12.11.16 source and 3D knee proof compared. Reconstructed lower leg/foot and exact knee target/angle remain technical review items. Keep sourceVerified=false and printReady=false. 2026-10-01 SUP source reconciliation: legacy scope addendum records P14 as the knee pose, while the later 23-photo ZIP mapping places 004-005 and 008-010 in knee/contact candidate groups. These labels are not silently equated. The 12.11.16 source drawing remains a draft; exact knee target/angle and source-number crosswalk are open. kick-technique/06-diz-vurmak.mp4 is the current named lesson source, but photo-to-video identity is not yet established."
     },
     {
       "cardId": "B07-G06",
