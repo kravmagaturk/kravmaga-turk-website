@@ -856,7 +856,7 @@
       "cardId": "B08-G04",
       "reviewPage": 45,
       "title": "Bilek ve giysi",
-      "artStatus": "book-style-source-photo-sequence-review",
+      "artStatus": "photo-derived-3d-review",
       "sourceCandidate": "HL-07 ana aday; HL-02 destek",
       "academyLessonId": null,
       "academyModuleId": null,
@@ -906,7 +906,17 @@
         "scope": "B08 metin akışı ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
       },
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 45
+      "collectionReviewPage": 45,
+      "drawingAsset": "generated_images/exec-2bacf59e-a990-4534-937a-f42f1b5930a8.png",
+      "proofWidthMm": 85,
+      "proofEffectivePpi": 325,
+      "drawingReviewArtifact": "B08_G04_Bilek_El_Temasi_Kaynak_Cizim_Inceleme.pdf",
+      "sourcePhoto": {
+        "libraryFileId": "libfile_e7cdadfda33c8191923103aa0ba279db",
+        "zipMember": "WhatsApp Image 2026-09-28 at 12.11.14.jpeg",
+        "poseInventoryNumber": 3
+      },
+      "sourceReviewNote": "Source003 full-size viewed; source008/010 separately classified, not inferred sequential. Wrist/contact exact anatomy remains technical review. Max width91.9mm at300ppi."
     },
     {
       "cardId": "B08-G05",
