@@ -2377,7 +2377,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B19_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B19-G02",
@@ -2389,7 +2391,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B19_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B19-G03",
@@ -2401,7 +2405,10 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B19_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending",
+      "sourceReviewNote": "K-180 military document shows Aubagne 06.05.1993; manuscript says 1994. Document date and event chronology require separate author/provenance verification."
     },
     {
       "cardId": "B19-G04",
@@ -2413,7 +2420,10 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B19_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending",
+      "sourceReviewNote": "K-178 source is a static group holding white kepis, not a walking scene; K-179 is multirow group. Persons, count, historical uniform period and permissions remain open."
     },
     {
       "cardId": "B19-G05",
@@ -2425,19 +2435,30 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B19_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B19-G06",
       "chapter": "B19 — Lejyon ve Eğitmenlik Anıları",
       "title": "Eğitmenlik",
       "sourcePlan": "Arşiv fotoğrafı, belge ve kişi doğrulaması",
-      "artStatus": "eight-card-review-pdf-saved",
+      "artStatus": "book-style-3d-representative-review",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B19_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending",
+      "drawingAsset": "generated_images/exec-66aa824a-0f0f-4e0b-8110-f9f5310f3a45.png",
+      "artPixelDimensions": [
+        1536,
+        1024
+      ],
+      "proofWidthMm": 118,
+      "proofEffectivePpi": 331
     },
     {
       "cardId": "B19-G07",
@@ -2449,7 +2470,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B19_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B19-G08",
@@ -2461,7 +2484,10 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B19_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B19_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending",
+      "sourceReviewNote": "K-178/179/180 originals inspected; no facial identity match asserted, personal document fields excluded from new review PDF."
     },
     {
       "cardId": "B20-G01",
@@ -2630,6 +2656,8 @@
       300,
       150
     ],
-    "physicalPrintProofVerified": false
+    "physicalPrintProofVerified": false,
+    "liveRetestAt": "2026-10-01",
+    "liveRetest": "Actual QR reopened and tested in new tab; same curriculum load error, zero lessons, no first video playback verified in this environment. Does not establish mobile regression or root cause."
   }
 }
