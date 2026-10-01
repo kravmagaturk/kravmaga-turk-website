@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="/assets/brand/logo-1948.png">
+<link rel="apple-touch-icon" href="/assets/brand/logo-1948.png">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <title>Online Eğitim | Krav Maga Türk</title>
 <meta name="description" content="Krav Maga Türk Online Eğitim: Basic Combatives, The Best Defense, materyal eğitimleri, seviye test hazırlığı ve ilerleme takibi.">
@@ -80,6 +82,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
 <div class="wrap footerNote">© Krav Maga Türk • Online Eğitim</div>
 </main>
 
+<script type="application/json" id="kmtCatalogData">{"sections":[]}</script>
 <script>
 (() => {
   const API='https://kravmaga-online-video.bulicet.workers.dev';
@@ -212,7 +215,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
   $('logoutBtn').onclick=async()=>{try{await api('/api/student-logout',{method:'POST'});}catch{}session='';profile=null;progress={};sessionStorage.removeItem('kmtStudentSession');playerEl.pause();playerEl.removeAttribute('src');playerEl.load();playerEl.classList.add('hidden');emptyState.classList.remove('hidden');updateLoginState();};
 
   const pre=params.get('reg');if(pre)$('regInput').value=pre.toUpperCase();
-  fetch('online-akademi-katalog.json',{cache:'no-store'}).then(r=>r.json()).then(async d=>{
+  Promise.resolve(JSON.parse($('kmtCatalogData').textContent||'{"sections":[]}')).then(async d=>{
     catalog=d;await restoreSession();updateLoginState();if(profile)await loadProgress();
     if(wantedLesson){const l=flatLessons().find(x=>x.id===wantedLesson);if(l){activeSection=l.sectionId;renderNav();renderLessons();if(profile)openLesson(l);else{$('nowTitle').textContent=l.title;$('nowMeta').textContent='Dersi izlemek için öğrenci şifrenizle giriş yapın.';}}}
   }).catch(()=>{$('lessonList').innerHTML='<div class="error" style="padding:18px">Müfredat verisi yüklenemedi.</div>';});
