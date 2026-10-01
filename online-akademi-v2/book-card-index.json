@@ -794,7 +794,7 @@
       "cardId": "B08-G03",
       "reviewPage": 44,
       "title": "Yakın sarılma",
-      "artStatus": "book-style-source-photo-sequence-review",
+      "artStatus": "photo-derived-3d-review",
       "sourceCandidate": "BH-01 ve BH-02; yalnız 2 video",
       "academyLessonId": null,
       "academyModuleId": null,
@@ -840,7 +840,17 @@
         "scope": "B08 metin akışı ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
       },
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 44
+      "collectionReviewPage": 44,
+      "drawingAsset": "generated_images/exec-60cd252b-d33a-45bf-b308-0a535f789b25.png",
+      "proofWidthMm": 85,
+      "proofEffectivePpi": 306,
+      "drawingReviewArtifact": "B08_G03_Arkadan_Sarilma_Kaynak_Cizim_Inceleme.pdf",
+      "sourcePhoto": {
+        "libraryFileId": "libfile_e7cdadfda33c8191923103aa0ba279db",
+        "zipMember": "WhatsApp Image 2026-09-28 at 12.11.45 (2).jpeg",
+        "poseInventoryNumber": 19
+      },
+      "sourceReviewNote": "Source019 used for static rear embrace pose; anatomical visual review completed; exact grip and technique sequence remain technical review. Maximum width86.7mm at300ppi."
     },
     {
       "cardId": "B08-G04",
