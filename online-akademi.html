@@ -188,11 +188,12 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
     try{const d=await api('/api/me');profile=d.user;return true;}catch{session='';sessionStorage.removeItem('kmtStudentSession');return false;}
   }
   function updateLoginState(){
+    const loginBox=$('loginBox'),logoutBtn=$('logoutBtn'),userText=$('userText'),accessText=$('accessText');
     if(profile){
-      $('loginBox').classList.add('hidden');$('logoutBtn').classList.remove('hidden');$('userText').textContent=(profile.display_name||profile.registerNo||'Öğrenci');
-      $('accessText').textContent=profile.sessionMode==='book'?'Kitap QR erişimi':'Online eğitim erişimi';
+      if(loginBox)loginBox.classList.add('hidden');if(logoutBtn)logoutBtn.classList.remove('hidden');if(userText)userText.textContent=(profile.display_name||profile.registerNo||'Öğrenci');
+      if(accessText)accessText.textContent=profile.sessionMode==='book'?'Kitap QR erişimi':'Online eğitim erişimi';
     }else{
-      $('loginBox').classList.remove('hidden');$('logoutBtn').classList.add('hidden');$('userText').textContent='';$('accessText').textContent='Giriş bekleniyor';
+      if(loginBox)loginBox.classList.remove('hidden');if(logoutBtn)logoutBtn.classList.add('hidden');if(userText)userText.textContent='';if(accessText)accessText.textContent='Giriş bekleniyor';
       if(isBookEntry){$('loginTitle').textContent='Kitap QR Öğrenci Girişi';$('loginInfo').textContent='Kitap görsel eğitimine erişmek için sicil numaranızı ve size verilen 5 haneli öğrenci şifresini girin.';$('studentLoginBtn').textContent='Kitap Eğitimine Gir';}
     }
     renderNav();renderLessons();updateMetrics();
@@ -218,7 +219,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
   Promise.resolve(JSON.parse($('kmtCatalogData').textContent||'{"sections":[]}')).then(async d=>{
     catalog=d;await restoreSession();updateLoginState();if(profile)await loadProgress();
     if(wantedLesson){const l=flatLessons().find(x=>x.id===wantedLesson);if(l){activeSection=l.sectionId;renderNav();renderLessons();if(profile)openLesson(l);else{$('nowTitle').textContent=l.title;$('nowMeta').textContent='Dersi izlemek için öğrenci şifrenizle giriş yapın.';}}}
-  }).catch(()=>{$('lessonList').innerHTML='<div class="error" style="padding:18px">Müfredat verisi yüklenemedi.</div>';});
+  }).catch(e=>{console.error('Online akademi başlatılamadı',e);if(!catalog){$('lessonList').innerHTML='<div class="error" style="padding:18px">Müfredat verisi yüklenemedi.</div>';}else{renderNav();renderLessons();updateMetrics();}});
 })();
 </script>
 <script src="assets/footer.js" defer></script>
