@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.2-draft",
-  "updated": "2026-09-29",
+  "updated": "2026-10-01",
   "source": "KITAP-AKADEMI-ENTEGRASYON.md Library v3; Krav_Maga_50_Kart_QR_ve_Baski_Kontrol_Cizelgesi_2026-09-28.md; courses.json branch online-akademi-v2",
   "scope": "B01–B20, 146 planned cards",
   "rules": [
@@ -1992,7 +1992,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "Yazar 1 Ekim'de sonraki bölüme devam talimatı verdi; B16 taslak sonrası geçiş onayı. Özgün poz, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B16-G02",
@@ -2006,14 +2007,15 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending",
+      "chapterAuthorDecision": "draft-approved",
       "drawingAsset": "generated_images/exec-61757429-a4b3-4e25-ae4f-30a4294f9236.png",
       "artPixelDimensions": [
         1672,
         940
       ],
       "proofWidthMm": 118,
-      "proofEffectivePpi": 360
+      "proofEffectivePpi": 360,
+      "chapterDecisionScope": "Yazar 1 Ekim'de sonraki bölüme devam talimatı verdi; B16 taslak sonrası geçiş onayı. Özgün poz, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B16-G03",
@@ -2027,7 +2029,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "Yazar 1 Ekim'de sonraki bölüme devam talimatı verdi; B16 taslak sonrası geçiş onayı. Özgün poz, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B16-G04",
@@ -2041,7 +2044,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "Yazar 1 Ekim'de sonraki bölüme devam talimatı verdi; B16 taslak sonrası geçiş onayı. Özgün poz, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B16-G05",
@@ -2055,7 +2059,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "Yazar 1 Ekim'de sonraki bölüme devam talimatı verdi; B16 taslak sonrası geçiş onayı. Özgün poz, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B16-G06",
@@ -2069,7 +2074,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "Yazar 1 Ekim'de sonraki bölüme devam talimatı verdi; B16 taslak sonrası geçiş onayı. Özgün poz, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B16-G07",
@@ -2083,7 +2089,8 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "Yazar 1 Ekim'de sonraki bölüme devam talimatı verdi; B16 taslak sonrası geçiş onayı. Özgün poz, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B16-G08",
@@ -2097,19 +2104,29 @@
       "printReady": false,
       "reviewArtifact": "Krav_Maga_B16_8_Kart_Tam_Inceleme_2026-09-29.pdf",
       "chapterReviewArtifact": "Krav_Maga_B16_Bolum_Onay_Dosyasi_2026-09-29.pdf",
-      "chapterAuthorDecision": "pending"
+      "chapterAuthorDecision": "draft-approved",
+      "chapterDecisionScope": "Yazar 1 Ekim'de sonraki bölüme devam talimatı verdi; B16 taslak sonrası geçiş onayı. Özgün poz, uzman, QR ve baskı açık"
     },
     {
       "cardId": "B17-G01",
       "chapter": "B17 — Çocuklar İçin Yetişkin Rehberi",
       "title": "Güvenli yetişkin",
       "sourcePlan": "Mevcut bölüm metni/gerçek fotoğraf; sahne şeması",
-      "artStatus": "eight-card-review-pdf-saved",
+      "artStatus": "book-style-3d-representative-review",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B17_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending",
+      "drawingAsset": "generated_images/exec-d2afefbf-b9c3-4593-b228-c9ec1d600437.png",
+      "artPixelDimensions": [
+        1536,
+        1024
+      ],
+      "proofWidthMm": 118,
+      "proofEffectivePpi": 331
     },
     {
       "cardId": "B17-G02",
@@ -2121,7 +2138,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B17_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B17-G03",
@@ -2133,7 +2152,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B17_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B17-G04",
@@ -2145,7 +2166,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B17_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B17-G05",
@@ -2157,19 +2180,30 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B17_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B17-G06",
       "chapter": "B17 — Çocuklar İçin Yetişkin Rehberi",
       "title": "Kids sınıfı",
       "sourcePlan": "Mevcut bölüm metni/gerçek fotoğraf; sahne şeması",
-      "artStatus": "eight-card-review-pdf-saved",
+      "artStatus": "book-style-3d-representative-review",
       "sourceVerified": false,
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B17_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending",
+      "drawingAsset": "generated_images/exec-b959e596-0eb5-4da8-a18e-0dfcd4baaf41.png",
+      "artPixelDimensions": [
+        1536,
+        1024
+      ],
+      "proofWidthMm": 118,
+      "proofEffectivePpi": 331
     },
     {
       "cardId": "B17-G07",
@@ -2181,7 +2215,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B17_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B17-G08",
@@ -2193,7 +2229,9 @@
       "bookQrKey": null,
       "permanentLessonUrl": null,
       "printReady": false,
-      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf"
+      "reviewArtifact": "Krav_Maga_B17_8_Kart_Tam_Inceleme_2026-09-29.pdf",
+      "chapterReviewArtifact": "Krav_Maga_B17_Bolum_Onay_Dosyasi_2026-10-01.pdf",
+      "chapterAuthorDecision": "pending"
     },
     {
       "cardId": "B18-G01",
@@ -2508,5 +2546,14 @@
     "bookQrAccess": "book-scoped entitlement to eligible lessons after sign-in",
     "externalPaidAccess": "future plan; inactive",
     "publicationStatus": "contract-draft-awaiting-route-and-entitlement-verification"
+  },
+  "bookQrSourceUpdate": {
+    "reportedAt": "2026-10-01",
+    "reportedBy": "author",
+    "curriculumName": "Krav Maga Kitap Görsel Eğitim",
+    "localFilePath": "C:\\Users\\RDC-GUEST\\OneDrive\\Masaüstü\\KRAV MAGA VIDEO DUZENLEME\\1. Basic Combatives\\Krav Maga Kitap Görsel Eğitim\\00-Kitap-Gorsel-Egitim-QR-Logolu.png",
+    "status": "author-reported-file-awaiting-access-and-qr-decoding",
+    "qrTargetVerified": false,
+    "printReady": false
   }
 }
