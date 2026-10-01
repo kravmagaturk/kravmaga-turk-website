@@ -500,7 +500,12 @@
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
       "collectionReviewPage": 30,
-      "sourceReviewNote": "2026-10-01 SUP B06 source audit: source manuscript describes Gergedan duruşu as one hand/elbow contacting the head and the other open hand extended approximately one arm length, but no front/side original pose is currently available. The editorial question whether Gergedan and Koç are the same current Academy stance remains open. No technical drawing should be finalized from text alone."
+      "sourceReviewNote": "2026-10-01 SUP B06 source audit: source manuscript describes Gergedan duruşu as one hand/elbow contacting the head and the other open hand extended approximately one arm length, but no front/side original pose is currently available. The editorial question whether Gergedan and Koç are the same current Academy stance remains open. No technical drawing should be finalized from text alone. 2026-10-01 author source update: two new original photos received in chat for Gergedan/Koç. gergedan.jpg provides full-body/foot placement in a three-quarter view; gergedan2.jpg provides a closer frontal technical view with one forearm/elbow shielding the head and the opposite open hand extended. These photos now provide authentic author-pose evidence for the card. A strict true side-profile reference is still not present, so side-view anatomy remains open. Do not mark printReady until the 3D conversion, final pose comparison and page-size ppi check are completed.",
+      "sourcePhotoIds": [
+        "gergedan.jpg",
+        "gergedan2.jpg"
+      ],
+      "sourceVerified": false
     },
     {
       "cardId": "B06-G03",
