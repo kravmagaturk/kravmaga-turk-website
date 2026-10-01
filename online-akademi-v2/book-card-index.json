@@ -2590,8 +2590,46 @@
     "reportedBy": "author",
     "curriculumName": "Krav Maga Kitap Görsel Eğitim",
     "localFilePath": "C:\\Users\\RDC-GUEST\\OneDrive\\Masaüstü\\KRAV MAGA VIDEO DUZENLEME\\1. Basic Combatives\\Krav Maga Kitap Görsel Eğitim\\00-Kitap-Gorsel-Egitim-QR-Logolu.png",
-    "status": "author-reported-file-awaiting-access-and-qr-decoding",
+    "status": "decoded-print-design-v2-live-curriculum-load-failed",
     "qrTargetVerified": false,
-    "printReady": false
+    "printReady": false,
+    "fileReceived": true,
+    "receivedFiles": [
+      {
+        "name": "qr kod",
+        "pixelDimensions": [
+          1900,
+          2240
+        ]
+      },
+      {
+        "name": "qr_kod-2.png",
+        "pixelDimensions": [
+          1737,
+          2048
+        ]
+      }
+    ],
+    "qrDecodeVerified": true,
+    "sameTarget": true,
+    "targetRoutePattern": "https://kravmaga.com.tr/online-akademi/kitap/[book-key]",
+    "targetSha256": "d690b4fcfea41ae15cdc2e5337953cbb8aa775b16fcfdc695d6a53918e581673",
+    "livePageOpened": true,
+    "livePageTest": "Book mode removed login box but showed Müfredat verisi yüklenemedi on initial visit and one reload; no lessons or playback verified",
+    "videoPlaybackVerified": false,
+    "printDesignArtifact": "Krav_Maga_Kitap_QR_Baski_V2.pdf",
+    "pngArtifact": "Krav_Maga_Kitap_QR_Baski_V2.png",
+    "layoutMm": [
+      90,
+      125
+    ],
+    "qrOuterMm": 60,
+    "vectorQr": true,
+    "digitalDecodeDpiTests": [
+      600,
+      300,
+      150
+    ],
+    "physicalPrintProofVerified": false
   }
 }
