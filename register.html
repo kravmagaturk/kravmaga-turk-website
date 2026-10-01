@@ -6,8 +6,20 @@
 <link rel="icon" type="image/png" href="https://kravmaga.com.tr/assets/brand/logo-1948.png">
 <link rel="apple-touch-icon" href="https://kravmaga.com.tr/assets/brand/logo-1948.png">
 <meta name="description" content="Krav Maga Türk öğrenci, eğitmen ve diploma kayıt sorgulama ekranı.">
-<link rel="canonical" href="https://kravmaga.com.tr/register">
 <title>Krav Maga Türk International Kayıt Sorgulama</title>
+<link rel="canonical" href="https://kravmaga.com.tr/register">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Krav Maga T&#252;rk">
+<meta property="og:title" content="Krav Maga Türk International Kayıt Sorgulama">
+<meta property="og:description" content="Krav Maga Türk öğrenci, eğitmen ve diploma kayıt sorgulama ekranı.">
+<meta property="og:url" content="https://kravmaga.com.tr/register">
+<meta property="og:image" content="https://kravmaga.com.tr/assets/brand/logo-1948.png">
+<meta property="og:image:alt" content="Krav Maga Turk International kayit sorgulama">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Krav Maga Türk International Kayıt Sorgulama">
+<meta name="twitter:description" content="Krav Maga Türk öğrenci, eğitmen ve diploma kayıt sorgulama ekranı.">
+<meta name="twitter:image" content="https://kravmaga.com.tr/assets/brand/logo-1948.png">
 <!-- v62: online eğitim erişim alanı + genel diploma + Junior/Kids/Asistan/Instructor alt seviyeleri + Katılım/Seminer -->
 <script src="qrcode.min.js"></script>
 <script src="jspdf.umd.min.js"></script>
@@ -348,7 +360,7 @@ body:after{content:"KRAV MAGA TÜRK";position:fixed;right:3vw;top:66%;font-size:
 
 <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
   <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-  <img id="lightbox-img" src="">
+  <img id="lightbox-img" src="" alt="BÃ¼yÃ¼tÃ¼lmÃ¼ÅŸ Ã¶ÄŸrenci profil gÃ¶rseli">
 </div>
 <div id="pdf-qr-hidden" style="position:absolute;left:-9999px;top:-9999px;"></div>
 
@@ -2393,7 +2405,7 @@ function renderDiplomaList(filtered, isFiltering){
       '<span class="badge-passive" onclick="event.stopPropagation();toggleStatus('+i+')">'+t('statusInactive')+'</span>' :
       '<span class="badge-active" onclick="event.stopPropagation();toggleStatus('+i+')">'+t('statusActive')+'</span>';
     var photoHtml = d.photo ?
-      '<div class="photo-frame" onclick="event.stopPropagation();openLightbox(\''+d.photo+'\')" style="cursor:pointer;"><img src="'+d.photo+'"></div>' :
+      '<div class="photo-frame" onclick="event.stopPropagation();openLightbox(\''+d.photo+'\')" style="cursor:pointer;"><img src="'+d.photo+'" alt="Ogrenci profil fotografi"></div>' :
       '<div class="photo-frame empty">'+t('noPhotoLabel')+'</div>';
     var docs = recordDocuments(d);
     var documentMenus = '';
