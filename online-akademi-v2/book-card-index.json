@@ -912,7 +912,7 @@
       "cardId": "B08-G05",
       "reviewPage": 46,
       "title": "Boyun güvenliği",
-      "artStatus": "book-style-head-arm-source-review",
+      "artStatus": "photo-derived-3d-review",
       "sourceCandidate": "HL-03 / 03-boyun-kilit-yandan.mp4",
       "academyLessonId": null,
       "academyModuleId": null,
@@ -936,8 +936,8 @@
       "sourceArtDraft": "generated_images/exec-d508757c-fb93-4857-a4ea-3ddac4810f6a.png",
       "reviewProof": "Krav_Maga_B07_G04_B08_G05_Kaynak_Stil_Inceleme_2026-09-29.pdf",
       "artPixelDimensions": [
-        1024,
-        1536
+        1086,
+        1448
       ],
       "technicalReview": "Baş/kol yerleşimi görünüyor; boyun güvenliği anlatımı ve el katmanı video/yazar kontrolünde. Saç tutuşu diye etiketlenmeyecek.",
       "authorDecision": {
@@ -952,7 +952,17 @@
         "scope": "B08 metin akışı ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
       },
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 46
+      "collectionReviewPage": 46,
+      "drawingAsset": "generated_images/exec-666d027c-a51c-4006-a810-7d23443f7fd6.png",
+      "proofWidthMm": 85,
+      "proofEffectivePpi": 325,
+      "drawingReviewArtifact": "B08_G05_Yan_Boyun_Tutusu_Kaynak_Cizim_Inceleme.pdf",
+      "sourcePhoto": {
+        "libraryFileId": "libfile_e7cdadfda33c8191923103aa0ba279db",
+        "zipMember": "WhatsApp Image 2026-09-28 at 12.11.40 (1).jpeg",
+        "poseInventoryNumber": 13
+      },
+      "sourceReviewNote": "Source013 full-size reviewed, static side head/neck hold. Sources011/015 inspected and not asserted as sequential steps. Source frame edges and exact contact need technical review; max uncropped300ppi width91.9mm."
     },
     {
       "cardId": "B08-G06",
