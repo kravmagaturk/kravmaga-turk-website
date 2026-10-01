@@ -1014,7 +1014,7 @@
       "cardId": "B08-G09",
       "reviewPage": 50,
       "title": "Saç tutuşu",
-      "artStatus": "source-photo-match-rejected",
+      "artStatus": "photo-derived-3d-review",
       "sourceCandidate": "M4Y/BH adayı; ana ders seçilmedi",
       "academyLessonId": null,
       "academyModuleId": null,
@@ -1038,7 +1038,20 @@
         "scope": "B08 metin akışı ve görsel taslak yönü; teknik kaynak, QR ve baskı kontrolleri açık"
       },
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 50
+      "collectionReviewPage": 50,
+      "drawingAsset": "generated_images/exec-8cc1194c-367d-4194-a33d-4c7baee81a62.png",
+      "artPixelDimensions": [
+        1024,
+        1536
+      ],
+      "proofWidthMm": 85,
+      "proofEffectivePpi": 306,
+      "sourcePhoto": {
+        "libraryFileId": "libfile_e7cdadfda33c8191923103aa0ba279db",
+        "zipMember": "WhatsApp Image 2026-09-28 at 12.11.46 (1).jpeg",
+        "poseInventoryNumber": 22
+      },
+      "sourceReviewNote": "Source pose022 opened full size. Hair contact and author likeness used; technique sequence not independently verified. 300ppi requires <=86.7mm width before cropping."
     },
     {
       "cardId": "B09-G01",
@@ -2829,7 +2842,7 @@
     "militaryIdArtifact": "K180_Kisisel_Alanlari_Kapatilmis_Belge.pdf",
     "diplomaDates": "KMG 2014 issue and 2016 expiry distinct; 2016/2018 appointments need corresponding evidence",
     "printReady": false,
-    "militaryIdPublication": "Blank illustrative card; headings only, no original image, personal data, place or date"
+    "militaryIdPublication": "Card contains only Bülent Çetin name; no headings, photo, numbers, signatures, place or date"
   },
   "pressArchiveSource": {
     "url": "https://kravmaga.com.tr/basin",
@@ -2872,5 +2885,13 @@
     "titleDecision": "author correction; Wikipedia already uses Krav",
     "catalogVariant": "Kraw retained in retailer record",
     "wikipediaEdited": false
+  },
+  "readerOnlineAccess": {
+    "decidedAt": "2026-10-01",
+    "visibleUrlText": false,
+    "accessMethod": "QR codes with short topic labels for videos and other online references",
+    "internalUrlRegistry": true,
+    "appliesTo": "all reader-facing book pages; prior draft visible URLs require layout conversion",
+    "qrChecks": "decode target, route/video access and physical print proof before final print"
   }
 }
