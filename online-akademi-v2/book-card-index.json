@@ -606,7 +606,9 @@
       "chapterAuthorDecision": "pending",
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 35
+      "collectionReviewPage": 35,
+      "sourceReviewNote": "2026-10-01 SUP source audit: Library review found no selected original photo/video frame for the open-hand family. Existing art is explicitly representative only. Palm-heel vs slap must remain separate and unlabeled until author-supplied front/side start-end references are available. sourceVerified=false; printReady=false.",
+      "sourceVerified": false
     },
     {
       "cardId": "B07-G02",
@@ -624,7 +626,9 @@
       "chapterAuthorDecision": "pending",
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 36
+      "collectionReviewPage": 36,
+      "sourceReviewNote": "2026-10-01 SUP source audit: Library review found no selected original photo/video frame for the punch family. Existing art is representative only and does not establish straight, side, uppercut or hammer-fist subtypes. Wrist alignment, subtype naming and start/contact/end frames remain open. sourceVerified=false; printReady=false.",
+      "sourceVerified": false
     },
     {
       "cardId": "B07-G03",
