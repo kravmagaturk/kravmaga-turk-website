@@ -2945,6 +2945,20 @@
     "accessMethod": "QR codes with short topic labels for videos and other online references",
     "internalUrlRegistry": true,
     "appliesTo": "all reader-facing book pages; prior draft visible URLs require layout conversion",
-    "qrChecks": "decode target, route/video access and physical print proof before final print"
-  }
+    "qrChecks": "decode target, route/video access and physical print proof before final print",
+    "bookSubscriptionRoute": "https://kravmaga.com.tr/online-akademi/kitap-abonelik",
+    "flow": "Printed book master QR opens the free Kitap Okuyucusu subscription page; reader verifies email; after verification the site displays that reader's private access QR for video training.",
+    "paymentRequired": false,
+    "authorProvidedAt": "2026-10-01",
+    "liveVerified": false,
+    "printCopyShort": "Kitap Video Eğitimleri\nQR kodu okutun, ücretsiz Kitap Okuyucusu aboneliğinizi oluşturun ve e-posta adresinizi doğrulayın. Doğrulama sonrası video eğitimlerine erişim sağlayan özel QR kodunuz otomatik olarak gösterilecektir.\n\nÜcretsizdir — ödeme bilgisi istenmez."
+  },
+  "pendingAuthorSources": [
+    {
+      "cardId": "B07-G02",
+      "expected": "yumruk fotoğrafı",
+      "note": "Author said on 2026-10-01 that a punch photo will be taken and sent tomorrow. Do not invent or finalize the punch pose before that source arrives.",
+      "status": "awaiting-author-photo"
+    }
+  ]
 }
