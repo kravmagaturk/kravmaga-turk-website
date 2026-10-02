@@ -607,8 +607,9 @@
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
       "collectionReviewPage": 35,
-      "sourceReviewNote": "2026-10-01 SUP source audit: Library review found no selected original photo/video frame for the open-hand family. Existing art is explicitly representative only. Palm-heel vs slap must remain separate and unlabeled until author-supplied front/side start-end references are available. sourceVerified=false; printReady=false.",
-      "sourceVerified": false
+      "sourceReviewNote": "2026-10-01 SUP source audit: Library review found no selected original photo/video frame for the open-hand family. Existing art is explicitly representative only. Palm-heel vs slap must remain separate and unlabeled until author-supplied front/side start-end references are available. sourceVerified=false; printReady=false. 2026-10-02 book-style artwork saved. Open-hand stance is now represented with the locked book character/style. It remains a general open-hand reference, not a finalized palm-strike/tokad subtype sequence. Final subtype naming, source match and print proof remain open. sourceVerified=false; printReady=false.",
+      "sourceVerified": false,
+      "drawingAsset": "/Krav Maga Kitap/Gorseller/B07/B07-G01_Acik_El.png"
     },
     {
       "cardId": "B07-G02",
@@ -627,14 +628,15 @@
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
       "collectionReviewPage": 36,
-      "sourceReviewNote": "2026-10-01 SUP source audit: Library review found no selected original photo/video frame for the punch family. Existing art is representative only and does not establish straight, side, uppercut or hammer-fist subtypes. Wrist alignment, subtype naming and start/contact/end frames remain open. sourceVerified=false; printReady=false. 2026-10-02 author source update: four new punch-reference photos received and stored. They provide multiple punch/guard views, including lateral and frontal extension. They are authentic author-pose sources for B07-G02. Do not infer unshown punch subtypes beyond what each photo visibly supports. Final subtype labels, exact wrist/fist alignment, drawing conversion and print proof remain open. sourceVerified=false; printReady=false.",
+      "sourceReviewNote": "2026-10-01 SUP source audit: Library review found no selected original photo/video frame for the punch family. Existing art is representative only and does not establish straight, side, uppercut or hammer-fist subtypes. Wrist alignment, subtype naming and start/contact/end frames remain open. sourceVerified=false; printReady=false. 2026-10-02 author source update: four new punch-reference photos received and stored. They provide multiple punch/guard views, including lateral and frontal extension. They are authentic author-pose sources for B07-G02. Do not infer unshown punch subtypes beyond what each photo visibly supports. Final subtype labels, exact wrist/fist alignment, drawing conversion and print proof remain open. sourceVerified=false; printReady=false. 2026-10-02 book-style artwork saved from the newly supplied author punch references. The drawing represents a straight extended punch/guard pose only; it does not stand for all punch-family subtypes. Wrist/fist alignment, subtype labeling and print proof remain open. sourceVerified=false; printReady=false.",
       "sourceVerified": false,
       "sourceAssets": [
         "/Krav Maga Kitap/Kaynaklar/B07/B07-G02_Yumruk_01.jpg",
         "/Krav Maga Kitap/Kaynaklar/B07/B07-G02_Yumruk_02.jpg",
         "/Krav Maga Kitap/Kaynaklar/B07/B07-G02_Yumruk_03.jpg",
         "/Krav Maga Kitap/Kaynaklar/B07/B07-G02_Yumruk_04.jpg"
-      ]
+      ],
+      "drawingAsset": "/Krav Maga Kitap/Gorseller/B07/B07-G02_Yumruk.png"
     },
     {
       "cardId": "B07-G03",
@@ -654,11 +656,12 @@
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
       "collectionReviewPage": 37,
-      "sourceReviewNote": "2026-10-01 SUP source reconciliation: legacy B08 scope addendum records P21 as the close-contact elbow pose, while the later 23-photo ZIP mapping groups 001-003 as B07-G03/B08-G01 candidates. These labels are not assumed to be the same numbering system. Independent elbow type/contact verification and source-number crosswalk are still required. Basic/Dirsekler.wmv is the current lesson-file candidate, not proof that a specific photo is the definitive elbow frame. 2026-10-02 author source update: new elbow-reference photo received and stored. It provides an authentic author-pose source for B07-G03 with close guard and bent striking arm. Exact elbow subtype/target is not assigned solely from the still image. Drawing conversion and print proof remain open. sourceVerified=false; printReady=false.",
+      "sourceReviewNote": "2026-10-01 SUP source reconciliation: legacy B08 scope addendum records P21 as the close-contact elbow pose, while the later 23-photo ZIP mapping groups 001-003 as B07-G03/B08-G01 candidates. These labels are not assumed to be the same numbering system. Independent elbow type/contact verification and source-number crosswalk are still required. Basic/Dirsekler.wmv is the current lesson-file candidate, not proof that a specific photo is the definitive elbow frame. 2026-10-02 author source update: new elbow-reference photo received and stored. It provides an authentic author-pose source for B07-G03 with close guard and bent striking arm. Exact elbow subtype/target is not assigned solely from the still image. Drawing conversion and print proof remain open. sourceVerified=false; printReady=false. 2026-10-02 book-style artwork saved from the newly supplied elbow reference. The drawing preserves the close guard and bent striking arm in the locked book style. Exact elbow subtype/target and print proof remain open. sourceVerified=false; printReady=false.",
       "sourceAssets": [
         "/Krav Maga Kitap/Kaynaklar/B07/B07-G03_Dirsek.jpg"
       ],
-      "sourceVerified": false
+      "sourceVerified": false,
+      "drawingAsset": "/Krav Maga Kitap/Gorseller/B07/B07-G03_Dirsek.png"
     },
     {
       "cardId": "B07-G04",
@@ -741,11 +744,12 @@
       "chapterAuthorDecision": "pending",
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
       "collectionReviewPage": 39,
-      "sourceReviewNote": "2026-10-01 new-chat SUP visual audit: 12.11.16 source and 3D knee proof compared. Reconstructed lower leg/foot and exact knee target/angle remain technical review items. Keep sourceVerified=false and printReady=false. 2026-10-01 SUP source reconciliation: legacy scope addendum records P14 as the knee pose, while the later 23-photo ZIP mapping places 004-005 and 008-010 in knee/contact candidate groups. These labels are not silently equated. The 12.11.16 source drawing remains a draft; exact knee target/angle and source-number crosswalk are open. kick-technique/06-diz-vurmak.mp4 is the current named lesson source, but photo-to-video identity is not yet established. 2026-10-02 author source update: two new knee-reference photos received and stored. Front/three-quarter and side views now provide authentic author-pose evidence for raised-knee position, guard and standing-leg balance. Exact knee subtype/target is not inferred beyond the visible pose. Drawing conversion and print proof remain open. sourceVerified=false; printReady=false.",
+      "sourceReviewNote": "2026-10-01 new-chat SUP visual audit: 12.11.16 source and 3D knee proof compared. Reconstructed lower leg/foot and exact knee target/angle remain technical review items. Keep sourceVerified=false and printReady=false. 2026-10-01 SUP source reconciliation: legacy scope addendum records P14 as the knee pose, while the later 23-photo ZIP mapping places 004-005 and 008-010 in knee/contact candidate groups. These labels are not silently equated. The 12.11.16 source drawing remains a draft; exact knee target/angle and source-number crosswalk are open. kick-technique/06-diz-vurmak.mp4 is the current named lesson source, but photo-to-video identity is not yet established. 2026-10-02 author source update: two new knee-reference photos received and stored. Front/three-quarter and side views now provide authentic author-pose evidence for raised-knee position, guard and standing-leg balance. Exact knee subtype/target is not inferred beyond the visible pose. Drawing conversion and print proof remain open. sourceVerified=false; printReady=false. 2026-10-02 book-style artwork saved from the newly supplied knee references. The drawing preserves raised-knee balance and open-hand guard in the locked book style. Exact knee subtype/target and print proof remain open. sourceVerified=false; printReady=false.",
       "sourceAssets": [
         "/Krav Maga Kitap/Kaynaklar/B07/B07-G05_Diz_On.jpg",
         "/Krav Maga Kitap/Kaynaklar/B07/B07-G05_Diz_Yan.jpg"
-      ]
+      ],
+      "drawingAsset": "/Krav Maga Kitap/Gorseller/B07/B07-G05_Diz.png"
     },
     {
       "cardId": "B07-G06",
