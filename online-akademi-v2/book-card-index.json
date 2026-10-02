@@ -793,7 +793,10 @@
       },
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 42
+      "collectionReviewPage": 42,
+      "drawingAsset": "/Krav Maga Kitap/Gorseller/B08/B08-G01_Temas_Haritasi.png",
+      "sourceReviewNote": "2026-10-02 book-style illustration saved. Card remains a representative contact-boundary / role / stop-signal map; it must not be read as a technical solution sequence. Near-wrap and distance-defense families remain conceptually separate. sourceVerified=false; printReady=false.",
+      "sourceVerified": false
     },
     {
       "cardId": "B08-G02",
@@ -815,7 +818,10 @@
       },
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 43
+      "collectionReviewPage": 43,
+      "drawingAsset": "/Krav Maga Kitap/Gorseller/B08/B08-G02_On_Yan_Arka.png",
+      "sourceReviewNote": "2026-10-02 book-style illustration saved. Front/side/back are used only to show starting orientation. This card does not claim a technical result or attack-resolution sequence. Final lesson mapping and print preflight remain open. sourceVerified=false; printReady=false.",
+      "sourceVerified": false
     },
     {
       "cardId": "B08-G03",
@@ -1043,7 +1049,10 @@
       },
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 48
+      "collectionReviewPage": 48,
+      "drawingAsset": "/Krav Maga Kitap/Gorseller/B08/B08-G07_Cikis_ve_Degerlendirme.png",
+      "sourceReviewNote": "2026-10-02 book-style illustration saved. Card is a safety/decision diagram: create distance, scan surroundings, identify exit and reassess. It is not presented as a guaranteed outcome or fixed movement sequence. QR lesson and print preflight remain open. sourceVerified=false; printReady=false.",
+      "sourceVerified": false
     },
     {
       "cardId": "B08-G08",
@@ -1065,7 +1074,10 @@
       },
       "printReady": false,
       "collectionReviewArtifact": "Krav_Maga_B01_B08_50_Kart_Inceleme_2026-09-28.pdf",
-      "collectionReviewPage": 49
+      "collectionReviewPage": 49,
+      "drawingAsset": "/Krav Maga Kitap/Gorseller/B08/B08-G08_Esli_Calisma_Sozlesmesi.png",
+      "sourceReviewNote": "2026-10-02 book-style illustration saved. Card documents paired-training agreement concepts: contact level, stop word, protective equipment and controlled tempo. It is not a technique sequence. Final lesson mapping and print preflight remain open. sourceVerified=false; printReady=false.",
+      "sourceVerified": false
     },
     {
       "cardId": "B08-G09",
