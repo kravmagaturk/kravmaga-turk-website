@@ -307,6 +307,7 @@
           <div class="kmt-footer-info">
             <a href="iletisim.html">İLETİŞİM</a>
             <span>KADIKÖY · İSTANBUL</span>
+            <span>YOĞURTÇU ŞÜKRÜ SK. NO:19</span>
             <a href="https://www.instagram.com/kravmagaturk" target="_blank" rel="noopener">INSTAGRAM</a>
             <a href="https://www.youtube.com/@KravMagaTurk" target="_blank" rel="noopener">YOUTUBE</a>
           </div>
