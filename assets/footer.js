@@ -272,6 +272,7 @@
               <button type="button" aria-expanded="false">KRAV MAGA ▾</button>
               <div class="kmt-nav-drop">
                 <a href="krav-maga.html">Krav Maga</a>
+                <a href="krav-maga-kadikoy.html">Krav Maga Kadıköy</a>
                 <a href="ozel-dersler.html">Özel Dersler</a>
                 <a href="cocuk-krav-maga.html">Çocuk Dersleri</a>
                 <a href="online-akademi.html">Online Eğitim</a>
@@ -306,7 +307,7 @@
           </div>
           <div class="kmt-footer-info">
             <a href="iletisim.html">İLETİŞİM</a>
-            <span>KADIKÖY · İSTANBUL</span>
+            <a href="krav-maga-kadikoy.html">KADIKÖY · İSTANBUL</a>
             <span>YOĞURTÇU ŞÜKRÜ SK. NO:19</span>
             <a href="https://www.instagram.com/kravmagaturk" target="_blank" rel="noopener">INSTAGRAM</a>
             <a href="https://www.youtube.com/@KravMagaTurk" target="_blank" rel="noopener">YOUTUBE</a>
