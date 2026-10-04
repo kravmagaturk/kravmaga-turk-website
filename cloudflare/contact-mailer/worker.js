@@ -1,4 +1,3 @@
-const MAIL_TO = "info@kravmaga.com.tr";
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz8_KnOO6-8oQr1NhG3GWf3v-wAIsMtO_-0AFLSgYQfnx0NU-h3GGv6U7SX590VB20t/exec";
 const ORIGINS = new Set(["https://kravmaga.com.tr", "https://www.kravmaga.com.tr"]);
 const WINDOW = 600000, MAX = 3, recent = new Map();
