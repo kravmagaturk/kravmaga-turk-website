@@ -1,5 +1,5 @@
 const MAIL_TO = "info@kravmaga.com.tr";
-const API_BASE = "https://api.mail.hostinger.com/api/v1/mailboxes";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz8_KnOO6-8oQr1NhG3GWf3v-wAIsMtO_-0AFLSgYQfnx0NU-h3GGv6U7SX590VB20t/exec";
 const ORIGINS = new Set(["https://kravmaga.com.tr", "https://www.kravmaga.com.tr"]);
 const WINDOW = 600000, MAX = 3, recent = new Map();
 
@@ -37,27 +37,30 @@ function limited(ip) {
 }
 
 async function send(env, values) {
-  const token = String(env.HOSTINGER_MAIL_API_TOKEN || "").trim();
-  const mailboxId = String(env.HOSTINGER_MAILBOX_ID || "").trim();
-  if (!token || !mailboxId) throw new Error("Hostinger Mail API credentials missing");
+  const secret = String(env.GOOGLE_APPS_SCRIPT_SECRET || "").trim();
+  if (!secret) throw new Error("Google Apps Script secret missing");
 
-  const response = await fetch(`${API_BASE}/${encodeURIComponent(mailboxId)}/send`, {
+  const response = await fetch(APPS_SCRIPT_URL, {
     method: "POST",
-    headers: {
-      "authorization": `Bearer ${token}`,
-      "content-type": "application/json"
-    },
+    headers: { "content-type": "application/json" },
+    redirect: "follow",
     body: JSON.stringify({
-      to: [MAIL_TO],
-      displayName: "Krav Maga Türk web iletişim formu",
-      subject: "Web sitesi iletişim formu",
-      text: `Ad Soyad: ${values.name}\nE-posta: ${values.email}\n\nYanıt için bu e-posta adresini kullanın: ${values.email}\n\nMesaj:\n${values.message}`
+      secret,
+      name: values.name,
+      email: values.email,
+      message: values.message
     })
   });
 
-  if (response.status !== 204) {
+  let result;
+  try {
+    result = await response.json();
+  } catch {
+    throw new Error(`Google Apps Script returned non-JSON response (${response.status})`);
+  }
+  if (!response.ok || !result?.ok) {
     // Do not log response bodies: they may contain submitted visitor information.
-    throw new Error(`Hostinger Mail API returned ${response.status}`);
+    throw new Error(`Google Apps Script mail relay failed (${response.status})`);
   }
 }
 
