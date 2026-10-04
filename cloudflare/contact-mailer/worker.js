@@ -1,12 +1,126 @@
-import { connect } from "cloudflare:sockets";
-const MAIL_TO="info@kravmaga.com.tr",HOST="smtp.hostinger.com",PORT=465;
-const ORIGINS=new Set(["https://kravmaga.com.tr","https://www.kravmaga.com.tr"]),WINDOW=600000,MAX=3,recent=new Map();
-function reply(data,status,origin){const h={"content-type":"application/json; charset=utf-8","cache-control":"no-store","vary":"Origin"};if(ORIGINS.has(origin)){h["access-control-allow-origin"]=origin;h["access-control-allow-methods"]="POST, OPTIONS, GET";h["access-control-allow-headers"]="content-type";h["access-control-max-age"]="600"}return new Response(status===204?null:JSON.stringify(data),{status,headers:h})}
-function clean(v,n){return String(v||"").replace(/\r/g,"").trim().slice(0,n)}
-function limited(ip){const now=Date.now(),x=recent.get(ip);if(x&&now-x.start<WINDOW){x.count++;return x.count>MAX}recent.set(ip,{start:now,count:1});for(const [k,v] of recent)if(now-v.start>WINDOW)recent.delete(k);return false}
-async function smtpLine(r,s){while(true){const i=s.buffer.indexOf("\n");if(i>=0){const out=s.buffer.slice(0,i).replace(/\r$/,"");s.buffer=s.buffer.slice(i+1);return out}const p=await r.read();if(p.done)throw Error("SMTP closed");s.buffer+=s.decoder.decode(p.value,{stream:true})}}
-async function smtpReply(r,s,want){const first=await smtpLine(r,s),code=first.slice(0,3);let line=first,n=0;while(line.slice(0,3)===code&&line[3]==="-"&&n++<30)line=await smtpLine(r,s);if(Number(code)!==want)throw Error("SMTP rejected");return line}
-function b64(v){const a=new TextEncoder().encode(v);let s="";for(let i=0;i<a.length;i+=8192)s+=String.fromCharCode(...a.subarray(i,i+8192));return btoa(s)}
-async function cmd(w,r,s,text,code){await w.write(new TextEncoder().encode(text+"\r\n"));return smtpReply(r,s,code)}
-async function send(env,v){const user=String(env.SMTP_USER||"").trim(),pass=String(env.SMTP_PASSWORD||"");if(!user||!pass||!/^[^\s<>@]+@[^\s<>@]+$/.test(user))throw Error("SMTP credentials missing");const socket=connect({hostname:HOST,port:PORT},{secureTransport:"on"});let w;try{await socket.opened;const r=socket.readable.getReader();w=socket.writable.getWriter();const s={buffer:"",decoder:new TextDecoder()};await smtpReply(r,s,220);await cmd(w,r,s,"EHLO kravmaga.com.tr",250);await cmd(w,r,s,"AUTH LOGIN",334);await cmd(w,r,s,b64(user),334);await cmd(w,r,s,b64(pass),235);await cmd(w,r,s,"MAIL FROM:<"+user+">",250);await cmd(w,r,s,"RCPT TO:<"+MAIL_TO+">",250);await cmd(w,r,s,"DATA",354);const body="Ad Soyad: "+v.name+"\r\nE-posta: "+v.email+"\r\n\r\n"+v.message,encoded=b64(body).match(/.{1,76}/g).join("\r\n");const msg=["From: Krav Maga Türk <"+user+">","To: "+MAIL_TO,"Reply-To: "+v.email,"Subject: Krav Maga Türk web iletişim formu","Date: "+new Date().toUTCString(),"Message-ID: <"+crypto.randomUUID()+"@kravmaga.com.tr>","MIME-Version: 1.0","Content-Type: text/plain; charset=UTF-8","Content-Transfer-Encoding: base64","",encoded,"."].join("\r\n")+"\r\n";await w.write(new TextEncoder().encode(msg));await smtpReply(r,s,250);await cmd(w,r,s,"QUIT",221);r.releaseLock()}finally{try{w?.releaseLock()}catch{}try{socket.close()}catch{}}}
-export default {async fetch(request,env){const origin=request.headers.get("Origin")||"";if(request.method==="OPTIONS"){if(!ORIGINS.has(origin))return reply({error:"İstek kaynağı reddedildi."},403,"");return reply({},204,origin)}const url=new URL(request.url);if(request.method==="GET"&&url.pathname==="/health")return reply({status:"ok"},200,origin);if(request.method!=="POST"||url.pathname!=="/send")return reply({error:"Adres bulunamadı."},404,origin);if(!ORIGINS.has(origin))return reply({error:"İstek kaynağı reddedildi."},403,"");if(!(request.headers.get("content-type")||"").toLowerCase().includes("application/json"))return reply({error:"Geçersiz istek biçimi."},415,origin);if(Number(request.headers.get("content-length")||0)>10000)return reply({error:"Mesaj çok uzun."},413,origin);let data;try{data=await request.json()}catch{return reply({error:"Form bilgileri okunamadı."},400,origin)}if(data.website)return reply({ok:true},200,origin);const name=clean(data.name,100),email=clean(data.email,160),message=clean(data.message,4000),start=Number(data.startedAt);if(name.length<2||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)||message.length<5)return reply({error:"Ad, geçerli e-posta ve açıklama alanlarını kontrol edin."},400,origin);if(!Number.isFinite(start)||Date.now()-start<2500||Date.now()-start>28800000)return reply({error:"Lütfen formu yeniden açıp tekrar deneyin."},400,origin);if(limited(request.headers.get("cf-connecting-ip")||"unknown"))return reply({error:"Çok sık gönderim yapıldı. Bir süre sonra tekrar deneyin."},429,origin);try{await send(env,{name,email,message});return reply({ok:true},200,origin)}catch(e){console.error("Contact email delivery failed:",e?.message||"unknown");return reply({error:"Mesaj şu anda gönderilemedi. Lütfen daha sonra tekrar deneyin veya WhatsApp'tan yazın."},502,origin)}}};
+const MAIL_TO = "info@kravmaga.com.tr";
+const API_BASE = "https://api.mail.hostinger.com/api/v1/mailboxes";
+const ORIGINS = new Set(["https://kravmaga.com.tr", "https://www.kravmaga.com.tr"]);
+const WINDOW = 600000, MAX = 3, recent = new Map();
+
+function reply(data, status, origin) {
+  const headers = {
+    "content-type": "application/json; charset=utf-8",
+    "cache-control": "no-store",
+    "vary": "Origin"
+  };
+  if (ORIGINS.has(origin)) {
+    headers["access-control-allow-origin"] = origin;
+    headers["access-control-allow-methods"] = "POST, OPTIONS, GET";
+    headers["access-control-allow-headers"] = "content-type";
+    headers["access-control-max-age"] = "600";
+  }
+  return new Response(status === 204 ? null : JSON.stringify(data), { status, headers });
+}
+
+function clean(value, maxLength) {
+  return String(value || "").replace(/[\\r\\n\\0]/g, " ").trim().slice(0, maxLength);
+}
+
+function limited(ip) {
+  const now = Date.now();
+  const entry = recent.get(ip);
+  if (entry && now - entry.start < WINDOW) {
+    entry.count++;
+    return entry.count > MAX;
+  }
+  recent.set(ip, { start: now, count: 1 });
+  for (const [key, value] of recent) {
+    if (now - value.start > WINDOW) recent.delete(key);
+  }
+  return false;
+}
+
+async function send(env, values) {
+  const token = String(env.HOSTINGER_MAIL_API_TOKEN || "").trim();
+  const mailboxId = String(env.HOSTINGER_MAILBOX_ID || "").trim();
+  if (!token || !mailboxId) throw new Error("Hostinger Mail API credentials missing");
+
+  const response = await fetch(`${API_BASE}/${encodeURIComponent(mailboxId)}/send`, {
+    method: "POST",
+    headers: {
+      "authorization": `Bearer ${token}`,
+      "content-type": "application/json"
+    },
+    body: JSON.stringify({
+      to: [MAIL_TO],
+      displayName: "Krav Maga Türk web iletişim formu",
+      subject: "Web sitesi iletişim formu",
+      text: `Ad Soyad: ${values.name}\\nE-posta: ${values.email}\\n\\nYanıt için bu e-posta adresini kullanın: ${values.email}\\n\\nMesaj:\\n${values.message}`
+    })
+  });
+
+  if (response.status !== 204) {
+    // Do not log response bodies: they may contain submitted visitor information.
+    throw new Error(`Hostinger Mail API returned ${response.status}`);
+  }
+}
+
+export default {
+  async fetch(request, env) {
+    const origin = request.headers.get("Origin") || "";
+
+    if (request.method === "OPTIONS") {
+      if (!ORIGINS.has(origin)) return reply({ error: "İstek kaynağı reddedildi." }, 403, "");
+      return reply({}, 204, origin);
+    }
+
+    const url = new URL(request.url);
+    if (request.method === "GET" && url.pathname === "/health") {
+      return reply({ status: "ok" }, 200, origin);
+    }
+    if (request.method !== "POST" || url.pathname !== "/send") {
+      return reply({ error: "Adres bulunamadı." }, 404, origin);
+    }
+    if (!ORIGINS.has(origin)) return reply({ error: "İstek kaynağı reddedildi." }, 403, "");
+    if (!(request.headers.get("content-type") || "").toLowerCase().includes("application/json")) {
+      return reply({ error: "Geçersiz istek biçimi." }, 415, origin);
+    }
+    if (Number(request.headers.get("content-length") || 0) > 10000) {
+      return reply({ error: "Mesaj çok uzun." }, 413, origin);
+    }
+
+    let data;
+    try {
+      data = await request.json();
+    } catch {
+      return reply({ error: "Form bilgileri okunamadı." }, 400, origin);
+    }
+
+    if (data.website) return reply({ ok: true }, 200, origin);
+
+    const name = clean(data.name, 100);
+    const email = clean(data.email, 160);
+    const message = clean(data.message, 4000);
+    const startedAt = Number(data.startedAt);
+
+    if (
+      name.length < 2 ||
+      !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email) ||
+      message.length < 5
+    ) {
+      return reply({ error: "Ad, geçerli e-posta ve açıklama alanlarını kontrol edin." }, 400, origin);
+    }
+    if (!Number.isFinite(startedAt) || Date.now() - startedAt < 2500 || Date.now() - startedAt > 28800000) {
+      return reply({ error: "Lütfen formu yeniden açıp tekrar deneyin." }, 400, origin);
+    }
+    if (limited(request.headers.get("cf-connecting-ip") || "unknown")) {
+      return reply({ error: "Çok sık gönderim yapıldı. Bir süre sonra tekrar deneyin." }, 429, origin);
+    }
+
+    try {
+      await send(env, { name, email, message });
+      return reply({ ok: true }, 200, origin);
+    } catch (error) {
+      console.error("Contact email delivery failed:", error?.message || "unknown");
+      return reply({
+        error: "Mesaj şu anda gönderilemedi. Lütfen daha sonra tekrar deneyin veya WhatsApp'tan yazın."
+      }, 502, origin);
+    }
+  }
+};
