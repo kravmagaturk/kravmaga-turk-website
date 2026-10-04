@@ -19,7 +19,7 @@ function reply(data, status, origin) {
 }
 
 function clean(value, maxLength) {
-  return String(value || "").replace(/[\\r\\n\\0]/g, " ").trim().slice(0, maxLength);
+  return String(value || "").replace(/[\r\n\0]/g, " ").trim().slice(0, maxLength);
 }
 
 function limited(ip) {
@@ -51,7 +51,7 @@ async function send(env, values) {
       to: [MAIL_TO],
       displayName: "Krav Maga Türk web iletişim formu",
       subject: "Web sitesi iletişim formu",
-      text: `Ad Soyad: ${values.name}\\nE-posta: ${values.email}\\n\\nYanıt için bu e-posta adresini kullanın: ${values.email}\\n\\nMesaj:\\n${values.message}`
+      text: `Ad Soyad: ${values.name}\nE-posta: ${values.email}\n\nYanıt için bu e-posta adresini kullanın: ${values.email}\n\nMesaj:\n${values.message}`
     })
   });
 
@@ -101,7 +101,7 @@ export default {
 
     if (
       name.length < 2 ||
-      !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email) ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
       message.length < 5
     ) {
       return reply({ error: "Ad, geçerli e-posta ve açıklama alanlarını kontrol edin." }, 400, origin);
