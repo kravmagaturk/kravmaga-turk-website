@@ -68,10 +68,29 @@ body{
     display:flex;
     align-items:center;
     overflow:hidden;
+    isolation:isolate;
     border-bottom:1px solid #2a2a2a;
-    background:
-        radial-gradient(circle at 78% 30%,rgba(190,0,0,.17),transparent 35%),
-        linear-gradient(120deg,#080808 0%,#050505 68%,#100000 100%);
+    background:#050505;
+}
+
+.kmt-hero-bg{
+    position:absolute;
+    inset:0;
+    z-index:-2;
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:62% 45%;
+    filter:brightness(.68) contrast(1.04) saturate(.88);
+}
+
+.kmt-hero-shade{
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    background:linear-gradient(90deg,rgba(5,5,5,.80) 0%,rgba(5,5,5,.68) 38%,rgba(5,5,5,.30) 62%,rgba(5,5,5,.08) 100%);
 }
 
 /* GERÇEK 19-48 LOGO WATERMARK */
@@ -675,7 +694,15 @@ body{
     }
 
     .kmt-hero{
-        min-height:auto;
+        min-height:540px;
+    }
+
+    .kmt-hero-bg{
+        object-position:68% center;
+    }
+
+    .kmt-hero-shade{
+        background:linear-gradient(0deg,rgba(5,5,5,.91) 0%,rgba(5,5,5,.72) 44%,rgba(5,5,5,.18) 100%),linear-gradient(90deg,rgba(5,5,5,.58),rgba(5,5,5,.10));
     }
 
     .kmt-hero:before{
@@ -919,6 +946,8 @@ html,body,.kmt-page{max-width:100%;overflow-x:hidden}
 <!-- HERO -->
 
 <section class="kmt-hero">
+<img class="kmt-hero-bg" src="assets/krav-maga/krav-maga-hero-20261004.jpg?v=20261004" alt="" aria-hidden="true">
+<div class="kmt-hero-shade" aria-hidden="true"></div>
 <div class="kmt-wrap">
 
 <div class="kmt-hero-content">
