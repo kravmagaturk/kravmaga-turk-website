@@ -54,6 +54,10 @@ body{
     background:#050505;
 }
 
+.kmt-page .kmt-standard-mark{
+    display:none!important;
+}
+
 .kmt-wrap{
     width:min(1120px,calc(100% - 36px));
     margin:0 auto;
@@ -171,8 +175,9 @@ body{
     border-bottom:1px solid #252525;
 
     background:
-        radial-gradient(circle at 80% 35%,rgba(190,0,0,.16),transparent 36%),
-        linear-gradient(120deg,#080808 0%,#050505 66%,#110000 100%);
+        linear-gradient(90deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.96) 35%,rgba(5,5,5,.60) 58%,rgba(5,5,5,.12) 100%),
+        url("assets/press/basin-hero.jpg") right center/auto 100% no-repeat,
+        #050505;
 }
 
 /* GERÇEK 19-48 LOGO */
@@ -644,7 +649,12 @@ body{
     }
 
     .kmt-hero{
-        min-height:auto;
+        min-height:620px;
+        align-items:flex-end;
+        background:
+            linear-gradient(0deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.98) 43%,rgba(5,5,5,.66) 62%,rgba(5,5,5,.08) 87%),
+            url("assets/press/basin-hero.jpg") center top/100% auto no-repeat,
+            #050505;
     }
 
     .kmt-hero:before{
@@ -656,7 +666,7 @@ body{
     }
 
     .kmt-hero-content{
-        padding:46px 0 42px;
+        padding:245px 0 42px;
         max-width:100%;
     }
 
@@ -1443,3 +1453,4 @@ iletişim sayfamız üzerinden bize ulaşabilirsiniz.
 
 <script src="assets/footer.js" defer></script></body>
 </html>
+

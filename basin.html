@@ -97,12 +97,9 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
   overflow:hidden;
 
   background:
-    radial-gradient(
-      circle at 75% 45%,
-      rgba(145,5,27,.30),
-      rgba(30,7,11,.18) 32%,
-      #070708 68%
-    );
+    linear-gradient(90deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.96) 35%,rgba(5,5,5,.60) 58%,rgba(5,5,5,.12) 100%),
+    url("assets/press/basin-hero.jpg") right center/auto 100% no-repeat,
+    #050505;
 
   border-bottom:1px solid #29292d;
 }
@@ -612,11 +609,16 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
 @media(max-width:650px){
 
   #kmt-basin .basin-hero{
-    min-height:350px;
+    min-height:620px;
+    align-items:flex-end;
+    background:
+      linear-gradient(0deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.98) 43%,rgba(5,5,5,.66) 62%,rgba(5,5,5,.08) 87%),
+      url("assets/press/basin-hero.jpg") center top/100% auto no-repeat,
+      #050505;
   }
 
   #kmt-basin .basin-hero-content{
-    padding:60px 0;
+    padding:245px 0 48px;
   }
 
   #kmt-basin .basin-hero h1{
@@ -1523,3 +1525,4 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
 <script src="assets/footer.js" defer></script>
 </body>
 </html>
+

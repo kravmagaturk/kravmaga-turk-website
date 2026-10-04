@@ -75,15 +75,13 @@
   overflow:hidden;
   border-bottom:1px solid #202020;
   background:
-    radial-gradient(
-      circle at 82% 45%,
-      #2a1013 0,
-      #0d0d0d 37%,
-      #050505 72%
-    );
+    linear-gradient(90deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.96) 36%,rgba(5,5,5,.60) 58%,rgba(5,5,5,.12) 100%),
+    url("assets/representatives/temsilcilik-hero.jpg") right center/auto 100% no-repeat,
+    #050505;
 }
 
 .kmt-representative-page .watermark{
+  display:none!important;
   position:absolute;
   right:3%;
   top:48%;
@@ -592,11 +590,16 @@
 @media(max-width:700px){
 
   .kmt-representative-page .hero{
-    min-height:420px;
+    min-height:620px;
+    align-items:flex-end;
+    background:
+      linear-gradient(0deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.98) 43%,rgba(5,5,5,.66) 61%,rgba(5,5,5,.10) 86%),
+      url("assets/representatives/temsilcilik-hero.jpg") center top/100% auto no-repeat,
+      #050505;
   }
 
   .kmt-representative-page .hero-inner{
-    padding:65px 0 58px;
+    padding:300px 0 48px;
   }
 
   .kmt-representative-page .watermark{
@@ -1025,3 +1028,4 @@
 <section class="verify"><div class="wrap"><div class="verify-box"><div><span class="label">KAYIT VE SORGULAMA</span><h2>KAYIT SORGULAMA</h2><p>Krav Maga Türk diploma ve sicil kayıtları, kayıt sorgulama sistemi üzerinden kontrol edilebilir.</p></div><div class="verify-action"><a class="btn" href="https://kravmaga.com.tr/egitmen-and-seviye-sorgu">TEMSİLCİLİK VE EĞİTİMCİ SORGU</a></div></div></div></section>
 <section class="final"><div class="final-inner"><span class="label">KRAV MAGA TÜRK</span><h2>Uluslararası Deneyim · Yerel Eğitim</h2><p>Krav Maga Türk, farklı dönemlerde edinilen uluslararası eğitim ve güvenlik deneyimini Türkiye'deki eğitim çalışmalarına aktarmaktadır.</p><div class="final-line"></div></div></section>
 </section><script src="assets/footer.js" defer></script></body></html>
+
