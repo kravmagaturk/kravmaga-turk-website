@@ -60,7 +60,7 @@ async function send(env, values) {
   }
   if (!response.ok || !result?.ok) {
     // Do not log response bodies: they may contain submitted visitor information.
-    throw new Error(`Google Apps Script mail relay failed (${response.status})`);
+    throw new Error(`Google Apps Script mail relay failed (${response.status}: ${String(result?.error || "unknown").slice(0, 40)})`);
   }
 }
 
