@@ -36,7 +36,7 @@ function limited(ip) {
 }
 
 async function send(env, values) {
-  const secret = String(env.GOOGLE_APPS_SCRIPT_SECRET || "").trim();
+  const secret = String(env.GOOGLE_APPS_SCRIPT_SECRET_V2 || env.GOOGLE_APPS_SCRIPT_SECRET || "").trim();
   if (!secret) throw new Error("Google Apps Script secret missing");
 
   const response = await fetch(APPS_SCRIPT_URL, {
