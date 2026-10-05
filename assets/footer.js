@@ -249,46 +249,46 @@
     wrap.innerHTML = `
       <header class="kmt-nav" data-component="shared-header">
         <div class="kmt-nav-inner">
-          <a class="kmt-nav-brand" href="index.html">KRAV MAGA <i>TÜRK</i></a>
+          <a class="kmt-nav-brand" href="/">KRAV MAGA <i>TÜRK</i></a>
           <button class="kmt-nav-mobile" type="button" aria-label="Menüyü aç" aria-expanded="false">☰</button>
 
           <nav class="kmt-nav-links" aria-label="Ana menü">
-            <div class="kmt-nav-item"><a href="index.html">ANA SAYFA</a></div>
+            <div class="kmt-nav-item"><a href="/">ANA SAYFA</a></div>
 
             <div class="kmt-nav-item">
               <button type="button" aria-expanded="false">HAKKIMIZDA ▾</button>
               <div class="kmt-nav-drop">
-                <a href="bulent-cetin.html">Bülent Çetin</a>
+                <a href="/bulent-cetin">Bülent Çetin</a>
                 <a href="/temsilcilik">Temsilcilikler</a>
-                <a href="belgeler.html">Belgeler</a>
-                <a href="legionnaire.html">Legionnaire</a>
-                <a href="egitmen-and-seviye-sorgu.html">Eğitmen &amp; Seviye Sorgu</a>
-                <a href="basin.html">Basın</a>
-                <a href="referanslar.html">Referanslar</a>
+                <a href="/belgeler">Belgeler</a>
+                <a href="/legionnaire">Legionnaire</a>
+                <a href="/egitmen-and-seviye-sorgu">Eğitmen &amp; Seviye Sorgu</a>
+                <a href="/basin">Basın</a>
+                <a href="/referanslar">Referanslar</a>
               </div>
             </div>
 
             <div class="kmt-nav-item">
               <button type="button" aria-expanded="false">KRAV MAGA ▾</button>
               <div class="kmt-nav-drop">
-                <a href="krav-maga.html">Krav Maga</a>
-                <a href="krav-maga-kadikoy.html">Krav Maga Kadıköy</a>
-                <a href="ozel-dersler.html">Özel Dersler</a>
-                <a href="cocuk-krav-maga.html">Çocuk Dersleri</a>
-                <a href="online-akademi.html">Online Eğitim</a>
+                <a href="/krav-maga">Krav Maga</a>
+                <a href="/krav-maga-kadikoy">Krav Maga Kadıköy</a>
+                <a href="/ozel-dersler">Özel Dersler</a>
+                <a href="/cocuk-krav-maga">Çocuk Dersleri</a>
+                <a href="/online-akademi.html">Online Eğitim</a>
               </div>
             </div>
 
             <div class="kmt-nav-item">
               <button type="button" aria-expanded="false">SECURITY ▾</button>
               <div class="kmt-nav-drop">
-                <a href="ozel-guvenlik.html">Özel Güvenlik</a>
-                <a href="yakin-koruma.html">Yakın Koruma</a>
+                <a href="/ozel-guvenlik">Özel Güvenlik</a>
+                <a href="/yakin-koruma">Yakın Koruma</a>
               </div>
             </div>
 
-            <div class="kmt-nav-item"><a href="blog.html">BLOG</a></div>
-            <div class="kmt-nav-item"><a href="iletisim.html">İLETİŞİM</a></div>
+            <div class="kmt-nav-item"><a href="/blog">BLOG</a></div>
+            <div class="kmt-nav-item"><a href="/iletisim">İLETİŞİM</a></div>
           </nav>
         </div>
       </header>
@@ -306,8 +306,8 @@
             <small>GÜVENLİK DANIŞMANLIĞI · SELF DEFENSE ACADEMY</small>
           </div>
           <div class="kmt-footer-info">
-            <a href="iletisim.html">İLETİŞİM</a>
-            <a href="krav-maga-kadikoy.html">KADIKÖY · İSTANBUL</a>
+            <a href="/iletisim">İLETİŞİM</a>
+            <a href="/krav-maga-kadikoy">KADIKÖY · İSTANBUL</a>
             <span>YOĞURTÇU ŞÜKRÜ SK. NO:19</span>
             <a href="https://www.instagram.com/kravmagaturk" target="_blank" rel="noopener">INSTAGRAM</a>
             <a href="https://www.youtube.com/@KravMagaTurk" target="_blank" rel="noopener">YOUTUBE</a>
