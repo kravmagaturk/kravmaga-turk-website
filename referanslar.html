@@ -72,7 +72,7 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
 
   background:
     linear-gradient(90deg,rgba(5,5,5,.99) 0%,rgba(5,5,5,.94) 40%,rgba(5,5,5,.28) 68%,rgba(5,5,5,.03) 100%),
-    url("assets/references/referanslar-hero.svg?v=20261009") right center/auto 100% no-repeat,
+    url("assets/references/referanslar-hero-wide-20261009.svg?v=2") right center/auto 100% no-repeat,
     #050505;
 
   border-bottom:1px solid var(--border);
@@ -507,7 +507,7 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
     align-items:flex-end;
     background:
       linear-gradient(0deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.98) 43%,rgba(5,5,5,.56) 67%,rgba(5,5,5,.08) 100%),
-      url("assets/references/referanslar-hero.svg?v=20261009") 66% top/auto 360px no-repeat,
+      url("assets/references/referanslar-hero-wide-20261009.svg?v=2") 66% top/auto 360px no-repeat,
       #050505;
   }
 
@@ -607,6 +607,12 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
  .kmt-ref-hero .kmt-header-shade{background:linear-gradient(0deg,rgba(5,5,5,.90),rgba(5,5,5,.65) 55%,rgba(5,5,5,.10));}
  .kmt-ref-content{padding:40px 0;}
 }
+
+@media(max-width:750px){
+ .kmt-ref-hero{min-height:540px;}
+ .kmt-ref-hero .kmt-header-photo{height:280px;object-fit:contain;object-position:center top;filter:brightness(.85);}
+ .kmt-ref-hero .kmt-header-shade{background:linear-gradient(0deg,#050505 5%,rgba(5,5,5,.65) 55%,transparent 85%);}
+}
 </style>
 
 
@@ -616,7 +622,7 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
 <!-- HERO -->
 
 <section class="kmt-ref-hero">
-<img class="kmt-header-photo" src="assets/references/referanslar-hero.svg?v=20261009" alt="" aria-hidden="true" width="1600" height="800" fetchpriority="high">
+<img class="kmt-header-photo" src="assets/references/referanslar-hero-wide-20261009.svg?v=2" alt="" aria-hidden="true" width="1600" height="800" fetchpriority="high">
 <div class="kmt-header-shade" aria-hidden="true"></div>
 <div class="kmt-ref-wrap">
 
