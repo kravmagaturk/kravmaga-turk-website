@@ -914,6 +914,17 @@ img{max-width:100%}
 }
 
 @media(max-width:750px){.kmt-hero{min-height:720px;}}
+
+/* Mobile: preserve the full photograph and keep faces clear of text. */
+@media(max-width:750px){
+ .kmt-hero{display:block;min-height:0;height:auto;background:#050505;}
+ .kmt-hero .kmt-hero-bg{position:relative;inset:auto;display:block;width:100%;height:auto;max-width:none;object-fit:contain;object-position:center;filter:brightness(.9);}
+ .kmt-hero .kmt-hero-shade{display:none;}
+ .kmt-hero > .kmt-wrap{position:relative;z-index:2;width:calc(100% - 36px);max-width:none;margin:-24px auto 0;}
+ .kmt-hero .kmt-hero-content{max-width:none;padding:0 0 32px;}
+ .kmt-hero h1{font-size:clamp(30px,8.4vw,42px);line-height:1.08;letter-spacing:-1px;}
+ .kmt-hero p{font-size:16px;line-height:1.65;}
+}
 </style>
 </head>
 
