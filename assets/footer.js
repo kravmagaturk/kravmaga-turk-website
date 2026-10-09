@@ -262,7 +262,7 @@
                 <a href="/temsilcilik">Temsilcilikler</a>
                 <a href="/belgeler">Belgeler</a>
                 <a href="/legionnaire">Legionnaire</a>
-                <a href="/egitmen-and-seviye-sorgu">Eğitmen &amp; Seviye Sorgu</a>
+                <a href="/egitmen-and-seviye-sorgu">Eğitmen ve Seviye Sorgu</a>
                 <a href="/basin">Basın</a>
                 <a href="/referanslar">Referanslar</a>
               </div>
