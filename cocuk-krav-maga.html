@@ -892,27 +892,17 @@ img{max-width:100%}
   .kmt-footer-info a,.kmt-footer-info span{white-space:normal!important}
 }
 
-/* Uncropped header photograph */
-.kmt-hero{
-    display:block;
-    min-height:0;
-}
-.kmt-hero-bg{
-    position:relative;
-    inset:auto;
-    z-index:auto;
-    width:100%;
-    height:auto;
-    max-width:1200px;
-    margin:0 auto;
-    object-fit:contain;
-    object-position:center;
-    filter:none;
-}
-.kmt-hero-shade{display:none;}
-.kmt-hero-content{padding:44px 0;}
+
+/* Header photograph with overlaid text, matching the private lesson page */
+.kmt-hero{display:flex;align-items:center;min-height:500px;isolation:isolate;background:#050505;}
+.kmt-hero .kmt-hero-bg{position:absolute;inset:0;z-index:0;display:block;width:100%;height:100%;max-width:none;margin:0;object-fit:cover;object-position:center 30%;filter:brightness(.64);}
+.kmt-hero .kmt-hero-shade{position:absolute;inset:0;z-index:1;display:block;pointer-events:none;background:linear-gradient(90deg,rgba(5,5,5,.35),rgba(5,5,5,.15) 50%,transparent);}
+.kmt-hero-content{position:relative;z-index:2;padding:75px 0;}
 @media(max-width:750px){
-    .kmt-hero-content{padding:28px 0 34px;}
+ .kmt-hero{min-height:540px;align-items:flex-end;}
+ .kmt-hero .kmt-hero-bg{object-position:center 30%;filter:brightness(.72);}
+ .kmt-hero .kmt-hero-shade{background:linear-gradient(0deg,rgba(5,5,5,.90),rgba(5,5,5,.65) 55%,rgba(5,5,5,.10));}
+ .kmt-hero-content{padding:40px 0;}
 }
 </style>
 </head>

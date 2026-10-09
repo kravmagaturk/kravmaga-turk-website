@@ -711,27 +711,17 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
 }
 
 
-/* Uncropped header photograph */
-#kmt-basin .basin-hero{
-    display:block;
-    min-height:0;
-}
-#kmt-basin .basin-hero-bg{
-    position:relative;
-    inset:auto;
-    z-index:auto;
-    width:100%;
-    height:auto;
-    max-width:1200px;
-    margin:0 auto;
-    object-fit:contain;
-    object-position:center;
-    filter:none;
-}
-#kmt-basin .basin-hero-shade{display:none;}
-#kmt-basin .basin-hero-content{padding:44px 0;}
-@media(max-width:650px){
-    #kmt-basin .basin-hero-content{padding:28px 0 34px;}
+
+/* Header photograph with overlaid text, matching the private lesson page */
+#kmt-basin .basin-hero{display:flex;align-items:center;min-height:500px;isolation:isolate;background:#050505;}
+#kmt-basin .basin-hero .basin-hero-bg{position:absolute;inset:0;z-index:0;display:block;width:100%;height:100%;max-width:none;margin:0;object-fit:cover;object-position:center 30%;filter:brightness(.64);}
+#kmt-basin .basin-hero .basin-hero-shade{position:absolute;inset:0;z-index:1;display:block;pointer-events:none;background:linear-gradient(90deg,rgba(5,5,5,.35),rgba(5,5,5,.15) 50%,transparent);}
+#kmt-basin .basin-hero-content{position:relative;z-index:2;padding:75px 0;}
+@media(max-width:750px){
+ #kmt-basin .basin-hero{min-height:540px;align-items:flex-end;}
+ #kmt-basin .basin-hero .basin-hero-bg{object-position:center 30%;filter:brightness(.72);}
+ #kmt-basin .basin-hero .basin-hero-shade{background:linear-gradient(0deg,rgba(5,5,5,.90),rgba(5,5,5,.65) 55%,rgba(5,5,5,.10));}
+ #kmt-basin .basin-hero-content{padding:40px 0;}
 }
 </style>
 
