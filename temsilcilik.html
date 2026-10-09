@@ -696,11 +696,25 @@
 
 }
 
+
+/* Header photograph with overlaid text, matching the private lesson page */
+.kmt-representative-page .hero{display:flex;align-items:center;min-height:500px;isolation:isolate;background:#050505;}
+.kmt-representative-page .hero .kmt-header-photo{position:absolute;inset:0;z-index:0;display:block;width:100%;height:100%;max-width:none;margin:0;object-fit:cover;object-position:center 20%;filter:brightness(.64);}
+.kmt-representative-page .hero .kmt-header-shade{position:absolute;inset:0;z-index:1;display:block;pointer-events:none;background:linear-gradient(90deg,rgba(5,5,5,.35),rgba(5,5,5,.15) 50%,transparent);}
+.kmt-representative-page .hero-inner{position:relative;z-index:2;padding:75px 0;}
+@media(max-width:750px){
+ .kmt-representative-page .hero{min-height:540px;align-items:flex-end;}
+ .kmt-representative-page .hero .kmt-header-photo{object-position:center 20%;filter:brightness(.72);}
+ .kmt-representative-page .hero .kmt-header-shade{background:linear-gradient(0deg,rgba(5,5,5,.90),rgba(5,5,5,.65) 55%,rgba(5,5,5,.10));}
+ .kmt-representative-page .hero-inner{padding:40px 0;}
+}
 </style>
 
 
 <!-- HERO -->
 <section class="hero">
+<img class="kmt-header-photo" src="assets/representatives/temsilcilik-hero.jpg" alt="" aria-hidden="true" width="450" height="380" fetchpriority="high">
+<div class="kmt-header-shade" aria-hidden="true"></div>
 
   <div class="watermark" aria-hidden="true">
     <strong>1948</strong>
