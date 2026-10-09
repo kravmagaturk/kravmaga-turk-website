@@ -101,13 +101,33 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
   align-items:center;
   overflow:hidden;
 
-  background:
-    linear-gradient(90deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.96) 35%,rgba(5,5,5,.60) 58%,rgba(5,5,5,.12) 100%),
-    url("assets/press/basin-hero.jpg") right center/auto 100% no-repeat,
-    #050505;
+  background:#050505;
+    isolation:isolate;
 
   border-bottom:1px solid #29292d;
 }
+
+#kmt-basin .basin-hero-bg{
+    position:absolute;
+    inset:0;
+    z-index:-2;
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:62% 45%;
+    filter:brightness(.68) contrast(1.04) saturate(.88);
+}
+
+#kmt-basin .basin-hero-shade{
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    background:linear-gradient(90deg,rgba(5,5,5,.80) 0%,rgba(5,5,5,.68) 38%,rgba(5,5,5,.30) 62%,rgba(5,5,5,.08) 100%);
+}
+
+
 
 #kmt-basin .basin-watermark{display:none!important}
 
@@ -616,14 +636,19 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
   #kmt-basin .basin-hero{
     min-height:620px;
     align-items:flex-end;
-    background:
-      linear-gradient(0deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.98) 43%,rgba(5,5,5,.66) 62%,rgba(5,5,5,.08) 87%),
-      url("assets/press/basin-hero.jpg") center top/100% auto no-repeat,
-      #050505;
+
   }
 
+    #kmt-basin .basin-hero-bg{
+        object-position:50% center;
+    }
+
+    #kmt-basin .basin-hero-shade{
+        background:linear-gradient(0deg,rgba(5,5,5,.91) 0%,rgba(5,5,5,.72) 44%,rgba(5,5,5,.18) 100%),linear-gradient(90deg,rgba(5,5,5,.58),rgba(5,5,5,.10));
+    }
+
   #kmt-basin .basin-hero-content{
-    padding:245px 0 48px;
+    padding:48px 0;
   }
 
   #kmt-basin .basin-hero h1{
@@ -693,6 +718,8 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
 ========================= -->
 
 <header class="basin-hero">
+<img class="basin-hero-bg" src="assets/press/basin-hero.jpg?v=20261004" alt="Krav Maga Türk eğitim ve medya çalışmaları." width="960" height="540">
+<div class="basin-hero-shade" aria-hidden="true"></div>
 <div class="basin-wrap">
 
     <div class="basin-hero-content">
