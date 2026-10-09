@@ -891,6 +891,29 @@ img{max-width:100%}
   .kmt-footer-inner,.kmt-footer-info{max-width:100%}
   .kmt-footer-info a,.kmt-footer-info span{white-space:normal!important}
 }
+
+/* Uncropped header photograph */
+.kmt-hero{
+    display:block;
+    min-height:0;
+}
+.kmt-hero-bg{
+    position:relative;
+    inset:auto;
+    z-index:auto;
+    width:100%;
+    height:auto;
+    max-width:1200px;
+    margin:0 auto;
+    object-fit:contain;
+    object-position:center;
+    filter:none;
+}
+.kmt-hero-shade{display:none;}
+.kmt-hero-content{padding:44px 0;}
+@media(max-width:750px){
+    .kmt-hero-content{padding:28px 0 34px;}
+}
 </style>
 </head>
 

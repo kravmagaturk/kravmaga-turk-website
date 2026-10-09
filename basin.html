@@ -710,6 +710,29 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
   }
 }
 
+
+/* Uncropped header photograph */
+#kmt-basin .basin-hero{
+    display:block;
+    min-height:0;
+}
+#kmt-basin .basin-hero-bg{
+    position:relative;
+    inset:auto;
+    z-index:auto;
+    width:100%;
+    height:auto;
+    max-width:1200px;
+    margin:0 auto;
+    object-fit:contain;
+    object-position:center;
+    filter:none;
+}
+#kmt-basin .basin-hero-shade{display:none;}
+#kmt-basin .basin-hero-content{padding:44px 0;}
+@media(max-width:650px){
+    #kmt-basin .basin-hero-content{padding:28px 0 34px;}
+}
 </style>
 
 
