@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" role="img" aria-labelledby="title desc">
+  <title id="title">Krav Maga Türk kurumsal referansları</title>
+  <desc id="desc">Kurum adlarının siyah ve kırmızı temalı bir logo duvarı düzeninde sunumu</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1"><stop stop-color="#050505"/><stop offset=".58" stop-color="#080808"/><stop offset="1" stop-color="#1a0608"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#e81822" stop-opacity=".35"/><stop offset="1" stop-color="#e81822" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity=".72"/></filter>
+  </defs>
+  <rect width="1600" height="800" fill="url(#bg)"/>
+  <circle cx="1270" cy="390" r="470" fill="url(#glow)"/>
+  <path d="M730 0h870v800H610z" fill="#fff" opacity=".018"/>
+  <g opacity=".2" stroke="#e81822" fill="none"><path d="M760 80h760M720 400h850M680 720h920"/><path d="M920 0v800M1260 0v800"/></g>
+  <g filter="url(#shadow)" font-family="Arial,Helvetica,sans-serif" font-weight="800">
+    <g transform="translate(70 210) rotate(-2)"><rect width="320" height="150" rx="18" fill="#121212" stroke="#343434"/><circle cx="68" cy="75" r="34" fill="#ffdd00"/><path d="M48 72c18-24 42-24 55 0-18-9-37-9-55 0z" fill="#184a9b"/><text x="120" y="88" fill="#fff" font-size="37">Turkcell</text></g>
+    <g transform="translate(615 210) rotate(2)"><rect width="330" height="155" rx="18" fill="#121212" stroke="#343434"/><circle cx="76" cy="78" r="40" fill="#e60000"/><circle cx="76" cy="78" r="24" fill="none" stroke="#fff" stroke-width="8"/><path d="M77 53c-18 8-22 26-12 38" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/><text x="132" y="90" fill="#e60000" font-size="34">vodafone</text></g>
+    <g transform="translate(1190 210) rotate(1)"><rect width="300" height="145" rx="18" fill="#121212" stroke="#343434"/><text x="42" y="94" fill="#e50010" font-family="Georgia,serif" font-style="italic" font-size="72">H&amp;M</text></g>
+    <g transform="translate(70 445) rotate(-1)"><rect width="400" height="150" rx="18" fill="#121212" stroke="#343434"/><rect x="33" y="35" width="80" height="80" rx="10" fill="none" stroke="#1671b9" stroke-width="8"/><text x="73" y="86" text-anchor="middle" fill="#1671b9" font-size="34">TBB</text><text x="135" y="68" fill="#fff" font-size="25">TÜRKİYE BANKALAR</text><text x="135" y="101" fill="#fff" font-size="25">BİRLİĞİ</text></g>
+    <g transform="translate(615 445) rotate(-2)"><rect width="355" height="145" rx="18" fill="#121212" stroke="#343434"/><circle cx="65" cy="72" r="34" fill="none" stroke="#e81822" stroke-width="8"/><text x="65" y="84" text-anchor="middle" fill="#e81822" font-size="38">C</text><text x="120" y="83" fill="#fff" font-family="Georgia,serif" font-size="35">Cumhuriyet</text></g>
+    <g transform="translate(1190 445) rotate(2)"><rect width="310" height="145" rx="18" fill="#121212" stroke="#343434"/><path d="M50 40h58v65H50z" fill="#e2232a"/><text x="79" y="86" text-anchor="middle" fill="#fff" font-size="30">MEF</text><text x="130" y="82" fill="#fff" font-size="30">OKULLARI</text></g>
+    <g transform="translate(400 710) rotate(1)"><text fill="#777" font-size="22" letter-spacing="5">ZORLU • SABANCI • SECURITAS • BAŞKENT</text></g>
+  </g>
+</svg>
