@@ -275,7 +275,7 @@
                 <a href="/krav-maga-kadikoy">Krav Maga Kadıköy</a>
                 <a href="/ozel-dersler">Özel Dersler</a>
                 <a href="/cocuk-krav-maga">Çocuk Dersleri</a>
-                <a href="/online-akademi.html">Online Eğitim</a>
+                <a href="/online-akademi">Online Eğitim</a>
               </div>
             </div>
 
