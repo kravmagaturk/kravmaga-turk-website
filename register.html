@@ -154,7 +154,7 @@ body:after{content:"KRAV MAGA TÜRK";position:fixed;right:3vw;top:66%;font-size:
 .result-card{background:#151517;border:1px solid #303034;border-left:4px solid #e50922;border-radius:0;color:#eee;}
 .result-card h3{color:#e50922;}.result-item{border-bottom:1px solid #29292d}.result-label{color:#999;}
 .message,.lockout-message,.legal-warning,.stats-bar{border-radius:3px;}
-.diploma-row{background:#151517;border-color:#303034;border-radius:3px 3px 0 0;}.diploma-row.closed{border-radius:3px}.row-name{color:#fff}.row-register,.expand-btn{color:#e50922}.diploma-details{background:#101012;border-color:#29292d;border-radius:0 0 3px 3px}.diploma-details .info-block p{color:#bbb}.photo-frame,.photo-frame-large{background:#09090a;border:1px solid #333;border-radius:4px}.legal-footer{background:#080809;color:#777;border-top:1px solid #252529}.log-list{background:#101012;border-color:#29292d}.log-item{border-bottom-color:#29292d}.security-notice{color:#777}
+.diploma-row{background:#151517;border-color:#303034;border-radius:3px 3px 0 0;}.diploma-row.closed{border-radius:3px}.row-name{color:#fff}.row-register{color:#fff;font-size:17px;letter-spacing:.04em}.expand-btn{color:#e50922}.diploma-details{background:#101012;border-color:#29292d;border-radius:0 0 3px 3px}.diploma-details .info-block p{color:#bbb}.photo-frame,.photo-frame-large{background:#09090a;border:1px solid #333;border-radius:4px}.legal-footer{background:#080809;color:#777;border-top:1px solid #252529}.log-list{background:#101012;border-color:#29292d}.log-item{border-bottom-color:#29292d}.security-notice{color:#777}.public-register-no{color:#fff;font-size:20px;letter-spacing:.04em}.admin-operations{width:100%;border:1px solid #34343a;border-radius:6px;background:#151517;padding:12px}.admin-operations summary{cursor:pointer;color:#fff;font-size:16px;font-weight:800}.admin-operation-section{border-top:1px solid #303034;padding:12px 0}.admin-operation-section h4{margin:0 0 8px;color:#fff}.admin-operation-section .btn,.admin-operation-section select{margin:4px 8px 4px 0}.admin-operation-section span{color:#ddd}
 #login-form>div:first-child>div{background:#e50922!important;border-radius:4px!important;}
 #login-form>div:first-child h2{color:#fff!important;}
 #add-form .form-group[style*="background:#f7f7f7"],#add-form .form-group[style*="background:#fff7f7"]{background:#151517!important;border-color:#333!important;color:#ddd!important;}
@@ -1078,21 +1078,13 @@ function renderSearchResult(d){
   resultDiv.innerHTML='<div class="result-card"><h3>Kayıt Bilgisi</h3>'+
     portraitHtml+
     '<div style="text-align:center;margin-bottom:14px;">'+statusBadge+'</div>'+
+    '<div class="result-item"><span class="result-label">Sicil No</span><strong class="public-register-no">'+d.registerNo+'</strong></div>'+
     '<div class="result-item"><span class="result-label">Ad Soyad</span><span>'+d.studentName+'</span></div>'+
     '<div class="result-item"><span class="result-label">Lokasyon</span><span>'+location+'</span></div>'+
     '<div class="result-item"><span class="result-label">Seviyesi</span><span>'+publicLevelText(d)+'</span></div>'+
     (d.joinDate?'<div class="result-item"><span class="result-label">Akademiye Giriş Tarihi</span><span>'+d.joinDate+'</span></div>':'')+
     (duration?'<div class="result-item"><span class="result-label">Eğitim Süresi</span><span>'+duration+'</span></div>':'')+
     '<div class="result-item"><span class="result-label">Durum</span><span>'+statusText+'</span></div>'+
-    '<div style="margin-top:18px;padding-top:16px;border-top:1px solid #303034;">'+
-      '<div style="font-weight:800;margin-bottom:8px;">Belge / Diploma İndirme</div>'+
-      '<div style="font-size:12px;color:#999;margin-bottom:10px;">İndirme seçeneklerini açmak için size verilen 5 haneli öğrenci şifresini girin.</div>'+
-      '<div style="display:flex;gap:8px;flex-wrap:wrap;">'+
-        '<input id="publicAccessPin" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="5" autocomplete="one-time-code" placeholder="5 haneli şifre" style="flex:1;min-width:160px;padding:10px;background:#09090a;color:#fff;border:1px solid #38383d;border-radius:4px;">'+
-        '<button class="btn" type="button" onclick="unlockStudentDownloads()">Kilidi Aç</button>'+
-      '</div>'+
-      '<div id="publicDownloadAccess" style="margin-top:10px;"></div>'+
-    '</div>'+
     '</div>';
 }
 function requestRecordDeletion(){
@@ -1255,6 +1247,7 @@ function handleUnlockedDocumentMenu(sel){
   runPdfAction(action,recordForDocument(lastUnlockedRecord,docIndex));
 }
 function unlockStudentDownloads(){
+  if(!currentAdminUser) return;
   var reg=lastSearchedRecord&&lastSearchedRecord.registerNo;
   var input=document.getElementById('publicAccessPin');
   var box=document.getElementById('publicDownloadAccess');
@@ -1292,6 +1285,7 @@ function unlockStudentDownloads(){
     });
 }
 function runPdfAction(value, record){
+  if(!currentAdminUser) return;
   if(!value || !record) return;
   if(value === 'diploma-tr') downloadPDF(record,'tr');
   else if(value === 'diploma-en') downloadPDF(record,'en');
@@ -2216,7 +2210,7 @@ function addDiploma(){
     };
     ensureAccessPin(record);
     diplomaData[targetIndex] = Object.assign({}, record, {_firebaseKey:old._firebaseKey});
-    msg.innerHTML = t('msgUpdated')+'<br><strong>'+registerNo+'</strong> - '+studentName+'<br>Öğrenci şifresi: <strong>'+record.accessPin+'</strong>';
+    msg.innerHTML = t('msgUpdated')+'<br><strong>'+registerNo+'</strong> - '+studentName;
 
   } else {
     // Yeni kişi = yeni sicil. Aynı isim varsa yanlışlıkla ikinci sicil açmayı engelle.
@@ -2243,7 +2237,7 @@ function addDiploma(){
     };
     ensureAccessPin(record);
     diplomaData.push(record);
-    msg.innerHTML = t('msgAdded')+'<br><strong>'+registerNo+'</strong> - '+studentName+'<br>Öğrenci şifresi: <strong>'+record.accessPin+'</strong>';
+    msg.innerHTML = t('msgAdded')+'<br><strong>'+registerNo+'</strong> - '+studentName;
   }
 
   adminFetch('/diplomaData/' + registerNo + '.json', {
@@ -2495,15 +2489,16 @@ function renderDiplomaList(filtered, isFiltering){
           '<p><strong>'+t('lblExamLoc')+'</strong> '+d.examLocation+'</p>' +
           '<p><strong>Belgeler / Seviyeler:</strong> '+recordDocuments(d).map(function(x){return documentLabel(x);}).join(' • ')+'</p>' +
           ((d.country||d.city||d.district) ? '<p><strong>Konum:</strong> '+[d.country,d.city,d.district].filter(Boolean).join(' / ')+'</p>' : '') +
-          '<p><strong>Öğrenci Şifresi:</strong> <span style="font-family:monospace;font-size:17px;color:#fff;">'+ensureAccessPin(d)+'</span> <button type="button" class="btn btn-secondary btn-small" onclick="regenerateAccessPin('+i+')">Yeni Şifre</button></p>' +
-          permissionHtml +
         '</div>' +
-        '<div class="actions">' +
-          '<button class="btn btn-edit" onclick="editDiploma('+i+')">'+t('btnEdit')+'</button>' +
-          '<button class="btn btn-danger" onclick="deleteDiploma('+i+')">'+t('btnDelete')+'</button>' +
-          documentMenus +
-          '<button class="btn btn-secondary btn-small" onclick="addDocumentToRecord('+i+')">➕ Belge / Seviye Ekle</button>' +
-        '</div>' +
+        '<details class="admin-operations"><summary>Yönetici İşlem Menüsü</summary>'+
+          '<div class="admin-operation-section"><h4>Yetkilendirme</h4>'+permissionHtml+'</div>'+
+          '<div class="admin-operation-section"><h4>Belgeler</h4>'+documentMenus+
+            '<button class="btn btn-secondary btn-small" onclick="addDocumentToRecord('+i+')">➕ Belge / Seviye Ekle</button></div>'+
+          '<div class="admin-operation-section"><h4>Kimlik</h4><span>Kimlik bilgileri kayıt detayında görüntülenir.</span></div>'+
+          '<div class="admin-operation-section"><h4>Kayıt Bilgisi</h4><span>'+d.registerNo+'</span></div>'+
+          '<div class="admin-operation-section"><h4>Düzenleme</h4><button class="btn btn-edit" onclick="editDiploma('+i+')">'+t('btnEdit')+'</button></div>'+
+          '<div class="admin-operation-section"><h4>Silme</h4><button class="btn btn-danger" onclick="deleteDiploma('+i+')">'+t('btnDelete')+'</button></div>'+
+        '</details>' +
       '</div>';
   });
   box.innerHTML = html;
