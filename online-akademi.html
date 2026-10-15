@@ -60,10 +60,9 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
 
 <div id="loginBox" class="loginBox">
   <h3 id="loginTitle">Öğrenci Girişi</h3>
-  <p id="loginInfo">Diploma / sicil sisteminde size verilen 5 haneli öğrenci şifresi ile giriş yapın.</p>
+  <p id="loginInfo">Online eğitim için yöneticiden onay alınız. Sicil numaranızı girerek cihazınız için erişim isteği gönderin.</p>
   <div class="loginFields">
-    <input id="regInput" type="text" autocomplete="username" placeholder="Sicil No (örn. KM......)">
-    <input id="pinInput" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="5" autocomplete="current-password" placeholder="5 haneli öğrenci şifresi">
+    <input id="regInput" type="text" autocomplete="username" placeholder="Sicil numaranız">
     <button id="studentLoginBtn" class="btn red" type="button">Online Eğitime Gir</button>
   </div>
   <div id="loginMsg" class="loginMsg"></div>
@@ -210,31 +209,58 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
       if(accessText)accessText.textContent=profile.sessionMode==='book'?'Kitap QR erişimi':'Online eğitim erişimi';
     }else{
       if(loginBox)loginBox.classList.remove('hidden');if(logoutBtn)logoutBtn.classList.add('hidden');if(userText)userText.textContent='';if(accessText)accessText.textContent='Giriş bekleniyor';
-      if(isBookEntry){$('loginTitle').textContent='Kitap QR Öğrenci Girişi';$('loginInfo').textContent='Kitap görsel eğitimine erişmek için sicil numaranızı ve size verilen 5 haneli öğrenci şifresini girin.';$('studentLoginBtn').textContent='Kitap Eğitimine Gir';}
     }
     renderNav();renderLessons();updateMetrics();
   }
-  async function login(){
-    const registerNo=$('regInput').value.trim().toUpperCase(),pin=$('pinInput').value.trim(),btn=$('studentLoginBtn');
-    $('loginMsg').className='loginMsg';$('loginMsg').textContent='';
-    if(!registerNo||!/^[0-9]{5}$/.test(pin)){$('loginMsg').className='loginMsg error';$('loginMsg').textContent='Sicil numarası ve 5 haneli öğrenci şifresini girin.';return;}
-    btn.disabled=true;btn.textContent='Kontrol ediliyor...';
-    try{
-      const d=await api('/api/student-login',{method:'POST',body:JSON.stringify({registerNo,pin,mode:isBookEntry?'book':'member'})});
-      session=d.session;sessionStorage.setItem('kmtStudentSession',session);profile=d.user;updateLoginState();await loadProgress();
-      if(wantedLesson){const l=flatLessons().find(x=>x.id===wantedLesson);if(l)openLesson(l);}
-    }catch(e){
-      const map={'invalid-credentials':'Sicil numarası veya öğrenci şifresi hatalı.','online-education-not-authorized':'Online eğitim giriş yetkiniz henüz açılmamış.','student-inactive':'Öğrenci kaydı aktif değil.','too-many-attempts':'Çok fazla hatalı deneme. 15 dakika sonra tekrar deneyin.'};
-      $('loginMsg').className='loginMsg error';$('loginMsg').textContent=map[e.message]||'Giriş doğrulanamadı.';
-    }finally{btn.disabled=false;btn.textContent=isBookEntry?'Kitap Eğitimine Gir':'Online Eğitime Gir';}
+  let approvalTimer=null,approvalBusy=false;
+  function deviceTokenFor(registerNo){
+    const key='kmtEducationDevice:'+registerNo;
+    let token=localStorage.getItem(key)||'';
+    if(!/^[0-9a-f]{64}$/.test(token)){
+      const bytes=new Uint8Array(32);crypto.getRandomValues(bytes);
+      token=Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');
+      localStorage.setItem(key,token);
+    }
+    return token;
   }
-  $('studentLoginBtn').onclick=login;$('pinInput').addEventListener('keydown',e=>{if(e.key==='Enter')login();});
-  $('logoutBtn').onclick=async()=>{try{await api('/api/student-logout',{method:'POST'});}catch{}session='';profile=null;progress={};sessionStorage.removeItem('kmtStudentSession');playerEl.pause();playerEl.removeAttribute('src');playerEl.load();playerEl.classList.add('hidden');emptyState.classList.remove('hidden');updateLoginState();};
+  function stopApprovalPoll(){if(approvalTimer)clearInterval(approvalTimer);approvalTimer=null;}
+  async function requestEducationAccess(registerNo){
+    return api('/api/student-login',{method:'POST',body:JSON.stringify({registerNo,deviceToken:deviceTokenFor(registerNo)})});
+  }
+  async function processEducationResponse(registerNo,d){
+    if(d.pending){
+      $('loginMsg').className='loginMsg';
+      $('loginMsg').textContent='Yönetici onayı bekleniyor. Başvuru kodunuz: '+d.requestCode+'. Bu kodu yöneticiyle paylaşın; bu cihazdaki sayfayı açık tutabilirsiniz.';
+      if(!approvalTimer)approvalTimer=setInterval(async()=>{
+        if(approvalBusy)return;approvalBusy=true;
+        try{await processEducationResponse(registerNo,await requestEducationAccess(registerNo));}
+        catch(e){if(e.message==='student-inactive'||e.message==='online-education-not-authorized')stopApprovalPoll();}
+        finally{approvalBusy=false;}
+      },5000);
+      return;
+    }
+    stopApprovalPoll();
+    session=d.session;sessionStorage.setItem('kmtStudentSession',session);profile=d.user;updateLoginState();await loadProgress();
+    if(wantedLesson){const l=flatLessons().find(x=>x.id===wantedLesson);if(l)openLesson(l);}
+  }
+  async function login(){
+    const registerNo=$('regInput').value.trim().toUpperCase(),btn=$('studentLoginBtn');
+    $('loginMsg').className='loginMsg';$('loginMsg').textContent='';
+    if(!/^KM[0-9]{6,12}$/.test(registerNo)){$('loginMsg').className='loginMsg error';$('loginMsg').textContent='Geçerli sicil numaranızı girin.';return;}
+    btn.disabled=true;btn.textContent='Kontrol ediliyor...';
+    try{await processEducationResponse(registerNo,await requestEducationAccess(registerNo));}
+    catch(e){
+      const map={'record-not-found':'Sicil numarası bulunamadı.','student-inactive':'Öğrenci kaydı aktif değil.','too-many-attempts':'Çok fazla istek. 15 dakika sonra tekrar deneyin.','online-education-not-authorized':'Online eğitim yetkiniz yönetici tarafından açılmamış.'};
+      $('loginMsg').className='loginMsg error';$('loginMsg').textContent=map[e.message]||'Giriş doğrulanamadı.';
+    }finally{btn.disabled=false;btn.textContent='Online Eğitime Gir';}
+  }
+  $('studentLoginBtn').onclick=login;$('regInput').addEventListener('keydown',e=>{if(e.key==='Enter')login();});
+  $('logoutBtn').onclick=async()=>{stopApprovalPoll();try{await api('/api/student-logout',{method:'POST'});}catch{}session='';profile=null;progress={};sessionStorage.removeItem('kmtStudentSession');playerEl.pause();playerEl.removeAttribute('src');playerEl.load();playerEl.classList.add('hidden');emptyState.classList.remove('hidden');updateLoginState();};
 
   const pre=params.get('reg');if(pre)$('regInput').value=pre.toUpperCase();
   Promise.resolve(JSON.parse($('kmtCatalogData').textContent||'{"sections":[]}')).then(async d=>{
     catalog=d;await restoreSession();updateLoginState();if(profile)await loadProgress();
-    if(wantedLesson){const l=flatLessons().find(x=>x.id===wantedLesson);if(l){activeSection=l.sectionId;renderNav();renderLessons();if(profile)openLesson(l);else{$('nowTitle').textContent=l.title;$('nowMeta').textContent='Dersi izlemek için öğrenci şifrenizle giriş yapın.';}}}
+    if(wantedLesson){const l=flatLessons().find(x=>x.id===wantedLesson);if(l){activeSection=l.sectionId;renderNav();renderLessons();if(profile)openLesson(l);else{$('nowTitle').textContent=l.title;$('nowMeta').textContent='Dersi izlemek için sicil numaranızla erişim isteği gönderin.';}}}
   }).catch(e=>{console.error('Online akademi başlatılamadı',e);if(!catalog){$('lessonList').innerHTML='<div class="error" style="padding:18px">Müfredat verisi yüklenemedi.</div>';}else{renderNav();renderLessons();updateMetrics();}});
 })();
 </script>
