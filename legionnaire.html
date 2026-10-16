@@ -1042,6 +1042,16 @@ body{
   .kmt-leg-lightbox{padding:10px}
   .kmt-leg-lightbox-inner{padding:10px}
 }
+/* Keep landscape and portrait archive images inside equal, viewport-sized cards. */
+.leg-gallery{width:100%!important;max-width:100%!important;min-width:0!important;grid-auto-flow:row!important}
+.leg-gallery .leg-photo{min-width:0!important;min-height:0!important;box-sizing:border-box!important;isolation:isolate}
+.leg-gallery .leg-photo img{position:absolute!important;inset:6px!important;width:calc(100% - 12px)!important;height:calc(100% - 12px)!important;max-width:none!important;max-height:none!important;object-fit:contain!important}
+@media(max-width:650px){
+  .leg-section .leg-wrap{width:calc(100% - 24px)!important;max-width:100%!important;box-sizing:border-box!important}
+  .leg-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+  .leg-gallery .leg-photo{aspect-ratio:4/3!important;padding:0!important}
+  .leg-gallery .leg-photo img{inset:4px!important;width:calc(100% - 8px)!important;height:calc(100% - 8px)!important}
+}
 </style>
 </head>
 
