@@ -34,7 +34,7 @@ body{min-height:100vh;padding:24px 14px 40px}.wrap{width:min(720px,100%);margin:
 .card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:12px;padding:22px;box-shadow:0 12px 40px rgba(0,0,0,.35)}
 .status{text-align:center;margin:0 0 20px}.badge{display:inline-block;padding:10px 18px;border-radius:999px;background:#e7f6e8;color:#34763e;font-weight:800}
 .photo{width:128px;height:154px;object-fit:cover;border-radius:9px;border:1px solid #333;display:block;margin:0 auto 12px}.name{text-align:center;font-size:27px;font-weight:900;margin:0 0 18px}
-.row{display:grid;grid-template-columns:180px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid #292929}.row:last-child{border-bottom:0}.label{font-weight:800;color:#9b9b9b}.value{text-align:right;overflow-wrap:anywhere}
+.row{display:grid;grid-template-columns:180px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid #292929}.row:last-child{border-bottom:0}.label{font-weight:800;color:#9b9b9b}.value{text-align:right;overflow-wrap:anywhere}.sicil{color:#fff;font-size:22px;font-weight:900;letter-spacing:.05em}
 .verify{margin-top:20px;padding-top:18px;border-top:1px solid #303030;color:#858585;font-size:12px;line-height:1.55;text-align:center}
 .msg{text-align:center;padding:28px 10px;color:#aaa}.error{color:#ff9696}
 @media(max-width:600px){body{padding:12px 8px 28px}.card{padding:18px 14px}.row{grid-template-columns:1fr;gap:5px}.value{text-align:left;font-size:18px}.name{font-size:24px}}
@@ -82,7 +82,7 @@ body{min-height:100vh;padding:24px 14px 40px}.wrap{width:min(720px,100%);margin:
       '<div class="name">'+esc(d.studentName||'-')+'</div>'+
       '<div class="status"><span class="badge">'+esc(st)+'</span></div>'+
       '<div class="row"><div class="label">Ad Soyad</div><div class="value">'+esc(d.studentName||'-')+'</div></div>'+
-      '<div class="row"><div class="label">Sicil No</div><div class="value">'+esc(d.registerNo||reg)+'</div></div>'+
+      '<div class="row"><div class="label">Sicil No</div><div class="value sicil">'+esc(d.registerNo||reg)+'</div></div>'+
       '<div class="row"><div class="label">Lokasyon</div><div class="value">'+esc(loc)+'</div></div>'+
       '<div class="row"><div class="label">Seviyesi</div><div class="value">'+esc(d.level||'-')+'</div></div>'+
       (d.joinDate?'<div class="row"><div class="label">Akademiye Giriş Tarihi</div><div class="value">'+esc(d.joinDate)+'</div></div>':'')+
