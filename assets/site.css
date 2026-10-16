@@ -332,31 +332,3 @@ main#top .map-home>a{min-height:190px;display:flex;flex-direction:column;align-i
   .press-strip{margin:12px 0;padding:12px 14px}
   .map-home{height:230px}
 }
-
-/* 16.10.2026: supplied homepage artwork uses a 1280x577 ratio on every screen. */
-main#top .welcome-poster.v39{
-  display:block!important;
-  width:100%!important;
-  height:auto!important;
-  min-height:0!important;
-  max-height:none!important;
-  margin:0!important;
-  padding:0!important;
-  overflow:hidden!important;
-  line-height:0!important;
-  background:transparent!important;
-  aspect-ratio:auto!important;
-}
-main#top .welcome-poster.v39>img{
-  position:static!important;
-  display:block!important;
-  width:100%!important;
-  height:auto!important;
-  min-height:0!important;
-  max-height:none!important;
-  margin:0!important;
-  padding:0!important;
-  aspect-ratio:auto!important;
-  object-fit:contain!important;
-  object-position:center!important;
-}
