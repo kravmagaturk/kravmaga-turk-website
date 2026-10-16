@@ -27,6 +27,8 @@
 <meta name="description" content="Krav Maga Türk Online Eğitim: Basic Combatives, The Best Defense, materyal eğitimleri, seviye test hazırlığı ve ilerleme takibi.">
 <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
 <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
 <style>
 :root{--bg:#050505;--panel:#0d0d0d;--panel2:#121212;--red:#e81822;--text:#f5f5f5;--muted:#969696;--line:#282828;--ok:#52c77a}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
@@ -40,17 +42,17 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
 .sidehead{padding:18px;border-bottom:1px solid var(--line)}.sidehead strong{display:block}.sidehead small{color:var(--muted)}
 .sectionBtn{width:100%;text-align:left;border:0;border-bottom:1px solid #1f1f1f;background:transparent;color:#ddd;padding:15px 18px;font-weight:800;cursor:pointer}.sectionBtn.active{background:#151515;color:#fff;border-left:3px solid var(--red)}
 .module{padding:16px 18px;border-bottom:1px solid #1f1f1f}.module h3{margin:0 0 9px;font-size:15px}.lesson{display:flex;justify-content:space-between;gap:8px;padding:8px 0;color:#aaa;font-size:13px;cursor:pointer}.lesson:hover{color:#fff}.lesson.locked{opacity:.45;cursor:default}.lesson.done{color:#9be9b6}.lesson span:last-child{white-space:nowrap}
-.playerWrap{padding:18px}.now{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:13px}.now h2{margin:0;font-size:22px}.now p{margin:5px 0 0;color:var(--muted);font-size:13px}.videoBox{background:#000;border-radius:10px;overflow:hidden;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}.videoBox video{width:100%;height:100%}
+.playerWrap{padding:18px}.now{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:13px}.now h2{margin:0;font-size:22px}.now p{margin:5px 0 0;color:var(--muted);font-size:13px}.videoBox{position:relative;background:#000;border-radius:10px;overflow:hidden;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}.videoBox video{width:100%;height:100%}.studentVideoBadge{position:absolute;top:12px;right:12px;z-index:10;padding:7px 11px;border-radius:7px;background:rgba(0,0,0,.78);color:#fff;font-size:clamp(12px,1.5vw,17px);font-weight:700;letter-spacing:.02em;pointer-events:none;text-shadow:0 1px 2px #000}
 .empty{color:#888;text-align:center;padding:70px 25px}.progressGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:18px;border-top:1px solid var(--line)}.metric{background:var(--panel2);border:1px solid #252525;border-radius:9px;padding:15px}.metric b{font-size:22px;display:block}.metric span{font-size:11px;color:#888}
 .info{padding:18px;border-top:1px solid var(--line);color:#aaa;line-height:1.65;font-size:13px}.hidden{display:none!important}.special{color:#ffbd72}.error{color:#ff8d8d}.footerNote{padding:0 0 60px;color:#666;font-size:12px;text-align:center}
 @media(max-width:900px){.layout{grid-template-columns:1fr}.side{order:1}.main{order:2}.side #lessonList{max-height:420px;overflow-y:auto;overscroll-behavior:contain}.progressGrid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.wrap{width:min(100% - 20px,1200px)}.hero{padding-top:35px}.topin{min-height:60px}.brand{font-size:13px}.actions .userText{display:none}.side #lessonList{max-height:330px}.progressGrid{grid-template-columns:1fr 1fr}.now{display:block}.loginFields{grid-template-columns:1fr}.loginFields .btn{width:100%}}
+@media(max-width:620px){.wrap{width:min(100% - 20px,1200px)}.hero{padding-top:35px}.topin{min-height:60px;flex-wrap:wrap;padding:8px 0}.brand{font-size:13px}.actions{width:100%;flex-wrap:wrap}.actions .btn{font-size:12px;padding:8px 10px}.actions .userText{display:none}.side #lessonList{max-height:330px}.progressGrid{grid-template-columns:1fr 1fr}.now{display:block}.loginFields{grid-template-columns:1fr}.loginFields .btn{width:100%}}
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap topin">
 <div class="brand">KRAV MAGA <b>TÜRK</b> • ONLINE EĞİTİM</div>
-<div class="actions"><span id="userText" class="userText" style="color:#999;font-size:12px"></span><button id="logoutBtn" class="btn hidden">Çıkış</button></div>
+<div class="actions"><span id="userText" class="userText" style="color:#999;font-size:12px"></span><button id="linkGoogleBtn" class="btn hidden" type="button">Google Hesabını Bağla</button><button id="logoutBtn" class="btn hidden">Çıkış / Başka Üye</button></div>
 </div></header>
 <main>
 <section class="hero"><div class="wrap">
@@ -60,11 +62,12 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
 
 <div id="loginBox" class="loginBox">
   <h3 id="loginTitle">Öğrenci Girişi</h3>
-  <p id="loginInfo">Online eğitim için yöneticiden onay alınız. Sicil numaranızı girerek cihazınız için erişim isteği gönderin.</p>
+  <p id="loginInfo">Online eğitim için yöneticiden onay alınız. Sicil numaranızı girerek erişim isteği gönderin. Onaydan sonra Google hesabınızı bağlayıp diğer cihazlardan giriş yapabilirsiniz.</p>
   <div class="loginFields">
     <input id="regInput" type="text" autocomplete="username" placeholder="Sicil numaranız">
     <button id="studentLoginBtn" class="btn red" type="button">Online Eğitime Gir</button>
   </div>
+  <button id="googleLoginBtn" class="btn" type="button" style="margin-top:10px">Google ile Giriş Yap</button>
   <div id="loginMsg" class="loginMsg"></div>
 </div>
 </div></section>
@@ -82,7 +85,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
 <div class="card">
 <div class="playerWrap">
 <div class="now"><div><h2 id="nowTitle">Bir ders seçin</h2><p id="nowMeta">Müfredattan video seçerek başlayın.</p></div><span id="nowAccess" class="pill">—</span></div>
-<div class="videoBox" id="videoBox"><div class="empty" id="emptyState">Ders oynatıcı burada açılacak.</div><video id="player" playsinline controls class="hidden"></video></div>
+<div class="videoBox" id="videoBox"><div class="empty" id="emptyState">Ders oynatıcı burada açılacak.</div><video id="player" playsinline controls class="hidden"></video><div id="studentVideoBadge" class="studentVideoBadge hidden"></div></div>
 </div>
 <div class="progressGrid">
 <div class="metric"><b id="mDone">0</b><span>TAMAMLANAN</span></div>
@@ -101,6 +104,10 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
 <script>
 (() => {
   const API='https://kravmaga-online-video.bulicet.workers.dev';
+  const studentFirebaseApp=firebase.initializeApp({apiKey:'AIzaSyAS8VB0ikbZXuhVQNzgn_ZbQWGXExijmKA',authDomain:'kravmaga-diploma.firebaseapp.com',projectId:'kravmaga-diploma'},'academy-student');
+  const studentAuth=studentFirebaseApp.auth();
+  const googleProvider=new firebase.auth.GoogleAuthProvider();
+  googleProvider.setCustomParameters({prompt:'select_account'});
   const params=new URLSearchParams(location.search);
   const wantedLesson=params.get('lesson')||'';
   const isBookEntry=false;
@@ -185,6 +192,10 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
       const d=await api('/api/video-ticket/'+encodeURIComponent(l.id),{method:'POST'});
       emptyState.classList.add('hidden');playerEl.classList.remove('hidden');playerEl.src=d.url;
       if(!plyr)plyr=new Plyr(playerEl,{controls:['play-large','play','progress','current-time','duration','mute','volume','settings','fullscreen']});
+      const badge=$('studentVideoBadge');
+      if(plyr.elements.container&&badge.parentElement!==plyr.elements.container)plyr.elements.container.appendChild(badge);
+      badge.textContent='Kayıtlı Öğrenci: '+profile.registerNo;
+      badge.classList.remove('hidden');
       const p=progress[l.id];if(p&&p.watched_sec>0&&p.watched_sec<l.durationSec*.9)playerEl.currentTime=Math.min(p.watched_sec,l.durationSec-2);
       playerEl.play().catch(()=>{});
     }catch(e){$('nowMeta').textContent+=' • Video açılamadı';}
@@ -203,12 +214,15 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
     try{const d=await api('/api/me');profile=d.user;return true;}catch{session='';sessionStorage.removeItem('kmtStudentSession');return false;}
   }
   function updateLoginState(){
-    const loginBox=$('loginBox'),logoutBtn=$('logoutBtn'),userText=$('userText'),accessText=$('accessText');
+    const loginBox=$('loginBox'),logoutBtn=$('logoutBtn'),linkGoogleBtn=$('linkGoogleBtn'),userText=$('userText'),accessText=$('accessText');
+    const badge=$('studentVideoBadge');
+    if(!profile||!current)badge.classList.add('hidden');
+    else badge.textContent='Kayıtlı Öğrenci: '+profile.registerNo;
     if(profile){
-      if(loginBox)loginBox.classList.add('hidden');if(logoutBtn)logoutBtn.classList.remove('hidden');if(userText)userText.textContent=(profile.display_name||profile.registerNo||'Öğrenci');
+      if(loginBox)loginBox.classList.add('hidden');if(logoutBtn)logoutBtn.classList.remove('hidden');if(linkGoogleBtn)linkGoogleBtn.classList.remove('hidden');if(userText)userText.textContent=(profile.display_name||profile.registerNo||'Öğrenci');
       if(accessText)accessText.textContent=profile.sessionMode==='book'?'Kitap QR erişimi':'Online eğitim erişimi';
     }else{
-      if(loginBox)loginBox.classList.remove('hidden');if(logoutBtn)logoutBtn.classList.add('hidden');if(userText)userText.textContent='';if(accessText)accessText.textContent='Giriş bekleniyor';
+      if(loginBox)loginBox.classList.remove('hidden');if(logoutBtn)logoutBtn.classList.add('hidden');if(linkGoogleBtn)linkGoogleBtn.classList.add('hidden');if(userText)userText.textContent='';if(accessText)accessText.textContent='Giriş bekleniyor';
     }
     renderNav();renderLessons();updateMetrics();
   }
@@ -240,7 +254,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
       return;
     }
     stopApprovalPoll();
-    session=d.session;sessionStorage.setItem('kmtStudentSession',session);profile=d.user;updateLoginState();await loadProgress();
+    session=d.session;sessionStorage.setItem('kmtStudentSession',session);profile=d.user;updateLoginState();await Promise.all([loadProgress(),refreshGoogleLink()]);
     if(wantedLesson){const l=flatLessons().find(x=>x.id===wantedLesson);if(l)openLesson(l);}
   }
   async function login(){
@@ -254,12 +268,48 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
       $('loginMsg').className='loginMsg error';$('loginMsg').textContent=map[e.message]||'Giriş doğrulanamadı.';
     }finally{btn.disabled=false;btn.textContent='Online Eğitime Gir';}
   }
+  async function refreshGoogleLink(){
+    if(!profile)return;
+    const button=$('linkGoogleBtn');
+    try{
+      const data=await api('/api/student-google-link');
+      button.disabled=!!data.linked;
+      button.textContent=data.linked?'Google Bağlı: '+data.email:'Google Hesabını Bağla';
+    }catch{button.disabled=false;button.textContent='Google Hesabını Bağla';}
+  }
+  async function googleToken(){
+    const result=await studentAuth.signInWithPopup(googleProvider);
+    return result.user.getIdToken(true);
+  }
+  $('linkGoogleBtn').onclick=async()=>{
+    const button=$('linkGoogleBtn');button.disabled=true;button.textContent='Google doğrulanıyor...';
+    try{
+      const token=await googleToken();
+      await api('/api/student-google-link',{method:'POST',headers:{Authorization:'Bearer '+token}});
+      await refreshGoogleLink();
+    }catch(e){
+      const map={'sicil-already-linked':'Bu sicile başka bir Google hesabı bağlı.','google-already-linked':'Bu Google hesabı başka bir sicile bağlı.'};
+      alert(map[e.message]||'Google hesabı bağlanamadı: '+e.message);
+      button.disabled=false;button.textContent='Google Hesabını Bağla';
+    }finally{await studentAuth.signOut().catch(()=>{});}
+  };
+  $('googleLoginBtn').onclick=async()=>{
+    const button=$('googleLoginBtn');button.disabled=true;button.textContent='Google doğrulanıyor...';
+    try{
+      const token=await googleToken();
+      const result=await api('/api/student-google-login',{method:'POST',headers:{Authorization:'Bearer '+token}});
+      await processEducationResponse('',result);
+    }catch(e){
+      $('loginMsg').className='loginMsg error';
+      $('loginMsg').textContent=e.message==='google-not-linked'?'Bu Google hesabı henüz bir sicile bağlı değil. Önce onaylı cihazdan hesabınızı bağlayın.':e.message==='online-education-not-authorized'?'Online eğitim yetkiniz kapalı.':'Google ile giriş yapılamadı: '+e.message;
+    }finally{button.disabled=false;button.textContent='Google ile Giriş Yap';await studentAuth.signOut().catch(()=>{});}
+  };
   $('studentLoginBtn').onclick=login;$('regInput').addEventListener('keydown',e=>{if(e.key==='Enter')login();});
-  $('logoutBtn').onclick=async()=>{stopApprovalPoll();try{await api('/api/student-logout',{method:'POST'});}catch{}session='';profile=null;progress={};sessionStorage.removeItem('kmtStudentSession');playerEl.pause();playerEl.removeAttribute('src');playerEl.load();playerEl.classList.add('hidden');emptyState.classList.remove('hidden');updateLoginState();};
+  $('logoutBtn').onclick=async()=>{stopApprovalPoll();try{await api('/api/student-logout',{method:'POST'});}catch{}await studentAuth.signOut().catch(()=>{});session='';profile=null;current=null;progress={};sessionStorage.removeItem('kmtStudentSession');playerEl.pause();playerEl.removeAttribute('src');playerEl.load();playerEl.classList.add('hidden');emptyState.classList.remove('hidden');$('studentVideoBadge').classList.add('hidden');$('regInput').value='';$('linkGoogleBtn').textContent='Google Hesabını Bağla';$('linkGoogleBtn').disabled=false;$('loginMsg').className='loginMsg';$('loginMsg').textContent='Çıkış yapıldı. Başka üyenin sicil numarasını girin.';const nextUrl=new URL(location.href);nextUrl.searchParams.delete('reg');history.replaceState(null,'',nextUrl);updateLoginState();$('regInput').focus();};
 
   const pre=params.get('reg');if(pre)$('regInput').value=pre.toUpperCase();
   Promise.resolve(JSON.parse($('kmtCatalogData').textContent||'{"sections":[]}')).then(async d=>{
-    catalog=d;await restoreSession();updateLoginState();if(profile)await loadProgress();
+    catalog=d;await restoreSession();updateLoginState();if(profile)await Promise.all([loadProgress(),refreshGoogleLink()]);
     if(wantedLesson){const l=flatLessons().find(x=>x.id===wantedLesson);if(l){activeSection=l.sectionId;renderNav();renderLessons();if(profile)openLesson(l);else{$('nowTitle').textContent=l.title;$('nowMeta').textContent='Dersi izlemek için sicil numaranızla erişim isteği gönderin.';}}}
   }).catch(e=>{console.error('Online akademi başlatılamadı',e);if(!catalog){$('lessonList').innerHTML='<div class="error" style="padding:18px">Müfredat verisi yüklenemedi.</div>';}else{renderNav();renderLessons();updateMetrics();}});
 })();
