@@ -52,7 +52,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
 <body>
 <header class="top"><div class="wrap topin">
 <div class="brand">KRAV MAGA <b>TÜRK</b> • ONLINE EĞİTİM</div>
-<div class="actions"><span id="userText" class="userText" style="color:#999;font-size:12px"></span><button id="linkGoogleBtn" class="btn hidden" type="button">Google Hesabını Bağla</button><button id="logoutBtn" class="btn hidden">Çıkış / Başka Üye</button></div>
+<div class="actions"><span id="userText" class="userText" style="color:#999;font-size:12px"></span><button id="linkGoogleBtn" class="btn hidden" type="button">Google Hesabını Bağla</button><button id="logoutBtn" class="btn" type="button">Çıkış / Başka Üye</button></div>
 </div></header>
 <main>
 <section class="hero"><div class="wrap">
@@ -219,10 +219,10 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
     if(!profile||!current)badge.classList.add('hidden');
     else badge.textContent='Kayıtlı Öğrenci: '+profile.registerNo;
     if(profile){
-      if(loginBox)loginBox.classList.add('hidden');if(logoutBtn)logoutBtn.classList.remove('hidden');if(linkGoogleBtn)linkGoogleBtn.classList.remove('hidden');if(userText)userText.textContent=(profile.display_name||profile.registerNo||'Öğrenci');
+      if(loginBox)loginBox.classList.add('hidden');if(linkGoogleBtn)linkGoogleBtn.classList.remove('hidden');if(userText)userText.textContent=(profile.display_name||profile.registerNo||'Öğrenci');
       if(accessText)accessText.textContent=profile.sessionMode==='book'?'Kitap QR erişimi':'Online eğitim erişimi';
     }else{
-      if(loginBox)loginBox.classList.remove('hidden');if(logoutBtn)logoutBtn.classList.add('hidden');if(linkGoogleBtn)linkGoogleBtn.classList.add('hidden');if(userText)userText.textContent='';if(accessText)accessText.textContent='Giriş bekleniyor';
+      if(loginBox)loginBox.classList.remove('hidden');if(linkGoogleBtn)linkGoogleBtn.classList.add('hidden');if(userText)userText.textContent='';if(accessText)accessText.textContent='Giriş bekleniyor';
     }
     renderNav();renderLessons();updateMetrics();
   }
