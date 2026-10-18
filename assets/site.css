@@ -360,3 +360,8 @@ main#top .welcome-poster.v39>img{
   object-fit:contain!important;
   object-position:center!important;
 }
+
+/* 2026-10-18 Core Web Vitals: reserve exact hero geometry to prevent CLS */
+.welcome-poster.v39{aspect-ratio:1280/577!important;min-height:0!important}
+.welcome-poster.v39>img{display:block!important;width:100%!important;height:100%!important;aspect-ratio:1280/577!important;object-fit:contain!important}
+@media(max-width:760px){.welcome-poster.v39{aspect-ratio:1280/577!important}.welcome-poster.v39>img{height:100%!important;aspect-ratio:1280/577!important}}
