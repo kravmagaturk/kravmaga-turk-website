@@ -167,7 +167,7 @@ body:after{content:"KRAV MAGA TÜRK";position:fixed;right:3vw;top:66%;font-size:
 <div class="container">
   <div class="header">
     <div class="lang-toggle"><button class="lang-btn" id="langToggleBtn" onclick="toggleUILang()">EN</button></div>
-    <img id="siteLogoImg" src="logo.png" class="logo" crossorigin="anonymous" onerror="this.style.display='none'" alt="Logo">
+    <img id="siteLogoImg" src="/assets/brand/logo-1948.png" class="logo" crossorigin="anonymous" onerror="this.style.display='none'" alt="Logo">
     <h1>KRAV MAGA TÜRK INTERNATIONAL</h1>
     <p id="txt-subtitle">Kayıt Sorgulama</p>
   </div>
@@ -894,7 +894,7 @@ function generateQR(elementId, text){
 }
 function prepareLogoBase64(){
   if(cachedLogoBase64 !== null) return Promise.resolve(cachedLogoBase64);
-  return fetch('logo.png').then(function(res){ return res.blob(); }).then(function(blob){
+  return fetch('/assets/brand/logo-1948.png').then(function(res){ return res.blob(); }).then(function(blob){
     return new Promise(function(resolve, reject){
       var reader = new FileReader();
       reader.onloadend = function(){ resolve(reader.result); };
