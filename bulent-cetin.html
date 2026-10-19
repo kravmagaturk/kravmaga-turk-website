@@ -1305,6 +1305,35 @@
 @media(hover:none){.bc-card:hover,.bc-consult-card:hover,.bc-person:hover,.bc-video:hover img{transform:none}}
 .bc-person:focus-visible,.bc-video:focus-visible{outline:2px solid #e50922;outline-offset:3px}
 
+
+/* Compact, proportional mobile layout for Bülent Çetin; desktop unchanged. */
+@media(max-width:750px){
+ .bc-hero{aspect-ratio:5/5!important;}
+ .bc-intro{width:92%;padding:26px 0;gap:17px;}
+ .bc-photo{max-height:330px;}
+ .bc-intro h2,.bc-video-section h2,.bc-krav h2,.bc-section h2,.bc-dark h2,.bc-people h2,.bc-links h2{font-size:clamp(19px,5.3vw,23px);line-height:1.2;}
+ .bc-intro p,.bc-krav p{font-size:12px;line-height:1.5;}
+ .bc-video-section{padding:26px 0;}
+ .bc-video-inner{width:92%;gap:15px;}
+ .bc-krav{padding:26px 4%;gap:12px;}
+ .bc-section{width:92%;padding:28px 0;}
+ .bc-grid-four{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;}
+ .bc-card,.bc-consult-card{min-width:0;padding:11px;overflow-wrap:anywhere;}
+ .bc-card h3,.bc-consult-card h3{font-size:13px;line-height:1.25;}
+ .bc-card p,.bc-consult-card p{font-size:11px;line-height:1.4;}
+ .bc-dark{padding:28px 0;}
+ .bc-dark-inner{width:92%;}
+ .bc-org-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;}
+ .bc-org-card{min-width:0;padding:10px;overflow-wrap:anywhere;font-size:11px;}
+ .bc-people{padding:28px 0;}
+ .bc-people-inner{width:92%;}
+ .bc-people-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;}
+ .bc-person{min-width:0;min-height:110px;padding:11px;overflow-wrap:anywhere;}
+ .bc-person h3{font-size:13px;line-height:1.25;margin-bottom:7px;}
+ .bc-person-number{font-size:36px;}
+ .bc-profile-link{font-size:9px;letter-spacing:.2px;}
+}
+@media(max-width:350px){.bc-people-grid{grid-template-columns:1fr;}}
 </style>
 
 
