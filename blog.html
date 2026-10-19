@@ -96,6 +96,35 @@ body{overflow-x:hidden}
   .kmt-grid{grid-template-columns:1fr}
 }
 </style>
+
+<style id="kmt-mobile-balanced-blog">
+@media(max-width:750px){
+
+.kmt-blog .kmt-wrap{width:calc(100% - 28px);}
+.kmt-blog .kmt-hero-content{padding:36px 0;}
+.kmt-blog .kmt-hero h1{font-size:clamp(30px,8vw,40px);line-height:1.08;}
+.kmt-blog .kmt-lead{font-size:14px;line-height:1.6;}
+.kmt-blog .kmt-section{padding:30px 0;}
+.kmt-blog .kmt-heading{margin-bottom:18px;}
+.kmt-blog .kmt-heading h2{font-size:clamp(23px,5.8vw,30px);line-height:1.17;}
+.kmt-blog .kmt-heading p{font-size:13px;line-height:1.6;}
+.kmt-blog .kmt-featured{grid-template-columns:minmax(0,1fr);gap:10px;}
+.kmt-blog .kmt-main-card{min-height:0;padding:18px;}
+.kmt-blog .kmt-label{font-size:9px;letter-spacing:.5px;line-height:1.5;}
+.kmt-blog .kmt-main-card h2{font-size:24px;line-height:1.2;margin:18px 0 10px;}
+.kmt-blog .kmt-main-card p{font-size:13px;line-height:1.65;}
+.kmt-blog .kmt-read{margin-top:16px;min-height:32px;}
+.kmt-blog .kmt-side,.kmt-blog .kmt-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+.kmt-blog .kmt-side-card,.kmt-blog .kmt-post{min-width:0;min-height:0;padding:14px 12px;overflow-wrap:anywhere;}
+.kmt-blog .kmt-side-card small,.kmt-blog .kmt-post small{font-size:9px;letter-spacing:.5px;line-height:1.4;margin-bottom:10px;}
+.kmt-blog .kmt-side-card h3,.kmt-blog .kmt-post h3{font-size:16px;line-height:1.3;margin-bottom:8px;}
+.kmt-blog .kmt-side-card p,.kmt-blog .kmt-post p{font-size:12px;line-height:1.6;}
+.kmt-blog .kmt-post .kmt-arrow{position:static;display:block;margin-top:10px;text-align:right;}
+.kmt-blog .kmt-topic-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+.kmt-blog .kmt-topic{min-width:0;justify-content:center;padding:8px;font-size:12px;text-align:center;line-height:1.4;}
+.kmt-blog .kmt-editorial{padding:16px;font-size:13px;line-height:1.6;}
+}
+</style>
 </head>
 <body>
 <main class="kmt-blog">
