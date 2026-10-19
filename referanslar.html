@@ -651,6 +651,20 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
  .kmt-ref-time h3{font-size:12px;line-height:1.3;margin-bottom:4px;overflow-wrap:anywhere;}
  .kmt-ref-time p{font-size:10px;line-height:1.35;overflow-wrap:anywhere;}
 }
+
+/* Mobile archive in compact horizontal rows; remove empty hero tail. */
+@media(max-width:750px){
+ .kmt-ref-hero{min-height:0!important;align-items:flex-end;}
+ .kmt-ref-hero .kmt-header-photo{height:175px;object-fit:contain;object-position:center top;}
+ .kmt-ref-hero .kmt-ref-wrap{padding-top:170px;}
+ .kmt-ref-hero .kmt-ref-content{padding:10px 0 20px;}
+ .kmt-ref-hero .kmt-ref-lead{line-height:1.4;}
+ .kmt-ref-timeline{grid-template-columns:1fr;gap:5px;}
+ .kmt-ref-time{display:grid;grid-template-columns:72px minmax(0,1fr);column-gap:8px;row-gap:2px;align-items:baseline;padding:8px 10px;}
+ .kmt-ref-time span{grid-row:1 / span 2;margin:0;font-size:10px;letter-spacing:0;}
+ .kmt-ref-time h3{margin:0;font-size:12px;line-height:1.2;}
+ .kmt-ref-time p{margin:0;font-size:10px;line-height:1.25;}
+}
 </style>
 
 
@@ -1094,7 +1108,7 @@ STFA Oğden
 </h3>
 
 <p>
-Saha müdürlüğü çalışması.
+Saha müdürlüğü.
 </p>
 
 </div>
@@ -1145,7 +1159,7 @@ Poronet
 </h3>
 
 <p>
-Operasyon yönetimi çalışması.
+Operasyon yönetimi.
 </p>
 
 </div>
@@ -1162,7 +1176,7 @@ NATO Zirvesi
 </h3>
 
 <p>
-Koruma hizmetleri çalışması.
+Koruma hizmetleri.
 </p>
 
 </div>
@@ -1179,7 +1193,7 @@ Rota Forte / CNR
 </h3>
 
 <p>
-Altın Fuarı çalışması.
+Altın Fuarı.
 </p>
 
 </div>
@@ -1196,7 +1210,7 @@ AK Sanat
 </h3>
 
 <p>
-Kurumsal güvenlik ve eğitim arşivi kaydı.
+Güvenlik ve eğitim.
 </p>
 
 </div>
