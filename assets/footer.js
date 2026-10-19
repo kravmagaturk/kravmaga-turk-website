@@ -75,6 +75,10 @@
         letter-spacing:.04em;white-space:nowrap;line-height:1.45
       }
       .kmt-footer-info a:hover{color:#fff!important}
+      .kmt-footer-info a.kmt-footer-social{display:inline-flex;align-items:center;justify-content:center;width:44px;min-width:44px;height:44px;border:1px solid #303337;border-radius:8px;background:#111315;line-height:1}
+      .kmt-footer-info a.kmt-footer-social:hover{border-color:#e30620;background:#1a1d20}
+      .kmt-footer-social svg{display:block;flex:none;width:26px;height:26px}
+
       .kmt-footer-copy{
         max-width:1536px;margin:0 auto;padding:18px 5% 22px;border-top:1px solid #1d1f22;
         color:#7f7f7f!important;font-size:12px;text-align:center;line-height:1.5
@@ -320,7 +324,30 @@
         </div>
       </footer>
     `;
-    return wrap.firstElementChild;
+    const footer = wrap.firstElementChild;
+    if (document.querySelector("main#top")) {
+      const socials = [
+        {
+          href: "https://www.instagram.com/kravmagaturk",
+          label: "Instagram — Krav Maga Türk",
+          icon: '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><defs><linearGradient id="kmt-footer-instagram-gradient" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#ffdc80"/><stop offset=".35" stop-color="#f77737"/><stop offset=".65" stop-color="#e1306c"/><stop offset="1" stop-color="#833ab4"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6" fill="url(#kmt-footer-instagram-gradient)"/><rect x="5.5" y="5.5" width="13" height="13" rx="4" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="16.4" cy="7.8" r="1" fill="#fff"/></svg>'
+        },
+        {
+          href: "https://www.youtube.com/@KravMagaTurk",
+          label: "YouTube — Krav Maga Türk",
+          icon: '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><rect x="1" y="4" width="22" height="16" rx="5" fill="#ff0033"/><path d="m10 8 6 4-6 4z" fill="#fff"/></svg>'
+        }
+      ];
+      socials.forEach(function (social) {
+        const link = footer.querySelector('a[href="' + social.href + '"]');
+        if (!link) return;
+        link.classList.add("kmt-footer-social");
+        link.setAttribute("aria-label", social.label);
+        link.setAttribute("title", social.label);
+        link.innerHTML = social.icon;
+      });
+    }
+    return footer;
   }
 
   function closeAllMenus(exceptItem) {
