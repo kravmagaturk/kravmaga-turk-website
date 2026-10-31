@@ -299,7 +299,7 @@ main#top .map-home>a{min-height:190px;display:flex;flex-direction:column;align-i
 /* PRODUCTION: shared navigation component 23.09.2026 */
 .kmt-nav{position:relative;z-index:100;background:#050607;border-bottom:1px solid #252525;color:#fff;font-family:Arial,sans-serif}
 .kmt-nav-inner{max-width:1536px;margin:auto;min-height:70px;padding:0 28px;display:flex;align-items:center;gap:24px}
-.kmt-nav-brand{font-weight:900;letter-spacing:.08em;white-space:nowrap;color:#fff;text-decoration:none}.kmt-nav-brand i{font-style:normal;color:#e30620}
+.kmt-nav-brand{font-weight:900;letter-spacing:.08em;white-space:nowrap;color:#fff;text-decoration:none}.kmt-nav-brand i{font-style:normal;color:#f04455}
 .kmt-nav-links{margin-left:auto;display:flex;align-items:stretch;gap:5px}
 .kmt-nav-item{position:relative}.kmt-nav-item>a,.kmt-nav-item>button{height:70px;display:flex;align-items:center;padding:0 13px;color:#fff;background:none;border:0;font:700 12px Arial;letter-spacing:.04em;cursor:pointer;text-decoration:none}
 .kmt-nav-item>a:hover,.kmt-nav-item>button:hover{color:#e30620}

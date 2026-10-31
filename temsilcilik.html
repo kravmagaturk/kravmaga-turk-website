@@ -634,16 +634,21 @@
   }
 
   .kmt-representative-page .card-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
   }
 
   .kmt-representative-page .card:last-child{
-    grid-column:auto;
+    grid-column:1 / -1;
     width:100%;
+    display:grid;
+    grid-template-columns:38% minmax(0,1fr);
   }
 
+  .kmt-representative-page .card:last-child .card-image{height:100%;min-height:200px}
+
   .kmt-representative-page .card-image{
-    height:300px;
+    height:130px;
   }
 
   .kmt-representative-page .image-kmg img,
@@ -655,8 +660,15 @@
 
   .kmt-representative-page .card-body{
     min-height:0;
-    padding:22px;
+    padding:13px;
   }
+
+  .kmt-representative-page .card h3{font-size:16px}
+  .kmt-representative-page .card-body p{font-size:11.5px;line-height:1.45}
+  .kmt-representative-page .country{letter-spacing:1px}
+  .kmt-representative-page .short{font-size:10px;letter-spacing:1px}
+  .kmt-representative-page .divider{margin:11px 0}
+  .kmt-representative-page .image-date{left:10px;bottom:9px;font-size:12px}
 
   .kmt-representative-page .timeline{
     grid-template-columns:1fr;
@@ -1058,4 +1070,4 @@
 <section class="philosophy"><div class="wrap"><div class="philosophy-inner"><div><span class="label">EĞİTİM YAKLAŞIMI</span><h2>Uluslararası Deneyimin Eğitime Aktarılması</h2></div><div class="philosophy-text"><p>Uluslararası temsilcilik ve eğitim çalışmaları sırasında edinilen teknik bilgi ve mesleki deneyimler, Krav Maga Türk eğitim sisteminin gelişimine katkı sağlamıştır.</p><p>Çalışmalarımızda gerçek yaşam koşullarına uygun yakın savunma, kişisel güvenlik, eğitmen gelişimi ve güvenlik eğitimi yaklaşımı esas alınmaktadır.</p></div></div></div></section>
 <section class="verify"><div class="wrap"><div class="verify-box"><div><span class="label">KAYIT VE SORGULAMA</span><h2>KAYIT SORGULAMA</h2><p>Krav Maga Türk diploma ve sicil kayıtları, kayıt sorgulama sistemi üzerinden kontrol edilebilir.</p></div><div class="verify-action"><a class="btn" href="https://kravmaga.com.tr/egitmen-and-seviye-sorgu">TEMSİLCİLİK VE EĞİTİMCİ SORGU</a></div></div></div></section>
 <section class="final"><div class="final-inner"><span class="label">KRAV MAGA TÜRK</span><h2>Uluslararası Deneyim · Yerel Eğitim</h2><p>Krav Maga Türk, farklı dönemlerde edinilen uluslararası eğitim ve güvenlik deneyimini Türkiye'deki eğitim çalışmalarına aktarmaktadır.</p><div class="final-line"></div></div></section>
-</section><script src="assets/footer.js" defer></script></body></html>
+</section><script src="assets/footer.js?v=20261028-inline" defer></script></body></html>
