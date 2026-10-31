@@ -28,7 +28,7 @@
         color:#fff!important;text-decoration:none!important;font-weight:900;
         font-size:16px;letter-spacing:.06em;white-space:nowrap
       }
-      .kmt-nav-brand i{font-style:normal;color:#e30620}
+      .kmt-nav-brand i{font-style:normal;color:#f04455}
       .kmt-nav-links{margin-left:auto;display:flex;align-items:center;gap:4px}
       .kmt-nav-item{position:relative}
       .kmt-nav-item>a,.kmt-nav-item>button{height:42px;display:flex;align-items:center;justify-content:center;padding:0 13px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,#121416,#0e1012);color:#f2f2f2!important;border-radius:7px;text-decoration:none!important;font:800 13px/1 Arial,Helvetica,sans-serif;letter-spacing:.035em;cursor:pointer;white-space:nowrap;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:background-color .06s linear,border-color .06s linear,color .06s linear,box-shadow .06s linear}
@@ -54,34 +54,45 @@
 
       .kmt-site-footer{
         width:100%;box-sizing:border-box;background:#070809!important;color:#aaa!important;
-        border-top:3px solid #d60000;font-family:Arial,Helvetica,sans-serif
+        border-top:2px solid #d60000;font-family:Arial,Helvetica,sans-serif
       }
       .kmt-footer-inner{
-        max-width:1536px;margin:0 auto;padding:34px 5% 28px;
-        display:flex;align-items:center;justify-content:space-between;gap:28px
+        max-width:1536px;margin:0 auto;padding:18px 5% 15px;
+        display:flex;align-items:center;justify-content:space-between;gap:18px
       }
       .kmt-footer-brand strong{
-        display:block;color:#fff!important;font-size:28px;font-weight:900;letter-spacing:1px;line-height:1.05
+        display:block;color:#fff!important;font-size:20px;font-weight:900;letter-spacing:.5px;line-height:1.1
       }
-      .kmt-footer-brand strong span{color:#d60000!important}
+      .kmt-footer-brand strong span{color:#f04455!important}
       .kmt-footer-brand small{
-        display:block;margin-top:10px;color:#7f8690!important;font-size:12px;font-weight:700;letter-spacing:2px
+        display:block;margin-top:4px;color:#7f8690!important;font-size:10px;font-weight:700;letter-spacing:1px
       }
       .kmt-footer-info{
-        display:flex;align-items:center;justify-content:flex-end;gap:28px;flex-wrap:wrap
+        display:flex;align-items:center;justify-content:flex-end;gap:12px 18px;flex-wrap:wrap
       }
       .kmt-footer-info a,.kmt-footer-info span{
-        color:#b8b8b8!important;text-decoration:none!important;font-size:13px;font-weight:800;
+        color:#b8b8b8!important;text-decoration:none!important;font-size:11px;font-weight:700;
         letter-spacing:.04em;white-space:nowrap;line-height:1.45
       }
       .kmt-footer-info a:hover{color:#fff!important}
-      .kmt-footer-info a.kmt-footer-social{display:inline-flex;align-items:center;justify-content:center;width:44px;min-width:44px;height:44px;border:1px solid #303337;border-radius:8px;background:#111315;line-height:1}
+      .kmt-footer-info a.kmt-footer-social{display:inline-flex;align-items:center;justify-content:center;width:36px;min-width:36px;height:36px;border:1px solid #303337;border-radius:7px;background:#111315;line-height:1}
       .kmt-footer-info a.kmt-footer-social:hover{border-color:#e30620;background:#1a1d20}
-      .kmt-footer-social svg{display:block;flex:none;width:26px;height:26px}
+      .kmt-footer-social svg{display:block;flex:none;width:21px;height:21px}
+      .kmt-footer-subscribe{width:min(100%,290px);flex:0 0 290px;color:#ddd;font-size:11px}
+      .kmt-footer-subscribe strong{display:block;color:#fff;font-size:13px;margin-bottom:2px}.kmt-footer-subscribe .kmt-subscribe-options{display:flex;align-items:center;justify-content:space-between;gap:6px}.kmt-footer-subscribe .kmt-subscribe-options label{flex:1;min-width:0;font-size:10px}.kmt-footer-subscribe .kmt-subscribe-options .kmt-footer-unsubscribe{white-space:nowrap}
+      .kmt-footer-subscribe p{margin:0 0 6px;color:#aeb5b8;line-height:1.35}
+      .kmt-footer-subscribe .kmt-subscribe-row{display:flex;gap:5px}
+      .kmt-footer-subscribe input[type=email]{min-width:0;flex:1;padding:7px 8px;border:1px solid #50565a;border-radius:5px;background:#171b1e;color:#fff;font:inherit}
+      .kmt-footer-subscribe button{padding:7px 9px;border:0;border-radius:5px;background:#c92134;color:#fff;font:700 11px Arial,sans-serif;cursor:pointer}
+      .kmt-footer-subscribe label{display:flex;align-items:flex-start;gap:5px;margin-top:5px;color:#aeb5b8;line-height:1.3}
+      .kmt-footer-subscribe label input{margin:2px 0 0}
+      .kmt-footer-subscribe [role=status]{margin:4px 0 0}.kmt-footer-subscribe [role=status]:empty{display:none}
+      .kmt-footer-subscribe .kmt-footer-unsubscribe{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:5px 8px;flex:none;border:1px solid #727d78;border-radius:5px;background:#26342b;color:#fff!important;font-size:11px;font-weight:700;text-decoration:none!important;text-align:center}
+      .kmt-footer-subscribe .kmt-footer-unsubscribe:hover{color:#fff!important}
 
       .kmt-footer-copy{
-        max-width:1536px;margin:0 auto;padding:18px 5% 22px;border-top:1px solid #1d1f22;
-        color:#7f7f7f!important;font-size:12px;text-align:center;line-height:1.5
+        max-width:1536px;margin:0 auto;padding:9px 5% 12px;border-top:1px solid #1d1f22;
+        color:#7f7f7f!important;font-size:10px;text-align:center;line-height:1.4
       }
       .kmt-footer-copy strong{color:#bdbdbd!important}
 
@@ -90,7 +101,7 @@
       /* TEK STANDART 19-48 LOGO */
       .bc-watermark,.bc-video-watermark,.bc-section-year,.bc-dark-year,.bc-photo-year,.kmt-representative-page .watermark,.kmt-belgeler .water,#kmt-basin .basin-watermark,#kmt-basin .basin-media::before,.kmt-ref-watermark,.kmt-watermark,.kmt-hero-logo,.leg-watermark,.leg-story-brand,.leg-author-logo,.leg-cta::before,.kmt-representative-page .final::before,.kmt-belgeler .bottom::before{display:none!important}
       .kmt-hero:before{content:none!important}
-      .kmt-standard-mark{position:absolute!important;width:390px!important;height:390px!important;right:4%!important;left:auto!important;top:50%!important;transform:translateY(-50%)!important;background:url("assets/brand/logo-1948.png") center/82% no-repeat!important;opacity:.28!important;filter:contrast(1.08)!important;mix-blend-mode:screen!important;-webkit-mask-image:radial-gradient(circle at center,#000 0 54%,rgba(0,0,0,.88) 62%,transparent 78%)!important;mask-image:radial-gradient(circle at center,#000 0 54%,rgba(0,0,0,.88) 62%,transparent 78%)!important;pointer-events:none!important;z-index:1!important}
+      .kmt-standard-mark{position:absolute!important;width:390px!important;height:390px!important;right:4%!important;left:auto!important;top:50%!important;transform:translateY(-50%)!important;background:url("/assets/brand/logo-520.webp") center/82% no-repeat!important;opacity:.28!important;filter:contrast(1.08)!important;mix-blend-mode:screen!important;-webkit-mask-image:radial-gradient(circle at center,#000 0 54%,rgba(0,0,0,.88) 62%,transparent 78%)!important;mask-image:radial-gradient(circle at center,#000 0 54%,rgba(0,0,0,.88) 62%,transparent 78%)!important;pointer-events:none!important;z-index:1!important}
       .bc-hero,.kmt-representative-page .hero,.kmt-belgeler .hero,
       #kmt-basin .basin-hero,.kmt-ref-hero,.leg-hero,.kmt-hero,.cpo-hero,.page{
         position:relative!important
@@ -215,11 +226,12 @@
         }
         .kmt-nav-item.open>.kmt-nav-drop{display:block}
         .kmt-nav-drop a{white-space:normal}
-        .kmt-footer-inner{display:block;padding:26px 18px 20px}
-        .kmt-footer-brand strong{font-size:23px}
-        .kmt-footer-brand small{font-size:11px;letter-spacing:1.4px}
-        .kmt-footer-info{margin-top:18px;justify-content:flex-start;gap:14px 18px}
-        .kmt-footer-copy{padding:14px 18px 18px;font-size:11px}
+        .kmt-footer-inner{display:block;padding:16px 18px 12px}
+        .kmt-footer-brand strong{font-size:18px}
+        .kmt-footer-brand small{font-size:9px;letter-spacing:.8px}
+        .kmt-footer-info{margin-top:12px;justify-content:flex-start;gap:9px 14px}
+        .kmt-footer-subscribe{width:100%;margin-top:14px}
+        .kmt-footer-copy{padding:9px 18px 12px;font-size:9px}
       }
     `;
     document.head.appendChild(style);
@@ -266,7 +278,7 @@
                 <a href="/temsilcilik">Temsilcilikler</a>
                 <a href="/belgeler">Belgeler</a>
                 <a href="/legionnaire">Legionnaire</a>
-                <a href="/egitmen-and-seviye-sorgu">Eğitmen ve Seviye Sorgu</a>
+                <a href="/egitmen-and-seviye-sorgu">Eğitmen Ara</a>
                 <a href="/basin">Basın</a>
                 <a href="/referanslar">Referanslar</a>
               </div>
@@ -280,6 +292,7 @@
                 <a href="/ozel-dersler">Özel Dersler</a>
                 <a href="/cocuk-krav-maga">Çocuk Dersleri</a>
                 <a href="/online-akademi">Online Eğitim</a>
+                
               </div>
             </div>
 
@@ -307,20 +320,24 @@
         <div class="kmt-footer-inner">
           <div class="kmt-footer-brand">
             <strong>KRAV MAGA <span>TÜRK</span></strong>
-            <small>GÜVENLİK DANIŞMANLIĞI · SELF DEFENSE ACADEMY</small>
+            <small>SELF DEFENSE ACADEMY</small>
           </div>
           <div class="kmt-footer-info">
             <a href="/iletisim">İLETİŞİM</a>
             <a href="/krav-maga-kadikoy">KADIKÖY · İSTANBUL</a>
-            <span>YOĞURTÇU ŞÜKRÜ SK. NO:19</span>
             <a href="https://www.instagram.com/kravmagaturk" target="_blank" rel="noopener">INSTAGRAM</a>
             <a href="https://www.youtube.com/@KravMagaTurk" target="_blank" rel="noopener">YOUTUBE</a>
           </div>
+          <form id="abonelik" class="kmt-footer-subscribe" data-kmt-newsletter="site">
+            <strong>Video ve haber aboneliği</strong>
+            <p>Yeni eğitim videoları ve haberleri e-postayla al.</p>
+            <div class="kmt-subscribe-row"><input type="email" name="email" aria-label="E-posta adresi" autocomplete="email" placeholder="E-posta adresin" required maxlength="200"><button type="submit">Abone ol</button><a class="kmt-footer-unsubscribe" href="/online-akademi/abonelik/ayril">Abonelikten çık</a></div>
+            <div class="kmt-subscribe-options"><label><input type="checkbox" name="consent" required> E-posta duyurularını almak istiyorum.</label></div>
+            <p role="status" aria-live="polite"></p>
+          </form>
         </div>
         <div class="kmt-footer-copy">
-          © COPYRIGHT 2026 TÜM HAKLARI SAKLIDIR.
-          <strong>KRAV MAGA TÜRK GÜVENLİK DANIŞMANLIĞI</strong>
-          ® TPE: 2007/49875
+          © 2026 <strong>KRAV MAGA TÜRK</strong> · ® TPE: 2007/49875
         </div>
       </footer>
     `;
@@ -436,6 +453,14 @@
       currentFooter.replaceWith(newFooter);
     } else {
       document.body.appendChild(newFooter);
+    }
+
+    if (!document.getElementById('kmt-newsletter-widget-script')) {
+      const script = document.createElement('script');
+      script.id = 'kmt-newsletter-widget-script';
+      script.src = '/assets/newsletter-widget.js';
+      script.defer = true;
+      document.head.appendChild(script);
     }
 
     injectStandardMark();
