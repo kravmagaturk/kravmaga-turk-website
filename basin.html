@@ -842,6 +842,107 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
 #kmt-basin .basin-hero .basin-hero-shade { display:none; }
 /* Arama motoru ve ekran okuyucular için gerçek H1 korunur; görsel üzerindeki yazı yinelenmez. */
 #kmt-basin .basin-hero > .basin-wrap { position:absolute !important; width:1px !important; height:1px !important; padding:0 !important; margin:-1px !important; overflow:hidden !important; clip:rect(0,0,0,0) !important; white-space:nowrap !important; border:0 !important; }
+
+/* Mobil basın: gerçek başlık akışta, resim üzerindeki masaüstü yazısı mobilde yok. */
+@media (max-width:750px) {
+  #kmt-basin .basin-hero {
+    display:flex;
+    flex-direction:column;
+    min-height:0;
+    height:auto;
+    align-items:stretch;
+    background:#080606;
+  }
+  #kmt-basin .basin-hero > .basin-wrap {
+    position:relative !important;
+    order:-1;
+    inset:auto !important;
+    z-index:2;
+    display:block;
+    width:100% !important;
+    height:auto !important;
+    max-width:none !important;
+    min-height:0;
+    padding:0 !important;
+    margin:0 !important;
+    overflow:visible !important;
+    clip:auto !important;
+    clip-path:none !important;
+    white-space:normal !important;
+    border:0 !important;
+  }
+  #kmt-basin .basin-hero .basin-hero-content {
+    position:relative;
+    padding:26px 22px 24px !important;
+    margin:0;
+    width:100%;
+    max-width:none;
+    background:linear-gradient(132deg,#2c080c 0%,#110708 48%,#050505 100%);
+  }
+  #kmt-basin .basin-hero .basin-label {
+    display:block;
+    color:#f32935;
+    font-size:10px;
+    letter-spacing:1.7px;
+    margin:0 0 14px;
+  }
+  #kmt-basin .basin-hero h1 {
+    display:block;
+    max-width:none;
+    color:#fff;
+    margin:0;
+    font-size:clamp(32px,8.3vw,48px);
+    line-height:1.06;
+    letter-spacing:-1px;
+    font-weight:900;
+    overflow-wrap:normal;
+    word-break:normal;
+  }
+  #kmt-basin .basin-hero h1 span {
+    display:block;
+    margin:1px 0 0;
+    color:#fff;
+    font-size:1em;
+    line-height:1.08;
+    letter-spacing:-.8px;
+  }
+  #kmt-basin .basin-hero .basin-redline {
+    display:block;
+    width:58px;
+    height:3px;
+    margin:16px 0 12px;
+    background:#e50922;
+  }
+  #kmt-basin .basin-hero .basin-lead {
+    display:block;
+    max-width:580px;
+    color:#d5cbcb;
+    font-size:14px;
+    line-height:1.6;
+    margin:0;
+  }
+  #kmt-basin .basin-hero .basin-hero-art {
+    order:1;
+    position:relative;
+    inset:auto;
+    display:block;
+    width:100%;
+    height:auto;
+    overflow:hidden;
+    flex:none;
+    background:#090707;
+  }
+  #kmt-basin .basin-hero .basin-hero-art .basin-hero-bg {
+    position:relative;
+    inset:auto;
+    display:block;
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    object-position:center;
+    max-width:none;
+  }
+}
 </style>
 
 
@@ -851,7 +952,7 @@ body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
 
 <header class="basin-hero">
 <picture class="basin-hero-art">
-  <source media="(max-width:750px)" type="image/webp" srcset="/assets/press/basin-oil-mobile-560.webp 560w, /assets/press/basin-oil-mobile-840.webp 840w" sizes="100vw" width="840" height="1253">
+  <source media="(max-width:750px)" type="image/webp" srcset="/assets/press/basin-oil-mobile-v2-560.webp 560w, /assets/press/basin-oil-mobile-v2-840.webp 840w" sizes="100vw" width="840" height="714">
   <source type="image/webp" srcset="/assets/press/basin-oil-960.webp 960w, /assets/press/basin-oil-1600.webp 1600w" sizes="100vw" width="1600" height="720">
   <img class="basin-hero-bg" src="/assets/press/basin-oil-1600.webp" alt="Krav Maga Türk basın çalışmaları: televizyon röportajı, yakın savunma eğitim sahnesi ve Krav Maga amblemi" width="1600" height="720" fetchpriority="high" decoding="async">
 </picture>
