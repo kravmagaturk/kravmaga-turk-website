@@ -288,6 +288,7 @@
               <button type="button" aria-expanded="false">KRAV MAGA ▾</button>
               <div class="kmt-nav-drop">
                 <a href="/krav-maga">Krav Maga</a>
+                <a href="/icerikler">Krav Maga İçerikler</a>
                 <a href="/krav-maga-kadikoy">Krav Maga Kadıköy</a>
                 <a href="/ozel-dersler">Özel Dersler</a>
                 <a href="/cocuk-krav-maga">Çocuk Dersleri</a>

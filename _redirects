@@ -1,7 +1,9 @@
 # Retired URLs with direct current equivalents. Do not redirect unknown URLs.
 /index.htm / 301
 /egitimmodul /egitim-icerigi 301
-/krav-maga-egitimleri /egitimler 301
+/egitimler /icerikler 301
+/egitimler.html /icerikler 301
+/krav-maga-egitimleri /icerikler 301
 /cocuklar-seansi-katilim-bilgileri /cocuk-krav-maga 301
 /online-egitim /online-akademi 301
 
