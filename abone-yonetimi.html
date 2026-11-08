@@ -23,6 +23,19 @@ p{color:#bfc3cc;margin:7px 0 17px}
 .toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:22px}
 .hidden{display:none!important}
 #login-status,#message{min-height:22px}
+.data-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:15px 0}
+.data-bar input{min-width:210px;flex:1;background:#10131a;color:white;border:1px solid #565b67;border-radius:8px;padding:10px 12px;font:inherit}
+.data-table{overflow:auto;max-height:440px;border:1px solid #343741;border-radius:10px}
+.data-table table{width:100%;border-collapse:collapse;font-size:14px;min-width:540px}
+.data-table th,.data-table td{padding:10px 12px;border-bottom:1px solid #33363d;text-align:left}
+.data-table th{background:#272b33;position:sticky;top:0;z-index:1}
+.data-table td{color:#dee0e5}
+.data-table button{font-size:12px;padding:6px 10px}
+.data-table .empty{padding:20px}
+#approval-output{border-left:3px solid #cd3046;padding:4px 15px;margin-top:15px}
+#approval-output:empty{display:none}
+#approval-output .request{display:flex;align-items:center;gap:11px;padding:12px 0;border-top:1px solid #454955;flex-wrap:wrap}
+#book-status,#student-status{overflow-wrap:anywhere}
 @media(max-width:700px){.grid{grid-template-columns:1fr}.panel{padding:17px}}
 </style>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js" defer></script>
@@ -55,6 +68,27 @@ p{color:#bfc3cc;margin:7px 0 17px}
 <div class="status">Veri bağlantısı bekleniyor · Abone listesi henüz bağlanmadı.</div>
 <p class="muted">E-posta kayıtları, otomatik onay ve toplu gönderim başlatılmaz.</p></section>
 </div>
+<section class="panel" aria-labelledby="students-title">
+  <span class="label">SİCİL · CANLI YETKİLİ OKUMA</span>
+  <h2 id="students-title">Kayıtlı öğrenciler ve eğitim onayları</h2>
+  <p>Sicil kayıtları Firebase kaynağından yalnızca yetkili yönetici oturumunda okunur. Öğrenci kartı ve seviyeler mevcut KMT Admin'de düzenlenmeye devam eder.</p>
+  <div class="data-bar">
+    <input id="student-filter" type="search" autocomplete="off" placeholder="Öğrenci adı veya sicil numarası ara" aria-label="Öğrenci adı veya sicil numarası ara">
+    <button id="refresh-students" class="secondary" type="button">Listeyi yenile</button>
+  </div>
+  <p id="student-status" class="status" aria-live="polite">Yetkili oturum açıldığında kayıtlar yüklenir.</p>
+  <div id="student-list" class="data-table"></div>
+  <div id="approval-output" aria-live="polite"></div>
+</section>
+<section class="panel" aria-labelledby="books-title">
+  <span class="label">KİTAP · AYRI ABONE KAYNAĞI</span>
+  <h2 id="books-title">Kitap abonelerini görüntüle</h2>
+  <p>Mevcut kitap aboneliği veritabanına ait yetkili listeleme servisi denenir. Bağlantı çalışmıyorsa bilgi verilerek kayıtlar korunur; otomatik aktarım veya onay yapılmaz.</p>
+  <button id="refresh-books" class="secondary" type="button">Kitap listesini denetle</button>
+  <p id="book-status" class="status" role="status" aria-live="polite">Bağlantı henüz doğrulanmadı.</p>
+  <div id="book-list" class="data-table"></div>
+</section>
+<section class="panel"><h2>Blog / haber aboneleri</h2><p>Bu grup, kitap erişimi ve öğrenci sicilinden ayrıdır. Abonelerin sunucu tarafı listeleme servisi henüz doğrulanmadı; kayıt sayısı, aktif aboneler veya onay durumu uydurularak gösterilmez.</p><p class="status">Entegrasyon gerekli · E-posta izinleri otomatik değiştirilmez.</p></section>
 <section class="panel"><h2>Kontrol ilkeleri</h2><p>Bir öğrencinin sicil kaydı, online eğitim izni ve e-posta aboneliği birbirine otomatik aktarılmaz. Abone verileri yalnızca yetkili sunucu API'leri üzerinden okunmalıdır. Toplu e-posta ve onay işlemleri için ayrıca izin kontrolü gerekir.</p><p class="muted">Geri dönüş noktası: 08.11.2026 · KMT_YONETIM_GERI_DONUS_2026-11-08_ONCESI</p></section>
 </div>
 </main>
@@ -64,9 +98,135 @@ p{color:#bfc3cc;margin:7px 0 17px}
 const ADMIN_EMAIL='bulicet@gmail.com';
 const firebaseConfig={apiKey:'AIzaSyAS8VB0ikbZXuhVQNzgn_ZbQWGXExijmKA',authDomain:'kravmaga-diploma.firebaseapp.com',databaseURL:'https://kravmaga-diploma-default-rtdb.firebaseio.com',projectId:'kravmaga-diploma'};
 const $=id=>document.getElementById(id);
+
+const FB_URL='https://kravmaga-diploma-default-rtdb.firebaseio.com';
+const EDUCATION_API='https://kravmaga-online-video.bulicet.workers.dev';
+let students=[];
+function isAdmin(user){return !!(user&&user.email&&user.email.toLowerCase()===ADMIN_EMAIL&&user.emailVerified);}
+function clearPrivateViews(){
+  students=[]; $('student-list').replaceChildren();$('book-list').replaceChildren();
+  $('approval-output').replaceChildren();$('student-filter').value='';
+  $('student-status').textContent='Yetkili giriş gerekli.'; $('book-status').textContent='Bağlantı henüz doğrulanmadı.';
+}
+function appendCell(row,value,header){
+  const c=document.createElement(header?'th':'td');
+  c.textContent=String(value==null?'':value);
+  row.appendChild(c);return c;
+}
+function tableFor(container,headings){
+  container.replaceChildren();
+  const table=document.createElement('table'),thead=table.createTHead(),tr=thead.insertRow();
+  headings.forEach(h=>appendCell(tr,h,true));
+  const body=table.createTBody();container.appendChild(table);return body;
+}
+function permission(record){
+  const p=record.downloadPermissions||{};
+  return p.onlineEducation===true||(p.onlineEducation===undefined&&record.onlineEducationAccess===true);
+}
+function renderStudents(){
+  const filter=$('student-filter').value.trim().toLocaleLowerCase('tr');
+  const shown=students.filter(s=>String(s.studentName||'').toLocaleLowerCase('tr').includes(filter)||String(s.registerNo||'').toLocaleLowerCase('tr').includes(filter)).slice(0,200);
+  const body=tableFor($('student-list'),['Ad Soyad','Sicil','Eğitim İzni','Erişim Talebi']);
+  for(const student of shown){
+    const tr=body.insertRow();appendCell(tr,student.studentName||'—');appendCell(tr,student.registerNo||'—');
+    appendCell(tr,permission(student)?'Açık':'Kapalı');
+    const c=tr.insertCell(),btn=document.createElement('button');btn.type='button';btn.className='secondary';
+    btn.textContent='Talepleri aç';
+    btn.disabled=!/^KM[0-9]{6,12}$/.test(String(student.registerNo||''));
+    btn.addEventListener('click',()=>loadApprovals(student));
+    c.appendChild(btn);
+  }
+  if(!shown.length){
+    const row=body.insertRow();const cell=row.insertCell();cell.colSpan=4;
+    cell.textContent='Aramaya uygun kayıt yok.';cell.className='empty';
+  }
+  $('student-status').textContent='Toplam '+students.length+' sicil kaydı. '+(students.length>200?'İlk 200 sonuç gösterilir; arama yapın.':'');
+}
+async function reloadStudents(){
+  const current=firebase.auth().currentUser;
+  if(!isAdmin(current))return;
+  $('refresh-students').disabled=true;$('student-status').textContent='Yetkili sicil kayıtları yükleniyor…';
+  try{
+    const token=await current.getIdToken();
+    const resp=await fetch(FB_URL+'/diplomaData.json?auth='+encodeURIComponent(token),{cache:'no-store',referrerPolicy:'no-referrer'});
+    if(!resp.ok)throw new Error('Firebase HTTP '+resp.status);
+    const data=await resp.json();
+    if(firebase.auth().currentUser!==current)return;
+    students=Object.values(data||{}).filter(x=>x&&typeof x==='object').sort((a,b)=>String(a.studentName||'').localeCompare(String(b.studentName||''),'tr'));
+    renderStudents();
+  }catch(e){students=[];$('student-list').replaceChildren();$('student-status').textContent='Sicil kayıtları okunamadı: '+e.message+' · KMT Admin üzerinden devam edebilirsiniz.';}
+  finally{$('refresh-students').disabled=false;}
+}
+async function educationFetch(path,options){
+  const current=firebase.auth().currentUser;
+  if(!isAdmin(current))throw new Error('Yetkili giriş gerekli.');
+  const token=await current.getIdToken();
+  const res=await fetch(EDUCATION_API+path,{
+    method:(options&&options.method)||'GET',cache:'no-store',referrerPolicy:'no-referrer',
+    headers:{'Authorization':'Bearer '+token,'Content-Type':'application/json'},
+    body:options&&options.body
+  });
+  const data=await res.json().catch(()=>({}));
+  if(!res.ok)throw new Error(data.error||('HTTP '+res.status));
+  return data;
+}
+async function loadApprovals(student){
+  const box=$('approval-output');box.replaceChildren();
+  const title=document.createElement('h3');title.textContent=(student.studentName||'Öğrenci')+' · '+student.registerNo;
+  box.appendChild(title);
+  const msg=document.createElement('p');msg.textContent='Cihaz erişim istekleri sorgulanıyor…';box.appendChild(msg);
+  try{
+    const reg=String(student.registerNo||'').trim().toUpperCase();
+    const result=await educationFetch('/api/admin/student-access?registerNo='+encodeURIComponent(reg));
+    if(!isAdmin(firebase.auth().currentUser))return;
+    msg.remove();
+    if(!permission(student)){
+      const info=document.createElement('p');info.textContent='Eğitim izni kapalı. Önce KMT Admin içinde öğrenci kartından Online Eğitim Erişimini açın.';info.className='status';box.appendChild(info);
+    }
+    const requests=Array.isArray(result.requests)?result.requests:[];
+    if(!requests.length){const empty=document.createElement('p');empty.textContent='Bekleyen cihaz onay isteği bulunamadı.';box.appendChild(empty);return;}
+    for(const req of requests){
+      const line=document.createElement('div');line.className='request';
+      const code=document.createElement('strong');code.textContent='Başvuru kodu: '+String(req.requestCode||'—');
+      const button=document.createElement('button');button.textContent='Onayla';button.type='button';button.disabled=!permission(student);
+      button.addEventListener('click',async()=>{
+        if(!window.confirm('Öğrenci '+reg+' için '+String(req.requestCode||'')+' kodlu başvuruyu onaylıyor musunuz? Kodu öğrenciyle doğrulayın.'))return;
+        button.disabled=true;
+        try{await educationFetch('/api/admin/student-access',{method:'POST',body:JSON.stringify({registerNo:reg,id:req.id})});await loadApprovals(student);}
+        catch(e){window.alert('Onay verilemedi: '+e.message);button.disabled=false;}
+      });
+      line.append(code,button);box.appendChild(line);
+    }
+  }catch(e){msg.textContent='Onay istekleri getirilemedi: '+e.message+' · Mevcut KMT Admin öğrenci kartından kontrol edin.';}
+}
+async function reloadBooks(){
+  const current=firebase.auth().currentUser;if(!isAdmin(current))return;
+  const button=$('refresh-books');button.disabled=true;$('book-status').textContent='Kitap abonelik veritabanına bağlantı kontrol ediliyor…';
+  $('book-list').replaceChildren();
+  try{
+    const token=await current.getIdToken();
+    const response=await fetch('/online-akademi/kitap-abonelik/api/admin/subscribers',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({idToken:token}),cache:'no-store',referrerPolicy:'no-referrer'
+    });
+    if(!response.ok)throw new Error('HTTP '+response.status);
+    const data=await response.json();
+    if(firebase.auth().currentUser!==current)return;
+    if(!Array.isArray(data.subscribers))throw new Error('Liste yanıtı beklenen biçimde değil.');
+    const body=tableFor($('book-list'),['Ad Soyad','E-posta','Durum','Doğrulama']);
+    data.subscribers.slice(0,500).forEach(item=>{
+      const row=body.insertRow();appendCell(row,item.full_name||'—');appendCell(row,item.email||'—');
+      appendCell(row,item.status||'—');appendCell(row,item.verified_at?'Doğrulandı':'Bekliyor');
+    });
+    $('book-status').textContent='Kitap aboneliği: '+data.subscribers.length+' kayıt. Sadece yetkili görüntüleme; durum değişikliği yapılmadı.';
+  }catch(e){$('book-status').textContent='Kitap listesine bağlantı henüz aktif değil ('+e.message+'). Abonelik kayıtları korunuyor.';}
+  finally{button.disabled=false;}
+}
+
 function view(user){const ok=!!user && user.email && user.email.toLowerCase()===ADMIN_EMAIL && user.emailVerified;
 $('dashboard').classList.toggle('hidden',!ok);$('login').classList.toggle('hidden',ok);
 $('session-label').textContent=ok?'Yetkili oturum: '+user.email:'';
+if(ok&&!students.length){reloadStudents();}else if(!ok){clearPrivateViews();}
 if(user&&!ok){$('login-status').textContent='Bu Google hesabı KMT yöneticisi olarak yetkilendirilmemiştir.';firebase.auth().signOut().catch(()=>{});}
 }
 window.addEventListener('load',function(){
@@ -79,6 +239,9 @@ $('login-status').textContent='Google girişi açılıyor…';
 try{const provider=new firebase.auth.GoogleAuthProvider();provider.setCustomParameters({prompt:'select_account'});const result=await auth.signInWithPopup(provider);if(!result.user||result.user.email.toLowerCase()!==ADMIN_EMAIL){await auth.signOut();$('login-status').textContent='Yetkisiz hesap.';return;}$('login-status').textContent='';}
 catch(e){$('login-status').textContent='Giriş başarısız. Tarayıcı açılır pencerelerini kontrol edin.';}
 });
+$('student-filter').addEventListener('input',()=>{if(isAdmin(auth.currentUser))renderStudents();});
+$('refresh-students').addEventListener('click',reloadStudents);
+$('refresh-books').addEventListener('click',reloadBooks);
 $('sign-out').addEventListener('click',()=>auth.signOut());
 });
 })();
