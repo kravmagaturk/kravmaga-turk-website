@@ -59,14 +59,12 @@ p{color:#bfc3cc;margin:7px 0 17px}
 <p>Öğrencinin eğitim erişimi ve cihaz başvuru kodu onayı, mevcut sicil kartından ayrı yetki kontrolüyle yapılır.</p>
 <div class="status ok">Onay işlemleri mevcut öğrenci kartlarında.</div>
 <a class="action" href="/kmt-admin" rel="noopener noreferrer">Eğitim onaylarını aç</a></section>
-<section class="panel"><span class="label">03 · KİTAP</span><h2>Kitap Aboneleri</h2>
-<p>Kitap okuyucusu abonelikleri ayrı veri kaynağındadır. Bu yönetim ekranında veri bağlantısı doğrulanmadan abone sayısı veya onay durumu gösterilmez.</p>
-<div class="status">Veri bağlantısı bekleniyor · Listeleme API'si henüz doğrulanmadı.</div>
-<p class="muted">Mevcut abonelik kayıtları değiştirilmez veya silinmez.</p></section>
-<section class="panel"><span class="label">04 · BLOG / HABER</span><h2>Blog ve Haber Aboneleri</h2>
-<p>Site haber aboneliği, kitap üyeliği ve eğitim izninden bağımsızdır. E-posta doğrulaması ile pazarlama izni ayrı yönetilmelidir.</p>
-<div class="status">Veri bağlantısı bekleniyor · Abone listesi henüz bağlanmadı.</div>
-<p class="muted">E-posta kayıtları, otomatik onay ve toplu gönderim başlatılmaz.</p></section>
+<section class="panel"><span class="label">03 · KİTAP</span><h2>Kitap Okuyucusu Aboneliği</h2>
+<p>Kitap okuyucularının e-posta doğrulamaları ve eğitim QR erişimi, site haber aboneliğinden ayrı yönetilir.</p>
+<a class="action" href="#books-title">Kitap abonelerini denetle</a></section>
+<section class="panel"><span class="label">04 · BLOG / HABER</span><h2>Site, Blog ve Haber Aboneleri</h2>
+<p>Ana sayfadaki “Abone ol” formu bu kategoriye aittir. Kitap, sicil ve eğitim yetkileriyle karıştırılmaz.</p>
+<a class="action" href="#news-title">Haber aboneliği durumunu gör</a></section>
 </div>
 <section class="panel" aria-labelledby="students-title">
   <span class="label">SİCİL · CANLI YETKİLİ OKUMA</span>
@@ -84,11 +82,17 @@ p{color:#bfc3cc;margin:7px 0 17px}
   <span class="label">KİTAP · AYRI ABONE KAYNAĞI</span>
   <h2 id="books-title">Kitap abonelerini görüntüle</h2>
   <p>Mevcut kitap aboneliği veritabanına ait yetkili listeleme servisi denenir. Bağlantı çalışmıyorsa bilgi verilerek kayıtlar korunur; otomatik aktarım veya onay yapılmaz.</p>
-  <button id="refresh-books" class="secondary" type="button">Kitap listesini denetle</button>
-  <p id="book-status" class="status" role="status" aria-live="polite">Bağlantı henüz doğrulanmadı.</p>
+  <div class="data-bar">
+    <input id="book-filter" type="search" autocomplete="off" placeholder="Kitap abonesi e-posta adresi ara" aria-label="Kitap abonesi e-posta adresi ara">
+    <button id="refresh-books" class="secondary" type="button">Kitap listesini denetle</button>
+  </div>
+  <p id="book-status" class="status" role="status" aria-live="polite">Listeleme servisi henüz doğrulanmadı. “Kitap listesini denetle” düğmesiyle kontrol edebilirsiniz.</p>
   <div id="book-list" class="data-table"></div>
 </section>
-<section class="panel"><h2>Blog / haber aboneleri</h2><p>Bu grup, kitap erişimi ve öğrenci sicilinden ayrıdır. Abonelerin sunucu tarafı listeleme servisi henüz doğrulanmadı; kayıt sayısı, aktif aboneler veya onay durumu uydurularak gösterilmez.</p><p class="status">Entegrasyon gerekli · E-posta izinleri otomatik değiştirilmez.</p></section>
+<section class="panel" aria-labelledby="news-title"><span class="label">SİTE · BLOG · HABER</span><h2 id="news-title">Ana sayfa aboneleri</h2>
+<p>Ana sayfadaki video ve haber formu <code>/online-akademi/abonelik</code> adresine kayıt gönderir. Bu kayıtları yetkili biçimde listeleyen sunucu servisi henüz yönetim merkezine bağlanmamıştır.</p>
+<p class="status">E-posta adreslerini şu an burada listeleyemiyoruz. Bir ziyaretçinin SMS veya e-posta doğrulaması yaptığını varsayarak aboneliğini otomatik onaylamıyoruz.</p>
+<p class="muted">Eğitim, sicil ve kitap verileri ayrı tutulur; kayıtlar değiştirilmez.</p></section>
 <section class="panel"><h2>Kontrol ilkeleri</h2><p>Bir öğrencinin sicil kaydı, online eğitim izni ve e-posta aboneliği birbirine otomatik aktarılmaz. Abone verileri yalnızca yetkili sunucu API'leri üzerinden okunmalıdır. Toplu e-posta ve onay işlemleri için ayrıca izin kontrolü gerekir.</p><p class="muted">Geri dönüş noktası: 08.11.2026 · KMT_YONETIM_GERI_DONUS_2026-11-08_ONCESI</p></section>
 </div>
 </main>
@@ -101,12 +105,25 @@ const $=id=>document.getElementById(id);
 
 const FB_URL='https://kravmaga-diploma-default-rtdb.firebaseio.com';
 const EDUCATION_API='https://kravmaga-online-video.bulicet.workers.dev';
-let students=[];
+let students=[],bookSubscribers=[];
 function isAdmin(user){return !!(user&&user.email&&user.email.toLowerCase()===ADMIN_EMAIL&&user.emailVerified);}
 function clearPrivateViews(){
-  students=[]; $('student-list').replaceChildren();$('book-list').replaceChildren();
-  $('approval-output').replaceChildren();$('student-filter').value='';
-  $('student-status').textContent='Yetkili giriş gerekli.'; $('book-status').textContent='Bağlantı henüz doğrulanmadı.';
+  students=[];bookSubscribers=[]; $('student-list').replaceChildren();$('book-list').replaceChildren();
+  $('approval-output').replaceChildren();$('student-filter').value='';$('book-filter').value='';
+  $('student-status').textContent='Yetkili giriş gerekli.'; $('book-status').textContent='Listeleme servisi henüz doğrulanmadı.';
+}
+function renderBooks(){
+  const q=$('book-filter').value.trim().toLowerCase();
+  const rows=bookSubscribers.filter(x=>String(x.email||'').toLowerCase().includes(q)||String(x.full_name||'').toLowerCase().includes(q)).slice(0,500);
+  const body=tableFor($('book-list'),['Ad Soyad','E-posta','Durum','Doğrulama']);
+  rows.forEach(item=>{
+    const row=body.insertRow();appendCell(row,item.full_name||'—');appendCell(row,item.email||'—');
+    appendCell(row,item.status||'—');appendCell(row,item.verified_at?'Doğrulandı':'Bekliyor');
+  });
+  if(!rows.length){
+    const row=body.insertRow(),cell=row.insertCell();cell.colSpan=4;cell.className='empty';
+    cell.textContent=bookSubscribers.length?'Aramanıza uygun kitap abonesi yok.':'Kayıt bulunamadı.';
+  }
 }
 function appendCell(row,value,header){
   const c=document.createElement(header?'th':'td');
@@ -213,11 +230,7 @@ async function reloadBooks(){
     const data=await response.json();
     if(firebase.auth().currentUser!==current)return;
     if(!Array.isArray(data.subscribers))throw new Error('Liste yanıtı beklenen biçimde değil.');
-    const body=tableFor($('book-list'),['Ad Soyad','E-posta','Durum','Doğrulama']);
-    data.subscribers.slice(0,500).forEach(item=>{
-      const row=body.insertRow();appendCell(row,item.full_name||'—');appendCell(row,item.email||'—');
-      appendCell(row,item.status||'—');appendCell(row,item.verified_at?'Doğrulandı':'Bekliyor');
-    });
+    bookSubscribers=data.subscribers;renderBooks();
     $('book-status').textContent='Kitap aboneliği: '+data.subscribers.length+' kayıt. Sadece yetkili görüntüleme; durum değişikliği yapılmadı.';
   }catch(e){$('book-status').textContent='Kitap listesine bağlantı henüz aktif değil ('+e.message+'). Abonelik kayıtları korunuyor.';}
   finally{button.disabled=false;}
@@ -242,6 +255,7 @@ catch(e){$('login-status').textContent='Giriş başarısız. Tarayıcı açılı
 $('student-filter').addEventListener('input',()=>{if(isAdmin(auth.currentUser))renderStudents();});
 $('refresh-students').addEventListener('click',reloadStudents);
 $('refresh-books').addEventListener('click',reloadBooks);
+$('book-filter').addEventListener('input',()=>{if(isAdmin(auth.currentUser)&&bookSubscribers.length)renderBooks();});
 $('sign-out').addEventListener('click',()=>auth.signOut());
 });
 })();
