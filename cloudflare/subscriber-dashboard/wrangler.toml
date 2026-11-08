@@ -1,0 +1,9 @@
+name = "kmt-subscriber-dashboard"
+main = "worker.js"
+compatibility_date = "2026-11-08"
+workers_dev = true
+preview_urls = false
+
+routes = [
+  { pattern = "kravmaga.com.tr/abone-yonetimi*", zone_name = "kravmaga.com.tr" }
+]
