@@ -76,6 +76,11 @@ p{color:#bfc3cc;margin:7px 0 17px}
   </div>
   <p id="student-status" class="status" aria-live="polite">Yetkili oturum açıldığında kayıtlar yüklenir.</p>
   <div id="student-list" class="data-table"></div>
+  <div class="data-bar">
+    <button id="scan-approvals" class="secondary" type="button">Bekleyen eğitim onaylarını tara</button>
+    <span id="scan-status" class="muted" role="status" aria-live="polite">İsterseniz bekleyen cihaz başvurularını sicil kayıtları üzerinden tarayabilirsiniz.</span>
+  </div>
+  <div id="scan-results" aria-live="polite"></div>
   <div id="approval-output" aria-live="polite"></div>
 </section>
 <section class="panel" aria-labelledby="books-title">
@@ -105,12 +110,12 @@ const $=id=>document.getElementById(id);
 
 const FB_URL='https://kravmaga-diploma-default-rtdb.firebaseio.com';
 const EDUCATION_API='https://kravmaga-online-video.bulicet.workers.dev';
-let students=[],bookSubscribers=[];
+let students=[],bookSubscribers=[],approvalScanOffset=0,approvalScanMatches=[];
 function isAdmin(user){return !!(user&&user.email&&user.email.toLowerCase()===ADMIN_EMAIL&&user.emailVerified);}
 function clearPrivateViews(){
-  students=[];bookSubscribers=[]; $('student-list').replaceChildren();$('book-list').replaceChildren();
+  students=[];bookSubscribers=[];approvalScanOffset=0;approvalScanMatches=[]; $('student-list').replaceChildren();$('book-list').replaceChildren();$('scan-results').replaceChildren();
   $('approval-output').replaceChildren();$('student-filter').value='';$('book-filter').value='';
-  $('student-status').textContent='Yetkili giriş gerekli.'; $('book-status').textContent='Listeleme servisi henüz doğrulanmadı.';
+  $('student-status').textContent='Yetkili giriş gerekli.';$('scan-status').textContent='Yetkili giriş gerekli.';$('scan-approvals').textContent='Bekleyen eğitim onaylarını tara'; $('book-status').textContent='Listeleme servisi henüz doğrulanmadı.';
 }
 function renderBooks(){
   const q=$('book-filter').value.trim().toLowerCase();
@@ -170,6 +175,9 @@ async function reloadStudents(){
     const data=await resp.json();
     if(firebase.auth().currentUser!==current)return;
     students=Object.values(data||{}).filter(x=>x&&typeof x==='object').sort((a,b)=>String(a.studentName||'').localeCompare(String(b.studentName||''),'tr'));
+    approvalScanOffset=0;approvalScanMatches=[];$('scan-results').replaceChildren();
+    $('scan-approvals').textContent='Bekleyen eğitim onaylarını tara';
+    $('scan-status').textContent='Sicil listesinden bekleyen onayları tarayabilirsiniz.';
     renderStudents();
   }catch(e){students=[];$('student-list').replaceChildren();$('student-status').textContent='Sicil kayıtları okunamadı: '+e.message+' · KMT Admin üzerinden devam edebilirsiniz.';}
   finally{$('refresh-students').disabled=false;}
@@ -216,6 +224,53 @@ async function loadApprovals(student){
     }
   }catch(e){msg.textContent='Onay istekleri getirilemedi: '+e.message+' · Mevcut KMT Admin öğrenci kartından kontrol edin.';}
 }
+
+function renderPendingSummary(){
+  const host=$('scan-results');host.replaceChildren();
+  for(const row of approvalScanMatches){
+    const wrapper=document.createElement('div');
+    wrapper.className='request';
+    const detail=document.createElement('span');
+    detail.textContent=String(row.student.studentName||'Öğrenci')+' · '+String(row.student.registerNo||'')+' · '+row.count+' bekleyen onay';
+    const button=document.createElement('button');button.type='button';button.className='secondary';button.textContent='Başvuruları aç';
+    button.addEventListener('click',()=>loadApprovals(row.student));
+    wrapper.append(detail,button);host.appendChild(wrapper);
+  }
+  if(!approvalScanMatches.length&&approvalScanOffset>=students.length){
+    const p=document.createElement('p');p.className='muted';p.textContent='Sorgulanan sicillerde bekleyen başvuru bulunamadı.';host.appendChild(p);
+  }
+}
+async function scanPendingApprovals(){
+  const current=firebase.auth().currentUser;
+  if(!isAdmin(current))return;
+  const button=$('scan-approvals'),status=$('scan-status');
+  if(approvalScanOffset>=students.length){approvalScanOffset=0;approvalScanMatches=[];}
+  const start=approvalScanOffset,end=Math.min(start+40,students.length);
+  if(!students.length){status.textContent='Önce sicil kayıtlarını yükleyin.';return;}
+  button.disabled=true;let errors=0;
+  try{
+    for(let i=start;i<end;i+=4){
+      const batch=students.slice(i,Math.min(end,i+4));
+      await Promise.all(batch.map(async(student)=>{
+        const reg=String(student.registerNo||'').toUpperCase();
+        if(!/^KM[0-9]{6,12}$/.test(reg))return;
+        try{
+          const data=await educationFetch('/api/admin/student-access?registerNo='+encodeURIComponent(reg));
+          if(Array.isArray(data.requests)&&data.requests.length){
+            approvalScanMatches.push({student,count:data.requests.length});
+          }
+        }catch(e){errors++;}
+      }));
+      if(firebase.auth().currentUser!==current)return;
+      status.textContent=Math.min(i+4,end)+' / '+students.length+' kayıt kontrol edildi.';
+    }
+    approvalScanOffset=end;
+    renderPendingSummary();
+    status.textContent=approvalScanOffset+' / '+students.length+' sicil tarandı; '+approvalScanMatches.reduce((sum,x)=>sum+x.count,0)+' bekleyen cihaz onayı tespit edildi.'+(errors?' '+errors+' kayıt okunamadı.':'');
+    button.textContent=approvalScanOffset<students.length?'Sonraki 40 sicili tara':'Yeniden tara';
+  }catch(e){status.textContent='Onay taraması tamamlanamadı: '+e.message;}
+  finally{button.disabled=false;}
+}
 async function reloadBooks(){
   const current=firebase.auth().currentUser;if(!isAdmin(current))return;
   const button=$('refresh-books');button.disabled=true;$('book-status').textContent='Kitap abonelik veritabanına bağlantı kontrol ediliyor…';
@@ -254,6 +309,7 @@ catch(e){$('login-status').textContent='Giriş başarısız. Tarayıcı açılı
 });
 $('student-filter').addEventListener('input',()=>{if(isAdmin(auth.currentUser))renderStudents();});
 $('refresh-students').addEventListener('click',reloadStudents);
+$('scan-approvals').addEventListener('click',scanPendingApprovals);
 $('refresh-books').addEventListener('click',reloadBooks);
 $('book-filter').addEventListener('input',()=>{if(isAdmin(auth.currentUser)&&bookSubscribers.length)renderBooks();});
 $('sign-out').addEventListener('click',()=>auth.signOut());
