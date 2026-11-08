@@ -1,138 +1,187 @@
-// KMT Abone Yönetimi | salt okunur, Firebase yetkili yöneticiyle sınırlandırılmış API.
-// Varsayılan olarak hiçbir aboneye mesaj göndermez ve hiçbir kaydı değiştirmez.
+// KMT yetkili abone yönetimi. D1 kayıtları iki kategoride tutar.
+// E-posta doğrulaması ve yöneticinin verdiği onay birbirinden bağımsızdır.
 const ADMIN_EMAIL = "bulicet@gmail.com";
-const API_PATH = "/online-akademi/abonelik/admin/list";
+const LIST_PATH = "/online-akademi/abonelik/admin/list";
+const ACTION_PATH = "/online-akademi/abonelik/admin/action";
 
-function json(value, status = 200) {
-  return new Response(JSON.stringify(value), {
+function respond(data, status = 200) {
+  return new Response(JSON.stringify(data), {
     status,
     headers: {
       "content-type": "application/json; charset=utf-8",
-      "cache-control": "no-store, max-age=0",
+      "cache-control": "private, no-store, max-age=0",
       "x-content-type-options": "nosniff",
-      "x-robots-tag": "noindex, nofollow, noarchive",
+      "x-robots-tag": "noindex, nofollow, noarchive, nosnippet",
       "referrer-policy": "no-referrer",
       "content-security-policy": "default-src 'none'; frame-ancestors 'none'"
     }
   });
 }
 
-async function isVerifiedAdmin(request, env) {
-  const authorization = request.headers.get("Authorization") || "";
-  const matched = authorization.match(/^Bearer\s+([^\s]+)$/i);
-  if (!matched || !env.FIREBASE_API_KEY) return false;
+async function isAdmin(request, env) {
+  const header = request.headers.get("Authorization") || "";
+  const match = /^Bearer\s+([^\s]+)$/i.exec(header);
+  if (!match || !env.FIREBASE_API_KEY) return false;
   try {
     const response = await fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=" + encodeURIComponent(env.FIREBASE_API_KEY),
-      { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ idToken: matched[1] }) }
+      "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=" +
+        encodeURIComponent(env.FIREBASE_API_KEY),
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ idToken: match[1] })
+      }
     );
     if (!response.ok) return false;
-    const body = await response.json();
-    const user = body && Array.isArray(body.users) ? body.users[0] : null;
-    return Boolean(user && user.emailVerified === true && String(user.email || "").toLowerCase() === ADMIN_EMAIL);
+    const data = await response.json();
+    const user = data && Array.isArray(data.users) ? data.users[0] : null;
+    return Boolean(user && user.emailVerified === true &&
+      String(user.email || "").toLowerCase() === ADMIN_EMAIL);
   } catch (_) { return false; }
 }
 
-function safeName(name) {
-  return /^[A-Za-z_][A-Za-z_0-9]*$/.test(String(name || ""));
-}
-function sqlName(name) { return '"' + name + '"'; }
-function findColumn(columns, possibilities) {
-  for (const wanted of possibilities) {
-    const name = columns.find(c => c.toLowerCase() === wanted.toLowerCase());
-    if (name) return sqlName(name);
-  }
-  return "NULL";
-}
-function displayDate(value) {
-  if (value == null || value === "") return null;
-  if (typeof value === "number" || /^\\d{10,13}$/.test(String(value))) {
-    const n = Number(value);
-    const date = new Date(n < 100000000000 ? n * 1000 : n);
-    return Number.isFinite(date.getTime()) ? date.toISOString() : null;
-  }
-  const date = new Date(value);
+function isoDate(value) {
+  if (value === null || value === undefined || value === "") return null;
+  const numeric = typeof value === "number" || /^\d{10,13}$/.test(String(value));
+  const num = Number(value);
+  const date = new Date(numeric ? (num < 100000000000 ? num * 1000 : num) : value);
   return Number.isFinite(date.getTime()) ? date.toISOString() : null;
 }
-async function selectSubscribers(env, tableName) {
-  if (!safeName(tableName)) return null;
-  const columns = (await env.DB.prepare("PRAGMA table_info(" + sqlName(tableName) + ")").all()).results || [];
-  const names = columns.map(c => String(c.name || "")).filter(safeName);
-  if (!names.some(name => /^e(-?mail)?$/i.test(name) || /^email(_address)?$/i.test(name))) return null;
-  const fields = {
-    id: ["id", "subscriber_id"],
-    email: ["email", "email_address", "mail"],
-    full_name: ["full_name", "name", "display_name"],
-    source: ["source", "signup_source", "origin", "channel"],
-    status: ["status", "state"],
-    consent: ["consent", "marketing_consent", "opt_in", "consented"],
-    created_at: ["created_at", "subscribed_at", "created_on", "registered_at"],
-    verified_at: ["verified_at", "confirmed_at", "activated_at"],
-    unsubscribed_at: ["unsubscribed_at", "opted_out_at"]
+
+async function list(env) {
+  const [books, news, bookCount, newsCount, reviews] = await Promise.all([
+    env.DB.prepare("SELECT id, full_name, email, status, created_at, verified_at FROM book_subscribers ORDER BY created_at DESC LIMIT 500").all(),
+    env.DB.prepare("SELECT email, status, source, created_at, confirmed_at, unsubscribed_at FROM newsletter_subscribers ORDER BY created_at DESC LIMIT 500").all(),
+    env.DB.prepare("SELECT COUNT(*) AS n FROM book_subscribers").first(),
+    env.DB.prepare("SELECT COUNT(*) AS n FROM newsletter_subscribers").first(),
+    env.DB.prepare("SELECT category, email, decision, updated_at FROM subscriber_admin_reviews").all()
+  ]);
+  const decisions = new Map((reviews.results || []).map(row => [
+    String(row.category) + ":" + String(row.email).toLowerCase(), row
+  ]));
+  const attach = (category, row) => {
+    const review = decisions.get(category + ":" + String(row.email).toLowerCase());
+    return {
+      ...row,
+      category,
+      source: category === "books" ? "kitap" : String(row.source || ""),
+      full_name: String(row.full_name || ""),
+      email: String(row.email || ""),
+      status: String(row.status || ""),
+      created_at: isoDate(row.created_at),
+      verified_at: isoDate(category === "books" ? row.verified_at : row.confirmed_at),
+      unsubscribed_at: isoDate(row.unsubscribed_at),
+      admin_decision: review ? review.decision : "pending",
+      admin_updated_at: review ? review.updated_at : null
+    };
   };
-  const select = Object.entries(fields).map(([alias, options]) => findColumn(names, options) + " AS " + sqlName(alias)).join(", ");
-  const countRow = await env.DB.prepare("SELECT COUNT(*) AS count FROM " + sqlName(tableName)).first();
-  const list = await env.DB.prepare("SELECT " + select + " FROM " + sqlName(tableName) + " LIMIT 500").all();
-  const rows = (list.results || []).map(row => ({
-    id: row.id,
-    email: String(row.email || "").slice(0, 254),
-    full_name: String(row.full_name || "").slice(0, 200),
-    source: String(row.source || "").slice(0, 100),
-    status: String(row.status || "").slice(0, 50),
-    consent: row.consent,
-    created_at: displayDate(row.created_at),
-    verified_at: displayDate(row.verified_at),
-    unsubscribed_at: displayDate(row.unsubscribed_at)
-  }));
-  return { table: tableName, total: Number(countRow && countRow.count || 0), rows };
+  const bookRows = (books.results || []).map(row => attach("books", row));
+  const newsRows = (news.results || []).map(row => attach("news", row));
+  return respond({
+    ok: true,
+    books: bookRows,
+    news: newsRows,
+    counts: { books: Number(bookCount?.n || 0), news: Number(newsCount?.n || 0) },
+    sources: [{ table: "book_subscribers" }, { table: "newsletter_subscribers" }],
+    complete: Number(bookCount?.n || 0) <= 500 && Number(newsCount?.n || 0) <= 500,
+    adminApprovalControlsDelivery: false,
+    notice: "Yönetici inceleme kararı ayrı saklanır. Mevcut otomatik haber gönderimi yalnızca bu karara göre filtrelenmemektedir."
+  });
 }
-function isBook(row, table) {
-  return /book|kitap/i.test(table) || /^(book|kitap|kitap-okuyucu)$/i.test(String(row.source || ""));
+
+async function action(request, env) {
+  const length = Number(request.headers.get("Content-Length") || 0);
+  if (length > 2048) return respond({ error: "İstek çok büyük." }, 413);
+  let input;
+  try { input = await request.json(); } catch (_) {
+    return respond({ error: "Geçersiz JSON." }, 400);
+  }
+  const category = String(input?.category || "");
+  const op = String(input?.action || "");
+  const email = String(input?.email || "").trim().toLowerCase();
+  if (!["books", "news"].includes(category) ||
+      !["approve", "unapprove", "unsubscribe", "delete"].includes(op) ||
+      email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return respond({ error: "Geçersiz kategori, işlem veya e-posta." }, 400);
+  }
+
+  const table = category === "books" ? "book_subscribers" : "newsletter_subscribers";
+  const record = await env.DB.prepare(
+    "SELECT email,status," + (category === "books" ? "verified_at" : "confirmed_at") +
+    " AS verified_at FROM " + table + " WHERE lower(email)=? LIMIT 1"
+  ).bind(email).first();
+  if (!record) return respond({ error: "Abone kaydı bulunamadı. Listeyi yenileyin." }, 404);
+
+  if (op === "approve") {
+    if (!record.verified_at || !["active", "verified"].includes(record.status)) {
+      return respond({
+        error: "Yönetici onayı için önce e-posta doğrulaması tamamlanmış ve abonelik aktif olmalıdır."
+      }, 409);
+    }
+  }
+
+  const now = new Date().toISOString();
+  const sqls = [];
+  if (op === "approve" || op === "unapprove") {
+    sqls.push(env.DB.prepare(
+      "INSERT INTO subscriber_admin_reviews(category,email,decision,updated_at) VALUES(?,?,?,?) " +
+      "ON CONFLICT(category,email) DO UPDATE SET decision=excluded.decision,updated_at=excluded.updated_at"
+    ).bind(category, email, op === "approve" ? "approved" : "pending", now));
+  } else if (op === "unsubscribe") {
+    if (category === "news") {
+      sqls.push(env.DB.prepare(
+        "UPDATE newsletter_subscribers SET status='unsubscribed',unsubscribed_at=?," +
+        "confirmation_hash=NULL,confirmation_expires=NULL WHERE lower(email)=?"
+      ).bind(Date.now(), email));
+      sqls.push(env.DB.prepare(
+        "DELETE FROM newsletter_deliveries WHERE lower(email)=? AND status!='sent'"
+      ).bind(email));
+    } else {
+      sqls.push(env.DB.prepare(
+        "UPDATE book_subscribers SET status='disabled' WHERE lower(email)=?"
+      ).bind(email));
+    }
+    sqls.push(env.DB.prepare(
+      "INSERT INTO subscriber_admin_reviews(category,email,decision,updated_at) VALUES(?,?,?,?) " +
+      "ON CONFLICT(category,email) DO UPDATE SET decision=excluded.decision,updated_at=excluded.updated_at"
+    ).bind(category, email, "revoked", now));
+  } else if (op === "delete") {
+    if (category === "news") {
+      sqls.push(env.DB.prepare("DELETE FROM newsletter_deliveries WHERE lower(email)=?").bind(email));
+      sqls.push(env.DB.prepare("DELETE FROM newsletter_unsubscribe_tokens WHERE lower(email)=?").bind(email));
+    } else {
+      sqls.push(env.DB.prepare("DELETE FROM book_email_events WHERE lower(email)=?").bind(email));
+    }
+    sqls.push(env.DB.prepare("DELETE FROM " + table + " WHERE lower(email)=?").bind(email));
+    sqls.push(env.DB.prepare(
+      "DELETE FROM subscriber_admin_reviews WHERE category=? AND lower(email)=?"
+    ).bind(category, email));
+  }
+  sqls.push(env.DB.prepare(
+    "INSERT INTO subscriber_admin_audit(category,action,created_at) VALUES(?,?,?)"
+  ).bind(category, op, now));
+  await env.DB.batch(sqls);
+  return respond({ ok: true, action: op, category, email,
+    admin_decision: op === "approve" ? "approved" : op === "unapprove" ? "pending" : "revoked"
+  });
 }
 
 export default {
   async fetch(request, env) {
-    const url = new URL(request.url);
-    if (url.pathname !== API_PATH) return json({ error: "Not found" }, 404);
-    if (request.method !== "GET") return json({ error: "Method not allowed" }, 405);
-    if (!await isVerifiedAdmin(request, env)) return json({ error: "Yetkili yönetici oturumu gerekli." }, 401);
-    if (!env.DB || typeof env.DB.prepare !== "function") return json({ error: "Abone veritabanı bağlı değil." }, 503);
+    const path = new URL(request.url).pathname;
+    if (![LIST_PATH, ACTION_PATH].includes(path)) return respond({ error: "Not found" }, 404);
+    if ((path === LIST_PATH && request.method !== "GET") ||
+        (path === ACTION_PATH && request.method !== "POST")) {
+      return respond({ error: "Method not allowed" }, 405);
+    }
+    if (!await isAdmin(request, env)) return respond({ error: "Yetkili yönetici oturumu gerekli." }, 401);
+    if (!env.DB || typeof env.DB.prepare !== "function")
+      return respond({ error: "Abone veritabanı bağlı değil." }, 503);
     try {
-      const schema = await env.DB.prepare("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name").all();
-      const names = (schema.results || []).map(x => String(x.name || ""))
-        .filter(name => safeName(name) && /subscr|newsletter|mailing/i.test(name));
-      const groups = { books: [], news: [] };
-      const sources = [];
-      let booksTotal = 0, newsTotal = 0;
-      for (const name of names) {
-        const result = await selectSubscribers(env, name);
-        if (!result) continue;
-        const tableIsBook = /book|kitap/i.test(name);
-        const onlyOneKind = !result.rows.some(row => isBook(row, name) !== tableIsBook);
-        // Non-book tables can contain book + site subscriptions together; respect source at row level.
-        let bookCount = 0, newsCount = 0;
-        for (const row of result.rows) {
-          const summary = { ...row, table: name };
-          if (isBook(row, name)) { groups.books.push(summary); bookCount++; }
-          else { groups.news.push(summary); newsCount++; }
-        }
-        if (tableIsBook) booksTotal += result.total;
-        else if (onlyOneKind) newsTotal += result.total;
-        // When sources mix in one table, total is a displayed-row count, not a database total.
-        else { booksTotal += bookCount; newsTotal += newsCount; }
-        sources.push({ table: name, count: result.total, shown: result.rows.length });
-      }
-      return json({
-        ok: true,
-        books: groups.books,
-        news: groups.news,
-        counts: { books: booksTotal, news: newsTotal },
-        sources,
-        complete: sources.every(source => source.count <= 500),
-        message: sources.length ? null : "Bu D1 veritabanında abone tablosu bulunamadı. Farklı bir kayıt kaynağı bağlı olabilir."
-      });
-    } catch (_) {
-      return json({ error: "Abone veritabanı okunamadı. D1 bağlarını ve tablo şemasını kontrol edin." }, 503);
+      return path === LIST_PATH ? await list(env) : await action(request, env);
+    } catch (error) {
+      console.error("subscriber-admin error", error && error.message ? error.message : error);
+      return respond({ error: "Abone yönetimi işlemi tamamlanamadı; veritabanı ve bağlantıyı kontrol edin." }, 503);
     }
   }
 };
