@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer">
+<title>KMT Yönetim Merkezi | Abone ve Üye Kontrolü</title>
+<link rel="icon" href="/assets/brand/favicon-96.png">
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}body{background:#0e1014;color:#f5f5f5;margin:0;line-height:1.6}
+main{max-width:1080px;margin:0 auto;padding:28px 20px 80px}
+a{color:#ff7381}button,.action{display:inline-block;background:#d32236;border:0;border-radius:9px;color:white;padding:11px 18px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}
+button:focus-visible,a:focus-visible{outline:3px solid white;outline-offset:3px}
+button:disabled{opacity:.5;cursor:not-allowed}.secondary{background:#323641}
+header{border-bottom:1px solid #333;padding-bottom:19px;margin-bottom:24px}
+.brand{color:#f05b6b;font-size:13px;font-weight:900;letter-spacing:2px}
+h1{font-size:clamp(28px,4vw,42px);line-height:1.18;margin:10px 0}
+h2{font-size:21px;margin:0 0 7px}
+p{color:#bfc3cc;margin:7px 0 17px}
+.panel{background:#191c23;border:1px solid #343741;border-radius:15px;padding:22px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.label{display:inline-block;background:#30343c;color:#ddd;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:700;margin-bottom:11px}
+.status{font-size:13px;color:#f3c48c;margin:12px 0}
+.ok{color:#95dfad}.muted{font-size:13px;color:#aeb3bd}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.hidden{display:none!important}
+#login-status,#message{min-height:22px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.panel{padding:17px}}
+</style>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js" defer></script>
+</head><body><main>
+<header><div class="brand">KRAV MAGA TÜRK · YETKİLİ YÖNETİM</div><h1>Abone ve Üye Yönetim Merkezi</h1><p>Sicil, online eğitim, kitap ve blog/haber abonelikleri tek ekranda; izinler ve kayıt sistemleri birbirinden bağımsızdır.</p></header>
+<section class="panel" id="login">
+<h2>Yönetici doğrulaması</h2>
+<p>Bu sayfaya yalnızca yetkili KMT yönetici Google hesabıyla giriş yapılabilir. Üye ve abone verileri herkese açık değildir.</p>
+<button id="sign-in" type="button">Google ile yönetici girişi</button>
+<p id="login-status" role="status" aria-live="polite"></p>
+</section>
+<div id="dashboard" class="hidden">
+<div class="toolbar"><span id="session-label" class="muted"></span><button class="secondary" id="sign-out" type="button">Güvenli çıkış</button></div>
+<div class="grid">
+<section class="panel"><span class="label">01 · KMT ADMİN</span><h2>Üye ve Sicil Yönetimi</h2>
+<p>Öğrenci sicil numaraları, kayıt düzenleme, belge ve üyelik yetkileri mevcut güvenli KMT Admin ekranında korunur.</p>
+<div class="status ok">Mevcut sicil yönetimi korunuyor.</div>
+<a class="action" href="/kmt-admin" rel="noopener noreferrer">Sicil yönetimine git</a></section>
+<section class="panel"><span class="label">02 · EĞİTİM</span><h2>Online / Görsel Eğitim Onayları</h2>
+<p>Öğrencinin eğitim erişimi ve cihaz başvuru kodu onayı, mevcut sicil kartından ayrı yetki kontrolüyle yapılır.</p>
+<div class="status ok">Onay işlemleri mevcut öğrenci kartlarında.</div>
+<a class="action" href="/kmt-admin" rel="noopener noreferrer">Eğitim onaylarını aç</a></section>
+<section class="panel"><span class="label">03 · KİTAP</span><h2>Kitap Aboneleri</h2>
+<p>Kitap okuyucusu abonelikleri ayrı veri kaynağındadır. Bu yönetim ekranında veri bağlantısı doğrulanmadan abone sayısı veya onay durumu gösterilmez.</p>
+<div class="status">Veri bağlantısı bekleniyor · Listeleme API'si henüz doğrulanmadı.</div>
+<p class="muted">Mevcut abonelik kayıtları değiştirilmez veya silinmez.</p></section>
+<section class="panel"><span class="label">04 · BLOG / HABER</span><h2>Blog ve Haber Aboneleri</h2>
+<p>Site haber aboneliği, kitap üyeliği ve eğitim izninden bağımsızdır. E-posta doğrulaması ile pazarlama izni ayrı yönetilmelidir.</p>
+<div class="status">Veri bağlantısı bekleniyor · Abone listesi henüz bağlanmadı.</div>
+<p class="muted">E-posta kayıtları, otomatik onay ve toplu gönderim başlatılmaz.</p></section>
+</div>
+<section class="panel"><h2>Kontrol ilkeleri</h2><p>Bir öğrencinin sicil kaydı, online eğitim izni ve e-posta aboneliği birbirine otomatik aktarılmaz. Abone verileri yalnızca yetkili sunucu API'leri üzerinden okunmalıdır. Toplu e-posta ve onay işlemleri için ayrıca izin kontrolü gerekir.</p><p class="muted">Geri dönüş noktası: 08.11.2026 · KMT_YONETIM_GERI_DONUS_2026-11-08_ONCESI</p></section>
+</div>
+</main>
+<script>
+(function(){
+'use strict';
+const ADMIN_EMAIL='bulicet@gmail.com';
+const firebaseConfig={apiKey:'AIzaSyAS8VB0ikbZXuhVQNzgn_ZbQWGXExijmKA',authDomain:'kravmaga-diploma.firebaseapp.com',databaseURL:'https://kravmaga-diploma-default-rtdb.firebaseio.com',projectId:'kravmaga-diploma'};
+const $=id=>document.getElementById(id);
+function view(user){const ok=!!user && user.email && user.email.toLowerCase()===ADMIN_EMAIL && user.emailVerified;
+$('dashboard').classList.toggle('hidden',!ok);$('login').classList.toggle('hidden',ok);
+$('session-label').textContent=ok?'Yetkili oturum: '+user.email:'';
+if(user&&!ok){$('login-status').textContent='Bu Google hesabı KMT yöneticisi olarak yetkilendirilmemiştir.';firebase.auth().signOut().catch(()=>{});}
+}
+window.addEventListener('load',function(){
+if(!window.firebase){$('login-status').textContent='Güvenli giriş bileşeni yüklenemedi. Sayfayı yenileyin.';return;}
+firebase.initializeApp(firebaseConfig);
+const auth=firebase.auth();
+auth.onAuthStateChanged(view,()=>{$('login-status').textContent='Oturum kontrolü yapılamadı.';view(null)});
+$('sign-in').addEventListener('click',async function(){
+$('login-status').textContent='Google girişi açılıyor…';
+try{const provider=new firebase.auth.GoogleAuthProvider();provider.setCustomParameters({prompt:'select_account'});const result=await auth.signInWithPopup(provider);if(!result.user||result.user.email.toLowerCase()!==ADMIN_EMAIL){await auth.signOut();$('login-status').textContent='Yetkisiz hesap.';return;}$('login-status').textContent='';}
+catch(e){$('login-status').textContent='Giriş başarısız. Tarayıcı açılır pencerelerini kontrol edin.';}
+});
+$('sign-out').addEventListener('click',()=>auth.signOut());
+});
+})();
+</script></body></html>
