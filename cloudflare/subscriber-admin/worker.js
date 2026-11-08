@@ -44,6 +44,16 @@ function findColumn(columns, possibilities) {
   }
   return "NULL";
 }
+function displayDate(value) {
+  if (value == null || value === "") return null;
+  if (typeof value === "number" || /^\\d{10,13}$/.test(String(value))) {
+    const n = Number(value);
+    const date = new Date(n < 100000000000 ? n * 1000 : n);
+    return Number.isFinite(date.getTime()) ? date.toISOString() : null;
+  }
+  const date = new Date(value);
+  return Number.isFinite(date.getTime()) ? date.toISOString() : null;
+}
 async function selectSubscribers(env, tableName) {
   if (!safeName(tableName)) return null;
   const columns = (await env.DB.prepare("PRAGMA table_info(" + sqlName(tableName) + ")").all()).results || [];
@@ -70,9 +80,9 @@ async function selectSubscribers(env, tableName) {
     source: String(row.source || "").slice(0, 100),
     status: String(row.status || "").slice(0, 50),
     consent: row.consent,
-    created_at: row.created_at,
-    verified_at: row.verified_at,
-    unsubscribed_at: row.unsubscribed_at
+    created_at: displayDate(row.created_at),
+    verified_at: displayDate(row.verified_at),
+    unsubscribed_at: displayDate(row.unsubscribed_at)
   }));
   return { table: tableName, total: Number(countRow && countRow.count || 0), rows };
 }
