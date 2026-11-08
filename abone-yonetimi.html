@@ -31,6 +31,17 @@ p{color:#bfc3cc;margin:7px 0 17px}
 .data-table th{background:#272b33;position:sticky;top:0;z-index:1}
 .data-table td{color:#dee0e5}
 .data-table button{font-size:12px;padding:6px 10px}
+.row-actions{display:flex;align-items:center;gap:5px;flex-wrap:wrap;min-width:230px}
+.row-actions button{font-size:12px;padding:7px 9px;border-radius:7px;white-space:nowrap}
+.row-actions .remove{background:#5e3034}
+.row-actions .delete{background:#6e1922}
+.row-actions .approve{background:#246646}
+.row-actions .undo{background:#434958}
+.note-small{font-size:12px;color:#c0c3cb;line-height:1.55}
+.state-pill{font-weight:750;white-space:nowrap}
+.state-ok{color:#8addab}
+.state-wait{color:#f2c98e}
+.state-off{color:#f18b97}
 .data-table .empty{padding:20px}
 #approval-output{border-left:3px solid #cd3046;padding:4px 15px;margin-top:15px}
 #approval-output:empty{display:none}
@@ -93,6 +104,7 @@ p{color:#bfc3cc;margin:7px 0 17px}
   </div>
   <p id="book-status" class="status" role="status" aria-live="polite">Listeleme servisi henüz doğrulanmadı. “Kitap listesini denetle” düğmesiyle kontrol edebilirsiniz.</p>
   <div id="book-list" class="data-table"></div>
+<p class="note-small">Onayla, Onayı kaldır, Abonelikten çıkar ve Kalıcı sil işlemleri yalnız yetkili yönetici girişiyle çalışır.</p>
 </section>
 <section class="panel" aria-labelledby="news-title"><span class="label">SİTE · BLOG · HABER</span><h2 id="news-title">Ana sayfa aboneleri</h2>
 <p>Ana sayfadaki “Video ve haber aboneliği” kayıtları kitap ve sicil üyelerinden bağımsız listelenir. Verileri yalnızca yönetici görebilir.</p>
@@ -102,6 +114,7 @@ p{color:#bfc3cc;margin:7px 0 17px}
 </div>
 <p id="news-status" class="status" role="status" aria-live="polite">Canlı listeleme bağlantısı denetlenmedi.</p>
 <div id="news-list" class="data-table"></div>
+<p class="note-small">E-posta doğrulaması aboneliğin geçerli adresle açıldığını, yönetici onayı ise sizin ayrıca verdiğiniz kararı gösterir. <strong>Önemli:</strong> Mevcut otomatik haber dağıtımının yönetici kararına göre filtrelenmesi henüz uygulanmış değildir. Gönderimi durdurmak için “Abonelikten çıkar” işlemini kullanın.</p>
 <p class="muted">SMS doğrulaması e-posta doğrulamasının yerine geçmez. Onay ve toplu e-posta otomatik başlatılmaz.</p></section>
 <section class="panel"><h2>Kontrol ilkeleri</h2><p>Bir öğrencinin sicil kaydı, online eğitim izni ve e-posta aboneliği birbirine otomatik aktarılmaz. Abone verileri yalnızca yetkili sunucu API'leri üzerinden okunmalıdır. Toplu e-posta ve onay işlemleri için ayrıca izin kontrolü gerekir.</p><p class="muted">Geri dönüş noktası: 08.11.2026 · KMT_YONETIM_GERI_DONUS_2026-11-08_ONCESI</p></section>
 </div>
@@ -276,21 +289,87 @@ async function scanPendingApprovals(){
   }catch(e){status.textContent='Onay taraması tamamlanamadı: '+e.message;}
   finally{button.disabled=false;}
 }
+function readableStatus(status){
+  const map={active:'Aktif',pending:'Bekliyor',verified:'Doğrulandı',unsubscribed:'Abonelikten çıktı',disabled:'Pasif'};
+  return map[status]||status||'—';
+}
+function showDecision(item){
+  if(item.admin_decision==='approved')return 'Yönetici onaylı';
+  if(item.admin_decision==='revoked')return 'Onay iptal';
+  return 'Yönetici onayı bekliyor';
+}
+async function subscriberAction(category,item,op,button){
+  const current=firebase.auth().currentUser;
+  if(!isAdmin(current))return;
+  const email=String(item.email||'').trim();
+  if(!email)return;
+  if(op==='approve'){
+    if(!window.confirm(email+' için ayrıca yönetici onayı verilsin mi?'))return;
+  }else if(op==='unapprove'){
+    if(!window.confirm(email+' adresinin yönetici onayı kaldırılsın mı?'))return;
+  }else if(op==='unsubscribe'){
+    if(!window.confirm(email+' adresini abonelikten çıkarmak istiyor musunuz? Bu adrese yeni bildirim gönderimi durdurulacaktır.'))return;
+  }else if(op==='delete'){
+    const answer=window.prompt('Kalıcı silme işlemi ana abonelik kaydını ve ilgili gönderim kayıtlarını kaldırır. İşlemi onaylamak için e-posta adresini aynen yazın:', '');
+    if(answer===null||answer.trim().toLowerCase()!==email.toLowerCase()){
+      if(answer!==null)window.alert('E-posta adresi eşleşmedi. Silme yapılmadı.');
+      return;
+    }
+  }
+  button.disabled=true;
+  try{
+    const token=await current.getIdToken(true);
+    const resp=await fetch('/online-akademi/abonelik/admin/action',{
+      method:'POST',cache:'no-store',referrerPolicy:'no-referrer',
+      headers:{'Authorization':'Bearer '+token,'Content-Type':'application/json'},
+      body:JSON.stringify({category:category,email:email,action:op})
+    });
+    const data=await resp.json().catch(()=>({}));
+    if(!resp.ok)throw Error(data.error||('HTTP '+resp.status));
+    if(firebase.auth().currentUser!==current)return;
+    await reloadSubscriptions();
+    const status=$(category==='books'?'book-status':'news-status');
+    const actionNames={approve:'Yönetici onayı verildi',unapprove:'Yönetici onayı kaldırıldı',unsubscribe:'Abonelikten çıkarıldı',delete:'Abone kaydı silindi'};
+    status.textContent=(actionNames[op]||'İşlem yapıldı')+': '+email+'. '+status.textContent;
+  }catch(e){window.alert('İşlem tamamlanamadı: '+e.message);button.disabled=false;}
+}
+function appendAction(host,label,css,enabled,callback){
+  const button=document.createElement('button');button.type='button';button.className=css;
+  button.textContent=label;button.disabled=!enabled;button.addEventListener('click',callback);host.appendChild(button);
+}
 function renderSubscriptions(kind){
-  const book=kind==='books';
-  const list=book?bookSubscribers:newsSubscribers;
+  const book=kind==='books',list=book?bookSubscribers:newsSubscribers;
   const q=$(book?'book-filter':'news-filter').value.trim().toLocaleLowerCase('tr');
   const host=$(book?'book-list':'news-list');
   const rows=list.filter(x=>String(x.email||'').toLocaleLowerCase('tr').includes(q)||String(x.full_name||'').toLocaleLowerCase('tr').includes(q)).slice(0,500);
-  const body=tableFor(host,['Ad Soyad','E-posta','Kaynak','Durum','Doğrulama','Kayıt']);
+  const body=tableFor(host,['Ad Soyad','E-posta','Durum','E-posta Doğrulama','Yönetici Onayı','Kayıt','İşlemler']);
   for(const item of rows){
     const tr=body.insertRow();
-    appendCell(tr,item.full_name||'—');appendCell(tr,item.email||'—');appendCell(tr,item.source||'—');
-    appendCell(tr,item.status||'—');appendCell(tr,item.verified_at?'Doğrulandı':'Doğrulama yok');
+    appendCell(tr,item.full_name||'—');
+    appendCell(tr,item.email||'—');
+    const statusCell=appendCell(tr,readableStatus(item.status));
+    const inactive=item.status==='unsubscribed'||item.status==='disabled';
+    statusCell.className=inactive?'state-off':item.status==='pending'?'state-wait':'state-ok';
+    appendCell(tr,item.verified_at?'Doğrulandı':'Doğrulama bekliyor');
+    const adminCell=appendCell(tr,showDecision(item));
+    adminCell.className=item.admin_decision==='approved'?'state-ok':item.admin_decision==='revoked'?'state-off':'state-wait';
     appendCell(tr,item.created_at?String(item.created_at).slice(0,10):'—');
+    const cell=tr.insertCell(),controls=document.createElement('div');controls.className='row-actions';cell.appendChild(controls);
+    const canApprove=!inactive&&!!item.verified_at&&['active','verified'].includes(item.status);
+    const category=book?'books':'news';
+    if(item.admin_decision==='approved')
+      appendAction(controls,'Onayı kaldır','undo',true,()=>subscriberAction(category,item,'unapprove',controls.querySelector('.undo')));
+    else
+      appendAction(controls,'Onayla','approve',canApprove,()=>subscriberAction(category,item,'approve',controls.querySelector('.approve')));
+    appendAction(controls,'Abonelikten çıkar','remove',!inactive,()=>subscriberAction(category,item,'unsubscribe',controls.querySelector('.remove')));
+    appendAction(controls,'Sil','delete',true,()=>subscriberAction(category,item,'delete',controls.querySelector('.delete')));
   }
-  if(!rows.length){const r=body.insertRow(),c=r.insertCell();c.colSpan=6;c.className='empty';c.textContent=list.length?'Aradığınız e-posta bulunamadı.':'Görüntülenebilir abone bulunamadı.';}
+  if(!rows.length){
+    const r=body.insertRow(),c=r.insertCell();c.colSpan=7;c.className='empty';
+    c.textContent=list.length?'Aradığınız e-posta bulunamadı.':'Görüntülenebilir abone bulunamadı.';
+  }
 }
+
 async function reloadSubscriptions(){
   const current=firebase.auth().currentUser;
   if(!isAdmin(current))return;
