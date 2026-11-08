@@ -1,4 +1,4 @@
-const DASHBOARD_SOURCE = "https://raw.githubusercontent.com/kravmagaturk/kravmaga-turk-website/d35a96be1a4f24deb57b191a95a9faa1344196dd/abone-yonetimi.html";
+const DASHBOARD_SOURCE = "https://raw.githubusercontent.com/kravmagaturk/kravmaga-turk-website/0feaad028a3d43120cd7e393b1ef12d0daf249ca/abone-yonetimi.html";
 function secure(response) {
   const headers = new Headers(response.headers);
   headers.set("content-type", "text/html; charset=utf-8");
