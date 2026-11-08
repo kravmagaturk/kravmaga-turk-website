@@ -236,7 +236,7 @@ const auth=firebase.auth();
 auth.onAuthStateChanged(view,()=>{$('login-status').textContent='Oturum kontrolü yapılamadı.';view(null)});
 $('sign-in').addEventListener('click',async function(){
 $('login-status').textContent='Google girişi açılıyor…';
-try{const provider=new firebase.auth.GoogleAuthProvider();provider.setCustomParameters({prompt:'select_account'});const result=await auth.signInWithPopup(provider);if(!result.user||result.user.email.toLowerCase()!==ADMIN_EMAIL){await auth.signOut();$('login-status').textContent='Yetkisiz hesap.';return;}$('login-status').textContent='';}
+try{await auth.setPersistence(firebase.auth.Auth.Persistence.NONE);const provider=new firebase.auth.GoogleAuthProvider();provider.setCustomParameters({prompt:'select_account'});const result=await auth.signInWithPopup(provider);if(!result.user||result.user.email.toLowerCase()!==ADMIN_EMAIL){await auth.signOut();$('login-status').textContent='Yetkisiz hesap.';return;}$('login-status').textContent='';}
 catch(e){$('login-status').textContent='Giriş başarısız. Tarayıcı açılır pencerelerini kontrol edin.';}
 });
 $('student-filter').addEventListener('input',()=>{if(isAdmin(auth.currentUser))renderStudents();});
