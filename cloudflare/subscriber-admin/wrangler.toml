@@ -1,0 +1,19 @@
+name = "kmt-subscriber-admin"
+main = "worker.js"
+compatibility_date = "2026-11-08"
+workers_dev = true
+preview_urls = false
+
+# Bu rota genel online-akademi Worker'ından daha belirgindir.
+routes = [
+  { pattern = "kravmaga.com.tr/online-akademi/abonelik/admin/*", zone_name = "kravmaga.com.tr" }
+]
+
+# Firebase Web API anahtarı herkese açıktır; yönetici yetkisi sunucuda ID token kontrolüyle doğrulanır.
+[vars]
+FIREBASE_API_KEY = "AIzaSyAS8VB0ikbZXuhVQNzgn_ZbQWGXExijmKA"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "kravmaga-online-akademi"
+database_id = "8187ea4f-22a7-419e-9eb1-82fc97fe8c03"
