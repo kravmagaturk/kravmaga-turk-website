@@ -86,7 +86,7 @@ p{color:#bfc3cc;margin:7px 0 17px}
 <section class="panel" aria-labelledby="books-title">
   <span class="label">KİTAP · AYRI ABONE KAYNAĞI</span>
   <h2 id="books-title">Kitap abonelerini görüntüle</h2>
-  <p>Mevcut kitap aboneliği veritabanına ait yetkili listeleme servisi denenir. Bağlantı çalışmıyorsa bilgi verilerek kayıtlar korunur; otomatik aktarım veya onay yapılmaz.</p>
+  <p>Kitap aboneleri ve doğrulama durumları yalnız yetkili yönetici hesabıyla görüntülenir. Abonelik onayları veya erişim izinleri otomatik değiştirilmez.</p>
   <div class="data-bar">
     <input id="book-filter" type="search" autocomplete="off" placeholder="Kitap abonesi e-posta adresi ara" aria-label="Kitap abonesi e-posta adresi ara">
     <button id="refresh-books" class="secondary" type="button">Kitap listesini denetle</button>
@@ -95,9 +95,14 @@ p{color:#bfc3cc;margin:7px 0 17px}
   <div id="book-list" class="data-table"></div>
 </section>
 <section class="panel" aria-labelledby="news-title"><span class="label">SİTE · BLOG · HABER</span><h2 id="news-title">Ana sayfa aboneleri</h2>
-<p>Ana sayfadaki video ve haber formu <code>/online-akademi/abonelik</code> adresine kayıt gönderir. Bu kayıtları yetkili biçimde listeleyen sunucu servisi henüz yönetim merkezine bağlanmamıştır.</p>
-<p class="status">E-posta adreslerini şu an burada listeleyemiyoruz. Bir ziyaretçinin SMS veya e-posta doğrulaması yaptığını varsayarak aboneliğini otomatik onaylamıyoruz.</p>
-<p class="muted">Eğitim, sicil ve kitap verileri ayrı tutulur; kayıtlar değiştirilmez.</p></section>
+<p>Ana sayfadaki “Video ve haber aboneliği” kayıtları kitap ve sicil üyelerinden bağımsız listelenir. Verileri yalnızca yönetici görebilir.</p>
+<div class="data-bar">
+  <input id="news-filter" type="search" autocomplete="off" placeholder="Abone e-posta adresi ara" aria-label="Blog ve haber abonesi ara">
+  <button id="refresh-news" class="secondary" type="button">Abonelikleri getir</button>
+</div>
+<p id="news-status" class="status" role="status" aria-live="polite">Canlı listeleme bağlantısı denetlenmedi.</p>
+<div id="news-list" class="data-table"></div>
+<p class="muted">SMS doğrulaması e-posta doğrulamasının yerine geçmez. Onay ve toplu e-posta otomatik başlatılmaz.</p></section>
 <section class="panel"><h2>Kontrol ilkeleri</h2><p>Bir öğrencinin sicil kaydı, online eğitim izni ve e-posta aboneliği birbirine otomatik aktarılmaz. Abone verileri yalnızca yetkili sunucu API'leri üzerinden okunmalıdır. Toplu e-posta ve onay işlemleri için ayrıca izin kontrolü gerekir.</p><p class="muted">Geri dönüş noktası: 08.11.2026 · KMT_YONETIM_GERI_DONUS_2026-11-08_ONCESI</p></section>
 </div>
 </main>
@@ -110,12 +115,12 @@ const $=id=>document.getElementById(id);
 
 const FB_URL='https://kravmaga-diploma-default-rtdb.firebaseio.com';
 const EDUCATION_API='https://kravmaga-online-video.bulicet.workers.dev';
-let students=[],bookSubscribers=[],approvalScanOffset=0,approvalScanMatches=[];
+let students=[],bookSubscribers=[],newsSubscribers=[],subscriberLoadStarted=false,approvalScanOffset=0,approvalScanMatches=[];
 function isAdmin(user){return !!(user&&user.email&&user.email.toLowerCase()===ADMIN_EMAIL&&user.emailVerified);}
 function clearPrivateViews(){
-  students=[];bookSubscribers=[];approvalScanOffset=0;approvalScanMatches=[]; $('student-list').replaceChildren();$('book-list').replaceChildren();$('scan-results').replaceChildren();
-  $('approval-output').replaceChildren();$('student-filter').value='';$('book-filter').value='';
-  $('student-status').textContent='Yetkili giriş gerekli.';$('scan-status').textContent='Yetkili giriş gerekli.';$('scan-approvals').textContent='Bekleyen eğitim onaylarını tara'; $('book-status').textContent='Listeleme servisi henüz doğrulanmadı.';
+  students=[];bookSubscribers=[];newsSubscribers=[];subscriberLoadStarted=false;approvalScanOffset=0;approvalScanMatches=[]; $('student-list').replaceChildren();$('book-list').replaceChildren();$('news-list').replaceChildren();$('scan-results').replaceChildren();
+  $('approval-output').replaceChildren();$('student-filter').value='';$('book-filter').value='';$('news-filter').value='';
+  $('student-status').textContent='Yetkili giriş gerekli.';$('scan-status').textContent='Yetkili giriş gerekli.';$('scan-approvals').textContent='Bekleyen eğitim onaylarını tara'; $('book-status').textContent='Listeleme servisi henüz doğrulanmadı.';$('news-status').textContent='Listeleme servisi henüz doğrulanmadı.';
 }
 function renderBooks(){
   const q=$('book-filter').value.trim().toLowerCase();
@@ -271,30 +276,59 @@ async function scanPendingApprovals(){
   }catch(e){status.textContent='Onay taraması tamamlanamadı: '+e.message;}
   finally{button.disabled=false;}
 }
-async function reloadBooks(){
-  const current=firebase.auth().currentUser;if(!isAdmin(current))return;
-  const button=$('refresh-books');button.disabled=true;$('book-status').textContent='Kitap abonelik veritabanına bağlantı kontrol ediliyor…';
-  $('book-list').replaceChildren();
+function renderSubscriptions(kind){
+  const book=kind==='books';
+  const list=book?bookSubscribers:newsSubscribers;
+  const q=$(book?'book-filter':'news-filter').value.trim().toLocaleLowerCase('tr');
+  const host=$(book?'book-list':'news-list');
+  const rows=list.filter(x=>String(x.email||'').toLocaleLowerCase('tr').includes(q)||String(x.full_name||'').toLocaleLowerCase('tr').includes(q)).slice(0,500);
+  const body=tableFor(host,['Ad Soyad','E-posta','Kaynak','Durum','Doğrulama','Kayıt']);
+  for(const item of rows){
+    const tr=body.insertRow();
+    appendCell(tr,item.full_name||'—');appendCell(tr,item.email||'—');appendCell(tr,item.source||'—');
+    appendCell(tr,item.status||'—');appendCell(tr,item.verified_at?'Doğrulandı':'Doğrulama yok');
+    appendCell(tr,item.created_at?String(item.created_at).slice(0,10):'—');
+  }
+  if(!rows.length){const r=body.insertRow(),c=r.insertCell();c.colSpan=6;c.className='empty';c.textContent=list.length?'Aradığınız e-posta bulunamadı.':'Görüntülenebilir abone bulunamadı.';}
+}
+async function reloadSubscriptions(){
+  const current=firebase.auth().currentUser;
+  if(!isAdmin(current))return;
+  subscriberLoadStarted=true;
+  const buttons=[$('refresh-books'),$('refresh-news')];buttons.forEach(b=>b.disabled=true);
+  $('book-status').textContent='Yetkili kitap aboneleri yükleniyor…';
+  $('news-status').textContent='Yetkili blog ve haber aboneleri yükleniyor…';
   try{
     const token=await current.getIdToken();
-    const response=await fetch('/online-akademi/kitap-abonelik/api/admin/subscribers',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({idToken:token}),cache:'no-store',referrerPolicy:'no-referrer'
+    const response=await fetch('/online-akademi/abonelik/admin/list',{
+      method:'GET',headers:{'Authorization':'Bearer '+token},cache:'no-store',referrerPolicy:'no-referrer'
     });
-    if(!response.ok)throw new Error('HTTP '+response.status);
-    const data=await response.json();
+    const data=await response.json().catch(()=>({}));
+    if(!response.ok)throw Error(data.error||('HTTP '+response.status));
     if(firebase.auth().currentUser!==current)return;
-    if(!Array.isArray(data.subscribers))throw new Error('Liste yanıtı beklenen biçimde değil.');
-    bookSubscribers=data.subscribers;renderBooks();
-    $('book-status').textContent='Kitap aboneliği: '+data.subscribers.length+' kayıt. Sadece yetkili görüntüleme; durum değişikliği yapılmadı.';
-  }catch(e){$('book-status').textContent='Kitap listesine bağlantı henüz aktif değil ('+e.message+'). Abonelik kayıtları korunuyor.';}
-  finally{button.disabled=false;}
+    if(!Array.isArray(data.books)||!Array.isArray(data.news))throw Error('Listeleme yanıtı beklenen biçimde değil.');
+    bookSubscribers=data.books;newsSubscribers=data.news;
+    if(!data.sources||!data.sources.length){
+      $('book-list').replaceChildren();$('news-list').replaceChildren();
+      const message=data.message||'Abone veri kaynağı bulunamadı.';
+      $('book-status').textContent=message;$('news-status').textContent=message;return;
+    }
+    renderSubscriptions('books');renderSubscriptions('news');
+    const suffix=data.complete===false?' · İlk 500 kayıt görüntülenebilir.':'';
+    $('book-status').textContent='Kitap aboneleri: '+(data.counts&&Number.isFinite(data.counts.books)?data.counts.books:bookSubscribers.length)+' kayıt'+suffix;
+    $('news-status').textContent='Blog ve haber aboneleri: '+(data.counts&&Number.isFinite(data.counts.news)?data.counts.news:newsSubscribers.length)+' kayıt'+suffix;
+  }catch(e){
+    bookSubscribers=[];newsSubscribers=[];$('book-list').replaceChildren();$('news-list').replaceChildren();
+    const err='Abone listesi bağlantısı hazır değil: '+e.message+'. Mevcut kayıtlar korunuyor.';
+    $('book-status').textContent=err;$('news-status').textContent=err;
+  }finally{buttons.forEach(b=>b.disabled=false);}
 }
+async function reloadBooks(){return reloadSubscriptions();}
 
 function view(user){const ok=!!user && user.email && user.email.toLowerCase()===ADMIN_EMAIL && user.emailVerified;
 $('dashboard').classList.toggle('hidden',!ok);$('login').classList.toggle('hidden',ok);
 $('session-label').textContent=ok?'Yetkili oturum: '+user.email:'';
-if(ok&&!students.length){reloadStudents();}else if(!ok){clearPrivateViews();}
+if(ok){if(!students.length)reloadStudents();if(!subscriberLoadStarted)reloadSubscriptions();}else{clearPrivateViews();}
 if(user&&!ok){$('login-status').textContent='Bu Google hesabı KMT yöneticisi olarak yetkilendirilmemiştir.';firebase.auth().signOut().catch(()=>{});}
 }
 window.addEventListener('load',function(){
@@ -311,7 +345,9 @@ $('student-filter').addEventListener('input',()=>{if(isAdmin(auth.currentUser))r
 $('refresh-students').addEventListener('click',reloadStudents);
 $('scan-approvals').addEventListener('click',scanPendingApprovals);
 $('refresh-books').addEventListener('click',reloadBooks);
-$('book-filter').addEventListener('input',()=>{if(isAdmin(auth.currentUser)&&bookSubscribers.length)renderBooks();});
+$('refresh-news').addEventListener('click',reloadSubscriptions);
+$('news-filter').addEventListener('input',()=>{if(isAdmin(auth.currentUser)&&newsSubscribers.length)renderSubscriptions('news');});
+$('book-filter').addEventListener('input',()=>{if(isAdmin(auth.currentUser)&&bookSubscribers.length)renderSubscriptions('books');});
 $('sign-out').addEventListener('click',()=>auth.signOut());
 });
 })();
