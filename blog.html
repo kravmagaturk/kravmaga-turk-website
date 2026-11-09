@@ -117,7 +117,77 @@ body{overflow-x:hidden}
 @media(max-width:750px){.kmt-blog .kmt-book-news{grid-template-columns:minmax(0,1fr) 95px;gap:12px}.kmt-blog .kmt-latest-news{grid-template-columns:minmax(0,1fr) 110px}.kmt-blog .kmt-book-news h2{font-size:22px;margin-top:14px}.kmt-blog .kmt-book-news p{font-size:12px}.kmt-blog .kmt-book-news .kmt-read{font-size:11px}.kmt-blog .kmt-side .kmt-side-card:last-child{grid-column:1/-1}}
 .kmt-demo-cover{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;min-height:215px;aspect-ratio:1;background:radial-gradient(circle at 50% 44%,#5a1721,#190d12 59%,#0e1014);border:1px solid #6f2933;border-radius:12px;padding:18px;color:#fff}.kmt-demo-tag{font-size:10px;letter-spacing:2px;color:#ff9ca3;font-weight:900}.kmt-demo-play{display:grid;place-items:center;width:70px;height:70px;border-radius:50%;background:#df2c3b;color:#fff;font-size:30px;box-shadow:0 0 0 8px #df2c3b24}.kmt-demo-cover strong{font-size:15px;line-height:1.25;letter-spacing:.5px}.kmt-demo-sub{font-size:10px;letter-spacing:1px;color:#ddd}.kmt-blog .kmt-archive-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 @media(max-width:750px){.kmt-blog .kmt-archive-grid{grid-template-columns:minmax(0,1fr);gap:10px}.kmt-blog .kmt-archive-grid .kmt-post{min-height:0}}
-</style></head>
+</style>
+
+<style id="kmt-mobile-compact-20261109">
+/* Mobile-only compact news cards; desktop remains unchanged */
+@media screen and (max-width:750px){
+  .kmt-blog .kmt-wrap{width:calc(100% - 24px)}
+  .kmt-blog .kmt-hero-content{padding:28px 0}
+  .kmt-blog .kmt-line{margin-bottom:14px}
+  .kmt-blog .kmt-section{padding:21px 0}
+  .kmt-blog .kmt-heading{margin-bottom:13px}
+  .kmt-blog .kmt-heading h2{font-size:clamp(21px,5.5vw,26px);margin-bottom:5px}
+  .kmt-blog .kmt-heading p{font-size:12px;line-height:1.4}
+
+  .kmt-blog .kmt-featured{gap:8px}
+  .kmt-blog .kmt-main-card{min-height:0;padding:14px;border-radius:11px}
+  .kmt-blog .kmt-book-news,.kmt-blog .kmt-latest-news{
+    grid-template-columns:minmax(0,1fr) 96px;
+    gap:10px;
+    align-items:stretch;
+  }
+  .kmt-blog .kmt-label{font-size:9px;line-height:1.3;padding:4px 6px}
+  .kmt-blog .kmt-main-card h2,.kmt-blog .kmt-book-news h2{
+    font-size:18px;line-height:1.23;margin:8px 0 6px;
+  }
+  .kmt-blog .kmt-main-card p,.kmt-blog .kmt-book-news p{
+    font-size:12px;line-height:1.42;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+    overflow:hidden;
+  }
+  .kmt-blog .kmt-read{min-height:0;margin-top:10px;font-size:11px;line-height:1.3}
+  .kmt-blog .kmt-demo-cover{width:100%;height:100%;min-height:0;aspect-ratio:auto;gap:7px;padding:7px;border-radius:9px}
+  .kmt-blog .kmt-demo-tag{font-size:8px;letter-spacing:.5px}
+  .kmt-blog .kmt-demo-play{width:42px;height:42px;flex:none;font-size:19px;box-shadow:0 0 0 4px #df2c3b24}
+  .kmt-blog .kmt-demo-cover strong{font-size:10px;line-height:1.25}
+  .kmt-blog .kmt-demo-sub{display:none}
+
+  .kmt-blog .kmt-side{grid-template-columns:minmax(0,1fr);gap:7px}
+  .kmt-blog .kmt-side .kmt-side-card{grid-column:auto;min-height:0;padding:11px 13px;border-radius:10px}
+  .kmt-blog .kmt-side-card small{margin-bottom:5px;line-height:1.3}
+  .kmt-blog .kmt-side-card h3{font-size:16px;line-height:1.25;margin-bottom:5px}
+  .kmt-blog .kmt-side-card p{
+    font-size:12px;line-height:1.4;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+    overflow:hidden;
+  }
+
+  .kmt-blog .kmt-archive-grid{grid-template-columns:minmax(0,1fr);gap:7px}
+  .kmt-blog .kmt-archive-grid .kmt-post{
+    position:relative;display:block;min-height:0;
+    padding:11px 42px 11px 13px;border-radius:10px;
+  }
+  .kmt-blog .kmt-archive-grid .kmt-post small{
+    margin:0 0 5px;line-height:1.3;letter-spacing:.35px;
+  }
+  .kmt-blog .kmt-archive-grid .kmt-post h3{
+    margin:0 0 5px;font-size:16px;line-height:1.25;
+  }
+  .kmt-blog .kmt-archive-grid .kmt-post p{
+    margin:0;font-size:12px;line-height:1.42;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+    overflow:hidden;
+  }
+  .kmt-blog .kmt-archive-grid .kmt-post .kmt-arrow{
+    position:absolute;right:13px;top:50%;bottom:auto;
+    transform:translateY(-50%);
+    display:block;margin:0;text-align:right;font-size:20px;line-height:1;
+  }
+  .kmt-blog .kmt-grid{gap:8px}
+}
+</style>
+</head>
 <body>
 <main class="kmt-blog">
 
