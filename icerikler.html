@@ -205,6 +205,54 @@ html,body,.edu-page{max-width:100%;overflow-x:hidden}
   }
 }
 </style>
+
+<style id="kmt-icerikler-actual-mobile-fit-20261109">
+/* Maintain equal-sized cards and keep the odd last card centered instead of stretching its contents. */
+@media (max-width:760px) {
+ html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+ html,body,.edu-page{width:100%;max-width:100%;min-width:0;overflow-x:clip}
+ .edu-wrap{width:calc(100% - 24px)!important;max-width:calc(100% - 24px)!important;min-width:0;margin-inline:auto!important}
+ .edu-section,.edu-section-head,.edu-grid,#kmt-technical-gallery,.kmt-tech-grid{width:100%;max-width:100%;min-width:0;box-sizing:border-box}
+ .edu-grid,.edu-grid.levels,#kmt-technical-gallery .kmt-tech-grid{
+   display:grid!important;
+   grid-template-columns:repeat(2,minmax(0,1fr))!important;
+   gap:10px!important;
+   justify-content:stretch;
+   overflow:clip;
+ }
+ .edu-grid>.edu-card,#kmt-technical-gallery .kmt-tech-grid>.edu-card{min-width:0;max-width:100%;width:100%;overflow:hidden;box-sizing:border-box}
+ .edu-grid>.edu-card>.edu-open,#kmt-technical-gallery .kmt-tech-grid>.edu-card>.edu-open{
+   display:block!important;min-width:0;width:100%;height:100%;max-width:100%;box-sizing:border-box;text-align:left;
+ }
+ .edu-grid>.edu-card:last-child:nth-child(odd),
+ #kmt-technical-gallery .kmt-tech-grid>.edu-card:last-child:nth-child(odd){
+   grid-column:1/-1!important;
+   justify-self:center!important;
+   width:calc((100% - 10px)/2)!important;
+   max-width:calc((100% - 10px)/2)!important;
+ }
+ .edu-grid>.edu-card .edu-media,#kmt-technical-gallery .kmt-tech-grid>.edu-card .edu-media{
+   width:100%!important;min-width:0!important;height:auto!important;min-height:0!important;
+   aspect-ratio:1/1!important;padding:5px!important;overflow:hidden;
+   border-right:0!important;border-bottom:1px solid var(--edu-line)!important;
+ }
+ .edu-grid>.edu-card .edu-media img,#kmt-technical-gallery .kmt-tech-grid>.edu-card .edu-media img{
+   display:block!important;width:100%!important;height:100%!important;max-height:100%!important;
+   max-width:100%!important;aspect-ratio:auto!important;object-fit:contain!important;
+   object-position:center!important;
+ }
+ .edu-grid>.edu-card .edu-info,#kmt-technical-gallery .kmt-tech-grid>.edu-card .edu-info{
+   display:block!important;width:100%!important;max-width:100%!important;min-height:0!important;
+   padding:10px 9px 12px!important;box-sizing:border-box;
+ }
+ .edu-grid>.edu-card .edu-info strong,#kmt-technical-gallery .kmt-tech-grid>.edu-card .edu-info strong{
+   font-size:clamp(11px,3.15vw,13px)!important;line-height:1.25!important;
+   overflow-wrap:anywhere!important;word-break:normal!important;
+ }
+ #kmt-technical-gallery .edu-info span:last-child{display:none}
+ .edu-grid>.edu-card .edu-open:focus-visible{outline-offset:-2px}
+}
+</style>
 </head>
 <body>
 <main class="edu-page">
