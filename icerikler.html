@@ -253,6 +253,120 @@ html,body,.edu-page{max-width:100%;overflow-x:hidden}
  .edu-grid>.edu-card .edu-open:focus-visible{outline-offset:-2px}
 }
 </style>
+<style id="kmt-icerikler-equal-rows-20261109">
+/* Every mobile card occupies exactly one equal column, including the last row. */
+@media (max-width:760px) {
+  #kmt-technical-gallery .kmt-tech-grid,
+  .edu-grid,.edu-grid.levels{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    justify-content:stretch!important;
+    align-items:stretch!important;
+    gap:10px!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    box-sizing:border-box!important;
+  }
+  #kmt-technical-gallery .kmt-tech-grid>.edu-card,
+  .edu-grid>.edu-card{
+    grid-column:auto!important;
+    justify-self:stretch!important;
+    align-self:stretch!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    box-sizing:border-box!important;
+    margin:0!important;
+    overflow:hidden!important;
+  }
+  #kmt-technical-gallery .kmt-tech-grid>.edu-card>.edu-open,
+  .edu-grid>.edu-card>.edu-open{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    height:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+    text-align:left!important;
+  }
+  #kmt-technical-gallery .kmt-tech-grid>.edu-card .edu-media,
+  .edu-grid>.edu-card .edu-media{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    height:auto!important;
+    min-width:0!important;
+    max-width:100%!important;
+    aspect-ratio:1/1!important;
+    padding:5px!important;
+    box-sizing:border-box!important;
+    border-right:0!important;
+    border-bottom:1px solid var(--edu-line)!important;
+    overflow:hidden!important;
+  }
+  #kmt-technical-gallery .kmt-tech-grid>.edu-card .edu-media img,
+  .edu-grid>.edu-card .edu-media img{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    max-height:100%!important;
+    max-width:100%!important;
+    aspect-ratio:auto!important;
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+  #kmt-technical-gallery .kmt-tech-grid>.edu-card .edu-info,
+  .edu-grid>.edu-card .edu-info{
+    display:block!important;
+    min-width:0!important;
+    width:100%!important;
+    padding:10px 9px 12px!important;
+    box-sizing:border-box!important;
+    text-align:left!important;
+  }
+  #kmt-technical-gallery .kmt-tech-grid>.edu-card .edu-info strong,
+  .edu-grid>.edu-card .edu-info strong{
+    font-size:clamp(11px,3.15vw,13px)!important;
+    line-height:1.25!important;
+    overflow-wrap:anywhere!important;
+  }
+}
+</style>
+<style id="kmt-visible-viewport-fit-20261109">
+/* Respect pinch zoom while fitting mobile cards into the actually visible viewport. */
+@media(max-width:760px){
+ html.kmt-visual-fit .edu-wrap{
+  width:calc(var(--kmt-visible-vw) - 24px)!important;
+  max-width:calc(var(--kmt-visible-vw) - 24px)!important;
+  min-width:0!important;
+  margin-left:calc(var(--kmt-visible-left) + 12px)!important;
+  margin-right:0!important;
+ }
+ html.kmt-visual-fit .edu-hero h1{font-size:clamp(28px,8vw,46px)!important;letter-spacing:-1.5px}
+ html.kmt-visual-fit .edu-section-head h2{font-size:clamp(24px,7vw,34px)!important}
+ html.kmt-visual-single #kmt-technical-gallery .kmt-tech-grid,
+ html.kmt-visual-single .edu-grid,
+ html.kmt-visual-single .edu-grid.levels{
+  grid-template-columns:minmax(0,1fr)!important;
+ }
+}
+</style>
+<style id="kmt-mobile-fifth-card-same-width-20261109">
+@media(max-width:760px){
+ #kmt-technical-gallery .kmt-tech-grid>.edu-card:last-child:nth-child(odd),
+ .edu-grid>.edu-card:last-child:nth-child(odd){
+   grid-column:auto!important;
+   grid-row:auto!important;
+   justify-self:stretch!important;
+   align-self:stretch!important;
+   width:100%!important;
+   max-width:100%!important;
+   margin:0!important;
+ }
+}
+</style>
 </head>
 <body>
 <main class="edu-page">
@@ -318,6 +432,28 @@ html,body,.edu-page{max-width:100%;overflow-x:hidden}
   function shut(){box.classList.remove('open');img.removeAttribute('src');document.body.style.overflow=''}
   document.querySelectorAll('.edu-open').forEach(btn=>btn.addEventListener('click',()=>open(btn.dataset.src,btn.dataset.title)));
   close.addEventListener('click',shut);box.addEventListener('click',e=>{if(e.target===box)shut()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&box.classList.contains('open'))shut()});
+})();
+</script>
+<script id="kmt-mobile-visualviewport-fit-20261109">
+(function(){
+  'use strict';
+  var vp=window.visualViewport,root=document.documentElement;
+  if(!vp)return;
+  function update(){
+    var mobile=window.matchMedia('(max-width:760px)').matches;
+    var zoomed=mobile&&vp.scale>1.07;
+    root.classList.toggle('kmt-visual-fit',zoomed);
+    root.classList.toggle('kmt-visual-single',zoomed&&vp.width<245);
+    if(!zoomed)return;
+    var width=Math.max(1,Math.floor(vp.width));
+    var left=Math.max(0,Math.floor(vp.offsetLeft));
+    root.style.setProperty('--kmt-visible-vw',width+'px');
+    root.style.setProperty('--kmt-visible-left',left+'px');
+  }
+  update();
+  vp.addEventListener('resize',update,{passive:true});
+  vp.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update,{passive:true});
 })();
 </script>
 </body>
