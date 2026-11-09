@@ -48,6 +48,44 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
 @media(max-width:900px){.layout{grid-template-columns:1fr}.side{order:1}.main{order:2}.side #lessonList{max-height:420px;overflow-y:auto;overscroll-behavior:contain}.progressGrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.wrap{width:min(100% - 20px,1200px)}.hero{padding-top:35px}.topin{min-height:60px;flex-wrap:wrap;padding:8px 0}.brand{font-size:13px}.actions{width:100%;flex-wrap:wrap}.actions .btn{font-size:12px;padding:8px 10px}.actions .userText{display:none}.side #lessonList{max-height:330px}.progressGrid{grid-template-columns:1fr 1fr}.now{display:block}.loginFields{grid-template-columns:1fr}.loginFields .btn{width:100%}}
 </style>
+
+<style id="kmt-smart-academy-player-20261109">
+/* Isolated controls; preserves video permissions, lesson lists and member records. */
+.kmtSmart{margin-top:13px;padding:15px;background:#15181e;border:1px solid #373c48;border-radius:12px}
+.kmtSmartTop{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap;margin-bottom:11px}
+.kmtSmartEyebrow{color:#ff7884;font-size:11px;font-weight:900;letter-spacing:1.3px}
+.kmtSmartId{font-size:12px;color:#b7bcc7}
+.kmtSmartControls{display:grid;grid-template-columns:1.2fr 1fr 1.2fr 1fr 1.2fr;gap:7px}
+.kmtSmartBtn{min-height:46px;padding:9px 6px;border:1px solid #4a5360;border-radius:9px;background:#262b35;color:#fff;font:700 12px/1.2 Arial,Helvetica,sans-serif;cursor:pointer}
+.kmtSmartBtn.primary{background:#dc2939;border-color:#dc2939;font-size:13px}
+.kmtSmartBtn:disabled{opacity:.4;cursor:not-allowed}
+.kmtSmartBtn:focus-visible,.kmtSmartSeek:focus-visible,.kmtSmartTools select:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.kmtSmartSeek{display:block;width:100%;accent-color:#e81822;margin:14px 0 2px;cursor:pointer}
+.kmtSmartSeek:disabled{opacity:.45;cursor:default}
+.kmtSmartTimes{display:flex;justify-content:space-between;color:#b4bac4;font:12px Arial,sans-serif}
+.kmtSmartTools{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:12px}
+.kmtSmartTools label{display:flex;align-items:center;gap:7px;font-size:12px;color:#c5cbd4}
+.kmtSmartTools select{min-height:38px;padding:7px 10px;border:1px solid #4b5562;border-radius:8px;background:#252c36;color:#fff}
+.kmtSmartTools .kmtSmartBtn{min-height:38px;padding:8px 12px}
+.kmtSmartInfo{margin:10px 0 0;font-size:12px;line-height:1.5;color:#b3bac4}
+.kmtChapterList{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.kmtChapterList button{padding:9px 11px;border:1px solid #4a5360;border-radius:8px;background:#242a33;color:#fff;cursor:pointer;font:700 12px Arial,sans-serif}
+.kmtChapterList button.active{border-color:#e81822;background:#44242a}
+.kmt-smart-player-ready .videoBox{border:1px solid #343945}
+@media(max-width:620px){
+ .kmtSmart{padding:10px;border-radius:10px;margin-top:9px}
+ .kmtSmartControls{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ .kmtSmartControls .kmtSmartBtn{min-height:42px;padding:7px 4px;font-size:11px}
+ .kmtSmartControls .kmtSmartBtn:first-child{grid-column:1/2}
+ .kmtSmartControls .kmtSmartBtn:nth-child(2){grid-column:2/3}
+ .kmtSmartControls .kmtSmartBtn:nth-child(3){grid-column:3/4}
+ .kmtSmartControls .kmtSmartBtn:nth-child(4){grid-column:1/2}
+ .kmtSmartControls .kmtSmartBtn:nth-child(5){grid-column:2/4}
+ .kmtSmartTools{gap:6px}
+ .kmtSmartInfo{font-size:11px}
+ .playerWrap{padding:11px}
+}
+</style>
 </head>
 <body>
 <header class="top"><div class="wrap topin">
@@ -85,7 +123,28 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
 <div class="card">
 <div class="playerWrap">
 <div class="now"><div><h2 id="nowTitle">Bir ders seçin</h2><p id="nowMeta">Müfredattan video seçerek başlayın.</p></div><span id="nowAccess" class="pill">—</span></div>
-<div class="videoBox" id="videoBox"><div class="empty" id="emptyState">Ders oynatıcı burada açılacak.</div><video id="player" playsinline controls class="hidden"></video></div>
+<div class="videoBox" id="videoBox"><div class="empty" id="emptyState">Ders oynatıcı burada açılacak.</div><video id="player" playsinline controls preload="metadata" class="hidden"></video></div>
+<div id="kmtSmartPanel" class="kmtSmart hidden" aria-label="KMT akıllı video eğitim oynatıcısı">
+  <div class="kmtSmartTop"><span class="kmtSmartEyebrow">KMT AKILLI VİDEO PANELİ</span><span id="smartLessonPosition" class="kmtSmartId">—</span></div>
+  <div class="kmtSmartControls" role="group" aria-label="Video oynatma ve ders geçişleri">
+    <button id="smartPrev" class="kmtSmartBtn" type="button">‹ Önceki ders</button>
+    <button id="smartBack" class="kmtSmartBtn" type="button">↺ 10 sn</button>
+    <button id="smartPlay" class="kmtSmartBtn primary" type="button">▶ Oynat</button>
+    <button id="smartForward" class="kmtSmartBtn" type="button">10 sn ↻</button>
+    <button id="smartNext" class="kmtSmartBtn" type="button">Sonraki ders ›</button>
+  </div>
+  <input class="kmtSmartSeek" id="smartSeek" type="range" min="0" max="0" step="0.1" value="0" disabled aria-label="Video zaman çizelgesi">
+  <div class="kmtSmartTimes"><span id="smartElapsed">0:00</span><span id="smartDuration">0:00</span></div>
+  <div class="kmtSmartTools">
+    <label id="smartSpeedLabel" for="smartSpeed">Hız
+      <select id="smartSpeed" aria-label="Video oynatma hızı"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select>
+    </label>
+    <button id="smartLang" type="button" class="kmtSmartBtn" aria-pressed="false">TR / EN · Panel dili</button>
+    <button id="smartFull" type="button" class="kmtSmartBtn">⛶ Tam ekran</button>
+  </div>
+  <div id="smartChapters" class="kmtChapterList hidden" aria-label="İşaretlenmiş video bölümleri"></div>
+  <p id="smartNote" class="kmtSmartInfo">İzleme konumunuz kaydedilir. TR/EN seçimi yalnızca panel düğmelerini çevirir; videonun sesini veya yazılarını değiştirmez.</p>
+</div>
 </div>
 <div class="progressGrid">
 <div class="metric"><b id="mDone">0</b><span>TAMAMLANAN</span></div>
@@ -113,6 +172,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
   const isBookEntry=false;
   let session=sessionStorage.getItem('kmtStudentSession')||'';
   let profile=null,catalog=null,progress={},current=null,plyr=null,saveTimer=null;
+  let smartLang='tr',openingEpoch=0,lastResumeCacheTime=-1;
   let activeSection='basic-combatives';
 
   const $=id=>document.getElementById(id);
@@ -184,25 +244,176 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
     if(!profile)return;
     try{const d=await api('/api/progress');progress={};(d.progress||[]).forEach(p=>progress[p.lesson_id]=p);renderLessons();updateMetrics();}catch(e){console.warn(e);}
   }
+  /* Per-student resume; backend progress and authorization remain authoritative. */
+  function resumeKey(l){return 'kmtAcademyResume:v2:'+(profile?profile.registerNo:'guest')+':'+l.id;}
+  function cacheResume(l,time,duration,ended=false){
+    if(!l||!profile||!Number.isFinite(time)||time<0)return;
+    try{
+      const key=resumeKey(l);
+      if(ended||(Number.isFinite(duration)&&duration>0&&time>=duration-1))localStorage.removeItem(key);
+      else localStorage.setItem(key,String(time));
+    }catch(e){}
+  }
+  function savedPosition(l,duration){
+    if(!l||!Number.isFinite(duration)||duration<=3)return 0;
+    let local=0;
+    try{local=Number(localStorage.getItem(resumeKey(l)))||0;}catch(e){}
+    const p=progress[l.id]||{};
+    const explicit=Number(p.resume_sec??p.last_position_sec??p.position_sec??p.last_position??0)||0;
+    const legacy=Number(p.watched_sec)||0;
+    const candidate=local>0?local:(explicit>0?explicit:(!p.completed?legacy:0));
+    return candidate>2&&candidate<duration-2?candidate:0;
+  }
+  function smartCopy(tr,en){return smartLang==='en'?en:tr;}
+  function lessonNeighbors(){
+    const ls=flatLessons().filter(canAccess);
+    const index=current?ls.findIndex(x=>x.id===current.id):-1;
+    return {ls,index};
+  }
+  function updateSmart(){
+    const duration=Number(playerEl.duration),time=Number(playerEl.currentTime)||0;
+    const valid=Number.isFinite(duration)&&duration>0;
+    $('smartElapsed').textContent=fmt(time);
+    $('smartDuration').textContent=valid?fmt(duration):'0:00';
+    const seek=$('smartSeek');seek.disabled=!current||!valid;seek.max=valid?String(duration):'0';seek.value=valid?String(Math.min(time,duration)):'0';
+    $('smartPlay').textContent=playerEl.paused?smartCopy('▶ Oynat','▶ Play'):smartCopy('Ⅱ Duraklat','Ⅱ Pause');
+    $('smartPrev').textContent=smartCopy('‹ Önceki ders','‹ Previous lesson');
+    $('smartNext').textContent=smartCopy('Sonraki ders ›','Next lesson ›');
+    $('smartBack').textContent=smartCopy('↺ 10 sn','↺ 10 sec');
+    $('smartForward').textContent=smartCopy('10 sn ↻','10 sec ↻');
+    $('smartSpeedLabel').firstChild.textContent=smartCopy('Hız ','Speed ');
+    $('smartFull').textContent=smartCopy('⛶ Tam ekran','⛶ Fullscreen');
+    $('smartLang').textContent=smartLang==='tr'?'TR / EN · Panel dili':'EN / TR · Panel language';
+    $('smartLang').setAttribute('aria-pressed',String(smartLang==='en'));
+    const {ls,index}=lessonNeighbors();
+    $('smartPrev').disabled=index<=0;
+    $('smartNext').disabled=index<0||index>=ls.length-1;
+    $('smartBack').disabled=!current||!valid||time<=.2;
+    $('smartForward').disabled=!current||!valid||time>=duration-.2;
+    $('smartPlay').disabled=!current;
+    $('smartLessonPosition').textContent=index>=0?(index+1)+' / '+ls.length:'—';
+    $('smartNote').textContent=smartCopy(
+      'İzleme konumunuz kaydedilir. TR/EN yalnızca paneli çevirir; video sesi ve yazıları değişmez.',
+      'Your position is saved. TR/EN translates controls only; original video audio and titles stay unchanged.'
+    );
+    const chapters=$('smartChapters');
+    if(current&&Array.isArray(current.chapters)&&current.chapters.length){
+      chapters.classList.remove('hidden');
+      [...chapters.children].forEach((btn)=>{
+        const t=Number(btn.dataset.time);
+        btn.classList.toggle('active',time>=t&&(!btn.nextElementSibling||time<Number(btn.nextElementSibling.dataset.time)));
+      });
+    }else chapters.classList.add('hidden');
+  }
+  function populateChapters(l){
+    const host=$('smartChapters');host.replaceChildren();
+    if(!l||!Array.isArray(l.chapters)){host.classList.add('hidden');return;}
+    l.chapters.forEach((c,i)=>{
+      if(!Number.isFinite(Number(c.start))||Number(c.start)<0||!c.title)return;
+      const b=document.createElement('button');b.type='button';b.dataset.time=String(Number(c.start));
+      b.textContent=(i+1)+' · '+c.title;
+      b.onclick=()=>{if(playerEl.readyState>=1){playerEl.currentTime=Number(c.start);playerEl.play().catch(()=>{});}};
+      host.appendChild(b);
+    });
+    host.classList.toggle('hidden',!host.children.length);
+  }
   async function openLesson(l){
-    current=l;$('nowTitle').textContent=l.title;$('nowMeta').textContent=l.sectionTitle+' • '+l.moduleTitle;$('nowAccess').textContent=profile?'Kayıtlı Öğrenci: '+profile.registerNo:'—';
-    const u=new URL(location.href);u.searchParams.set('lesson',l.id);if(profile&&profile.sessionMode==='book')u.searchParams.set('mode','book');history.replaceState(null,'',u.pathname+'?'+u.searchParams.toString());
     if(!canAccess(l))return;
+    const requestId=++openingEpoch;
+    clearInterval(saveTimer);
+    if(current){
+      const wasPlaying=!playerEl.paused;
+      if(wasPlaying)playerEl.pause();
+      await saveProgress(false);
+      if(requestId!==openingEpoch)return;
+    }
     try{
       const d=await api('/api/video-ticket/'+encodeURIComponent(l.id),{method:'POST'});
-      emptyState.classList.add('hidden');playerEl.classList.remove('hidden');playerEl.src=d.url;
-      if(!plyr)plyr=new Plyr(playerEl,{controls:['play-large','play','progress','current-time','duration','mute','volume','settings','fullscreen']});
-      const p=progress[l.id];if(p&&p.watched_sec>0&&p.watched_sec<l.durationSec*.9)playerEl.currentTime=Math.min(p.watched_sec,l.durationSec-2);
-      playerEl.play().catch(()=>{});
-    }catch(e){$('nowMeta').textContent+=' • Video açılamadı';}
+      if(requestId!==openingEpoch)return;
+      if(!d||!d.url)throw new Error('video-url-missing');
+      current=l;
+      $('nowTitle').textContent=l.title;
+      $('nowMeta').textContent=l.sectionTitle+' • '+l.moduleTitle;
+      $('nowAccess').textContent=profile?'Kayıtlı Öğrenci: '+profile.registerNo:'—';
+      const u=new URL(location.href);u.searchParams.set('lesson',l.id);
+      if(profile&&profile.sessionMode==='book')u.searchParams.set('mode','book');
+      history.replaceState(null,'',u.pathname+'?'+u.searchParams.toString());
+      emptyState.classList.add('hidden');playerEl.classList.remove('hidden');
+      $('kmtSmartPanel').classList.remove('hidden');document.body.classList.add('kmt-smart-player-ready');
+      if(!plyr&&typeof Plyr==='function'){
+        plyr=new Plyr(playerEl,{controls:['play-large','play','progress','current-time','duration','mute','volume','settings','fullscreen'],speed:{selected:1,options:[.25,.5,.75,1,1.25,1.5,2]}});
+      }
+      populateChapters(l);
+      lastResumeCacheTime=-1;
+      playerEl.addEventListener('loadedmetadata',()=>{
+        if(requestId!==openingEpoch||!current||current.id!==l.id)return;
+        const resume=savedPosition(l,playerEl.duration);
+        if(resume>0)playerEl.currentTime=resume;
+        playerEl.playbackRate=Number($('smartSpeed').value)||1;
+        updateSmart();
+        playerEl.play().catch(()=>{});
+      },{once:true});
+      playerEl.src=d.url;playerEl.load();
+      updateSmart();
+      if(window.innerWidth<=900){$('videoBox').scrollIntoView({behavior:'smooth',block:'center'});}
+    }catch(e){
+      if(requestId===openingEpoch){$('nowMeta').textContent='Video açılamadı: '+e.message;}
+    }
   }
   async function saveProgress(ended=false){
-    if(!current||!profile||!canAccess(current)||!playerEl.duration)return;
-    try{await api('/api/progress/'+encodeURIComponent(current.id),{method:'PUT',body:JSON.stringify({watchedSec:playerEl.currentTime,durationSec:playerEl.duration,ended})});}catch{}
+    const l=current,d=Number(playerEl.duration),time=Number(playerEl.currentTime);
+    if(!l||!profile||!canAccess(l)||!Number.isFinite(d)||d<=0||!Number.isFinite(time))return;
+    cacheResume(l,time,d,ended);
+    try{
+      await api('/api/progress/'+encodeURIComponent(l.id),{
+        method:'PUT',body:JSON.stringify({watchedSec:time,durationSec:d,ended})
+      });
+    }catch(e){console.warn('İzleme ilerlemesi sunucuya kaydedilemedi',e);}
   }
-  playerEl.addEventListener('play',()=>{clearInterval(saveTimer);saveTimer=setInterval(()=>saveProgress(false),15000);});
-  playerEl.addEventListener('pause',()=>saveProgress(false));
-  playerEl.addEventListener('ended',async()=>{clearInterval(saveTimer);await saveProgress(true);await loadProgress();});
+  $('smartPrev').onclick=()=>{const {ls,index}=lessonNeighbors();if(index>0)openLesson(ls[index-1]);};
+  $('smartNext').onclick=()=>{const {ls,index}=lessonNeighbors();if(index>=0&&index<ls.length-1)openLesson(ls[index+1]);};
+  $('smartPlay').onclick=()=>{if(!current)return;playerEl.paused?playerEl.play().catch(()=>{}):playerEl.pause();};
+  $('smartBack').onclick=()=>{if(!current||!Number.isFinite(playerEl.duration))return;playerEl.currentTime=Math.max(0,playerEl.currentTime-10);updateSmart();};
+  $('smartForward').onclick=()=>{if(!current||!Number.isFinite(playerEl.duration))return;playerEl.currentTime=Math.min(playerEl.duration,playerEl.currentTime+10);updateSmart();};
+  $('smartSeek').oninput=e=>{if(!current||!Number.isFinite(playerEl.duration))return;playerEl.currentTime=Math.min(playerEl.duration,Math.max(0,Number(e.target.value)));updateSmart();};
+  $('smartSpeed').onchange=e=>{playerEl.playbackRate=Number(e.target.value)||1;};
+  $('smartLang').onclick=()=>{smartLang=smartLang==='tr'?'en':'tr';updateSmart();};
+  $('smartFull').onclick=()=>{
+    const host=$('videoBox');
+    if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});
+    else if(host.requestFullscreen)host.requestFullscreen().catch(()=>{});
+    else if(playerEl.webkitEnterFullscreen)playerEl.webkitEnterFullscreen();
+  };
+  playerEl.addEventListener('loadedmetadata',updateSmart);
+  playerEl.addEventListener('timeupdate',()=>{
+    updateSmart();
+    if(current&&profile&&Math.abs(playerEl.currentTime-lastResumeCacheTime)>=1){
+      lastResumeCacheTime=playerEl.currentTime;
+      cacheResume(current,playerEl.currentTime,playerEl.duration);
+    }
+  });
+  playerEl.addEventListener('seeking',updateSmart);
+  playerEl.addEventListener('play',()=>{
+    clearInterval(saveTimer);
+    saveTimer=setInterval(()=>saveProgress(false),15000);
+    updateSmart();
+  });
+  playerEl.addEventListener('pause',()=>{
+    clearInterval(saveTimer);
+    saveProgress(false);
+    updateSmart();
+  });
+  playerEl.addEventListener('ended',async()=>{
+    clearInterval(saveTimer);
+    if(current)cacheResume(current,0,playerEl.duration,true);
+    await saveProgress(true);
+    await loadProgress();
+    updateSmart();
+  });
+  playerEl.addEventListener('ratechange',()=>{
+    if(document.activeElement!==$('smartSpeed'))$('smartSpeed').value=String(playerEl.playbackRate);
+  });
+  updateSmart();
   document.addEventListener('contextmenu',e=>{if(e.target.closest('.videoBox'))e.preventDefault();});
 
   async function restoreSession(){
@@ -299,7 +510,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
     }finally{button.disabled=false;button.textContent='Google ile Giriş Yap';await studentAuth.signOut().catch(()=>{});}
   };
   $('studentLoginBtn').onclick=login;$('regInput').addEventListener('keydown',e=>{if(e.key==='Enter')login();});
-  $('logoutBtn').onclick=async()=>{stopApprovalPoll();try{await api('/api/student-logout',{method:'POST'});}catch{}await studentAuth.signOut().catch(()=>{});session='';profile=null;current=null;progress={};sessionStorage.removeItem('kmtStudentSession');playerEl.pause();playerEl.removeAttribute('src');playerEl.load();playerEl.classList.add('hidden');emptyState.classList.remove('hidden');$('nowTitle').textContent='Bir ders seçin';$('nowMeta').textContent='Müfredattan video seçerek başlayın.';$('regInput').value='';$('linkGoogleBtn').textContent='Google Hesabını Bağla';$('linkGoogleBtn').disabled=false;$('loginMsg').className='loginMsg';$('loginMsg').textContent='Çıkış yapıldı. Başka üyenin sicil numarasını girin.';const nextUrl=new URL(location.href);nextUrl.searchParams.delete('reg');history.replaceState(null,'',nextUrl);updateLoginState();$('regInput').focus();};
+  $('logoutBtn').onclick=async()=>{stopApprovalPoll();try{await api('/api/student-logout',{method:'POST'});}catch{}await studentAuth.signOut().catch(()=>{});session='';profile=null;current=null;progress={};openingEpoch++;clearInterval(saveTimer);sessionStorage.removeItem('kmtStudentSession');playerEl.pause();$('kmtSmartPanel').classList.add('hidden');document.body.classList.remove('kmt-smart-player-ready');playerEl.removeAttribute('src');playerEl.load();playerEl.classList.add('hidden');emptyState.classList.remove('hidden');$('nowTitle').textContent='Bir ders seçin';$('nowMeta').textContent='Müfredattan video seçerek başlayın.';$('regInput').value='';$('linkGoogleBtn').textContent='Google Hesabını Bağla';$('linkGoogleBtn').disabled=false;$('loginMsg').className='loginMsg';$('loginMsg').textContent='Çıkış yapıldı. Başka üyenin sicil numarasını girin.';const nextUrl=new URL(location.href);nextUrl.searchParams.delete('reg');history.replaceState(null,'',nextUrl);updateLoginState();$('regInput').focus();};
 
   const pre=params.get('reg');if(pre)$('regInput').value=pre.toUpperCase();
   Promise.resolve(JSON.parse($('kmtCatalogData').textContent||'{"sections":[]}')).then(async d=>{
