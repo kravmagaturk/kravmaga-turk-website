@@ -125,6 +125,86 @@ html,body,.edu-page{max-width:100%;overflow-x:hidden}
 @media(max-width:760px){#kmt-technical-gallery .kmt-tech-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#kmt-technical-gallery .edu-media{height:auto;aspect-ratio:1/1;padding:5px}#kmt-technical-gallery .edu-media img{height:100%;max-height:100%}#kmt-technical-gallery .edu-info{min-height:112px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ImageGallery","@id":"https://kravmaga.com.tr/icerikler#kmt-technical-gallery","name":"Krav Maga Türk Teknik Eğitim Görselleri","url":"https://kravmaga.com.tr/icerikler","inLanguage":"tr-TR","publisher":{"@type":"Organization","name":"Krav Maga Türk","url":"https://kravmaga.com.tr"},"hasPart":[{"@type":"ImageObject","name":"Ayı Sarmalı ve Kurtulma","description":"Krav Maga ayı sarmalı savunması ve güvenli kurtulma aşamalarını gösteren görsel eğitim şeması","contentUrl":"https://kravmaga.com.tr/assets/education/techniques/ayi-sarmali-kurtulma.webp","thumbnailUrl":"https://kravmaga.com.tr/assets/education/techniques/ayi-sarmali-kurtulma-640.webp","width":1199,"height":1312,"inLanguage":"tr-TR"},{"@type":"ImageObject","name":"Bilek Tutuşlarından Kurtulma","description":"Bilek tutuşunda denge, çıkış yönü ve kontrollü kurtulma mekaniğini gösteren eğitim infografiği","contentUrl":"https://kravmaga.com.tr/assets/education/techniques/bilek-tutuslari-kurtulma.webp","thumbnailUrl":"https://kravmaga.com.tr/assets/education/techniques/bilek-tutuslari-kurtulma-640.webp","width":1199,"height":1312,"inLanguage":"tr-TR"},{"@type":"ImageObject","name":"Yumruk Mekaniği","description":"Bülent Çetin ile yumruk formu, el sağlığı ve doğru yumruk mekaniğini açıklayan teknik eğitim panosu","contentUrl":"https://kravmaga.com.tr/assets/education/techniques/yumruk-mekanigi.webp","thumbnailUrl":"https://kravmaga.com.tr/assets/education/techniques/yumruk-mekanigi-640.webp","width":1254,"height":1254,"inLanguage":"tr-TR"},{"@type":"ImageObject","name":"Yumruk Savunması ve Duruş","description":"Krav Maga yumruk savunmasında duruş, denge, el anatomisi ve güvenlik ilkeleri görseli","contentUrl":"https://kravmaga.com.tr/assets/education/techniques/yumruk-savunmasi.webp","thumbnailUrl":"https://kravmaga.com.tr/assets/education/techniques/yumruk-savunmasi-640.webp","width":1254,"height":1254,"inLanguage":"tr-TR"},{"@type":"ImageObject","name":"Çocuklar İçin Öz Savunma","description":"Çocuklar için tehlikeyi fark etme, güvenli uzaklaşma ve acil yardım güvenlik rehberi","contentUrl":"https://kravmaga.com.tr/assets/education/techniques/cocuklar-oz-savunma.webp","thumbnailUrl":"https://kravmaga.com.tr/assets/education/techniques/cocuklar-oz-savunma-640.webp","width":1199,"height":1312,"inLanguage":"tr-TR"}]}</script>
+<style id="kmt-mobile-last-card-and-school-20261109">
+/* Odd card count: use the full final row instead of leaving an empty right column. */
+@media (max-width:760px) {
+  .edu-grid > .edu-card:last-child:nth-child(odd),
+  #kmt-technical-gallery .kmt-tech-grid > .edu-card:last-child:nth-child(odd) {
+    grid-column:1 / -1 !important;
+    min-width:0;
+  }
+  .edu-grid > .edu-card:last-child:nth-child(odd) > .edu-open,
+  #kmt-technical-gallery .kmt-tech-grid > .edu-card:last-child:nth-child(odd) > .edu-open {
+    display:grid;
+    grid-template-columns:minmax(0,44%) minmax(0,1fr);
+    align-items:center;
+    width:100%;
+    min-height:0;
+    gap:0;
+    text-align:left;
+  }
+  .edu-grid > .edu-card:last-child:nth-child(odd) .edu-media {
+    width:100%;
+    height:auto !important;
+    min-height:0;
+    aspect-ratio:2 / 3;
+    padding:0;
+    overflow:hidden;
+    background:#101214;
+    border-bottom:0;
+    border-right:1px solid var(--edu-line);
+  }
+  .edu-grid > .edu-card:last-child:nth-child(odd) .edu-media img {
+    display:block;
+    width:100%;
+    height:100%;
+    max-height:none;
+    aspect-ratio:auto;
+    object-fit:contain;
+    object-position:center;
+  }
+  .edu-grid > .edu-card:last-child:nth-child(odd) .edu-info,
+  #kmt-technical-gallery .kmt-tech-grid > .edu-card:last-child:nth-child(odd) .edu-info {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    gap:6px;
+    min-height:0;
+    min-width:0;
+    padding:12px;
+    overflow-wrap:anywhere;
+  }
+  #kmt-technical-gallery .kmt-tech-grid > .edu-card:last-child:nth-child(odd) .edu-media {
+    aspect-ratio:1199 / 1312;
+    width:100%;
+    height:auto;
+    min-height:0;
+    padding:0;
+    background:#101214;
+    border:0;
+    border-right:1px solid var(--edu-line);
+  }
+  #kmt-technical-gallery .kmt-tech-grid > .edu-card:last-child:nth-child(odd) .edu-media img {
+    width:100%;
+    height:100%;
+    max-height:none;
+    aspect-ratio:auto;
+    object-fit:contain;
+    background:transparent;
+  }
+  .edu-grid > .edu-card:has(img[src*="okul-guvenligi"]) .edu-media {
+    background:#101214 !important;
+  }
+  .edu-grid > .edu-card:has(img[src*="okul-guvenligi"]) .edu-media img {
+    background:transparent !important;
+  }
+  .edu-card .edu-info strong,.edu-card .edu-info span {
+    max-width:100%;
+    overflow-wrap:anywhere;
+  }
+}
+</style>
 </head>
 <body>
 <main class="edu-page">
@@ -171,7 +251,7 @@ html,body,.edu-page{max-width:100%;overflow-x:hidden}
       <article class="edu-card"><button class="edu-open" data-src="assets/education/cpo.webp" data-title="Close Protection Officer"><div class="edu-media"><img src="assets/education/cpo.webp" alt="Close Protection Officer CPO eğitimi" loading="lazy" decoding="async" width="540" height="720"></div><div class="edu-info"><span class="edu-index">CPO</span><strong>Close Protection Officer</strong><span>Yakın koruma eğitim içeriği.</span></div></button></article>
       <article class="edu-card"><button class="edu-open" data-src="assets/education/ozel-ders-icerigi.webp" data-title="Özel Ders İçeriği"><div class="edu-media"><img src="assets/education/ozel-ders-icerigi.webp" alt="Krav Maga özel ders içeriği" loading="lazy" decoding="async" width="480" height="720"></div><div class="edu-info"><span class="edu-index">PRIVATE</span><strong>Özel Ders</strong><span>Bireysel hedef ve seviyeye göre çalışma.</span></div></button></article>
       <article class="edu-card"><button class="edu-open" data-src="assets/education/cocuk-dersi.webp" data-title="Çocuk Krav Maga"><div class="edu-media"><img src="assets/education/cocuk-dersi.webp" alt="Çocuk Krav Maga dersi" loading="lazy" decoding="async" width="480" height="720"></div><div class="edu-info"><span class="edu-index">KIDS</span><strong>Çocuk Dersi</strong><span>Yaş grubuna uygun Krav Maga eğitim içeriği.</span></div></button></article>
-      <article class="edu-card"><button class="edu-open" data-src="/assets/okul-guvenligi-ozel-egitimli-guvenlik-personeli.png?v=20261018" data-title="Okullarda Güvenlik"><div class="edu-media"><img src="/assets/okul-guvenligi-ozel-egitimli-guvenlik-personeli.webp?v=20261018" alt="Okullarda güvenlik, özel eğitimli güvenlik personeli ve risk analizi" loading="lazy" decoding="async" width="1024" height="1536" style="object-fit:contain;background:#fff"></div><div class="edu-info"><span class="edu-index">SECURITY</span><strong>Okullarda Güvenlik</strong><span>Özel eğitimli personel ve risk analizi.</span></div></button></article>
+      <article class="edu-card"><button class="edu-open" data-src="/assets/okul-guvenligi-ozel-egitimli-guvenlik-personeli.png?v=20261018" data-title="Okullarda Güvenlik"><div class="edu-media"><img src="/assets/okul-guvenligi-ozel-egitimli-guvenlik-personeli.webp?v=20261018" alt="Okullarda güvenlik, özel eğitimli güvenlik personeli ve risk analizi" loading="lazy" decoding="async" width="1024" height="1536" style="object-fit:contain"></div><div class="edu-info"><span class="edu-index">SECURITY</span><strong>Okullarda Güvenlik</strong><span>Özel eğitimli personel ve risk analizi.</span></div></button></article>
     </div>
   </section>
 </div>
