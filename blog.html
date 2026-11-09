@@ -187,6 +187,53 @@ body{overflow-x:hidden}
   .kmt-blog .kmt-grid{gap:8px}
 }
 </style>
+
+<style id="kmt-blog-desktop-featured-20261109">
+/* Only desktop: prevent the featured card from stretching to the side news height. */
+@media (min-width:901px) {
+ .kmt-blog .kmt-featured{
+   grid-template-columns:minmax(0,1fr) minmax(290px,340px);
+   align-items:start;
+   gap:16px;
+ }
+ .kmt-blog .kmt-main-card.kmt-latest-news{
+   min-width:0;
+   min-height:0;
+   align-self:start;
+   grid-template-columns:minmax(0,1fr) 160px;
+   align-items:center;
+   gap:20px;
+   padding:24px 26px;
+   border-radius:13px;
+ }
+ .kmt-blog .kmt-main-card.kmt-latest-news h2{
+   max-width:100%;
+   margin:16px 0 9px;
+   font-size:clamp(24px,2.5vw,30px);
+   line-height:1.12;
+ }
+ .kmt-blog .kmt-main-card.kmt-latest-news p{
+   font-size:14px;
+   line-height:1.52;
+ }
+ .kmt-blog .kmt-main-card.kmt-latest-news .kmt-read{margin-top:15px}
+ .kmt-blog .kmt-main-card.kmt-latest-news .kmt-demo-cover{
+   box-sizing:border-box;
+   width:160px;
+   height:160px;
+   min-height:0;
+   max-width:100%;
+   aspect-ratio:1/1;
+   gap:7px;
+   padding:11px;
+   border-radius:11px;
+ }
+ .kmt-blog .kmt-main-card.kmt-latest-news .kmt-demo-play{width:54px;height:54px;font-size:23px}
+ .kmt-blog .kmt-main-card.kmt-latest-news .kmt-demo-tag{font-size:9px;letter-spacing:1px}
+ .kmt-blog .kmt-main-card.kmt-latest-news .kmt-demo-cover strong{font-size:12px}
+ .kmt-blog .kmt-main-card.kmt-latest-news .kmt-demo-sub{font-size:9px}
+}
+</style>
 </head>
 <body>
 <main class="kmt-blog">
