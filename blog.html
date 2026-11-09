@@ -234,6 +234,37 @@ body{overflow-x:hidden}
  .kmt-blog .kmt-main-card.kmt-latest-news .kmt-demo-sub{font-size:9px}
 }
 </style>
+<style id="kmt-blog-no-empty-column-20261109">
+/* Keep the featured article and news in consecutive rows, without a tall empty left column. */
+@media (min-width:901px) {
+  .kmt-blog .kmt-featured {
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    align-items:start;
+    gap:12px;
+  }
+  .kmt-blog .kmt-featured > .kmt-main-card {
+    width:100%;
+    max-width:100%;
+    margin:0;
+  }
+  .kmt-blog .kmt-featured > .kmt-side {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    align-items:stretch;
+    gap:12px;
+  }
+  .kmt-blog .kmt-featured .kmt-side-card {
+    min-width:0;
+    min-height:0;
+    padding:16px 18px;
+    border-radius:11px;
+  }
+  .kmt-blog .kmt-featured .kmt-side-card small{margin-bottom:7px}
+  .kmt-blog .kmt-featured .kmt-side-card h3{font-size:17px;line-height:1.25;margin:0 0 7px}
+  .kmt-blog .kmt-featured .kmt-side-card p{font-size:12px;line-height:1.45}
+}
+</style>
 </head>
 <body>
 <main class="kmt-blog">
