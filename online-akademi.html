@@ -172,7 +172,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
   const isBookEntry=false;
   let session=sessionStorage.getItem('kmtStudentSession')||'';
   let profile=null,catalog=null,progress={},current=null,plyr=null,saveTimer=null;
-  let smartLang='tr',openingEpoch=0,lastResumeCacheTime=-1;
+  let smartLang='tr',openingEpoch=0,lastResumeCacheTime=-1,mediaReady=false;
   let activeSection='basic-combatives';
 
   const $=id=>document.getElementById(id);
@@ -321,7 +321,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
     if(!canAccess(l))return;
     const requestId=++openingEpoch;
     clearInterval(saveTimer);
-    if(current){
+    if(current&&mediaReady){
       const wasPlaying=!playerEl.paused;
       if(wasPlaying)playerEl.pause();
       await saveProgress(false);
@@ -331,6 +331,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
       const d=await api('/api/video-ticket/'+encodeURIComponent(l.id),{method:'POST'});
       if(requestId!==openingEpoch)return;
       if(!d||!d.url)throw new Error('video-url-missing');
+      mediaReady=false;
       current=l;
       $('nowTitle').textContent=l.title;
       $('nowMeta').textContent=l.sectionTitle+' • '+l.moduleTitle;
@@ -349,6 +350,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
         if(requestId!==openingEpoch||!current||current.id!==l.id)return;
         const resume=savedPosition(l,playerEl.duration);
         if(resume>0)playerEl.currentTime=resume;
+        mediaReady=true;
         playerEl.playbackRate=Number($('smartSpeed').value)||1;
         updateSmart();
         playerEl.play().catch(()=>{});
@@ -362,7 +364,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
   }
   async function saveProgress(ended=false){
     const l=current,d=Number(playerEl.duration),time=Number(playerEl.currentTime);
-    if(!l||!profile||!canAccess(l)||!Number.isFinite(d)||d<=0||!Number.isFinite(time))return;
+    if(!mediaReady||!l||!profile||!canAccess(l)||!Number.isFinite(d)||d<=0||!Number.isFinite(time))return;
     cacheResume(l,time,d,ended);
     try{
       await api('/api/progress/'+encodeURIComponent(l.id),{
@@ -387,7 +389,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
   playerEl.addEventListener('loadedmetadata',updateSmart);
   playerEl.addEventListener('timeupdate',()=>{
     updateSmart();
-    if(current&&profile&&Math.abs(playerEl.currentTime-lastResumeCacheTime)>=1){
+    if(mediaReady&&current&&profile&&Math.abs(playerEl.currentTime-lastResumeCacheTime)>=1){
       lastResumeCacheTime=playerEl.currentTime;
       cacheResume(current,playerEl.currentTime,playerEl.duration);
     }
@@ -510,7 +512,7 @@ a{color:inherit}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}.top{posit
     }finally{button.disabled=false;button.textContent='Google ile Giriş Yap';await studentAuth.signOut().catch(()=>{});}
   };
   $('studentLoginBtn').onclick=login;$('regInput').addEventListener('keydown',e=>{if(e.key==='Enter')login();});
-  $('logoutBtn').onclick=async()=>{stopApprovalPoll();try{await api('/api/student-logout',{method:'POST'});}catch{}await studentAuth.signOut().catch(()=>{});session='';profile=null;current=null;progress={};openingEpoch++;clearInterval(saveTimer);sessionStorage.removeItem('kmtStudentSession');playerEl.pause();$('kmtSmartPanel').classList.add('hidden');document.body.classList.remove('kmt-smart-player-ready');playerEl.removeAttribute('src');playerEl.load();playerEl.classList.add('hidden');emptyState.classList.remove('hidden');$('nowTitle').textContent='Bir ders seçin';$('nowMeta').textContent='Müfredattan video seçerek başlayın.';$('regInput').value='';$('linkGoogleBtn').textContent='Google Hesabını Bağla';$('linkGoogleBtn').disabled=false;$('loginMsg').className='loginMsg';$('loginMsg').textContent='Çıkış yapıldı. Başka üyenin sicil numarasını girin.';const nextUrl=new URL(location.href);nextUrl.searchParams.delete('reg');history.replaceState(null,'',nextUrl);updateLoginState();$('regInput').focus();};
+  $('logoutBtn').onclick=async()=>{stopApprovalPoll();try{await api('/api/student-logout',{method:'POST'});}catch{}await studentAuth.signOut().catch(()=>{});session='';profile=null;current=null;progress={};openingEpoch++;mediaReady=false;clearInterval(saveTimer);sessionStorage.removeItem('kmtStudentSession');playerEl.pause();$('kmtSmartPanel').classList.add('hidden');document.body.classList.remove('kmt-smart-player-ready');playerEl.removeAttribute('src');playerEl.load();playerEl.classList.add('hidden');emptyState.classList.remove('hidden');$('nowTitle').textContent='Bir ders seçin';$('nowMeta').textContent='Müfredattan video seçerek başlayın.';$('regInput').value='';$('linkGoogleBtn').textContent='Google Hesabını Bağla';$('linkGoogleBtn').disabled=false;$('loginMsg').className='loginMsg';$('loginMsg').textContent='Çıkış yapıldı. Başka üyenin sicil numarasını girin.';const nextUrl=new URL(location.href);nextUrl.searchParams.delete('reg');history.replaceState(null,'',nextUrl);updateLoginState();$('regInput').focus();};
 
   const pre=params.get('reg');if(pre)$('regInput').value=pre.toUpperCase();
   Promise.resolve(JSON.parse($('kmtCatalogData').textContent||'{"sections":[]}')).then(async d=>{
