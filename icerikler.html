@@ -367,6 +367,105 @@ html,body,.edu-page{max-width:100%;overflow-x:hidden}
  }
 }
 </style>
+<style id="kmt-mobile-natural-ratios-20261110">
+@media (max-width:760px) {
+  html,body,.edu-page{max-width:100%;overflow-x:clip}
+  .edu-wrap{
+    width:calc(100% - 24px)!important;
+    max-width:calc(100% - 24px)!important;
+    margin-inline:auto!important;
+  }
+  html.kmt-visual-fit .edu-wrap{
+    width:calc(var(--kmt-visible-vw) - 24px)!important;
+    max-width:calc(var(--kmt-visible-vw) - 24px)!important;
+    margin-left:calc(var(--kmt-visible-left) + 12px)!important;
+    margin-right:0!important;
+  }
+  .edu-grid,.edu-grid.levels,#kmt-technical-gallery .kmt-tech-grid,
+  html.kmt-visual-single .edu-grid,
+  html.kmt-visual-single #kmt-technical-gallery .kmt-tech-grid{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:16px!important;
+    justify-items:center!important;
+    align-items:start!important;
+    width:100%!important;
+    overflow:visible!important;
+  }
+  .edu-grid>.edu-card,#kmt-technical-gallery .kmt-tech-grid>.edu-card,
+  .edu-grid>.edu-card:last-child:nth-child(odd),
+  #kmt-technical-gallery .kmt-tech-grid>.edu-card:last-child:nth-child(odd){
+    grid-column:auto!important;
+    grid-row:auto!important;
+    width:min(94%,420px)!important;
+    max-width:420px!important;
+    min-width:0!important;
+    justify-self:center!important;
+    align-self:start!important;
+    margin:0!important;
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+  }
+  .edu-grid>.edu-card>.edu-open,#kmt-technical-gallery .kmt-tech-grid>.edu-card>.edu-open,
+  .edu-grid>.edu-card:last-child:nth-child(odd)>.edu-open,
+  #kmt-technical-gallery .kmt-tech-grid>.edu-card:last-child:nth-child(odd)>.edu-open{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    height:auto!important;
+    text-align:left!important;
+  }
+  .edu-grid>.edu-card .edu-media,#kmt-technical-gallery .kmt-tech-grid>.edu-card .edu-media,
+  .edu-grid>.edu-card:last-child:nth-child(odd) .edu-media,
+  #kmt-technical-gallery .kmt-tech-grid>.edu-card:last-child:nth-child(odd) .edu-media{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:auto!important;
+    padding:0!important;
+    border-right:0!important;
+    border-bottom:1px solid var(--edu-line)!important;
+    overflow:hidden!important;
+  }
+  .edu-grid>.edu-card .edu-media img,#kmt-technical-gallery .kmt-tech-grid>.edu-card .edu-media img,
+  .edu-grid>.edu-card:last-child:nth-child(odd) .edu-media img,
+  #kmt-technical-gallery .kmt-tech-grid>.edu-card:last-child:nth-child(odd) .edu-media img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    max-width:100%!important;
+    max-height:none!important;
+    aspect-ratio:auto!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    background:transparent!important;
+  }
+  .edu-grid>.edu-card .edu-info,#kmt-technical-gallery .kmt-tech-grid>.edu-card .edu-info,
+  .edu-grid>.edu-card:last-child:nth-child(odd) .edu-info,
+  #kmt-technical-gallery .kmt-tech-grid>.edu-card:last-child:nth-child(odd) .edu-info{
+    display:block!important;
+    width:100%!important;
+    min-height:0!important;
+    padding:12px 14px 14px!important;
+    box-sizing:border-box!important;
+    text-align:left!important;
+  }
+  .edu-grid>.edu-card .edu-info strong,#kmt-technical-gallery .kmt-tech-grid>.edu-card .edu-info strong{
+    font-size:16px!important;
+    line-height:1.32!important;
+    overflow-wrap:anywhere!important;
+  }
+  .edu-grid>.edu-card .edu-index,#kmt-technical-gallery .kmt-tech-grid>.edu-card .edu-index{
+    font-size:11px!important;
+    letter-spacing:1.2px!important;
+  }
+  .edu-grid>.edu-card:has(img[src*="okul-guvenligi"]) .edu-media{background:#101214!important}
+}
+
+[executed on device: Bulicet (5c4ad261-b010-44bd-bec2-8a024ee59ce3)]
+</style>
 </head>
 <body>
 <main class="edu-page">
@@ -380,11 +479,11 @@ html,body,.edu-page{max-width:100%;overflow-x:hidden}
 
 <section class="edu-section" id="kmt-technical-gallery" aria-labelledby="kmt-technical-heading">
 <div class="edu-section-head"><div><div class="edu-kicker">TEKNİK EĞİTİM · GÖRSEL KÜTÜPHANE</div><h2 id="kmt-technical-heading">Teknik Eğitim Görselleri</h2></div><p>Ayı sarmalı, bilek tutuşları, yumruk mekaniği ve çocuklar için güvenlik; orijinal oranlarında büyütülebilir beş eğitim infografiği.</p></div>
-<div class="kmt-tech-grid"><article class="edu-card"><button class="edu-open" type="button" data-src="/assets/education/techniques/ayi-sarmali-kurtulma.webp" data-title="Ayı Sarmalı ve Kurtulma" aria-label="Ayı Sarmalı ve Kurtulma görselini büyüt"><div class="edu-media"><img src="/assets/education/techniques/ayi-sarmali-kurtulma-640.webp" srcset="/assets/education/techniques/ayi-sarmali-kurtulma-640.webp 585w, /assets/education/techniques/ayi-sarmali-kurtulma.webp 1199w" sizes="(max-width:760px) 46vw, (max-width:1100px) 45vw, 360px" alt="Krav Maga ayı sarmalı savunması ve güvenli kurtulma aşamalarını gösteren görsel eğitim şeması" loading="lazy" decoding="async" width="1199" height="1312"></div><div class="edu-info"><span class="edu-index">TEKNİK · 01</span><strong>Ayı Sarmalı ve Kurtulma</strong><span>Büyütmek için görsele dokunun.</span></div></button></article>
-<article class="edu-card"><button class="edu-open" type="button" data-src="/assets/education/techniques/bilek-tutuslari-kurtulma.webp" data-title="Bilek Tutuşlarından Kurtulma" aria-label="Bilek Tutuşlarından Kurtulma görselini büyüt"><div class="edu-media"><img src="/assets/education/techniques/bilek-tutuslari-kurtulma-640.webp" srcset="/assets/education/techniques/bilek-tutuslari-kurtulma-640.webp 585w, /assets/education/techniques/bilek-tutuslari-kurtulma.webp 1199w" sizes="(max-width:760px) 46vw, (max-width:1100px) 45vw, 360px" alt="Bilek tutuşunda denge, çıkış yönü ve kontrollü kurtulma mekaniğini gösteren eğitim infografiği" loading="lazy" decoding="async" width="1199" height="1312"></div><div class="edu-info"><span class="edu-index">TEKNİK · 02</span><strong>Bilek Tutuşlarından Kurtulma</strong><span>Büyütmek için görsele dokunun.</span></div></button></article>
-<article class="edu-card"><button class="edu-open" type="button" data-src="/assets/education/techniques/yumruk-mekanigi.webp" data-title="Yumruk Mekaniği" aria-label="Yumruk Mekaniği görselini büyüt"><div class="edu-media"><img src="/assets/education/techniques/yumruk-mekanigi-640.webp" srcset="/assets/education/techniques/yumruk-mekanigi-640.webp 640w, /assets/education/techniques/yumruk-mekanigi.webp 1254w" sizes="(max-width:760px) 46vw, (max-width:1100px) 45vw, 360px" alt="Bülent Çetin ile yumruk formu, el sağlığı ve doğru yumruk mekaniğini açıklayan teknik eğitim panosu" loading="lazy" decoding="async" width="1254" height="1254"></div><div class="edu-info"><span class="edu-index">TEKNİK · 03</span><strong>Yumruk Mekaniği</strong><span>Büyütmek için görsele dokunun.</span></div></button></article>
-<article class="edu-card"><button class="edu-open" type="button" data-src="/assets/education/techniques/yumruk-savunmasi.webp" data-title="Yumruk Savunması ve Duruş" aria-label="Yumruk Savunması ve Duruş görselini büyüt"><div class="edu-media"><img src="/assets/education/techniques/yumruk-savunmasi-640.webp" srcset="/assets/education/techniques/yumruk-savunmasi-640.webp 640w, /assets/education/techniques/yumruk-savunmasi.webp 1254w" sizes="(max-width:760px) 46vw, (max-width:1100px) 45vw, 360px" alt="Krav Maga yumruk savunmasında duruş, denge, el anatomisi ve güvenlik ilkeleri görseli" loading="lazy" decoding="async" width="1254" height="1254"></div><div class="edu-info"><span class="edu-index">TEKNİK · 04</span><strong>Yumruk Savunması ve Duruş</strong><span>Büyütmek için görsele dokunun.</span></div></button></article>
-<article class="edu-card"><button class="edu-open" type="button" data-src="/assets/education/techniques/cocuklar-oz-savunma.webp" data-title="Çocuklar İçin Öz Savunma" aria-label="Çocuklar İçin Öz Savunma görselini büyüt"><div class="edu-media"><img src="/assets/education/techniques/cocuklar-oz-savunma-640.webp" srcset="/assets/education/techniques/cocuklar-oz-savunma-640.webp 585w, /assets/education/techniques/cocuklar-oz-savunma.webp 1199w" sizes="(max-width:760px) 46vw, (max-width:1100px) 45vw, 360px" alt="Çocuklar için tehlikeyi fark etme, güvenli uzaklaşma ve acil yardım güvenlik rehberi" loading="lazy" decoding="async" width="1199" height="1312"></div><div class="edu-info"><span class="edu-index">TEKNİK · 05</span><strong>Çocuklar İçin Öz Savunma</strong><span>Büyütmek için görsele dokunun.</span></div></button></article></div>
+<div class="kmt-tech-grid"><article class="edu-card"><button class="edu-open" type="button" data-src="/assets/education/techniques/ayi-sarmali-kurtulma.webp" data-title="Ayı Sarmalı ve Kurtulma" aria-label="Ayı Sarmalı ve Kurtulma görselini büyüt"><div class="edu-media"><img src="/assets/education/techniques/ayi-sarmali-kurtulma-640.webp" srcset="/assets/education/techniques/ayi-sarmali-kurtulma-640.webp 585w, /assets/education/techniques/ayi-sarmali-kurtulma.webp 1199w" sizes="(max-width:760px) 94vw, (max-width:1100px) 45vw, 360px" alt="Krav Maga ayı sarmalı savunması ve güvenli kurtulma aşamalarını gösteren görsel eğitim şeması" loading="lazy" decoding="async" width="1199" height="1312"></div><div class="edu-info"><span class="edu-index">TEKNİK · 01</span><strong>Ayı Sarmalı ve Kurtulma</strong><span>Büyütmek için görsele dokunun.</span></div></button></article>
+<article class="edu-card"><button class="edu-open" type="button" data-src="/assets/education/techniques/bilek-tutuslari-kurtulma.webp" data-title="Bilek Tutuşlarından Kurtulma" aria-label="Bilek Tutuşlarından Kurtulma görselini büyüt"><div class="edu-media"><img src="/assets/education/techniques/bilek-tutuslari-kurtulma-640.webp" srcset="/assets/education/techniques/bilek-tutuslari-kurtulma-640.webp 585w, /assets/education/techniques/bilek-tutuslari-kurtulma.webp 1199w" sizes="(max-width:760px) 94vw, (max-width:1100px) 45vw, 360px" alt="Bilek tutuşunda denge, çıkış yönü ve kontrollü kurtulma mekaniğini gösteren eğitim infografiği" loading="lazy" decoding="async" width="1199" height="1312"></div><div class="edu-info"><span class="edu-index">TEKNİK · 02</span><strong>Bilek Tutuşlarından Kurtulma</strong><span>Büyütmek için görsele dokunun.</span></div></button></article>
+<article class="edu-card"><button class="edu-open" type="button" data-src="/assets/education/techniques/yumruk-mekanigi.webp" data-title="Yumruk Mekaniği" aria-label="Yumruk Mekaniği görselini büyüt"><div class="edu-media"><img src="/assets/education/techniques/yumruk-mekanigi-640.webp" srcset="/assets/education/techniques/yumruk-mekanigi-640.webp 640w, /assets/education/techniques/yumruk-mekanigi.webp 1254w" sizes="(max-width:760px) 94vw, (max-width:1100px) 45vw, 360px" alt="Bülent Çetin ile yumruk formu, el sağlığı ve doğru yumruk mekaniğini açıklayan teknik eğitim panosu" loading="lazy" decoding="async" width="1254" height="1254"></div><div class="edu-info"><span class="edu-index">TEKNİK · 03</span><strong>Yumruk Mekaniği</strong><span>Büyütmek için görsele dokunun.</span></div></button></article>
+<article class="edu-card"><button class="edu-open" type="button" data-src="/assets/education/techniques/yumruk-savunmasi.webp" data-title="Yumruk Savunması ve Duruş" aria-label="Yumruk Savunması ve Duruş görselini büyüt"><div class="edu-media"><img src="/assets/education/techniques/yumruk-savunmasi-640.webp" srcset="/assets/education/techniques/yumruk-savunmasi-640.webp 640w, /assets/education/techniques/yumruk-savunmasi.webp 1254w" sizes="(max-width:760px) 94vw, (max-width:1100px) 45vw, 360px" alt="Krav Maga yumruk savunmasında duruş, denge, el anatomisi ve güvenlik ilkeleri görseli" loading="lazy" decoding="async" width="1254" height="1254"></div><div class="edu-info"><span class="edu-index">TEKNİK · 04</span><strong>Yumruk Savunması ve Duruş</strong><span>Büyütmek için görsele dokunun.</span></div></button></article>
+<article class="edu-card"><button class="edu-open" type="button" data-src="/assets/education/techniques/cocuklar-oz-savunma.webp" data-title="Çocuklar İçin Öz Savunma" aria-label="Çocuklar İçin Öz Savunma görselini büyüt"><div class="edu-media"><img src="/assets/education/techniques/cocuklar-oz-savunma-640.webp" srcset="/assets/education/techniques/cocuklar-oz-savunma-640.webp 585w, /assets/education/techniques/cocuklar-oz-savunma.webp 1199w" sizes="(max-width:760px) 94vw, (max-width:1100px) 45vw, 360px" alt="Çocuklar için tehlikeyi fark etme, güvenli uzaklaşma ve acil yardım güvenlik rehberi" loading="lazy" decoding="async" width="1199" height="1312"></div><div class="edu-info"><span class="edu-index">TEKNİK · 05</span><strong>Çocuklar İçin Öz Savunma</strong><span>Büyütmek için görsele dokunun.</span></div></button></article></div>
 </section>
 
   <section class="edu-section" aria-labelledby="genel-egitim">
