@@ -1,0 +1,15 @@
+name = "kmt-instructor-lookup"
+main = "worker.js"
+compatibility_date = "2026-11-15"
+workers_dev = true
+keep_vars = true
+
+[secrets]
+required = ["FIREBASE_SERVICE_ACCOUNT_EMAIL", "FIREBASE_SERVICE_ACCOUNT_PRIVATE_KEY"]
+
+[[ratelimits]]
+name = "INSTRUCTOR_RATE_LIMITER"
+namespace_id = "120157"
+[ratelimits.simple]
+limit = 10
+period = 60
