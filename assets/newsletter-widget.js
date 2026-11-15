@@ -9,7 +9,7 @@
     const source = academy ? 'akademi' : 'kitap';
     const section = document.createElement('section');
     section.className = 'kmt-login-newsletter';
-    section.innerHTML = '<h3>Video ve haber bildirimleri</h3><p>Abone olursanız yeni eğitim videoları ve haberleri e-postayla alırsınız. Abonelik derslere giriş için zorunlu değildir.</p><form data-kmt-newsletter="' + source + '"><label>E-posta adresi <input type="email" name="email" autocomplete="email" maxlength="200" required></label><label class="kmt-newsletter-consent"><input type="checkbox" name="consent" required> E-posta duyurularını almak istiyorum.</label><button type="submit">Ücretsiz abone ol</button><p role="status" aria-live="polite"></p></form>';
+    section.innerHTML = '<h3>Video ve haber bildirimleri</h3><p>Abone olursanız yeni eğitim videoları ve haberleri e-postayla alırsınız. Abonelik derslere giriş için zorunlu değildir.</p><form data-kmt-newsletter="' + source + '"><label>E-posta adresi <input type="email" name="email" autocomplete="email" maxlength="200" required></label><label class="kmt-newsletter-consent"><input type="checkbox" name="consent" required> E-posta duyurularını almak istiyorum.</label><p>Abonelik verileri için <a href="/kvkk-aydinlatma" style="color:#fff;text-decoration:underline">KVKK aydınlatma metnini</a> inceleyebilirsiniz.</p><button type="submit">Ücretsiz abone ol</button><p role="status" aria-live="polite"></p></form>';
     host.appendChild(section);
     if (!document.getElementById('kmt-login-newsletter-style')) {
       const style = document.createElement('style');
