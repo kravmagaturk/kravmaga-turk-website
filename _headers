@@ -1,3 +1,12 @@
+# Safe, non-breaking baseline for static site responses. Check production after deploying.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(self)
+  Strict-Transport-Security: max-age=300
+  Content-Security-Policy-Report-Only: default-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: blob: https:; font-src 'self' data: https:; connect-src 'self' https:; frame-src https:; object-src 'none'; base-uri 'self'; frame-ancestors 'self'
+
 # Management pages: only signed-in administrators may fetch private data.
 /abone-yonetimi
   X-Robots-Tag: noindex, nofollow, noarchive, nosnippet

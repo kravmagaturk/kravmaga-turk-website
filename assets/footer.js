@@ -88,7 +88,7 @@
       .kmt-footer-subscribe label input{margin:2px 0 0}
       .kmt-footer-subscribe [role=status]{margin:4px 0 0}.kmt-footer-subscribe [role=status]:empty{display:none}
       .kmt-footer-subscribe .kmt-footer-unsubscribe{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:5px 8px;flex:none;border:1px solid #727d78;border-radius:5px;background:#26342b;color:#fff!important;font-size:11px;font-weight:700;text-decoration:none!important;text-align:center}
-      .kmt-footer-subscribe .kmt-footer-unsubscribe:hover{color:#fff!important}
+      .kmt-footer-subscribe .kmt-footer-unsubscribe:hover{color:#fff!important}.kmt-footer-subscribe .kmt-subscribe-privacy{font-size:10px;line-height:1.5;margin-top:7px;color:#c5cbd0}.kmt-footer-subscribe .kmt-subscribe-privacy a{color:#fff!important;text-decoration:underline;text-decoration-color:#e30620}
 
       .kmt-footer-copy{
         max-width:1536px;margin:0 auto;padding:9px 5% 12px;border-top:1px solid #1d1f22;
@@ -334,11 +334,12 @@
             <p>Yeni eğitim videoları ve haberleri e-postayla al.</p>
             <div class="kmt-subscribe-row"><input type="email" name="email" aria-label="E-posta adresi" autocomplete="email" placeholder="E-posta adresin" required maxlength="200"><button type="submit">Abone ol</button><a class="kmt-footer-unsubscribe" href="/online-akademi/abonelik/ayril">Abonelikten çık</a></div>
             <div class="kmt-subscribe-options"><label><input type="checkbox" name="consent" required> E-posta duyurularını almak istiyorum.</label></div>
+            <p class="kmt-subscribe-privacy">E-posta aboneliği verilerinin işlenmesi hakkında <a href="/kvkk-aydinlatma">KVKK aydınlatma metni</a>.</p>
             <p role="status" aria-live="polite"></p>
           </form>
         </div>
         <div class="kmt-footer-copy">
-          © 2026 <strong>KRAV MAGA TÜRK</strong> · ® TPE: 2007/49875
+          © 2026 <strong>KRAV MAGA TÜRK</strong> · ® TPE: 2007/49875 · <a href="/kvkk-aydinlatma" style="color:#f1f1f1;text-decoration:underline">KVKK / Aydınlatma</a>
         </div>
       </footer>
     `;
