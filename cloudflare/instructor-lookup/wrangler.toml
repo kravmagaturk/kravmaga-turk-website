@@ -4,8 +4,11 @@ compatibility_date = "2026-11-15"
 workers_dev = true
 keep_vars = true
 
+[vars]
+FIREBASE_SERVICE_ACCOUNT_EMAIL = "kmt-instructor-lookup@kravmaga-diploma.iam.gserviceaccount.com"
+
 [secrets]
-required = ["FIREBASE_SERVICE_ACCOUNT_EMAIL", "FIREBASE_SERVICE_ACCOUNT_PRIVATE_KEY"]
+required = ["FIREBASE_SERVICE_ACCOUNT_PRIVATE_KEY"]
 
 [[ratelimits]]
 name = "INSTRUCTOR_RATE_LIMITER"
