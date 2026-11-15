@@ -422,7 +422,10 @@
         btn.setAttribute("aria-expanded", "false");
       });
       item.addEventListener("focusout", function (event) {
-        if (item.contains(event.relatedTarget)) return;
+        const nextFocus = event.relatedTarget;
+        // Do not collapse before a click on another menu item; that shifts its position.
+        if (item.contains(nextFocus) ||
+            (nextFocus && nextFocus.closest && nextFocus.closest(".kmt-nav"))) return;
         item.classList.remove("open");
         btn.setAttribute("aria-expanded", "false");
       });
