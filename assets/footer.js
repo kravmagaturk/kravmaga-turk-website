@@ -382,36 +382,55 @@
   function bindMenu() {
     const mobileBtn = document.querySelector(".kmt-nav-mobile");
     const links = document.querySelector(".kmt-nav-links");
+    const isDesktopHover = function () {
+      return window.innerWidth > 900 &&
+        window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    };
 
     if (mobileBtn && links) {
       mobileBtn.addEventListener("click", function (event) {
         event.stopPropagation();
         const isOpen = links.classList.toggle("open");
         mobileBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (!isOpen) closeAllMenus();
       });
     }
 
     document.querySelectorAll(".kmt-nav-item > button").forEach(function (btn) {
+      const item = btn.parentElement;
+
       btn.addEventListener("click", function (event) {
         event.preventDefault();
         event.stopPropagation();
-
-        const item = btn.parentElement;
         const shouldOpen = !item.classList.contains("open");
-
         closeAllMenus(item);
         item.classList.toggle("open", shouldOpen);
         btn.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+      });
+
+      // Fine-pointer desktop: open on hover; close when leaving the entire item.
+      // On mobile and touch devices, only clicking the button changes its state.
+      item.addEventListener("mouseenter", function () {
+        if (!isDesktopHover()) return;
+        closeAllMenus(item);
+        item.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+      });
+      item.addEventListener("mouseleave", function () {
+        if (!isDesktopHover()) return;
+        item.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      });
+      item.addEventListener("focusout", function (event) {
+        if (item.contains(event.relatedTarget)) return;
+        item.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
       });
     });
 
     document.querySelectorAll(".kmt-nav-drop").forEach(function (drop) {
       drop.addEventListener("click", function (event) {
         event.stopPropagation();
-      });
-      drop.addEventListener("mouseenter", function () {
-        const item = drop.parentElement;
-        if (item) item.classList.add("open");
       });
     });
 
@@ -428,6 +447,18 @@
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
         closeAllMenus();
+        if (links && mobileBtn && window.innerWidth <= 900) {
+          links.classList.remove("open");
+          mobileBtn.setAttribute("aria-expanded", "false");
+        }
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      closeAllMenus();
+      if (links && mobileBtn) {
+        links.classList.remove("open");
+        mobileBtn.setAttribute("aria-expanded", "false");
       }
     });
   }
