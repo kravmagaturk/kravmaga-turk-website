@@ -2,6 +2,10 @@ name = "kmt-contact-mailer"
 main = "worker.js"
 compatibility_date = "2026-10-04"
 workers_dev = true
+keep_vars = true
+
+[secrets]
+required = ["GOOGLE_APPS_SCRIPT_SECRET_V2"]
 
 [vars]
 HOSTINGER_MAILBOX_ID = "AC19b143db0562636e22bddab9bbc7"
