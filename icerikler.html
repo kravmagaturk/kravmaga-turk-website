@@ -483,6 +483,11 @@ html,body,.edu-page{max-width:100%;overflow-x:hidden}
 #kmt-technical-gallery .edu-media img{background-color:#050505!important}
 .edu-card{border-color:#292929}
 .edu-media{border-bottom-color:#292929}
+/* Specific mobile gallery rules use !important background shorthand; override those too. */
+#kmt-technical-gallery .kmt-tech-grid > .edu-card .edu-media,
+#kmt-technical-gallery .kmt-tech-grid > .edu-card:last-child:nth-child(2n+1) .edu-media,
+#kmt-technical-gallery .kmt-tech-grid > .edu-card .edu-media img,
+#kmt-technical-gallery .kmt-tech-grid > .edu-card:last-child:nth-child(2n+1) .edu-media img{background:#050505!important}
 </style>
 </head>
 <body>
