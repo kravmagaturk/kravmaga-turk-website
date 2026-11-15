@@ -21,3 +21,11 @@
   Referrer-Policy: no-referrer
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
+
+# Versioned Workers Static Assets (fingerprinted filenames only).
+# No changes to HTML, admin, API, or unversioned assets.
+/assets/kmt-v20261115/static/*
+  Cache-Control: public, max-age=604800, immutable
+
+/assets/kmt-v20261115/images/*
+  Cache-Control: public, max-age=2592000, immutable
