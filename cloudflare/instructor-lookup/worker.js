@@ -10,16 +10,25 @@ function b64(bytes) {
  let raw=""; for(const byte of bytes)raw+=String.fromCharCode(byte);
  return btoa(raw).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/g,"");
 }
-function der(pem){
- const s=String(pem||"").replace(/\\n/g,"\n").replace(/-----BEGIN PRIVATE KEY-----|-----END PRIVATE KEY-----|\s/g,"");
- if(!s)throw Error("Service key absent");
- return Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+function der(pem, expectedEmail) {
+ let raw=String(pem||"").trim();
+ if(raw.startsWith("{")){
+  let obj;
+  try{obj=JSON.parse(raw)}catch{throw Error("Invalid service JSON")}
+  if(obj.type!=="service_account"||obj.project_id!=="kravmaga-diploma"||obj.client_email!==expectedEmail)throw Error("Service identity mismatch");
+  raw=String(obj.private_key||"");
+ }else if(raw.startsWith('"')){
+  try{const decoded=JSON.parse(raw);if(typeof decoded==="string")raw=decoded}catch{}
+ }
+ const b64=raw.replace(/\\n/g,"\n").replace(/-----BEGIN PRIVATE KEY-----|-----END PRIVATE KEY-----|\s/g,"");
+ if(!b64||!/^[A-Za-z0-9+/]+={0,2}$/.test(b64))throw Error("Invalid service private key format");
+ return Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
 }
 async function getToken(env) {
  if(token&&Date.now()<expires)return token;
  const email=String(env.FIREBASE_SERVICE_ACCOUNT_EMAIL||"").trim(),pem=env.FIREBASE_SERVICE_ACCOUNT_PRIVATE_KEY;
  if(!email||!pem)throw Error("Service credentials missing");
- const key=await crypto.subtle.importKey("pkcs8",der(pem),{name:"RSASSA-PKCS1-v1_5",hash:"SHA-256"},false,["sign"]);
+ const key=await crypto.subtle.importKey("pkcs8",der(pem,email),{name:"RSASSA-PKCS1-v1_5",hash:"SHA-256"},false,["sign"]);
  const now=Math.floor(Date.now()/1000),e=new TextEncoder();
  const header=b64(e.encode(JSON.stringify({alg:"RS256",typ:"JWT"})));
  const claims=b64(e.encode(JSON.stringify({iss:email,scope:"https://www.googleapis.com/auth/firebase.database https://www.googleapis.com/auth/userinfo.email",aud:"https://oauth2.googleapis.com/token",iat:now,exp:now+3600})));
