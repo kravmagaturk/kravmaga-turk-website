@@ -111,7 +111,22 @@ export default {
     if (!Number.isFinite(startedAt) || Date.now() - startedAt < 2500 || Date.now() - startedAt > 28800000) {
       return reply({ error: "Lütfen formu yeniden açıp tekrar deneyin." }, 400, origin);
     }
-    if (limited(request.headers.get("cf-connecting-ip") || "unknown")) {
+    // Cloudflare's rate-limit binding is shared across Worker instances in a location.
+    // Keep the existing local fallback until the binding is deployed.
+    const visitorKey = request.headers.get("cf-connecting-ip") || "unknown";
+    if (env.CONTACT_RATE_LIMITER && typeof env.CONTACT_RATE_LIMITER.limit === "function") {
+      try {
+        const decision = await env.CONTACT_RATE_LIMITER.limit({ key: "contact:" + visitorKey });
+        if (!decision.success) {
+          return reply({ error: "Çok sık gönderim yapıldı. Bir süre sonra tekrar deneyin." }, 429, origin);
+        }
+      } catch (error) {
+        // An unresponsive abuse-control service must not silently accept messages.
+        console.error("Contact rate limit check failed", error?.message || "unknown");
+        return reply({ error: "Gönderim güvenlik kontrolü şu an kullanılamıyor." }, 503, origin);
+      }
+    }
+    if (limited(visitorKey)) {
       return reply({ error: "Çok sık gönderim yapıldı. Bir süre sonra tekrar deneyin." }, 429, origin);
     }
 
