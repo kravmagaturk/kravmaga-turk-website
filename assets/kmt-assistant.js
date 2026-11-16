@@ -14,6 +14,48 @@
     ["Belgeler", "Bülent Çetin'in diplomaları ve yetkileri nelerdir?"],
     ["Yeni kitap", "Yeni Krav Maga Türk kitabı ne zaman çıkacak?"]
   ];
+  var assistantLang="tr", languagePacks=null, languageRequest=null;
+  function languageUI(){return languagePacks&&languagePacks[assistantLang]?languagePacks[assistantLang].ui:null;}
+  function translate(key, fallback){var u=languageUI();return u&&u[key]!==undefined?u[key]:fallback;}
+  function speechTag(){return translate("tag","tr-TR");}
+  function loadLanguages(){
+    if(!languageRequest){
+      languageRequest=fetch("/assets/kmt-assistant-languages.json?v=20261116-i18n1",{credentials:"omit"})
+        .then(function(r){if(!r.ok)throw Error("Language pack unavailable");return r.json();})
+        .then(function(x){languagePacks=x&&x.locales?x.locales:null;return languagePacks;})
+        .catch(function(){return null;});
+    }
+    return languageRequest;
+  }
+  async function answerFromCards(q,forcedId){
+    if(assistantLang==="tr"){
+      if(forcedId){
+        var alias={documents:"docs",address:"location",protection:"protect"};
+        var ids=Array.isArray(forcedId)?forcedId:[forcedId];
+        var picked=ids.map(function(id){return embedded.find(function(x){return x.id===(alias[id]||id);});}).filter(Boolean);
+        if(picked.length)return {answer:picked.map(function(x){return x.a;}).join("\n\n"),url:picked[0].url};
+      }
+      return fallback(q);
+    }
+    if(!languagePacks)await loadLanguages();
+    var data=languagePacks&&languagePacks[assistantLang];
+    if(!data||!data.answers)return {answer:translate("loadFailed","Approved information is unavailable. Please contact the academy via WhatsApp."),url:"/iletisim"};
+    var answers=data.answers,choices=Object.keys(answers).map(function(id){return {id:id,info:answers[id]};});
+    if(forcedId){
+      var ids2=Array.isArray(forcedId)?forcedId:[forcedId];
+      var preselected=ids2.map(function(id){return choices.find(function(x){return x.id===id;});}).filter(Boolean);
+      if(preselected.length)return {answer:preselected.map(function(x){return x.info.answer;}).join("\n\n").slice(0,3000),url:preselected[0].info.url};
+    }
+    var input=normalized(q);
+    var scores=choices.map(function(x){
+      var n=x.info.keywords.reduce(function(total,word){return total+(input.includes(normalized(word))?(word.length>=7?2:1):0);},0);
+      return {info:x.info,n:n};
+    }).sort(function(a,b){return b.n-a.n;});
+    if(!scores.length||scores[0].n===0)return {answer:translate("unknown","Please contact us through WhatsApp for more information."),url:"/iletisim"};
+    var combined=/\b(and|und|et|sowie|außerdem|ainsi)\b/i.test(input)||q.length>105;
+    var selected=combined?scores.filter(function(x){return x.n>0;}).slice(0,3):scores.slice(0,1);
+    return {answer:selected.map(function(x){return x.info.answer;}).join("\n\n").slice(0,3000),url:selected[0].info.url};
+  }
   var embedded = [
     {id:"group",terms:["grup","baslangic","seans","salı","sali","persembe","perşembe","telafi","saat"],a:"Başlangıç sınıfında Salı ve Perşembe saat 19.30'da grup dersleri var. Ayda 8 seans için sitede 4.000 TL + %20 KDV ücreti belirtiliyor. Pazar 12.00–13.00 telafi seansı bulunuyor. İlk deneme dersi ücretsiz. Güncel durumu akademiden teyit edebilirsiniz.",url:"/krav-maga"},
     {id:"private",terms:["ozel","özel","bire","paket"],a:"Bire bir özel dersler 60 dakikalık seanslar ve 10 derslik paketler şeklinde planlanır. Sitedeki ücret seans başına 4.000 TL + KDV'dir. Uygun saatler için WhatsApp'tan randevu alabilirsiniz.",url:"/ozel-dersler"},
@@ -54,12 +96,18 @@
   }
   function mount() {
     if(document.getElementById("kmt-ai-root"))return;
-    var css=document.createElement("link");css.rel="stylesheet";css.href="/assets/kmt-assistant.css?v=20261116-logo";document.head.appendChild(css);
+    var css=document.createElement("link");css.rel="stylesheet";css.href="/assets/kmt-assistant.css?v=20261116-i18n1";document.head.appendChild(css);
     var root=el("div");root.id="kmt-ai-root";
     var launch=el("button","kmt-ai-launch");launch.type="button";launch.setAttribute("aria-label","Krav Maga Türk Akıllı Asistanı aç");
     launch.innerHTML=icon()+'<span class="kmt-ai-launch-label">KMT Akıllı Asistan<span class="kmt-ai-launch-sub">Sorun, cevaplayalım</span></span>';
     var panel=el("section","kmt-ai-panel");panel.hidden=true;panel.setAttribute("role","dialog");panel.setAttribute("aria-label","KMT dijital danışman sohbeti");
     var head=el("div","kmt-ai-head");head.innerHTML=icon()+'<div class="kmt-ai-head-text"><strong class="kmt-ai-title">KMT Akıllı Asistan</strong><span class="kmt-ai-subtitle">Krav Maga Türk · Dijital danışman</span></div>';
+    var languagePicker=el("select","kmt-ai-language");
+    languagePicker.setAttribute("aria-label","Dil / Language / Sprache / Langue");
+    [["tr","TR"],["en","EN"],["de","DE"],["fr","FR"]].forEach(function(pair){
+      var option=el("option",null,pair[1]);option.value=pair[0];languagePicker.append(option);
+    });
+    head.appendChild(languagePicker);
     var close=el("button","kmt-ai-iconbtn","×");close.type="button";close.setAttribute("aria-label","Asistan penceresini kapat");head.appendChild(close);
     var msgs=el("div","kmt-ai-messages");msgs.setAttribute("role","log");msgs.setAttribute("aria-live","polite");msgs.setAttribute("aria-relevant","additions");
     var chips=el("div","kmt-ai-chips");
@@ -89,57 +137,94 @@
       if(!voiceMode || !("speechSynthesis" in window))return;
       window.speechSynthesis.cancel();
       var utter=new SpeechSynthesisUtterance(s);
-      utter.lang="tr-TR";utter.rate=.98;utter.pitch=1;utter.volume=1;
+      utter.lang=speechTag();utter.rate=.98;utter.pitch=1;utter.volume=1;
       var voices=window.speechSynthesis.getVoices();
-      var tr=voices.find(function(x){return x.lang.toLowerCase().startsWith("tr");});
-      if(tr) utter.voice=tr;
+      var selectedVoice=voices.find(function(x){return x.lang.toLowerCase()===speechTag().toLowerCase();})||voices.find(function(x){return x.lang.toLowerCase().startsWith(assistantLang);});
+      if(selectedVoice)utter.voice=selectedVoice;
       window.speechSynthesis.speak(utter);
     }
     function bubble(role,s,url,source) {
       var node=el("div","kmt-ai-msg "+role,s);
       if(url && url.startsWith("/") && !url.startsWith("//")){
-        var small=el("small"),a=el("a",null,"İlgili sayfayı aç");a.href=url;small.append(a);node.append(small);
+        var small=el("small"),a=el("a",null,translate("link","İlgili sayfayı aç"));a.href=url;small.append(a);node.append(small);
       }
       if(source){var src=el("small",null,source);node.append(src);}
       msgs.append(node);msgs.scrollTop=msgs.scrollHeight;
     }
     function toggle(open) {
       opened=open;panel.hidden=!open;launch.hidden=open;
-      if(open){if(!msgs.childElementCount)bubble("bot",GREETING);input.focus();}
+      if(open){if(!msgs.childElementCount)bubble("bot",translate("greeting",GREETING));input.focus();}
       else{ if("speechSynthesis" in window)window.speechSynthesis.cancel();if(recognition){try{recognition.abort();}catch(_){}}launch.focus();}
     }
     function setVoice(on){
       voiceMode=on;textMode.setAttribute("aria-pressed",String(!on));speechMode.setAttribute("aria-pressed",String(on));
-      status.textContent=on?"Sesli yanıt açık":"Yazılı sohbet";
-      if(on && !("speechSynthesis" in window)){status.textContent="Sesli yanıt bu tarayıcıda desteklenmiyor";voiceMode=false;speechMode.setAttribute("aria-pressed","false");textMode.setAttribute("aria-pressed","true");}
+      status.textContent=on?translate("speechOn","Sesli yanıt açık"):translate("speechOff","Yazılı sohbet");
+      if(on && !("speechSynthesis" in window)){status.textContent=translate("speechUnsupported","Sesli yanıt desteklenmiyor");voiceMode=false;speechMode.setAttribute("aria-pressed","false");textMode.setAttribute("aria-pressed","true");}
     }
-    async function reply(q) {
-      if(busy)return;busy=true;send.disabled=true;mic.disabled=true;
+    var trQuickIds=["group",["group","private"],"bio","documents","book"];
+    function renderQuick(){
+      chips.replaceChildren();
+      var localized=translate("quick",null);
+      var items=localized||quick.map(function(q,i){return [q[0],q[1],trQuickIds[i]];});
+      items.forEach(function(item){
+        var button=el("button",null,item[0]);button.type="button";
+        button.addEventListener("click",function(){reply(item[1],item[2]);});
+        chips.append(button);
+      });
+    }
+    function refreshLanguage(){
+      var ui=languageUI();
+      languagePicker.value=assistantLang;panel.lang=speechTag();
+      launch.setAttribute("aria-label",translate("open","KMT Akıllı Asistanı aç"));
+      launch.querySelector(".kmt-ai-launch-sub").textContent=translate("sub","Sorun, cevaplayalım");
+      head.querySelector(".kmt-ai-subtitle").textContent=translate("subtitle","Krav Maga Türk · Dijital danışman");
+      close.setAttribute("aria-label",translate("close","Sohbeti kapat"));
+      panel.setAttribute("aria-label",translate("dialog","KMT dijital danışman sohbeti"));
+      input.placeholder=translate("placeholder","Sorunuzu yazın...");
+      input.setAttribute("aria-label",translate("input","KMT asistana sorunuzu yazın"));
+      mic.setAttribute("aria-label",translate("mic","Mikrofonla soru sor"));
+      send.setAttribute("aria-label",translate("send","Mesajı gönder"));
+      textMode.textContent=translate("text","Yazılı");
+      speechMode.textContent=translate("voice","Sesli");
+      status.textContent=voiceMode?translate("speechOn","Sesli yanıt açık"):translate("ready","Hazır · Site bilgileri");
+      more.textContent=translate("contact","İletişim");
+      note.firstChild.textContent=translate("notice","Sesli kullanım tarayıcı desteğine bağlıdır. Mikrofon yalnızca siz açarsanız çalışır. Kişisel bilgi paylaşmayın.");
+      renderQuick();
+    }
+    languagePicker.addEventListener("change",async function(){
+      if(busy){languagePicker.value=assistantLang;return;}
+      languagePicker.disabled=true;
+      assistantLang=languagePicker.value;
+      if("speechSynthesis" in window)window.speechSynthesis.cancel();
+      if(recognition){try{recognition.abort();}catch(_){}}
+      if(assistantLang!=="tr")await loadLanguages();
+      history=[];msgs.replaceChildren();input.value="";
+      refreshLanguage();bubble("bot",translate("greeting",GREETING));
+      languagePicker.disabled=false;input.focus();
+    });
+    async function reply(q,forcedId) {
+      if(busy)return;busy=true;send.disabled=true;mic.disabled=true;languagePicker.disabled=true;
       bubble("user",q);history.push({role:"user",content:q});history=history.slice(-8);
-      status.textContent="Yanıt hazırlanıyor...";
+      status.textContent=translate("working","Yanıt hazırlanıyor...");
       var found=null;var usedServer=false;
       try {
         var ctrl=new AbortController();var timeout=setTimeout(function(){ctrl.abort();},13000);
         try{
-          var r=await fetch("/api/kmt-assistant",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q,history:history.slice(0,-1)}),signal:ctrl.signal,credentials:"omit"});
+          var r=await fetch("/api/kmt-assistant",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q,language:assistantLang,history:history.slice(0,-1)}),signal:ctrl.signal,credentials:"omit"});
           if(r.ok && (r.headers.get("content-type")||"").includes("application/json")){
             var data=await r.json();
             if(data && typeof data.answer==="string" && data.answer.trim().length){found={answer:data.answer.slice(0,1400),url:typeof data.url==="string"?data.url:null};usedServer=true;}
           }
         }finally{clearTimeout(timeout);}
       }catch(_){}
-      if(!found)found=fallback(q);
-      bubble("bot",found.answer,found.url,usedServer?"KMT dijital danışman":"Yanıt: akademinin yayımladığı bilgiler");
+      if(!found)found=await answerFromCards(q,forcedId);
+      bubble("bot",found.answer,found.url,usedServer?translate("aiSource","KMT dijital danışman"):translate("webSource","Akademinin yayımladığı bilgiler"));
       history.push({role:"assistant",content:found.answer});history=history.slice(-8);
-      status.textContent=usedServer?"Yapay zekâ yanıtı":"Site bilgileri · Güvenli yanıt";
+      status.textContent=usedServer?translate("aiStatus","Yapay zekâ yanıtı"):translate("safeStatus","Site bilgileri · Güvenli yanıt");
       speak(found.answer);
-      busy=false;send.disabled=false;mic.disabled=false;input.focus();
+      busy=false;send.disabled=false;mic.disabled=false;languagePicker.disabled=false;input.focus();
     }
-    quick.forEach(function(item){
-      var btn=el("button",null,item[0]);btn.type="button";
-      btn.addEventListener("click",function(){reply(item[1]);});
-      chips.append(btn);
-    });
+    refreshLanguage();
     launch.addEventListener("click",function(){toggle(true);});
     close.addEventListener("click",function(){toggle(false);});
     textMode.addEventListener("click",function(){setVoice(false);if("speechSynthesis" in window)window.speechSynthesis.cancel();});
@@ -149,12 +234,12 @@
       if(!Recognition)return;
       try{
         if(recognition){recognition.abort();}
-        recognition=new Recognition();recognition.lang="tr-TR";recognition.interimResults=false;recognition.maxAlternatives=1;
+        recognition=new Recognition();recognition.lang=speechTag();recognition.interimResults=false;recognition.maxAlternatives=1;
         recognition.onresult=function(e){var heard=e.results[0][0].transcript.trim();if(heard){input.value=heard;reply(heard);}};
-        recognition.onerror=function(){status.textContent="Mikrofon kullanılamadı; yazarak devam edebilirsiniz.";};
+        recognition.onerror=function(){status.textContent=translate("micError","Mikrofon kullanılamadı; yazarak devam edebilirsiniz.");};
         recognition.onend=function(){mic.textContent="🎙";};
-        mic.textContent="●";status.textContent="Dinliyorum...";recognition.start();
-      }catch(_){status.textContent="Mikrofon kullanılamadı; yazarak devam edebilirsiniz.";}
+        mic.textContent="●";status.textContent=translate("listening","Dinliyorum...");recognition.start();
+      }catch(_){status.textContent=translate("micError","Mikrofon kullanılamadı; yazarak devam edebilirsiniz.");}
     });
     panel.addEventListener("keydown",function(e){if(e.key==="Escape"){e.preventDefault();toggle(false);}});
   }

@@ -226,12 +226,26 @@
         }
         .kmt-nav-item.open>.kmt-nav-drop{display:block}
         .kmt-nav-drop a{white-space:normal}
-        .kmt-footer-inner{display:block;padding:16px 18px 12px}
-        .kmt-footer-brand strong{font-size:18px}
-        .kmt-footer-brand small{font-size:9px;letter-spacing:.8px}
-        .kmt-footer-info{margin-top:12px;justify-content:flex-start;gap:9px 14px}
-        .kmt-footer-subscribe{width:100%;margin-top:14px}
-        .kmt-footer-copy{padding:9px 18px 12px;font-size:9px}
+        /* Compact but readable mobile footer — keep subscribe and KVKK controls intact */
+        .kmt-site-footer{padding:0!important;max-width:100%;overflow-x:clip}
+        .kmt-footer-inner{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;padding:10px 14px 7px}
+        .kmt-footer-brand strong{font-size:16px;line-height:1.08}
+        .kmt-footer-brand small{font-size:8px;letter-spacing:.6px;margin-top:2px}
+        .kmt-footer-info{margin-top:1px;justify-content:flex-start;gap:4px 12px}
+        .kmt-footer-info a,.kmt-footer-info span{font-size:10px;letter-spacing:.01em}
+        .kmt-footer-info a.kmt-footer-social{width:30px;min-width:30px;height:30px}
+        .kmt-footer-social svg{width:19px;height:19px}
+        .kmt-footer-subscribe{width:100%;min-width:0;max-width:none;flex:none;margin:2px 0 0;font-size:10px}
+        .kmt-footer-subscribe strong{font-size:12px;margin-bottom:1px}
+        .kmt-footer-subscribe p{font-size:10px;line-height:1.3;margin:0 0 4px}
+        .kmt-footer-subscribe .kmt-subscribe-row{gap:4px}
+        .kmt-footer-subscribe input[type=email]{min-width:0;min-height:32px;padding:6px 7px;font-size:11px}
+        .kmt-footer-subscribe button{min-height:32px;padding:6px 7px;font-size:10px}
+        .kmt-footer-subscribe .kmt-footer-unsubscribe{min-height:32px;padding:3px 5px;font-size:10px}
+        .kmt-footer-subscribe label{margin-top:3px;line-height:1.25}
+        .kmt-footer-subscribe .kmt-subscribe-options label{font-size:9.5px}
+        .kmt-footer-subscribe .kmt-subscribe-privacy{font-size:9px;line-height:1.25;margin-top:3px}
+        .kmt-footer-copy{padding:6px 14px 8px;font-size:9px;line-height:1.25}
       }
     `;
     document.head.appendChild(style);
@@ -502,7 +516,7 @@
     if (!document.getElementById('kmt-assistant-loader')) {
       const script = document.createElement('script');
       script.id = 'kmt-assistant-loader';
-      script.src = '/assets/kmt-assistant.js?v=20261116-logo';
+      script.src = '/assets/kmt-assistant.js?v=20261116-i18n1';
       script.defer = true;
       document.head.appendChild(script);
     }
