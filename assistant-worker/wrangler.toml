@@ -1,0 +1,11 @@
+name = "kmt-akilli-asistan-api"
+main = "src/worker.js"
+compatibility_date = "2026-11-16"
+workers_dev = true
+
+[vars]
+OPENAI_MODEL = "gpt-6-luna"
+
+# RATE_LIMIT_KV binding ayrıca tanımlanır.
+# Secret'lar Cloudflare'de eklenir: OPENAI_API_KEY, RATE_SALT.
+# KESİNLİKLE GitHub'a veya istemci koduna koymayın.

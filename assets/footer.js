@@ -499,6 +499,13 @@
       document.head.appendChild(script);
     }
 
+    if (!document.getElementById('kmt-assistant-loader')) {
+      const script = document.createElement('script');
+      script.id = 'kmt-assistant-loader';
+      script.src = '/assets/kmt-assistant.js?v=20261116';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
     injectStandardMark();
     bindMenu();
   }
