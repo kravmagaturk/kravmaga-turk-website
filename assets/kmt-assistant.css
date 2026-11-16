@@ -2,6 +2,7 @@
 #kmt-ai-root{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:4400;font:14px/1.45 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:#f6f6f7;pointer-events:none}
 #kmt-ai-root *,#kmt-ai-root *::before,#kmt-ai-root *::after{box-sizing:border-box}
 #kmt-ai-root button,#kmt-ai-root input{font:inherit}
+#kmt-ai-root [hidden]{display:none!important}
 #kmt-ai-root button{cursor:pointer}
 #kmt-ai-root .kmt-ai-launch{pointer-events:auto;display:flex;align-items:center;gap:10px;border:1px solid #8b2735;border-radius:52px;background:#111315;color:#fff;padding:5px 15px 5px 4px;box-shadow:0 6px 20px rgba(0,0,0,.45)}
 #kmt-ai-root .kmt-ai-launch:hover{border-color:#e23649;background:#1a1b1e}
