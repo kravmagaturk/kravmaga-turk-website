@@ -39,9 +39,9 @@
     var ordered = embedded.map(function(x){return {e:x,n:score(x)};}).sort(function(a,b){return b.n-a.n;});
     var found=ordered[0];
     if(!found || found.n===0) return {answer:"Bu konuda onaylanmış ayrıntılı bilgi bulamadım. Yanlış bilgi vermemek için sizi akademimizin WhatsApp hattına yönlendirebilirim. Konuyu biraz daha ayrıntılı yazarsanız yardımcı olmaya çalışırım.",url:"/iletisim"};
-    var compound = /\\b(ve|ayrica|ayrıca|hem|bir de)\\b/i.test(s) || s.length>95;
+    var compound = /\b(ve|ayrica|ayrıca|hem|bir de)\b/i.test(s) || s.length>95;
     var selected = compound ? ordered.filter(function(x){return x.n>0;}).slice(0,3) : [found];
-    return {answer:selected.map(function(x){return x.e.a;}).join("\\n\\n").slice(0,2400),url:selected[0].e.url};
+    return {answer:selected.map(function(x){return x.e.a;}).join("\n\n").slice(0,2400),url:selected[0].e.url};
   }
   function el(tag, cls, text) {
     var n=document.createElement(tag);
