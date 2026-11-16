@@ -59,7 +59,7 @@
     '<path d="M37 42q11-6 23 0l13 34-8 10-17-6-16 6-10-9z" fill="url(#kmt-ai-suit)"/>'+
     '<path d="M40 42l8 16 9-16" fill="none" stroke="#a32336" stroke-width="3"/>'+
     '<circle cx="56" cy="62" r="9.6" fill="#090909" stroke="#a9273b" stroke-width="1.6"/>'+
-    '<image href="/assets/brand/logo-1948.png" x="47.5" y="53.5" width="17" height="17" preserveAspectRatio="xMidYMid meet"/>'+
+    '<image href="/assets/brand/favicon-96.png" x="47.5" y="53.5" width="17" height="17" preserveAspectRatio="xMidYMid meet"/>'+
     '<path d="M37 45q-13 0-16 11l-7 19 10 5 10-17 10-5-6-11z" fill="#1a1c20"/>'+
     '<path d="M56 45q12-2 18 6l10 15-9 7-14-12-10-2z" fill="#1b1e22"/>'+
     '<path d="M14 69l10 5 13-23-8-8-8 5z" fill="#1a1d20"/>'+
