@@ -145,6 +145,67 @@
           "answer": "Krav Maga Türk Akademi: Yoğurtçu Şükrü Sokak No:19, Osmanağa, Kadıköy, Istanbul, Türkiye. Business WhatsApp: +90 532 162 18 21. Please confirm your visit or appointment before arriving.",
           "url": "/iletisim"
         }
+      },
+      "ui": {
+        "tag": "en-US",
+        "sub": "Ask us anything",
+        "subtitle": "Krav Maga Türk · Digital adviser",
+        "greeting": "Hello and welcome to Krav Maga Türk Academy! How may I help you? Ask about class times, prices, Bülent Çetin's qualifications or our book. You can type or choose voice mode.",
+        "open": "Open KMT Smart Assistant",
+        "close": "Close chat",
+        "dialog": "KMT Smart Assistant chat",
+        "placeholder": "Type your question...",
+        "input": "Your question",
+        "mic": "Ask by microphone",
+        "send": "Send message",
+        "voice": "Voice",
+        "text": "Text",
+        "ready": "Ready · Published information",
+        "working": "Preparing a reply...",
+        "speechOn": "Voice replies enabled",
+        "speechOff": "Text chat",
+        "speechUnsupported": "Voice replies not available in this browser",
+        "listening": "Listening...",
+        "micError": "Microphone unavailable. Please type your question.",
+        "webSource": "Academy's published information",
+        "aiSource": "KMT digital adviser",
+        "safeStatus": "Published information",
+        "aiStatus": "AI response",
+        "link": "Open source page",
+        "contact": "Contact",
+        "notice": "Voice features depend on your browser. The microphone is used only with your permission. Please do not share personal data.",
+        "unknown": "I couldn't find an approved answer. Please contact the academy through WhatsApp.",
+        "loadFailed": "Verified information couldn't be loaded. Please contact the academy via WhatsApp.",
+        "quick": [
+          [
+            "Class times",
+            "When are the beginner group classes?",
+            "group"
+          ],
+          [
+            "Prices",
+            "What are group and private lesson prices?",
+            [
+              "group",
+              "private"
+            ]
+          ],
+          [
+            "Bülent Çetin",
+            "Who is Bülent Çetin?",
+            "bio"
+          ],
+          [
+            "Certificates",
+            "What qualifications and certificates are available?",
+            "documents"
+          ],
+          [
+            "New book",
+            "When will the new book be published?",
+            "book"
+          ]
+        ]
       }
     },
     "de": {
@@ -285,6 +346,67 @@
           "answer": "Krav Maga Türk Akademi: Yoğurtçu Şükrü Sokak No:19, Osmanağa, Kadıköy, Istanbul, Türkei. WhatsApp: +90 532 162 18 21. Bitte Termine und Verfügbarkeit vor dem Besuch bestätigen lassen.",
           "url": "/iletisim"
         }
+      },
+      "ui": {
+        "tag": "de-DE",
+        "sub": "Fragen Sie uns",
+        "subtitle": "Krav Maga Türk · Digitaler Berater",
+        "greeting": "Hallo und willkommen bei der Krav Maga Türk Akademie! Wie können wir Ihnen helfen? Fragen Sie nach Kurszeiten, Preisen, Qualifikationen von Bülent Çetin oder unserem Buch. Schreiben Sie oder wählen Sie den Sprachmodus.",
+        "open": "KMT-Assistent öffnen",
+        "close": "Chat schließen",
+        "dialog": "KMT-Assistent Chat",
+        "placeholder": "Ihre Frage eingeben...",
+        "input": "Ihre Frage",
+        "mic": "Frage per Mikrofon stellen",
+        "send": "Nachricht senden",
+        "voice": "Sprache",
+        "text": "Text",
+        "ready": "Bereit · Veröffentlichte Informationen",
+        "working": "Antwort wird vorbereitet...",
+        "speechOn": "Sprachausgabe aktiv",
+        "speechOff": "Text-Chat",
+        "speechUnsupported": "Sprachausgabe hier nicht verfügbar",
+        "listening": "Ich höre zu...",
+        "micError": "Mikrofon nicht verfügbar. Bitte schreiben Sie Ihre Frage.",
+        "webSource": "Veröffentlichte Angaben der Akademie",
+        "aiSource": "KMT digitaler Berater",
+        "safeStatus": "Veröffentlichte Informationen",
+        "aiStatus": "KI-Antwort",
+        "link": "Quellseite öffnen",
+        "contact": "Kontakt",
+        "notice": "Sprachfunktionen hängen vom Browser ab. Das Mikrofon wird nur mit Ihrer Erlaubnis aktiviert. Bitte keine persönlichen Daten eingeben.",
+        "unknown": "Dazu habe ich keine geprüften Angaben. Bitte kontaktieren Sie die Akademie per WhatsApp.",
+        "loadFailed": "Die bestätigten Informationen konnten nicht geladen werden. Bitte kontaktieren Sie die Akademie per WhatsApp.",
+        "quick": [
+          [
+            "Kurszeiten",
+            "Wann ist das Anfängertraining?",
+            "group"
+          ],
+          [
+            "Preise",
+            "Was kosten Gruppen- und Privatkurse?",
+            [
+              "group",
+              "private"
+            ]
+          ],
+          [
+            "Bülent Çetin",
+            "Wer ist Bülent Çetin?",
+            "bio"
+          ],
+          [
+            "Nachweise",
+            "Welche Zertifikate und Berechtigungen gibt es?",
+            "documents"
+          ],
+          [
+            "Neues Buch",
+            "Wann erscheint das neue Buch?",
+            "book"
+          ]
+        ]
       }
     },
     "fr": {
@@ -423,6 +545,67 @@
           "answer": "Krav Maga Türk Akademi : Yoğurtçu Şükrü Sokak No:19, Osmanağa, Kadıköy, Istanbul, Turquie. WhatsApp professionnel : +90 532 162 18 21. Veuillez confirmer le rendez-vous avant de venir.",
           "url": "/iletisim"
         }
+      },
+      "ui": {
+        "tag": "fr-FR",
+        "sub": "Posez vos questions",
+        "subtitle": "Krav Maga Türk · Conseiller numérique",
+        "greeting": "Bonjour et bienvenue à la Krav Maga Türk Akademi ! Comment pouvons-nous vous aider ? Posez vos questions sur les horaires, les tarifs, les qualifications de Bülent Çetin ou notre livre. Vous pouvez écrire ou choisir le mode vocal.",
+        "open": "Ouvrir l'assistant KMT",
+        "close": "Fermer la discussion",
+        "dialog": "Discussion avec l'assistant KMT",
+        "placeholder": "Écrivez votre question...",
+        "input": "Votre question",
+        "mic": "Poser une question au micro",
+        "send": "Envoyer le message",
+        "voice": "Vocal",
+        "text": "Écrit",
+        "ready": "Prêt · Informations publiées",
+        "working": "Préparation de la réponse...",
+        "speechOn": "Réponse vocale activée",
+        "speechOff": "Discussion écrite",
+        "speechUnsupported": "La synthèse vocale n'est pas disponible ici",
+        "listening": "Je vous écoute...",
+        "micError": "Microphone indisponible. Veuillez écrire votre question.",
+        "webSource": "Informations publiées par l'académie",
+        "aiSource": "Conseiller numérique KMT",
+        "safeStatus": "Informations publiées",
+        "aiStatus": "Réponse IA",
+        "link": "Voir la page source",
+        "contact": "Contact",
+        "notice": "Les fonctions vocales dépendent du navigateur. Le micro ne fonctionne qu'avec votre autorisation. Ne partagez pas de données personnelles.",
+        "unknown": "Je n'ai pas trouvé de réponse confirmée. Veuillez contacter l'académie par WhatsApp.",
+        "loadFailed": "Les informations vérifiées n'ont pas pu être chargées. Veuillez contacter l'académie par WhatsApp.",
+        "quick": [
+          [
+            "Horaires",
+            "Quand ont lieu les cours collectifs débutants ?",
+            "group"
+          ],
+          [
+            "Tarifs",
+            "Quels sont les tarifs des cours collectifs et privés ?",
+            [
+              "group",
+              "private"
+            ]
+          ],
+          [
+            "Bülent Çetin",
+            "Qui est Bülent Çetin ?",
+            "bio"
+          ],
+          [
+            "Certificats",
+            "Quels certificats et habilitations sont présentés ?",
+            "documents"
+          ],
+          [
+            "Nouveau livre",
+            "Quand paraîtra le nouveau livre ?",
+            "book"
+          ]
+        ]
       }
     }
   }
