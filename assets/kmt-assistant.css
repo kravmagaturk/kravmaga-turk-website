@@ -16,6 +16,10 @@
 #kmt-ai-root .kmt-ai-head{background:linear-gradient(130deg,#201013,#111215 74%);display:flex;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid #3c252b}
 #kmt-ai-root .kmt-ai-head .kmt-ai-figure{width:46px;height:46px}
 #kmt-ai-root .kmt-ai-head-text{min-width:0;flex:1}
+#kmt-ai-root .kmt-ai-language{flex:none;max-width:57px;min-height:34px;padding:4px 5px;border:1px solid #88505b;border-radius:7px;background:#1e2024;color:#fff;font:700 11px system-ui,Arial,sans-serif;cursor:pointer}
+#kmt-ai-root .kmt-ai-language:focus-visible{outline:3px solid #e74c60;outline-offset:2px}
+@media(max-width:350px){#kmt-ai-root .kmt-ai-head{gap:6px;padding:8px}#kmt-ai-root .kmt-ai-head .kmt-ai-figure{width:40px;height:40px}#kmt-ai-root .kmt-ai-title{font-size:13px}#kmt-ai-root .kmt-ai-subtitle{font-size:10px}}
+
 #kmt-ai-root .kmt-ai-title{display:block;font-weight:800;font-size:15px;line-height:1.3;color:#fff}
 #kmt-ai-root .kmt-ai-subtitle{font-size:11px;color:#d7babf}
 #kmt-ai-root .kmt-ai-iconbtn{width:34px;height:34px;background:#28292b;border:1px solid #4a3c40;border-radius:8px;color:#fff;flex:none;display:inline-flex;align-items:center;justify-content:center;padding:0}
