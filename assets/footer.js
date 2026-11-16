@@ -228,24 +228,24 @@
         .kmt-nav-drop a{white-space:normal}
         /* Compact but readable mobile footer — keep subscribe and KVKK controls intact */
         .kmt-site-footer{padding:0!important;max-width:100%;overflow-x:clip}
-        .kmt-footer-inner{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;padding:10px 14px 7px}
-        .kmt-footer-brand strong{font-size:16px;line-height:1.08}
-        .kmt-footer-brand small{font-size:8px;letter-spacing:.6px;margin-top:2px}
-        .kmt-footer-info{margin-top:1px;justify-content:flex-start;gap:4px 12px}
-        .kmt-footer-info a,.kmt-footer-info span{font-size:10px;letter-spacing:.01em}
-        .kmt-footer-info a.kmt-footer-social{width:30px;min-width:30px;height:30px}
-        .kmt-footer-social svg{width:19px;height:19px}
-        .kmt-footer-subscribe{width:100%;min-width:0;max-width:none;flex:none;margin:2px 0 0;font-size:10px}
-        .kmt-footer-subscribe strong{font-size:12px;margin-bottom:1px}
-        .kmt-footer-subscribe p{font-size:10px;line-height:1.3;margin:0 0 4px}
-        .kmt-footer-subscribe .kmt-subscribe-row{gap:4px}
-        .kmt-footer-subscribe input[type=email]{min-width:0;min-height:32px;padding:6px 7px;font-size:11px}
-        .kmt-footer-subscribe button{min-height:32px;padding:6px 7px;font-size:10px}
-        .kmt-footer-subscribe .kmt-footer-unsubscribe{min-height:32px;padding:3px 5px;font-size:10px}
-        .kmt-footer-subscribe label{margin-top:3px;line-height:1.25}
-        .kmt-footer-subscribe .kmt-subscribe-options label{font-size:9.5px}
-        .kmt-footer-subscribe .kmt-subscribe-privacy{font-size:9px;line-height:1.25;margin-top:3px}
-        .kmt-footer-copy{padding:6px 14px 8px;font-size:9px;line-height:1.25}
+        .kmt-site-footer .kmt-footer-inner{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;padding:10px 14px 7px}
+        .kmt-site-footer .kmt-footer-brand strong{font-size:16px;line-height:1.08}
+        .kmt-site-footer .kmt-footer-brand small{font-size:8px;letter-spacing:.6px;margin-top:2px}
+        .kmt-site-footer .kmt-footer-info{margin-top:1px;justify-content:flex-start;gap:4px 12px}
+        .kmt-site-footer .kmt-footer-info a,.kmt-site-footer .kmt-footer-info span{font-size:10px;letter-spacing:.01em}
+        .kmt-site-footer .kmt-footer-info a.kmt-site-footer .kmt-footer-social{width:30px;min-width:30px;height:30px}
+        .kmt-site-footer .kmt-footer-social svg{width:19px;height:19px}
+        .kmt-site-footer .kmt-footer-subscribe{width:100%;min-width:0;max-width:none;flex:none;margin:2px 0 0;font-size:10px}
+        .kmt-site-footer .kmt-footer-subscribe strong{font-size:12px;margin-bottom:1px}
+        .kmt-site-footer .kmt-footer-subscribe p{font-size:10px;line-height:1.3;margin:0 0 4px}
+        .kmt-site-footer .kmt-footer-subscribe .kmt-subscribe-row{gap:4px}
+        .kmt-site-footer .kmt-footer-subscribe input[type=email]{min-width:0;min-height:32px;padding:6px 7px;font-size:11px}
+        .kmt-site-footer .kmt-footer-subscribe button{min-height:32px;padding:6px 7px;font-size:10px}
+        .kmt-site-footer .kmt-footer-subscribe .kmt-site-footer .kmt-footer-unsubscribe{min-height:32px;padding:3px 5px;font-size:10px}
+        .kmt-site-footer .kmt-footer-subscribe label{margin-top:3px;line-height:1.25}
+        .kmt-site-footer .kmt-footer-subscribe .kmt-subscribe-options label{font-size:9.5px}
+        .kmt-site-footer .kmt-footer-subscribe .kmt-subscribe-privacy{font-size:9px;line-height:1.25;margin-top:3px}
+        .kmt-site-footer .kmt-footer-copy{padding:6px 14px 8px;font-size:9px;line-height:1.25}
       }
     `;
     document.head.appendChild(style);
