@@ -19,7 +19,7 @@
     {id:"private",terms:["ozel","özel","bire","paket"],a:"Bire bir özel dersler 60 dakikalık seanslar ve 10 derslik paketler şeklinde planlanır. Sitedeki ücret seans başına 4.000 TL + KDV'dir. Uygun saatler için WhatsApp'tan randevu alabilirsiniz.",url:"/ozel-dersler"},
     {id:"bio",terms:["bulent","bülent","cetin","çetin","kimdir","hayati","özgeçmiş"],a:"Bülent Çetin, Krav Maga Türk Akademi'nin kurucu eğitmenidir. Akademide yayımlanan özgeçmişinde spora 1979'da Tae Kwon Do ile başladığı, 2. Dan siyah kuşak ve resmî hakem olduğu, 1994'te CQC çalışmalarıyla tanıştığı ve 2016'da GIC-1/GIC-2 eğitmen eğitimlerini tamamladığı belirtilir. Bunlar akademinin yayımladığı özgeçmiş bilgileri olup bağımsız resmî doğrulama anlamına gelmez.",url:"/bulent-cetin"},
     {id:"docs",terms:["belge","diploma","sertifika","yetki","tescil","ruhsat","resmi"],a:"Akademinin Belgeler sayfasında Krav Maga eğitmenliği, Tae Kwon Do, hakemlik, güvenlik eğitimi ve marka tesciliyle ilgili bilgiler vardır. Önemli: Sitedeki 'ÖRNEKTİR' ibareli görseller orijinal diploma taraması değil, temsili çizimlerdir. Güncel resmî yetkileri ilgili kuruluşla veya akademiyle doğrudan teyit edin.",url:"/belgeler"},
-    {id:"book",terms:["kitap","baski","baskı","yayin","yayın","cikacak","çıkacak","ne zaman","satış","satisa"],a:"Yeni Krav Maga Türk eğitim kitabının baskı hazırlıkları sürüyor; sitede kesin çıkış veya satış tarihi henüz açıklanmadı. Tarih ve temin bilgileri resmî duyuru sayfasında paylaşılacak. Bülent Çetin'in 2018 tarihli önceki Krav Maga kitabı da bu sayfada tanıtılıyor.",url:"/blog-krav-maga-turk-yeni-kitap"},
+    {id:"book",terms:["kitap","kitab","baski","baskı","yayin","yayın","cikacak","çıkacak","ne zaman","satış","satisa"],a:"Yeni Krav Maga Türk eğitim kitabının baskı hazırlıkları sürüyor; sitede kesin çıkış veya satış tarihi henüz açıklanmadı. Tarih ve temin bilgileri resmî duyuru sayfasında paylaşılacak. Bülent Çetin'in 2018 tarihli önceki Krav Maga kitabı da bu sayfada tanıtılıyor.",url:"/blog-krav-maga-turk-yeni-kitap"},
     {id:"kids",terms:["cocuk","çocuk","kids","yas","yaş"],a:"Kids Defense programı, sitede 9–12 yaş grubu için farkındalık, kişisel güvenlik, koordinasyon ve temel savunma eğitimi olarak tanıtılıyor. Güncel saat, katılım ve ücret için akademiyle görüşebilirsiniz.",url:"/cocuk-krav-maga"},
     {id:"protect",terms:["koruma","guvenlik","güvenlik","silah"],a:"Akademinin yakın koruma ve özel güvenlik eğitimi tanıtımları bulunuyor. Eğitim kapsamı ve fiyatı için kurumsal teklif alınmalıdır. Sitede silahlı eğitim verildiği varsayılmamalıdır.",url:"/yakin-koruma"},
     {id:"location",terms:["adres","konum","nerede","telefon","whatsapp","ulasim","ulaşım"],a:"Krav Maga Türk Akademi, Yoğurtçu Şükrü Sokak No:19, Osmanağa, Kadıköy / İstanbul adresinde. İşletme hattı: 0532 162 18 21.",url:"/iletisim"},
@@ -39,7 +39,9 @@
     var ordered = embedded.map(function(x){return {e:x,n:score(x)};}).sort(function(a,b){return b.n-a.n;});
     var found=ordered[0];
     if(!found || found.n===0) return {answer:"Bu konuda onaylanmış ayrıntılı bilgi bulamadım. Yanlış bilgi vermemek için sizi akademimizin WhatsApp hattına yönlendirebilirim. Konuyu biraz daha ayrıntılı yazarsanız yardımcı olmaya çalışırım.",url:"/iletisim"};
-    return {answer:found.e.a,url:found.e.url};
+    var compound = /\\b(ve|ayrica|ayrıca|hem|bir de)\\b/i.test(s) || s.length>95;
+    var selected = compound ? ordered.filter(function(x){return x.n>0;}).slice(0,3) : [found];
+    return {answer:selected.map(function(x){return x.e.a;}).join("\\n\\n").slice(0,2400),url:selected[0].e.url};
   }
   function el(tag, cls, text) {
     var n=document.createElement(tag);
