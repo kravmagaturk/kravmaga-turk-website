@@ -1,0 +1,87 @@
+{
+  "version": "2026-11-16",
+  "brand": "Krav Maga Türk Akademi",
+  "assistant": "KMT Akıllı Asistan",
+  "note": "Yalnızca kamuya açık, doğrulanmış site bilgileri. Fiyat ve seanslar yayın değiştiğinde yeniden kontrol edilmelidir.",
+  "phone": "+90 532 162 18 21",
+  "whatsapp": "https://wa.me/905321621821",
+  "address": "Yoğurtçu Şükrü Sokak No:19, Osmanağa, Kadıköy, İstanbul",
+  "site": "https://kravmaga.com.tr",
+  "bookStatus": "Baskı hazırlıkları sürüyor; kesin çıkış tarihi açıklanmadı.",
+  "qa": [
+    {
+      "id": "welcome",
+      "q": "Krav Maga Türk için size nasıl yardımcı olabilirim?",
+      "a": "Merhaba, Krav Maga Türk Akademi'ye hoş geldiniz. Ders saatleri, ücretler, özel dersler, Bülent Çetin'in özgeçmişi, belgeler ve kitap projesi hakkında sorularınızı yanıtlayabilirim. İsterseniz yazarak ya da mikrofon desteği olan tarayıcıda konuşarak sorabilirsiniz.",
+      "url": "/"
+    },
+    {
+      "id": "group",
+      "q": "Grup ders günleri, saatleri ve ücretleri nedir?",
+      "a": "Başlangıç sınıfında Salı ve Perşembe günleri saat 19.30'da grup dersi yapılır. Ayda 8 seans için web sitesinde aylık 4.000 TL + %20 KDV bilgisi yer alıyor. Pazar 12.00–13.00 telafi seansı bilgisi bulunuyor. İlk deneme dersi ücretsizdir. Güncel kontenjan ve olası değişiklikler için akademiyle görüşebilirsiniz.",
+      "url": "/krav-maga"
+    },
+    {
+      "id": "private",
+      "q": "Özel ders fiyatı ve programı nedir?",
+      "a": "Web sitesinde bire bir Krav Maga özel dersleri 60 dakika ve seans başına 4.000 TL + KDV olarak belirtiliyor. Eğitimler 10 derslik paketler şeklinde düzenleniyor; uygun saatler randevuya göre planlanıyor. Paket veya güncel ücret teyidi için WhatsApp üzerinden bilgi alabilirsiniz.",
+      "url": "/ozel-dersler"
+    },
+    {
+      "id": "kids",
+      "q": "Çocuk Krav Maga eğitimi var mı?",
+      "a": "Evet. Kids Defense programında web sitesine göre 9–12 yaş çocuklara yönelik farkındalık, kişisel güvenlik, koordinasyon ve temel savunma çalışmaları bulunuyor. Güncel gün, saat ve ücret bilgisini akademiden teyit etmelisiniz.",
+      "url": "/cocuk-krav-maga"
+    },
+    {
+      "id": "bio",
+      "q": "Bülent Çetin kimdir?",
+      "a": "Krav Maga Türk Akademi'nin kurucusu ve eğitmenidir. Akademinin yayımladığı özgeçmişe göre spora 1979'da Tae Kwon Do ile başlamış; 2. Dan siyah kuşak ve resmî hakem olduğunu belirtmiştir. 1994 yılında Legionnaire birliğinde CQC çalışmalarıyla tanıştığı, 1996–1998 arasında yakın koruma alanında görev yaptığı ve 2016'da Krav Maga Global GIC-1 ve GIC-2 eğitmen eğitimlerini tamamladığı sitede yer alır. Bunlar kurumun yayımladığı özgeçmiş bilgileridir; bağımsız bir yetki teyidi değildir.",
+      "url": "/bulent-cetin"
+    },
+    {
+      "id": "documents",
+      "q": "Bülent Çetin'in diploması, belgeleri ve yetkileri nelerdir?",
+      "a": "Krav Maga Türk'ün Belgeler sayfasında Tae Kwon Do, Krav Maga eğitmenliği, hakemlik, güvenlik eğitimi ve marka tescili gibi başlıklarda belge bilgileri yer alıyor. Sayfadaki görseller, özgün diploma taramaları değil, kişisel bilgileri korumak için hazırlanan ve 'ÖRNEKTİR' ibaresi taşıyan temsili çizimlerdir. Güncel resmî yetki kapsamı ve özgün belge teyidi için akademiyle veya ilgili kurumla doğrudan iletişime geçilmelidir.",
+      "url": "/belgeler"
+    },
+    {
+      "id": "book",
+      "q": "Bülent Çetin'in yeni kitabı ne zaman çıkacak?",
+      "a": "Krav Maga Türk adlı yeni görsel destekli eğitim kitabının baskı hazırlıkları sürüyor. Web sitesinde henüz kesin bir basım veya satış tarihi açıklanmış değil. Resmî tarih ve temin bilgileri açıklandığında kitap duyuru sayfasında paylaşılacak. 2018'de yayımlanmış önceki Krav Maga kitabı da bu sayfada tanıtılıyor.",
+      "url": "/blog-krav-maga-turk-yeni-kitap"
+    },
+    {
+      "id": "levels",
+      "q": "Krav Maga seviyeleri ve sınavları hakkında bilgi verir misiniz?",
+      "a": "Krav Maga eğitiminde Practitioner ve ileri seviye programlar bulunur. Seviye sınavlarına ilişkin güncel katılım koşulları ve ücretleri eğitmen ve akademi tarafından duyurulur. Hangi seviyenin size uygun olduğunu öğrenmek için akademiyle görüşebilirsiniz.",
+      "url": "/krav-maga"
+    },
+    {
+      "id": "system",
+      "q": "Krav Maga nedir, ne öğretir?",
+      "a": "Krav Maga; günlük yaşamda olası tehditleri erken fark etme, güvenli mesafe bırakma, tehlikeden uzaklaşma ve gerektiğinde kontrollü kişisel savunma konularını ele alan bir sistemdir. Akademide eğitim, öğrencinin seviyesine uygun güvenli ve eğitmen gözetimli çalışmalara dayanır.",
+      "url": "/krav-maga"
+    },
+    {
+      "id": "protection",
+      "q": "Yakın koruma ve özel güvenlik eğitimleriniz var mı?",
+      "a": "Krav Maga Türk Akademi'nin yakın koruma, özel güvenlik ve kişisel güvenlik eğitimleri hakkında bilgilendirme sayfaları bulunuyor. Program kapsamı, uygunluk ve teklif kişiye veya kuruma göre netleştiriliyor. Silahlı eğitim verildiği varsayılmamalıdır; ayrıntılar için doğrudan akademiyle görüşebilirsiniz.",
+      "url": "/yakin-koruma"
+    },
+    {
+      "id": "address",
+      "q": "Akademinin adresi ve iletişim numarası nedir?",
+      "a": "Krav Maga Türk Akademi: Yoğurtçu Şükrü Sokak No:19, Osmanağa, Kadıköy / İstanbul. İşletme WhatsApp ve iletişim telefonu: 0532 162 18 21. Ziyaret öncesinde ders/randevu uygunluğunu teyit etmenizi öneririm.",
+      "url": "/iletisim"
+    }
+  ],
+  "rules": [
+    "Ödeme, kayıt, kontenjan, anlık ders iptali veya kesin basım tarihi uydurma.",
+    "Belgeler sayfasındaki çizimleri orijinal diploma veya yetki belgesi diye sunma.",
+    "Sertifikalar, rütbeler ve yetki konusunda yalnızca akademi sitesinde yer alan beyanları atıfla anlat.",
+    "Savunmayı güvenlik ve uzaklaşma odağında açıkla; kişilere zarar verme yöntemi verme.",
+    "Özel üyelik, sicil, aidat ve yönetim verilerine erişim yok.",
+    "Emin olmadığın güncel fiyat, saat, mevzuat ve yayın takvimi için WhatsApp'a yönlendir."
+  ]
+}
