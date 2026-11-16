@@ -64,7 +64,7 @@
     '<path d="M73 63l-10-5-10-11 7-9 13 10 10 16z" fill="#1a1d20"/>'+
     '<path d="M26 38q-4-5-8 0l-3 8 9 7 8-6zM54 30q-7-2-8 6l9 9 8-7z" fill="#36383e"/>'+
     '<path d="M36 25q-1-16 12-18 15 0 14 18l-4 12-10 8-10-9z" fill="#c58b70"/>'+
-    '<path d="M35 20q-2-16 13-18 15 0 17 15l-5 6-4-11-15 4-5 9z" fill="#242427"/>'+
+    '<path d="M36 23Q36 4 48 3Q63 4 63 23L59 13L40 16Z" fill="#b9886f"/><path d="M37 31Q43 34 47 35Q53 34 60 30L57 40Q51 47 47 45Q40 41 37 31Z" fill="#9b9a98" stroke="#49494b" stroke-width="1"/><path d="M45 34q3 2 7 0" fill="none" stroke="#554840" stroke-width="1.5"/>'+
     '<path d="M43 27h3m9-1h3" stroke="#28201c" stroke-linecap="round"/>'+
     '<path d="M45 34q4 3 9 0" fill="none" stroke="#754c40" stroke-width="1.4"/>'+
     '</g></svg>';
