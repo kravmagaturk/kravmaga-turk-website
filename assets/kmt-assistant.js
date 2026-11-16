@@ -50,30 +50,11 @@
     return n;
   }
   function icon() {
-    return '<svg class="kmt-ai-figure" viewBox="0 0 96 112" role="img" aria-label="Krav Maga savunma gardında KMT maskotu" focusable="false" xmlns="http://www.w3.org/2000/svg">'+
-    '<defs><linearGradient id="kmt-ai-suit" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#272b30"/><stop offset="1" stop-color="#080b0e"/></linearGradient></defs>'+
-    '<ellipse cx="48" cy="107" rx="25" ry="4" fill="#000" opacity=".25"/>'+
-    '<g class="kmt-ai-character" stroke="#050608" stroke-linejoin="round" stroke-width="2.3">'+
-    '<path d="M36 77l-3 29h14l3-25m10-4 6 29H52l-2-25" fill="#161a1d"/>'+
-    '<path d="M30 105h18v5H27q-2-3 3-5m24 0h15q5 2 5 5H53z" fill="#090b0e"/>'+
-    '<path d="M37 42q11-6 23 0l13 34-8 10-17-6-16 6-10-9z" fill="url(#kmt-ai-suit)"/>'+
-    '<path d="M40 42l8 16 9-16" fill="none" stroke="#a32336" stroke-width="3"/>'+
-    '<circle cx="56" cy="62" r="9.6" fill="#090909" stroke="#a9273b" stroke-width="1.6"/>'+
-    '<image href="/assets/brand/favicon-96.png" x="47.5" y="53.5" width="17" height="17" preserveAspectRatio="xMidYMid meet"/>'+
-    '<path d="M37 45q-13 0-16 11l-7 19 10 5 10-17 10-5-6-11z" fill="#1a1c20"/>'+
-    '<path d="M56 45q12-2 18 6l10 15-9 7-14-12-10-2z" fill="#1b1e22"/>'+
-    '<path d="M14 69l10 5 13-23-8-8-8 5z" fill="#1a1d20"/>'+
-    '<path d="M73 63l-10-5-10-11 7-9 13 10 10 16z" fill="#1a1d20"/>'+
-    '<path d="M26 38q-4-5-8 0l-3 8 9 7 8-6zM54 30q-7-2-8 6l9 9 8-7z" fill="#36383e"/>'+
-    '<path d="M36 25q-1-16 12-18 15 0 14 18l-4 12-10 8-10-9z" fill="#c58b70"/>'+
-    '<path d="M36 23Q36 4 48 3Q63 4 63 23L59 13L40 16Z" fill="#b9886f"/><path d="M37 31Q43 34 47 35Q53 34 60 30L57 40Q51 47 47 45Q40 41 37 31Z" fill="#9b9a98" stroke="#49494b" stroke-width="1"/><path d="M45 34q3 2 7 0" fill="none" stroke="#554840" stroke-width="1.5"/>'+
-    '<path d="M43 27h3m9-1h3" stroke="#28201c" stroke-linecap="round"/>'+
-    '<path d="M45 34q4 3 9 0" fill="none" stroke="#754c40" stroke-width="1.4"/>'+
-    '</g></svg>';
+    return '<img class="kmt-ai-figure" src="/assets/brand/favicon-96.png" width="96" height="96" alt="Krav Maga Türk 1948 logosu" decoding="async">';
   }
   function mount() {
     if(document.getElementById("kmt-ai-root"))return;
-    var css=document.createElement("link");css.rel="stylesheet";css.href="/assets/kmt-assistant.css?v=20261116";document.head.appendChild(css);
+    var css=document.createElement("link");css.rel="stylesheet";css.href="/assets/kmt-assistant.css?v=20261116-logo";document.head.appendChild(css);
     var root=el("div");root.id="kmt-ai-root";
     var launch=el("button","kmt-ai-launch");launch.type="button";launch.setAttribute("aria-label","Krav Maga Türk Akıllı Asistanı aç");
     launch.innerHTML=icon()+'<span class="kmt-ai-launch-label">KMT Akıllı Asistan<span class="kmt-ai-launch-sub">Sorun, cevaplayalım</span></span>';
