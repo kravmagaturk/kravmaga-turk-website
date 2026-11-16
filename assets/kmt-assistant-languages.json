@@ -1,0 +1,429 @@
+{
+  "version": "2026-11-16",
+  "note": "Translated summaries of existing public FAQ only; not independent verification.",
+  "locales": {
+    "en": {
+      "lang": "en-US",
+      "answers": {
+        "group": {
+          "keywords": [
+            "group",
+            "beginner",
+            "schedule",
+            "class",
+            "lesson",
+            "tuesday",
+            "thursday",
+            "sunday",
+            "price",
+            "fees",
+            "cost",
+            "hours",
+            "trial"
+          ],
+          "answer": "The published beginner group schedule is Tuesday and Thursday at 19:30, with eight sessions a month. The website lists TRY 4,000 per month plus 20% VAT, a Sunday make-up session from 12:00 to 13:00, and a free first trial lesson. Please confirm current availability and fees with the academy.",
+          "url": "/krav-maga"
+        },
+        "private": {
+          "keywords": [
+            "private",
+            "one to one",
+            "one-on-one",
+            "individual",
+            "personal training",
+            "package"
+          ],
+          "answer": "The website lists private Krav Maga lessons as 60-minute sessions at TRY 4,000 plus VAT per session, generally arranged in 10-lesson packages. Times are arranged by appointment; please confirm current rates and availability via WhatsApp.",
+          "url": "/ozel-dersler"
+        },
+        "kids": {
+          "keywords": [
+            "children",
+            "child",
+            "kids",
+            "junior",
+            "age",
+            "teen"
+          ],
+          "answer": "The academy presents Kids Defense as an awareness, personal-safety, coordination and basic-defense program for children aged 9–12. Please ask the academy about current schedules, enrollment requirements and fees.",
+          "url": "/cocuk-krav-maga"
+        },
+        "bio": {
+          "keywords": [
+            "bulent",
+            "bülent",
+            "cetin",
+            "çetin",
+            "who is",
+            "founder",
+            "instructor",
+            "background",
+            "experience",
+            "biography"
+          ],
+          "answer": "Bülent Çetin is the founder and an instructor of Krav Maga Türk Akademi. According to the academy's published biography, he began Tae Kwon Do in 1979, holds a second-degree black belt and is an official referee. The biography describes CQC experience beginning in 1994, close-protection work in 1996–1998 and GIC-1/GIC-2 instructor training completed in 2016. These are statements on the academy's website, not independent verification of current official authorization.",
+          "url": "/bulent-cetin"
+        },
+        "documents": {
+          "keywords": [
+            "certificate",
+            "certification",
+            "qualification",
+            "credential",
+            "diploma",
+            "document",
+            "license",
+            "authority",
+            "authorization",
+            "official",
+            "evidence"
+          ],
+          "answer": "The academy's Documents page describes credentials associated with Tae Kwon Do, Krav Maga instruction, refereeing, security training and a trademark. The pictured documents are labeled 'sample' and are illustrative reconstructions, not scans of original diplomas. Current official authorization should be verified directly with the relevant institution or the academy.",
+          "url": "/belgeler"
+        },
+        "book": {
+          "keywords": [
+            "book",
+            "publication",
+            "publish",
+            "release",
+            "launch date",
+            "printed",
+            "edition"
+          ],
+          "answer": "The new illustrated Krav Maga Türk training book is still being prepared for print. No confirmed publication or sales date has been announced on the academy's website. Its announcement page also introduces Bülent Çetin's earlier Krav Maga book, published in 2018.",
+          "url": "/blog-krav-maga-turk-yeni-kitap"
+        },
+        "levels": {
+          "keywords": [
+            "level",
+            "rank",
+            "grading",
+            "exam",
+            "test",
+            "practitioner",
+            "coach"
+          ],
+          "answer": "The academy offers Practitioner and more advanced training levels. The current examination requirements, dates, fees and eligibility must be confirmed with an instructor or the academy.",
+          "url": "/krav-maga"
+        },
+        "system": {
+          "keywords": [
+            "what is krav",
+            "self defense",
+            "self-defence",
+            "krav maga",
+            "defense system",
+            "personal safety",
+            "technique"
+          ],
+          "answer": "Krav Maga focuses on threat awareness, distance, escape and, where necessary, controlled personal defense. The academy teaches techniques in supervised, level-appropriate training; online information is not a substitute for in-person instruction.",
+          "url": "/krav-maga"
+        },
+        "protection": {
+          "keywords": [
+            "close protection",
+            "bodyguard",
+            "security",
+            "armed",
+            "weapon",
+            "corporate"
+          ],
+          "answer": "The academy publishes information about close-protection and security-related programs. Specific content, eligibility and pricing are discussed directly with the academy. Do not assume armed training is offered.",
+          "url": "/yakin-koruma"
+        },
+        "address": {
+          "keywords": [
+            "address",
+            "location",
+            "where",
+            "directions",
+            "contact",
+            "phone",
+            "whatsapp"
+          ],
+          "answer": "Krav Maga Türk Akademi: Yoğurtçu Şükrü Sokak No:19, Osmanağa, Kadıköy, Istanbul, Türkiye. Business WhatsApp: +90 532 162 18 21. Please confirm your visit or appointment before arriving.",
+          "url": "/iletisim"
+        }
+      }
+    },
+    "de": {
+      "lang": "de-DE",
+      "answers": {
+        "group": {
+          "keywords": [
+            "gruppe",
+            "gruppen",
+            "anfänger",
+            "kurs",
+            "unterricht",
+            "trainingszeit",
+            "stundenplan",
+            "dienstag",
+            "donnerstag",
+            "sonntag",
+            "preis",
+            "kosten",
+            "gebühr",
+            "probetraining"
+          ],
+          "answer": "Der auf der Website veröffentlichte Anfängerkurs findet dienstags und donnerstags um 19:30 Uhr statt. Genannt werden acht Einheiten im Monat für 4.000 TRY zuzüglich 20 % MwSt., ein Nachholtermin am Sonntag von 12:00 bis 13:00 Uhr sowie ein kostenloses erstes Probetraining. Bitte aktuelle Plätze und Preise bei der Akademie bestätigen lassen.",
+          "url": "/krav-maga"
+        },
+        "private": {
+          "keywords": [
+            "privat",
+            "einzeltraining",
+            "einzelunterricht",
+            "persönlich",
+            "paket"
+          ],
+          "answer": "Laut Website dauern private Krav-Maga-Einheiten 60 Minuten und kosten 4.000 TRY zuzüglich MwSt. pro Einheit. Die Ausbildung wird in Paketen zu zehn Einheiten angeboten. Termine und aktuelle Preise bitte über WhatsApp bestätigen lassen.",
+          "url": "/ozel-dersler"
+        },
+        "kids": {
+          "keywords": [
+            "kind",
+            "kinder",
+            "jugend",
+            "alter",
+            "kids"
+          ],
+          "answer": "Die Akademie stellt Kids Defense als Programm für 9- bis 12-Jährige vor, mit Aufmerksamkeit, persönlicher Sicherheit, Koordination und grundlegender Selbstverteidigung. Aktuelle Zeiten, Teilnahmebedingungen und Gebühren erfahren Sie direkt bei der Akademie.",
+          "url": "/cocuk-krav-maga"
+        },
+        "bio": {
+          "keywords": [
+            "bülent",
+            "bulent",
+            "çetin",
+            "cetin",
+            "wer ist",
+            "gründer",
+            "ausbilder",
+            "trainer",
+            "biografie",
+            "lebenslauf",
+            "erfahrung"
+          ],
+          "answer": "Bülent Çetin ist Gründer und Ausbilder der Krav Maga Türk Akademi. Nach der veröffentlichten Selbstdarstellung begann er 1979 mit Tae Kwon Do, besitzt den zweiten Dan und ist offizieller Kampfrichter. Die Website beschreibt CQC-Erfahrung ab 1994, Personenschutzarbeit von 1996 bis 1998 sowie die 2016 abgeschlossenen GIC-1- und GIC-2-Ausbildungen. Dies sind Angaben der Akademie, keine unabhängige Bestätigung aktueller amtlicher Befugnisse.",
+          "url": "/bulent-cetin"
+        },
+        "documents": {
+          "keywords": [
+            "diplom",
+            "zertifikat",
+            "nachweis",
+            "urkunde",
+            "berechtigung",
+            "qualifikation",
+            "lizenz",
+            "dokument",
+            "befugnis"
+          ],
+          "answer": "Auf der Seite „Belgeler“ stellt die Akademie Informationen zu Tae Kwon Do, Krav-Maga-Ausbildung, Kampfrichtertätigkeit, Sicherheitsausbildung und Markeneintragung vor. Die als „ÖRNEKTİR“ gekennzeichneten Bilder sind illustrative Darstellungen, keine Scans der Originaldiplome. Aktuelle offizielle Berechtigungen bitte bei der zuständigen Stelle prüfen.",
+          "url": "/belgeler"
+        },
+        "book": {
+          "keywords": [
+            "buch",
+            "erscheinung",
+            "veröffentlicht",
+            "veröffentlichung",
+            "erscheinungsdatum",
+            "druck",
+            "publikation"
+          ],
+          "answer": "Das neue illustrierte Ausbildungsbuch Krav Maga Türk befindet sich noch in der Druckvorbereitung. Ein verbindlicher Erscheinungs- oder Verkaufstermin wurde auf der Website noch nicht bekannt gegeben. Auf der Ankündigungsseite wird auch Bülent Çetins früheres Buch von 2018 vorgestellt.",
+          "url": "/blog-krav-maga-turk-yeni-kitap"
+        },
+        "levels": {
+          "keywords": [
+            "stufe",
+            "grad",
+            "prüfung",
+            "practitioner",
+            "trainerstufe",
+            "level"
+          ],
+          "answer": "Die Akademie bietet Practitioner- und fortgeschrittene Ausbildungsstufen an. Prüfungsbedingungen, Termine, Gebühren und Voraussetzungen müssen bei der Akademie beziehungsweise beim Ausbilder erfragt werden.",
+          "url": "/krav-maga"
+        },
+        "system": {
+          "keywords": [
+            "krav maga",
+            "selbstverteidigung",
+            "sicherheit",
+            "bedrohung",
+            "technik"
+          ],
+          "answer": "Krav Maga vermittelt Aufmerksamkeit gegenüber Gefahren, sicheren Abstand, Rückzug und gegebenenfalls kontrollierte Selbstverteidigung. Die Übungen werden passend zum Niveau unter Anleitung durchgeführt.",
+          "url": "/krav-maga"
+        },
+        "protection": {
+          "keywords": [
+            "personenschutz",
+            "sicherheit",
+            "bodyguard",
+            "bewaffnet",
+            "waffen",
+            "unternehmen"
+          ],
+          "answer": "Die Akademie informiert über Personenschutz- und Sicherheitsprogramme. Inhalte, Voraussetzungen und Preise werden direkt vereinbart. Ein Angebot bewaffneter Ausbildung darf nicht vorausgesetzt werden.",
+          "url": "/yakin-koruma"
+        },
+        "address": {
+          "keywords": [
+            "adresse",
+            "standort",
+            "wo",
+            "anfahrt",
+            "kontakt",
+            "telefon",
+            "whatsapp"
+          ],
+          "answer": "Krav Maga Türk Akademi: Yoğurtçu Şükrü Sokak No:19, Osmanağa, Kadıköy, Istanbul, Türkei. WhatsApp: +90 532 162 18 21. Bitte Termine und Verfügbarkeit vor dem Besuch bestätigen lassen.",
+          "url": "/iletisim"
+        }
+      }
+    },
+    "fr": {
+      "lang": "fr-FR",
+      "answers": {
+        "group": {
+          "keywords": [
+            "groupe",
+            "débutant",
+            "débutants",
+            "cours",
+            "horaire",
+            "mardi",
+            "jeudi",
+            "dimanche",
+            "prix",
+            "tarif",
+            "coût",
+            "essai"
+          ],
+          "answer": "Selon le programme publié, les cours collectifs débutants ont lieu le mardi et le jeudi à 19 h 30, à raison de huit séances par mois. Le site indique 4 000 TRY par mois, plus 20 % de TVA, une séance de rattrapage le dimanche de 12 h à 13 h, et un premier cours d'essai gratuit. Merci de confirmer les places et tarifs actuels auprès de l'académie.",
+          "url": "/krav-maga"
+        },
+        "private": {
+          "keywords": [
+            "privé",
+            "privés",
+            "individuel",
+            "particulier",
+            "personnel",
+            "forfait"
+          ],
+          "answer": "Le site indique des cours particuliers de Krav Maga de 60 minutes, au tarif de 4 000 TRY plus TVA par séance. Ils sont organisés en forfaits de dix séances. Les horaires et prix actuels sont à confirmer par WhatsApp.",
+          "url": "/ozel-dersler"
+        },
+        "kids": {
+          "keywords": [
+            "enfant",
+            "enfants",
+            "jeune",
+            "âge",
+            "kids"
+          ],
+          "answer": "Le programme Kids Defense est présenté pour les enfants de 9 à 12 ans : vigilance, sécurité personnelle, coordination et bases de l'autodéfense. Contactez l'académie pour connaître les horaires, conditions d'inscription et tarifs actuels.",
+          "url": "/cocuk-krav-maga"
+        },
+        "bio": {
+          "keywords": [
+            "bülent",
+            "bulent",
+            "çetin",
+            "cetin",
+            "qui est",
+            "fondateur",
+            "instructeur",
+            "parcours",
+            "biographie",
+            "expérience"
+          ],
+          "answer": "Bülent Çetin est fondateur et instructeur de Krav Maga Türk Akademi. Selon la biographie publiée par l'académie, il a commencé le Tae Kwon Do en 1979, possède le 2e dan et est arbitre officiel. Le site évoque une expérience en CQC à partir de 1994, des missions de protection rapprochée de 1996 à 1998 et des formations GIC-1/GIC-2 achevées en 2016. Il s'agit de déclarations publiées par l'académie, non d'une vérification indépendante d'une habilitation officielle actuelle.",
+          "url": "/bulent-cetin"
+        },
+        "documents": {
+          "keywords": [
+            "diplôme",
+            "diplomes",
+            "certificat",
+            "qualification",
+            "habilitation",
+            "autorisation",
+            "document",
+            "preuve",
+            "licence"
+          ],
+          "answer": "La page « Belgeler » présente des informations sur le Tae Kwon Do, l'enseignement du Krav Maga, l'arbitrage, la formation à la sécurité et l'enregistrement d'une marque. Les images marquées « ÖRNEKTİR » sont des illustrations représentatives, et non des scans des diplômes originaux. Toute habilitation officielle actuelle doit être vérifiée auprès de l'organisme compétent.",
+          "url": "/belgeler"
+        },
+        "book": {
+          "keywords": [
+            "livre",
+            "parution",
+            "publication",
+            "sortie",
+            "date",
+            "impression",
+            "édition"
+          ],
+          "answer": "Le nouveau livre illustré de formation Krav Maga Türk est toujours en préparation pour l'impression. Aucune date officielle de parution ou de vente n'a été annoncée sur le site. La page présente également un précédent livre de Bülent Çetin paru en 2018.",
+          "url": "/blog-krav-maga-turk-yeni-kitap"
+        },
+        "levels": {
+          "keywords": [
+            "niveau",
+            "grade",
+            "examen",
+            "practitioner",
+            "évaluation"
+          ],
+          "answer": "L'académie propose les niveaux Practitioner et des niveaux avancés. Les conditions d'examen, dates, frais et critères d'admission doivent être confirmés auprès de l'académie ou d'un instructeur.",
+          "url": "/krav-maga"
+        },
+        "system": {
+          "keywords": [
+            "krav maga",
+            "autodéfense",
+            "self défense",
+            "sécurité",
+            "technique",
+            "menace"
+          ],
+          "answer": "Le Krav Maga travaille la vigilance face aux menaces, la distance de sécurité, l'évitement et, si nécessaire, une défense personnelle contrôlée. Les exercices sont encadrés par un instructeur selon le niveau de l'élève.",
+          "url": "/krav-maga"
+        },
+        "protection": {
+          "keywords": [
+            "protection rapprochée",
+            "sécurité",
+            "garde du corps",
+            "arme",
+            "armé",
+            "entreprise"
+          ],
+          "answer": "L'académie présente des formations liées à la protection rapprochée et à la sécurité. Le contenu, les conditions et les tarifs sont à définir directement avec elle. Ne présumez pas qu'une formation armée est proposée.",
+          "url": "/yakin-koruma"
+        },
+        "address": {
+          "keywords": [
+            "adresse",
+            "où",
+            "localisation",
+            "itinéraire",
+            "contact",
+            "téléphone",
+            "whatsapp"
+          ],
+          "answer": "Krav Maga Türk Akademi : Yoğurtçu Şükrü Sokak No:19, Osmanağa, Kadıköy, Istanbul, Turquie. WhatsApp professionnel : +90 532 162 18 21. Veuillez confirmer le rendez-vous avant de venir.",
+          "url": "/iletisim"
+        }
+      }
+    }
+  }
+}
