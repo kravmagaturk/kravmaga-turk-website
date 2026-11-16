@@ -82,12 +82,15 @@
       .kmt-footer-subscribe strong{display:block;color:#fff;font-size:13px;margin-bottom:2px}.kmt-footer-subscribe .kmt-subscribe-options{display:flex;align-items:center;justify-content:space-between;gap:6px}.kmt-footer-subscribe .kmt-subscribe-options label{flex:1;min-width:0;font-size:10px}.kmt-footer-subscribe .kmt-subscribe-options .kmt-footer-unsubscribe{white-space:nowrap}
       .kmt-footer-subscribe p{margin:0 0 6px;color:#aeb5b8;line-height:1.35}
       .kmt-footer-subscribe .kmt-subscribe-row{display:flex;gap:5px}
-      .kmt-footer-subscribe input[type=email]{min-width:0;flex:1;padding:7px 8px;border:1px solid #50565a;border-radius:5px;background:#171b1e;color:#fff;font:inherit}
-      .kmt-footer-subscribe button{padding:7px 9px;border:0;border-radius:5px;background:#c92134;color:#fff;font:700 11px Arial,sans-serif;cursor:pointer}
+      .kmt-footer-subscribe input[type=email]{min-width:0;flex:1;padding:6px 7px;border:1px solid #50565a;border-radius:5px;background:#171b1e;color:#fff;font:inherit}
+      .kmt-footer-subscribe button{padding:6px 8px;border:0;border-radius:5px;background:#c92134;color:#fff;font:700 11px Arial,sans-serif;cursor:pointer}
       .kmt-footer-subscribe label{display:flex;align-items:flex-start;gap:5px;margin-top:5px;color:#aeb5b8;line-height:1.3}
       .kmt-footer-subscribe label input{margin:2px 0 0}
+      .kmt-footer-subscribe .kmt-subscribe-options{display:flex;align-items:center;justify-content:flex-start;gap:7px;flex-wrap:wrap}
+      .kmt-footer-subscribe .kmt-subscribe-options label{flex:0 1 auto;min-width:0;margin:0;font-size:10px}
+      .kmt-footer-subscribe .kmt-footer-privacy-link{display:inline-block;flex:none;color:#f3f3f3!important;font-size:10px;font-weight:700;line-height:1.25;text-decoration:underline;text-decoration-color:#e30620;text-underline-offset:2px}
       .kmt-footer-subscribe [role=status]{margin:4px 0 0}.kmt-footer-subscribe [role=status]:empty{display:none}
-      .kmt-footer-subscribe .kmt-footer-unsubscribe{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:5px 8px;flex:none;border:1px solid #727d78;border-radius:5px;background:#26342b;color:#fff!important;font-size:11px;font-weight:700;text-decoration:none!important;text-align:center}
+      .kmt-footer-subscribe .kmt-footer-unsubscribe{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:4px 7px;flex:none;border:1px solid #727d78;border-radius:5px;background:#26342b;color:#fff!important;font-size:11px;font-weight:700;text-decoration:none!important;text-align:center}
       .kmt-footer-subscribe .kmt-footer-unsubscribe:hover{color:#fff!important}.kmt-footer-subscribe .kmt-subscribe-privacy{font-size:10px;line-height:1.5;margin-top:7px;color:#c5cbd0}.kmt-footer-subscribe .kmt-subscribe-privacy a{color:#fff!important;text-decoration:underline;text-decoration-color:#e30620}
 
       .kmt-footer-copy{
@@ -243,7 +246,11 @@
         .kmt-site-footer .kmt-footer-subscribe button{min-height:32px;padding:6px 7px;font-size:10px}
         .kmt-site-footer .kmt-footer-subscribe .kmt-site-footer .kmt-footer-unsubscribe{min-height:32px;padding:3px 5px;font-size:10px}
         .kmt-site-footer .kmt-footer-subscribe label{margin-top:3px;line-height:1.25}
-        .kmt-site-footer .kmt-footer-subscribe .kmt-subscribe-options label{font-size:9.5px}
+        .kmt-site-footer .kmt-footer-subscribe .kmt-subscribe-options{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:3px}
+        .kmt-site-footer .kmt-footer-subscribe .kmt-subscribe-options label{font-size:9px;flex:0 1 auto;line-height:1.2;margin-top:0}
+        .kmt-site-footer .kmt-footer-subscribe .kmt-footer-privacy-link{font-size:9px;line-height:1.2}
+        .kmt-site-footer .kmt-footer-subscribe input[type=email],.kmt-site-footer .kmt-footer-subscribe button,.kmt-site-footer .kmt-footer-subscribe .kmt-footer-unsubscribe{min-height:30px;height:30px}
+        
         .kmt-site-footer .kmt-footer-subscribe .kmt-subscribe-privacy{font-size:9px;line-height:1.25;margin-top:3px}
         .kmt-site-footer .kmt-footer-copy{padding:6px 14px 8px;font-size:9px;line-height:1.25}
       }
@@ -345,15 +352,14 @@
           </div>
           <form id="abonelik" class="kmt-footer-subscribe" data-kmt-newsletter="site">
             <strong>Video ve haber aboneliği</strong>
-            <p>Yeni eğitim videoları ve haberleri e-postayla al.</p>
+            
             <div class="kmt-subscribe-row"><input type="email" name="email" aria-label="E-posta adresi" autocomplete="email" placeholder="E-posta adresin" required maxlength="200"><button type="submit">Abone ol</button><a class="kmt-footer-unsubscribe" href="/online-akademi/abonelik/ayril">Abonelikten çık</a></div>
-            <div class="kmt-subscribe-options"><label><input type="checkbox" name="consent" required> E-posta duyurularını almak istiyorum.</label></div>
-            <p class="kmt-subscribe-privacy">E-posta aboneliği verilerinin işlenmesi hakkında <a href="/kvkk-aydinlatma">KVKK aydınlatma metni</a>.</p>
+            <div class="kmt-subscribe-options"><label><input type="checkbox" name="consent" required> E-posta duyurularını almak istiyorum.</label><a class="kmt-footer-privacy-link" href="/kvkk-aydinlatma">KVKK Aydınlatma Metni</a></div>
             <p role="status" aria-live="polite"></p>
           </form>
         </div>
         <div class="kmt-footer-copy">
-          © 2026 <strong>KRAV MAGA TÜRK</strong> · ® TPE: 2007/49875 · <a href="/kvkk-aydinlatma" style="color:#f1f1f1;text-decoration:underline">KVKK / Aydınlatma</a>
+          © 2026 <strong>KRAV MAGA TÜRK</strong> · ® TPE: 2007/49875
         </div>
       </footer>
     `;
