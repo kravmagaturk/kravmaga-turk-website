@@ -8,7 +8,7 @@ const ASSETS={
     mime:"application/javascript; charset=utf-8"
   },
   "/assets/kmt-assistant-knowledge.json":{
-    sha:"acf2f34fb1d77727308f58fde7011db4778433d4",
+    sha:"265412271bd5bea9aed170caad3b1aada68baa4d",
     mime:"application/json; charset=utf-8"
   },
   "/assets/kmt-assistant-languages.json":{
@@ -40,6 +40,9 @@ const ROUTES=[
 ];
 const STOP=new Set("bir bu şu su ile ve veya için ne nedir nasıl hangi kaç kadar mı mi mu mü mıdır midir siz bana da de ile hakkında konusunda ilgili bilgi ver verir misiniz acaba ben biz bizim sizin onların var mı oluyor yapıyor yapılıyor ne zaman acaba hangi saat saatlerde kaçta için olur güncel şimdi bugün olan en bir".split(" "));
 const KEYWORDS={
+  attendance:["devam zorunlulugu","devam zorunlu","devamsizlik","devamsızlık","devam etmeli","devam etmek"],
+  firstclass:["ilk ders","ne getirmeli","ne giy","spor ayakkab","spor kıyafet","deneme ders"],
+  advanced:["advanced","ileri sınıf","üst seviye","üç ay sonra","ileriye geç"],
   capacity:["kontenjan","sınıf mevcudu","kaç kişi","kaç öğrenci","sınıflarda kaç","grupta kaç","katılımcı","kapasite","sınıf kaç kişilik"],
   group:["grup dersi","ders saati","program","salı","perşembe","telafi","haftada kaç gün","seans","ilk ders","devam zorunluluğu"],
   private:["özel ders","bire bir","birebir","private lesson","paket"],
@@ -141,7 +144,8 @@ function matchKnowledge(question,kb,lang){
   const qScore=textScore(question,item.q);
   const keys=KEYWORDS[item.id]||[];
   const keyHit=keys.some(k=>q.includes(norm(k)));
-  return {item,score:qScore.matched*2+qScore.score*3+(topic===item.id?8:0)+(keyHit?3:0)};
+  const relevant=qScore.matched>=1 || keyHit;
+  return {item,score:relevant?(qScore.matched*2+qScore.score*3+(topic===item.id?8:0)+(keyHit?3:0)):0};
  }).sort((a,b)=>b.score-a.score);
  if(lang!=="tr")return null;
  if(!ranked.length||ranked[0].score<5)return null;
