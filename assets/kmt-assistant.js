@@ -144,10 +144,26 @@
       if(selectedVoice)utter.voice=selectedVoice;
       window.speechSynthesis.speak(utter);
     }
-    function bubble(role,s,url,source) {
+    function bubble(role,s,url,source,sources) {
       var node=el("div","kmt-ai-msg "+role,s);
       if(url && url.startsWith("/") && !url.startsWith("//")){
         var small=el("small"),a=el("a",null,translate("link","İlgili sayfayı aç"));a.href=url;small.append(a);node.append(small);
+      }
+      if(Array.isArray(sources)&&sources.length){
+        var references=el("small","kmt-ai-sources");
+        references.append(el("span",null,"Kaynaklar: "));
+        sources.slice(0,4).forEach(function(item,i){
+          if(!item||!item.url)return;
+          var safeUrl;
+          try{
+            safeUrl=new URL(item.url,URL_BASE);
+            if(safeUrl.protocol!=="https:"||safeUrl.username||safeUrl.password)return;
+          }catch(_){return;}
+          var link=el("a",null,(i+1)+". "+String(item.title||"Kaynak").slice(0,75));
+          link.href=safeUrl.href;link.target="_blank";link.rel="noopener noreferrer";link.style.marginRight="9px";
+          references.append(link);
+        });
+        node.append(references);
       }
       if(source){var src=el("small",null,source);node.append(src);}
       msgs.append(node);msgs.scrollTop=msgs.scrollHeight;
@@ -214,14 +230,20 @@
           var r=await fetch("/api/kmt-assistant",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q,language:assistantLang,history:history.slice(0,-1)}),signal:ctrl.signal,credentials:"omit"});
           if(r.ok && (r.headers.get("content-type")||"").includes("application/json")){
             var data=await r.json();
-            if(data && typeof data.answer==="string" && data.answer.trim().length){found={answer:data.answer.slice(0,1400),url:typeof data.url==="string"?data.url:null};usedServer=true;}
+            if(data && typeof data.answer==="string" && data.answer.trim().length){
+              found={answer:data.answer.slice(0,1500),url:typeof data.url==="string"?data.url:null,
+                sources:Array.isArray(data.sources)?data.sources.slice(0,4):[],mode:data.mode};
+              usedServer=true;
+            }
           }
         }finally{clearTimeout(timeout);}
       }catch(_){}
       if(!found)found=await answerFromCards(q,forcedId);
-      bubble("bot",found.answer,found.url,usedServer?translate("aiSource","KMT dijital danışman"):translate("webSource","Akademinin yayımladığı bilgiler"));
+      bubble("bot",found.answer,found.url,
+        usedServer?(found.sources&&found.sources.some(function(x){return x.kind==="public";})?"Kamuya açık kaynaklara dayalı araştırma":translate("aiSource","KMT dijital danışman")):translate("webSource","Akademinin yayımladığı bilgiler"),
+        found.sources||[]);
       history.push({role:"assistant",content:found.answer});history=history.slice(-8);
-      status.textContent=usedServer?translate("aiStatus","Yapay zekâ yanıtı"):translate("safeStatus","Site bilgileri · Güvenli yanıt");
+      status.textContent=usedServer?(found.mode==="research"?"Kaynaklı araştırma":translate("aiStatus","Yapay zekâ yanıtı")):translate("safeStatus","Site bilgileri · Güvenli yanıt");
       speak(found.answer);
       busy=false;send.disabled=false;mic.disabled=false;languagePicker.disabled=false;input.focus();
     }
