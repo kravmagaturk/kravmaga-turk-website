@@ -8,7 +8,7 @@ const ASSETS={
     mime:"application/javascript; charset=utf-8"
   },
   "/assets/kmt-assistant-knowledge.json":{
-    sha:"265412271bd5bea9aed170caad3b1aada68baa4d",
+    sha:"a98e4b51014bd3e60a0ba0c179eb4798968e240c",
     mime:"application/json; charset=utf-8"
   },
   "/assets/kmt-assistant-languages.json":{
@@ -43,6 +43,7 @@ const KEYWORDS={
   attendance:["devam zorunlulugu","devam zorunlu","devamsizlik","devamsızlık","devam etmeli","devam etmek"],
   firstclass:["ilk ders","ne getirmeli","ne giy","spor ayakkab","spor kıyafet","deneme ders"],
   advanced:["advanced","ileri sınıf","üst seviye","üç ay sonra","ileriye geç"],
+  origin:["krav maga tarihi","köken","imi lichtenfeld","tarihi","nasıl ortaya çıktı","kurucusu"],
   capacity:["kontenjan","sınıf mevcudu","kaç kişi","kaç öğrenci","sınıflarda kaç","grupta kaç","katılımcı","kapasite","sınıf kaç kişilik"],
   group:["grup dersi","ders saati","program","salı","perşembe","telafi","haftada kaç gün","seans","ilk ders","devam zorunluluğu"],
   private:["özel ders","bire bir","birebir","private lesson","paket"],
@@ -139,7 +140,7 @@ async function getKnowledge(){
 }
 function matchKnowledge(question,kb,lang){
  const q=norm(question),topic=topicFor(question);
- const entries=(kb.qa||[]).filter(x=>x&&x.id&&x.a&&x.url);
+ const entries=(kb.qa||[]).filter(x=>x&&x.id&&x.id!=="welcome"&&x.a&&x.url);
  const ranked=entries.map(item=>{
   const qScore=textScore(question,item.q);
   const keys=KEYWORDS[item.id]||[];
@@ -172,7 +173,7 @@ async function searchSite(question,lang){
   if(p.status!=="fulfilled")continue;
   for(const item of p.value.items){
    const m=textScore(question,item);
-   if(m.matched<2&&!(topic===p.value.route.topic&&m.matched>=1))continue;
+   if(m.matched<2)continue;
    const boost=topic===p.value.route.topic?1.8:0;
    const score=m.matched*2.3+m.score*6+boost-Math.max(0,item.length-350)/350;
    candidates.push({text:item,score,match:m.matched,route:p.value.route});
