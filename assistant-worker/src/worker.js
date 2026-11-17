@@ -102,13 +102,25 @@ async function wikiFacts(q,language) {
     const r=await fetch(query,{headers:{"accept":"application/json","user-agent":"KravMagaTurkPublicAssistant/1.0 (https://kravmaga.com.tr/iletisim)"},signal:AbortSignal.timeout(5500)});
     if(!r.ok)throw Error("wiki "+r.status);
     const data=await r.json();
-    return ((data.query&&data.query.search)||[]).slice(0,3).map(x=>({
-      title:String(x.title||"Wikipedia"),
-      url:"https://"+lang+".wikipedia.org/wiki/"+encodeURIComponent(String(x.title||"").replace(/\s/g,"_")),
-      excerpt:htmlToText(x.snippet).slice(0,600),
+    const first=((data.query&&data.query.search)||[])[0];
+    if(!first||!first.title)return [];
+    let excerpt=htmlToText(first.snippet).slice(0,600);
+    try{
+      const pageUrl=root+"?action=query&prop=extracts&explaintext=1&exintro=1&redirects=1&format=json&titles="+encodeURIComponent(first.title);
+      const pageResp=await fetch(pageUrl,{headers:{"accept":"application/json","user-agent":"KravMagaTurkPublicAssistant/1.0 (https://kravmaga.com.tr/iletisim)"},signal:AbortSignal.timeout(4500)});
+      if(pageResp.ok){
+        const parsed=await pageResp.json();
+        const pages=parsed.query&&parsed.query.pages?Object.values(parsed.query.pages):[];
+        if(pages[0]&&typeof pages[0].extract==="string"&&pages[0].extract.length>80)excerpt=pages[0].extract.slice(0,1800);
+      }
+    }catch(_){}
+    return [{
+      title:String(first.title).slice(0,150),
+      url:"https://"+lang+".wikipedia.org/wiki/"+encodeURIComponent(String(first.title).replace(/\s/g,"_")),
+      excerpt,
       kind:"public",
       score:3
-    })).filter(x=>x.excerpt);
+    }].filter(x=>x.excerpt);
   }catch(_){return [];}
 }
 function validUrl(s) {
