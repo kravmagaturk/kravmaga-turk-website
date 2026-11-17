@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-17",
+  "version": "2026-11-17-r2",
   "note": "Translated summaries of existing public FAQ only; not independent verification.",
   "locales": {
     "en": {
@@ -158,6 +158,54 @@
             "classroom"
           ],
           "answer": "According to the academy's published information, group classes have approximately 15–20 participants. This describes typical class size, not currently available places. Please contact the academy to confirm availability.",
+          "url": "/krav-maga"
+        },
+        "attendance": {
+          "keywords": [
+            "attendance",
+            "mandatory",
+            "compulsory",
+            "required",
+            "must i attend",
+            "absence",
+            "miss class"
+          ],
+          "answer": "The academy's published participation information states that attendance is not compulsory. Regular practice is nevertheless helpful for progress and level assessment.",
+          "url": "/krav-maga"
+        },
+        "firstclass": {
+          "keywords": [
+            "first class",
+            "first lesson",
+            "what to bring",
+            "what to wear",
+            "training clothes",
+            "shoes",
+            "trial"
+          ],
+          "answer": "The first trial class is free and no previous martial arts experience is required. Comfortable sportswear and clean training shoes are sufficient. Please arrange an appointment before attending.",
+          "url": "/krav-maga"
+        },
+        "advanced": {
+          "keywords": [
+            "advanced",
+            "intermediate group",
+            "move up",
+            "next level",
+            "after three months"
+          ],
+          "answer": "The Advanced group meets on Wednesdays at 19:30. New students do not join directly; after about three months of beginner training, transition depends on the instructor's assessment.",
+          "url": "/krav-maga"
+        },
+        "origin": {
+          "keywords": [
+            "history of krav maga",
+            "origin",
+            "who founded krav maga",
+            "imi lichtenfeld",
+            "krav maga history"
+          ],
+          "answer": "The development of Krav Maga is associated with Imi Lichtenfeld. It evolved for close-combat and personal-defence needs and was later adapted for civilian use. Today there are different programs for civilian, security, law-enforcement and military training.",
           "url": "/krav-maga"
         }
       },
@@ -374,6 +422,52 @@
           ],
           "answer": "Laut den veröffentlichten Angaben der Akademie umfassen Gruppen ungefähr 15–20 Personen. Das ist die ungefähre Gruppengröße, nicht die Zahl aktuell freier Plätze. Bitte fragen Sie die Akademie nach der aktuellen Verfügbarkeit.",
           "url": "/krav-maga"
+        },
+        "attendance": {
+          "keywords": [
+            "teilnahmepflicht",
+            "anwesend",
+            "teilnahme verpflichtend",
+            "fehlstunden",
+            "muss ich teilnehmen",
+            "regelmäßig kommen"
+          ],
+          "answer": "Laut den veröffentlichten Teilnahmeinformationen der Akademie besteht keine Anwesenheitspflicht. Regelmäßiges Training unterstützt aber die Entwicklung und die Einstufung.",
+          "url": "/krav-maga"
+        },
+        "firstclass": {
+          "keywords": [
+            "erste stunde",
+            "erste training",
+            "was mitbringen",
+            "sportkleidung",
+            "sportschuhe",
+            "probetraining"
+          ],
+          "answer": "Die erste Probestunde ist kostenlos und Vorerfahrung ist nicht erforderlich. Bequeme Sportkleidung und saubere Sportschuhe reichen aus. Bitte vereinbaren Sie vorher einen Termin.",
+          "url": "/krav-maga"
+        },
+        "advanced": {
+          "keywords": [
+            "advanced",
+            "fortgeschrittene",
+            "aufstieg",
+            "nächste stufe",
+            "drei monate"
+          ],
+          "answer": "Die Advanced-Gruppe trainiert mittwochs um 19:30 Uhr. Ein direkter Einstieg ist nicht vorgesehen. Nach etwa drei Monaten Grundtraining kann der Wechsel nach Einschätzung des Trainers erfolgen.",
+          "url": "/krav-maga"
+        },
+        "origin": {
+          "keywords": [
+            "geschichte des krav maga",
+            "ursprung",
+            "gründer",
+            "imi lichtenfeld",
+            "entstehung"
+          ],
+          "answer": "Die Entwicklung von Krav Maga ist mit Imi Lichtenfeld verbunden. Das System wurde für Nahkampf und persönliche Verteidigung entwickelt und später für Zivilpersonen angepasst.",
+          "url": "/krav-maga"
         }
       },
       "ui": {
@@ -586,6 +680,52 @@
             "classe"
           ],
           "answer": "Selon les informations publiées par l'académie, les cours en groupe accueillent environ 15 à 20 personnes. Il s'agit de la taille approximative des groupes, pas du nombre de places actuellement disponibles. Contactez l'académie pour vérifier les disponibilités.",
+          "url": "/krav-maga"
+        },
+        "attendance": {
+          "keywords": [
+            "présence obligatoire",
+            "assiduité",
+            "obligatoire",
+            "absence",
+            "faut-il venir",
+            "participation"
+          ],
+          "answer": "Selon les informations publiées par l'académie, la présence n'est pas obligatoire. Une pratique régulière aide néanmoins à progresser et à préparer les évaluations.",
+          "url": "/krav-maga"
+        },
+        "firstclass": {
+          "keywords": [
+            "premier cours",
+            "quoi apporter",
+            "comment s'habiller",
+            "tenue",
+            "chaussures propres",
+            "cours d'essai"
+          ],
+          "answer": "Le premier cours d'essai est gratuit et aucune expérience préalable n'est requise. Une tenue de sport confortable et des chaussures propres suffisent. Il faut prendre rendez-vous avant de venir.",
+          "url": "/krav-maga"
+        },
+        "advanced": {
+          "keywords": [
+            "advanced",
+            "avancé",
+            "niveau supérieur",
+            "passer au niveau",
+            "trois mois"
+          ],
+          "answer": "Le groupe Advanced s'entraîne le mercredi à 19 h 30. Les nouveaux élèves n'y entrent pas directement : après environ trois mois de cours débutants, le passage dépend de l'évaluation de l'instructeur.",
+          "url": "/krav-maga"
+        },
+        "origin": {
+          "keywords": [
+            "histoire du krav maga",
+            "origine",
+            "fondateur",
+            "imi lichtenfeld",
+            "création"
+          ],
+          "answer": "Le développement du Krav Maga est associé à Imi Lichtenfeld. Conçu pour le combat rapproché et la défense personnelle, il a ensuite été adapté aux civils.",
           "url": "/krav-maga"
         }
       },
