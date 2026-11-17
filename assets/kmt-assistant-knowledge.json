@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-17",
+  "version": "2026-11-17-r2",
   "brand": "Krav Maga Türk Akademi",
   "assistant": "KMT Akıllı Asistan",
   "note": "Yalnızca kamuya açık, doğrulanmış site bilgileri. Fiyat ve seanslar yayın değiştiğinde yeniden kontrol edilmelidir.",
@@ -25,6 +25,24 @@
       "id": "capacity",
       "q": "Krav Maga sınıflarında kaç kişi ders yapıyor, kontenjan kaç kişilik?",
       "a": "Krav Maga Türk Akademi'nin yayımladığı katılım bilgilerine göre yetişkin grup sınıfları yaklaşık 15–20 kişidir. Bu bilgi sınıfların yaklaşık büyüklüğünü belirtir; şu anda kaç boş yer bulunduğunu göstermez. Güncel yer durumu ve ilk derse katılım için akademiyle iletişime geçebilirsiniz.",
+      "url": "/krav-maga"
+    },
+    {
+      "id": "attendance",
+      "q": "Krav Maga derslerine devam zorunlu mu, devamsızlık yapabilir miyim?",
+      "a": "Akademinin Krav Maga sayfasındaki katılım bilgilerine göre derslere devam zorunluluğu bulunmamaktadır. Ancak düzenli katılım eğitimdeki gelişim ve seviye değerlendirmesi açısından önemlidir.",
+      "url": "/krav-maga"
+    },
+    {
+      "id": "firstclass",
+      "q": "İlk Krav Maga dersine ne getirmeliyim, spor deneyimim olmalı mı?",
+      "a": "Akademinin yayımladığı bilgiye göre ilk deneme dersi ücretsizdir; önceden spor deneyimi gerekli değildir. Rahat spor kıyafeti ve temiz spor ayakkabısı yeterlidir. İlk kez katılmadan önce randevu alınmalıdır.",
+      "url": "/krav-maga"
+    },
+    {
+      "id": "advanced",
+      "q": "Krav Maga Advanced sınıfına ne zaman ve nasıl geçebilirim?",
+      "a": "Advanced sınıfı Çarşamba 19.30'da yapılır. Yeni öğrenciler Advanced'a doğrudan katılmaz; başlangıç eğitiminde yaklaşık üç aylık çalışmadan sonra eğitmenin değerlendirmesiyle geçiş yapılabilir.",
       "url": "/krav-maga"
     },
     {
