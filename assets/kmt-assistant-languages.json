@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16",
+  "version": "2026-11-17",
   "note": "Translated summaries of existing public FAQ only; not independent verification.",
   "locales": {
     "en": {
@@ -144,6 +144,21 @@
           ],
           "answer": "Krav Maga Türk Akademi: Yoğurtçu Şükrü Sokak No:19, Osmanağa, Kadıköy, Istanbul, Türkiye. Business WhatsApp: +90 532 162 18 21. Please confirm your visit or appointment before arriving.",
           "url": "/iletisim"
+        },
+        "capacity": {
+          "keywords": [
+            "capacity",
+            "class size",
+            "how many",
+            "students per class",
+            "people in class",
+            "group size",
+            "participants",
+            "places available",
+            "classroom"
+          ],
+          "answer": "According to the academy's published information, group classes have approximately 15–20 participants. This describes typical class size, not currently available places. Please contact the academy to confirm availability.",
+          "url": "/krav-maga"
         }
       },
       "ui": {
@@ -345,6 +360,20 @@
           ],
           "answer": "Krav Maga Türk Akademi: Yoğurtçu Şükrü Sokak No:19, Osmanağa, Kadıköy, Istanbul, Türkei. WhatsApp: +90 532 162 18 21. Bitte Termine und Verfügbarkeit vor dem Besuch bestätigen lassen.",
           "url": "/iletisim"
+        },
+        "capacity": {
+          "keywords": [
+            "teilnehmer",
+            "klassengröße",
+            "gruppengröße",
+            "wie viele personen",
+            "wie viele schüler",
+            "plätze",
+            "kapazität",
+            "klasse"
+          ],
+          "answer": "Laut den veröffentlichten Angaben der Akademie umfassen Gruppen ungefähr 15–20 Personen. Das ist die ungefähre Gruppengröße, nicht die Zahl aktuell freier Plätze. Bitte fragen Sie die Akademie nach der aktuellen Verfügbarkeit.",
+          "url": "/krav-maga"
         }
       },
       "ui": {
@@ -544,6 +573,20 @@
           ],
           "answer": "Krav Maga Türk Akademi : Yoğurtçu Şükrü Sokak No:19, Osmanağa, Kadıköy, Istanbul, Turquie. WhatsApp professionnel : +90 532 162 18 21. Veuillez confirmer le rendez-vous avant de venir.",
           "url": "/iletisim"
+        },
+        "capacity": {
+          "keywords": [
+            "combien de personnes",
+            "taille des groupes",
+            "places",
+            "capacité",
+            "participants",
+            "élèves par cours",
+            "effectif",
+            "classe"
+          ],
+          "answer": "Selon les informations publiées par l'académie, les cours en groupe accueillent environ 15 à 20 personnes. Il s'agit de la taille approximative des groupes, pas du nombre de places actuellement disponibles. Contactez l'académie pour vérifier les disponibilités.",
+          "url": "/krav-maga"
         }
       },
       "ui": {
