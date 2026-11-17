@@ -94,34 +94,82 @@ async function siteFacts(q) {
   }));
   return results.filter(x=>x&&x.excerpt);
 }
-async function wikiFacts(q,language) {
-  const lang=language==="tr"?"tr":"en";
+// Remove common question endings (including small typos), without changing names.
+// Searching for the subject rather than the whole sentence improves multilingual matches.
+function wikipediaSubject(question) {
+  const original=String(question||"").trim();
+  const tokens=norm(original).split(" ").filter(Boolean);
+  const fillers=new Set(["ne","zaman","hangi","yil","yilda","yillarda","yilinda","kac","nerede","nerededir",
+    "nedir","kimdir","kim","kmdir","kimdi","kimdie","kimdri","kimdirr","kimdier",
+    "nasil","insa","edildi","edilmis","yapildi","basladi","kurdu","kurucusu",
+    "kurucusu","kimdirr","hakkinda","bilgi","ver","verir","misin","ogrenmek",
+    "isterim","aciklar","misiniz","soyle"]);
+  const reduced=tokens.filter((t,i)=>
+    !fillers.has(t) && !(i>0 && /^kimd[a-z]{1,4}$/.test(t))
+  );
+  return reduced.length?reduced.join(" ").slice(0,130):original.slice(0,130);
+}
+function goodWikiTitle(title,subject){
+  const target=norm(subject).split(" ").filter(x=>x.length>=2);
+  const actual=norm(title).split(" ").filter(Boolean);
+  if(!target.length || !actual.length)return false;
+  // All meaningful subject tokens should occur in the title. Reject general
+  // "Krav Maga" pages as biographies of "Eyal Yanilov".
+  return target.every(t=>actual.some(a=>a===t));
+}
+async function searchWikipedia(subject,lang) {
+  const root="https://"+lang+".wikipedia.org/w/api.php";
+  const query=root+"?action=query&list=search&format=json&utf8=1&srlimit=5&srsearch="+encodeURIComponent(subject);
   try{
-    const root="https://"+lang+".wikipedia.org/w/api.php";
-    const wikiTerm=q.replace(/ne zaman|hangi yılda|hangi yıl|kaç yılında|inşa edildi|inşa edilmiş|ne zaman yapıldı|kimdir|nerededir|nedir|nasıl|yapıldı/gi," ").replace(/[?!.,]/g," ").replace(/\s+/g," ").trim()||q;
-    const query=root+"?action=query&list=search&format=json&utf8=1&srlimit=3&srsearch="+encodeURIComponent(wikiTerm.slice(0,140));
-    const r=await fetch(query,{headers:{"accept":"application/json","user-agent":"KravMagaTurkPublicAssistant/1.0 (https://kravmaga.com.tr/iletisim)"},signal:AbortSignal.timeout(5500)});
-    if(!r.ok)throw Error("wiki "+r.status);
+    const r=await fetch(query,{
+      headers:{"accept":"application/json","user-agent":"KravMagaTurkPublicAssistant/1.1 (https://kravmaga.com.tr/iletisim)"},
+      signal:AbortSignal.timeout(5000)
+    });
+    if(!r.ok)return null;
     const data=await r.json();
-    const first=((data.query&&data.query.search)||[])[0];
-    if(!first||!first.title)return [];
-    let excerpt=htmlToText(first.snippet).slice(0,600);
+    const hits=((data.query&&data.query.search)||[]);
+    const first=hits.find(x=>x.title&&goodWikiTitle(x.title,subject));
+    if(!first)return null;
+    let excerpt=htmlToText(first.snippet).slice(0,650);
     try{
       const pageUrl=root+"?action=query&prop=extracts&explaintext=1&exintro=1&redirects=1&format=json&titles="+encodeURIComponent(first.title);
-      const pageResp=await fetch(pageUrl,{headers:{"accept":"application/json","user-agent":"KravMagaTurkPublicAssistant/1.0 (https://kravmaga.com.tr/iletisim)"},signal:AbortSignal.timeout(4500)});
+      const pageResp=await fetch(pageUrl,{
+        headers:{"accept":"application/json","user-agent":"KravMagaTurkPublicAssistant/1.1 (https://kravmaga.com.tr/iletisim)"},
+        signal:AbortSignal.timeout(4500)
+      });
       if(pageResp.ok){
         const parsed=await pageResp.json();
         const pages=parsed.query&&parsed.query.pages?Object.values(parsed.query.pages):[];
-        if(pages[0]&&typeof pages[0].extract==="string"&&pages[0].extract.length>80)excerpt=pages[0].extract.slice(0,1800);
+        if(pages[0]&&typeof pages[0].extract==="string"&&pages[0].extract.length>70)
+          excerpt=pages[0].extract.slice(0,1700);
       }
     }catch(_){}
-    return [{
+    if(excerpt.length<65)return null;
+    return {
       title:String(first.title).slice(0,150),
       url:"https://"+lang+".wikipedia.org/wiki/"+encodeURIComponent(String(first.title).replace(/\s/g,"_")),
-      excerpt,
-      kind:"public",
-      score:3
-    }].filter(x=>x.excerpt);
+      excerpt,kind:"public",score:4
+    };
+  }catch(_){return null;}
+}
+async function wikiFacts(q,language) {
+  const subject=wikipediaSubject(q);
+  const languages=language==="tr"?["tr","en"]:["en","tr"];
+  for(const lang of languages){
+    const result=await searchWikipedia(subject,lang);
+    if(result)return [result];
+  }
+  return [];
+}
+async function publicOrganizationFacts(q) {
+  // Only preselected organizational sources, never arbitrary URLs from visitors.
+  if(!/\b(eyal|yanilov|kmg|krav maga global)\b/i.test(norm(q)))return [];
+  try{
+    const url="https://krav-maga.com/about/";
+    const r=await fetch(url,{headers:{"accept":"text/html"},signal:AbortSignal.timeout(5000),cf:{cacheTtl:300}});
+    if(!r.ok||!(r.headers.get("content-type")||"").includes("text/html"))return [];
+    const txt=findSnippets((await r.text()).slice(0,85000),q);
+    return txt.length>100?[{title:"Krav Maga Global — Kuruluş ve tarihçe",url,excerpt:txt.slice(0,1250),kind:"public",score:5}]:[];
   }catch(_){return [];}
 }
 function validUrl(s) {
@@ -144,7 +192,12 @@ async function webFacts(q,env) {
 }
 function officialQuestion(q) {
   const n=" "+norm(q)+" ";
-  return ["krav","akademi","bulent","cetin","sinif","kontenjan","seans","kurs","ders","kitap","sicil","egitmen","egitim","ucret","fiyat","randevu","belge","online","salon","kayit"].some(s=>n.includes(s));
+  // Do not mistake other Krav Maga organisations or people for KMT itself.
+  if(/\b(yanilov|kmg|krav maga global|ikmf|lichtenfeld|avikzar|moyal)\b/.test(n))return false;
+  return ["kmt","krav maga turk","akademi","bulent","cetin",
+    "sinif","kontenjan","seans","kurs","ders","kitap","sicil",
+    "egitim","ucret","fiyat","randevu","belge","salon","kayit",
+    "iletisim","kadikoy","baslangic","ozel ders","ogrenci"].some(s=>n.includes(s));
 }
 async function compose(q,history,lang,env) {
   const own=officialQuestion(q), kb=await kbFacts(q);
@@ -153,8 +206,8 @@ async function compose(q,history,lang,env) {
     const pages=await siteFacts(q);
     sources=[...kb,...pages].slice(0,6);
   }else{
-    const [web,wiki]=await Promise.all([webFacts(q,env),wikiFacts(q,lang)]);
-    sources=[...web,...wiki].slice(0,5);
+    const [web,wiki,organization]=await Promise.all([webFacts(q,env),wikiFacts(q,lang),publicOrganizationFacts(q)]);
+    sources=[...organization,...web,...wiki].slice(0,5);
   }
   const langName={tr:"Türkçe",en:"English",de:"Deutsch",fr:"Français"}[lang]||"Türkçe";
   if(!sources.length) {
