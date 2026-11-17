@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-17-r2",
+  "version": "2026-11-17-r3",
   "brand": "Krav Maga Türk Akademi",
   "assistant": "KMT Akıllı Asistan",
   "note": "Yalnızca kamuya açık, doğrulanmış site bilgileri. Fiyat ve seanslar yayın değiştiğinde yeniden kontrol edilmelidir.",
@@ -98,6 +98,12 @@
       "q": "Akademinin adresi ve iletişim numarası nedir?",
       "a": "Krav Maga Türk Akademi: Yoğurtçu Şükrü Sokak No:19, Osmanağa, Kadıköy / İstanbul. İşletme WhatsApp ve iletişim telefonu: 0532 162 18 21. Ziyaret öncesinde ders/randevu uygunluğunu teyit etmenizi öneririm.",
       "url": "/iletisim"
+    },
+    {
+      "id": "origin",
+      "q": "Krav Maga tarihi, kökeni ve kurucusu hakkında bilgi verir misiniz?",
+      "a": "Krav Maga'nın gelişimi Imi Lichtenfeld'in çalışmalarıyla ilişkilidir. Sistem yakın dövüş ve kişisel savunma ihtiyaçları doğrultusunda geliştirilmiş, daha sonra sivil kullanıma da uyarlanmıştır. Günümüzde sivil, güvenlik, kolluk ve askerî eğitim ihtiyaçlarına göre farklı programları vardır.",
+      "url": "/krav-maga"
     }
   ],
   "rules": [
