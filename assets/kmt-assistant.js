@@ -227,7 +227,7 @@
       try {
         var ctrl=new AbortController();var timeout=setTimeout(function(){ctrl.abort();},18000);
         try{
-          var r=await fetch("/api/kmt-assistant",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q,language:assistantLang,history:history.slice(0,-1)}),signal:ctrl.signal,credentials:"omit"});
+          var r=await fetch("/api/kmt-research",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q,language:assistantLang,history:history.slice(0,-1)}),signal:ctrl.signal,credentials:"omit"});
           if(r.ok && (r.headers.get("content-type")||"").includes("application/json")){
             var data=await r.json();
             if(data && typeof data.answer==="string" && data.answer.trim().length){
