@@ -57,6 +57,7 @@
     return {answer:selected.map(function(x){return x.info.answer;}).join("\n\n").slice(0,3000),url:selected[0].info.url};
   }
   var embedded = [
+    {id:"capacity",terms:["kontenjan","sinif","sınıf","kac kisi","kaç kişi","kac ogrenci","kaç öğrenci","mevcut","mevcudu","katilimci","katılımcı","kalabalik","kalabalık","kapasite"],a:"Akademinin yayımladığı bilgiye göre grup sınıfları yaklaşık 15–20 kişidir. Bu sayı sınıf büyüklüğüdür; güncel boş kontenjanı göstermez. Katılım için akademiyle iletişime geçebilirsiniz.",url:"/krav-maga"},
     {id:"group",terms:["grup","baslangic","seans","salı","sali","persembe","perşembe","telafi","saat"],a:"Başlangıç sınıfında Salı ve Perşembe saat 19.30'da grup dersleri var. Ayda 8 seans için sitede 4.000 TL + %20 KDV ücreti belirtiliyor. Pazar 12.00–13.00 telafi seansı bulunuyor. İlk deneme dersi ücretsiz. Güncel durumu akademiden teyit edebilirsiniz.",url:"/krav-maga"},
     {id:"private",terms:["ozel","özel","bire","paket"],a:"Bire bir özel dersler 60 dakikalık seanslar ve 10 derslik paketler şeklinde planlanır. Sitedeki ücret seans başına 4.000 TL + KDV'dir. Uygun saatler için WhatsApp'tan randevu alabilirsiniz.",url:"/ozel-dersler"},
     {id:"bio",terms:["bulent","bülent","cetin","çetin","kimdir","hayati","özgeçmiş"],a:"Bülent Çetin, Krav Maga Türk Akademi'nin kurucu eğitmenidir. Akademide yayımlanan özgeçmişinde spora 1979'da Tae Kwon Do ile başladığı, 2. Dan siyah kuşak ve resmî hakem olduğu, 1994'te CQC çalışmalarıyla tanıştığı ve 2016'da GIC-1/GIC-2 eğitmen eğitimlerini tamamladığı belirtilir. Bunlar akademinin yayımladığı özgeçmiş bilgileri olup bağımsız resmî doğrulama anlamına gelmez.",url:"/bulent-cetin"},
@@ -80,7 +81,7 @@
     };
     var ordered = embedded.map(function(x){return {e:x,n:score(x)};}).sort(function(a,b){return b.n-a.n;});
     var found=ordered[0];
-    if(!found || found.n===0) return {answer:"Bu konuda onaylanmış ayrıntılı bilgi bulamadım. Yanlış bilgi vermemek için sizi akademimizin WhatsApp hattına yönlendirebilirim. Konuyu biraz daha ayrıntılı yazarsanız yardımcı olmaya çalışırım.",url:"/iletisim"};
+    if(!found || found.n===0)return {answer:"Bu soruyla ilgili doğrulanmış bilgi bulamadım. Akademinin ilgili sayfasını kontrol edebilir veya WhatsApp üzerinden bilgi alabilirsiniz. Kesin bilgi olmadan tahminde bulunmam.",url:"/iletisim"};
     var compound = /\b(ve|ayrica|ayrıca|hem|bir de)\b/i.test(s) || s.length>95;
     var selected = compound ? ordered.filter(function(x){return x.n>0;}).slice(0,3) : [found];
     return {answer:selected.map(function(x){return x.e.a;}).join("\n\n").slice(0,2400),url:selected[0].e.url};
@@ -208,7 +209,7 @@
       status.textContent=translate("working","Yanıt hazırlanıyor...");
       var found=null;var usedServer=false;
       try {
-        var ctrl=new AbortController();var timeout=setTimeout(function(){ctrl.abort();},13000);
+        var ctrl=new AbortController();var timeout=setTimeout(function(){ctrl.abort();},18000);
         try{
           var r=await fetch("/api/kmt-assistant",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q,language:assistantLang,history:history.slice(0,-1)}),signal:ctrl.signal,credentials:"omit"});
           if(r.ok && (r.headers.get("content-type")||"").includes("application/json")){
