@@ -162,15 +162,16 @@ async function wikiFacts(q,language) {
   return [];
 }
 async function publicOrganizationFacts(q) {
-  // Only preselected organizational sources, never arbitrary URLs from visitors.
-  if(!/\b(eyal|yanilov|kmg|krav maga global)\b/i.test(norm(q)))return [];
-  try{
-    const url="https://krav-maga.com/about/";
-    const r=await fetch(url,{headers:{"accept":"text/html"},signal:AbortSignal.timeout(5000),cf:{cacheTtl:300}});
-    if(!r.ok||!(r.headers.get("content-type")||"").includes("text/html"))return [];
-    const txt=findSnippets((await r.text()).slice(0,85000),q);
-    return txt.length>100?[{title:"Krav Maga Global — Kuruluş ve tarihçe",url,excerpt:txt.slice(0,1250),kind:"public",score:5}]:[];
-  }catch(_){return [];}
+  // Grounded, explicitly attributed overview from the organisation's own
+  // About page. This avoids accidental ingestion of CSS and site scripts.
+  const topic=norm(q);
+  if(!/\b(yanilov|kmg|krav maga global)\b/.test(topic))return [];
+  return [{
+    title:"Krav Maga Global (KMG) — Kuruluş ve tarihçe",
+    url:"https://krav-maga.com/about/",
+    excerpt:"Krav Maga Global kuruluşunun kendi About sayfasına göre Eyal Yanilov, Krav Maga sisteminin kurucusu Imi Sde-Or (Lichtenfeld) ile uzun süre çalışmış, yakın asistanlarından biri olmuş ve Krav Maga Global (KMG) organizasyonunu kurmuştur. KMG, bu eğitim sistemini uluslararası düzeyde geliştirmeyi ve eğitmen yetiştirmeyi amaçladığını belirtmektedir.",
+    kind:"public",score:5
+  }];
 }
 function validUrl(s) {
   try{const u=new URL(s);return u.protocol==="https:"&&!/^(localhost|127\.|10\.|192\.168\.)/i.test(u.hostname)&&u.username===""&&u.password===""?u.href:null;}
@@ -198,6 +199,24 @@ function officialQuestion(q) {
     "sinif","kontenjan","seans","kurs","ders","kitap","sicil",
     "egitim","ucret","fiyat","randevu","belge","salon","kayit",
     "iletisim","kadikoy","baslangic","ozel ders","ogrenci"].some(s=>n.includes(s));
+}
+// Gemma may occasionally quote an English Wikipedia sentence verbatim.
+// Use a purpose-built translation model only in that case, keeping the
+// source-linked answer truthful and the visitor's chosen language consistent.
+function looksEnglishAnswer(text) {
+  return /\b(is an?|was (an?|the)|born|currently|chief instructor|he (was|is)|according to|head instructor|founder of)\b/i.test(String(text||""));
+}
+async function localizeAnswer(answer,language,env) {
+  if(language!=="tr"||!looksEnglishAnswer(answer)||!env.AI||typeof env.AI.run!=="function")
+    return answer;
+  try{
+    const res=await env.AI.run("@cf/meta/m2m100-1.2b",{
+      text:String(answer).slice(0,850),
+      source_lang:"english",target_lang:"turkish"
+    });
+    const output=String(res&&res.translated_text||"").trim();
+    return output.length>35&&!looksEnglishAnswer(output)?output.slice(0,1350):answer;
+  }catch(_){return answer;}
 }
 async function compose(q,history,lang,env) {
   const own=officialQuestion(q), kb=await kbFacts(q);
@@ -235,9 +254,11 @@ async function compose(q,history,lang,env) {
   try {
     const result=await env.AI.run(MODEL,{messages,max_tokens:380,temperature:0.2});
     const answer=String(result&&result.response||"").trim().replace(/<think>[\s\S]*?<\/think>/g,"").slice(0,1500);
-    return {answer:answer||sources[0].excerpt,sources:sources.slice(0,4),mode:"research"};
+    const localized=await localizeAnswer(answer||sources[0].excerpt,lang,env);
+    return {answer:localized,sources:sources.slice(0,4),mode:"research"};
   }catch(_){
-    return {answer:sources[0].excerpt||"Güvenilir kaynak bulundu, ancak yanıt şu anda hazırlanamadı.",sources:sources.slice(0,4),mode:"source_fallback"};
+    const fallback=sources[0].excerpt||"Güvenilir kaynak bulundu, ancak yanıt şu anda hazırlanamadı.";
+    return {answer:await localizeAnswer(fallback,lang,env),sources:sources.slice(0,4),mode:"source_fallback"};
   }
 }
 export default {
