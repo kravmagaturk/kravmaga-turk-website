@@ -12,7 +12,7 @@ const ASSETS={
     mime:"application/json; charset=utf-8"
   },
   "/assets/kmt-assistant-languages.json":{
-    sha:"2b1c4247cfdff148ef98d673f488cb2fee026bdb",
+    sha:"0d89274a93f004ac020e9244e4c9dda9cd832bb5",
     mime:"application/json; charset=utf-8"
   },
   "/assets/kmt-assistant.css":{
@@ -153,6 +153,35 @@ function matchKnowledge(question,kb,lang){
  const best=ranked[0].item;
  return {answer:best.a,url:best.url,source:"academy-knowledge"};
 }
+async function getLanguages(){
+ const asset=ASSETS["/assets/kmt-assistant-languages.json"];
+ const uri="https://raw.githubusercontent.com/kravmagaturk/kravmaga-turk-website/"+
+  asset.sha+"/assets/kmt-assistant-languages.json";
+ const response=await fetch(uri,{cf:{cacheEverything:true,cacheTtl:300},headers:{"accept":"application/json"}});
+ if(!response.ok)throw Error("languages unavailable");
+ return response.json();
+}
+function matchLocalized(question,languagePack,lang){
+ const data=languagePack?.locales?.[lang]?.answers;
+ if(!data)return null;
+ const q=norm(question);
+ const keys=tokens(q);
+ const candidates=Object.entries(data).map(([id,entry])=>{
+  let n=0;
+  const phrases=Array.isArray(entry?.keywords)?entry.keywords:[];
+  for(const phrase of phrases){
+   const normalized=norm(phrase);
+   if(normalized.length<3)continue;
+   if(q.includes(normalized)){n+=normalized.includes(" ")?5:3;continue;}
+   const matched=tokens(normalized).filter(w=>keys.some(k=>stem(w)===stem(k))).length;
+   if(matched>=2)n+=matched;
+  }
+  return {id,entry,n};
+ }).sort((a,b)=>b.n-a.n);
+ const best=candidates[0];
+ if(!best||best.n<3||typeof best.entry.answer!=="string")return null;
+ return {answer:best.entry.answer,url:best.entry.url||"/krav-maga",source:"academy-translated"};
+}
 async function searchSite(question,lang){
  if(lang!=="tr")return null;
  const topic=topicFor(question);
@@ -200,9 +229,14 @@ async function answer(request){
  if(!q||q.length>500)return json({error:"Soru uzunluğu geçersiz."},400,origin);
  let result=null;
  try{
-  const kb=await getKnowledge();
-  result=matchKnowledge(q,kb,lang);
-  if(!result)result=await searchSite(q,lang);
+  if(lang==="tr"){
+   const kb=await getKnowledge();
+   result=matchKnowledge(q,kb,lang);
+   if(!result)result=await searchSite(q,lang);
+  }else{
+   const pack=await getLanguages();
+   result=matchLocalized(q,pack,lang);
+  }
  }catch(e){console.log("KMT assistant site retrieval unavailable",String(e?.message||e));}
  return json(result||{answer:LOCALIZED[lang],url:"/iletisim",source:"no-verified-answer"},200,origin);
 }
