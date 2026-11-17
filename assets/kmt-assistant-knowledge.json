@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16",
+  "version": "2026-11-17",
   "brand": "Krav Maga Türk Akademi",
   "assistant": "KMT Akıllı Asistan",
   "note": "Yalnızca kamuya açık, doğrulanmış site bilgileri. Fiyat ve seanslar yayın değiştiğinde yeniden kontrol edilmelidir.",
@@ -19,6 +19,12 @@
       "id": "group",
       "q": "Grup ders günleri, saatleri ve ücretleri nedir?",
       "a": "Başlangıç sınıfında Salı ve Perşembe günleri saat 19.30'da grup dersi yapılır. Ayda 8 seans için web sitesinde aylık 4.000 TL + %20 KDV bilgisi yer alıyor. Pazar 12.00–13.00 telafi seansı bilgisi bulunuyor. İlk deneme dersi ücretsizdir. Güncel kontenjan ve olası değişiklikler için akademiyle görüşebilirsiniz.",
+      "url": "/krav-maga"
+    },
+    {
+      "id": "capacity",
+      "q": "Krav Maga sınıflarında kaç kişi ders yapıyor, kontenjan kaç kişilik?",
+      "a": "Krav Maga Türk Akademi'nin yayımladığı katılım bilgilerine göre yetişkin grup sınıfları yaklaşık 15–20 kişidir. Bu bilgi sınıfların yaklaşık büyüklüğünü belirtir; şu anda kaç boş yer bulunduğunu göstermez. Güncel yer durumu ve ilk derse katılım için akademiyle iletişime geçebilirsiniz.",
       "url": "/krav-maga"
     },
     {
@@ -77,11 +83,13 @@
     }
   ],
   "rules": [
+    "Sınıf büyüklüğü ile o an müsait kontenjanı ayır. Sınıflar yaklaşık 15–20 kişidir; kesin boş yer bilgisi verme.",
     "Ödeme, kayıt, kontenjan, anlık ders iptali veya kesin basım tarihi uydurma.",
     "Belgeler sayfasındaki çizimleri orijinal diploma veya yetki belgesi diye sunma.",
     "Sertifikalar, rütbeler ve yetki konusunda yalnızca akademi sitesinde yer alan beyanları atıfla anlat.",
     "Savunmayı güvenlik ve uzaklaşma odağında açıkla; kişilere zarar verme yöntemi verme.",
     "Özel üyelik, sicil, aidat ve yönetim verilerine erişim yok.",
-    "Emin olmadığın güncel fiyat, saat, mevzuat ve yayın takvimi için WhatsApp'a yönlendir."
+    "Emin olmadığın güncel fiyat, saat, mevzuat ve yayın takvimi için WhatsApp'a yönlendir.",
+    "Site sayfalarında bulunmayan güncel, hukuki, mali veya kurumsal bilgiler için tahminde bulunma; resmî kaynağa ve iletişime yönlendir."
   ]
 }
