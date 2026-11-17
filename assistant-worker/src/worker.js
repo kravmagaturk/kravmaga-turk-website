@@ -176,7 +176,7 @@ async function compose(q,history,lang,env) {
 export default {
   async fetch(request,env){
     const path=new URL(request.url).pathname;
-    if(path!=="/api/kmt-assistant")return json({error:"Bulunamadı"},404);
+    if(path!=="/api/kmt-research"&&path!=="/api/kmt-assistant")return json({error:"Bulunamadı"},404);
     const origin=request.headers.get("origin")||"";
     if(!ALLOWED_ORIGINS.has(origin))return json({error:"Yetkisiz köken."},403);
     if(request.method==="OPTIONS")return new Response(null,{status:204,headers:{
