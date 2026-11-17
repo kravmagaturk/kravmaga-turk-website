@@ -16,7 +16,7 @@ const ASSETS={
     mime:"application/json; charset=utf-8"
   },
   "/assets/kmt-assistant.css":{
-    sha:"344fe0bd1666de2ad2b6e92345a603237ebbca43",
+    sha:"a9563af2f3625e798402d5eb767d26ee5f2a0aba",
     mime:"text/css; charset=utf-8"
   }
 };
