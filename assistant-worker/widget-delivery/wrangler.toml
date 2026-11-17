@@ -1,0 +1,8 @@
+name = "kmt-assistant-widget-js"
+main = "worker.js"
+compatibility_date = "2026-11-17"
+workers_dev = true
+
+routes = [
+  { pattern = "kravmaga.com.tr/assets/kmt-assistant.js*", zone_name = "kravmaga.com.tr" }
+]
