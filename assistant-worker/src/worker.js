@@ -98,7 +98,8 @@ async function wikiFacts(q,language) {
   const lang=language==="tr"?"tr":"en";
   try{
     const root="https://"+lang+".wikipedia.org/w/api.php";
-    const query=root+"?action=query&list=search&format=json&utf8=1&srlimit=3&srsearch="+encodeURIComponent(q.slice(0,140));
+    const wikiTerm=q.replace(/ne zaman|hangi yılda|hangi yıl|kaç yılında|inşa edildi|inşa edilmiş|ne zaman yapıldı|kimdir|nerededir|nedir|nasıl|yapıldı/gi," ").replace(/[?!.,]/g," ").replace(/\s+/g," ").trim()||q;
+    const query=root+"?action=query&list=search&format=json&utf8=1&srlimit=3&srsearch="+encodeURIComponent(wikiTerm.slice(0,140));
     const r=await fetch(query,{headers:{"accept":"application/json","user-agent":"KravMagaTurkPublicAssistant/1.0 (https://kravmaga.com.tr/iletisim)"},signal:AbortSignal.timeout(5500)});
     if(!r.ok)throw Error("wiki "+r.status);
     const data=await r.json();
