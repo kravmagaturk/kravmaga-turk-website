@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-17-r2",
+  "version": "2026-11-17-r3",
   "note": "Translated summaries of existing public FAQ only; not independent verification.",
   "locales": {
     "en": {
@@ -430,7 +430,11 @@
             "teilnahme verpflichtend",
             "fehlstunden",
             "muss ich teilnehmen",
-            "regelmäßig kommen"
+            "regelmäßig kommen",
+            "verpflichtend",
+            "anwesend sein",
+            "teilnehmen müssen",
+            "anwesenheitspflicht"
           ],
           "answer": "Laut den veröffentlichten Teilnahmeinformationen der Akademie besteht keine Anwesenheitspflicht. Regelmäßiges Training unterstützt aber die Entwicklung und die Einstufung.",
           "url": "/krav-maga"
