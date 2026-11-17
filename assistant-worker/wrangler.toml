@@ -1,11 +1,19 @@
 name = "kmt-akilli-asistan-api"
 main = "src/worker.js"
-compatibility_date = "2026-11-16"
+compatibility_date = "2026-11-17"
 workers_dev = true
 
-[vars]
-OPENAI_MODEL = "gpt-6-luna"
+routes = [
+  { pattern = "kravmaga.com.tr/api/kmt-assistant*", zone_name = "kravmaga.com.tr" }
+]
 
-# RATE_LIMIT_KV binding ayrıca tanımlanır.
-# Secret'lar Cloudflare'de eklenir: OPENAI_API_KEY, RATE_SALT.
-# KESİNLİKLE GitHub'a veya istemci koduna koymayın.
+[ai]
+binding = "AI"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT_KV"
+id = "d0cb4699c7304dbeb14eddb68cf950c1"
+
+[vars]
+# Ücretli geniş kapsamlı web araması, AI Gateway kredisi tanımlanana kadar kapalı.
+ENABLE_WEB_SEARCH = "false"
