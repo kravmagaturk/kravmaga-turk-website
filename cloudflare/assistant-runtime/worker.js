@@ -12,7 +12,7 @@ const ASSETS={
     mime:"application/json; charset=utf-8"
   },
   "/assets/kmt-assistant-languages.json":{
-    sha:"0d89274a93f004ac020e9244e4c9dda9cd832bb5",
+    sha:"53c6e6a861406962c3144055692a6972a825084e",
     mime:"application/json; charset=utf-8"
   },
   "/assets/kmt-assistant.css":{
