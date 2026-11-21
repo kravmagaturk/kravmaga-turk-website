@@ -45,7 +45,7 @@ def optimize(source_rel: str, page_rels: tuple[str, ...]) -> None:
         if encoded.size != original_rgba.size:
             raise AssertionError(f"Image size changed: {source_rel}")
         diff = ImageChops.difference(original_rgba, encoded.convert("RGBA"))
-        if diff.getbbox() is not None:
+        if any(channel.getbbox() is not None for channel in diff.split()):
             raise AssertionError(f"Lossless image pixels changed: {source_rel}")
 
     if new_size > old_size * MAX_RATIO:
