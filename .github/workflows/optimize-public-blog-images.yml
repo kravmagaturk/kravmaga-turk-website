@@ -1,0 +1,39 @@
+name: Optimize public blog images (lossless WebP)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/optimize-public-blog-images.yml"
+      - "scripts/optimize_public_blog_images.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Pillow
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Convert and verify public blog images
+        run: python scripts/optimize_public_blog_images.py
+      - name: Commit optimized media if verified
+        run: |
+          git add -A -- assets blog.html blog-kolluk-ozel-guvenlik-krav-maga-egitimi.html blog-cocuklar-icin-yangin-guvenligi.html blog-online-egitim-27-ulkede.html blog-acil-cikis-plani-kalabalik-ortam.html
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "perf: use verified lossless WebP in public articles [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No size-saving, pixel-identical WebP changes."
+          fi
