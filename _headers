@@ -29,3 +29,13 @@
 
 /assets/kmt-v20261115/images/*
   Cache-Control: public, max-age=2592000, immutable
+
+# Stable, pixel-verified public blog WebP derivatives; original PNGs are retained.
+/assets/blog/kolluk-ozel-guvenlik-krav-maga-20261121.webp
+  Cache-Control: public, max-age=86400
+/assets/blog/cocuklarda-yangin-guvenligi-surunme-20261115.webp
+  Cache-Control: public, max-age=86400
+/assets/blog/udemy-ogrenci-haritasi-2026-10-30-koyu.webp
+  Cache-Control: public, max-age=86400
+/assets/acil-cikis-plani-bulent-burcu-20261027.webp
+  Cache-Control: public, max-age=86400
