@@ -7,7 +7,9 @@
       document.head.appendChild(icon);
     }
     icon.type = "image/png";
-    icon.href = "/assets/brand/logo-1948.png";
+    const kmtUpdatedBrandPages = new Set(["/blog", "/iletisim", "/belgeler", "/krav-maga-kadikoy"]);
+    const currentPath = window.location.pathname.replace(/\.html$/, "").replace(/\/$/, "") || "/";
+    icon.href = kmtUpdatedBrandPages.has(currentPath) ? "/assets/brand/kmt-favicon-96-20261121.png" : "/assets/brand/logo-1948.png";
   }
 
   ensureBrowserLogo();
