@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-11-22T18:13:14.567151+00:00",
+  "0": {
+    "url": "https://kravmaga.com.tr/?kmt-redeploy-check=r2",
+    "status": 200,
+    "final_url": "https://kravmaga.com.tr/?kmt-redeploy-check=r2",
+    "bytes": 23002,
+    "cf_cache_status": "HIT",
+    "new_build": false,
+    "r2_asset_reference": false,
+    "webp": false
+  },
+  "1": {
+    "url": "https://www.kravmaga.com.tr/?kmt-redeploy-check=r2",
+    "status": 200,
+    "final_url": "https://kravmaga.com.tr/?kmt-redeploy-check=r2",
+    "bytes": 23002,
+    "cf_cache_status": "HIT",
+    "new_build": false,
+    "r2_asset_reference": false,
+    "webp": false
+  },
+  "2": {
+    "url": "https://kravmaga.com.tr/assets/home/kmt-egitim-uc-panel-20261122-1370.webp?v=kmt-live-20261122-r2",
+    "status": 200,
+    "final_url": "https://kravmaga.com.tr/assets/home/kmt-egitim-uc-panel-20261122-1370.webp?v=kmt-live-20261122-r2",
+    "bytes": 174286,
+    "cf_cache_status": "HIT",
+    "new_build": false,
+    "r2_asset_reference": false,
+    "webp": true
+  }
+}
