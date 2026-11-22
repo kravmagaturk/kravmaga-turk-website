@@ -1,0 +1,65 @@
+name: KMT production deployment path audit
+on:
+  push:
+    paths:
+      - ".github/workflows/kmt-deployment-path-audit.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read only nonsecret configuration and Github deployment metadata
+        run: |
+          python3 - <<'PY'
+          import os,json,pathlib,urllib.request,urllib.error,subprocess,datetime
+          base="https://api.github.com/repos/"+os.environ['GITHUB_REPOSITORY']
+          def gh(path):
+            req=urllib.request.Request(base+path,headers={"Authorization":"Bearer "+os.environ["GH_TOKEN"],"Accept":"application/vnd.github+json"})
+            try:
+              with urllib.request.urlopen(req,timeout=20) as x:return json.load(x)
+            except Exception as e:return {"error":type(e).__name__+":"+str(e)[:150]}
+          workflows=gh("/actions/workflows?per_page=100")
+          runs=gh("/actions/runs?per_page=35")
+          secrets=gh("/actions/secrets?per_page=100")
+          vars=gh("/actions/variables?per_page=100")
+          deploys=gh("/deployments?per_page=15")
+          files=subprocess.run(["git","ls-files"],capture_output=True,text=True,check=True).stdout.splitlines()
+          deploy_related=[p for p in files if ('wrangler' in p.lower() or 'cloudflare' in p.lower() or p.startswith('.github/workflows/') or p in ('package.json','_headers','_routes.json','_worker.js','_redirects'))]
+          included={}
+          for p in deploy_related:
+            if p.startswith(".github/workflows/") or p in ('package.json','wrangler.toml','wrangler.json','wrangler.jsonc','_routes.json','_worker.js'):
+              if len(included)>=25:break
+              try:
+                text=pathlib.Path(p).read_text(encoding='utf-8')
+                included[p]={"bytes":len(text),"deployer_signals":[s for s in ("cloudflare","wrangler","pages deploy","workers deploy","publish","skip ci","build") if s in text.lower()]}
+              except Exception:pass
+          out={
+            "checked_at":datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            "main_head":subprocess.run(["git","rev-parse","HEAD"],capture_output=True,text=True).stdout.strip(),
+            "deploy_related_files":deploy_related[:90],
+            "deploy_related_file_signals":included,
+            "github_workflows":[{"name":w.get("name"),"path":w.get("path"),"state":w.get("state")} for w in workflows.get('workflows',[])],
+            "recent_runs":[{"name":x.get('name'),"head_sha":x.get('head_sha'),"status":x.get('status'),"conclusion":x.get('conclusion'),"event":x.get('event'),"created_at":x.get('created_at')} for x in runs.get("workflow_runs",[])[:25]],
+            "github_secret_names":[s.get("name") for s in secrets.get("secrets",[])],
+            "github_variable_names":[s.get("name") for s in vars.get("variables",[])],
+            "github_deployments":[{"environment":d.get('environment'),"created_at":d.get('created_at'),"ref":d.get('ref'),"sha":d.get('sha')} for d in deploys[:10]] if isinstance(deploys,list) else []
+          }
+          dest=pathlib.Path("reports/kmt-deployment-audit-20261122.json")
+          dest.parent.mkdir(exist_ok=True,parents=True)
+          dest.write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n")
+          print(json.dumps(out,ensure_ascii=False,indent=2))
+          PY
+      - name: Save deployment audit
+        run: |
+          git add reports/kmt-deployment-audit-20261122.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "diagnostic: record deployment pipeline audit [skip ci]"
+          git push origin HEAD:main
