@@ -1,0 +1,45 @@
+name: Publish 2026-11-23 approved education triptych
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/home/kmt-egitim-source-20261123.png"
+      - ".github/workflows/publish-education-banner-20261123.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kmt-education-triptych-20261123
+  cancel-in-progress: false
+jobs:
+  optimize-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout latest published branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install image encoder
+        run: python3 -m pip install --quiet Pillow==11.3.0
+      - name: Optimize approved image and change only one homepage tag
+        run: python3 scripts/publish_approved_triptych_20261123.py
+      - name: Check modifications
+        run: |
+          git diff --check
+          git status --short
+      - name: Publish optimized assets and HTML
+        shell: bash
+        run: |
+          git add -- index.html \
+            assets/home/kmt-egitim-bulent-ogrenci-20261123-750.webp \
+            assets/home/kmt-egitim-bulent-ogrenci-20261123-1370.webp \
+            assets/home/kmt-egitim-bulent-ogrenci-20261123-1670.webp
+          if git diff --cached --quiet; then
+            echo 'Approved assets are already published'
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "feat(home): display approved Bülent-student education triptych with responsive WebP"
+          git push origin HEAD:main
