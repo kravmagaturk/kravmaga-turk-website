@@ -22,12 +22,12 @@ jobs:
           import json, urllib.request, urllib.error, datetime, os, re
           from pathlib import Path
           root = 'https://kravmaga.com.tr/'
-          urls = [root,root+'?kmt-deploy-check=20261122-2159',root+'assets/home/kmt-egitim-uc-panel-20261122-1370.webp',root+'assets/home/kmt-egitim-uc-panel-20261122-750.webp']
+          urls = [root,root+'?kmt-deploy-check=20261122-2159', 'https://www.kravmaga.com.tr/', 'https://www.kravmaga.com.tr/?kmt-deploy-check=20261122-2159',root+'index.html',root+'assets/home/kmt-egitim-uc-panel-20261122-1370.webp',root+'assets/home/kmt-egitim-uc-panel-20261122-750.webp']
           out={'checked_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'repository_commit':os.environ.get('GITHUB_SHA'),'urls':[]}
           for url in urls:
               item={'url':url}
               try:
-                  req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 (KMT deployment diagnostic)','Cache-Control':'no-cache','Pragma':'no-cache'})
+                  req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 (Linux; Android 17; Mobile) Chrome/130.0.0.0 Safari/537.36','Cache-Control':'no-cache','Pragma':'no-cache'})
                   with urllib.request.urlopen(req,timeout=20) as res:
                       data=res.read()
                       item.update({'http_status':res.status,'final_url':res.geturl(),'content_type':res.headers.get('Content-Type'),'bytes':len(data),'cf_cache_status':res.headers.get('CF-Cache-Status'),'cache_control':res.headers.get('Cache-Control'),'server':res.headers.get('Server'),'cf_ray':res.headers.get('CF-RAY')})
@@ -42,7 +42,7 @@ jobs:
               except Exception as e:
                   item.update({'error':type(e).__name__+': '+str(e)[:220]})
               out['urls'].append(item)
-          target=Path('reports/public-site-verify-20261122.json')
+          target=Path('reports/public-site-variants-20261122.json')
           target.parent.mkdir(exist_ok=True,parents=True)
           target.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
           print(json.dumps(out,ensure_ascii=False,indent=2))
@@ -52,5 +52,5 @@ jobs:
           git add reports/public-site-verify-20261122.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "diagnostic: record public site response after triptych deployment [skip ci]"
+          git commit -m "diagnostic: record www and mobile site variants [skip ci]"
           git push origin HEAD:main
