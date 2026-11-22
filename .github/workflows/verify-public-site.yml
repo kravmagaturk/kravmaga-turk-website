@@ -49,8 +49,9 @@ jobs:
           PY
       - name: Save public diagnostic for transparent review
         run: |
-          git add reports/public-site-verify-20261122.json
+          git add reports/public-site-variants-20261122.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --cached --quiet; then echo "No report change"; exit 0; fi
           git commit -m "diagnostic: record www and mobile site variants [skip ci]"
           git push origin HEAD:main
