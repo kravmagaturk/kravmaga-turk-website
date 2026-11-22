@@ -1,0 +1,82 @@
+name: KMT — purge only stale homepage and triptych assets
+on:
+  push:
+    paths:
+      - ".github/workflows/kmt-purge-home-cache.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kmt-purge-specific-home
+  cancel-in-progress: false
+jobs:
+  purge:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+      CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Purge only public homepage and three-panel image URLs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os, json, urllib.request, urllib.error
+          from datetime import datetime, timezone
+          from pathlib import Path
+          token = os.environ.get("CLOUDFLARE_API_TOKEN") or os.environ.get("CF_API_TOKEN")
+          zone_id = os.environ.get("CLOUDFLARE_ZONE_ID") or os.environ.get("CF_ZONE_ID")
+          urls = [
+            "https://kravmaga.com.tr/",
+            "https://www.kravmaga.com.tr/",
+            "https://kravmaga.com.tr/index.html",
+            "https://kravmaga.com.tr/assets/home/egitim-secenekleri-20261006-1370.webp",
+            "https://kravmaga.com.tr/assets/home/egitim-secenekleri-20261006-750.webp",
+            "https://kravmaga.com.tr/assets/home/kmt-egitim-uc-panel-20261122-1370.webp",
+            "https://kravmaga.com.tr/assets/home/kmt-egitim-uc-panel-20261122-750.webp",
+          ]
+          report = {"checked_at": datetime.now(timezone.utc).isoformat(),
+                    "requested_urls":urls,"success":False,"state":"not_started"}
+          def call(method, endpoint, payload=None):
+            data = json.dumps(payload).encode() if payload is not None else None
+            req = urllib.request.Request(endpoint, method=method, data=data,
+               headers={"Authorization":"Bearer "+token,"Content-Type":"application/json"})
+            try:
+              with urllib.request.urlopen(req, timeout=25) as res:
+                return json.load(res)
+            except urllib.error.HTTPError as e:
+              return {"success":False,"errors":[{"code":e.code,"message":e.read(2048).decode("utf-8","replace")[:350]}]}
+          if not token:
+            report["state"]="no_cloudflare_token_in_github_secrets"
+          else:
+            if not zone_id:
+              discovered = call("GET","https://api.cloudflare.com/client/v4/zones?name=kravmaga.com.tr")
+              matches = [z for z in discovered.get("result",[]) if z.get("name")=="kravmaga.com.tr"]
+              if matches:
+                zone_id=matches[0].get("id")
+              else:
+                report["state"]="zone_id_unavailable_or_insufficient_zone_read_permission"
+                report["errors"]=[str(x.get("code")) for x in discovered.get("errors",[])]
+            if zone_id:
+              result=call("POST",f"https://api.cloudflare.com/client/v4/zones/{zone_id}/purge_cache",
+                           {"files":urls})
+              report["success"]=result.get("success",False)
+              report["state"]="purge_completed" if report["success"] else "purge_failed"
+              report["errors"]=[str(x.get("code")) for x in result.get("errors",[])]
+          path=Path("reports/kmt-targeted-cache-purge-20261122.json")
+          path.parent.mkdir(exist_ok=True,parents=True)
+          path.write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n")
+          print("Targeted Cloudflare purge state:",report["state"])
+          PY
+      - name: Record safe result without credentials
+        shell: bash
+        run: |
+          git add reports/kmt-targeted-cache-purge-20261122.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "diagnostic: targeted Cloudflare homepage cache purge result [skip ci]"
+          git push origin HEAD:main
