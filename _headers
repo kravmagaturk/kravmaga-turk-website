@@ -39,3 +39,14 @@
   Cache-Control: public, max-age=86400
 /assets/acil-cikis-plani-bulent-burcu-20261027.webp
   Cache-Control: public, max-age=86400
+
+# Public, versioned or separately named optimized photographs; modest cache TTL
+# keeps future photograph replacements responsive without affecting HTML/admin.
+/assets/home/*.webp
+  Cache-Control: public, max-age=86400
+/assets/krav-maga/*.webp
+  Cache-Control: public, max-age=86400
+/assets/legionnaire/*.webp
+  Cache-Control: public, max-age=86400
+/assets/social/blog-1200x630*.webp
+  Cache-Control: public, max-age=86400
