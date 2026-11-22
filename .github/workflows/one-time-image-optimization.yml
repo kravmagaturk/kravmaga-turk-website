@@ -1,0 +1,45 @@
+name: One-time image delivery optimization
+on:
+  push:
+    paths:
+      - ".github/workflows/one-time-image-optimization.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kmt-one-time-images
+  cancel-in-progress: false
+jobs:
+  optimize:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install WebP encoder
+        run: python -m pip install --disable-pip-version-check "Pillow>=11,<13"
+      - name: Convert only allowlisted site photos and poster
+        run: python scripts/optimize_legacy_images.py
+      - name: Ensure no whitespace or syntax errors in patch
+        run: git diff --check
+      - name: Commit optimized assets and HTML references
+        shell: bash
+        run: |
+          git add -A -- \
+            index.html legionnaire.html krav-maga.html cocuk-krav-maga.html \
+            blog-krav-maga-dunya-gundemi-ekim-2026.html \
+            blog-okul-guvenligi-ozel-egitimli-guvenlik.html \
+            assets/home assets/legionnaire assets/krav-maga assets/press assets/social
+          if git diff --cached --quiet; then
+            echo "No beneficial image conversions; existing originals kept."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "perf: serve smaller WebP photos with responsive source sizes [skip ci]"
+          git push origin HEAD:main
