@@ -61,16 +61,11 @@
     <source media="(min-width:761px)" srcset="/assets/home/kmt-hero-1280-20261122.webp" type="image/webp">
     <img src="/assets/home/kmt-hero-1280-20261122.webp" alt="Krav Maga Türk Akademi eğitmenleri Bülent Çetin ve Burcu Hoca; Krav Maga Türk amblemi ve Legionnaire dövmesi" width="1280" height="640" fetchpriority="high" loading="eager" decoding="async">
   </picture>
+  <div class="kmt-hero-technique" aria-hidden="true">
+    <img src="/assets/home/kmt-grey-krav-maga-technique-20261123.png" alt="" width="1086" height="1448" loading="eager" decoding="async" fetchpriority="low">
+  </div>
   <div class="kmt-home-hero-inner">
-    <div class="kmt-home-hero-copy">
-      <p class="kmt-home-eyebrow">KRAV MAGA TÜRK · KADIKÖY / İSTANBUL</p>
-      <h1 id="kmt-home-h1">KRAV MAGA <span>TÜRK AKADEMİ</span></h1>
-      <p class="kmt-home-lead">Kişisel güvenlik, farkındalık, güvenli mesafe ve kontrollü savunma. Başlangıç ve ileri seviye Krav Maga eğitimleri, deneyimli eğitmenler eşliğinde.</p>
-      <div class="kmt-home-hero-actions">
-        <a class="kmt-home-btn kmt-home-btn-primary" href="#kmt-egitim-title">Eğitimleri İncele <span aria-hidden="true">↗</span></a>
-        <a class="kmt-home-btn kmt-home-btn-outline" href="/iletisim">Konum ve İletişim <span aria-hidden="true">↗</span></a>
-      </div>
-    </div>
+    <h1 id="kmt-home-h1" class="kmt-hero-visually-hidden-title">Krav Maga Türk Akademi</h1>
   </div>
 </section>
 <style id="kmt-home-hero-v20261122">
@@ -127,6 +122,12 @@
 }
 @media(max-width:360px){.kmt-home-hero-inner{padding-left:14px;padding-right:14px}.kmt-selected-hero h1{font-size:29px}}
 @media(prefers-reduced-motion:reduce){.kmt-home-btn{transition:none!important}}
+/* The supplied translucent technique figure is a separate overlay. Original hero picture is untouched. */
+.kmt-selected-hero .kmt-home-hero-inner{position:absolute!important;left:0;top:0;width:1px!important;height:1px!important;padding:0!important;margin:0!important;overflow:hidden!important;clip-path:inset(50%)}
+.kmt-selected-hero .kmt-hero-visually-hidden-title{position:absolute!important;width:1px!important;height:1px!important;white-space:nowrap!important;overflow:hidden!important;clip-path:inset(50%);margin:0!important;padding:0!important}
+.kmt-selected-hero .kmt-hero-technique{position:absolute;z-index:2;left:clamp(12px,1.6vw,28px);top:52%;transform:translateY(-50%);width:min(21vw,315px);max-height:78%;opacity:.42;pointer-events:none;display:block}
+.kmt-selected-hero .kmt-hero-technique img{display:block;width:100%;height:auto;max-height:100%;object-fit:contain;object-position:left center}
+@media(max-width:760px){.kmt-selected-hero .kmt-hero-technique{left:4px;top:51%;width:min(23vw,110px);max-height:90%;opacity:.3}}
 </style>
 
 <section class="kmt-seo-intro" aria-labelledby="kmt-seo-intro-title">
