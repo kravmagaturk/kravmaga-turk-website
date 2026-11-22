@@ -50,3 +50,8 @@
   Cache-Control: public, max-age=86400
 /assets/social/blog-1200x630*.webp
   Cache-Control: public, max-age=86400
+# Legacy homepage image aliases: always revalidate until old HTML disappears.
+/assets/home/egitim-secenekleri-20261006-1370.webp
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/home/egitim-secenekleri-20261006-750.webp
+  Cache-Control: public, max-age=0, must-revalidate
