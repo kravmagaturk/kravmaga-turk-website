@@ -1,0 +1,125 @@
+{
+  "checked_at": "2026-11-22T19:39:49.447082+00:00",
+  "repository_commit": "2b66a17495de257dd8f0ebfdd806dadc7c52a084",
+  "urls": [
+    {
+      "url": "https://kravmaga.com.tr/",
+      "http_status": 200,
+      "final_url": "https://kravmaga.com.tr/",
+      "content_type": "text/html",
+      "bytes": 23081,
+      "cf_cache_status": "HIT",
+      "cache_control": "public, max-age=0, must-revalidate",
+      "server": "cloudflare",
+      "cf_ray": "a5ea67045ea529c6-MSP",
+      "approved_triptych_present": true,
+      "old_triptych_present": false,
+      "cards_links": {
+        "href=\"/krav-maga\"": true,
+        "href=\"/ozel-dersler\"": true,
+        "href=\"/cocuk-krav-maga\"": true
+      },
+      "homepage_build_marker": "production-20261122-approved-triptych-r2"
+    },
+    {
+      "url": "https://kravmaga.com.tr/?kmt-deploy-check=20261122-2159",
+      "http_status": 200,
+      "final_url": "https://kravmaga.com.tr/?kmt-deploy-check=20261122-2159",
+      "content_type": "text/html",
+      "bytes": 23081,
+      "cf_cache_status": "HIT",
+      "cache_control": "public, max-age=0, must-revalidate",
+      "server": "cloudflare",
+      "cf_ray": "a5ea6704fcdda20f-MSP",
+      "approved_triptych_present": true,
+      "old_triptych_present": false,
+      "cards_links": {
+        "href=\"/krav-maga\"": true,
+        "href=\"/ozel-dersler\"": true,
+        "href=\"/cocuk-krav-maga\"": true
+      },
+      "homepage_build_marker": "production-20261122-approved-triptych-r2"
+    },
+    {
+      "url": "https://www.kravmaga.com.tr/",
+      "http_status": 200,
+      "final_url": "https://kravmaga.com.tr/",
+      "content_type": "text/html",
+      "bytes": 23081,
+      "cf_cache_status": "HIT",
+      "cache_control": "public, max-age=0, must-revalidate",
+      "server": "cloudflare",
+      "cf_ray": "a5ea67061b1e9bd0-MSP",
+      "approved_triptych_present": true,
+      "old_triptych_present": false,
+      "cards_links": {
+        "href=\"/krav-maga\"": true,
+        "href=\"/ozel-dersler\"": true,
+        "href=\"/cocuk-krav-maga\"": true
+      },
+      "homepage_build_marker": "production-20261122-approved-triptych-r2"
+    },
+    {
+      "url": "https://www.kravmaga.com.tr/?kmt-deploy-check=20261122-2159",
+      "http_status": 200,
+      "final_url": "https://kravmaga.com.tr/?kmt-deploy-check=20261122-2159",
+      "content_type": "text/html",
+      "bytes": 23081,
+      "cf_cache_status": "HIT",
+      "cache_control": "public, max-age=0, must-revalidate",
+      "server": "cloudflare",
+      "cf_ray": "a5ea670719efa1ca-MSP",
+      "approved_triptych_present": true,
+      "old_triptych_present": false,
+      "cards_links": {
+        "href=\"/krav-maga\"": true,
+        "href=\"/ozel-dersler\"": true,
+        "href=\"/cocuk-krav-maga\"": true
+      },
+      "homepage_build_marker": "production-20261122-approved-triptych-r2"
+    },
+    {
+      "url": "https://kravmaga.com.tr/index.html",
+      "http_status": 200,
+      "final_url": "https://kravmaga.com.tr/",
+      "content_type": "text/html",
+      "bytes": 23081,
+      "cf_cache_status": "HIT",
+      "cache_control": "public, max-age=0, must-revalidate",
+      "server": "cloudflare",
+      "cf_ray": "a5ea67080c78e02b-MSP",
+      "approved_triptych_present": true,
+      "old_triptych_present": false,
+      "cards_links": {
+        "href=\"/krav-maga\"": true,
+        "href=\"/ozel-dersler\"": true,
+        "href=\"/cocuk-krav-maga\"": true
+      },
+      "homepage_build_marker": "production-20261122-approved-triptych-r2"
+    },
+    {
+      "url": "https://kravmaga.com.tr/assets/home/kmt-egitim-uc-panel-20261122-1370.webp",
+      "http_status": 200,
+      "final_url": "https://kravmaga.com.tr/assets/home/kmt-egitim-uc-panel-20261122-1370.webp",
+      "content_type": "image/webp",
+      "bytes": 174286,
+      "cf_cache_status": "HIT",
+      "cache_control": "public, max-age=86400",
+      "server": "cloudflare",
+      "cf_ray": "a5ea67088a02a600-MSP",
+      "valid_webp": true
+    },
+    {
+      "url": "https://kravmaga.com.tr/assets/home/kmt-egitim-uc-panel-20261122-750.webp",
+      "http_status": 200,
+      "final_url": "https://kravmaga.com.tr/assets/home/kmt-egitim-uc-panel-20261122-750.webp",
+      "content_type": "image/webp",
+      "bytes": 78216,
+      "cf_cache_status": "HIT",
+      "cache_control": "public, max-age=86400",
+      "server": "cloudflare",
+      "cf_ray": "a5ea6708ffd7a218-MSP",
+      "valid_webp": true
+    }
+  ]
+}
