@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-11-22T18:06:50.237780+00:00",
+  "images": [
+    {
+      "url": "https://kravmaga.com.tr/assets/home/egitim-secenekleri-20261006-750.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "cf_cache_status": "HIT",
+      "bytes": 66304,
+      "matches_approved_file": false
+    },
+    {
+      "url": "https://kravmaga.com.tr/assets/home/egitim-secenekleri-20261006-1370.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "cf_cache_status": "HIT",
+      "bytes": 144324,
+      "matches_approved_file": false
+    },
+    {
+      "url": "https://kravmaga.com.tr/assets/home/kmt-egitim-uc-panel-20261122-750.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "cf_cache_status": "HIT",
+      "bytes": 78216,
+      "matches_approved_file": true
+    },
+    {
+      "url": "https://kravmaga.com.tr/assets/home/kmt-egitim-uc-panel-20261122-1370.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "cf_cache_status": "HIT",
+      "bytes": 174286,
+      "matches_approved_file": true
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://kravmaga.com.tr/",
+      "status": 200,
+      "final_url": "https://kravmaga.com.tr/",
+      "cf_cache_status": "HIT",
+      "new_banner_reference": true,
+      "old_banner_reference": false
+    },
+    {
+      "url": "https://www.kravmaga.com.tr/",
+      "status": 200,
+      "final_url": "https://kravmaga.com.tr/",
+      "cf_cache_status": "HIT",
+      "new_banner_reference": true,
+      "old_banner_reference": false
+    }
+  ]
+}
