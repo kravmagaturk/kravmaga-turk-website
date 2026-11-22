@@ -1,0 +1,75 @@
+name: KMT — legacy triptych image fallback
+on:
+  push:
+    paths:
+      - ".github/workflows/kmt-legacy-triptych-fallback.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kmt-triptych-legacy-fallback
+  cancel-in-progress: false
+jobs:
+  publish-fallback:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Match former homepage image filenames to user-approved graphics
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          from pathlib import Path
+          pairs=[
+             ('assets/home/kmt-egitim-uc-panel-20261122-1370.webp','assets/home/egitim-secenekleri-20261006-1370.webp'),
+             ('assets/home/kmt-egitim-uc-panel-20261122-750.webp','assets/home/egitim-secenekleri-20261006-750.webp')
+          ]
+          for source,target in pairs:
+              p=Path(source);dest=Path(target)
+              if not p.is_file() or not dest.is_file():
+                  raise SystemExit(f'Missing expected image: {source} or {target}')
+              data=p.read_bytes()
+              if data[:4]!=b'RIFF' or data[8:12]!=b'WEBP':
+                  raise SystemExit(f'Invalid approved WebP: {source}')
+              original=dest.read_bytes()
+              if original[:4]!=b'RIFF' or original[8:12]!=b'WEBP':
+                  raise SystemExit(f'Legacy target not WebP: {target}')
+              dest.write_bytes(data)
+              if hashlib.sha256(dest.read_bytes()).digest()!=hashlib.sha256(data).digest():
+                  raise SystemExit('Copy verification failed')
+              print(f'Legacy URL now serves approved image: {target} ({len(data)} bytes)')
+          PY
+      - name: Prevent future long-lived caching of legacy paths
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('_headers')
+          s=p.read_text(encoding='utf-8')
+          rules = """
+          # Legacy homepage image aliases: always revalidate until old HTML disappears.
+          /assets/home/egitim-secenekleri-20261006-1370.webp
+            Cache-Control: public, max-age=0, must-revalidate
+          /assets/home/egitim-secenekleri-20261006-750.webp
+            Cache-Control: public, max-age=0, must-revalidate
+          """
+          if '/assets/home/egitim-secenekleri-20261006-1370.webp' not in s:
+              p.write_text(s.rstrip()+'\n'+rules.strip()+'\n',encoding='utf-8')
+          PY
+      - name: Commit only legacy compatibility files
+        shell: bash
+        run: |
+          git add -- _headers \
+             assets/home/egitim-secenekleri-20261006-1370.webp \
+             assets/home/egitim-secenekleri-20261006-750.webp
+          if git diff --cached --quiet; then
+            echo 'Legacy filenames already match approved image.'
+            exit 0
+          fi
+          git diff --cached --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "fix: also serve approved education banner at legacy image URLs"
+          git push origin HEAD:main
