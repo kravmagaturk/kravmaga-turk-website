@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-11-22T18:05:18.370326+00:00",
+  "requested_urls": [
+    "https://kravmaga.com.tr/",
+    "https://www.kravmaga.com.tr/",
+    "https://kravmaga.com.tr/index.html",
+    "https://kravmaga.com.tr/assets/home/egitim-secenekleri-20261006-1370.webp",
+    "https://kravmaga.com.tr/assets/home/egitim-secenekleri-20261006-750.webp",
+    "https://kravmaga.com.tr/assets/home/kmt-egitim-uc-panel-20261122-1370.webp",
+    "https://kravmaga.com.tr/assets/home/kmt-egitim-uc-panel-20261122-750.webp"
+  ],
+  "success": false,
+  "state": "no_cloudflare_token_in_github_secrets"
+}
