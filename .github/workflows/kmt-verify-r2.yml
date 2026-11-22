@@ -1,0 +1,50 @@
+name: Verify published triptych revision r2
+on:
+  push:
+    paths:
+      - ".github/workflows/kmt-verify-r2.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read current Cloudflare public page
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from urllib.request import Request,urlopen
+          import datetime,json,re,pathlib
+          out={"checked_at":datetime.datetime.now(datetime.timezone.utc).isoformat()}
+          urls=[
+            "https://kravmaga.com.tr/?kmt-redeploy-check=r2",
+            "https://www.kravmaga.com.tr/?kmt-redeploy-check=r2",
+            "https://kravmaga.com.tr/assets/home/kmt-egitim-uc-panel-20261122-1370.webp?v=kmt-live-20261122-r2"
+          ]
+          for i,url in enumerate(urls):
+            try:
+              with urlopen(Request(url,headers={"User-Agent":"Mozilla/5.0 (Linux; Android 17) Chrome/133.0.0.0","Cache-Control":"no-cache"}),timeout=25) as r:
+                content=r.read()
+                html=content.decode("utf-8","replace") if i<2 else ""
+                out[str(i)]={"url":url,"status":r.status,"final_url":r.geturl(),"bytes":len(content),
+                             "cf_cache_status":r.headers.get("CF-Cache-Status"),
+                             "new_build":"production-20261122-approved-triptych-r2" in html,
+                             "r2_asset_reference":"kmt-live-20261122-r2" in html,
+                             "webp":content[:4]==b'RIFF' and content[8:12]==b'WEBP'}
+            except Exception as e:
+              out[str(i)]={"url":url,"error":type(e).__name__+": "+str(e)[:200]}
+          p=pathlib.Path("reports/kmt-r2-live-check.json")
+          p.parent.mkdir(exist_ok=True,parents=True)
+          p.write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          print(json.dumps(out,ensure_ascii=False,indent=2))
+          PY
+      - name: Record results
+        run: |
+          git add reports/kmt-r2-live-check.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "diagnostic: verify approved triptych r2 public [skip ci]"
+          git push origin HEAD:main
