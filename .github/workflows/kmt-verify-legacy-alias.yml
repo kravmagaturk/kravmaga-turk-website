@@ -1,0 +1,68 @@
+name: Verify KMT legacy banner fallback on live site
+on:
+  push:
+    paths:
+      - ".github/workflows/kmt-verify-legacy-alias.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kmt-verify-legacy-alias
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compare Cloudflare image bytes against approved files
+        run: |
+          python3 - <<'PY'
+          import datetime, hashlib, json, pathlib, urllib.request
+          base='https://kravmaga.com.tr/'
+          paths=[
+            'assets/home/egitim-secenekleri-20261006-750.webp',
+            'assets/home/egitim-secenekleri-20261006-1370.webp',
+            'assets/home/kmt-egitim-uc-panel-20261122-750.webp',
+            'assets/home/kmt-egitim-uc-panel-20261122-1370.webp'
+          ]
+          out={'checked_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'images':[]}
+          for path in paths:
+              x={'url':base+path}
+              try:
+                req=urllib.request.Request(base+path,headers={'Cache-Control':'no-cache','User-Agent':'Mozilla/5.0 (Android 17; Mobile) Chrome/131'})
+                with urllib.request.urlopen(req,timeout=25) as resp:
+                    data=resp.read()
+                    x.update({'status':resp.status,'content_type':resp.headers.get('Content-Type'),
+                              'cf_cache_status':resp.headers.get('CF-Cache-Status'),
+                              'bytes':len(data),
+                              'matches_approved_file':hashlib.sha256(data).digest()==hashlib.sha256(pathlib.Path(path).read_bytes()).digest()})
+              except Exception as e:
+                x['error']=type(e).__name__+': '+str(e)[:100]
+              out['images'].append(x)
+          for hostname in ['kravmaga.com.tr','www.kravmaga.com.tr']:
+            item={'url':f'https://{hostname}/'}
+            try:
+              req=urllib.request.Request(item['url'],headers={'Cache-Control':'no-cache','User-Agent':'Mozilla/5.0 (Android 17; Mobile) Chrome/131'})
+              with urllib.request.urlopen(req,timeout=25) as r:
+                html=r.read().decode('utf-8','replace')
+                item.update({'status':r.status,'final_url':r.geturl(),
+                              'cf_cache_status':r.headers.get('CF-Cache-Status'),
+                              'new_banner_reference':'kmt-egitim-uc-panel-20261122-1370.webp' in html,
+                              'old_banner_reference':'egitim-secenekleri-20261006-1370.webp' in html})
+            except Exception as e:
+              item['error']=type(e).__name__+': '+str(e)[:100]
+            out.setdefault('pages',[]).append(item)
+          path=pathlib.Path('reports/kmt-live-banner-legacy-verify-20261122.json')
+          path.parent.mkdir(parents=True,exist_ok=True)
+          path.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print(json.dumps(out,ensure_ascii=False,indent=2))
+          PY
+      - name: Record public results
+        run: |
+          git add reports/kmt-live-banner-legacy-verify-20261122.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "diagnostic: verify live legacy and new KMT banner [skip ci]"
+          git push origin HEAD:main
