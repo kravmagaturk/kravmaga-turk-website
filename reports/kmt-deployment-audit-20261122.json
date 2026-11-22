@@ -1,0 +1,318 @@
+{
+  "checked_at": "2026-11-22T18:16:20.534419+00:00",
+  "main_head": "be79be27f2977b9384d20507b91d2ca46b5ddfb5",
+  "deploy_related_files": [
+    ".github/workflows/kmt-deployment-path-audit.yml",
+    ".github/workflows/kmt-legacy-triptych-fallback.yml",
+    ".github/workflows/kmt-purge-home-cache.yml",
+    ".github/workflows/kmt-verify-legacy-alias.yml",
+    ".github/workflows/kmt-verify-r2.yml",
+    ".github/workflows/one-time-image-optimization.yml",
+    ".github/workflows/optimize-public-blog-images.yml",
+    ".github/workflows/publish-approved-triptych.yml",
+    ".github/workflows/verify-public-site.yml",
+    "_headers",
+    "_redirects",
+    "assistant-worker/widget-delivery/wrangler.toml",
+    "assistant-worker/wrangler.toml",
+    "cloudflare/assistant-runtime/worker.js",
+    "cloudflare/assistant-runtime/wrangler.toml",
+    "cloudflare/basin-deploy-trigger-20261102.md",
+    "cloudflare/contact-mailer/DEPLOYED_2026-11-15.md",
+    "cloudflare/contact-mailer/worker.js",
+    "cloudflare/contact-mailer/wrangler.toml",
+    "cloudflare/instructor-lookup/README.md",
+    "cloudflare/instructor-lookup/worker.js",
+    "cloudflare/instructor-lookup/wrangler.toml",
+    "cloudflare/portrait-worker/worker.js",
+    "cloudflare/portrait-worker/wrangler.toml",
+    "cloudflare/shared-player-integration-20261109.md",
+    "cloudflare/subscriber-admin/2026-11-08_admin_reviews.sql",
+    "cloudflare/subscriber-admin/worker.js",
+    "cloudflare/subscriber-admin/wrangler.toml",
+    "cloudflare/subscriber-dashboard/worker.js",
+    "cloudflare/subscriber-dashboard/wrangler.toml"
+  ],
+  "deploy_related_file_signals": {
+    ".github/workflows/kmt-deployment-path-audit.yml": {
+      "bytes": 3867,
+      "deployer_signals": [
+        "cloudflare",
+        "wrangler",
+        "pages deploy",
+        "workers deploy",
+        "publish",
+        "skip ci",
+        "build"
+      ]
+    },
+    ".github/workflows/kmt-legacy-triptych-fallback.yml": {
+      "bytes": 3216,
+      "deployer_signals": [
+        "publish"
+      ]
+    },
+    ".github/workflows/kmt-purge-home-cache.yml": {
+      "bytes": 4085,
+      "deployer_signals": [
+        "cloudflare",
+        "skip ci"
+      ]
+    },
+    ".github/workflows/kmt-verify-legacy-alias.yml": {
+      "bytes": 3470,
+      "deployer_signals": [
+        "cloudflare",
+        "skip ci"
+      ]
+    },
+    ".github/workflows/kmt-verify-r2.yml": {
+      "bytes": 2345,
+      "deployer_signals": [
+        "cloudflare",
+        "publish",
+        "skip ci",
+        "build"
+      ]
+    },
+    ".github/workflows/one-time-image-optimization.yml": {
+      "bytes": 1691,
+      "deployer_signals": [
+        "skip ci"
+      ]
+    },
+    ".github/workflows/optimize-public-blog-images.yml": {
+      "bytes": 1423,
+      "deployer_signals": [
+        "skip ci"
+      ]
+    },
+    ".github/workflows/publish-approved-triptych.yml": {
+      "bytes": 1396,
+      "deployer_signals": [
+        "publish"
+      ]
+    },
+    ".github/workflows/verify-public-site.yml": {
+      "bytes": 3365,
+      "deployer_signals": [
+        "skip ci",
+        "build"
+      ]
+    }
+  },
+  "github_workflows": [
+    {
+      "name": "KMT production deployment path audit",
+      "path": ".github/workflows/kmt-deployment-path-audit.yml",
+      "state": "active"
+    },
+    {
+      "name": "KMT — legacy triptych image fallback",
+      "path": ".github/workflows/kmt-legacy-triptych-fallback.yml",
+      "state": "active"
+    },
+    {
+      "name": "KMT — purge only stale homepage and triptych assets",
+      "path": ".github/workflows/kmt-purge-home-cache.yml",
+      "state": "active"
+    },
+    {
+      "name": "Verify KMT legacy banner fallback on live site",
+      "path": ".github/workflows/kmt-verify-legacy-alias.yml",
+      "state": "active"
+    },
+    {
+      "name": "Verify published triptych revision r2",
+      "path": ".github/workflows/kmt-verify-r2.yml",
+      "state": "active"
+    },
+    {
+      "name": "TRANSFER Localize External Assets",
+      "path": ".github/workflows/localize-external-assets.yml",
+      "state": "active"
+    },
+    {
+      "name": "One-time image delivery optimization",
+      "path": ".github/workflows/one-time-image-optimization.yml",
+      "state": "active"
+    },
+    {
+      "name": "Optimize public blog images (lossless WebP)",
+      "path": ".github/workflows/optimize-public-blog-images.yml",
+      "state": "active"
+    },
+    {
+      "name": "Publish approved KMT education triptych",
+      "path": ".github/workflows/publish-approved-triptych.yml",
+      "state": "active"
+    },
+    {
+      "name": "Verify public production homepage",
+      "path": ".github/workflows/verify-public-site.yml",
+      "state": "active"
+    }
+  ],
+  "recent_runs": [
+    {
+      "name": "KMT production deployment path audit",
+      "head_sha": "be79be27f2977b9384d20507b91d2ca46b5ddfb5",
+      "status": "in_progress",
+      "conclusion": null,
+      "event": "push",
+      "created_at": "2026-11-22T18:16:11Z"
+    },
+    {
+      "name": "Verify published triptych revision r2",
+      "head_sha": "0f7a26307612808b0e9829f2508530ceacda2cb5",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-11-22T18:13:07Z"
+    },
+    {
+      "name": "Verify KMT legacy banner fallback on live site",
+      "head_sha": "185cc47fa742d48224d3c158fd35309ede1b25fe",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-11-22T18:06:43Z"
+    },
+    {
+      "name": "KMT — legacy triptych image fallback",
+      "head_sha": "eb5ff04f4c2516fbb64f7b7fd8064114b73b72b9",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-11-22T18:06:05Z"
+    },
+    {
+      "name": "KMT — purge only stale homepage and triptych assets",
+      "head_sha": "ae8dd177c3b46337b7ae8731055e2885a1cb5e57",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-11-22T18:05:10Z"
+    },
+    {
+      "name": "Verify public production homepage",
+      "head_sha": "84577606cb818258e87cbd277c6a92e3c37d6952",
+      "status": "completed",
+      "conclusion": "failure",
+      "event": "push",
+      "created_at": "2026-11-22T17:40:57Z"
+    },
+    {
+      "name": "Verify public production homepage",
+      "head_sha": "c8240669ec2ea9c1cb59286d0cb5fc25f05bbf8a",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-11-22T17:40:01Z"
+    },
+    {
+      "name": "Publish approved KMT education triptych",
+      "head_sha": "b4cbb592b308c016d8ce188dc424cec470f74fff",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-11-22T17:37:20Z"
+    },
+    {
+      "name": "One-time image delivery optimization",
+      "head_sha": "3c9d35751b37db35f063d15eecd8de20f15b5633",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-11-22T17:09:53Z"
+    },
+    {
+      "name": "Optimize public blog images (lossless WebP)",
+      "head_sha": "58f7925d505510a073ad22d699e0fea406240769",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-11-21T18:19:23Z"
+    },
+    {
+      "name": "Optimize public blog images (lossless WebP)",
+      "head_sha": "8fbf9f6cfb6bc56708a40ec9d5339c138c573a55",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-11-21T18:05:55Z"
+    },
+    {
+      "name": "TRANSFER Localize External Assets",
+      "head_sha": "3294353912486c88e616a3a21eb8b65e1e57b1ee",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-09-24T13:21:05Z"
+    }
+  ],
+  "github_secret_names": [],
+  "github_variable_names": [],
+  "github_deployments": [
+    {
+      "environment": "Production",
+      "created_at": "2026-09-24T22:49:25Z",
+      "ref": "5f09082c5fc84ce505ec8ad0057625dab0fab3b8",
+      "sha": "5f09082c5fc84ce505ec8ad0057625dab0fab3b8"
+    },
+    {
+      "environment": "Production",
+      "created_at": "2026-09-24T22:28:25Z",
+      "ref": "1b3dd6dc476acc71d095498bf09d99198de069b7",
+      "sha": "1b3dd6dc476acc71d095498bf09d99198de069b7"
+    },
+    {
+      "environment": "Production",
+      "created_at": "2026-09-24T22:13:00Z",
+      "ref": "49d3bb549d8f9270ba698dd60dc03f8776dd15bb",
+      "sha": "49d3bb549d8f9270ba698dd60dc03f8776dd15bb"
+    },
+    {
+      "environment": "Production",
+      "created_at": "2026-09-24T22:13:00Z",
+      "ref": "71eca3d40b31ce72484a508aa38df9a46cff95a5",
+      "sha": "71eca3d40b31ce72484a508aa38df9a46cff95a5"
+    },
+    {
+      "environment": "Production",
+      "created_at": "2026-09-24T22:12:57Z",
+      "ref": "763a56f23cdf3c7ba691ae25c3dfd9e7f45fe5e3",
+      "sha": "763a56f23cdf3c7ba691ae25c3dfd9e7f45fe5e3"
+    },
+    {
+      "environment": "Production",
+      "created_at": "2026-09-24T22:07:22Z",
+      "ref": "df5b34178657b31c73cd5503adf5c968a1672a21",
+      "sha": "df5b34178657b31c73cd5503adf5c968a1672a21"
+    },
+    {
+      "environment": "Production",
+      "created_at": "2026-09-24T22:07:17Z",
+      "ref": "f43ea53fbe37222658913c06e3af511aae78023d",
+      "sha": "f43ea53fbe37222658913c06e3af511aae78023d"
+    },
+    {
+      "environment": "Production",
+      "created_at": "2026-09-24T22:07:13Z",
+      "ref": "671df6560285e5a6b3dfb70360dc5e9bb0fa2c3b",
+      "sha": "671df6560285e5a6b3dfb70360dc5e9bb0fa2c3b"
+    },
+    {
+      "environment": "Production",
+      "created_at": "2026-09-24T21:56:32Z",
+      "ref": "e674f8d07b1e89fe18537fddad6bd9b600359eb7",
+      "sha": "e674f8d07b1e89fe18537fddad6bd9b600359eb7"
+    },
+    {
+      "environment": "Production",
+      "created_at": "2026-09-24T21:55:24Z",
+      "ref": "8e6c26828d14a4fd4ef5d14cdb557ee1b80bf1f3",
+      "sha": "8e6c26828d14a4fd4ef5d14cdb557ee1b80bf1f3"
+    }
+  ]
+}
