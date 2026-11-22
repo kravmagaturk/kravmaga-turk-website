@@ -121,10 +121,12 @@ def main() -> None:
             raise FileNotFoundError(f"Protected original or existing WebP missing: {old}")
         with Image.open(ROOT / old) as original, Image.open(ROOT / new) as converted:
             if original.size != converted.size:
-                raise ValueError(f"Existing WebP has different dimensions: {new}")
+                print(f"SKIP existing WebP: dimensions differ for {old}")
+                continue
             diff = ImageChops.difference(original.convert("RGBA"), converted.convert("RGBA"))
-            if diff.getbbox() is not None:
-                raise ValueError(f"Existing WebP is not pixel-identical: {new}")
+            if any(channel.getbbox() is not None for channel in diff.split()):
+                print(f"SKIP existing WebP: not pixel-identical to {old}")
+                continue
         for page_name in pages:
             n = replace_visible_images(ROOT / page_name, old, new, [])
             if not n:
