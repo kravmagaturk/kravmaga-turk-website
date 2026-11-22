@@ -1,0 +1,41 @@
+name: Publish approved KMT education triptych
+on:
+  push:
+    paths:
+      - ".github/workflows/publish-approved-triptych.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kmt-home-triptych-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install approved WebP image assets and keep three card links
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/publish_approved_triptych.py
+      - name: Check patch
+        run: git diff --check
+      - name: Commit only image assets and homepage reference
+        shell: bash
+        run: |
+          git add -- index.html \
+            assets/home/kmt-egitim-uc-panel-20261122-750.webp \
+            assets/home/kmt-egitim-uc-panel-20261122-1370.webp
+          if git diff --cached --quiet; then
+            echo "Approved triptych already deployed"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "feat: publish approved three-card KMT homepage education banner"
+          git push origin HEAD:main
