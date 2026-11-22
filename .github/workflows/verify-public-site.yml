@@ -1,0 +1,56 @@
+name: Verify public production homepage
+on:
+  push:
+    paths: [".github/workflows/verify-public-site.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kmt-live-verify
+  cancel-in-progress: false
+jobs:
+  check-live:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify public URLs without credentials
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request, urllib.error, datetime, os, re
+          from pathlib import Path
+          root = 'https://kravmaga.com.tr/'
+          urls = [root,root+'?kmt-deploy-check=20261122-2159',root+'assets/home/kmt-egitim-uc-panel-20261122-1370.webp',root+'assets/home/kmt-egitim-uc-panel-20261122-750.webp']
+          out={'checked_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'repository_commit':os.environ.get('GITHUB_SHA'),'urls':[]}
+          for url in urls:
+              item={'url':url}
+              try:
+                  req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 (KMT deployment diagnostic)','Cache-Control':'no-cache','Pragma':'no-cache'})
+                  with urllib.request.urlopen(req,timeout=20) as res:
+                      data=res.read()
+                      item.update({'http_status':res.status,'final_url':res.geturl(),'content_type':res.headers.get('Content-Type'),'bytes':len(data),'cf_cache_status':res.headers.get('CF-Cache-Status'),'cache_control':res.headers.get('Cache-Control'),'server':res.headers.get('Server'),'cf_ray':res.headers.get('CF-RAY')})
+                      if 'text/html' in res.headers.get('Content-Type','') or url==root:
+                          s=data.decode('utf-8','replace')
+                          item['approved_triptych_present']='kmt-egitim-uc-panel-20261122-1370.webp' in s
+                          item['old_triptych_present']='egitim-secenekleri-20261006-1370.webp' in s
+                          item['cards_links']={part:part in s for part in ['href="/krav-maga"','href="/ozel-dersler"','href="/cocuk-krav-maga"']}
+                          item['homepage_build_marker']=(re.search('data-build="([^"]+)"',s) or [None,None])[1]
+                      if '.webp' in url:
+                          item['valid_webp']=data[:4]==b'RIFF' and data[8:12]==b'WEBP'
+              except Exception as e:
+                  item.update({'error':type(e).__name__+': '+str(e)[:220]})
+              out['urls'].append(item)
+          target=Path('reports/public-site-verify-20261122.json')
+          target.parent.mkdir(exist_ok=True,parents=True)
+          target.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print(json.dumps(out,ensure_ascii=False,indent=2))
+          PY
+      - name: Save public diagnostic for transparent review
+        run: |
+          git add reports/public-site-verify-20261122.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "diagnostic: record public site response after triptych deployment [skip ci]"
+          git push origin HEAD:main
