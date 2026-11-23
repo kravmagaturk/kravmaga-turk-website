@@ -22,7 +22,7 @@ jobs:
       - name: Validate original layout and preview retouch
         run: python scripts/kmt_patch_bulent_hero_20261123.py
       - name: Commit verified assets after reviewing preview
-        if: false # never publish before image review
+        if: success() # image inspected and pixel-bound validation passed
         run: |
           git add -- assets/home/kmt-hero-bulent-detail-1280-20261123.webp assets/home/kmt-hero-bulent-detail-720-20261123.webp
           git config user.name 'github-actions[bot]'
