@@ -32,26 +32,11 @@ def apply():
     face=face.point(lambda value: value) # explicit no geometry change
     fr,fg,fb=face.split()
     face=Image.merge("RGB",tuple(ch.point(lambda v,g=g:int(min(255,v*g))) for ch,g in zip((fr,fg,fb),gain)))
-    # Avoid rectangular black-source background against the smoky original.
-    # Segment the illuminated hair/face from source darkness, then soften the edge.
+    # Preserve the existing complete straight hairstyle and silhouette.
+    # Blend only face/stubble/skin INSIDE the original head; no foreign background.
     mask=Image.new("L",face.size,0)
-    fp=face.load(); mp=mask.load()
-    for yy in range(face.height):
-        for xx in range(face.width):
-            rr,gg,bb=fp[xx,yy]
-            lum=.299*rr+.587*gg+.114*bb
-            if lum>=52 and not (yy>226 and lum<85):
-                mp[xx,yy]=230
-    # Close the dark gaps between strands and avoid the source's rectangular outline.
-    mask=mask.filter(ImageFilter.MaxFilter(19))
-    mask=mask.filter(ImageFilter.GaussianBlur(10))
-    # Graduated fade along top/bottom of cropped portrait prevents horizontal seams.
-    alpha=mask.load()
-    for yy in range(face.height):
-        fade_top=min(1.,yy/22.)
-        fade_bottom=min(1.,(face.height-yy-1)/43.)
-        for xx in range(face.width):
-            alpha[xx,yy]=round(alpha[xx,yy]*max(0.,min(fade_top,fade_bottom)))
+    ImageDraw.Draw(mask).ellipse((23,65,190,240),fill=233)
+    mask=mask.filter(ImageFilter.GaussianBlur(17))
     original.paste(face,(265,72),mask)
 
     # Source: exact compact, dark tattoo approved by owner; do not invent a legionary helmet.
