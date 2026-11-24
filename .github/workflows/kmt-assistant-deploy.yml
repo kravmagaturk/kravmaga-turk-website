@@ -116,3 +116,73 @@ jobs:
           assert.equal(rosterData.mode,'academy_roster');
           console.log('PASS: public widget and live API regression');
           JS
+
+  live-audit:
+    needs: test-and-deploy
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check current public endpoints without credentials
+        run: |
+          node --input-type=module <<'JS'
+          const base='https://kravmaga.com.tr';
+          const js=await fetch(base+'/assets/kmt-assistant.js?v=20261124-audit',{signal:AbortSignal.timeout(15000)});
+          console.log('Live widget HTTP:',js.status,'updated:',/function scheduleCard/.test(await js.text()));
+          for(const [label,message,mode] of [
+            ['schedule','hangi saatler antrenman','academy_knowledge'],
+            ['roster','aktif yetkili antrenörlerin ismini ver','academy_roster']
+          ]){
+            try {
+              const res=await fetch(base+'/api/kmt-research',{method:'POST',headers:{Origin:base,'Content-Type':'application/json'},body:JSON.stringify({message,language:'tr',history:[]}),signal:AbortSignal.timeout(25000)});
+              const data=await res.json();
+              console.log(label,'HTTP:',res.status,'mode:',String(data.mode||'unknown'),'updated:',res.ok&&data.mode===mode,'schedule_correct:',label==='schedule'&&/19[.:]30/.test(data.answer||''));
+            }catch(e){console.log(label,'probe unavailable:',e.name);}
+          }
+          JS
+      - name: Install isolated browser test dependency
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install chromium
+      - name: Verify desktop and mobile live widget behavior
+        run: |
+          node --input-type=module <<'JS'
+          import {chromium,devices} from 'playwright';
+          const browser=await chromium.launch({headless:true});
+          let failed=false;
+          for(const [label,options] of [['desktop',{viewport:{width:1440,height:900}}],['mobile',{...devices['iPhone 13']}]]) {
+            const context=await browser.newContext(options);
+            const page=await context.newPage();
+            try{
+              const res=await page.goto('https://kravmaga.com.tr/',{waitUntil:'load',timeout:30000});
+              const launch=page.locator('.kmt-ai-launch');
+              await launch.waitFor({state:'visible',timeout:15000});
+              await launch.click();
+              const panel=page.locator('.kmt-ai-panel');
+              await panel.waitFor({state:'visible',timeout:10000});
+              const layout=await panel.evaluate(e=>{const r=e.getBoundingClientRect();return r.left>=-2&&r.top>=-2&&r.right<=innerWidth+2&&r.bottom<=innerHeight+2});
+              const input=panel.locator('input');
+              const bots=panel.locator('.kmt-ai-msg.bot');
+              const ask=async(q)=>{
+                const before=await bots.count();
+                await input.fill(q);
+                await panel.locator('button[type="submit"]').click();
+                await bots.nth(before).waitFor({timeout:30000});
+                return await bots.nth(before).innerText();
+              };
+              const schedule=await ask('hangi saatler antrenman');
+              const scheduleOK=/19[.:]30/.test(schedule)&&/Salı/i.test(schedule);
+              const roster=await ask('aktif yetkili antrenörlerin ismini ver');
+              const rosterOK=/yayımlanmasına izin verdiği faal yetkili antrenörler/i.test(roster);
+              const rosterEmpty=/yayımlanması onaylanmış faal antrenör ismi bulunmuyor/i.test(roster);
+              console.log(JSON.stringify({label,http:res.status(),panelVisible:true,withinViewport:layout,scheduleOK,rosterOK,rosterEmpty,seoTitlePresent:!!(await page.title()),seoDescriptionPresent:!!(await page.locator('meta[name="description"]').getAttribute('content').catch(()=>null))}));
+              if(!res.ok()||!layout||!scheduleOK||!rosterOK)failed=true;
+            }catch(e){failed=true;console.log(label,'browser verification incomplete:',e.name);}
+            finally{await context.close();}
+          }
+          await browser.close();
+          if(failed)process.exitCode=1;
+          JS
