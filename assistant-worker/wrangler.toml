@@ -17,3 +17,8 @@ id = "d0cb4699c7304dbeb14eddb68cf950c1"
 [vars]
 # Ücretli geniş kapsamlı web araması, AI Gateway kredisi tanımlanana kadar kapalı.
 ENABLE_WEB_SEARCH = "false"
+
+[[services]]
+binding = "INSTRUCTOR_ROSTER"
+service = "kmt-instructor-lookup"
+entrypoint = "AssistantRoster"
