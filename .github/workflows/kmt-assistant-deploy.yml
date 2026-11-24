@@ -18,6 +18,7 @@ concurrency:
 jobs:
   test-and-deploy:
     runs-on: ubuntu-latest
+    environment: Production
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
@@ -82,11 +83,12 @@ jobs:
           JS
       - name: Deploy instructor RPC and assistant Workers, then verify live
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.CF_API_TOKEN || secrets.CLOUDFLARE_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.CF_ACCOUNT_ID || vars.CF_ACCOUNT_ID }}
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
-            echo "::error::Cloudflare deployment blocked: configure CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID as repository secrets."
+            if [ -z "$CLOUDFLARE_API_TOKEN" ]; then echo "::error::Cloudflare token unavailable to this job."; fi
+            if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then echo "::error::Cloudflare account ID unavailable to this job."; fi
             exit 1
           fi
           npx --yes wrangler@4 deploy --config cloudflare/instructor-lookup/wrangler.toml --keep-vars
