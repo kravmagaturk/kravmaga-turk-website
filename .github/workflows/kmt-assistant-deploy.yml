@@ -6,6 +6,8 @@ on:
       - 'assistant-worker/src/worker.js'
       - 'assistant-worker/widget-delivery/worker.js'
       - 'assets/kmt-assistant.js'
+      - 'assistant-worker/wrangler.toml'
+      - 'cloudflare/instructor-lookup/worker.js'
       - '.github/workflows/kmt-assistant-deploy.yml'
   workflow_dispatch:
 permissions:
@@ -55,9 +57,30 @@ jobs:
             assert.equal(client.scheduleCard(q),null,q);
           }
           assert.equal(JSON.parse(delivery.split('\n')[1].slice('const JAVASCRIPT='.length,-1)),widget);
+          const lookup=fs.readFileSync('cloudflare/instructor-lookup/worker.js','utf8');
+          const roster=vm.createContext({WorkerEntrypoint:class{}});
+          vm.runInContext(lookup.replace(/import[^\n]+\n/,'').replace('export default {','globalThis.lookup = {').replace('export class AssistantRoster','class AssistantRoster'),roster);
+          const rows={
+            a:{name:'Test Faal',status:'faal',role:'instructor',publishInAssistant:true},
+            b:{name:'Test Pasif',status:'pasif',role:'instructor',publishInAssistant:true},
+            c:{name:'Test Asistan',status:'faal',role:'asistan',publishInAssistant:true},
+            d:{name:'Test Onaysiz',status:'faal',role:'instructor'},
+            e:{name:'Test Durumsuz',role:'instructor',publishInAssistant:true},
+            f:{name:'Test Temsilci',status:'faal',role:'temsilci',publishInAssistant:true}
+          };
+          assert.deepEqual(Array.from(roster.approvedInstructorNames(rows)),['Test Faal']);
+          const question='aktif yetkili antrenörlerin ismini ver';
+          assert.equal(sandbox.rosterQuestion(question,'tr'),true);
+          assert.equal(sandbox.rosterQuestion('pasif antrenörler kimler','tr'),false);
+          const answer=await sandbox.compose(question,[],'tr',{INSTRUCTOR_ROSTER:{activeNames:async()=>({names:['Test Faal']})}});
+          assert.equal(answer.mode,'academy_roster');
+          assert.match(answer.answer,/Test Faal/);
+          assert.equal((await sandbox.compose(question,[],'tr',{})).mode,'registry_unavailable');
+          assert.equal((await sandbox.compose(question,[],'tr',{INSTRUCTOR_ROSTER:{activeNames:async()=>({names:[]})}})).mode,'academy_roster');
+          console.log('PASS: roster approval, active status, instructor role, and unavailable registry');
           console.log('PASS: Turkish schedule intent, exclusions, exact knowledge entry and widget parity');
           JS
-      - name: Deploy only the two assistant Workers and verify live
+      - name: Deploy instructor RPC and assistant Workers, then verify live
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -66,6 +89,7 @@ jobs:
             echo "::error::Cloudflare deployment blocked: configure CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID as repository secrets."
             exit 1
           fi
+          npx --yes wrangler@4 deploy --config cloudflare/instructor-lookup/wrangler.toml --keep-vars
           npx --yes wrangler@4 deploy --config assistant-worker/wrangler.toml --keep-vars
           npx --yes wrangler@4 deploy --config assistant-worker/widget-delivery/wrangler.toml --keep-vars
           node --input-type=module <<'JS'
@@ -81,5 +105,12 @@ jobs:
           const data=await res.json();
           assert.match(data.answer,/19[.:]30/);
           assert.equal(data.mode,'academy_knowledge');
+          const rosterRes=await fetch('https://kravmaga.com.tr/api/kmt-research',{
+            method:'POST',headers:{'Content-Type':'application/json',Origin:'https://kravmaga.com.tr'},
+            body:JSON.stringify({message:'aktif yetkili antrenörlerin ismini ver',language:'tr',history:[]})
+          });
+          assert.ok(rosterRes.ok);
+          const rosterData=await rosterRes.json();
+          assert.equal(rosterData.mode,'academy_roster');
           console.log('PASS: public widget and live API regression');
           JS
