@@ -203,11 +203,14 @@ function scheduleQuestion(q) {
 }
 function rosterQuestion(q,lang) {
  const n=norm(q);
- if(lang==="tr"){
-  return /\b(antrenor[a-z]*|egitmen[a-z]*|instructor[a-z]*|hoca[a-z]*)\b/.test(n)
-   && /\b(aktif|faal|yetkili|resmi)\b/.test(n)
-   && /\b(kim[a-z]*|isim[a-z]*|adlar[a-z]*|liste[a-z]*|say[a-z]*|ver|goster)\b/.test(n)
-   && !/\b(pasif|inactive|faal olmayan|yanilov|kmg|ikmf|lichtenfeld|avikzar|moyal|baska|diger)\b/.test(n);
+  if(lang==="tr"){
+  const role=/\b(antren[o]?r[a-z]*|egitmen[a-z]*|instructor[a-z]*|hoca[a-z]*)\b/.test(n);
+  const plural=/\b(antren[o]?rler[a-z]*|egitmenler[a-z]*|instructorlar[a-z]*|hocalar[a-z]*)\b/.test(n);
+  const local=/\b(kmt|krav ?maga (turk|tuk|tur|trk)|akademi[a-z]*|sizin|siz|burada|burdaki|buradaki)\b/.test(n);
+  const active=/\b(aktif|faal|yetkili|resmi|calisan[a-z]*|gorevli[a-z]*|gorev yapan|mevcut)\b/.test(n);
+  const ask=/\b(kim[a-z]*|isim[a-z]*|adlar[a-z]*|liste[a-z]*|say[a-z]*|ver|goster)\b/.test(n);
+  return role && ((plural&&(local||active||ask||n.split(" ").length<=3))||(active&&ask))
+   && !/\b(pasif|inactive|faal olmayan|aktif olmayan|yanilov|kmg|ikmf|lichtenfeld|avikzar|moyal|baska|diger|nasil|olmak|olunur|basvuru[a-z]*|maas[a-z]*|ucret[a-z]*|sinav[a-z]*|seviye[a-z]*|kac kisi)\b/.test(n);
  }
  return /\b(active|authorized|authorised|aktiv[a-z]*|zugelassen[a-z]*|actif[a-z]*|actifs|autorise[a-z]*)\b/.test(n)
   && /\b(instructor[a-z]*|trainer[a-z]*|coach[a-z]*|entraineur[a-z]*|instructeur[a-z]*)\b/.test(n)
@@ -234,7 +237,7 @@ function officialQuestion(q) {
   const n=" "+norm(q)+" ";
   // Do not mistake other Krav Maga organisations or people for KMT itself.
   if(/\b(yanilov|kmg|krav maga global|ikmf|lichtenfeld|avikzar|moyal)\b/.test(n))return false;
-  return ["kmt","krav maga turk","akademi","bulent","cetin",
+  return ["kmt","krav maga turk","krav maga tuk","krav maga trk","akademi","bulent","cetin",
     "sinif","kontenjan","seans","kurs","ders","kitap","sicil",
     "egitim","antrenman","antreman","antrman","idman","ucret","fiyat","randevu","belge","salon","kayit",
     "iletisim","kadikoy","baslangic","ozel ders","ogrenci"].some(s=>n.includes(s));
