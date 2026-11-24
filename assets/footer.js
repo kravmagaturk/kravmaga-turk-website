@@ -521,10 +521,10 @@
       document.head.appendChild(script);
     }
 
-    if (!document.getElementById('kmt-assistant-loader')) {
+    if (/^\/iletisim(?:\.html)?\/?$/.test(location.pathname) && !document.getElementById('kmt-assistant-loader')) {
       const script = document.createElement('script');
       script.id = 'kmt-assistant-loader';
-      script.src = '/assets/kmt-assistant.js?v=20261116-i18n1';
+      script.src = '/assets/kmt-assistant.js?v=20261125-contact-only';
       script.defer = true;
       document.head.appendChild(script);
     }
