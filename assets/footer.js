@@ -9,7 +9,7 @@
     icon.type = "image/png";
     const kmtUpdatedBrandPages = new Set(["/blog", "/iletisim", "/belgeler", "/krav-maga-kadikoy"]);
     const currentPath = window.location.pathname.replace(/\.html$/, "").replace(/\/$/, "") || "/";
-    icon.href = kmtUpdatedBrandPages.has(currentPath) ? "/assets/brand/kmt-favicon-96-20261121.png" : "/assets/brand/logo-1948.png";
+    icon.href = "/assets/brand/kmt-symbol-mono-20261125.png";
   }
 
   ensureBrowserLogo();
