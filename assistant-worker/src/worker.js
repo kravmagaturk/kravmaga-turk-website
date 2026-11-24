@@ -191,13 +191,23 @@ async function webFacts(q,env) {
     })).filter(x=>x.url&&x.excerpt);
   }catch(_){return [];}
 }
+// Common Turkish scheduling phrases are academy enquiries, not web searches.
+function scheduleQuestion(q) {
+  const n=norm(q);
+  if(/\b(yanilov|kmg|ikmf|lichtenfeld|avikzar|moyal|baska|diger|cocuk|kids|ozel|birebir|bire bir|advanced|ileri|telafi|online|koruma|ucret|fiyat|kontenjan|kayit|iptal|bugun|yarin|acik mi|kapali mi|saat kac|kac saat)\b/.test(n)) {
+    // "saat kaçta" is a normal scheduling question; "saat kaç" alone is not.
+    if(!/\bsaat kacta\b/.test(n) || /\b(yanilov|kmg|ikmf|lichtenfeld|avikzar|moyal|baska|diger|cocuk|kids|ozel|birebir|bire bir|advanced|ileri|telafi|online|koruma|ucret|fiyat|kontenjan|kayit|iptal|bugun|yarin|acik mi|kapali mi|kac saat)\b/.test(n))return false;
+  }
+  return /\b(antr[ae]n?man[a-z]*|idman[a-z]*|ders[a-z]*|seans[a-z]*|kurs[a-z]*|egitim[a-z]*)\b/.test(n)
+    && /\b(saat[a-z]*|kacta|gun[a-z]*|zaman|program[a-z]*)\b/.test(n);
+}
 function officialQuestion(q) {
   const n=" "+norm(q)+" ";
   // Do not mistake other Krav Maga organisations or people for KMT itself.
   if(/\b(yanilov|kmg|krav maga global|ikmf|lichtenfeld|avikzar|moyal)\b/.test(n))return false;
   return ["kmt","krav maga turk","akademi","bulent","cetin",
     "sinif","kontenjan","seans","kurs","ders","kitap","sicil",
-    "egitim","ucret","fiyat","randevu","belge","salon","kayit",
+    "egitim","antrenman","antreman","antrman","idman","saat","ucret","fiyat","randevu","belge","salon","kayit",
     "iletisim","kadikoy","baslangic","ozel ders","ogrenci"].some(s=>n.includes(s));
 }
 // Gemma may occasionally quote an English Wikipedia sentence verbatim.
@@ -219,10 +229,17 @@ async function localizeAnswer(answer,language,env) {
   }catch(_){return answer;}
 }
 async function compose(q,history,lang,env) {
-  const own=officialQuestion(q), kb=await kbFacts(q);
+  const schedule=lang==="tr"&&scheduleQuestion(q);
+  const own=schedule||officialQuestion(q);
+  const retrievalQuestion=schedule?"Grup ders günleri, saatleri ve seans programı":q;
+  const kb=await kbFacts(retrievalQuestion);
+  if(schedule){
+    const fact=kb.find(s=>s.url===SITE+"/krav-maga" && /19[.:]30/.test(s.excerpt));
+    if(fact)return {answer:fact.excerpt,url:"/krav-maga",sources:[fact],mode:"academy_knowledge"};
+  }
   let sources;
   if(own){
-    const pages=await siteFacts(q);
+    const pages=await siteFacts(retrievalQuestion);
     sources=[...kb,...pages].slice(0,6);
   }else{
     const [web,wiki,organization]=await Promise.all([webFacts(q,env),wikiFacts(q,lang),publicOrganizationFacts(q)]);
