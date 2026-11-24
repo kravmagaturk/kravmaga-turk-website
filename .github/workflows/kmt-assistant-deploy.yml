@@ -164,7 +164,10 @@ jobs:
             const context=await browser.newContext(options);
             const page=await context.newPage();
             try{
-              const res=await page.goto('https://kravmaga.com.tr/',{waitUntil:'load',timeout:30000});
+              await page.goto('https://kravmaga.com.tr/',{waitUntil:'load',timeout:30000});
+              await page.waitForTimeout(3000);
+              if(await page.locator('#kmt-ai-root').count())throw Error('Assistant visible outside contact page');
+              const res=await page.goto('https://kravmaga.com.tr/iletisim',{waitUntil:'load',timeout:30000});
               const launch=page.locator('.kmt-ai-launch');
               await launch.waitFor({state:'visible',timeout:15000});
               await page.waitForFunction(()=>getComputedStyle(document.getElementById('kmt-ai-root')).position==='fixed');
