@@ -2,6 +2,7 @@ name = "kmt-akilli-asistan-api"
 main = "src/worker.js"
 compatibility_date = "2026-11-17"
 workers_dev = true
+keep_vars = true
 
 routes = [
   { pattern = "kravmaga.com.tr/api/kmt-research*", zone_name = "kravmaga.com.tr" }
