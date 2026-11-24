@@ -1,6 +1,8 @@
 /* KMT Akıllı Asistan — hafif maskot / yazılı + isteğe bağlı sesli arayüz */
 (function () {
   "use strict";
+  // Homepage assistant is intentionally disabled, including cached HTML.
+  if (location.pathname === "/" || location.pathname === "/index.html" || location.pathname === "/index") return;
   if (document.getElementById("kmt-ai-root") || window.__KMT_ASSISTANT_LOADED__) return;
   window.__KMT_ASSISTANT_LOADED__ = true;
 
