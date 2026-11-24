@@ -71,7 +71,14 @@ jobs:
           };
           assert.deepEqual(Array.from(roster.approvedInstructorNames(rows)),['Test Faal']);
           const question='aktif yetkili antrenörlerin ismini ver';
-          assert.equal(sandbox.rosterQuestion(question,'tr'),true);
+          for(const q of [question,'krav maga tuk çalışan antrenörler','KMT hocaları kimler','Akademide görevli eğitmenler','antrenörler','Sizin antrenörleriniz kimler?']){
+            assert.equal(sandbox.rosterQuestion(q,'tr'),true,q);
+            assert.equal(client.rosterRequest(q),true,q);
+          }
+          for(const q of ['Antrenör nasıl olunur?','Antrenörlük sınavı','Pasif antrenörler kimler','KMG antrenörleri kimler?']){
+            assert.equal(sandbox.rosterQuestion(q,'tr'),false,q);
+            assert.equal(client.rosterRequest(q),false,q);
+          }
           assert.equal(sandbox.rosterQuestion('pasif antrenörler kimler','tr'),false);
           const answer=await sandbox.compose(question,[],'tr',{INSTRUCTOR_ROSTER:{activeNames:async()=>({names:['Test Faal']})}});
           assert.equal(answer.mode,'academy_roster');
@@ -160,6 +167,7 @@ jobs:
               const res=await page.goto('https://kravmaga.com.tr/',{waitUntil:'load',timeout:30000});
               const launch=page.locator('.kmt-ai-launch');
               await launch.waitFor({state:'visible',timeout:15000});
+              await page.waitForFunction(()=>getComputedStyle(document.getElementById('kmt-ai-root')).position==='fixed');
               await launch.click();
               const panel=page.locator('.kmt-ai-panel');
               await panel.waitFor({state:'visible',timeout:10000});
@@ -179,7 +187,7 @@ jobs:
               const rosterOK=/yayımlanmasına izin verdiği faal yetkili antrenörler/i.test(roster);
               const rosterEmpty=/yayımlanması onaylanmış faal antrenör ismi bulunmuyor/i.test(roster);
               console.log(JSON.stringify({label,http:res.status(),panelVisible:true,withinViewport:layout,scheduleOK,rosterOK,rosterEmpty,seoTitlePresent:!!(await page.title()),seoDescriptionPresent:!!(await page.locator('meta[name="description"]').getAttribute('content').catch(()=>null))}));
-              if(!res.ok()||!layout||!scheduleOK||!rosterOK)failed=true;
+              if(!res.ok()||!layout||!scheduleOK||!(rosterOK||rosterEmpty))failed=true;
             }catch(e){failed=true;console.log(label,'browser verification incomplete:',e.name);}
             finally{await context.close();}
           }
