@@ -80,7 +80,18 @@
     if(!/\b(antr[ae]n?man[a-z]*|idman[a-z]*|ders[a-z]*|seans[a-z]*|kurs[a-z]*|egitim[a-z]*)\b/.test(s)||!/\b(saat[a-z]*|kacta|gun[a-z]*|zaman|program[a-z]*)\b/.test(s))return null;
     return {answer:"Başlangıç grup antrenmanlarımız Salı ve Perşembe günleri saat 19.30'da yapılır. Pazar 12.00–13.00 telafi seansıdır. İlk deneme dersi ücretsizdir; katılım için önceden randevu alabilirsiniz.",url:"/krav-maga"};
   }
+  function rosterRequest(q) {
+    var n=normalized(q).replace(/\s+/g," ").trim();
+    var role=/\b(antren[o]?r[a-z]*|egitmen[a-z]*|instructor[a-z]*|hoca[a-z]*)\b/.test(n);
+    var plural=/\b(antren[o]?rler[a-z]*|egitmenler[a-z]*|instructorlar[a-z]*|hocalar[a-z]*)\b/.test(n);
+    var local=/\b(kmt|krav ?maga (turk|tuk|tur|trk)|akademi[a-z]*|sizin|siz|burada|burdaki|buradaki)\b/.test(n);
+    var active=/\b(aktif|faal|yetkili|resmi|calisan[a-z]*|gorevli[a-z]*|gorev yapan|mevcut)\b/.test(n);
+    var ask=/\b(kim[a-z]*|isim[a-z]*|adlar[a-z]*|liste[a-z]*|say[a-z]*|ver|goster)\b/.test(n);
+    return role && ((plural&&(local||active||ask||n.split(" ").length<=3))||(active&&ask))
+      && !/\b(pasif|inactive|faal olmayan|aktif olmayan|yanilov|kmg|ikmf|lichtenfeld|avikzar|moyal|baska|diger|nasil|olmak|olunur|basvuru[a-z]*|maas[a-z]*|ucret[a-z]*|sinav[a-z]*|seviye[a-z]*|kac kisi)\b/.test(n);
+  }
   function fallback(q) {
+    if(rosterRequest(q))return {answer:"Güncel eğitmen sicilinden doğrulanmış isimleri şu anda alamıyorum. Yanlış isim veya eğitim bilgisi vermemek için resmî eğitmen sorgulama sayfasını kullanabilirsiniz.",url:"/egitmen-and-seviye-sorgu"};
     var s=normalized(q);
     var score = function(entry) {
       return entry.terms.reduce(function(n,t){return n+(s.includes(normalized(t))?1:0);},0);
@@ -237,7 +248,7 @@
           var r=await fetch("/api/kmt-research",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q,language:assistantLang,history:history.slice(0,-1)}),signal:ctrl.signal,credentials:"omit"});
           if(r.ok && (r.headers.get("content-type")||"").includes("application/json")){
             var data=await r.json();
-            if(data && data.mode!=="no_source" && typeof data.answer==="string" && data.answer.trim().length){
+            if(data && data.mode!=="no_source" && (!rosterRequest(q)||data.mode==="academy_roster"||data.mode==="registry_unavailable") && typeof data.answer==="string" && data.answer.trim().length){
               found={answer:data.answer.slice(0,1500),url:typeof data.url==="string"?data.url:null,
                 sources:Array.isArray(data.sources)?data.sources.slice(0,4):[],mode:data.mode};
               usedServer=true;
