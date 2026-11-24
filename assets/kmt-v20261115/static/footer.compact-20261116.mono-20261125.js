@@ -1,0 +1,525 @@
+(function () {
+  function ensureBrowserLogo() {
+    let icon = document.querySelector('link[rel~="icon"]');
+    if (!icon) {
+      icon = document.createElement("link");
+      icon.rel = "icon";
+      document.head.appendChild(icon);
+    }
+    icon.type = "image/png";
+    icon.href = "/assets/brand/kmt-symbol-mono-20261125.png";
+  }
+
+  ensureBrowserLogo();
+
+  function injectSharedStyles() {
+    if (document.getElementById("kmt-shared-layout-styles")) return;
+
+    const style = document.createElement("style");
+    style.id = "kmt-shared-layout-styles";
+    style.textContent = `
+      .kmt-nav{
+        position:sticky!important;top:0;z-index:5000;background:#050607!important;
+        border-bottom:1px solid #252525;color:#fff;font-family:Arial,Helvetica,sans-serif;
+        box-shadow:0 5px 18px rgba(0,0,0,.22)
+      }
+      .kmt-nav-inner{max-width:1536px;margin:0 auto;min-height:72px;padding:0 24px;display:flex;align-items:center;gap:18px}
+      .kmt-nav-brand{
+        color:#fff!important;text-decoration:none!important;font-weight:900;
+        font-size:16px;letter-spacing:.06em;white-space:nowrap
+      }
+      .kmt-nav-brand i{font-style:normal;color:#f04455}
+      .kmt-nav-links{margin-left:auto;display:flex;align-items:center;gap:4px}
+      .kmt-nav-item{position:relative}
+      .kmt-nav-item>a,.kmt-nav-item>button{height:42px;display:flex;align-items:center;justify-content:center;padding:0 13px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,#121416,#0e1012);color:#f2f2f2!important;border-radius:7px;text-decoration:none!important;font:800 13px/1 Arial,Helvetica,sans-serif;letter-spacing:.035em;cursor:pointer;white-space:nowrap;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:background-color .06s linear,border-color .06s linear,color .06s linear,box-shadow .06s linear}
+      .kmt-nav-item>a:hover,.kmt-nav-item>button:hover,.kmt-nav-item.open>button{background:linear-gradient(180deg,rgba(227,6,32,.18),rgba(227,6,32,.08));border-color:rgba(227,6,32,.55);color:#fff!important;box-shadow:0 0 0 1px rgba(227,6,32,.08) inset,0 4px 12px rgba(0,0,0,.2)}
+      .kmt-nav-item>a:focus-visible,.kmt-nav-item>button:focus-visible{
+        outline:2px solid #e30620;outline-offset:2px
+      }
+
+      .kmt-nav-drop{display:none;position:absolute;top:42px;left:0;min-width:250px;max-height:70vh;overflow-y:auto;background:#0b0c0e;border:1px solid #2a2d31;border-top:3px solid #e30620;box-shadow:0 14px 28px rgba(0,0,0,.42);border-radius:0 0 10px 10px;z-index:9000}
+      .kmt-nav-item.open>.kmt-nav-drop{display:block}
+      .kmt-nav-drop a{
+        display:block;padding:10px 14px;color:#ddd!important;text-decoration:none!important;line-height:1.35;font-size:12.5px;font-weight:700;border-bottom:1px solid #1d2023;background:#0b0c0e;white-space:nowrap;touch-action:manipulation;transition:background-color .05s linear,color .05s linear,padding-left .05s linear
+      }
+      .kmt-nav-drop a:last-child{border-bottom:0}
+      .kmt-nav-drop a:hover{background:rgba(227,6,32,.12);color:#fff!important;padding-left:17px}
+
+      .kmt-nav-mobile{
+        display:none;margin-left:auto;background:#111315;color:#fff;border:1px solid #3b3d42;
+        border-radius:8px;padding:9px 12px;font-size:20px;min-width:44px;min-height:44px;touch-action:manipulation;-webkit-tap-highlight-color:transparent
+      }
+      .kmt-nav-mobile:focus-visible,.kmt-nav-item>a:focus-visible,.kmt-nav-item>button:focus-visible,
+      .kmt-footer-info a:focus-visible{outline:2px solid #e30620;outline-offset:2px}
+
+      .kmt-site-footer{
+        width:100%;box-sizing:border-box;background:#070809!important;color:#aaa!important;
+        border-top:2px solid #d60000;font-family:Arial,Helvetica,sans-serif
+      }
+      .kmt-footer-inner{
+        max-width:1536px;margin:0 auto;padding:18px 5% 15px;
+        display:flex;align-items:center;justify-content:space-between;gap:18px
+      }
+      .kmt-footer-brand strong{
+        display:block;color:#fff!important;font-size:20px;font-weight:900;letter-spacing:.5px;line-height:1.1
+      }
+      .kmt-footer-brand strong span{color:#f04455!important}
+      .kmt-footer-brand small{
+        display:block;margin-top:4px;color:#7f8690!important;font-size:10px;font-weight:700;letter-spacing:1px
+      }
+      .kmt-footer-info{
+        display:flex;align-items:center;justify-content:flex-end;gap:12px 18px;flex-wrap:wrap
+      }
+      .kmt-footer-info a,.kmt-footer-info span{
+        color:#b8b8b8!important;text-decoration:none!important;font-size:11px;font-weight:700;
+        letter-spacing:.04em;white-space:nowrap;line-height:1.45
+      }
+      .kmt-footer-info a:hover{color:#fff!important}
+      .kmt-footer-info a.kmt-footer-social{display:inline-flex;align-items:center;justify-content:center;width:36px;min-width:36px;height:36px;border:1px solid #303337;border-radius:7px;background:#111315;line-height:1}
+      .kmt-footer-info a.kmt-footer-social:hover{border-color:#e30620;background:#1a1d20}
+      .kmt-footer-social svg{display:block;flex:none;width:21px;height:21px}
+      .kmt-footer-subscribe{width:min(100%,290px);flex:0 0 290px;color:#ddd;font-size:11px}
+      .kmt-footer-subscribe strong{display:block;color:#fff;font-size:13px;margin-bottom:2px}.kmt-footer-subscribe .kmt-subscribe-options{display:flex;align-items:center;justify-content:space-between;gap:6px}.kmt-footer-subscribe .kmt-subscribe-options label{flex:1;min-width:0;font-size:10px}.kmt-footer-subscribe .kmt-subscribe-options .kmt-footer-unsubscribe{white-space:nowrap}
+      .kmt-footer-subscribe p{margin:0 0 6px;color:#aeb5b8;line-height:1.35}
+      .kmt-footer-subscribe .kmt-subscribe-row{display:flex;gap:5px}
+      .kmt-footer-subscribe input[type=email]{min-width:0;flex:1;padding:7px 8px;border:1px solid #50565a;border-radius:5px;background:#171b1e;color:#fff;font:inherit}
+      .kmt-footer-subscribe button{padding:7px 9px;border:0;border-radius:5px;background:#c92134;color:#fff;font:700 11px Arial,sans-serif;cursor:pointer}
+      .kmt-footer-subscribe label{display:flex;align-items:flex-start;gap:5px;margin-top:5px;color:#aeb5b8;line-height:1.3}
+      .kmt-footer-subscribe label input{margin:2px 0 0}
+      .kmt-footer-subscribe [role=status]{margin:4px 0 0}.kmt-footer-subscribe [role=status]:empty{display:none}
+      .kmt-footer-subscribe .kmt-footer-unsubscribe{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:5px 8px;flex:none;border:1px solid #727d78;border-radius:5px;background:#26342b;color:#fff!important;font-size:11px;font-weight:700;text-decoration:none!important;text-align:center}
+      .kmt-footer-subscribe .kmt-footer-unsubscribe:hover{color:#fff!important}.kmt-footer-subscribe .kmt-subscribe-privacy{font-size:10px;line-height:1.5;margin-top:7px;color:#c5cbd0}.kmt-footer-subscribe .kmt-subscribe-privacy a{color:#fff!important;text-decoration:underline;text-decoration-color:#e30620}
+
+      .kmt-footer-copy{
+        max-width:1536px;margin:0 auto;padding:9px 5% 12px;border-top:1px solid #1d1f22;
+        color:#7f7f7f!important;font-size:10px;text-align:center;line-height:1.4
+      }
+      .kmt-footer-copy strong{color:#bdbdbd!important}
+
+
+
+      /* TEK STANDART 19-48 LOGO */
+      .bc-watermark,.bc-video-watermark,.bc-section-year,.bc-dark-year,.bc-photo-year,.kmt-representative-page .watermark,.kmt-belgeler .water,#kmt-basin .basin-watermark,#kmt-basin .basin-media::before,.kmt-ref-watermark,.kmt-watermark,.kmt-hero-logo,.leg-watermark,.leg-story-brand,.leg-author-logo,.leg-cta::before,.kmt-representative-page .final::before,.kmt-belgeler .bottom::before{display:none!important}
+      .kmt-hero:before{content:none!important}
+      .kmt-standard-mark{position:absolute!important;width:390px!important;height:390px!important;right:4%!important;left:auto!important;top:50%!important;transform:translateY(-50%)!important;background:url("/assets/brand/logo-520.webp") center/82% no-repeat!important;opacity:.28!important;filter:contrast(1.08)!important;mix-blend-mode:screen!important;-webkit-mask-image:radial-gradient(circle at center,#000 0 54%,rgba(0,0,0,.88) 62%,transparent 78%)!important;mask-image:radial-gradient(circle at center,#000 0 54%,rgba(0,0,0,.88) 62%,transparent 78%)!important;pointer-events:none!important;z-index:1!important}
+      .bc-hero,.kmt-representative-page .hero,.kmt-belgeler .hero,
+      #kmt-basin .basin-hero,.kmt-ref-hero,.leg-hero,.kmt-hero,.cpo-hero,.page{
+        position:relative!important
+      }
+      .bc-hero-content,.kmt-representative-page .hero-inner,.kmt-belgeler .hero-in,
+      #kmt-basin .basin-hero-inner,.kmt-ref-hero-content,.leg-hero-content,
+      .kmt-hero-content,.cpo-hero-content,.page>.wrap{
+        position:relative!important;z-index:2!important
+      }
+
+      @media(max-width:900px){
+        .kmt-standard-mark{width:260px!important;height:260px!important;right:-4%!important;opacity:.20!important}
+      }
+      /* PRODUCTION PAGE CALIBRATION */
+      @media(min-width:751px){
+        .kmt-belgeler .hero-in{padding-top:54px!important;padding-bottom:54px!important}
+        .kmt-representative-page .hero-inner{padding-top:54px!important;padding-bottom:54px!important}
+        .leg-hero-content{padding-top:56px!important;padding-bottom:56px!important}
+        .kmt-contact-wrap{padding-top:52px!important;padding-bottom:48px!important}
+        .edu-page{padding-top:44px!important}
+        .bc-hero-content{padding-top:0!important;padding-bottom:0!important}
+      }
+      @media(max-width:750px){
+        .kmt-belgeler .hero{min-height:340px!important}
+        .kmt-belgeler .hero-in{padding-top:0!important;padding-bottom:38px!important}
+        .kmt-representative-page .hero-inner{padding-top:0!important;padding-bottom:38px!important}
+        .leg-hero-content{padding-top:0!important;padding-bottom:42px!important}
+        .kmt-contact-wrap{padding-top:0!important;padding-bottom:38px!important}
+        .edu-page{padding-top:0!important}
+        .kmt-belgeler h1,.kmt-representative-page h1,.leg-hero h1{margin-top:0!important}
+      }
+
+      /* MOBILE TOP GAP ZERO: iç sayfalar ortak menünün hemen altında başlar */
+      @media(max-width:750px){
+        body>main,body>section,
+        .kmt-page,.cpo-page,.edu-page,.bc-page,.kmt-belgeler,
+        .kmt-representative-page,#kmt-basin,.leg-page,.kmt-contact{
+          margin-top:0!important;
+          padding-top:0!important;
+        }
+        .kmt-belgeler .hero-in,
+        .kmt-representative-page .hero-inner,
+        .leg-hero-content,
+        .kmt-contact-wrap,
+        .edu-page{
+          padding-top:0!important;
+          margin-top:0!important;
+        }
+        body:not(.kmt-home-theme) .kmt-hero-content{
+          padding-top:0!important;
+          margin-top:0!important;
+        }
+        #kmt-egitmen-sorgu{
+          padding-top:0!important;
+          margin-top:0!important;
+        }
+        .bc-hero{margin-top:0!important}
+        .bc-hero-content{margin-top:0!important}
+        .kmt-security-photo,.cpo-hero-photo{top:0!important}
+      }
+
+      /* KRAV MAGA MOBILE TOP REFERENCE: diğer iç sayfalar Krav Maga ile aynı üst başlangıç */
+      @media(max-width:750px){
+        .kmt-belgeler .hero,
+        .kmt-representative-page .hero,
+        .leg-hero,
+        .bc-hero,
+        .kmt-contact,
+        .edu-hero,
+        #kmt-basin .basin-hero,
+        .kmt-ref-hero{
+          margin-top:0!important;
+          padding-top:0!important;
+          top:auto!important;
+        }
+        .kmt-belgeler .hero-in,
+        .kmt-representative-page .hero-inner,
+        .leg-hero-content,
+        .bc-hero-content,
+        .kmt-contact-wrap,
+        .edu-hero,
+        #kmt-basin .basin-hero-inner,
+        .kmt-ref-hero-content{
+          margin-top:0!important;
+          padding-top:0!important;
+        }
+        .kmt-belgeler .hero,
+        .kmt-representative-page .hero,
+        .leg-hero,
+        .bc-hero,
+        #kmt-basin .basin-hero,
+        .kmt-ref-hero{
+          align-items:flex-start!important;
+        }
+        /* Güvenlik sayfaları: menü-altı boşluk yok, görsel için iç alan korunur */
+        body.kmt-home-theme .kmt-hero,
+        body.cpo-body .cpo-hero{
+          margin-top:0!important;
+          padding-top:0!important;
+        }
+      }
+
+      @media(max-width:900px){
+        .kmt-nav-inner{min-height:64px;padding:0 14px}
+        .kmt-nav-brand{font-size:14px}
+        .kmt-nav-mobile{display:block}
+        .kmt-nav-links{
+          display:none;position:absolute;left:0;right:0;top:64px;background:#08090a;
+          border-bottom:1px solid #26292d;padding:10px 14px 18px;flex-direction:column;gap:0;
+          max-height:calc(100dvh - 64px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+          box-shadow:0 14px 24px rgba(0,0,0,.35)
+        }
+        .kmt-nav-links.open{display:flex}
+        .kmt-nav-item{width:100%}
+        .kmt-nav-item>a,.kmt-nav-item>button{
+          width:100%;height:50px;justify-content:flex-start;border-radius:0;border:0;
+          border-bottom:1px solid #202225;background:#08090a;padding:0 10px;font-size:14px
+        }
+        .kmt-nav-drop{
+          position:static;display:none;min-width:0;box-shadow:none;border:0;
+          border-left:3px solid #d60000;border-radius:0;margin:0 0 8px 8px
+        }
+        .kmt-nav-item.open>.kmt-nav-drop{display:block}
+        .kmt-nav-drop a{white-space:normal}
+        /* Compact but readable mobile footer — keep subscribe and KVKK controls intact */
+        .kmt-site-footer{padding:0!important;max-width:100%;overflow-x:clip}
+        .kmt-footer-inner{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;padding:10px 14px 7px}
+        .kmt-footer-brand strong{font-size:16px;line-height:1.08}
+        .kmt-footer-brand small{font-size:8px;letter-spacing:.6px;margin-top:2px}
+        .kmt-footer-info{margin-top:1px;justify-content:flex-start;gap:4px 12px}
+        .kmt-footer-info a,.kmt-footer-info span{font-size:10px;letter-spacing:.01em}
+        .kmt-footer-info a.kmt-footer-social{width:30px;min-width:30px;height:30px}
+        .kmt-footer-social svg{width:19px;height:19px}
+        .kmt-footer-subscribe{width:100%;min-width:0;max-width:none;flex:none;margin:2px 0 0;font-size:10px}
+        .kmt-footer-subscribe strong{font-size:12px;margin-bottom:1px}
+        .kmt-footer-subscribe p{font-size:10px;line-height:1.3;margin:0 0 4px}
+        .kmt-footer-subscribe .kmt-subscribe-row{gap:4px}
+        .kmt-footer-subscribe input[type=email]{min-width:0;min-height:32px;padding:6px 7px;font-size:11px}
+        .kmt-footer-subscribe button{min-height:32px;padding:6px 7px;font-size:10px}
+        .kmt-footer-subscribe .kmt-footer-unsubscribe{min-height:32px;padding:3px 5px;font-size:10px}
+        .kmt-footer-subscribe label{margin-top:3px;line-height:1.25}
+        .kmt-footer-subscribe .kmt-subscribe-options label{font-size:9.5px}
+        .kmt-footer-subscribe .kmt-subscribe-privacy{font-size:9px;line-height:1.25;margin-top:3px}
+        .kmt-footer-copy{padding:6px 14px 8px;font-size:9px;line-height:1.25}
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+
+  function injectStandardMark() {
+    document.querySelectorAll(".kmt-standard-mark").forEach(function(el){el.remove()});
+    if(document.body.classList.contains("kmt-home-theme") ||
+       document.body.classList.contains("cpo-body") ||
+       document.querySelector(".bc-hero")) return;
+    var hero =
+      document.querySelector(".bc-hero") ||
+      document.querySelector(".kmt-representative-page .hero") ||
+      document.querySelector(".kmt-belgeler .hero") ||
+      document.querySelector("#kmt-basin .basin-hero") ||
+      document.querySelector(".kmt-ref-hero") ||
+      document.querySelector(".leg-hero") ||
+      document.querySelector(".kmt-hero") ||
+      document.querySelector(".cpo-hero") ||
+      document.querySelector("main.page");
+    if(!hero) return;
+    var mark=document.createElement("div");
+    mark.className="kmt-standard-mark";
+    mark.setAttribute("aria-hidden","true");
+    hero.appendChild(mark);
+  }
+
+  function buildHeader() {
+    const wrap = document.createElement("div");
+    wrap.innerHTML = `
+      <header class="kmt-nav" data-component="shared-header">
+        <div class="kmt-nav-inner">
+          <a class="kmt-nav-brand" href="/">KRAV MAGA <i>TÜRK</i></a>
+          <button class="kmt-nav-mobile" type="button" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+
+          <nav class="kmt-nav-links" aria-label="Ana menü">
+            <div class="kmt-nav-item"><a href="/">ANA SAYFA</a></div>
+
+            <div class="kmt-nav-item">
+              <button type="button" aria-expanded="false">HAKKIMIZDA ▾</button>
+              <div class="kmt-nav-drop">
+                <a href="/bulent-cetin">Bülent Çetin</a>
+                <a href="/temsilcilik">Temsilcilikler</a>
+                <a href="/belgeler">Belgeler</a>
+                <a href="/legionnaire">Legionnaire</a>
+                <a href="/egitmen-and-seviye-sorgu">Eğitmen Ara</a>
+                <a href="/basin">Basın</a>
+                <a href="/referanslar">Referanslar</a>
+              </div>
+            </div>
+
+            <div class="kmt-nav-item">
+              <button type="button" aria-expanded="false">KRAV MAGA ▾</button>
+              <div class="kmt-nav-drop">
+                <a href="/krav-maga">Krav Maga</a>
+                <a href="/krav-maga-kadikoy">Krav Maga Kadıköy</a>
+                <a href="/ozel-dersler">Özel Dersler</a>
+                <a href="/cocuk-krav-maga">Çocuk Dersleri</a>
+                <a href="/online-akademi">Online Eğitim</a>
+                <a href="/icerikler">Krav Maga İçerikler</a>
+                
+              </div>
+            </div>
+
+            <div class="kmt-nav-item">
+              <button type="button" aria-expanded="false">SECURITY ▾</button>
+              <div class="kmt-nav-drop">
+                <a href="/ozel-guvenlik">Özel Güvenlik</a>
+                <a href="/yakin-koruma">Yakın Koruma</a>
+              </div>
+            </div>
+
+            <div class="kmt-nav-item"><a href="/blog">BLOG</a></div>
+            <div class="kmt-nav-item"><a href="/iletisim">İLETİŞİM</a></div>
+          </nav>
+        </div>
+      </header>
+    `;
+    return wrap.firstElementChild;
+  }
+
+  function buildFooter() {
+    const wrap = document.createElement("div");
+    wrap.innerHTML = `
+      <footer class="kmt-site-footer" data-component="shared-footer">
+        <div class="kmt-footer-inner">
+          <div class="kmt-footer-brand">
+            <strong>KRAV MAGA <span>TÜRK</span></strong>
+            <small>SELF DEFENSE ACADEMY</small>
+          </div>
+          <div class="kmt-footer-info">
+            <a href="/iletisim">İLETİŞİM</a>
+            <a href="/krav-maga-kadikoy">KADIKÖY · İSTANBUL</a>
+            <a href="https://www.instagram.com/kravmagaturk" target="_blank" rel="noopener">INSTAGRAM</a>
+            <a href="https://www.youtube.com/@KravMagaTurk" target="_blank" rel="noopener">YOUTUBE</a>
+          </div>
+          <form id="abonelik" class="kmt-footer-subscribe" data-kmt-newsletter="site">
+            <strong>Video ve haber aboneliği</strong>
+            <p>Yeni eğitim videoları ve haberleri e-postayla al.</p>
+            <div class="kmt-subscribe-row"><input type="email" name="email" aria-label="E-posta adresi" autocomplete="email" placeholder="E-posta adresin" required maxlength="200"><button type="submit">Abone ol</button><a class="kmt-footer-unsubscribe" href="/online-akademi/abonelik/ayril">Abonelikten çık</a></div>
+            <div class="kmt-subscribe-options"><label><input type="checkbox" name="consent" required> E-posta duyurularını almak istiyorum.</label></div>
+            <p class="kmt-subscribe-privacy">E-posta aboneliği verilerinin işlenmesi hakkında <a href="/kvkk-aydinlatma">KVKK aydınlatma metni</a>.</p>
+            <p role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <div class="kmt-footer-copy">
+          © 2026 <strong>KRAV MAGA TÜRK</strong> · ® TPE: 2007/49875 · <a href="/kvkk-aydinlatma" style="color:#f1f1f1;text-decoration:underline">KVKK / Aydınlatma</a>
+        </div>
+      </footer>
+    `;
+    const footer = wrap.firstElementChild;
+    if (document.querySelector("main#top")) {
+      const socials = [
+        {
+          href: "https://www.instagram.com/kravmagaturk",
+          label: "Instagram — Krav Maga Türk",
+          icon: '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><defs><linearGradient id="kmt-footer-instagram-gradient" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#ffdc80"/><stop offset=".35" stop-color="#f77737"/><stop offset=".65" stop-color="#e1306c"/><stop offset="1" stop-color="#833ab4"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6" fill="url(#kmt-footer-instagram-gradient)"/><rect x="5.5" y="5.5" width="13" height="13" rx="4" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="16.4" cy="7.8" r="1" fill="#fff"/></svg>'
+        },
+        {
+          href: "https://www.youtube.com/@KravMagaTurk",
+          label: "YouTube — Krav Maga Türk",
+          icon: '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><rect x="1" y="4" width="22" height="16" rx="5" fill="#ff0033"/><path d="m10 8 6 4-6 4z" fill="#fff"/></svg>'
+        }
+      ];
+      socials.forEach(function (social) {
+        const link = footer.querySelector('a[href="' + social.href + '"]');
+        if (!link) return;
+        link.classList.add("kmt-footer-social");
+        link.setAttribute("aria-label", social.label);
+        link.setAttribute("title", social.label);
+        link.innerHTML = social.icon;
+      });
+    }
+    return footer;
+  }
+
+  function closeAllMenus(exceptItem) {
+    document.querySelectorAll(".kmt-nav-item.open").forEach(function (item) {
+      if (item !== exceptItem) {
+        item.classList.remove("open");
+        const btn = item.querySelector(":scope > button");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  function bindMenu() {
+    const mobileBtn = document.querySelector(".kmt-nav-mobile");
+    const links = document.querySelector(".kmt-nav-links");
+    const isDesktopHover = function () {
+      return window.innerWidth > 900 &&
+        window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    };
+
+    if (mobileBtn && links) {
+      mobileBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        const isOpen = links.classList.toggle("open");
+        mobileBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (!isOpen) closeAllMenus();
+      });
+    }
+
+    document.querySelectorAll(".kmt-nav-item > button").forEach(function (btn) {
+      const item = btn.parentElement;
+
+      btn.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        const shouldOpen = !item.classList.contains("open");
+        closeAllMenus(item);
+        item.classList.toggle("open", shouldOpen);
+        btn.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+      });
+
+      // Fine-pointer desktop: open on hover; close when leaving the entire item.
+      // On mobile and touch devices, only clicking the button changes its state.
+      item.addEventListener("mouseenter", function () {
+        if (!isDesktopHover()) return;
+        closeAllMenus(item);
+        item.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+      });
+      item.addEventListener("mouseleave", function () {
+        if (!isDesktopHover()) return;
+        item.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      });
+      item.addEventListener("focusout", function (event) {
+        const nextFocus = event.relatedTarget;
+        // Do not collapse before a click on another menu item; that shifts its position.
+        if (item.contains(nextFocus) ||
+            (nextFocus && nextFocus.closest && nextFocus.closest(".kmt-nav"))) return;
+        item.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.querySelectorAll(".kmt-nav-drop").forEach(function (drop) {
+      drop.addEventListener("click", function (event) {
+        event.stopPropagation();
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!event.target.closest(".kmt-nav")) {
+        closeAllMenus();
+        if (links && window.innerWidth <= 900) {
+          links.classList.remove("open");
+          if (mobileBtn) mobileBtn.setAttribute("aria-expanded", "false");
+        }
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeAllMenus();
+        if (links && mobileBtn && window.innerWidth <= 900) {
+          links.classList.remove("open");
+          mobileBtn.setAttribute("aria-expanded", "false");
+        }
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      closeAllMenus();
+      if (links && mobileBtn) {
+        links.classList.remove("open");
+        mobileBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  function renderSharedLayout() {
+    injectSharedStyles();
+
+    const currentHeader =
+      document.querySelector("body > header") ||
+      document.querySelector("header.kmt-nav") ||
+      document.querySelector("header.top");
+
+    const newHeader = buildHeader();
+
+    if (currentHeader) {
+      currentHeader.replaceWith(newHeader);
+    } else {
+      document.body.insertBefore(newHeader, document.body.firstChild);
+    }
+
+    const currentFooter = document.querySelector("footer");
+    const newFooter = buildFooter();
+
+    if (currentFooter) {
+      currentFooter.replaceWith(newFooter);
+    } else {
+      document.body.appendChild(newFooter);
+    }
+
+    if (!document.getElementById('kmt-newsletter-widget-script')) {
+      const script = document.createElement('script');
+      script.id = 'kmt-newsletter-widget-script';
+      script.src = '/assets/newsletter-widget.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+
+    injectStandardMark();
+    bindMenu();
+  }
+
+  if (document.body) {
+    renderSharedLayout();
+  } else {
+    document.addEventListener("DOMContentLoaded", renderSharedLayout, { once: true });
+  }
+})();
