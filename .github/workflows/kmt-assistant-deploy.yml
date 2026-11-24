@@ -1,0 +1,85 @@
+name: KMT assistant regression and targeted deploy
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assistant-worker/src/worker.js'
+      - 'assistant-worker/widget-delivery/worker.js'
+      - 'assets/kmt-assistant.js'
+      - '.github/workflows/kmt-assistant-deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: kmt-assistant-targeted-deploy
+  cancel-in-progress: false
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Regression test actual source and widget parity
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          import vm from 'node:vm';
+          import assert from 'node:assert/strict';
+          const worker=fs.readFileSync('assistant-worker/src/worker.js','utf8');
+          const widget=fs.readFileSync('assets/kmt-assistant.js','utf8');
+          const delivery=fs.readFileSync('assistant-worker/widget-delivery/worker.js','utf8');
+          const kb=JSON.parse(fs.readFileSync('assets/kmt-assistant-knowledge.json','utf8'));
+          const sandbox={fetch:async u=>{
+            assert.equal(u,'https://kravmaga.com.tr/assets/kmt-assistant-knowledge.json');
+            return new Response(JSON.stringify(kb),{headers:{'content-type':'application/json'}});
+          },Response,URL,console};
+          vm.createContext(sandbox);
+          vm.runInContext(worker.replace('export default {','globalThis.worker = {'),sandbox);
+          const client=vm.createContext({});
+          new vm.Script(widget);
+          vm.runInContext(widget.slice(widget.indexOf('  function normalized(s)'),widget.indexOf('  function fallback(q)')),client);
+          const questions=['hangi saatler antrenman','Antrenman hangi günler?','antreman saatleri','Dersler ne zaman?','Grup dersleri hangi günler ve saat kaçta?','İdman programı'];
+          for(const q of questions){
+            assert.equal(sandbox.scheduleQuestion(q),true,q);
+            assert.match(client.scheduleCard(q).answer,/Salı ve Perşembe/);
+            const result=await sandbox.compose(q,[],'tr',{});
+            assert.equal(result.mode,'academy_knowledge');
+            assert.equal(result.sources[0].id,'group');
+            assert.match(result.answer,/19.30/);
+          }
+          for(const q of ['Çocuk antrenman saatleri','Özel ders saatleri','Bugün antrenman iptal mi?','Eyal Yanilov kimdir?','Ders kaç saat sürüyor?']){
+            assert.equal(sandbox.scheduleQuestion(q),false,q);
+            assert.equal(client.scheduleCard(q),null,q);
+          }
+          assert.equal(JSON.parse(delivery.split('\n')[1].slice('const JAVASCRIPT='.length,-1)),widget);
+          console.log('PASS: Turkish schedule intent, exclusions, exact knowledge entry and widget parity');
+          JS
+      - name: Deploy only the two assistant Workers and verify live
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error::Cloudflare deployment blocked: configure CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID as repository secrets."
+            exit 1
+          fi
+          npx --yes wrangler@4 deploy --config assistant-worker/wrangler.toml --keep-vars
+          npx --yes wrangler@4 deploy --config assistant-worker/widget-delivery/wrangler.toml --keep-vars
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          const js=await fetch('https://kravmaga.com.tr/assets/kmt-assistant.js?v=20261124-fix',{cache:'no-store'});
+          assert.ok(js.ok);
+          assert.match(await js.text(),/function scheduleCard/);
+          const res=await fetch('https://kravmaga.com.tr/api/kmt-research',{
+            method:'POST',headers:{'Content-Type':'application/json',Origin:'https://kravmaga.com.tr'},
+            body:JSON.stringify({message:'hangi saatler antrenman',language:'tr',history:[]})
+          });
+          assert.ok(res.ok);
+          const data=await res.json();
+          assert.match(data.answer,/19[.:]30/);
+          assert.equal(data.mode,'academy_knowledge');
+          console.log('PASS: public widget and live API regression');
+          JS
