@@ -1,3 +1,4 @@
+import { WorkerEntrypoint } from "cloudflare:workers";
 const allowed = new Set(["https://kravmaga.com.tr","https://www.kravmaga.com.tr"]);
 const db = "https://kravmaga-diploma-default-rtdb.firebaseio.com";
 let token = null, expires = 0;
@@ -104,3 +105,26 @@ export default {
   }catch{return respond({error:"Sorgu hizmeti şu anda kullanılamıyor."},503,origin)}
  }
 };
+
+
+// The public name-search API remains unchanged. This named RPC entrypoint
+// is accessible only through a Cloudflare service binding, not an HTTP route.
+function approvedInstructorNames(data) {
+ const names=new Set();
+ for(const r of Object.values(data||{})){
+  if(!r||typeof r!=="object"||r.publishInAssistant!==true)continue;
+  if(!["faal","aktif","active"].includes(norm(r.status)))continue;
+  if(!rolesOf(r).includes("instructor"))continue;
+  const name=String(r.name||r.fullName||r.adSoyad||"").trim();
+  if(name.length>=3&&name.length<=120&&!/[\r\n<>]/.test(name))names.add(name);
+ }
+ return [...names].sort((a,b)=>a.localeCompare(b,"tr"));
+}
+export class AssistantRoster extends WorkerEntrypoint {
+ async activeNames(){
+  const access=await getToken(this.env);
+  const res=await fetch(db+"/publicInstructors.json",{headers:{authorization:"Bearer "+access},cache:"no-store",signal:AbortSignal.timeout(5000)});
+  if(!res.ok)throw Error("Instructor registry unavailable");
+  return {names:approvedInstructorNames(await res.json())};
+ }
+}
