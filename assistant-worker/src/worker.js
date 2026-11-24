@@ -201,6 +201,35 @@ function scheduleQuestion(q) {
   return /\b(antr[ae]n?man[a-z]*|idman[a-z]*|ders[a-z]*|seans[a-z]*|kurs[a-z]*|egitim[a-z]*)\b/.test(n)
     && /\b(saat[a-z]*|kacta|gun[a-z]*|zaman|program[a-z]*)\b/.test(n);
 }
+function rosterQuestion(q,lang) {
+ const n=norm(q);
+ if(lang==="tr"){
+  return /\b(antrenor[a-z]*|egitmen[a-z]*|instructor[a-z]*|hoca[a-z]*)\b/.test(n)
+   && /\b(aktif|faal|yetkili|resmi)\b/.test(n)
+   && /\b(kim[a-z]*|isim[a-z]*|adlar[a-z]*|liste[a-z]*|say[a-z]*|ver|goster)\b/.test(n)
+   && !/\b(pasif|inactive|faal olmayan|yanilov|kmg|ikmf|lichtenfeld|avikzar|moyal|baska|diger)\b/.test(n);
+ }
+ return /\b(active|authorized|authorised|aktiv[a-z]*|zugelassen[a-z]*|actif[a-z]*|actifs|autorise[a-z]*)\b/.test(n)
+  && /\b(instructor[a-z]*|trainer[a-z]*|coach[a-z]*|entraineur[a-z]*|instructeur[a-z]*)\b/.test(n)
+  && !/\b(inactive|inaktiv|inactif|yanilov|kmg|ikmf|lichtenfeld)\b/.test(n);
+}
+async function rosterAnswer(lang,env){
+ const copy={
+ tr:["Akademinin yayımlanmasına izin verdiği faal yetkili antrenörler:","Şu anda yayımlanması onaylanmış faal antrenör ismi bulunmuyor. Bu, faal antrenör bulunmadığı anlamına gelmez.","Güncel eğitmen siciline şu anda ulaşılamıyor. İsim uydurmadan sizi resmî sorgulama sayfasına yönlendiriyorum."],
+ en:["Active authorized instructors approved for publication by the academy:","No active instructor names are approved for publication at present. This does not mean there are no active instructors.","The current instructor registry is unavailable. Please use the official verification page."],
+ de:["Aktive, zur Veröffentlichung freigegebene autorisierte Trainer:","Derzeit sind keine Namen zur Veröffentlichung freigegeben.","Das aktuelle Trainerregister ist nicht erreichbar. Bitte nutzen Sie die offizielle Abfrage."],
+ fr:["Entraîneurs actifs et autorisés dont la publication est approuvée :","Aucun nom n’est actuellement approuvé pour publication.","Le registre actuel est indisponible. Veuillez consulter la page officielle."]
+ }[lang];
+ const url="/egitmen-and-seviye-sorgu";
+ try{
+  if(!env.INSTRUCTOR_ROSTER||typeof env.INSTRUCTOR_ROSTER.activeNames!=="function")throw Error("missing roster binding");
+  const result=await env.INSTRUCTOR_ROSTER.activeNames();
+  if(!Array.isArray(result?.names))throw Error("invalid roster");
+  const names=[...new Set(result.names.filter(n=>typeof n==="string"&&n.length>=3&&n.length<=120&&!/[\r\n<>]/.test(n)))];
+  return {answer:names.length?copy[0]+"\n"+names.map(n=>"• "+n).join("\n"):copy[1],url,sources:[{title:"KMT Eğitmen Sicili",url:SITE+url,kind:"site"}],mode:"academy_roster"};
+ }catch(_){return {answer:copy[2],url,sources:[],mode:"registry_unavailable"};}
+}
+
 function officialQuestion(q) {
   const n=" "+norm(q)+" ";
   // Do not mistake other Krav Maga organisations or people for KMT itself.
@@ -229,6 +258,7 @@ async function localizeAnswer(answer,language,env) {
   }catch(_){return answer;}
 }
 async function compose(q,history,lang,env) {
+  if(rosterQuestion(q,lang))return rosterAnswer(lang,env);
   const schedule=lang==="tr"&&scheduleQuestion(q);
   const own=schedule||officialQuestion(q);
   const retrievalQuestion=schedule?"Grup ders günleri, saatleri ve seans programı":q;
