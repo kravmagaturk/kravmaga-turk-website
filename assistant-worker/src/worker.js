@@ -60,7 +60,7 @@ async function kbFacts(q) {
     const kb=await r.json(),list=Array.isArray(kb.qa)?kb.qa:[];
     const t=words(q);
     const ranked=list.map(x=>({x,score:tokensScore(x.q,t)*2+tokensScore(x.a.slice(0,200),t)})).sort((a,b)=>b.score-a.score);
-    return ranked.filter(x=>x.score>0).slice(0,3).map(z=>({title:"KMT: "+z.x.q,url:SITE+z.x.url,excerpt:String(z.x.a).slice(0,640),kind:"site",score:z.score}));
+    return ranked.filter(x=>x.score>0).slice(0,3).map(z=>({id:z.x.id,title:"KMT: "+z.x.q,url:SITE+z.x.url,excerpt:String(z.x.a).slice(0,640),kind:"site",score:z.score}));
   }catch(_){return [];}
 }
 function htmlToText(html) {
@@ -207,7 +207,7 @@ function officialQuestion(q) {
   if(/\b(yanilov|kmg|krav maga global|ikmf|lichtenfeld|avikzar|moyal)\b/.test(n))return false;
   return ["kmt","krav maga turk","akademi","bulent","cetin",
     "sinif","kontenjan","seans","kurs","ders","kitap","sicil",
-    "egitim","antrenman","antreman","antrman","idman","saat","ucret","fiyat","randevu","belge","salon","kayit",
+    "egitim","antrenman","antreman","antrman","idman","ucret","fiyat","randevu","belge","salon","kayit",
     "iletisim","kadikoy","baslangic","ozel ders","ogrenci"].some(s=>n.includes(s));
 }
 // Gemma may occasionally quote an English Wikipedia sentence verbatim.
@@ -234,7 +234,7 @@ async function compose(q,history,lang,env) {
   const retrievalQuestion=schedule?"Grup ders günleri, saatleri ve seans programı":q;
   const kb=await kbFacts(retrievalQuestion);
   if(schedule){
-    const fact=kb.find(s=>s.url===SITE+"/krav-maga" && /19[.:]30/.test(s.excerpt));
+    const fact=kb.find(s=>s.id==="group" && s.url===SITE+"/krav-maga");
     if(fact)return {answer:fact.excerpt,url:"/krav-maga",sources:[fact],mode:"academy_knowledge"};
   }
   let sources;
