@@ -240,17 +240,16 @@
     });
     async function reply(q,forcedId) {
       if(busy)return;busy=true;send.disabled=true;mic.disabled=true;languagePicker.disabled=true;
-      bubble("user",q);history.push({role:"user",content:q});history=history.slice(-8);
+      bubble("user",q);history.push({role:"user",content:q});history=history.slice(-9);
       status.textContent=translate("working","Yanıt hazırlanıyor...");
-      var found=assistantLang==="tr"?scheduleCard(q):null;var usedServer=false;
-      if(!found && forcedId)found=await answerFromCards(q,forcedId);
+      var found=null;var usedServer=false;
       if(!found)try {
-        var ctrl=new AbortController();var timeout=setTimeout(function(){ctrl.abort();},18000);
+        var ctrl=new AbortController();var timeout=setTimeout(function(){ctrl.abort();},30000);
         try{
-          var r=await fetch("/api/kmt-research",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q,language:assistantLang,history:history.slice(0,-1)}),signal:ctrl.signal,credentials:"omit"});
+          var r=await fetch("/api/kmt-research",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q,language:assistantLang,history:history.slice(0,-1).slice(-8).map(function(h){return {role:h.role,content:h.content.slice(0,500)};})}),signal:ctrl.signal,credentials:"omit"});
           if(r.ok && (r.headers.get("content-type")||"").includes("application/json")){
             var data=await r.json();
-            if(data && data.mode!=="no_source" && (!rosterRequest(q)||data.mode==="academy_roster"||data.mode==="registry_unavailable") && typeof data.answer==="string" && data.answer.trim().length){
+            if(data && (!rosterRequest(q)||data.mode==="academy_roster"||data.mode==="registry_unavailable") && typeof data.answer==="string" && data.answer.trim().length){
               found={answer:data.answer.slice(0,1500),url:typeof data.url==="string"?data.url:null,
                 sources:Array.isArray(data.sources)?data.sources.slice(0,4):[],mode:data.mode};
               usedServer=true;
@@ -258,11 +257,11 @@
           }
         }finally{clearTimeout(timeout);}
       }catch(_){}
-      if(!found)found=await answerFromCards(q,forcedId);
+      if(!found){found=assistantLang==="tr"&&history.length===1?scheduleCard(q):null;if(!found){found=forcedId?await answerFromCards(q,forcedId):{answer:assistantLang==="tr"?"Şu anda kaynaklı yanıt hazırlayamadım. Lütfen biraz sonra tekrar deneyin veya akademiyle iletişim kurun.":translate("loadFailed","Approved information is unavailable. Please contact the academy."),url:"/iletisim"};}}
       bubble("bot",found.answer,found.url,
         usedServer?(found.sources&&found.sources.some(function(x){return x.kind==="public";})?"Kamuya açık kaynaklara dayalı araştırma":translate("aiSource","KMT dijital danışman")):translate("webSource","Akademinin yayımladığı bilgiler"),
         found.sources||[]);
-      history.push({role:"assistant",content:found.answer});history=history.slice(-8);
+      history.push({role:"assistant",content:found.answer});history=history.slice(-9);
       status.textContent=usedServer?(found.mode==="research"?"Kaynaklı araştırma":translate("aiStatus","Kaynaklı yanıt")):translate("safeStatus","Site bilgileri · Güvenli yanıt");
       speak(found.answer);
       busy=false;send.disabled=false;mic.disabled=false;languagePicker.disabled=false;input.focus();
