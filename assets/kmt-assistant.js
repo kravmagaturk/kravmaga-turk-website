@@ -74,6 +74,12 @@
     return String(s || "").toLocaleLowerCase("tr-TR").normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "").replace(/ı/g, "i").replace(/[^a-z0-9\s]/g, " ");
   }
+  function scheduleCard(q) {
+    var s=normalized(q).replace(/\s+/g," ").trim();
+    if(/\b(yanilov|kmg|ikmf|lichtenfeld|avikzar|moyal|baska|diger|cocuk|kids|ozel|birebir|bire bir|advanced|ileri|telafi|online|koruma|ucret|fiyat|kontenjan|kayit|iptal|bugun|yarin|kac saat|acik mi|kapali mi)\b/.test(s))return null;
+    if(!/\b(antr[ae]n?man[a-z]*|idman[a-z]*|ders[a-z]*|seans[a-z]*|kurs[a-z]*|egitim[a-z]*)\b/.test(s)||!/\b(saat[a-z]*|kacta|gun[a-z]*|zaman|program[a-z]*)\b/.test(s))return null;
+    return {answer:"Başlangıç grup antrenmanlarımız Salı ve Perşembe günleri saat 19.30'da yapılır. Pazar 12.00–13.00 telafi seansıdır. İlk deneme dersi ücretsizdir; katılım için önceden randevu alabilirsiniz.",url:"/krav-maga"};
+  }
   function fallback(q) {
     var s=normalized(q);
     var score = function(entry) {
@@ -223,14 +229,15 @@
       if(busy)return;busy=true;send.disabled=true;mic.disabled=true;languagePicker.disabled=true;
       bubble("user",q);history.push({role:"user",content:q});history=history.slice(-8);
       status.textContent=translate("working","Yanıt hazırlanıyor...");
-      var found=null;var usedServer=false;
-      try {
+      var found=assistantLang==="tr"?scheduleCard(q):null;var usedServer=false;
+      if(!found && forcedId)found=await answerFromCards(q,forcedId);
+      if(!found)try {
         var ctrl=new AbortController();var timeout=setTimeout(function(){ctrl.abort();},18000);
         try{
           var r=await fetch("/api/kmt-research",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q,language:assistantLang,history:history.slice(0,-1)}),signal:ctrl.signal,credentials:"omit"});
           if(r.ok && (r.headers.get("content-type")||"").includes("application/json")){
             var data=await r.json();
-            if(data && typeof data.answer==="string" && data.answer.trim().length){
+            if(data && data.mode!=="no_source" && typeof data.answer==="string" && data.answer.trim().length){
               found={answer:data.answer.slice(0,1500),url:typeof data.url==="string"?data.url:null,
                 sources:Array.isArray(data.sources)?data.sources.slice(0,4):[],mode:data.mode};
               usedServer=true;
@@ -243,7 +250,7 @@
         usedServer?(found.sources&&found.sources.some(function(x){return x.kind==="public";})?"Kamuya açık kaynaklara dayalı araştırma":translate("aiSource","KMT dijital danışman")):translate("webSource","Akademinin yayımladığı bilgiler"),
         found.sources||[]);
       history.push({role:"assistant",content:found.answer});history=history.slice(-8);
-      status.textContent=usedServer?(found.mode==="research"?"Kaynaklı araştırma":translate("aiStatus","Yapay zekâ yanıtı")):translate("safeStatus","Site bilgileri · Güvenli yanıt");
+      status.textContent=usedServer?(found.mode==="research"?"Kaynaklı araştırma":translate("aiStatus","Kaynaklı yanıt")):translate("safeStatus","Site bilgileri · Güvenli yanıt");
       speak(found.answer);
       busy=false;send.disabled=false;mic.disabled=false;languagePicker.disabled=false;input.focus();
     }
